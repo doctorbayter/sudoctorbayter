@@ -54,104 +54,104 @@ Route::get('query', function(){
     DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (2, '1', '2', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (3, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (3, '2', '3', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (3, '1', '2', CURRENT_TIMESTAMP, NULL)");
-
-    
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (4, '2', '2', CURRENT_TIMESTAMP, NULL)");
-    
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (4, '1', '2', CURRENT_TIMESTAMP, NULL)");
-
-
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (5, '2', '2', CURRENT_TIMESTAMP, NULL)");
-    
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (5, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (3, '1', '3', CURRENT_TIMESTAMP, NULL)");
 
     
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (6, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (4, '2', '4', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (6, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (4, '1', '4', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (7, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (5, '2', '5', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (7, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (5, '1', '5', CURRENT_TIMESTAMP, NULL)");
 
-
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (8, '2', '2', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (8, '1', '2', CURRENT_TIMESTAMP, NULL)");
-
-
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (9, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (6, '2', '6', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (9, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (6, '1', '6', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (10, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (7, '2', '7', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (10, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (7, '1', '7', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (11, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (8, '2', '8', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (11, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (8, '1', '8', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (12, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (9, '2', '9', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (12, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (9, '1', '9', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (13, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (10, '2', '10', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (13, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (10, '1', '10', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (14, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (11, '2', '11', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (14, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (11, '1', '11', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (15, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (12, '2', '12', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (15, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (12, '1', '12', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (16, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (13, '2', '13', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (16, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (13, '1', '13', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (17, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (14, '2', '14', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (17, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (14, '1', '14', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (18, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (15, '2', '15', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (18, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (15, '1', '15', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (19, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (16, '2', '16', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (19, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (16, '1', '16', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (20, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (17, '2', '17', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (20, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (17, '1', '17', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (21, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (18, '2', '18', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (21, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (18, '1', '18', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (22, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (19, '2', '19', CURRENT_TIMESTAMP, NULL)");
     
-    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (22, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (19, '1', '19', CURRENT_TIMESTAMP, NULL)");
+
+
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (20, '2', '20', CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (20, '1', '20', CURRENT_TIMESTAMP, NULL)");
+
+
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (21, '2', '21', CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (21, '1', '21', CURRENT_TIMESTAMP, NULL)");
+
+
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (22, '2', '22', CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (22, '1', '22', CURRENT_TIMESTAMP, NULL)");
 
 
 

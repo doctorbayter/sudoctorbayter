@@ -47,10 +47,7 @@ Route::get('query', function(){
     DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (1, '2', '1', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL)");
-
-    $pass = '$2y$10$KSNrEWzqNY554Sut5JN6DeBgNJqILHDoxgpMqQKtHPs3J091iW/uG';
     
-    DB::insert("INSERT INTO users (id, name, email, email_verified_at, password, two_factor_secret, two_factor_recovery_codes, remember_token, current_team_id, profile_photo_path, created_at, updated_at) VALUES ('2', 'Jeff', 'hello@jeffcote.me', '2021-06-06 12:02:30', '$pass', NULL, NULL, NULL, NULL, NULL, CURRENT_TIMESTAMP, NULL)");
     
     DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (2, '2', '2', CURRENT_TIMESTAMP, NULL)");
     

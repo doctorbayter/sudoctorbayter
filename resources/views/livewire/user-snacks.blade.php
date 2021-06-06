@@ -6,7 +6,7 @@
             <header class="bg-fixed bg-cover shadow-lg" style="background-image: url({{asset('img/backgrounds/meal_plan_top_banner_2-1-1.jpg')}})">
                 <div class="w-10/12 mx-auto py-10">
                     <h3 class="font-bold text-white text-xl px-2 inline-block bg-red-700">Listado de</h3>
-                    <h2 class=" font-bold text-6xl">Salsitas <span class="text-red-700">Keto</span></h2>
+                    <h2 class=" font-bold text-6xl">Snakcs <span class="text-red-700">Keto</span></h2>
                 </div>
             </header>  
             <section class="bg-gradient-to-t from-gray-100 pb-14 ">

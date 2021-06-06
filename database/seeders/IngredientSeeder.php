@@ -850,7 +850,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => '75 gramos de tocineta o panceta picadas en trozos ',
+            'name' => '75 gramos de tocineta o panceta picadas en trozos',
             'recipe_id' => 31,
         ]);
         Ingredient::create([
@@ -858,7 +858,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 31,
         ]);
         Ingredient::create([
-            'name' => 'Media cucharadita de mantequilla de vaca 100 % de pastoreo o manteca de cerdo ',
+            'name' => 'Media cucharadita de mantequilla de vaca 100 % de pastoreo o manteca de cerdo',
             'recipe_id' => 31,
         ]);
         Ingredient::create([
@@ -991,7 +991,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 36,
         ]);
         Ingredient::create([
-            'name' => '30 gramos de queso manchego o de tu gusto, pero bien graso picado en trocitos  ',
+            'name' => '30 gramos de queso manchego o de tu gusto, pero bien graso picado en trocitos',
             'recipe_id' => 36,
         ]);
         Ingredient::create([
@@ -999,11 +999,11 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 36,
         ]);
         Ingredient::create([
-            'name' => 'Albahaca ',
+            'name' => 'Albahaca',
             'recipe_id' => 36,
         ]);
         Ingredient::create([
-            'name' => 'Orégano ',
+            'name' => 'Orégano',
             'recipe_id' => 36,
         ]);
         Ingredient::create([
@@ -1147,7 +1147,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 41,
         ]);
         Ingredient::create([
-            'name' => '1 cucharada de mayonesa casera ',
+            'name' => '1 cucharada de mayonesa casera',
             'recipe_id' => 41,
         ]);
         Ingredient::create([
@@ -1155,7 +1155,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 41,
         ]);
         Ingredient::create([
-            'name' => '2 cucharadas aceite de oliva virgen extra ',
+            'name' => '2 cucharadas aceite de oliva virgen extra',
             'recipe_id' => 41,
         ]);
         Ingredient::create([
@@ -1168,7 +1168,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 42,
         ]);
         Ingredient::create([
-            'name' => '50 gramos de queso graso como gruyer o cabra o al gusto partido en trocitos ',
+            'name' => '50 gramos de queso graso como gruyer o cabra o al gusto partido en trocitos',
             'recipe_id' => 42,
         ]);
         Ingredient::create([
@@ -1193,7 +1193,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 45,
         ]);
         Ingredient::create([
-            'name' => '1/2 cucharadita de pimentón en polvo especies al gusto (opcional) ',
+            'name' => '1/2 cucharadita de pimentón en polvo especies al gusto (opcional)',
             'recipe_id' => 45,
         ]);
         Ingredient::create([
@@ -1239,7 +1239,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => '60 gramos queso rallado tipo cheddar o parmesano ',
+            'name' => '60 gramos queso rallado tipo cheddar o parmesano',
             'recipe_id' => 47,
         ]);
         Ingredient::create([
@@ -1247,7 +1247,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 47,
         ]);
         Ingredient::create([
-            'name' => '1 cucharada de queso crema o crema de leche o nata ',
+            'name' => '1 cucharada de queso crema o crema de leche o nata',
             'recipe_id' => 47,
         ]);
         Ingredient::create([
@@ -1256,7 +1256,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => 'Salmón partido en cuadritos (180 a 200 gramos para mujer y 200 a 220 gramos para hombre)  ',
+            'name' => 'Salmón partido en cuadritos (180 a 200 gramos para mujer y 200 a 220 gramos para hombre)',
             'recipe_id' => 48,
         ]);
         Ingredient::create([
@@ -1305,7 +1305,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 49,
         ]);
         Ingredient::create([
-            'name' => '80 gramos de pernil de pollo con piel sin hueso lo haces a la plancha y picas en trozos ',
+            'name' => '80 gramos de pernil de pollo con piel sin hueso lo haces a la plancha y picas en trozos',
             'recipe_id' => 49,
         ]);
         Ingredient::create([
@@ -1339,7 +1339,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 52,
         ]);
         Ingredient::create([
-            'name' => 'Colitas de langostinos limpias y peladas (180 a 200 gramos para mujer y 200 a 220 gramos para hombre)  ',
+            'name' => 'Colitas de langostinos limpias y peladas (180 a 200 gramos para mujer y 200 a 220 gramos para hombre)',
             'recipe_id' => 52,
         ]);
         Ingredient::create([
@@ -1396,7 +1396,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 53,
         ]);
         Ingredient::create([
-            'name' => '2 huevos ',
+            'name' => '2 huevos',
             'recipe_id' => 53,
         ]);
         Ingredient::create([
@@ -1404,7 +1404,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 53,
         ]);
         Ingredient::create([
-            'name' => '3 cucharadas de mantequilla de vaca 100% de pastoreo  ',
+            'name' => '3 cucharadas de mantequilla de vaca 100% de pastoreo',
             'recipe_id' => 53,
         ]);
         Ingredient::create([
@@ -1577,7 +1577,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 60,
         ]);
         Ingredient::create([
-            'name' => '20 gramos de cebolla cortados a la juliana (1,86 gr. CH) ',
+            'name' => '20 gramos de cebolla cortados a la juliana (1,86 gr. CH)',
             'recipe_id' => 60,
         ]);
         Ingredient::create([
@@ -1589,7 +1589,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 60,
         ]);
         Ingredient::create([
-            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo ',
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
             'recipe_id' => 60,
         ]);
         Ingredient::create([
@@ -1656,7 +1656,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 63,
         ]);
         Ingredient::create([
-            'name' => '½ cucharadita de orégano ',
+            'name' => '½ cucharadita de orégano',
             'recipe_id' => 63,
         ]);
         Ingredient::create([
@@ -1668,7 +1668,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 63,
         ]);
         Ingredient::create([
-            'name' => '1 taza de caldo de carne ',
+            'name' => '1 taza de caldo de carne',
             'recipe_id' => 63,
         ]);
         Ingredient::create([
@@ -1748,7 +1748,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 66,
         ]);
         Ingredient::create([
-            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo ',
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
             'recipe_id' => 66,
         ]);
         Ingredient::create([
@@ -1791,7 +1791,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => '3 porciones costilla de res bien grasosa y adobada al gusto (1 libra) ',
+            'name' => '3 porciones costilla de res bien grasosa y adobada al gusto (1 libra)',
             'recipe_id' => 68,
         ]);
         Ingredient::create([
@@ -1803,7 +1803,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 68,
         ]);
         Ingredient::create([
-            'name' => '2 (20 gramos) tallos cebollín o cebolla larga (1,4 gr. CH), estos se dejan enteros y en ramillete ',
+            'name' => '2 (20 gramos) tallos cebollín o cebolla larga (1,4 gr. CH), estos se dejan enteros y en ramillete',
             'recipe_id' => 68,
         ]);
         Ingredient::create([
@@ -1853,11 +1853,11 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => '4 tiras o lonjas o lonchas (100 gramos) tocino o bacon picados en trozos ',
+            'name' => '4 tiras o lonjas o lonchas (100 gramos) tocino o bacon picados en trozos',
             'recipe_id' => 70,
         ]);
         Ingredient::create([
-            'name' => '2 portobellos cada uno de 50 gramos o uno de 100 gramos ',
+            'name' => '2 portobellos cada uno de 50 gramos o uno de 100 gramos',
             'recipe_id' => 70,
         ]);
         Ingredient::create([
@@ -1939,7 +1939,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 72,
         ]);
         Ingredient::create([
-            'name' => '100 gramos de tocino o bacon (natural) en lonjas y si no los consigues en lonjas, en trozos ',
+            'name' => '100 gramos de tocino o bacon (natural) en lonjas y si no los consigues en lonjas, en trozos',
             'recipe_id' => 72,
         ]);
         Ingredient::create([
@@ -1960,7 +1960,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => 'Lomo de salmón, o trucha o atún o merluza sazonado al gusto (160 a 180 gramos para mujer y 180 a 200 gramos para hombre) ',
+            'name' => 'Lomo de salmón, o trucha o atún o merluza sazonado al gusto (160 a 180 gramos para mujer y 180 a 200 gramos para hombre)',
             'recipe_id' => 73,
         ]);
         Ingredient::create([
@@ -2088,7 +2088,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 77,
         ]);
         Ingredient::create([
-            'name' => '50 gramos de pepino partido en rodajas o láminas y con cáscara (1,8 gr. CH) ',
+            'name' => '50 gramos de pepino partido en rodajas o láminas y con cáscara (1,8 gr. CH)',
             'recipe_id' => 77,
         ]);
 
@@ -2196,7 +2196,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 85,
         ]);
         Ingredient::create([
-            'name' => 'Un chorro de agua ',
+            'name' => 'Un chorro de agua',
             'recipe_id' => 85,
         ]);
         Ingredient::create([
@@ -2221,7 +2221,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 86,
         ]);
         Ingredient::create([
-            'name' => 'Un chorro de agua ',
+            'name' => 'Un chorro de agua',
             'recipe_id' => 86,
         ]);
         Ingredient::create([
@@ -2241,12 +2241,12 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 86,
         ]);
         Ingredient::create([
-            'name' => '1 copa de Martini ',
+            'name' => '1 copa de Martini',
             'recipe_id' => 86,
         ]);
 
         Ingredient::create([
-            'name' => '1 yema de huevo ',
+            'name' => '1 yema de huevo',
             'recipe_id' => 87,
         ]);
         Ingredient::create([
@@ -2304,7 +2304,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 89,
         ]);
         Ingredient::create([
-            'name' => '1 cucharadita de orégano seco (opcional) ',
+            'name' => '1 cucharadita de orégano seco (opcional)',
             'recipe_id' => 89,
         ]);
         Ingredient::create([
@@ -2321,7 +2321,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 90,
         ]);
         Ingredient::create([
-            'name' => '1 (1 gramo) de ajo finamente picado (0,24 gr. CH) ',
+            'name' => '1 (1 gramo) de ajo finamente picado (0,24 gr. CH)',
             'recipe_id' => 90,
         ]);
         Ingredient::create([
@@ -2370,11 +2370,11 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 91,
         ]);
         Ingredient::create([
-            'name' => '2 cucharadas de vinagre de sidra de manzana ',
+            'name' => '2 cucharadas de vinagre de sidra de manzana',
             'recipe_id' => 91,
         ]);
         Ingredient::create([
-            'name' => '1 (2 gramos) de ajo finamente picado (0,48 gr. CH) ',
+            'name' => '1 (2 gramos) de ajo finamente picado (0,48 gr. CH)',
             'recipe_id' => 91,
         ]);
         Ingredient::create([
@@ -2425,7 +2425,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => '120 gramos de aguacate (10,2 gr. CH) ',
+            'name' => '120 gramos de aguacate (10,2 gr. CH)',
             'recipe_id' => 94,
         ]);
         Ingredient::create([

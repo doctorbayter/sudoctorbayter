@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
 
         $user = User::create([
             'name' => 'Jackie',
-            'email' => 'Jackie@adn-empresarial.com',
+            'email' => 'jackie@adn-empresarial.com',
             'password' => bcrypt('01020304'),
         ]);
 
@@ -82,6 +82,25 @@ class UserSeeder extends Seeder
             'password' => bcrypt('01020304'),
         ]);
 
+        $user = User::create([
+            'name' => 'Osvaldo De Britos',
+            'email' => 'osvaldodebritos@hotmail.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Edith Marcozzi',
+            'email' => 'edithmarcozzi75@gmail.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Tatiana Patiño Ferrin',
+            'email' => 'tata_0825@hotmail.com ',
+            'password' => bcrypt('01020304'),
+        ]);
+
+
         // Grupo Selecto
 
         $user = User::create([
@@ -98,7 +117,7 @@ class UserSeeder extends Seeder
 
         $user = User::create([
             'name' => 'Martha Czielke',
-            'email' => 'Marthaczielke@gmail.com',
+            'email' => 'marthaczielke@gmail.com',
             'password' => bcrypt('Miladin731'),
         ]);
 
@@ -110,7 +129,7 @@ class UserSeeder extends Seeder
 
         $user = User::create([
             'name' => 'Agustina G Siri',
-            'email' => 'Fanin123@yahoo.com',
+            'email' => 'fanin123@yahoo.com',
             'password' => bcrypt('Jossy123'),
         ]);
 
@@ -134,7 +153,7 @@ class UserSeeder extends Seeder
 
         $user = User::create([
             'name' => 'Sara Ibeth Fayad Castaño',
-            'email' => 'Saraifayad@hotmail.com',
+            'email' => 'saraifayad@hotmail.com',
             'password' => bcrypt('Camila02'),
         ]);
 
@@ -150,6 +169,12 @@ class UserSeeder extends Seeder
             'password' => bcrypt('coco2308'),
         ]);
 
-        
+        $user = User::create([
+            'name' => 'Janet N Chávez',
+            'email' => 'janetnalonso@gmail.com',
+            'password' => bcrypt('Janito88'),
+        ]);
+
+          
     }
 }

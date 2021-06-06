@@ -43,9 +43,22 @@ Route::get('query', function(){
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, created_at, updated_at) VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL), (2, '1', '2', CURRENT_TIMESTAMP, NULL), (3, '1', '3', CURRENT_TIMESTAMP, NULL)");
     
     DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES (1, 'Lista de Alimentos Fase 1', 'lista-de-alimentos-fase-1-dkp.pdf', '1', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL), (2, 'Secretos Fase 1', 'secretos-fase-1-dkp.pdf', '1', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
-    
+
     DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (1, '2', '1', CURRENT_TIMESTAMP, NULL)");
     
+    DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (1, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL)");
+
+    
+    DB::insert("INSERT INTO users (id, name, email, email_verified_at, password, two_factor_secret, two_factor_recovery_codes, remember_token, current_team_id, profile_photo_path, created_at, updated_at) VALUES ('2', 'Jeff', 'hello@jeffcote.mw', '2021-06-06 12:02:30', '$2y$10$KSNrEWzqNY554Sut5JN6DeBgNJqILHDoxgpMqQKtHPs3J091iW/uG', NULL, NULL, NULL, NULL, NULL, CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (1, '2', '2', CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (1, '1', '2', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (1, '2', '2', CURRENT_TIMESTAMP, NULL)");
+
     DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (1, '1', '2', CURRENT_TIMESTAMP, NULL)");
     
     DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL)");

@@ -25,5 +25,131 @@ class UserSeeder extends Seeder
             'email' => 'hello@jeffcote.me',
             'password' => bcrypt('01020304'),
         ]);
+
+        //Lideres
+
+        $user = User::create([
+            'name' => 'Jackie',
+            'email' => 'Jackie@adn-empresarial.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Dianan Rodriguez',
+            'email' => 'dianarod.can@gmail.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Aberruncio',
+            'email' => 'aberruncio@gmail.com',
+            'password' => bcrypt('01020304'),
+        ]);
+        
+        $user = User::create([
+            'name' => 'Ceci Bracho',
+            'email' => 'cecibracho@gmail.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Anca Stanciou',
+            'email' => 'ancuta_stancioiu@yahoo.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Claudia Carlomagno',
+            'email' => 'claudiacarlomagno@gmail.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Shanna Patiño',
+            'email' => 'shanis18@gmail.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Carrizal',
+            'email' => 'carrizalcity1978@gmail.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Osvaldo De Britos',
+            'email' => 'osvaldodebritos@hotmail.com',
+            'password' => bcrypt('01020304'),
+        ]);
+
+        // Grupo Selecto
+
+        $user = User::create([
+            'name' => 'Sandra Bustamante Valdebenito',
+            'email' => 'sandra.bustamante.v@gmail.com',
+            'password' => bcrypt('Avatar2010'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Sandra Bustamante Valdebenito',
+            'email' => 'sandra.bustamante.v@gmail.com',
+            'password' => bcrypt('Avatar2010'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Mariella Francesca Baeza Garcia',
+            'email' => 'm.bgariella28@gmail.com',
+            'password' => bcrypt('hijosbellos4'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Martha Czielke',
+            'email' => 'Marthaczielke@gmail.com',
+            'password' => bcrypt('Miladin731'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Virginia Lopez',
+            'email' => 'virginialop27@gmail.com',
+            'password' => bcrypt('8801Isa$$'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Agustina G Siri',
+            'email' => 'Fanin123@yahoo.com',
+            'password' => bcrypt('Jossy123'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Ana Victoria Paz',
+            'email' => 'anavictoriapaz17@gmail.com',
+            'password' => bcrypt('anavictoria1770'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Alondra montes Arteaga',
+            'email' => 'alondrama18@gmail.com',
+            'password' => bcrypt('Lucas0709'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Gisela Díaz Hernández',
+            'email' => 'giseladiaz201560@gmail.com',
+            'password' => bcrypt('Lorena2011$-'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Sara Ibeth Fayad Castaño',
+            'email' => 'Saraifayad@hotmail.com',
+            'password' => bcrypt('Camila02'),
+        ]);
+
+        $user = User::create([
+            'name' => 'Cintya Morales',
+            'email' => 'cintyamorales93@gmail.com',
+            'password' => bcrypt('Freshtruck399#'),
+        ]);
+
+        
     }
 }

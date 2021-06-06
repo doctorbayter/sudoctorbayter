@@ -144,6 +144,12 @@ class UserSeeder extends Seeder
             'password' => bcrypt('Freshtruck399#'),
         ]);
 
+        $user = User::create([
+            'name' => 'Maria del socorro de la cruz Martínez',
+            'email' => 'cococruz2308@hotmail.com',
+            'password' => bcrypt('coco2308'),
+        ]);
+
         
     }
 }

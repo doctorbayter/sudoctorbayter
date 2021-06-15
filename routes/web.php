@@ -197,6 +197,12 @@ Route::get('query', function(){
     DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (30, '1', '30', CURRENT_TIMESTAMP, NULL)");
 
 
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (31, '2', '31', CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (31, '1', '31', CURRENT_TIMESTAMP, NULL)");
+
+
+
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (1, '1', '1', '1', CURRENT_TIMESTAMP, NULL), (2, '1', '2', '2', CURRENT_TIMESTAMP, NULL), (3, '1', '3', '3', CURRENT_TIMESTAMP, NULL), (4, '1', '4', '4', CURRENT_TIMESTAMP, NULL), (5, '1', '5', '4', CURRENT_TIMESTAMP, NULL)");
     

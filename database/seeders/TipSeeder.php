@@ -334,8 +334,110 @@ class TipSeeder extends Seeder
             'recipe_id' => 74
         ]);
 
-        
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 96
+        ]);
 
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 97
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 98
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 99
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 100
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 101
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 102
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 103
+        ]);
+        
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 104
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 105
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 106
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 107
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 108
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 109
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 110
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 111
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 112
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 113
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 114
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 115
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 116
+        ]);
         
 
     }

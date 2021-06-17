@@ -886,5 +886,198 @@ class RecipeSeeder extends Seeder
             'level_id' => 6
         ]);
 
+        // Fin salsitas parte 1
+
+        Recipe::create([
+            'name' => 'Triangulitos mojaditos',
+            'slug' => 'triangulitos-mojaditos',
+            'indice'=> 1,
+            'carbs' => 5.79,
+            'time' => 15,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Tazón de pollo tres quesos',
+            'slug' => 'tazon-de-pollo-tres-quesos',
+            'indice'=> 1,
+            'carbs' => 17.69,
+            'time' => 25,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Champiñones al ajillo',
+            'slug' => 'champinones-al-ajillo',
+            'indice'=> 1,
+            'carbs' => 2.88,
+            'time' => 15,
+            'level_id' => 3
+        ]);
+
+        Recipe::create([
+            'name' => 'Huevitos revoltosos',
+            'slug' => 'huevitos-revoltosos-2',
+            'indice'=> 1,
+            'carbs' => 0,
+            'time' => 15,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Pastas a la boloñesa',
+            'slug' => 'pastas-a-la-bolonesa',
+            'indice'=> 1,
+            'carbs' => 19.4,
+            'time' => 25,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Salmón con aceitunas',
+            'slug' => 'salmon-con-aceitunas',
+            'indice'=> 1,
+            'carbs' => 2.93,
+            'time' => 20,
+            'level_id' => 3
+        ]);
+
+        Recipe::create([
+            'name' => 'Bolitas ketobayter',
+            'slug' => 'bolitas-ketobayter',
+            'indice'=> 1,
+            'carbs' => 0,
+            'time' => 15,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Piernitas de pollo a la plancha',
+            'slug' => 'piernitas-de-pollo-a-la-plancha',
+            'indice'=> 1,
+            'carbs' => 20.8,
+            'time' => 25,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Huevos rellenos',
+            'slug' => 'huevos-rellenos',
+            'indice'=> 1,
+            'carbs' => 0.5,
+            'time' => 10,
+            'level_id' => 3
+        ]);
+
+        Recipe::create([
+            'name' => 'Tortillita de orégano con dip de macadamia',
+            'slug' => 'tortillita-de-oregano-con-dip-de-macadamia',
+            'indice'=> 1,
+            'carbs' => 4.67,
+            'time' => 10,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Lomo de cerdo con crema de cilantro',
+            'slug' => 'lomo-de-cerdo-con-crema-de-cilantro',
+            'indice'=> 1,
+            'carbs' => 15,
+            'time' => 20,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Huevos con especies',
+            'slug' => 'huevos-con-especies',
+            'indice'=> 1,
+            'carbs' => 0,
+            'time' => 7,
+            'level_id' => 3
+        ]);
+
+        Recipe::create([
+            'name' => 'Espárragos en cama de huevo',
+            'slug' => 'esparragos-en-cama-de-huevo',
+            'indice'=> 1,
+            'carbs' => 3.2,
+            'time' => 10,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Tazón de salmón',
+            'slug' => 'tazon-de-salmon',
+            'indice'=> 1,
+            'carbs' => 25.28,
+            'time' => 30,
+            'level_id' => 2
+        ]);
+        
+        Recipe::create([
+            'name' => 'Nuggets de pollo',
+            'slug' => 'nuggets-de-pollo',
+            'indice'=> 1,
+            'carbs' => 0,
+            'time' => 10,
+            'level_id' => 3
+        ]);
+
+        Recipe::create([
+            'name' => 'Tazón codorniz',
+            'slug' => 'tazon-codorniz',
+            'indice'=> 1,
+            'carbs' => 1.28,
+            'time' => 8,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Spaguetis de zuquini con salsa verdosa',
+            'slug' => 'spaguetis-de-zuquini-con-salsa-verdosa',
+            'indice'=> 1,
+            'carbs' => 15.37,
+            'time' => 30,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Tortillas con pollo',
+            'slug' => 'tortillas-con-pollo',
+            'indice'=> 1,
+            'carbs' => 0.85,
+            'time' => 10,
+            'level_id' => 3
+        ]);
+
+        Recipe::create([
+            'name' => 'Omelet primaveral',
+            'slug' => 'omelet-primaveral',
+            'indice'=> 1,
+            'carbs' => 3.04,
+            'time' => 10,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Fríjoles con chicharrón',
+            'slug' => 'frijoles-con-chicharron',
+            'indice'=> 1,
+            'carbs' => 26.01,
+            'time' => 30,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Pizza ligera',
+            'slug' => 'pizza-ligera',
+            'indice'=> 1,
+            'carbs' => 0.5,
+            'time' => 10,
+            'level_id' => 3
+        ]);
+        
+        
+
     }
 }

@@ -9,6 +9,7 @@
                     <h2 class=" font-bold text-3xl md:text-6xl"> {!!$fase->sub_name!!}</h2>
                     <p class="text-base text-gray-600 mt-2">{{$fase->descripcion}}</p>
                     <section class=" flex items-center flex-col md:flex-row mt-4 ">
+
                         @foreach ($fase->resources as $resource)
                                 <a  href="{{asset($resource->url)}}" target="_blank" class="text-white text-xs mt-4 md:mt-0 md:text-sm xl:text-base border @if ($loop->first) md:mr-3 @endif cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-6 py-2 rounded-full">Descargar {{$resource->name}}</a>        
                         @endforeach
@@ -30,7 +31,7 @@
                 
                     <section class="mt-8 mb-20">
                         <div class="grid grid-cols-{{$fase->weeks->count()}} text-center">
-                            
+
                             @foreach ($fase->weeks as $key => $week)
                                 <div class="border border-gray-100 font-bold cursor-pointer bg-gray-50 rounded-tl-md relative">
                                     <div class="text-red-700 border-b-4 text-xs md:text-base  hover:text-red-700" @click="selected = {{$key}}" x-bind:class="{ 'border-red-700 py-4': selected == {{$key}}, 'border-gray-400 py-4': selected !== {{$key}} }">
@@ -38,7 +39,12 @@
                                     </div>
                                     <div class="grid overflow-hidden h-0 md:h-auto grid-cols-7 text-center shadow-md  absolute w-full " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
                                         @foreach ($week->days as $day)
-                                            <div wire:click="setDay({{$day}})" class="font-semibold text-xs @if ($this->day->day == $day->day) bg-red-700 text-red-100 cursor-default @else bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer @endif  py-2   "><span class="hidden md:block xl:inline">Día</span> {{$day->day}}</div>
+                                        
+                                            @if ($day->fase->id == $fase->id)
+                                                <div wire:click="setDay({{$day}})" class="font-semibold text-xs @if ($this->day->day == $day->day) bg-red-700 text-red-100 cursor-default @else bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer @endif  py-2   "><span class="hidden md:block xl:inline">Día</span> {{$day->day}}</div>
+                                            @endif
+
+                                            
                                         @endforeach
                                     </div>
                                 </div>
@@ -89,78 +95,82 @@
                         </div>
                         <hr class="my-12"> 
                         <div class="flex flex-col xl:flex-row" x-data="{ modalIsShowing: false }" >
-                            <div class="w-full xl:w-5/12">
-                                <h2 class="text-4xl text-gray-900 font-bold">
-                                    <span class="text-red-700">Snacks</span> Día {{$this->day->day}} <span class="text-base text-gray-600 font-medium">(opcional)</span>
-                                </h2>
-                                <section class="my-4" >
-                                    @foreach ($this->day->recipes->where('level_id', '==', 4) as $snack)
-                                        <div wire:click="toogleSnack('{{$snack->id}}')" wire:key="{{ $loop->index }}"   x-on:click="modalIsShowing = true" id="snack{{$snack->id}}" class="border border-gray-100 shadow-md rounded-xl overflow-hidden w-full mb-6 cursor-pointer" title="click para ver más">
-                                            <div class="w-full block">
-                                                <div class="flex items-center">
-                                                    <figure class="w-20 md:w-48 h-28 overflow-hidden bg-gray-100 ">
-                                                        <img src="{{asset('img/'.$snack->image->url)}}" alt="" class=" h-full object-cover">
-                                                    </figure>
-                                                    <div class="ml-6 relative w-full flex-1">
-                                                        <h2 class="font-bold text-lg text-gray-900">{{$snack->name}}</h2>
-                                                        <div class="text-gray-400 text-sm pr-4 mb-2 hidden md:block">{!!Str::limit($snack->descripcion, '90', '...')!!} </div>
-                                                        <div class="text-gray-400 text-sm pr-4 mb-2 md:hidden">{!!Str::limit($snack->descripcion, '50', '...')!!} </div>
-                                                        <p class="bg-green-500 mt-1 px-2 py-1 text-xs rounded-lg inline-block text-white">{{$snack->carbs}}g Carbs.</p>
+
+                            @if ($this->day->recipes->where('level_id', '==', 4)->count() > 0 )
+                                <div class="w-full xl:w-5/12 xl:mr-16">
+                                    <h2 class="text-4xl text-gray-900 font-bold">
+                                        <span class="text-red-700">Snacks</span> Día {{$this->day->day}} <span class="text-base text-gray-600 font-medium">(opcional)</span>
+                                    </h2>
+                                    <section class="my-4" >
+                                        @foreach ($this->day->recipes->where('level_id', '==', 4) as $snack)
+                                            <div wire:click="toogleSnack('{{$snack->id}}')" wire:key="{{ $loop->index }}"   x-on:click="modalIsShowing = true" id="snack{{$snack->id}}" class="border border-gray-100 shadow-md rounded-xl overflow-hidden w-full mb-6 cursor-pointer" title="click para ver más">
+                                                <div class="w-full block">
+                                                    <div class="flex items-center">
+                                                        <figure class="w-20 md:w-48 h-28 overflow-hidden bg-gray-100 ">
+                                                            <img src="{{asset('img/'.$snack->image->url)}}" alt="" class=" h-full object-cover">
+                                                        </figure>
+                                                        <div class="ml-6 relative w-full flex-1">
+                                                            <h2 class="font-bold text-lg text-gray-900">{{$snack->name}}</h2>
+                                                            <div class="text-gray-400 text-sm pr-4 mb-2 hidden md:block">{!!Str::limit($snack->descripcion, '90', '...')!!} </div>
+                                                            <div class="text-gray-400 text-sm pr-4 mb-2 md:hidden">{!!Str::limit($snack->descripcion, '50', '...')!!} </div>
+                                                            <p class="bg-green-500 mt-1 px-2 py-1 text-xs rounded-lg inline-block text-white">{{$snack->carbs}}g Carbs.</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
 
-                                    <aside x-show="modalIsShowing" x-cloak class="z-50 fixed delay-500 w-full h-full top-0 left-0 flex items-center justify-center"
-                                        x-transition:enter="transition ease-out duration-500"
-                                        x-transition:enter-start="opacity-0"
-                                        x-transition:enter-end="opacity-100"
-                                        x-transition:leave="ease-in duration-300"
-                                        x-transition:leave-end="opacity-0"
-                                        >
-                                        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50" x-on:click="modalIsShowing = false"></div>
-                                        
-                                        <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+                                        <aside x-show="modalIsShowing" x-cloak class="z-50 fixed delay-500 w-full h-full top-0 left-0 flex items-center justify-center"
+                                            x-transition:enter="transition ease-out duration-500"
+                                            x-transition:enter-start="opacity-0"
+                                            x-transition:enter-end="opacity-100"
+                                            x-transition:leave="ease-in duration-300"
+                                            x-transition:leave-end="opacity-0"
+                                            >
+                                            <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50" x-on:click="modalIsShowing = false"></div>
                                             
-                                            <div x-on:click="modalIsShowing = false" class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"  >
-                                                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                                                </svg>
+                                            <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
                                                 
+                                                <div x-on:click="modalIsShowing = false" class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"  >
+                                                    <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                                        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                                    </svg>
+                                                    
+                                                </div>
+                                        
+                                                <!-- Add margin if you want to see some of the overlay behind the modal-->
+                                                <div class="modal-content py-4 text-left px-6">
+
+                                                    @if ($this->snack != null)
+                                                        <!--Title-->
+                                                        <div class="flex justify-between items-center pb-3">
+                                                            <p class="text-2xl font-bold"><span class="mr-2 text-red-700">Snack</span>{{$this->snack->name}}</p>
+                                                            <div class="modal-close cursor-pointer z-50">
+                                                            <svg x-on:click="modalIsShowing = false" id="crossClose{{$this->snack->id}}" class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                                            </svg>
+                                                            </div>
+                                                        </div>
+                                                        <!--Body-->
+                                                        <div class="text-gray-400 text-sm" >
+                                                            <div>
+                                                                <figure class="w-full h-36 overflow-hidden bg-gray-100 ">
+                                                                    <img src="{{asset('img/'.$this->snack->image->url)}}" alt="" class=" w-full object-cover">
+                                                                </figure>
+                                                            </div>
+                                                            <div class="py-4">
+                                                                <h3 class="text-xl font-bold text-gray-900 mb-1">Preparación</h3>
+                                                                {!!$this->snack->descripcion!!}
+                                                            </div>
+                                                        </div>
+                                                    @endif
+                                                </div>
                                             </div>
-                                    
-                                            <!-- Add margin if you want to see some of the overlay behind the modal-->
-                                            <div class="modal-content py-4 text-left px-6">
-                                                   @if ($this->snack)
-                                                    <!--Title-->
-                                                    <div class="flex justify-between items-center pb-3">
-                                                        <p class="text-2xl font-bold"><span class="mr-2 text-red-700">Snack</span>{{$this->snack->name}}</p>
-                                                        <div class="modal-close cursor-pointer z-50">
-                                                        <svg x-on:click="modalIsShowing = false" id="crossClose{{$this->snack->id}}" class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                                            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                                                        </svg>
-                                                        </div>
-                                                    </div>
-                                                    <!--Body-->
-                                                    <div class="text-gray-400 text-sm" >
-                                                        <div>
-                                                            <figure class="w-full h-36 overflow-hidden bg-gray-100 ">
-                                                                <img src="{{asset('img/'.$this->snack->image->url)}}" alt="" class=" w-full object-cover">
-                                                            </figure>
-                                                        </div>
-                                                        <div class="py-4">
-                                                            <h3 class="text-xl font-bold text-gray-900 mb-1">Preparación</h3>
-                                                            {!!$this->snack->descripcion!!}
-                                                        </div>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </aside> 
-                                </section>
-                            </div>
-                            <div class=" flex-1 xl:ml-16">
+                                        </aside> 
+                                    </section>
+                                </div>
+                            @endif                            
+                            <div class=" flex-1 ">
                                 <h2 class="text-4xl font-bold mb-4 text-red-700">¡Notas!</h2>
                                 <div class="text-gray-600">
                                     {!!$this->day->note!!}

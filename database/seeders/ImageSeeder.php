@@ -581,8 +581,135 @@ class ImageSeeder extends Seeder
             'imageable_id' => 95,
             'imageable_type' => 'App\Models\Recipe',
         ]);
+
+        Image::create([
+            'url' => 'recipes/triangulitos-mojaditos.jpg',
+            'imageable_id' => 96,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/tazon-de-pollo-tres-quesos.jpg',
+            'imageable_id' => 97,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/champinones-al-ajillo.jpg',
+            'imageable_id' => 98,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/huevitos-revoltosos.jpg',
+            'imageable_id' => 99,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/pastas-a-la-bolonesa.jpg',
+            'imageable_id' => 100,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/salmon-con-aceitunas.jpg',
+            'imageable_id' => 101,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/bolitas-ketobayter.jpg',
+            'imageable_id' => 102,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/piernitas-de-pollo-a-la-plancha.jpg',
+            'imageable_id' => 103,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/huevos-rellenos.jpg',
+            'imageable_id' => 104,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/tortillita-de-oregano-con-dip-de-macadamia.jpg',
+            'imageable_id' => 105,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/lomo-de-cerdo-con-crema-de-cilantro.jpg',
+            'imageable_id' => 106,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/huevos-con-especies.jpg',
+            'imageable_id' => 107,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/esparragos-en-cama-de-huevo.jpg',
+            'imageable_id' => 108,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/tazon-de-salmon.jpg',
+            'imageable_id' => 109,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+        
+        Image::create([
+            'url' => 'recipes/nuggets-de-pollo.jpg',
+            'imageable_id' => 110,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/tazon-codorniz.jpg',
+            'imageable_id' => 111,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/spaguetis-de-zuquini-con-salsa-verdosa.jpg',
+            'imageable_id' => 112,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/tortillas-con-pollo.jpg',
+            'imageable_id' => 113,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/omelet-primaveral.jpg',
+            'imageable_id' => 114,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/frijoles-con-chicharron.jpg',
+            'imageable_id' => 115,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/pizza-ligera.jpg',
+            'imageable_id' => 116,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
         
         
         
+
     }
 }

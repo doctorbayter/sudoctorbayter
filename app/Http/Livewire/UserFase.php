@@ -17,8 +17,13 @@ class UserFase extends Component
     public function mount(Fase $fase){
         $this->fase = $fase;
 
+        
+
         foreach($fase->days as $day){
             if($day->users()->find(auth()->user()->id)){
+
+                
+
                 $this->day = $day;
                 break;
             }
@@ -26,6 +31,8 @@ class UserFase extends Component
         if (!$this->day) {
             $this->day = $fase->days->first();
         }
+
+
         $this->setCarbs($this->day);
     }
 

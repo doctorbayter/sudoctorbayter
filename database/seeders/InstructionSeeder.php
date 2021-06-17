@@ -2359,5 +2359,925 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 95,
         ]);
 
+
+        Instruction::create([
+            'name' => 'Precalentar el horno a 180°c',
+            'step' => 1,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón añade la harina, mantequilla, huevo, sal, queso crema y mezcla con batidora, hasta conseguir una masa consistente y sin grumos',
+            'step' => 2,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'Engrasa con mantequilla una refractaria cuadrada para que salgan bien los triangulitos, pon la mezcla y lleva al horno',
+            'step' => 3,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'Hornea por 10 minutos o hasta que cuando introduzcas un cuchillo salga limpio',
+            'step' => 4,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'Déjalo enfriar para poder sacarlo y cortar por mitad en triángulo',
+            'step' => 4,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación para mojar los triangulitos',
+            'step' => 5,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón mezcla el huevo',
+            'step' => 6,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'En otro tazón pon el queso',
+            'step' => 7,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'Después coge cada triangulito (ojo ya debe estar frio) pásalo por el huevo, deja que se empape muy bien',
+            'step' => 8,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'Después pásalo por el queso, si es necesario repite para que queden bien empapados',
+            'step' => 9,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con la mantequilla y a fuego bajo, pon cada triangulito a freír',
+            'step' => 10,
+            'recipe_id' => 96,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 11,
+            'recipe_id' => 96,
+        ]);
+
+        Instruction::create([
+            'name' => 'Precalentar el horno a 180oC',
+            'step' => 1,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén a fuego bajo con mantequilla dorar los trozos de pollo ',
+            'step' => 2,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando esté medio hecho, añade la cebolla, pimentón                                           champiñones, ajo y sal pimienta, deja por 10 minutos o hasta que las verduras estén al dente retirar y reservar',
+            'step' => 3,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'En otro sartén a fuego bajo, coloca el queso crema, azul, mozzarella y las especies al gusto y cuando se esté derretido añade el pollo, revuelve y apaga',
+            'step' => 4,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'En una refractaria coloca el pollo y espolvorear con el queso parmesano',
+            'step' => 5,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'Coloca en el horno por 10 minutos solo para gratinar',
+            'step' => 6,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve con una buena ensalada',
+            'step' => 7,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación ensalada',
+            'step' => 8,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón coloca todos los ingredientes menos el aguacate',
+            'step' => 9,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'Sal pimienta y revuelve muy bien',
+            'step' => 10,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'Añade el vinagre y un buen chorro de aceite de oliva y nuevamente revuelve',
+            'step' => 11,
+            'recipe_id' => 97,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de servir añade el aguacate y vuelve a salpimentar',
+            'step' => 12,
+            'recipe_id' => 97,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla y a fuego bajo coloca el ajo a sofreír',
+            'step' => 1,
+            'recipe_id' => 98,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez esté sofrito añade los champiñones y salpimienta',
+            'step' => 2,
+            'recipe_id' => 98,
+        ]);
+        Instruction::create([
+            'name' => 'Cocina, por 2 a 3 minutos y agrega dos cucharadas de aceite de oliva y revuelve',
+            'step' => 3,
+            'recipe_id' => 98,
+        ]);
+        Instruction::create([
+            'name' => 'Cocina por 1 minuto más',
+            'step' => 4,
+            'recipe_id' => 98,
+        ]);
+        Instruction::create([
+            'name' => 'Apaga y agrega el perejil, las otras dos cucharadas de aceite y tapa por 1 o dos minutos más',
+            'step' => 5,
+            'recipe_id' => 98,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 6,
+            'recipe_id' => 98,
+        ]);
+
+
+        Instruction::create([
+            'name' => 'Bate los huevos en una taza hasta que aparezcan burbujas',
+            'step' => 1,
+            'recipe_id' => 99,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez listo agrega el queso crema y vuelve a batir ',
+            'step' => 2,
+            'recipe_id' => 99,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén a fuego bajo y con la mantequilla derretida le agregamos el huevo y lo mueves suavemente, cuando la textura esté cremosa, añade la sal, remueve nuevamente',
+            'step' => 3,
+            'recipe_id' => 99,
+        ]);
+        Instruction::create([
+            'name' => 'Apaga y tapa para que se termine de cocinar',
+            'step' => 4,
+            'recipe_id' => 99,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve caliente con la porción de queso y por fin tu café con leche',
+            'step' => 5,
+            'recipe_id' => 99,
+        ]);
+        
+
+        Instruction::create([
+            'name' => 'Preparación de la salsa',
+            'step' => 1,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla y a fuego bajo se sofríe la cebolla y el ajo',
+            'step' => 2,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando esté dorada, agrega la carne, revuelve y sal pimienta al gusto ',
+            'step' => 3,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => 'Con la carne a medio hacer le agregas el tomate, orégano y especies de tú gusto y seguimos revolviendo',
+            'step' => 4,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => ' Mientras que está la carne pon a hacer las pastas de zucchini en agua hirviendo y déjala, al dente o a tu gusto (otra opción es sofreír en mantequilla por unos minutos)',
+            'step' => 5,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez las dos cosas, coloca en un plato hondo las pastas y encima la carne y espolvorea con el queso',
+            'step' => 6,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve con una rica ensalada',
+            'step' => 7,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón coloca todos los ingredientes menos el perejil',
+            'step' => 8,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => 'Sal pimienta y revuelve muy bien',
+            'step' => 9,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => 'Añade el balsámico, 3 cucharadas de aceite de oliva y revuelve',
+            'step' => 10,
+            'recipe_id' => 100,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de servir añade las otras dos cucharadas de aceite y el perejil y vuelve a salpimentar',
+            'step' => 11,
+            'recipe_id' => 100,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un tazón coloca las aceitunas, dos cucharadas de aceite de oliva y debes macerarlas hasta tener una pasta ',
+            'step' => 1,
+            'recipe_id' => 101,
+        ]);
+        Instruction::create([
+            'name' => 'Con esta pasta adoba el salmón y sal pimienta, deja conservando 30 minutos mínimo',
+            'step' => 2,
+            'recipe_id' => 101,
+        ]);
+        Instruction::create([
+            'name' => 'En otro tazón coloca las aceitunas verdes, la cebolla y mezcla con 4 cucharadas de aceite de oliva y conserva',
+            'step' => 3,
+            'recipe_id' => 101,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla y a fuego bajo pon el salmón a sofreír',
+            'step' => 4,
+            'recipe_id' => 101,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez esté sofrito al gusto, le agregamos el aderezo que tienes en el tazón con las aceitunas verdes',
+            'step' => 5,
+            'recipe_id' => 101,
+        ]);
+        Instruction::create([
+            'name' => 'Cocina por 1 minuto, apaga y tapa para que se conserve el sabor por no más de 2 minutos',
+            'step' => 6,
+            'recipe_id' => 101,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 7,
+            'recipe_id' => 101,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un sartén con 1 cucharada de mantequilla debes freír la tocineta hasta que dore',
+            'step' => 1,
+            'recipe_id' => 102,
+        ]);
+        Instruction::create([
+            'name' => 'La retiras y déjala enfriar y conserva la grasita que está en el sartén',
+            'step' => 2,
+            'recipe_id' => 102,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón coloca la grasa que quedó del sartén y mezcla con la otra cucharada de mantequilla, el queso crema, queso cheddar, sal pimienta y bate hasta que todo se incorpore. ',
+            'step' => 3,
+            'recipe_id' => 102,
+        ]);
+        Instruction::create([
+            'name' => 'Esta mezcla, déjala en la nevera, por unos minutos',
+            'step' => 4,
+            'recipe_id' => 102,
+        ]);
+        Instruction::create([
+            'name' => 'Después armar las bolitas y antes de servir espolvorea con la tocineta.',
+            'step' => 5,
+            'recipe_id' => 102,
+        ]);
+        
+        Instruction::create([
+            'name' => 'En un tazón coloca el limón, ajo, especias y las cucharadas de aceite',
+            'step' => 1,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Mezcla todo muy bien',
+            'step' => 2,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Con esta mezcla unta muy bien el pernil, sal pimienta y deja marinar por 20 minutos',
+            'step' => 3,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Si deseas marinar de otra forma no hay problema',
+            'step' => 4,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Después de este tiempo, en un sartén con mantequilla y a fuego bajo pon el pernil a la plancha',
+            'step' => 5,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Deja que se hace por un lado y una vez doradito dale vuelta',
+            'step' => 6,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Para cocinar por el otro lado, deja cocción según tu gusto',
+            'step' => 7,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato con una rica ensalada de lentejas',
+            'step' => 8,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación para la ensalada',
+            'step' => 9,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón poner las lentejas y todas las verduras excepto la cucharada de las hojas de apio',
+            'step' => 10,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Añadir el limón, aceite de oliva, salpimentar y revolver bien',
+            'step' => 11,
+            'recipe_id' => 103,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de servir espolvorear con las ramitas de apio y el queso parmesano',
+            'step' => 12,
+            'recipe_id' => 103,
+        ]);
+
+        Instruction::create([
+            'name' => 'Ya cocidos los huevos y partidos a la mitad retira las yemas ',
+            'step' => 1,
+            'recipe_id' => 104,
+        ]);
+        Instruction::create([
+            'name' => 'Reserva las claras a parte y la yema a parte',
+            'step' => 2,
+            'recipe_id' => 104,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón coloca las yemas, le agregas la mayonesa, aceitunas salpimientas y mezclas todo muy bien, hasta que quede una pasta',
+            'step' => 3,
+            'recipe_id' => 104,
+        ]);
+        Instruction::create([
+            'name' => 'Rellena otra vez las claras con la pasta, espolvorea con el queso ',
+            'step' => 4,
+            'recipe_id' => 104,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 5,
+            'recipe_id' => 104,
+        ]);
+
+        Instruction::create([
+            'name' => 'Preparación del Dip',
+            'step' => 1,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'En una procesadora o licuadora pon todos los ingredientes, excepto los 10 gramos de tomate finamente picado',
+            'step' => 2,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'Bate muy bien, sal pimienta y vuelve a procesar',
+            'step' => 3,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'Coloca en una tacita y agrega por encima los tomaticos picado',
+            'step' => 4,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'Conservar en la nevera mientras se hacen las tortillas',
+            'step' => 5,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación tortillas',
+            'step' => 6,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón coloca el queso y el orégano y revuelve muy bien',
+            'step' => 7,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén pequeño redondo a fuego bajo, agrega dos cucharadas de la mezcla del queso y orégano',
+            'step' => 8,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'Que quede bien esparcido en forma de tortilla y tapar',
+            'step' => 9,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando esté burbujeando, debes voltear la tortilla un minuto más',
+            'step' => 10,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'Apaga y deja enfriar para que endurezca',
+            'step' => 11,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'Repites el mismo procedimiento para la otra tortilla',
+            'step' => 12,
+            'recipe_id' => 105,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez listas sirve con su dip para untar ',
+            'step' => 13,
+            'recipe_id' => 105,
+        ]);
+
+
+        Instruction::create([
+            'name' => 'Preparación para el lomo y salsa ',
+            'step' => 1,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'En una licuadora coloca la cebolla, cilantro, queso crema y el caldo de pollo',
+            'step' => 2,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'Licua muy bien hasta que todo quede compenetrado y deja conservar',
+            'step' => 3,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'A parte en un sartén, coloca el lomo al azar, que esté bien cocido y dorado por lado y lado',
+            'step' => 4,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de terminar la cocción del lomo, en otro sartén a fuego bajo, derrite la mantequilla y agrega la salsa de cilantro que teníamos conservando',
+            'step' => 5,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'Deja sofreír por unos minutos',
+            'step' => 6,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez listo el lomo baña con la salsa de cilantro',
+            'step' => 7,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato con tu rica ensalada',
+            'step' => 8,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación ensalada',
+            'step' => 9,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón pon todas las verduras sal pimienta y revuelve',
+            'step' => 10,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'Añade aceite de oliva y revuelve',
+            'step' => 11,
+            'recipe_id' => 106,
+        ]);
+        Instruction::create([
+            'name' => 'Añade el vinagre, vuelve a salpimentar y revuelve una vez más antes de servir con el lomo',
+            'step' => 12,
+            'recipe_id' => 106,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un sartén a fuego bajo con mantequilla parte los dos huevos',
+            'step' => 1,
+            'recipe_id' => 107,
+        ]);
+        Instruction::create([
+            'name' => 'De inmediato, espolvorea con sal y deja por 1 minuto',
+            'step' => 2,
+            'recipe_id' => 107,
+        ]);
+        Instruction::create([
+            'name' => 'Seguido pon el queso y espolvorea con especies, tapa y apaga',
+            'step' => 3,
+            'recipe_id' => 107,
+        ]);
+        Instruction::create([
+            'name' => 'Para que se cocine lentamente con el vapor, servimos de inmediato',
+            'step' => 4,
+            'recipe_id' => 107,
+        ]);
+
+        Instruction::create([
+            'name' => 'Deja los espárragos por unos minutos en el aceite de oliva y sal pimienta',
+            'step' => 1,
+            'recipe_id' => 108,
+        ]);
+        Instruction::create([
+            'name' => 'Después envuélvelos con la tocineta',
+            'step' => 2,
+            'recipe_id' => 108,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con 1 cucharada de mantequilla y a fuego alto, pon los espárragos y deja sofreír, ojo le debes dar vuelta para que no se quemen',
+            'step' => 3,
+            'recipe_id' => 108,
+        ]);
+        Instruction::create([
+            'name' => 'Nuevamente sal pimienta y baja la llama al mínimo y tapa',
+            'step' =>4,
+            'recipe_id' => 108,
+        ]);
+        Instruction::create([
+            'name' => 'Simultáneamente en otro sartén pon a freír un huevo',
+            'step' => 5,
+            'recipe_id' => 108,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez esté listo colócalo en el plato y encima los espárragos',
+            'step' => 6,
+            'recipe_id' => 108,
+        ]);
+
+        Instruction::create([
+            'name' => 'Primero prepara el aderezo, coloca en una licuadora el aceite de oliva, vinagre, los 25 gramos de pimientos, perejil, orégano y crema agria',
+            'step' => 1,
+            'recipe_id' => 109,
+        ]);
+        Instruction::create([
+            'name' => 'Licua muy bien, sal pimienta y vuelve a licuar, si está muy espesa, agrega otra cucharada de vinagre y aceite de oliva.  Deja conservando en la nevera',
+            'step' => 2,
+            'recipe_id' => 109,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón coloca los ingredientes',
+            'step' => 3,
+            'recipe_id' => 109,
+        ]);
+        Instruction::create([
+            'name' => 'Primero el arroz divídelo en porciones de lado y lado de manera que el fondo quede libre',
+            'step' => 4,
+            'recipe_id' => 109,
+        ]);
+        Instruction::create([
+            'name' => 'Empieza a repartir hacía alrededor en un lado el aguacate, en el otro el pepino, hacia el otro lado la cebolla y hacia el centro los tomates Cherry',
+            'step' => 5,
+            'recipe_id' => 109,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez listo lo rocías con el zumo de limón y pimienta',
+            'step' => 6,
+            'recipe_id' => 109,
+        ]);
+        Instruction::create([
+            'name' => 'Agrega la salsa si es de tu gusto, si no la puedes servir aparte',
+            'step' => 7,
+            'recipe_id' => 109,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 8,
+            'recipe_id' => 109,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un tazón pon el queso parmesano',
+            'step' => 1,
+            'recipe_id' => 110,
+        ]);
+        Instruction::create([
+            'name' => 'En otro tazón pon el huevo y bate',
+            'step' => 2,
+            'recipe_id' => 110,
+        ]);
+        Instruction::create([
+            'name' => 'Moja cada trocito de pollo en el huevo y después pásalo por el queso',
+            'step' => 3,
+            'recipe_id' => 110,
+        ]);
+        Instruction::create([
+            'name' => 'Repite para que el pollo quede bien sellado',
+            'step' => 4,
+            'recipe_id' => 110,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén hondo a fuego bajo y con mantequilla coloca una buena cantidad para freír los Nuggets por lado y lado hasta que doren bien',
+            'step' => 5,
+            'recipe_id' => 110,
+        ]);
+        Instruction::create([
+            'name' => 'Servir de inmediato',
+            'step' => 6,
+            'recipe_id' => 110,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un tazón pon las aceitunas, huevos, queso, manzana, sal pimienta, revuelve y deja conservando',
+            'step' => 1,
+            'recipe_id' => 111,
+        ]);
+        Instruction::create([
+            'name' => 'En la licuadora o procesadora pon el vinagre, aceite y tomate',
+            'step' => 2,
+            'recipe_id' => 111,
+        ]);
+        Instruction::create([
+            'name' => 'Revuelve bien hasta que todo se incorpore',
+            'step' => 3,
+            'recipe_id' => 111,
+        ]);
+        Instruction::create([
+            'name' => 'Baña con esta salsa lo que tienes en el tazón y lo rocéalo nuevamente con pimienta',
+            'step' => 4,
+            'recipe_id' => 111,
+        ]);
+
+        Instruction::create([
+            'name' => 'Preparación espaguetis ',
+            'step' => 1,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con dos a tres cucharadas de mantequilla pon a sofreír el ajo y la cebolla por 2 minutos máximo',
+            'step' => 2,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Agrega los espaguetis de zucchini y se sofríen, no más de dos minutos para que no se vuelvan cauchos, sal pimienta y deja tapado conservando ',
+            'step' => 3,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'A parte mezcla en licuadora o procesadora, aguacate, limón, albahaca, aceite de oliva, un chorrito de agua y sal pimienta',
+            'step' => 4,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Licua muy bien y si ves que sigue muy espesa agrega una copita de agua adicional  ',
+            'step' => 5,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Nuevamente en el sartén en donde están los espaguetis agregas más mantequilla, los camarones, revuelve y de una agregas la sal',
+            'step' => 6,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Revuelve hasta que todo se incorpore y se caliente, pero ojo hazlo con cuidado para evitar romper el zuquini',
+            'step' => 7,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato en un plato hondo, adorna con los tomates Cherry y espolvorea con el queso ',
+            'step' => 8,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación coliflor',
+            'step' => 9,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'En una olla con agua hirviendo coloca los arbolitos de coliflor por no más de 10 minutos',
+            'step' => 10,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Retira de inmediato',
+            'step' => 11,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Escurre, seca muy bien y reservamos ',
+            'step' => 12,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Después en un sartén con mantequilla generosa, sofríe el ajo',
+            'step' => 13,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando esté doradito, coloca el coliflor y sal pimienta',
+            'step' => 14,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Agrega si es necesario más mantequilla para que los arbolitos doren muy bien',
+            'step' => 15,
+            'recipe_id' => 112,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de servir báñalos con el aceite de oliva',
+            'step' => 16,
+            'recipe_id' => 112,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un tazón coloca el pollo, cebolla, tomate, crema y revuelve muy bien ',
+            'step' => 1,
+            'recipe_id' => 113,
+        ]);
+        Instruction::create([
+            'name' => 'Para que quede una especie de crema para untar, deja conservando',
+            'step' => 2,
+            'recipe_id' => 113,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén pequeño y a fuego bajo coloca 2 cucharadas de queso bien esparcidas y tapa',
+            'step' => 3,
+            'recipe_id' => 113,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando el queso esté burbujeando voltea y vuelve a tapar',
+            'step' => 4,
+            'recipe_id' => 113,
+        ]);
+        Instruction::create([
+            'name' => 'Deja por 1 minuto más y retira para que se endurezca',
+            'step' => 5,
+            'recipe_id' => 113,
+        ]);
+        Instruction::create([
+            'name' => 'Haz lo mismo con el queso restante',
+            'step' => 6,
+            'recipe_id' => 113,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez listas las dos tortillas',
+            'step' => 7,
+            'recipe_id' => 113,
+        ]);
+        Instruction::create([
+            'name' => 'Esparce media porción del pollo en cada una',
+            'step' => 8,
+            'recipe_id' => 113,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 9,
+            'recipe_id' => 113,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un tazón bate los huevos y sal pimienta',
+            'step' => 1,
+            'recipe_id' => 114,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla y a fuego bajo coloca los huevos batidos',
+            'step' => 2,
+            'recipe_id' => 114,
+        ]);
+        Instruction::create([
+            'name' => 'Espera unos 2 minutos cuando ya veas que estén cuajados',
+            'step' => 3,
+            'recipe_id' => 114,
+        ]);
+        Instruction::create([
+            'name' => 'Seguido incorpora la cebolla, el tomate, espinacas, el pimentón, si así lo deseas y más sal    ',
+            'step' => 4,
+            'recipe_id' => 114,
+        ]);
+        Instruction::create([
+            'name' => 'Deja calentar según tu preferencia blando o duro y antes de cerrar la omelet, agrega el queso espolvoreado. ',
+            'step' => 5,
+            'recipe_id' => 114,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de servir rociar un poco de aceite de oliva aromatizado',
+            'step' => 6,
+            'recipe_id' => 114,
+        ]);
+
+        Instruction::create([
+            'name' => 'Preparación para los frijoles',
+            'step' => 1,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'En la noche anterior deja los frijoles en remojo con agua, que los cubra',
+            'step' => 2,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla sofreír la cebolla y el tomate y dejar unos segundos',
+            'step' => 3,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Añade los frijoles con el agua, donde los pusiste en remojo, además añade el caldo de pollo cuando veas que los frijoles están un poco blandos',
+            'step' => 4,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Agrega la panceta, pasta de tomate y la sal ',
+            'step' => 5,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Tapa y deja cocinar hasta que ablande completamente',
+            'step' => 6,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Revisa la sazón según tu preferencia ',
+            'step' => 7,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve en un plato hondo bien caliente y si deseas con unas gotas de ají o chile ',
+            'step' => 8,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación para la ensalada',
+            'step' => 9,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Coloca en un plato, plano, distribuido el aguacate, pepino y las aceitunas',
+            'step' => 10,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Sal pimienta',
+            'step' => 11,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Rocía con el vinagre, el aceite y el limón',
+            'step' => 12,
+            'recipe_id' => 115,
+        ]);
+        Instruction::create([
+            'name' => 'Espolvorea con el cilantro, si deseas, vuelves a salpimentar',
+            'step' => 13,
+            'recipe_id' => 115,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un sartén redondo y a fuego bajo, colocá las cucharadas de queso bien esparcidas y tapa',
+            'step' => 1,
+            'recipe_id' => 116,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando esté burbujeando coloca la pasta de tomate esparcida',
+            'step' => 2,
+            'recipe_id' => 116,
+        ]);
+        Instruction::create([
+            'name' => 'Encima distribuye el huevo en rodajas, las aceitunas, el queso mozzarella',
+            'step' => 3,
+            'recipe_id' => 116,
+        ]);
+        Instruction::create([
+            'name' => 'Espolvorea con el orégano y tapa',
+            'step' => 4,
+            'recipe_id' => 116,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando el queso mozzarella derrita apaga',
+            'step' => 5,
+            'recipe_id' => 116,
+        ]);
+        Instruction::create([
+            'name' => 'Esperamos que se endurezca un poco',
+            'step' => 6,
+            'recipe_id' => 116,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de servir le rocía aceite de oliva y una pizca de orégano',
+            'step' => 7,
+            'recipe_id' => 116,
+        ]);
+
     }
 }

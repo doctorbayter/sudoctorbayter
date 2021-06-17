@@ -36,20 +36,34 @@ Route::get('/recipe/{recipe}', UserRecipe::class)->name('recipe');
 
 Route::get('query', function(){
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL), (2, '1', '2', CURRENT_TIMESTAMP, NULL), (3, '1', '3', CURRENT_TIMESTAMP, NULL), (4, '1', '4', CURRENT_TIMESTAMP, NULL), (5, '1', '5', CURRENT_TIMESTAMP, NULL), (6, '1', '6', CURRENT_TIMESTAMP, NULL), (7, '1', '7', CURRENT_TIMESTAMP, NULL), (8, '1', '8', CURRENT_TIMESTAMP, NULL), (9, '1', '9', CURRENT_TIMESTAMP, NULL), (10, '1', '10', CURRENT_TIMESTAMP, NULL), (11, '1', '11', CURRENT_TIMESTAMP, NULL), (12, '1', '12', CURRENT_TIMESTAMP, NULL), (13, '1', '13', CURRENT_TIMESTAMP, NULL), (14, '1', '14', CURRENT_TIMESTAMP, NULL), (15, '1', '15', CURRENT_TIMESTAMP, NULL), (16, '1', '16', CURRENT_TIMESTAMP, NULL), (17, '1', '17', CURRENT_TIMESTAMP, NULL), (18, '1', '18', CURRENT_TIMESTAMP, NULL), (19, '1', '19', CURRENT_TIMESTAMP, NULL), (20, '1', '20', CURRENT_TIMESTAMP, NULL), (21, '1', '21', CURRENT_TIMESTAMP, NULL)");
-    
+
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL), (2, '2', '1', CURRENT_TIMESTAMP, NULL), (3, '3', '1', CURRENT_TIMESTAMP, NULL), (4, '4', '1', CURRENT_TIMESTAMP, NULL), (5, '5', '1', CURRENT_TIMESTAMP, NULL), (6, '6', '1', CURRENT_TIMESTAMP, NULL), (7, '7', '1', CURRENT_TIMESTAMP, NULL), (8, '8', '2', CURRENT_TIMESTAMP, NULL), (9, '9', '2', CURRENT_TIMESTAMP, NULL), (10, '10', '2', CURRENT_TIMESTAMP, NULL), (11, '11', '2', CURRENT_TIMESTAMP, NULL), (12, '12', '2', CURRENT_TIMESTAMP, NULL), (13, '13', '2', CURRENT_TIMESTAMP, NULL), (14, '14', '2', CURRENT_TIMESTAMP, NULL), (15, '15', '3', CURRENT_TIMESTAMP, NULL), (16, '16', '3', CURRENT_TIMESTAMP, NULL), (17, '17', '3', CURRENT_TIMESTAMP, NULL), (18, '18', '3', CURRENT_TIMESTAMP, NULL), (19, '19', '3', CURRENT_TIMESTAMP, NULL), (20, '20', '3', CURRENT_TIMESTAMP, NULL), (21, '21', '3', CURRENT_TIMESTAMP, NULL);
+    ");
+
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES (22, '2', '22', CURRENT_TIMESTAMP, NULL), (23, '2', '23', CURRENT_TIMESTAMP, NULL), (24, '2', '24', CURRENT_TIMESTAMP, NULL), (25, '2', '25', CURRENT_TIMESTAMP, NULL), (26, '2', '26', CURRENT_TIMESTAMP, NULL), (27, '2', '27', CURRENT_TIMESTAMP, NULL), (28, '2', '28', CURRENT_TIMESTAMP, NULL), (29, '2', '29', CURRENT_TIMESTAMP, NULL), (30, '2', '30', CURRENT_TIMESTAMP, NULL), (31, '2', '31', CURRENT_TIMESTAMP, NULL), (32, '2', '32', CURRENT_TIMESTAMP, NULL), (33, '2', '33', CURRENT_TIMESTAMP, NULL), (34, '2', '34', CURRENT_TIMESTAMP, NULL), (35, '2', '35', CURRENT_TIMESTAMP, NULL), (36, '2', '36', CURRENT_TIMESTAMP, NULL), (37, '2', '37', CURRENT_TIMESTAMP, NULL), (38, '2', '38', CURRENT_TIMESTAMP, NULL), (39, '2', '39', CURRENT_TIMESTAMP, NULL), (40, '2', '40', CURRENT_TIMESTAMP, NULL), (41, '2', '41', CURRENT_TIMESTAMP, NULL), (42, '2', '42', CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES (22, '22', '1', CURRENT_TIMESTAMP, NULL), (23, '23', '1', CURRENT_TIMESTAMP, NULL), (24, '24', '1', CURRENT_TIMESTAMP, NULL), (25, '25', '1', CURRENT_TIMESTAMP, NULL), (26, '26', '1', CURRENT_TIMESTAMP, NULL), (27, '27', '1', CURRENT_TIMESTAMP, NULL), (28, '28', '1', CURRENT_TIMESTAMP, NULL), (29, '29', '2', CURRENT_TIMESTAMP, NULL), (30, '30', '2', CURRENT_TIMESTAMP, NULL), (31, '31', '2', CURRENT_TIMESTAMP, NULL), (32, '32', '2', CURRENT_TIMESTAMP, NULL), (33, '33', '2', CURRENT_TIMESTAMP, NULL), (34, '34', '2', CURRENT_TIMESTAMP, NULL), (35, '35', '2', CURRENT_TIMESTAMP, NULL), (36, '36', '3', CURRENT_TIMESTAMP, NULL), (37, '37', '3', CURRENT_TIMESTAMP, NULL), (38, '38', '3', CURRENT_TIMESTAMP, NULL), (39, '39', '3', CURRENT_TIMESTAMP, NULL), (40, '40', '3', CURRENT_TIMESTAMP, NULL), (41, '41', '3', CURRENT_TIMESTAMP, NULL), (42, '42', '3', CURRENT_TIMESTAMP, NULL);
     ");
     
     DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (1, '1', '2', CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (2, '1', '1', CURRENT_TIMESTAMP, NULL)");
+    
+    DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (3, '2', '1', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, created_at, updated_at) VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL), (2, '1', '2', CURRENT_TIMESTAMP, NULL), (3, '1', '3', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO fase_week (id, fase_id, week_id, created_at, updated_at) VALUES (4, '2', '1', CURRENT_TIMESTAMP, NULL), (5, '2', '2', CURRENT_TIMESTAMP, NULL), (6, '2', '3', CURRENT_TIMESTAMP, NULL)");
     
     DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES (1, 'Lista de Alimentos Fase 1', 'files/pdf/lista-de-alimentos-fase-1-dkp.pdf', '1', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL), (2, 'Secretos Fase 1', 'files/pdf/secretos-fase-1-dkp.pdf', '1', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (1, '2', '1', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES (3, 'Lista de Alimentos Fase 2', 'files/pdf/lista-de-alimentos-fase-2-dkp.pdf', '2', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL), (4, 'Secretos Fase 2', 'files/pdf/secretos-fase-2-dkp.pdf', '2', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
+
+    DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL)");
     DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_user (id, fase_id, user_id, created_at, updated_at) VALUES (32, '2', '1', CURRENT_TIMESTAMP, NULL)");
 
     
     DB::insert("INSERT INTO subscriptions (id, plan_id, user_id, created_at, updated_at) VALUES (2, '2', '2', CURRENT_TIMESTAMP, NULL)");
@@ -245,5 +259,20 @@ Route::get('query', function(){
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (96, '20', '70', '1', CURRENT_TIMESTAMP, NULL), (97, '20', '71', '2', CURRENT_TIMESTAMP, NULL), (98, '20', '72', '3', CURRENT_TIMESTAMP, NULL), (99, '20', '4', '4', CURRENT_TIMESTAMP, NULL), (100, '20', '28', '4', CURRENT_TIMESTAMP, NULL)");
     
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (101, '21', '45', '1', CURRENT_TIMESTAMP, NULL), (102, '21', '73', '2', CURRENT_TIMESTAMP, NULL), (103, '21', '74', '3', CURRENT_TIMESTAMP, NULL),  (104, '21', '4', '4', CURRENT_TIMESTAMP, NULL),  (105, '21', '28', '4', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (106, '22', '96', '1', CURRENT_TIMESTAMP, NULL), (107, '22', '97', '2', CURRENT_TIMESTAMP, NULL), (108, '22', '98', '3', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (109, '23', '99', '1', CURRENT_TIMESTAMP, NULL), (110, '23', '100', '2', CURRENT_TIMESTAMP, NULL), (111, '23', '101', '3', CURRENT_TIMESTAMP, NULL)");
+
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (112, '24', '102', '1', CURRENT_TIMESTAMP, NULL), (113, '24', '103', '2', CURRENT_TIMESTAMP, NULL), (114, '24', '104', '3', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (115, '25', '105', '1', CURRENT_TIMESTAMP, NULL), (116, '25', '106', '2', CURRENT_TIMESTAMP, NULL), (117, '25', '107', '3', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (118, '26', '108', '1', CURRENT_TIMESTAMP, NULL), (119, '26', '109', '2', CURRENT_TIMESTAMP, NULL), (120, '26', '110', '3', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (121, '27', '111', '1', CURRENT_TIMESTAMP, NULL), (122, '27', '112', '2', CURRENT_TIMESTAMP, NULL), (123, '27', '113', '3', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES (124, '28', '114', '1', CURRENT_TIMESTAMP, NULL), (125, '28', '115', '2', CURRENT_TIMESTAMP, NULL), (126, '28', '116', '3', CURRENT_TIMESTAMP, NULL)");
 
 });

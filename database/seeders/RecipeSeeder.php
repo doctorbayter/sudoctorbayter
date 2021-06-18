@@ -1076,8 +1076,87 @@ class RecipeSeeder extends Seeder
             'time' => 10,
             'level_id' => 3
         ]);
-        
-        
 
+        Recipe::create([
+            'name' => 'Combinado de salmón y fruta',
+            'slug' => 'combinado-de-salmon-y-fruta',
+            'indice'=> 1,
+            'carbs' => 9.74,
+            'time' => 15,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Medallones con filtes de coliflor',
+            'slug' => 'medallones-con-filtes-de-coliflor',
+            'indice'=> 1,
+            'carbs' => 19.12,
+            'time' => 25,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Huevos rellenos de jamón serrano',
+            'slug' => 'huevos-rellenos-de-jamon-serrano',
+            'indice'=> 1,
+            'carbs' => 0.93,
+            'time' => 10,
+            'level_id' => 3
+        ]);
+
+        Recipe::create([
+            'name' => 'Espárragos apanados',
+            'slug' => 'esparragos-apanados',
+            'indice'=> 1,
+            'carbs' => 3.2,
+            'time' => 10,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Salmón con almendras en cama de verduras',
+            'slug' => 'salmon-con-almendras-en-cama-de-verduras',
+            'indice'=> 1,
+            'carbs' => 29.5,
+            'time' => 10,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Portobello relleno',
+            'slug' => 'portobello-relleno',
+            'indice'=> 1,
+            'carbs' => 4.83,
+            'time' => 15,
+            'level_id' => 3
+        ]);
+
+        Recipe::create([
+            'name' => 'Tostada con huevo ponche',
+            'slug' => 'tostada-con-huevo-ponche',
+            'indice'=> 1,
+            'carbs' => 3.4,
+            'time' => 7,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Berenjenas rellenas de pollo',
+            'slug' => 'berenjenas-rellenas-de-pollo',
+            'indice'=> 1,
+            'carbs' => 18.88,
+            'time' => 30,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Espinacas con huevos a la crema',
+            'slug' => 'espinacas-con-huevos-a-la-crema',
+            'indice'=> 1,
+            'carbs' => 1.08,
+            'time' => 10,
+            'level_id' => 3
+        ]);
+        
     }
 }

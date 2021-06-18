@@ -438,6 +438,51 @@ class TipSeeder extends Seeder
             'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
             'recipe_id' => 116
         ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 117
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 118
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 119
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 120
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 121
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 122
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 123
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 124
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 125
+        ]);
         
 
     }

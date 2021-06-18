@@ -2798,7 +2798,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => 'Ingredientes para el pernil ',
+            'name' => 'Ingredientes para el pernil',
             'recipe_id' => 103,
         ]);
         Ingredient::create([
@@ -2949,7 +2949,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 106,
         ]);
         Ingredient::create([
-            'name' => '1 cucharada de cilantro ',
+            'name' => '1 cucharada de cilantro',
             'recipe_id' => 106,
         ]);
         Ingredient::create([
@@ -2981,7 +2981,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 106,
         ]);
         Ingredient::create([
-            'name' => '50 gramos de espinacas finamente picado (0,70 gr. CH) ',
+            'name' => '50 gramos de espinacas finamente picado (0,70 gr. CH)',
             'recipe_id' => 106,
         ]);
         Ingredient::create([
@@ -3030,7 +3030,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 107,
         ]);
         Ingredient::create([
-            'name' => '2 cucharadas de mantequilla de vaca 100% de pastoreo o manteca de cerdo ',
+            'name' => '2 cucharadas de mantequilla de vaca 100% de pastoreo o manteca de cerdo',
             'recipe_id' => 107,
         ]);
         Ingredient::create([
@@ -3068,7 +3068,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => 'Salmón fresco entre 160 a 180 gramos para mujer y de 200 a 250 gramos para hombres, previamente sazonado a tu gusto, partido en cuadritos y cocido a la plancha ',
+            'name' => 'Salmón fresco entre 160 a 180 gramos para mujer y de 200 a 250 gramos para hombres, previamente sazonado a tu gusto, partido en cuadritos y cocido a la plancha',
             'recipe_id' => 109,
         ]);
         Ingredient::create([
@@ -3138,7 +3138,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => '8 huevos de codorniz cocidos ',
+            'name' => '8 huevos de codorniz cocidos',
             'recipe_id' => 111,
         ]);
         Ingredient::create([
@@ -3269,7 +3269,7 @@ class IngredientSeeder extends Seeder
         ]);
 
         Ingredient::create([
-            'name' => '2 huevos ',
+            'name' => '2 huevos',
             'recipe_id' => 114,
         ]);
         Ingredient::create([
@@ -3330,7 +3330,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 115,
         ]);
         Ingredient::create([
-            'name' => '1 pocillo de caldo de pollo ',
+            'name' => '1 pocillo de caldo de pollo',
             'recipe_id' => 115,
         ]);
         Ingredient::create([
@@ -3410,6 +3410,411 @@ class IngredientSeeder extends Seeder
             'name' => '2 cucharadas de aceite de oliva si deseas puede ser aromatizado',
             'recipe_id' => 116,
         ]);
+
+        Ingredient::create([
+            'name' => '60 gramos de espinacas enteras (0,84 gr. CH)',
+            'recipe_id' => 117,
+        ]);
+        Ingredient::create([
+            'name' => '3 lonjas de salmón ahumado, (75 gramos), picado en trozos',
+            'recipe_id' => 117,
+        ]);
+        Ingredient::create([
+            'name' => '1(150 gramos) pomelo pelado y picado en trozos (9 gr. CH)',
+            'recipe_id' => 117,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 117,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada de vinagre de sidra de manzana',
+            'recipe_id' => 117,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 117,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Ingredientes para los medallones',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '2 medallones de carne roja entre 180 a 220 gramos para mujer y de 200 a 280 gramos para hombres, previamente sazonado al gusto (entre los dos medallones deben sumar este gramaje)',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '2 (50 gramos) lonjas de tocino o tocineta, debe ser en tiras porque son para envolver los medallones',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de aguacate ( 8,5 gr. CH)',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes filetes de coliflor',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '1 coliflor grande de 300 gramos (4,65 gr. CH)',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas de vinagre de sidra de manzana',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas de mantequilla de vaca 100% de pastoreo',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '30 ml de zumo de limón (1 gramo de carbohidrato)',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '1 (2 gramos) diente de ajo finamente picado (0,48 gr. CH)',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de cebolla finamente picada (3,72 gr. CH)',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '10 gramos de pimentón (0,77 gr. CH)',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas de perejil finamente picado',
+            'recipe_id' => 118,
+        ]);
+        Ingredient::create([
+            'name' => '1/2 cucharadita de orégano seco',
+            'recipe_id' => 118,
+        ]);
+
+        Ingredient::create([
+            'name' => '3 huevos cocidos divididos en dos',
+            'recipe_id' => 119,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de jamón serrano picadito',
+            'recipe_id' => 119,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas de mayonesa casera',
+            'recipe_id' => 119,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadas, (10 gramos), de queso crema',
+            'recipe_id' => 119,
+        ]);
+        Ingredient::create([
+            'name' => '10 gramos de cebolla finamente picada (0,93 gr. CH)',
+            'recipe_id' => 119,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas (20 gramos) de queso, amarillo, rallado, parmesano o cheddar',
+            'recipe_id' => 119,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal pimienta al gusto',
+            'recipe_id' => 119,
+        ]);
+
+        Ingredient::create([
+            'name' => '2 huevos',
+            'recipe_id' => 120,
+        ]);
+        Ingredient::create([
+            'name' => '1/2 cucharadita de orégano o especie de tu gusto',
+            'recipe_id' => 120,
+        ]);
+        Ingredient::create([
+            'name' => '3 cucharadas de queso parmesano (30 gramos)',
+            'recipe_id' => 120,
+        ]);
+        Ingredient::create([
+            'name' => '4 espárragos, (80 gramos) naturales (3,2 gr. CH)',
+            'recipe_id' => 120,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Ingredientes para el salmón',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '2 lomos de salmón 180 a 220 gramos para mujer y de 200 a 280 gramos para hombre, previamente sazonado al gusto,    (entre los dos lomos deben sumar este gramaje).',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de almendra picadas (2,48 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '30 ml de zumo de limón (2 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita, (40 gramos), de cebollín del parte verde finamente picado (2,8 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas, (20 gramos) de queso parmesano',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes para la cama de verduras',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de pepino picado a la juliana (3,6 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de zucchini picado a la juliana (3,3 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de cebolla picada a la juliana (2,79 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '25 gramos de pimentón picado a la juliana (1,9 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '1 (2 gramos) diente de ajo finamente picado (0,48 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de champiñones (1,65 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de aguacate (8,5 gr. CH)',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo',
+            'recipe_id' => 121,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 121,
+        ]);
+
+        Ingredient::create([
+            'name' => '1 (100 gramos) portobello (3,9 gr. CH) limpio y hueco',
+            'recipe_id' => 122,
+        ]);
+        Ingredient::create([
+            'name' => '10 gramos cebolla finamente picada (0,93 gr. CH)',
+            'recipe_id' => 122,
+        ]);
+        Ingredient::create([
+            'name' => '2 lonjas, (50 gramos), de tocineta finamente picada (previamente tostada en el sartén)',
+            'recipe_id' => 122,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada, (10 gramos) de queso crema',
+            'recipe_id' => 122,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada de mayonesa casera',
+            'recipe_id' => 122,
+        ]);
+        Ingredient::create([
+            'name' => '1 lonja de queso que mozarela o que derrita',
+            'recipe_id' => 122,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita de perejil finamente picado',
+            'recipe_id' => 122,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 122,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 122,
+        ]);
+
+        Ingredient::create([
+            'name' => '1 (25 gramos) tostada integral, ojo debes buscar sin azúcar (3,4 gr. CH)',
+            'recipe_id' => 123,
+        ]);
+        Ingredient::create([
+            'name' => '2 huevos ',
+            'recipe_id' => 123,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de aguacate cortados a la juliana (3,4 gr. CH)',
+            'recipe_id' => 123,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 123,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal pimienta',
+            'recipe_id' => 123,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Ingredientes berenjena',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => 'Pernil de pollo picado en trozos pequeños 180 a 220 gramos para mujer y de 200 a 280 gramos para hombre, previamente sazonado al gusto',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '1 berenjena (6 gr. CH)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '20 gramos de cebolla finamente picado (1,86 gr. CH)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '1 (1 gramos) diente de ajo finamente picado (0,24 gr. CH)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '7 a 10 aceitunas finamente picadas (1 gramo de carbohidratos)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita de perejil finamente picado',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas, (20 gramos), de queso parmesano',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas, (20 gramos), queso crema',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas, (20 gramos), crema agria',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas de aceite de oliva extra virgen',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100 % de pastoreo o manteca de cerdo',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '1 pocillo de caldo de pollo ',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes ensalada ',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de lechuga romana picada en trozos (1,74 gr. CH)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de acelgas picada en trozos (1,35 gr. CH)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de rúcula picada en trozos (2,4 gr. CH)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de col rizado picado (2,1 gr. CH)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de brotes de alfalfa (0,63 gr. CH)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos tomate, Cherry (1,56 gr. CH)',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => '3 cucharadas vinagre de sidra de manzana',
+            'recipe_id' => 124,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 124,
+        ]);
+
+        Ingredient::create([
+            'name' => '60 gramos de espinacas (0,84 gr. CH)',
+            'recipe_id' => 125,
+        ]);
+        Ingredient::create([
+            'name' => '2 huevos ',
+            'recipe_id' => 125,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas, (20 gramos), de queso parmesano',
+            'recipe_id' => 125,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharada, (20 gramos), de queso crema o crema agria o mayonesa casera',
+            'recipe_id' => 125,
+        ]);
+        Ingredient::create([
+            'name' => '1 diente de ajo, (1 gramo), finamente picado (0,24 gr. CH)',
+            'recipe_id' => 125,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo o aceite de coco',
+            'recipe_id' => 125,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 125,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 125,
+        ]);
+
+
+
+
 
     }
 }

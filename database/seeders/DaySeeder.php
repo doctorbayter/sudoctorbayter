@@ -189,19 +189,19 @@ class DaySeeder extends Seeder
         Day::create([
             'day' => 8,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA POMELO 9 gramos, esta es una opción, pero tu lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 9,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA, almendras 40 gramos, esta es una opción, pero tú lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 10,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA tostada integral 3,4, esta es una opción, pero tú lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([

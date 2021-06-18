@@ -3279,5 +3279,427 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 116,
         ]);
 
+        Instruction::create([
+            'name' => 'Coloca en un tazón las espinacas, el pomelo, salmón y salpimienta',
+            'step' => 1,
+            'recipe_id' => 117,
+        ]);
+        Instruction::create([
+            'name' => 'Baña con aceite de oliva y agrega la cucharada de vinagre',
+            'step' => 2,
+            'recipe_id' => 117,
+        ]);
+        Instruction::create([
+            'name' => 'Si deseas puedes agregar más pimienta',
+            'step' => 3,
+            'recipe_id' => 117,
+        ]);
+
+        Instruction::create([
+            'name' => 'Preparación de los medallones',
+            'step' => 1,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando compres la carne, puede ser solomillo pide, que lo limpien y que te la corten en medallones de un dedo de grosor',
+            'step' => 2,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Después con una brocha esparce aceite de oliva, sal pimienta y envuelve, cada medallón con una lonja de tocino y deja conservando por media hora mínimo',
+            'step' => 3,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez listos, pon los medallones en una refractaria, previamente, untada con mantequilla y además le pones a cada medallón, encima, media cucharada de mantequilla ',
+            'step' => 4,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Lleva al horno por 10 minutos o el tiempo de cocción según tu gusto',
+            'step' => 5,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez listo sirve con el filete de coliflor y tu porción de aguacate',
+            'step' => 6,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación para los filetes de coliflor',
+            'step' => 7,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Precalentamos el horno a 220°C',
+            'step' => 8,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'En una bandeja de horno pon los dos filetes de coliflor',
+            'step' => 9,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Agrega con una brocha aceite de oliva, mantequilla y sal y pimienta al gusto.  Esto por lado y lado ',
+            'step' => 10,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Lo pones al horno por 15 minutos o el tiempo que sea necesario para que doren, pero en la mitad del tiempo les das vuelta, para que doren por lado y lado',
+            'step' => 11,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Mientras que se están haciendo los filetes que puede ser en el mismo momento de los medallones',
+            'step' => 12,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Prepara la salsa con que vas a bañar los filetes',
+            'step' => 13,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'En la licuadora o batidora pon el vinagre, limón, cebolla, ajo, sal pimienta y bate hasta que todo se incorpore',
+            'step' => 14,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Después añade el aceite de oliva, perejil y orégano y bate nuevamente hasta tener la salsa',
+            'step' => 15,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Si ves que está muy espesa le puedes agregar más aceite de oliva',
+            'step' => 16,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez listos los medallones y los filetes de coliflor',
+            'step' => 17,
+            'recipe_id' => 118,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve y baña la coliflor y el aguacate con la salsita anterior',
+            'step' => 18,
+            'recipe_id' => 118,
+        ]);
+
+        Instruction::create([
+            'name' => 'Parte los huevos por la mitad, una vez estén duros',
+            'step' => 1,
+            'recipe_id' => 119,
+        ]);
+        Instruction::create([
+            'name' => 'Retira la yema y deja aparte la clara',
+            'step' => 2,
+            'recipe_id' => 119,
+        ]);
+        Instruction::create([
+            'name' => 'Mezcla la yema en una taza, la mayonesa, queso crema, la cebolla, el jamón y sal pimienta',
+            'step' => 3,
+            'recipe_id' => 119,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez todo mezclado vuelve a llenar cada tapida del huevo',
+            'step' => 4,
+            'recipe_id' => 119,
+        ]);
+        Instruction::create([
+            'name' => ' Espolvorea con el queso',
+            'step' => 5,
+            'recipe_id' => 119,
+        ]);
+        Instruction::create([
+            'name' => 'Y si deseas lo puedes poner al horno por 10 minutos a gratinar',
+            'step' => 6,
+            'recipe_id' => 119,
+        ]);
+        Instruction::create([
+            'name' => 'Si no puedes servir de inmediato',
+            'step' => 7,
+            'recipe_id' => 119,
+        ]);
+
+
+        Instruction::create([
+            'name' => 'Bate los 2 huevos en un tazón',
+            'step' => 1,
+            'recipe_id' => 120,
+        ]);
+        Instruction::create([
+            'name' => 'Pon el queso parmesano y el orégano en otro tazón y revuelve, para que se incorpore muy bien',
+            'step' => 2,
+            'recipe_id' => 120,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez tengas los espárragos listos, introduce en el huevo, después pásalos por el queso parmesano y repetir el proceso para que cada esparrago quede bien cubierto de las dos cosas',
+            'step' => 3,
+            'recipe_id' => 120,
+        ]);
+        Instruction::create([
+            'name' => 'Pon en un sartén a fuego medio alto, por dos minutos o hasta que veas que estén dorados',
+            'step' => 4,
+            'recipe_id' => 120,
+        ]);
+        Instruction::create([
+            'name' => 'Simultáneamente revuelve el sobrante del huevo con el queso y pon a sofreír en tortilla',
+            'step' => 5,
+            'recipe_id' => 120,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 6,
+            'recipe_id' => 120,
+        ]);
+
+        Instruction::create([
+            'name' => 'Preparación para el salmón',
+            'step' => 1,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Precalentar el horno a 180°C',
+            'step' => 2,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla pon a tostar las almendras por unos segundos',
+            'step' => 3,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Agrega el zumo de limón y deja por dos minutos hasta que el zumo se reduzca, deja conservando.',
+            'step' => 4,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'En una refractaria previamente untada con mantequilla pon el salmón',
+            'step' => 5,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Encima de cada lomo coloca media cucharadita de mantequilla, salpimienta y espolvorea con alguna especie',
+            'step' => 6,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Pon al horno por no más de 10 minutos',
+            'step' => 7,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Agrega la salsa de almendra que tenemos conservando, y espolvorea con el cebollín, el queso parmesano y dejar por 2 a 3 minutos más.',
+            'step' => 8,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato sobre la cama de verduras, que ya deben estar. ',
+            'step' => 9,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación cama de verduras',
+            'step' => 10,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con buena cantidad de mantequilla so frita el ajo',
+            'step' => 11,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez esté doradito, añade las verduras, más mantequilla y revuelve.',
+            'step' => 12,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando veas que estén al dente, sal pimienta, revuelve y tapa hasta tener el salmón listo',
+            'step' => 13,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve en un plato y encima el salmón',
+            'step' => 14,
+            'recipe_id' => 121,
+        ]);
+        Instruction::create([
+            'name' => 'Acompaña con el aguacate',
+            'step' => 15,
+            'recipe_id' => 121,
+        ]);
+
+        Instruction::create([
+            'name' => 'Precalentar horno a 180°C',
+            'step' => 1,
+            'recipe_id' => 122,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón coloca la cebolla, el queso crema, mayonesa, tocinetas, la mitad de perejil y un chorrito de aceite de oliva, sal pimienta y revuelve hasta que se incorpore y quede como una masa',
+            'step' => 2,
+            'recipe_id' => 122,
+        ]);
+        Instruction::create([
+            'name' => 'Rellena el portobello, báñalo con 2 cucharadas de aceite de oliva y le agregamos por encima el queso mozzarella',
+            'step' => 3,
+            'recipe_id' => 122,
+        ]);
+        Instruction::create([
+            'name' => 'Pon en una refractaria y llévalo al horno por unos minutos.  Antes de servir espolvorea con perejil.',
+            'step' => 4,
+            'recipe_id' => 122,
+        ]);
+
+        Instruction::create([
+            'name' => 'Para hacer los huevos, pon 1 litro de agua a hervir',
+            'step' => 1,
+            'recipe_id' => 123,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando ya esté burbujeando el agua, empieza a remover con una cuchara',
+            'step' => 2,
+            'recipe_id' => 123,
+        ]);
+        Instruction::create([
+            'name' => 'Seguido parte los huevos y los agregas, ojo muy cerca al agua y despacio para que no se deshagan y en el remolino que hemos hecho con la cuchara',
+            'step' => 3,
+            'recipe_id' => 123,
+        ]);
+        Instruction::create([
+            'name' => 'Déjalo por 3 minutos para que la yema quede líquida',
+            'step' => 4,
+            'recipe_id' => 123,
+        ]);
+        Instruction::create([
+            'name' => 'Esta es una opción, pero los puedes hacer a tu gusto',
+            'step' => 5,
+            'recipe_id' => 123,
+        ]);
+        Instruction::create([
+            'name' => 'Seguido coloca la tostada en un plato pando ya para servir',
+            'step' => 6,
+            'recipe_id' => 123,
+        ]);
+        Instruction::create([
+            'name' => 'Encima pon el aguacate y sal pimienta',
+            'step' => 7,
+            'recipe_id' => 123,
+        ]);
+        Instruction::create([
+            'name' => 'Baña con un chorrito de aceite, coloca los huevos ponchados y sal pimienta al gusto',
+            'step' => 8,
+            'recipe_id' => 123,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 9,
+            'recipe_id' => 123,
+        ]);
+
+        Instruction::create([
+            'name' => 'Preparación berenjena',
+            'step' => 1,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Divide la berenjena en dos y retira la pulpa y deja aparte',
+            'step' => 2,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón pon la pulpa, agrega el aceite de oliva y rosea con pimienta deja conservando ',
+            'step' => 3,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla a fuego bajo, pon a so fritar el ajo y la cebolla por unos minutos o hasta que esté doradito',
+            'step' => 4,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Seguido agrega la pulpa de la berenjena que tenías conservando, trozos de pollo, aceitunas, agrega el caldo y sal pimienta',
+            'step' => 5,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Deja cocinar por 10 minutos y cuando esté bien reducido el caldo adiciona el queso crema, la crema agria y revuelve por unos segundos, apaga y tapa.',
+            'step' => 6,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Toma nuevamente las berenjenas y rellena cada una con el pollo preparado',
+            'step' => 7,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Rocía el perejil y el queso parmesano',
+            'step' => 8,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Lleva al horno por 10 minutos o hasta que gratine',
+            'step' => 9,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato con nuestra ensalada',
+            'step' => 10,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación ensalada',
+            'step' => 11,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón pon todos los ingredientes menos los tomates, sal pimienta y revuelve muy bien',
+            'step' => 12,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Agrega un buen chorro de aceite de oliva, el vinagre y salpimienta nuevamente',
+            'step' => 13,
+            'recipe_id' => 124,
+        ]);
+        Instruction::create([
+            'name' => 'Al servir coloca los tomates',
+            'step' => 14,
+            'recipe_id' => 124,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla y a fuego bajo sofríe el ajo ',
+            'step' => 1,
+            'recipe_id' => 125,
+        ]);
+        Instruction::create([
+            'name' => 'Añade las espinacas y las salteamos unos minutos',
+            'step' => 2,
+            'recipe_id' => 125,
+        ]);
+        Instruction::create([
+            'name' => 'Seguido agrega el queso crema, sal pimienta y revuelve por unos minutos más y apaga',
+            'step' => 3,
+            'recipe_id' => 125,
+        ]);
+        Instruction::create([
+            'name' => 'Coloca en tazas, que puedan ir al horno, las espinacas y le revientas los huevos encima, espolvorea con queso parmesano',
+            'step' => 4,
+            'recipe_id' => 125,
+        ]);
+        Instruction::create([
+            'name' => 'Lleva al horno por 10 minutos o hasta que esté el huevo al gusto ',
+            'step' => 5,
+            'recipe_id' => 125,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 6,
+            'recipe_id' => 125,
+        ]);
+
+
+
     }
 }

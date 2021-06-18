@@ -707,9 +707,62 @@ class ImageSeeder extends Seeder
             'imageable_id' => 116,
             'imageable_type' => 'App\Models\Recipe',
         ]);
-        
-        
-        
 
+        Image::create([
+            'url' => 'recipes/combinado-de-salmon-y-fruta.jpg',
+            'imageable_id' => 117,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/medallones-con-filtes-de-coliflor.jpg',
+            'imageable_id' => 118,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/huevos-rellenos-de-jamon-serrano.jpg',
+            'imageable_id' => 119,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+        
+        Image::create([
+            'url' => 'recipes/esparragos-apanados.jpg',
+            'imageable_id' => 120,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/salmon-con-almendras-en-cama-de-verduras.jpg',
+            'imageable_id' => 121,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+        
+        Image::create([
+            'url' => 'recipes/portobello-relleno.jpg',
+            'imageable_id' => 122,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/tostada-con-huevo-ponche.jpg',
+            'imageable_id' => 123,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/berenjenas-rellenas-de-pollo.jpg',
+            'imageable_id' => 124,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/espinacas-con-huevos-a-la-crema.jpg',
+            'imageable_id' => 125,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+        
+        
+        
     }
 }

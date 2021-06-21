@@ -1157,6 +1157,33 @@ class RecipeSeeder extends Seeder
             'time' => 10,
             'level_id' => 3
         ]);
+
+        Recipe::create([
+            'name' => 'Changua con huevo',
+            'slug' => 'changua-con-huevo',
+            'indice'=> 1,
+            'carbs' => 2.1,
+            'time' => 15,
+            'level_id' => 1
+        ]);
+
+        Recipe::create([
+            'name' => 'Trucha con champiñones al ajillo',
+            'slug' => 'trucha-con-champinones-al-ajillo',
+            'indice'=> 1,
+            'carbs' => 24.74,
+            'time' => 30,
+            'level_id' => 2
+        ]);
+
+        Recipe::create([
+            'name' => 'Tortilla casera',
+            'slug' => 'tortilla-casera',
+            'indice'=> 1,
+            'carbs' => 0.93,
+            'time' => 10,
+            'level_id' => 3
+        ]);
         
     }
 }

@@ -3700,6 +3700,132 @@ class InstructionSeeder extends Seeder
         ]);
 
 
+        Instruction::create([
+            'name' => 'En una olla coloca a hervir el agua, con la rama de cebollín, la rama de cilantro y sal.  No olvides ponerla entera',
+            'step' => 1,
+            'recipe_id' => 126,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando esté hirviendo agrega un huevo entero, con mucho cuidado lo partes, para que no se reviente la yema y la clara del otro huevo, ojo solo la clara del otro huevo y deja reservando la yema',
+            'step' => 2,
+            'recipe_id' => 126,
+        ]);
+        Instruction::create([
+            'name' => 'Mientras se está cocinando, a parte en un tazón batir la crema con la yema y deja en reserva',
+            'step' => 3,
+            'recipe_id' => 126,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez el otro huevo ya esté cocido al gusto, agrega el batido que tienes en el tazón',
+            'step' => 4,
+            'recipe_id' => 126,
+        ]);
+        Instruction::create([
+            'name' => 'Deja por unos minutos más, antes que hierva quita la rama de cilantro y cebollín',
+            'step' => 5,
+            'recipe_id' => 126,
+        ]);
+        Instruction::create([
+            'name' => 'Apaga y agrega el cilantro y cebollín picado y tapa',
+            'step' => 6,
+            'recipe_id' => 126,
+        ]);
+        Instruction::create([
+            'name' => 'Deja por unos segundos para que se concentre',
+            'step' => 7,
+            'recipe_id' => 126,
+        ]);
+        Instruction::create([
+            'name' => 'Y sirve de inmediato, si deseas agrega más cilantro y cebollín',
+            'step' => 8,
+            'recipe_id' => 126,
+        ]);
 
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla a fuego lento, sofríe la cebolla y el ajo',
+            'step' => 1,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando esté doradito, agrega los champiñones, sal pimienta y deja cocinar por unos minutos.  ',
+            'step' => 2,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => ' Apaga y deja tapado',
+            'step' => 3,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén a parte coloca la trucha azar por lado y lado',
+            'step' => 4,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez lista, añade la salsa de champiñones y deja por unos segundos para que todo se caliente ',
+            'step' => 5,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato con tu buena ensalada ',
+            'step' => 6,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación para la ensalada',
+            'step' => 7,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => 'Una vez bien lavada y cocida déjala lista.  Ojo, recuerda bien lavada y colada por lo menos 7 veces antes de su cocción, esta es una semilla y te puede inflamar si no le haces el proceso correcto',
+            'step' => 8,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón pon todos los ingredientes, excepto el aguacate, sal pimienta y revuelve',
+            'step' => 9,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => 'Añade una buena cantidad de aceite de oliva, el vinagre y revuelve una vez más',
+            'step' => 10,
+            'recipe_id' => 127,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de servir agrega el aguacate, espolvorea con el queso y pimienta',
+            'step' => 11,
+            'recipe_id' => 127,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un sartén con mantequilla y a fuego bajo pon a sofreír la cebolla ',
+            'step' => 1,
+            'recipe_id' => 128,
+        ]);
+        Instruction::create([
+            'name' => 'Simultáneamente en un tazón, revuelve bien los huevos, sal pimienta al gusto y agrega los trozos de queso ',
+            'step' => 2,
+            'recipe_id' => 128,
+        ]);
+        Instruction::create([
+            'name' => 'Cuando la cebolla esté sofrita, agrega los huevos batidos y tapa',
+            'step' => 3,
+            'recipe_id' => 128,
+        ]);
+        Instruction::create([
+            'name' => 'Debes estar atenta, cuando veas que el huevo está endureciendo en forma de tortilla',
+            'step' => 4,
+            'recipe_id' => 128,
+        ]);
+        Instruction::create([
+            'name' => ' Empieza a despegar los bordes con una palita de cocina, y le dale vuelta para que se cocine por lado y lado',
+            'step' => 5,
+            'recipe_id' => 128,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato',
+            'step' => 6,
+            'recipe_id' => 128,
+        ]);
     }
 }

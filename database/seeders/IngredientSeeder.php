@@ -3481,7 +3481,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 118,
         ]);
         Ingredient::create([
-            'name' => '30 ml de zumo de limón (1 gramo de carbohidrato)',
+            'name' => '30 ml de zumo de limón (1 gr. CH)',
             'recipe_id' => 118,
         ]);
         Ingredient::create([
@@ -3703,7 +3703,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 124,
         ]);
         Ingredient::create([
-            'name' => '7 a 10 aceitunas finamente picadas (1 gramo de carbohidratos)',
+            'name' => '7 a 10 aceitunas finamente picadas (1 gr. CHs)',
             'recipe_id' => 124,
         ]);
         Ingredient::create([
@@ -3813,8 +3813,124 @@ class IngredientSeeder extends Seeder
         ]);
 
 
+        Ingredient::create([
+            'name' => '2 tazas de agua',
+            'recipe_id' => 126,
+        ]);
+        Ingredient::create([
+            'name' => '1 1/2 cucharada de crema de leche o nata',
+            'recipe_id' => 126,
+        ]);
+        Ingredient::create([
+            'name' => '1 rama de cebolla larga o cebollín (entera)',
+            'recipe_id' => 126,
+        ]);
+        Ingredient::create([
+            'name' => '1 rama de cilantro (entera y frondosa)',
+            'recipe_id' => 126,
+        ]);
+        Ingredient::create([
+            'name' => '2 huevos ',
+            'recipe_id' => 126,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de cebollín o cebolla larga finamente picada (2,1 gramos de carbohidrato)',
+            'recipe_id' => 126,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita de cilantro finamente picado',
+            'recipe_id' => 126,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 126,
+        ]);
 
+        Ingredient::create([
+            'name' => '180 a 220 gramos para mujer y de 200 a 280 gramos para hombres, previamente sazonado al gusto',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '80 gramos de champiñones en laminas (2,64 gr. CH)',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '1 diente de ajo, (2 gramos), finamente picados (0,48 gr. CH)',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '10 gramos de cebolla finamente picada (0,93 gr. CH)',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes para la ensalada',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '25 gramos de quinua (6,6 gr. CH)',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de tomate Cherry partidos a la mitad (2,34 gr. CH)',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '12 aceitunas negras partidas a la mitad (1 gr. CH)',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de zucchini picado en cuadritos (1,32 gr. CH)',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de apio en rama (0,93 gr. CH)',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de aguacate picado en trocitos (8,5 gr. CH)',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada de vinagre de cidra de manzana',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen aromatizado',
+            'recipe_id' => 127,
+        ]);
+        Ingredient::create([
+            'name' => '2 queso parmesano (20 gramos)',
+            'recipe_id' => 127,
+        ]);
 
+        Ingredient::create([
+            'name' => '2 huevos',
+            'recipe_id' => 128,
+        ]);
+        Ingredient::create([
+            'name' => '10 gramos de   cebolla cortada en plumas (0,93 gr. CH)',
+            'recipe_id' => 128,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de trocitos de queso mozzarella o el que tengas preferiblemente graso',
+            'recipe_id' => 128,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo ',
+            'recipe_id' => 128,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal al gusto',
+            'recipe_id' => 128,
+        ]);
 
     }
 }

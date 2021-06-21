@@ -207,7 +207,7 @@ class DaySeeder extends Seeder
         Day::create([
             'day' => 11,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA quinua 25 gramos, esta es una opción, pero tú lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([

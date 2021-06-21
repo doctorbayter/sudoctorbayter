@@ -761,6 +761,24 @@ class ImageSeeder extends Seeder
             'imageable_id' => 125,
             'imageable_type' => 'App\Models\Recipe',
         ]);
+
+        Image::create([
+            'url' => 'recipes/changua-con-huevo.jpg',
+            'imageable_id' => 126,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/trucha-con-champinones-al-ajillo.jpg',
+            'imageable_id' => 127,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/tortilla-casera.jpg',
+            'imageable_id' => 128,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
         
         
         

@@ -4959,6 +4959,121 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 151,
         ]);
 
+        Ingredient::create([
+            'name' => '3 huevos',
+            'recipe_id' => 152
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de queso gruyeren en rodajas o el queso que tengas en casa, pero preferiblemente graso',
+            'recipe_id' => 152
+        ]);
+        Ingredient::create([
+            'name' => '3 a 4 hojas de albahaca fresca o seca finamente picada   ',
+            'recipe_id' => 152
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de tomate Cherry o el tomate que tengas cortado en rodajas (1,56 gr. CH)',
+            'recipe_id' => 152
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
+            'recipe_id' => 152
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 152
+        ]);
+
+        Ingredient::create([
+            'name' => '35 gramos de arroz salvaje (4,9 gr. CH)',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '1 taza de caldo de pescado',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de gambas o camarones lavados y limpios',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de rodajas de calamares lavados y limpios',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '80 gramos de mejillones',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de cebolla (4,65 gr. CH)',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '1 (3 gramos) dientes de ajo finamente picado (0,72 gr. CH)',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita de perejil',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '80 gramos de queso parmesano',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => 'Sal',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => 'Pimienta negra molida',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => 'ingredientes para la ensalada',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de rúcula partida en trozos (2,4 gr. CH)',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de lechuga crespa partida en trozos (2,9 gr. CH)',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '65 gramos de champiñones cortados en láminas (2,14 gr. CH)',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de espinacas (0,56 gr. CH) ',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '10 gramos de cebolla roja picada a la juliana (0,93 gr. CH)',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de aguacate picado en cuadritos (8,5 gr. CH)',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra-virgen aromatizado o el que tengas',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas de vinagre balsámico',
+            'recipe_id' => 153
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 153
+        ]);
+
+
 
     }
 }

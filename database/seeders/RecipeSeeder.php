@@ -1392,6 +1392,24 @@ class RecipeSeeder extends Seeder
             'type' => 1,
         ]);
 
+        Recipe::create([
+            'name' => 'Tortilla con especies',
+            'slug' => 'tortilla-con-especies',
+            'indice'=> 1,
+            'carbs' => 1.56,
+            'time' => 10,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Rissoto frutos del mar',
+            'slug' => 'rissoto-frutos-del-mar',
+            'indice'=> 1,
+            'carbs' => 27.7,
+            'time' => 30,
+            'type' => 1,
+        ]);
+
         
         
         

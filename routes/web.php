@@ -366,4 +366,10 @@ Route::get('query', function(){
     (164, '41', '150', '2', CURRENT_TIMESTAMP, NULL),
     (165, '41', '151', '3', CURRENT_TIMESTAMP, NULL)
     ");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (166, '42', '152', '1', CURRENT_TIMESTAMP, NULL),
+    (167, '42', '153', '2', CURRENT_TIMESTAMP, NULL),
+    (168, '42', '47', '3', CURRENT_TIMESTAMP, NULL)
+    ");
 }); 

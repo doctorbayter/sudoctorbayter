@@ -917,6 +917,18 @@ class ImageSeeder extends Seeder
             'imageable_id' => 151,
             'imageable_type' => 'App\Models\Recipe',
         ]);
+
+        Image::create([
+            'url' => 'recipes/tortilla-con-especies.jpg',
+            'imageable_id' => 152,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/rissoto-frutos-del-mar.jpg',
+            'imageable_id' => 153,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
         
         
     }

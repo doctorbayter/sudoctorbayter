@@ -104,7 +104,7 @@
                     </figure>
                     <div>
                         <header class="flex my-4 items-end">
-                            <h4 class="font-bold text-xl">Claudia carlos magno</h4>
+                            <h4 class="font-bold text-xl">Claudia carlomagno</h4>
                             <p class="ml-2 text-gray-600">2 años en Keto</p>
                         </header>
                         <p class="text-sm text-justify"></p>

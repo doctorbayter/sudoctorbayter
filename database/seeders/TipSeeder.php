@@ -614,5 +614,15 @@ class TipSeeder extends Seeder
             'recipe_id' => 151
         ]);
 
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 152
+        ]);
+
+        Tip::create([
+            'name' => 'lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.',
+            'recipe_id' => 153
+        ]);
+
     }
 }

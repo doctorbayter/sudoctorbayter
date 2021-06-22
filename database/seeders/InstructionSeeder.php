@@ -950,7 +950,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 37,
         ]);
         Instruction::create([
-            'name' => ' A parte en un sartén hondo con mantequilla pon la cebolla a fuego bajo hasta que dore',
+            'name' => 'A parte en un sartén hondo con mantequilla pon la cebolla a fuego bajo hasta que dore',
             'step' => 3,
             'recipe_id' => 37,
         ]);
@@ -2156,7 +2156,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 87,
         ]);
         Instruction::create([
-            'name' => ' Una vez bien batido y cuando empiece a espesar añadimos la otra mitad del aceite.',
+            'name' => 'Una vez bien batido y cuando empiece a espesar añadimos la otra mitad del aceite.',
             'step' => 2,
             'recipe_id' => 87,
         ]);
@@ -2265,7 +2265,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 91,
         ]);
         Instruction::create([
-            'name' => ' Deja reposar durante 1 hora y a la nevera.',
+            'name' => 'Deja reposar durante 1 hora y a la nevera.',
             'step' => 6,
             'recipe_id' => 91,
         ]);
@@ -2562,7 +2562,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 100,
         ]);
         Instruction::create([
-            'name' => ' Mientras que está la carne pon a hacer las pastas de zucchini en agua hirviendo y déjala, al dente o a tu gusto (otra opción es sofreír en mantequilla por unos minutos)',
+            'name' => 'Mientras que está la carne pon a hacer las pastas de zucchini en agua hirviendo y déjala, al dente o a tu gusto (otra opción es sofreír en mantequilla por unos minutos)',
             'step' => 5,
             'recipe_id' => 100,
         ]);
@@ -3407,7 +3407,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 119,
         ]);
         Instruction::create([
-            'name' => ' Espolvorea con el queso',
+            'name' => 'Espolvorea con el queso',
             'step' => 5,
             'recipe_id' => 119,
         ]);
@@ -3752,7 +3752,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 127,
         ]);
         Instruction::create([
-            'name' => ' Apaga y deja tapado',
+            'name' => 'Apaga y deja tapado',
             'step' => 3,
             'recipe_id' => 127,
         ]);
@@ -3818,7 +3818,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 128,
         ]);
         Instruction::create([
-            'name' => ' Empieza a despegar los bordes con una palita de cocina, y le dale vuelta para que se cocine por lado y lado',
+            'name' => 'Empieza a despegar los bordes con una palita de cocina, y le dale vuelta para que se cocine por lado y lado',
             'step' => 5,
             'recipe_id' => 128,
         ]);
@@ -4114,7 +4114,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 134,
         ]);
         Instruction::create([
-            'name' => ' Deja por unos minutos, espolvorea con el queso, baña con un chorrito de aceite de oliva',
+            'name' => 'Deja por unos minutos, espolvorea con el queso, baña con un chorrito de aceite de oliva',
             'step' => 3,
             'recipe_id' => 134,
         ]);
@@ -4390,7 +4390,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 140,
         ]);
         Instruction::create([
-            'name' => 'En una olla con agua caliente pon los garbanzos, la cebolla entera cortada en dos, rama completa de perejil, el ajo entero y el tomate pelado  ',
+            'name' => 'En una olla con agua caliente pon los garbanzos, la cebolla entera cortada en dos, rama completa de perejil, el ajo entero y el tomate pelado ',
             'step' => 3,
             'recipe_id' => 140,
         ]);
@@ -4614,7 +4614,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 144,
         ]);
         Instruction::create([
-            'name' => 'Pon a hervir las moras en agua, ojo debe ser un poquito de agua  ',
+            'name' => 'Pon a hervir las moras en agua, ojo debe ser un poquito de agua ',
             'step' => 9,
             'recipe_id' => 144,
         ]);
@@ -4660,7 +4660,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 145,
         ]);
         Instruction::create([
-            'name' => 'En un sartén con suficiente mantequilla y a fuego bajo pon a sofreír el ajo máximo dos minutos ',
+            'name' => 'En un sartén con suficiente mantequilla y a fuego bajo pon a sofreír el ajo máximo dos minutos',
             'step' => 4,
             'recipe_id' => 145,
         ]);
@@ -4680,7 +4680,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 145,
         ]);
         Instruction::create([
-            'name' => 'Sirve de inmediato con tus croketos y tu salsita ',
+            'name' => 'Sirve de inmediato con tus croketos y tu salsita',
             'step' => 8,
             'recipe_id' => 145,
         ]);
@@ -4761,7 +4761,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 146,
         ]);
         Instruction::create([
-            'name' => 'Agrega el chicharrón revuelve y dejar por otros dos minutos más ',
+            'name' => 'Agrega el chicharrón revuelve y dejar por otros dos minutos más',
             'step' => 2,
             'recipe_id' => 146,
         ]);
@@ -4771,7 +4771,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 146,
         ]);
         Instruction::create([
-            'name' => 'Añade de inmediato las aceitunas, revuelve bien ',
+            'name' => 'Añade de inmediato las aceitunas, revuelve bien',
             'step' => 4,
             'recipe_id' => 146,
         ]);
@@ -4787,7 +4787,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 147,
         ]);
         Instruction::create([
-            'name' => 'Con anterioridad has realizado el relleno (en un tazón pones el aguacate, huevo lo trituras con un tenedor, agrega el perejil y revuelve) ',
+            'name' => 'Con anterioridad has realizado el relleno (en un tazón pones el aguacate, huevo lo trituras con un tenedor, agrega el perejil y revuelve)',
             'step' => 2,
             'recipe_id' => 147,
         ]);
@@ -4813,7 +4813,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 148,
         ]);
         Instruction::create([
-            'name' => 'En un tazón pon las costillas agrega perejil, laurel, limón, ajo, un buen chorro de aceite de oliva, sal pimientas  ',
+            'name' => 'En un tazón pon las costillas agrega perejil, laurel, limón, ajo, un buen chorro de aceite de oliva, sal pimientas ',
             'step' => 2,
             'recipe_id' => 148,
         ]);
@@ -4843,7 +4843,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 148,
         ]);
         Instruction::create([
-            'name' => 'Una vez lista sirve con tu ensalada ',
+            'name' => 'Una vez lista sirve con tu ensalada',
             'step' => 8,
             'recipe_id' => 148,
         ]);
@@ -4853,7 +4853,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 148,
         ]);
         Instruction::create([
-            'name' => 'En un tazón pones todos los ingredientes excepto los trozos de tostadas ',
+            'name' => 'En un tazón pones todos los ingredientes excepto los trozos de tostadas',
             'step' => 10,
             'recipe_id' => 148,
         ]);
@@ -4868,7 +4868,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 148,
         ]);
         Instruction::create([
-            'name' => 'Antes de servir pon los crotones y el aguacate o trozos de tostada esparcidos ',
+            'name' => 'Antes de servir pon los crotones y el aguacate o trozos de tostada esparcidos',
             'step' => 13,
             'recipe_id' => 148,
         ]);
@@ -4884,12 +4884,12 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 149,
         ]);
         Instruction::create([
-            'name' => 'Rocías ajo, especies y salpimientas  ',
+            'name' => 'Rocías ajo, especies y salpimientas ',
             'step' => 3,
             'recipe_id' => 149,
         ]);
         Instruction::create([
-            'name' => 'Horneamos durante 30 minutos o hasta que queden crocantes ',
+            'name' => 'Horneamos durante 30 minutos o hasta que queden crocantes',
             'step' => 4,
             'recipe_id' => 149,
         ]);
@@ -4920,7 +4920,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 150,
         ]);
         Instruction::create([
-            'name' => ' En una refractaria que puedas llevar al horno, y previa con mantequilla, pon la trucha, baña con las especies y deje conservar como mínimo 30 minutos',
+            'name' => 'En una refractaria que puedas llevar al horno, y previa con mantequilla, pon la trucha, baña con las especies y deje conservar como mínimo 30 minutos',
             'step' => 5,
             'recipe_id' => 150,
         ]);
@@ -4991,7 +4991,7 @@ class InstructionSeeder extends Seeder
             'recipe_id' => 151,
         ]);
         Instruction::create([
-            'name' => 'Una vez este hueco se rellena con la pasta de huevo que tienes conservando ',
+            'name' => 'Una vez este hueco se rellena con la pasta de huevo que tienes conservando',
             'step' => 4,
             'recipe_id' => 151,
         ]);
@@ -5009,6 +5009,98 @@ class InstructionSeeder extends Seeder
             'name' => 'Sirve de inmediato, si deseas con un poco más de aceite',
             'step' => 7,
             'recipe_id' => 151,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un tazón mezcla los huevos, añade la albahaca, sal pimienta y sigue revolviendo, hasta que todo esté compenetrado',
+            'step' => 1,
+            'recipe_id' => 152,
+        ]);
+        Instruction::create([
+            'name' => 'En un sartén con 2 cucharadas de mantequilla, sofríe los tomates por 2 minutos',
+            'step' => 2,
+            'recipe_id' => 152,
+        ]);
+        Instruction::create([
+            'name' => 'Añade los huevos sobre los tomates y espera hasta que quede algo firme y agrega el queso',
+            'step' => 3,
+            'recipe_id' => 152,
+        ]);
+        Instruction::create([
+            'name' => 'Baja el fuego y tapa para que se derrita el queso',
+            'step' => 4,
+            'recipe_id' => 152,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de servir le roseas 1 cucharada de aceite de oliva extra virgen',
+            'step' => 5,
+            'recipe_id' => 152,
+        ]);
+
+        Instruction::create([
+            'name' => 'En un sartén con un poco de mantequilla sofríe   las rodajas de calamares y las gambas por 10 minutos y deja en reserva',
+            'step' => 1,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'En otra sartén pon otro poco de mantequilla y echa la cebolla y los ajos y sofríe por 5 minutos o hasta que doren',
+            'step' => 2,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Agrega al sartén donde sofritaste la cebolla, los calamares, las gambas y el arroz y   revuelve',
+            'step' => 3,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Debes saltear por unos 4 minutos o hasta que los granos de arroz se doren ',
+            'step' => 4,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Incorpora el caldo de pescado, y mueve constantemente el contenido de la sartén',
+            'step' => 5,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Este es el truco, sigue removiendo durante unos 25 minutos, hasta que el arroz obtenga el punto ideal, ten en cuenta que no se puede secar si ves que aún falta le agregas más caldo',
+            'step' => 6,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Ya listo el arroz le agregas sal pimienta y el queso parmesano y mezclar por 5 minutos más',
+            'step' => 7,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve de inmediato con una rica ensalada verde',
+            'step' => 8,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Preparación ensalada',
+            'step' => 9,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'En un tazón pon todos los ingredientes menos el aguacate Añade un chorro de aceite de oliva, dos cucharadas de vinagre y sal pimienta',
+            'step' => 10,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Revuelve hasta que todo quede bien mezclado',
+            'step' => 11,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Antes de servir le agregamos',
+            'step' => 12,
+            'recipe_id' => 153,
+        ]);
+        Instruction::create([
+            'name' => 'Sirve con el risotto ya lista',
+            'step' => 12,
+            'recipe_id' => 153,
         ]);
        
     }

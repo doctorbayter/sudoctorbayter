@@ -9,7 +9,7 @@ class UserBebidas extends Component
 {
     public function render()
     {
-        $bebidas = Recipe::where('level_id', '5')->get();
+        $bebidas = Recipe::where('type', '3')->get();
         return view('livewire.user-bebidas', compact('bebidas'));
     }
 }

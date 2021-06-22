@@ -11,8 +11,5 @@ class Level extends Model
 
     protected $guarded = ['id'];
 
-    // Relacion uno a muchos
-    public function recipes()    {
-        return $this->hasMany('App\Models\Recipe');
-    }
+    
 }

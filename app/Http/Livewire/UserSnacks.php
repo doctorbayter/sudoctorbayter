@@ -10,7 +10,7 @@ class UserSnacks extends Component
 
     public function render()
     {
-        $snacks = Recipe::where('level_id', '4')->get();
+        $snacks = Recipe::where('type', '2')->get();
         return view('livewire.user-snacks', compact('snacks'));
     }
 }

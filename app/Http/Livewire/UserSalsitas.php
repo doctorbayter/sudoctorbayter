@@ -9,7 +9,7 @@ class UserSalsitas extends Component
 {
     public function render()
     {
-        $salsitas = Recipe::where('level_id', '6')->get();
+        $salsitas = Recipe::where('type', '4')->get();
         return view('livewire.user-salsitas', compact('salsitas'));
     }
 }

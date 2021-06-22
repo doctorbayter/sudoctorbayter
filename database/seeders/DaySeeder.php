@@ -213,55 +213,55 @@ class DaySeeder extends Seeder
         Day::create([
             'day' => 12,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA harina de coco 6, esta es una opción, pero tu lo puedes cambiar, sin embargo, ten en cuenta, que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 13,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA arveja 30 gramos, esta es una opción, pero tú lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 14,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA maracuyá 25 gramos, esta es una opción, pero tu lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 15,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA 3 gramos de nueces del Brasil, esta es una opción, pero tú lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 16,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA 19,5 gramos de garbanzos, esta es una opción, pero tu lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 17,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA, 4 gramos de habas, esta es una opción, pero tú lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 18,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA 5 gramos de moras, esta es una opción, pero tú lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 19,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA 3,4 tostada integral, esta es una opción, pero tu lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([
             'day' => 20,
             'fase_id' => 2,
-            'note' => '<p></p>
+            'note' => '<p>CARBOHIDRATO ADICIONAL DIA 3,5 gramos de macadamia, esta es una opción, pero tu lo puedes cambiar, sin embargo, ten en cuenta que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>
             <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>',
         ]);
         Day::create([

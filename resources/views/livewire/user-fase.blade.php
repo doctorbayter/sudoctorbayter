@@ -66,12 +66,24 @@
                             <p class="mb-4 text-gray-500"><img src="{{asset('img/icons/gfx/pie-chart.svg')}}" alt="" class="w-4 mr-1 inline opacity-40">Gramos de carbohidratos día <b>{{$this->carbs}}</b></p>
                         </header>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-10 divide-y-2 md:divide-y-0 ">
-                            @foreach ($this->day->recipes->where('level_id', '!=', 4) as $key => $recipe)
+                            @foreach ($this->day->recipes->where('type', '==', 1) as $key => $recipe)
                                 <div class="pt-12 md:pt-0">
                                     <a href="{{route('plan.recipe', $recipe)}}">
                                         <div class="relative h-62"> 
                                             <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 ">
-                                                <p>{{$recipe->level->name}}</p>
+                                                
+                                                @switch($recipe->days[0]->pivot->meal)
+                                                    @case(1)
+                                                        <p>Desayuno</p>              
+                                                        @break
+                                                    @case(2)
+                                                        <p>Almuerzo</p>
+                                                        @break
+                                                    @case(3)
+                                                        <p>Cena</p>
+                                                        @break    
+                                                @endswitch
+                                                
                                             </div>
                                             <img src="{{asset('img/'.$recipe->image->url)}}" alt="" class="rounded-2xl object-cover">
                                         </div>
@@ -96,13 +108,13 @@
                         <hr class="my-12"> 
                         <div class="flex flex-col xl:flex-row" x-data="{ modalIsShowing: false }" >
 
-                            @if ($this->day->recipes->where('level_id', '==', 4)->count() > 0 )
+                            @if ($this->day->recipes->where('type', '==', 2)->count() > 0 )
                                 <div class="w-full xl:w-5/12 xl:mr-16">
                                     <h2 class="text-4xl text-gray-900 font-bold">
                                         <span class="text-red-700">Snacks</span> Día {{$this->day->day}} <span class="text-base text-gray-600 font-medium">(opcional)</span>
                                     </h2>
                                     <section class="my-4" >
-                                        @foreach ($this->day->recipes->where('level_id', '==', 4) as $snack)
+                                        @foreach ($this->day->recipes->where('type', '==', 2) as $snack)
                                             <div wire:click="toogleSnack('{{$snack->id}}')" wire:key="{{ $loop->index }}"   x-on:click="modalIsShowing = true" id="snack{{$snack->id}}" class="border border-gray-100 shadow-md rounded-xl overflow-hidden w-full mb-6 cursor-pointer" title="click para ver más">
                                                 <div class="w-full block">
                                                     <div class="flex items-center">

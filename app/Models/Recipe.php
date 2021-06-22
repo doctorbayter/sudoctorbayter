@@ -15,12 +15,15 @@ class Recipe extends Model
     const MEDIO = 2;
     const ALTO = 3;
 
+    const RECETAS = 1;
+    const SNACKS = 2;
+    const BEBIDAS = 3;
+    const SALSITAS = 4;
+
     const DESAYUNO = 1;
     const ALMUERZO = 2;
-    const CENA = 3;
-    const SNACK = 4;
-    const BEBIDAS = 5;
-    const SALSITAS = 6;
+    const CENA = 3; 
+    const SNACK = 4; 
 
     //URL's Amigables
     public function getRouteKeyName(){
@@ -38,11 +41,6 @@ class Recipe extends Model
         return $this->hasMany('App\Models\Tip');
     }
 
-    //Relacion uno a muchos inversa
-    public function level(){
-        return $this->belongsTo('App\Models\Level');
-    }
-
     // Relaciones uno a uno polimorfica
     public function image(){
         return $this->morphOne('App\Models\Image', 'imageable');
@@ -53,7 +51,7 @@ class Recipe extends Model
 
     //Relaciones muchos a muchos inversa
     public function days(){
-        return $this->belongsToMany('\App\Models\Day');
+        return $this->belongsToMany('\App\Models\Day')->withPivot(['meal']);
     }
 
 }

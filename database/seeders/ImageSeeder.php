@@ -779,7 +779,144 @@ class ImageSeeder extends Seeder
             'imageable_id' => 128,
             'imageable_type' => 'App\Models\Recipe',
         ]);
+
+        Image::create([
+            'url' => 'recipes/arepa-rellena-de-pollo.jpg',
+            'imageable_id' => 129,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/langostinos-embojotados-en-cama-de-coliflor.jpg',
+            'imageable_id' => 130,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/pastelitos-de-queso.jpg',
+            'imageable_id' => 131,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/zuquihuevo.jpg',
+            'imageable_id' => 132,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/jopolocas-cremosas.jpg',
+            'imageable_id' => 133,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/champinones-al-wok.jpg',
+            'imageable_id' => 134,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/tilapia-en-salsa-blanca.jpg',
+            'imageable_id' => 135,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/palitos-apanados-con-dip-de-nuez-del-brasil.jpg',
+            'imageable_id' => 136,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/salmon-en-cama-pesto.jpg',
+            'imageable_id' => 137,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/huevos-revueltos-con-tocino-y-espinacas.jpg',
+            'imageable_id' => 138,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/tacita-de-huevo.jpg',
+            'imageable_id' => 139,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
         
+        Image::create([
+            'url' => 'recipes/ketocallos.jpg',
+            'imageable_id' => 140,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/huevos-con-panceta.jpg',
+            'imageable_id' => 141,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/empollado-de-habas.jpg',
+            'imageable_id' => 142,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/keto-esparragos.jpg',
+            'imageable_id' => 143,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/morosandwich.jpg',
+            'imageable_id' => 144,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/cora-pollo-con-croketos.jpg',
+            'imageable_id' => 145,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/champiketo.jpg',
+            'imageable_id' => 146,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/empanadas-sorpresa.jpg',
+            'imageable_id' => 147,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+        
+        Image::create([
+            'url' => 'recipes/costillitas-de-dragon.jpg',
+            'imageable_id' => 148,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/chicharrones-de-cerdo.jpg',
+            'imageable_id' => 149,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/trucha-a-las-finas-hierbas.jpg',
+            'imageable_id' => 150,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+        Image::create([
+            'url' => 'recipes/portoketo.jpg',
+            'imageable_id' => 151,
+            'imageable_type' => 'App\Models\Recipe',
+        ]);
         
         
     }

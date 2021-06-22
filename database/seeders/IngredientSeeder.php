@@ -1656,7 +1656,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 63,
         ]);
         Ingredient::create([
-            'name' => '½ cucharadita de orégano',
+            'name' => '1/2 cucharadita de orégano',
             'recipe_id' => 63,
         ]);
         Ingredient::create([
@@ -3666,7 +3666,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 123,
         ]);
         Ingredient::create([
-            'name' => '2 huevos ',
+            'name' => '2 huevos',
             'recipe_id' => 123,
         ]);
         Ingredient::create([
@@ -3731,7 +3731,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 124,
         ]);
         Ingredient::create([
-            'name' => '1 pocillo de caldo de pollo ',
+            'name' => '1 pocillo de caldo de pollo',
             'recipe_id' => 124,
         ]);
         Ingredient::create([
@@ -3739,7 +3739,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 124,
         ]);
         Ingredient::create([
-            'name' => 'Ingredientes ensalada ',
+            'name' => 'Ingredientes ensalada',
             'recipe_id' => 124,
         ]);
         Ingredient::create([
@@ -3784,7 +3784,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 125,
         ]);
         Ingredient::create([
-            'name' => '2 huevos ',
+            'name' => '2 huevos',
             'recipe_id' => 125,
         ]);
         Ingredient::create([
@@ -3830,7 +3830,7 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 126,
         ]);
         Ingredient::create([
-            'name' => '2 huevos ',
+            'name' => '2 huevos',
             'recipe_id' => 126,
         ]);
         Ingredient::create([
@@ -3924,13 +3924,1041 @@ class IngredientSeeder extends Seeder
             'recipe_id' => 128,
         ]);
         Ingredient::create([
-            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo ',
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
             'recipe_id' => 128,
         ]);
         Ingredient::create([
             'name' => 'Sal al gusto',
             'recipe_id' => 128,
         ]);
+
+        Ingredient::create([
+            'name' => '1 huevo',
+            'recipe_id' => 129,
+        ]);
+        Ingredient::create([
+            'name' => '7(70 gramos) de queso mozzarella rallado',
+            'recipe_id' => 129,
+        ]);
+        Ingredient::create([
+            'name' => '20 gramos de harina de coco ( 6 gr. CH)',
+            'recipe_id' => 129,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos (4 cucharadas) de queso parmesano.',
+            'recipe_id' => 129,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de pollo desmechado',
+            'recipe_id' => 129,
+        ]);
+        Ingredient::create([
+            'name' => '1 (10 gramos) queso crema o crema agria o mayonesa casera',
+            'recipe_id' => 129,
+        ]);
+        Ingredient::create([
+            'name' => '5 gramos de cebolla finamente picada (0,46 gr. CH)',
+            'recipe_id' => 129,
+        ]);
+        Ingredient::create([
+            'name' => '10 gramos de tomate finamente picado (0,39 gr. CH)',
+            'recipe_id' => 129,
+        ]);
+
+        Ingredient::create([
+            'name' => '6 langostinos o camarones bien grandes que pesan entre 180 a 220 gramos para mujer y de 200 a 280 gramos para hombres, previamente sazonado al gusto',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '6 lonjas o tiras de tocino, (150 gramos), para envolver los langostinos',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '4 cucharadas, (40 gramos), de queso crema',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Media cucharadita de orégano o especie de tu gusto.',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita de cilantro finamente picado',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes cama de coliflor',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '80 gramos de coliflor desmenuzado o picado en trozos bien pequeños (2,48 gr. CH)',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '1 diente de ajo, (4 gramos), finamente picado',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal pimienta',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes cama de coliflor',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '80 gramos de coliflor desmenuzado o picado en trozos bien pequeños (2,48 gr. CH)',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '1 diente de ajo, (4 gramos), finamente picado',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal pimienta',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes para la ensalada',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de cogollos europeos picados en trozos (1,5 gr. CH)',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de espinacas enteras (0,84 gr. CH)',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de col rizado picado en trozos (2,1 gr. CH)',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de brotes de alfalfa (0,63 gr. CH)',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de aguacate picado en cuadritos (8,5 gr. CH)',
+            'recipe_id' => 130,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 130,
+        ]);
+
+        Ingredient::create([
+            'name' => '2 huevos',
+            'recipe_id' => 131,
+        ]);
+        Ingredient::create([
+            'name' => '3 queso crema (30 gramos)',
+            'recipe_id' => 131,
+        ]);
+        Ingredient::create([
+            'name' => '1/2 cucharadita de perejil finamente picado',
+            'recipe_id' => 131,
+        ]);
+        Ingredient::create([
+            'name' => '2 (20 gramos) queso parmesano',
+            'recipe_id' => 131,
+        ]);
+        Ingredient::create([
+            'name' => 'Pimienta',
+            'recipe_id' => 131,
+        ]);
+
+        Ingredient::create([
+            'name' => '60 gramos de zucchini o calabacín picado en cuadritos (1,98 gr. CH)',
+            'recipe_id' => 132,
+        ]);
+        Ingredient::create([
+            'name' => '2 huevos',
+            'recipe_id' => 132,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo',
+            'recipe_id' => 132,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 132,
+        ]);
+        Ingredient::create([
+            'name' => 'Especies de tu gusto',
+            'recipe_id' => 132,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Rabadillas entre 180 a 220 gramos para mujer y de 200 a 280 gramos para hombres, previamente sazonadas al gusto (o la parte del pollo que quieras, pero busca la más grasosa)',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '200 gramos de espinacas (2,8 gr. CH)',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '1 (2 gramos) diente de ajo finamente picado (0,48 gr. CH)',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '5(50 gramos) cucharadas de queso parmesano',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '4(40 gramos) cucharadas de queso crema o crema agria',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '1 taza de caldo de pollo',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => 'Especies al gusto',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes arvejas o guisantes o chicharrón guisado',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '35 gramos de arvejas (19,5 gr. CH)',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '1 taza de agua',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de cebolla finamente picada (4,65 gr. CH)',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de pimentón finamente picado (3,08 gr. CH)',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '1 (3 gramos) diente de ajo finamente picado (0,72 gr. CH)',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita de cilantro finamente picado',
+            'recipe_id' => 133,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de aguacate ( 8,5 gr. CH)',
+            'recipe_id' => 133,
+        ]);
+
+        Ingredient::create([
+            'name' => '65 gramos de champiñones enteros o laminados (2,14 gr. CH)',
+            'recipe_id' => 134,
+        ]);
+        Ingredient::create([
+            'name' => '15 gramos de cebolla finamente picada (1,39 gr. CH)',
+            'recipe_id' => 134,
+        ]);
+        Ingredient::create([
+            'name' => '3 láminas, (75 gramos), de tocinetas finamente picada',
+            'recipe_id' => 134,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada, (10 gramos), de queso parmesano',
+            'recipe_id' => 134,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo',
+            'recipe_id' => 134,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 134,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal y pimienta al gusto',
+            'recipe_id' => 134,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Lomo de tilapia fresca (o la proteína de tu gusto) entre 180 a 220 gramos para mujer y de 200 a 280 gramos para hombre, previamente sazonadas al gusto 1/2 diente de ajo finamente picado',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '20 gramos de cebolla finamente picada (1,86 gr. CH)',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '1 (1 gramo) diente de ajo finamente picado (0,24 gr. CH)',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '2 (20 gramos) cucharadas de queso crema',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '1 (10 gramos) cucharada de crema agria',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita de perejil finamente picado',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal pimienta',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes para el acompañamiento',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de espinacas finamente picada (0,70 gr. CH)',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de brócoli (2,2 gr. CH)',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de pepino a la juliana (2,16 gr. CH)',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '7 a 10 aceitunas partidas a la mitad (1 gr. CH)',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '15 gramos de apio en rama en trocitos (0,45 gr. CH)',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de aguacate (8,5 gr. CH)',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '25 gramos de zumo de maracuyá, incluye la pulpa (5,75 gr. CH)',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '3 cucharadas de aceite de oliva extra virgen',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada de vinagre blanco',
+            'recipe_id' => 135,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 135,
+        ]);
+
+        Ingredient::create([
+            'name' => '1 huevo',
+            'recipe_id' => 136,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de chicharrón de pollo completamente triturado',
+            'recipe_id' => 136,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de queso de azar partidos en forma de dedos cada uno de 20 gramos',
+            'recipe_id' => 136,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
+            'recipe_id' => 136,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes para el Dip',
+            'recipe_id' => 136,
+        ]);
+        Ingredient::create([
+            'name' => '25 gramos de nueces del Brasil (3 gr. CH)',
+            'recipe_id' => 136,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas de queso crema (20 gramos)',
+            'recipe_id' => 136,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada de crema agria (10 gramos)',
+            'recipe_id' => 136,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 136,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 136,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Filete de salmón entre 180 a 220 gramos para mujer y de 200 a 280 gramos para hombres',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada de hojas de laurel y tomillo bien picadas (o las especies de tu gusto)',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => '30 ml de zumo de limón (2 gr. CH)',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes cama coliflor al pesto',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => ' 150 gramos de Coliflor (4,65 gr. CH)',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => ' 30 gramos de Albahaca',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => ' 1 diente de ajo, (3 gramos), finamente picado (0,72 gr. CH)',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => ' 3 cucharadas de queso parmesano (30 gramos)',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => ' 1 ml de zumo de limón (1 gr. CH)',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de aguacate (8, 5 gr. CH)',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => '7 a 10 aceitunas finamente picadas (1 gr. CH)',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de apio en rama finamente picado (1,55 gr. CH)',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => ' Aceite de oliva extra virgen',
+            'recipe_id' => 137,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 137,
+        ]);
+
+        Ingredient::create([
+            'name' => '50 gramos de tocino, picado en cuadritos y precocido',
+            'recipe_id' => 138,
+        ]);
+        Ingredient::create([
+            'name' => '2 huevos',
+            'recipe_id' => 138,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de espinaca picada (0,42 gr. CH)',
+            'recipe_id' => 138,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca',
+            'recipe_id' => 138,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 138,
+        ]);
+
+        Ingredient::create([
+            'name' => '3 huevos',
+            'recipe_id' => 139,
+        ]);
+        Ingredient::create([
+            'name' => '2 lonjas, (25 gramos), lonchas o tajadas de jamón serrano (100% natural)',
+            'recipe_id' => 139,
+        ]);
+        Ingredient::create([
+            'name' => '5 gramos de apio en rama (0,15 gr. CH)',
+            'recipe_id' => 139,
+        ]);
+        Ingredient::create([
+            'name' => '3 cucharadas, (30 gramos), de queso rallado tipo parmesano o cheddar',
+            'recipe_id' => 139,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de queso manchego o cabra (o cualquiera que tengas en casa, preferiblemente graso)',
+            'recipe_id' => 139,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita de perejil fresco finamente picado',
+            'recipe_id' => 139,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal pimienta',
+            'recipe_id' => 139,
+        ]);
+        Ingredient::create([
+            'name' => '2 moldes pequeños de muffins o cupcake o cualquiera que tengas en casa',
+            'recipe_id' => 139,
+        ]);
+
+        Ingredient::create([
+            'name' => '25 gramos de garbanzos (19,5 gr. CH)',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de tomate picado en cuadros (1,56 gr. CH)',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de cebolla entera partida en dos (3,72 gr. CH)',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => '1(2 gramos) dientes de Ajo entero (0,48 gr. CH)',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => '2 ramas de Perejil',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => 'Callos limpios y picados 180 a 200 gramos para mujer y 200 a 220 gramos para hombre',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de cebolla (3,72 gr. CH)',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => ' 40 gramos de Pimentón (3,08 gr. CH)',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => '1(4 gramos) diente de Ajo (0,98 gr. CH)',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => ' Aceite de oliva extra virgen',
+            'recipe_id' => 140,
+        ]);
+        Ingredient::create([
+            'name' => '130 gramos de aguacate (11.05 gr. CH)',
+            'recipe_id' => 140,
+        ]);
+
+        Ingredient::create([
+            'name' => '2 huevos duros',
+            'recipe_id' => 141,
+        ]);
+        Ingredient::create([
+            'name' => 'Panceta (90 gramos)',
+            'recipe_id' => 141,
+        ]);
+        Ingredient::create([
+            'name' => '7 aceitunas',
+            'recipe_id' => 141,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal pimienta',
+            'recipe_id' => 141,
+        ]);
+        Ingredient::create([
+            'name' => 'Café con leche de almendras o de coco',
+            'recipe_id' => 141,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Pernil de pollo adobado al gusto (180 a 200 gramos para mujer y 200 a 280 gramos para hombre)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '80 gramos de tomate picado a la juliana (3,12 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de habas verdes tiernas (4 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '20 gramos de cebolla picado a la juliana (1,86 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '1(2 gramos) ajo finamente picado (0,48 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharadita de perejil',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '1 pocillo de caldo de pollo',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '2 gramos de chili o ají finamente picados (o más si es de tu gusto)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes ensalada',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de rúcula partida en trozos (2,4 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de lechuga crespa partida en trozos (2,9 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '65 gramos de champiñones cortados en láminas (2,14 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de espinacas (0,56 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '10 gramos de cebolla roja picada a la juliana (0,93 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de aguacate picado en cuadritos (5,1 gr. CH)',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de queso cabra picado en cuadros o cualquier queso de tu gusto, pero graso',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra-virgen aromatizado o el que tengas',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas de vinagre balsámico',
+            'recipe_id' => 142,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 142,
+        ]);
+
+        Ingredient::create([
+            'name' => '3 esparragos',
+            'recipe_id' => 143,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva',
+            'recipe_id' => 143,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de queso cabra o al gusto pero que sea graso y cero carbohidratos',
+            'recipe_id' => 143,
+        ]);
+        Ingredient::create([
+            'name' => '4 tiras o lonjas o lonchas (100 gramos) tocino o bacon picados en trozos',
+            'recipe_id' => 143,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 143,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo',
+            'recipe_id' => 144,
+        ]);
+        Ingredient::create([
+            'name' => '2 huevos',
+            'recipe_id' => 144,
+        ]);
+        Ingredient::create([
+            'name' => '2 (50 gramos) lonjas o lonchas o tiras jamón serrano',
+            'recipe_id' => 144,
+        ]);
+        Ingredient::create([
+            'name' => '2 (50 gramos) lonjas o lonchas de queso Edam o el de tu gusto, pero bien graso',
+            'recipe_id' => 144,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes para la salsita de mora',
+            'recipe_id' => 144,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de moras maduras y lavadas (5 gr. CH)',
+            'recipe_id' => 144,
+        ]);
+        Ingredient::create([
+            'name' => '1/2  cucharadita de mantequilla de vaca 100% sin sal',
+            'recipe_id' => 144,
+        ]);
+        Ingredient::create([
+            'name' => '1(10 gramos) cucharada de queso crema',
+            'recipe_id' => 144,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Ingredientes para los corapollos',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Corazones de pollo, entre 160 a 200 gramos para mujer y 220 a 260 gramos para hombre, limpios y bien lavados',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '1 (4 gramos) diente de ajo finamente picado (0,98 gr. CH)',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de cebolla (4,65 gr. CH)',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Taza de caldo de pollo',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Hojas de laurel',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes para las croketos',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de coliflor partido en trozos (3,1 gr. CH)',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '20 gramos de cebolla finamente picada (1,86 gr. CH)',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '25 gramos de pimentón finamente picado (1,9 gr. CH)',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '1/2 cucharadita de cilantro finamente picado',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '4 (40 gramos) queso parmesano',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '1 huevo',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes para la salsa',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de aguacate ( 8,5 gr. CH)',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '1/2 cucharadita de cilantro',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => '2 cucharadas de vinagre blanco o sidra de manzana',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 145,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 145,
+        ]);
+
+        Ingredient::create([
+            'name' => '7 a 10 aceitunas finamente picadas (1 gr. CH)',
+            'recipe_id' => 146,
+        ]);
+        Ingredient::create([
+            'name' => '65 gramos de champiñones enteros (2,14 gr. CH)',
+            'recipe_id' => 146,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de tocino o chicharrón finamente picado ya cocido',
+            'recipe_id' => 146,
+        ]);
+        Ingredient::create([
+            'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo',
+            'recipe_id' => 146,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de queso manchego picado en cuadros (o el queso que tengas preferiblemente graso) ',
+            'recipe_id' => 146,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 146,
+        ]);
+
+        Ingredient::create([
+            'name' => '6(60 gramos) cucharadas de queso parmesano',
+            'recipe_id' => 147,
+        ]);
+        Ingredient::create([
+            'name' => '1 huevo cocido partido en trocitos',
+            'recipe_id' => 147,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de aguacate (4,25 gr. CH)',
+            'recipe_id' => 147,
+        ]);
+        Ingredient::create([
+            'name' => '1/3 de cucharadita de perejil finamente picado',
+            'recipe_id' => 147,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Costillitas de cerdo en trozos entre 180 a 220 gramos para mujer y 220 a 280 gramos para hombre',
+            'recipe_id' => 148,
+        ]);
+        Ingredient::create([
+            'name' => '15 gramos de ajo finamente picado (3,67 gr. CH)',
+            'recipe_id' => 148,
+        ]);
+        Ingredient::create([
+            'name' => '2 (30 ml) cucharadas de zumo de limón (2 gr. CH)',
+            'recipe_id' => 148,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada de perejil',
+            'recipe_id' => 148,
+        ]);
+        Ingredient::create([
+            'name' => '1 hoja de laurel ',
+            'recipe_id' => 148,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 148,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 148,
+        ]);
+
+        Ingredient::create([
+            'name' => '60 gramos de panceta picada en trozos',
+            'recipe_id' => 149,
+        ]);
+        Ingredient::create([
+            'name' => '1/2 cucharadita de ajo en polvo (0,24 gr. CH)',
+            'recipe_id' => 149,
+        ]);
+        Ingredient::create([
+            'name' => 'Especies de su gusto (opcional)',
+            'recipe_id' => 149,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 149,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de aguacate (4,25 gr. CH)',
+            'recipe_id' => 149,
+        ]);
+
+        Ingredient::create([
+            'name' => 'Trucha o cualquier pescado azul, abierta y limpia entre 180 a 220 gramos para mujer y 220 a 280 gramos para hombre, limpia y lista',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '2 (30 ml) cucharadas de zumo de  limón (2 gr. CH)',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '1 ( 2 gramos) diente de ajo finamente picado ( 0,48 gr. CH)',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '3 hojas  de romero  ',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '3 hojas   de laurel  ',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '1/2  cucharadita de tomillo',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '1/2  cucharadita de orégano',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '1 ramita de perejil',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '1 cucharada de mantequilla de vaca',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra virgen',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => 'Sal pimienta',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => 'Ingredientes ensalada',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '100 gramos de espinacas picada en trozos (1,4 gr. CH)',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de kale picada en trozos (2,2 gr. CH)',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '50 gramos de col rizado picado en trozos (2,1 gr. CH)',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '30 gramos de brotes de alfalfa (0,63 gr. CH)',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '60 gramos de rúcula (2,4 gr. CH)',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '40 gramos de queso cabra picada en cuadritos o el que tengas, pero graso.',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '2 (20 gramos) cucharadas queso parmesano',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva extra-virgen aromatizado o el que tengas en casa',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '3 cucharadas de vinagre de cidra de manzana o blanco',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => 'Salpimienta',
+            'recipe_id' => 150,
+        ]);
+        Ingredient::create([
+            'name' => '25 gramos de macadamias picadas (3,5 gr. CH',
+            'recipe_id' => 150,
+        ]);
+
+        Ingredient::create([
+            'name' => '2 huevos duros finamente picados',
+            'recipe_id' => 151,
+        ]);
+        Ingredient::create([
+            'name' => '1 (100 gramos) portobello ( 3,9 gr. CH)',
+            'recipe_id' => 151,
+        ]);
+        Ingredient::create([
+            'name' => '10 gramos de cebolla finamente picada (0,93 gr. CH)',
+            'recipe_id' => 151,
+        ]);
+        Ingredient::create([
+            'name' => '20 gramos de tomate finamente picado (0,78 gr. CH)',
+            'recipe_id' => 151,
+        ]);
+        Ingredient::create([
+            'name' => '3 (30 gramos) queso parmesano',
+            'recipe_id' => 151,
+        ]);
+        Ingredient::create([
+            'name' => 'Aceite de oliva aromatizada o la que tengas en casa',
+            'recipe_id' => 151,
+        ]);
+
 
     }
 }

@@ -19,7 +19,7 @@ class CreateDayRecipeTable extends Migration
 
             $table->unsignedBigInteger('day_id');
             $table->unsignedBigInteger('recipe_id');
-            $table->enum('meal', [Recipe::DESAYUNO,Recipe::ALMUERZO,Recipe::CENA,Recipe::SNACK,Recipe::BEBIDAS,Recipe::SALSITAS]);
+            $table->enum('meal', [Recipe::DESAYUNO,Recipe::ALMUERZO,Recipe::CENA,Recipe::SNACK]);
             $table->foreign('day_id')->references('id')->on('days')->onDelete('cascade');
             $table->foreign('recipe_id')->references('id')->on('recipes')->onDelete('cascade');
 

@@ -22,10 +22,7 @@ class CreateRecipesTable extends Migration
             $table->enum('indice', [Recipe::BAJO,Recipe::MEDIO,Recipe::ALTO]);
             $table->float('carbs');
             $table->integer('time');
-
-            $table->unsignedBigInteger('level_id')->nullable();
-            
-            $table->foreign('level_id')->references('id')->on('levels')->onDelete('set null');
+            $table->enum('type', [Recipe::RECETAS,Recipe::SNACKS,Recipe::BEBIDAS,Recipe::SALSITAS]);
 
             $table->timestamps();
         });

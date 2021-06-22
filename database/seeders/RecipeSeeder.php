@@ -20,7 +20,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2.27,
             'time' => 35,
-            'level_id' => 1
+            'type' => 1,
         ]);
         Recipe::create([
             'name' => 'Salmón Verdoso',
@@ -28,7 +28,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 13.25,
             'time' => 35,
-            'level_id' => 2
+            'type' => 1,
         ]);
         Recipe::create([
             'name' => 'Enhuevados Rellenos',
@@ -36,7 +36,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1,
             'time' => 20,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -46,7 +46,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1,
             'time' => 1,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -56,7 +56,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -65,7 +65,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2.58,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -74,7 +74,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 13.12,
             'time' => 20,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -83,7 +83,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.89,
             'time' => 15,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -93,7 +93,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 15,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -102,7 +102,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -111,7 +111,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 10.9,
             'time' => 25,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -120,7 +120,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 3,
             'time' => 15,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -130,7 +130,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 3,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
         
         Recipe::create([
@@ -139,7 +139,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 4,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -148,7 +148,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 9.88,
             'time' => 20,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -157,7 +157,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -167,7 +167,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -176,7 +176,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -185,7 +185,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 12.57,
             'time' => 45,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -194,7 +194,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -204,7 +204,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.65,
             'time' => 62,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -213,7 +213,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.56,
             'time' => 15,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -222,7 +222,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 16.83,
             'time' => 35,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -231,7 +231,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2.2,
             'time' => 25,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -240,7 +240,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -249,7 +249,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 17.35,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
         
         Recipe::create([
@@ -258,7 +258,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
         
         Recipe::create([
@@ -268,7 +268,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -277,7 +277,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.8,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -286,7 +286,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 14.8,
             'time' => 10,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -295,7 +295,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 15,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -305,7 +305,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2.88,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -314,7 +314,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -323,7 +323,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 15.59,
             'time' => 25,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -332,7 +332,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 15,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -341,7 +341,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.31,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -350,7 +350,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 13.94,
             'time' => 10,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -359,7 +359,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.98,
             'time' => 15,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -369,7 +369,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -378,7 +378,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2.34,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
         Recipe::create([
             'name' => 'Ensalada pollo ketobayter',
@@ -386,7 +386,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 14.55,
             'time' => 20,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
 
@@ -396,7 +396,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.56,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -406,7 +406,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
         
         Recipe::create([
@@ -416,7 +416,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -425,7 +425,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.24,
             'time' => 15,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -434,7 +434,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 11.57,
             'time' => 15,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -443,7 +443,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -452,7 +452,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 14.34,
             'time' => 20,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -461,7 +461,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.75,
             'time' => 25,
-            'level_id' => 3
+            'type' => 1,
         ]);
         
         Recipe::create([
@@ -471,7 +471,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -480,7 +480,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 7,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -489,7 +489,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 15.65,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -498,7 +498,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.89,
             'time' => 15,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -508,7 +508,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
         
         Recipe::create([
@@ -517,7 +517,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 4.83,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -526,7 +526,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 14.69,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
         
         Recipe::create([
@@ -535,7 +535,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -545,7 +545,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 5,
-            'level_id' => 4
+            'type' => 2,
         ]);
 
         Recipe::create([
@@ -554,7 +554,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 3.64,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -563,7 +563,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 13.62,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -572,7 +572,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 25,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -581,7 +581,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 5.25,
             'time' => 15,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -590,7 +590,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 11.2,
             'time' => 35,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -599,7 +599,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -608,7 +608,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -617,7 +617,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 16.71,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -626,7 +626,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -635,7 +635,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 3.28,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -644,7 +644,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 4.65,
             'time' => 40,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -653,7 +653,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 5.28,
             'time' => 30,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -662,7 +662,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 12.03,
             'time' => 35,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -671,7 +671,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 7.55,
             'time' => 15,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -680,7 +680,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 16.84,
             'time' => 35,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -689,7 +689,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
         
         //Bebidas
@@ -700,7 +700,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
@@ -709,16 +709,16 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
             'name' => 'Refrescante de pepino',
             'slug' => 'refrescante-de-pepino',
-            'indice'=> 1,
+            'indice'=> 3,
             'carbs' => 3.8,
             'time' => 10,
-            'level_id' => 5
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -727,7 +727,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
@@ -736,7 +736,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 5.1,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
@@ -745,7 +745,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
@@ -754,7 +754,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
@@ -763,7 +763,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
@@ -772,7 +772,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
@@ -781,7 +781,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
@@ -790,7 +790,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 3.26,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
         Recipe::create([
@@ -799,7 +799,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2.05,
             'time' => 10,
-            'level_id' => 5
+            'type' => 3,
         ]);
 
  
@@ -811,7 +811,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2,
             'time' => 10,
-            'level_id' => 6
+            'type' => 4,
         ]);
 
         Recipe::create([
@@ -820,7 +820,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 6
+            'type' => 4,
         ]);
 
         Recipe::create([
@@ -829,7 +829,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.24,
             'time' => 10,
-            'level_id' => 6
+            'type' => 4,
         ]);
 
         Recipe::create([
@@ -838,7 +838,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 11.44,
             'time' => 10,
-            'level_id' => 6
+            'type' => 4,
         ]);
 
         Recipe::create([
@@ -847,7 +847,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.48,
             'time' => 10,
-            'level_id' => 6
+            'type' => 4,
         ]);
 
         Recipe::create([
@@ -856,7 +856,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.93,
             'time' => 10,
-            'level_id' => 6
+            'type' => 4,
         ]);
 
         Recipe::create([
@@ -865,7 +865,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1,
             'time' => 10,
-            'level_id' => 6
+            'type' => 4,
         ]);
 
         Recipe::create([
@@ -874,7 +874,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 16,
             'time' => 10,
-            'level_id' => 6
+            'type' => 4,
         ]);
 
         Recipe::create([
@@ -883,7 +883,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 18.41,
             'time' => 10,
-            'level_id' => 6
+            'type' => 4,
         ]);
 
         // Fin salsitas parte 1
@@ -894,7 +894,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 5.79,
             'time' => 15,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -903,7 +903,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 17.69,
             'time' => 25,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -912,7 +912,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2.88,
             'time' => 15,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -921,7 +921,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 15,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -930,7 +930,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 19.4,
             'time' => 25,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -939,7 +939,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2.93,
             'time' => 20,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -948,7 +948,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 15,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -957,7 +957,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 20.8,
             'time' => 25,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -966,7 +966,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.5,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -975,7 +975,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 4.67,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -984,7 +984,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 15,
             'time' => 20,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -993,7 +993,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 7,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1002,7 +1002,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 3.2,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1011,7 +1011,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 25.28,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
         
         Recipe::create([
@@ -1020,7 +1020,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1029,7 +1029,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.28,
             'time' => 8,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1038,7 +1038,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 15.37,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1047,7 +1047,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.85,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1056,7 +1056,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 3.04,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1065,7 +1065,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 26.01,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1074,7 +1074,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.5,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1083,7 +1083,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 9.74,
             'time' => 15,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1092,7 +1092,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 19.12,
             'time' => 25,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1101,7 +1101,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.93,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1110,7 +1110,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 3.2,
             'time' => 10,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1119,7 +1119,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 29.5,
             'time' => 10,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1128,7 +1128,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 4.83,
             'time' => 15,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1137,7 +1137,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 3.4,
             'time' => 7,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1146,7 +1146,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 18.88,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1155,7 +1155,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 1.08,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1164,7 +1164,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 2.1,
             'time' => 15,
-            'level_id' => 1
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1173,7 +1173,7 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 24.74,
             'time' => 30,
-            'level_id' => 2
+            'type' => 1,
         ]);
 
         Recipe::create([
@@ -1182,8 +1182,219 @@ class RecipeSeeder extends Seeder
             'indice'=> 1,
             'carbs' => 0.93,
             'time' => 10,
-            'level_id' => 3
+            'type' => 1,
         ]);
+
+        Recipe::create([
+            'name' => 'Arepa rellena de pollo',
+            'slug' => 'arepa-rellena-de-pollo',
+            'indice'=> 1,
+            'carbs' => 7.7,
+            'time' => 15,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Langostinos embojotados en cama de coliflor',
+            'slug' => 'langostinos-embojotados-en-cama-de-coliflor',
+            'indice'=> 1,
+            'carbs' => 16.05,
+            'time' => 25,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Pastelitos de queso',
+            'slug' => 'pastelitos-de-queso',
+            'indice'=> 1,
+            'carbs' => 0,
+            'time' => 10,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Zuquihuevo',
+            'slug' => 'zuquihuevo',
+            'indice'=> 1,
+            'carbs' => 1.98,
+            'time' => 15,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Jopolocas cremosas',
+            'slug' => 'jopolocas-cremosas',
+            'indice'=> 1,
+            'carbs' => 39.73,
+            'time' => 30,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Champiñones al wok',
+            'slug' => 'champinones-al-wok',
+            'indice'=> 1,
+            'carbs' => 3.53,
+            'time' => 20,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Tilapia en salsa blanca',
+            'slug' => 'tilapia-en-salsa-blanca',
+            'indice'=> 1,
+            'carbs' => 22.86,
+            'time' => 25,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Palitos apanados con dip de nuez del Brasil',
+            'slug' => 'palitos-apanados-con-dip-de-nuez-del-brasil',
+            'indice'=> 1,
+            'carbs' => 3,
+            'time' => 10,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Salmón en cama pesto',
+            'slug' => 'salmon-en-cama-pesto',
+            'indice'=> 1,
+            'carbs' => 19.42,
+            'time' => 25,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Huevos revueltos con tocino y espinacas',
+            'slug' => 'huevos-revueltos-con-tocino-y-espinacas',
+            'indice'=> 1,
+            'carbs' => 0.42,
+            'time' => 5,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Tacita de huevo',
+            'slug' => 'tacita-de-huevo',
+            'indice'=> 1,
+            'carbs' => 0.15,
+            'time' => 5,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Ketocallos',
+            'slug' => 'ketocallos',
+            'indice'=> 1,
+            'carbs' => 44.09,
+            'time' => 25,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Huevos con panceta',
+            'slug' => 'huevos-con-panceta',
+            'indice'=> 1,
+            'carbs' => 1,
+            'time' => 10,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Empollado de habas',
+            'slug' => 'empollado-de-habas',
+            'indice'=> 1,
+            'carbs' => 20.37,
+            'time' => 20,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Keto espárragos',
+            'slug' => 'keto-esparragos',
+            'indice'=> 1,
+            'carbs' => 2.82,
+            'time' => 15,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Morosandwich',
+            'slug' => 'morosandwich',
+            'indice'=> 1,
+            'carbs' => 5,
+            'time' => 15,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Cora pollo con croketos',
+            'slug' => 'cora-pollo-con-croketos',
+            'indice'=> 1,
+            'carbs' => 20.99,
+            'time' => 25,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Champiketo',
+            'slug' => 'champiketo',
+            'indice'=> 1,
+            'carbs' => 3.14,
+            'time' => 15,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Empanadas sorpresa',
+            'slug' => 'empanadas-sorpresa',
+            'indice'=> 1,
+            'carbs' => 4.25,
+            'time' => 15,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Costillitas de dragón',
+            'slug' => 'costillitas-de-dragon',
+            'indice'=> 1,
+            'carbs' => 20.64,
+            'time' => 25,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Chicharrones de cerdo',
+            'slug' => 'chicharrones-de-cerdo',
+            'indice'=> 1,
+            'carbs' => 4.49,
+            'time' => 30,
+            'type' => 1,
+        ]);
+
+        Recipe::create([
+            'name' => 'Trucha a las finas hierbas',
+            'slug' => 'trucha-a-las-finas-hierbas',
+            'indice'=> 1,
+            'carbs' => 14.71,
+            'time' => 30,
+            'type' => 1,
+        ]);
+        
+        Recipe::create([
+            'name' => 'Portoketo',
+            'slug' => 'portoketo',
+            'indice'=> 1,
+            'carbs' => 5.61,
+            'time' => 20,
+            'type' => 1,
+        ]);
+
+        
+        
+        
         
     }
 }

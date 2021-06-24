@@ -9,7 +9,7 @@ class Subscription extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['expires_at'];
+    protected $guarded = ['id'];
 
     //Relacion uno a muchos
     public function user()

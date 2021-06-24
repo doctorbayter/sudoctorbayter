@@ -17,6 +17,6 @@ Route::post('pay/payu/approved', [PaymentController::class, 'approvedPayu'] )->n
 
 Route::post('{plan}/pay/epayco', [PaymentController::class, 'epayco'] )->middleware(['auth' , 'verified'])->name('epayco');
 Route::get('{plan}/pay/epayco/response', [PaymentController::class, 'responseEpayco'] )->middleware(['auth' , 'verified'])->name('epayco.response');
-Route::post('pay/epayco/approved', [PaymentController::class, 'approvedEpayco'] )->name('epayco.approved');
+Route::post('pay/epayco/approved', [PaymentController::class, 'approvedEpayco'] )->withoutMiddleware(['auth'])->name('epayco.approved');
 
 Route::get('prueba', [PaymentController::class, 'prueba'] )->name('prueba.approved');

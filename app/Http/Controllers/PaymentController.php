@@ -456,6 +456,13 @@ class PaymentController extends Controller
     
     }
 
+    public function sql()
+    {
+        DB::insert("SELECT setval(pg_get_serial_sequence('subscriptions', 'id'), max(id)) FROM subscriptions");
+        DB::insert("SELECT setval(pg_get_serial_sequence('fase_user', 'id'), max(id)) FROM fase_user");
+    }
+
+
     public function faseuno (){
         $user = User::create([ 'name' => 'Maria Mercedes González', 'email' => 'mercepego@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
@@ -3371,20 +3378,608 @@ class PaymentController extends Controller
         
     }
 
-    public function sql()
-    {
-        DB::insert("SELECT setval(pg_get_serial_sequence('subscriptions', 'id'), max(id)) FROM subscriptions");
-        DB::insert("SELECT setval(pg_get_serial_sequence('fase_user', 'id'), max(id)) FROM fase_user");
-    }
-
+    
     public function fasedos(){
-        $user = User::create([ 'name' => 'Maria Mercedes González', 'email' => 'mercepego@gmail.com', 'password' => bcrypt('01020304')]);
+        $user = User::create([ 'name' => 'Marí Carmen Amat Segura', 'email' => 'yosoyfelizahora7@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
-        $suscription->id = 34;
         $suscription->user_id = $user->id;
         $suscription->plan_id = 2;
         $suscription->save();
-        DB::insert("insert into 'fase_user' ('id', 'fase_id', 'user_id') values (71, 1, 34)");
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Dayanna Ortiz Cofre', 'email' => 'dayanna.oc@outlook.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Verónica Araujo', 'email' => 'veroara@live.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Lourdes Pulido Montesdeoca', 'email' => 'lourdeslula.pm@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Tila Ramirez', 'email' => 'tilaobispo@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Cecilia María Mejía Vergara', 'email' => 'ceciliamaria14@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Silvia Carolina Florez Faillace', 'email' => 'scflorez@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Jimena Duran', 'email' => 'mariajimena24@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Saul Chavira', 'email' => 'schavirav@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Maria Del Pilar Tellez', 'email' => 'mptellez@yahoo.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Yahaira Bonilla', 'email' => 'yahairabonilla33@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Angel Salvador Mar Martinez', 'email' => 'angelmar_mtz@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Dolores Gonzalez Garza', 'email' => 'dolores.gzz@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Carmen Melendez', 'email' => 'cecimel07@yahoo.es', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Elga Batista', 'email' => 'elgabatista@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Nadya Garcia', 'email' => 'nadyatkt@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Ledys Suley Quiñones', 'email' => 'suley_26@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Marta Gibbons', 'email' => 'martagibbons@yahoo.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Claudia Ivette Castellanos Reyes', 'email' => 'clau.castllanos@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Juan Manuel Perez Suarez', 'email' => 'juansuarez21900@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Geraldine Lira', 'email' => 'geraldinelira1@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Tania Fumero', 'email' => 'familia.moura@hotmail.fr', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Susana Reza', 'email' => 'susydhk@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Lucas Ses', 'email' => 'lucas.singh10@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Alexandra Ramirez', 'email' => 'aleramirezsol@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Nancy Salgado', 'email' => 'nsalgado1207@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Judith Rojas ', 'email' => 'jdthrojas@yahoo.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'María José López Mayor', 'email' => 'mariajo_lo@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Maria Jose Nunez', 'email' => 'machenunez90@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Lucia Reynoso', 'email' => 'luciareynosog2@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Lorena Gallego Hernandez', 'email' => 'loviva2010@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Fernanda Bahamonde', 'email' => 'fer.bahamonde@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Monica Liliana Carrillo Ribero', 'email' => 'monili8@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Rober C', 'email' => 'instalacionessrc@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+
+        $user = User::create([ 'name' => 'Xiomara Ardila', 'email' => 'xiomaraardila@yahoo.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Sofia Polanco ', 'email' => 'sofipolanco11@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Janneth Zapata Marcelo', 'email' => 'jannethzmarcelo@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Lina Salazar Velandia', 'email' => 'linamaria.patico@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Andrea Alvarez ', 'email' => 'abogadaandreaalvarezrodriguez@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Gabriela Torres', 'email' => 'chompadamian@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Claudia Herrera', 'email' => 'clavaness@yahoo.es', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Danixa Leal', 'email' => 'danixal@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Carolina Gutierrez', 'email' => 'caro.gut.e@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Joanna Braud Pérez', 'email' => 'joanna.braud@provident.com.mx', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Laura Ruiz Garcia', 'email' => 'psicoseleccion2130@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Margarita Martin Sanchez', 'email' => 'marsanglo@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Milena Fernandez', 'email' => 'milefdz@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Mayra Barrios', 'email' => 'ventas@blancosymaquilas.com.mx', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Maria Guadalupe Sanjuanelo Herrera ', 'email' => 'sanjuanelo1244@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Leidy Milena Mondragon Lourido ', 'email' => 'leidymondragon4@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+
+        $user = User::create([ 'name' => 'Gusmari Boscan', 'email' => 'gusmarivanessa@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Abraham Varela', 'email' => 'varela_180@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Joselene Guerrero', 'email' => 'joselenedgg24@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Carolina Neira', 'email' => 'carolina.g.neira@gmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
+        $user = User::create([ 'name' => 'Jackeline Robles Martínez', 'email' => 'jirom09@hotmail.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+        $user = User::create([ 'name' => 'Ssnta Eusebio ', 'email' => 'eusebio23@outlook.com', 'password' => bcrypt('01020304')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 2;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+
+
     }
 
     public function subs(){

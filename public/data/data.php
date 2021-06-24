@@ -58,7 +58,7 @@ function usuarios($conn) {
 		
 		$sql = "SELECT * FROM usuario_fase WHERE id_usuario = ".$cliente['id_usuario'];
 		$result = mysqli_query($conn, $sql);
-		if(mysqli_num_rows($result) == 1){
+		if(mysqli_num_rows($result) == 2 ){
 			while ($row = mysqli_fetch_assoc($result)) {
 
 				$name = strtolower($cliente['nombre']). " ".strtolower($cliente['apellido']);
@@ -78,9 +78,13 @@ function usuarios($conn) {
 				echo "<br>";
 				echo "%suscription->save();";
 				echo "<br>";
-            	echo "%fase = Fase::find(1);";
+            	echo "%faseuno = Fase::find(1);";
 				echo "<br>";
-				echo "%fase->clients()->attach(%user->id);";
+				echo "%faseuno->clients()->attach(%user->id);";
+				echo "<br>";
+				echo "%fasedos = Fase::find(2);";
+				echo "<br>";
+				echo "%fasedos->clients()->attach(%user->id);";
 				echo "<br>";
 				echo "<br>";
 				

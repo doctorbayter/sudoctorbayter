@@ -8735,6 +8735,7 @@ class PaymentController extends Controller
         */
         
         /*
+
         $user = User::create([ 'name' => 'Irina Lebesheva', 'email' => 'lebesheva@hotmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
         $suscription->user_id = $user->id;
@@ -11565,6 +11566,7 @@ class PaymentController extends Controller
         $fasedos = Fase::find(2);
         $fasedos->clients()->attach($user->id);*/
 
+        /*
         $user = User::create([ 'name' => 'Angela Rodriguez', 'email' => 'angelarodrigues540@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
         $suscription->user_id = $user->id;
@@ -12445,6 +12447,7 @@ class PaymentController extends Controller
         $fasedos = Fase::find(2);
         $fasedos->clients()->attach($user->id);
 
+        //ya está
         $user = User::create([ 'name' => 'Maria Berrocal', 'email' => 'marinesberrocal@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
         $suscription->user_id = $user->id;
@@ -12453,7 +12456,7 @@ class PaymentController extends Controller
         $faseuno = Fase::find(1);
         $faseuno->clients()->attach($user->id);
         $fasedos = Fase::find(2);
-        $fasedos->clients()->attach($user->id);
+        $fasedos->clients()->attach($user->id);*/
 
         $user = User::create([ 'name' => 'Sergio Nuñez', 'email' => 'sergionunez5271@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();

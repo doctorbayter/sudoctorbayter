@@ -32172,8 +32172,7 @@ class PaymentController extends Controller
     }
 
     public function users(){
-        $users = User::all()->sortByDesc("id");;
-
+        $users = User::orderBy('id', 'DESC')->take(100)->get();
         dd($users);
     }
 

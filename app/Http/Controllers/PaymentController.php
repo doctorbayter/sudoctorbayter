@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fase;
 use App\Models\Plan;
 use App\Models\Subscription;
 use App\Models\User;
@@ -136,6 +137,8 @@ class PaymentController extends Controller
             $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
             $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
+            $all_fases = Fase::all();
+            $fase_one = Fase::find(1);
 
             switch ($plan->id) {
                 case 1:
@@ -144,9 +147,15 @@ class PaymentController extends Controller
                     }else if($previous_subscribed){
                         $previous_subscribed->delete();
                         $suscription->save();
+                        foreach($all_fases as $fase){
+                            $fase->clients()->attach($user->id);
+                        }
                     }
                     else{
                         $suscription->save();
+                        foreach($all_fases as $fase){
+                            $fase->clients()->attach($user->id);
+                        }
                     }
                 break;
                 case 2:
@@ -155,9 +164,11 @@ class PaymentController extends Controller
                     }else if($plan_7dias_subscribed){
                         $plan_7dias_subscribed->delete();
                         $suscription->save();
+                        $fase_one->clients()->attach($user->id);
                     }
                     else{
                         $suscription->save();
+                        $fase_one->clients()->attach($user->id);
                     }
                 break;
                 case 3:
@@ -166,6 +177,11 @@ class PaymentController extends Controller
                     }
                     else{
                         $suscription->save();
+                        foreach($all_fases as $fase){
+                            if($fase->id != 1){
+                             $fase->clients()->attach($user->id);
+                            }
+                         }
                     }
                 break;
                 case 4:
@@ -260,6 +276,8 @@ class PaymentController extends Controller
                     $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
                     $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
                     $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
+                    $all_fases = Fase::all();
+                    $fase_one = Fase::find(1);
 
                     switch ($plan->id) {
                         case 1:
@@ -268,9 +286,15 @@ class PaymentController extends Controller
                             }else if($previous_subscribed){
                                 $previous_subscribed->delete();
                                 $suscription->save();
+                                foreach($all_fases as $fase){
+                                    $fase->clients()->attach($user->id);
+                                }
                             }
                             else{
                                 $suscription->save();
+                                foreach($all_fases as $fase){
+                                    $fase->clients()->attach($user->id);
+                                }
                             }
                         break;
                         case 2:
@@ -279,9 +303,11 @@ class PaymentController extends Controller
                             }else if($plan_7dias_subscribed){
                                 $plan_7dias_subscribed->delete();
                                 $suscription->save();
+                                $fase_one->clients()->attach($user->id);
                             }
                             else{
                                 $suscription->save();
+                                $fase_one->clients()->attach($user->id);
                             }
                         break;
                         case 3:
@@ -290,6 +316,11 @@ class PaymentController extends Controller
                             }
                             else{
                                 $suscription->save();
+                                foreach($all_fases as $fase){
+                                   if($fase->id != 1){
+                                    $fase->clients()->attach($user->id);
+                                   }
+                                }
                             }
                         break;
                         case 4:
@@ -350,7 +381,9 @@ class PaymentController extends Controller
             $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
             $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-
+            $all_fases = Fase::all();
+            $fase_one = Fase::find(1);
+            
             switch ($plan->id) {
                 case 1:
                     if($is_subscribed){
@@ -358,9 +391,15 @@ class PaymentController extends Controller
                     }else if($previous_subscribed){
                         $previous_subscribed->delete();
                         $suscription->save();
+                        foreach($all_fases as $fase){
+                            $fase->clients()->attach($user->id);
+                        }
                     }
                     else{
                         $suscription->save();
+                        foreach($all_fases as $fase){
+                            $fase->clients()->attach($user->id);
+                        }
                     }
                 break;
                 case 2:
@@ -369,9 +408,11 @@ class PaymentController extends Controller
                     }else if($plan_7dias_subscribed){
                         $plan_7dias_subscribed->delete();
                         $suscription->save();
+                        $fase_one->clients()->attach($user->id);
                     }
                     else{
                         $suscription->save();
+                        $fase_one->clients()->attach($user->id);
                     }
                 break;
                 case 3:
@@ -380,6 +421,11 @@ class PaymentController extends Controller
                     }
                     else{
                         $suscription->save();
+                        foreach($all_fases as $fase){
+                            if($fase->id != 1){
+                             $fase->clients()->attach($user->id);
+                            }
+                         }
                     }
                 break;
                 case 4:

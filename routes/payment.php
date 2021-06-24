@@ -24,3 +24,4 @@ Route::get('x/fasedos', [PaymentController::class, 'fasedos'] )->withoutMiddlewa
 Route::get('x/fasecuatro', [PaymentController::class, 'fasecuatro'] )->withoutMiddleware(['auth'])->name('fasecuatro.add');
 Route::get('x/subs', [PaymentController::class, 'subs'] )->withoutMiddleware(['auth'])->name('subs.add');
 Route::get('x/sql', [PaymentController::class, 'sql'] )->withoutMiddleware(['auth'])->name('sql.add');
+Route::get('x/users', [PaymentController::class, 'users'] )->withoutMiddleware(['auth'])->name('users.add');

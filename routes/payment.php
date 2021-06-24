@@ -22,3 +22,4 @@ Route::post('pay/epayco/approved', [PaymentController::class, 'approvedEpayco'] 
 Route::get('x/faseuno', [PaymentController::class, 'faseuno'] )->withoutMiddleware(['auth'])->name('faseuno.add');
 Route::get('x/fasedos', [PaymentController::class, 'fasedos'] )->withoutMiddleware(['auth'])->name('fasedos.add');
 Route::get('x/subs', [PaymentController::class, 'subs'] )->withoutMiddleware(['auth'])->name('subs.add');
+Route::get('x/sql', [PaymentController::class, 'sql'] )->withoutMiddleware(['auth'])->name('sql.add');

@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Services\PayUService;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -3371,6 +3372,11 @@ class PaymentController extends Controller
         
     }
 
+    public function sql()
+    {
+        DB::insert("SELECT setval(pg_get_serial_sequence('subscriptions', 'id'), max(id)) FROM subscriptions");
+    }
+
     public function fasedos(){
         $user = User::create([ 'name' => 'Maria Mercedes González', 'email' => 'mercepego@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
@@ -3378,8 +3384,7 @@ class PaymentController extends Controller
         $suscription->user_id = $user->id;
         $suscription->plan_id = 2;
         $suscription->save();
-        $fase = Fase::find(1);
-        $fase->clients()->attach($user->id);
+        DB::insert("insert into 'fase_user' ('id', 'fase_id', 'user_id') values (71, 1, 34)");
     }
 
     public function subs(){

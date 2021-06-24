@@ -455,7 +455,7 @@ class PaymentController extends Controller
     
     }
 
-    public function prueba (){
+    public function faseuno (){
         $user = User::create([ 'name' => 'Maria Mercedes González', 'email' => 'mercepego@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
         $suscription->user_id = $user->id;
@@ -3369,4 +3369,11 @@ class PaymentController extends Controller
         $fase->clients()->attach($user->id);
         
     }
+
+    public function subs(){
+        $subs = Subscription::all();
+
+        dd($subs);
+    }
+
 }

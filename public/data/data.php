@@ -72,7 +72,7 @@ function usuarios($conn) {
 
 				echo "%suscription = new Subscription();";
 				echo "<br>";
-				echo "%suscription->user_id =". $cliente['id_usuario'].";";
+				echo "%suscription->user_id = %user->id;";
 				echo "<br>";
 				echo "%suscription->plan_id = 2;";
 				echo "<br>";

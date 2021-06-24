@@ -58,9 +58,8 @@ function usuarios($conn) {
 		
 		$sql = "SELECT * FROM usuario_fase WHERE id_usuario = ".$cliente['id_usuario'];
 		$result = mysqli_query($conn, $sql);
-		if(mysqli_num_rows($result) == 2 ){
-			while ($row = mysqli_fetch_assoc($result)) {
-
+		if(mysqli_num_rows($result) >= 3 ){
+			$row = mysqli_fetch_assoc($result);
 				$name = strtolower($cliente['nombre']). " ".strtolower($cliente['apellido']);
 
 				echo " %user = User::create([";
@@ -74,7 +73,7 @@ function usuarios($conn) {
 				echo "<br>";
 				echo "%suscription->user_id = %user->id;";
 				echo "<br>";
-				echo "%suscription->plan_id = 2;";
+				echo "%suscription->plan_id = 1;";
 				echo "<br>";
 				echo "%suscription->save();";
 				echo "<br>";
@@ -88,7 +87,7 @@ function usuarios($conn) {
 				echo "<br>";
 				echo "<br>";
 				
-			}
+			
 		}
 		
 	}

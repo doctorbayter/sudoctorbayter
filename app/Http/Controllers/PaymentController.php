@@ -16643,7 +16643,7 @@ class PaymentController extends Controller
         $fasedos->clients()->attach($user->id);
         
         */
-        
+        /*
         $user = User::create([ 'name' => 'J Castañeda', 'email' => 'jenniferdebarrientos@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
         $suscription->user_id = $user->id;
@@ -17853,6 +17853,7 @@ class PaymentController extends Controller
         $faseuno->clients()->attach($user->id);
         $fasedos = Fase::find(2);
         $fasedos->clients()->attach($user->id);
+        */
 
         $user = User::create([ 'name' => 'Estefania Castillo Matus', 'email' => 'phaniech88@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();

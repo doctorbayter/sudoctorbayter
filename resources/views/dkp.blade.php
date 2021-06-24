@@ -20,6 +20,54 @@
             </figure>
         </div>
     </section>
+
+    <section class="bg-white">
+        <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
+            <header>
+                <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Toma la decisión ahora</h2>
+                <p class="text-center text-lg font-semibold">Da el primer paso. Yo te acompañaré el resto del camino.</p>
+            </header>
+            
+            
+            <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
+                <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span></h2>
+                <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
+
+                @if ($plan_premium->discount)
+
+                
+
+                    @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                        
+                            <p class="text-center font-extrabold text-6xl">{{round($plan_premium->finalPrice)}} US$</p>
+                            <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small>
+                        <div class="text-center">
+                            <p class="text-base text-gray-700 mb-2">Oferta {{$plan_premium->discount->name}}</p>
+                            <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                        </div>
+                        @else
+                        <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
+                    @endif
+                @else
+                    <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
+                @endif
+
+
+                
+                <div class="mt-4">
+                    <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
+                    <ul>
+                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida al método DKP y futuras actualizaciones <b class=" text-sm text-gray-600 block font-medium">(Precio normal 147 US$)</b></p></li>
+                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
+                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">1 Sesión grupal vía Zoom <b class=" text-sm text-gray-600 block font-medium">(Precio normal 200 US$)</b></p></li>
+                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
+                    </ul>
+                    <a href="{{route('payment.checkout', $plan_premium)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-white ">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex relative overflow-hidden py-16 md:py-24">
             <div class="flex flex-col md:flex-row">
@@ -393,8 +441,8 @@
     <section class="py-8 md:py-16 bg-gray-900 bg-opacity-95 px-6 md:px-0">
         <div class="max-w-5xl mx-auto text-gray-50">
             <p class="uppercase text-yellow-500 font-medium text-sm md:text-lg">¿Tienes dudas adicionales?</p>
-            <a href="mailto:hello%40mediasocial.co" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline " title="Escríbemele a mi equipo">
-                <span  class="">equipo@doctorbayter.com</span>
+            <a href="https://chat.whatsapp.com/FACKQp2A72U9idC2xiUfsR" target="_blank" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline " title="Escríbemele a mi equipo">
+                <span  class="">Entra al grupo de WhatsApp</span>
             </a>
         </div>
     </section>

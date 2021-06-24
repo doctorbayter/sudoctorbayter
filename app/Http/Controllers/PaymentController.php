@@ -32172,7 +32172,7 @@ class PaymentController extends Controller
     }
 
     public function users(){
-        $users = User::all();
+        $users = User::all()->sortByDesc("id");;
 
         dd($users);
     }

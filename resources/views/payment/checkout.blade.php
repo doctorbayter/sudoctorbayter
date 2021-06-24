@@ -133,7 +133,7 @@
         <script>
             let handler = ePayco.checkout.configure({
                 key: '{{config('services.epayco.public_key')}}',
-                test: false
+                test: true
             })
             let data={
             //Parametros compra (obligatorio)

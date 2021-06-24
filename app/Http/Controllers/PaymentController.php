@@ -459,7 +459,6 @@ class PaymentController extends Controller
     public function faseuno (){
         $user = User::create([ 'name' => 'Maria Mercedes González', 'email' => 'mercepego@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
-        $suscription->id = 34;
         $suscription->user_id = $user->id;
         $suscription->plan_id = 2;
         $suscription->save();

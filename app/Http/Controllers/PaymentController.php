@@ -119,78 +119,79 @@ class PaymentController extends Controller
 
     public function approvedPayu(Request $request){
         
-        Log::info($request);
-        $extra1 = $request->extra1;
-        $extra2 = $request->extra2;
+        if($request->state_pol == 4){
+            //Log::info($request);
+            $extra1 = $request->extra1;
+            $extra2 = $request->extra2;
 
-        $user = User::find($extra1);
-        $plan = Plan::find($extra2);
+            $user = User::find($extra1);
+            $plan = Plan::find($extra2);
 
-        $suscription = new Subscription();
-        $suscription->user_id = $user->id;
-        $suscription->plan_id = $plan->id;
-        $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-        $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->first();
-        $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
-        $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
-        $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
-        $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
+            $suscription = new Subscription();
+            $suscription->user_id = $user->id;
+            $suscription->plan_id = $plan->id;
+            $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
+            $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->first();
+            $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
+            $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
+            $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
+            $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
 
-        switch ($plan->id) {
-            case 1:
-                if($is_subscribed){
-                    // Do nothing
-                }else if($previous_subscribed){
-                    $previous_subscribed->delete();
-                    $suscription->save();
-                }
-                else{
-                    $suscription->save();
-                }
-            break;
-            case 2:
-                if($plan_2_subscribed){
-                    // Do nothing
-                }else if($plan_7dias_subscribed){
-                    $plan_7dias_subscribed->delete();
-                    $suscription->save();
-                }
-                else{
-                    $suscription->save();
-                }
-            break;
-            case 3:
-                if($plan_3_subscribed){
-                    // Do nothing
-                }
-                else{
-                    $suscription->save();
-                }
-            break;
-            case 4:
-                if($whatsapp_subscribed){
+            switch ($plan->id) {
+                case 1:
+                    if($is_subscribed){
+                        // Do nothing
+                    }else if($previous_subscribed){
+                        $previous_subscribed->delete();
+                        $suscription->save();
+                    }
+                    else{
+                        $suscription->save();
+                    }
+                break;
+                case 2:
+                    if($plan_2_subscribed){
+                        // Do nothing
+                    }else if($plan_7dias_subscribed){
+                        $plan_7dias_subscribed->delete();
+                        $suscription->save();
+                    }
+                    else{
+                        $suscription->save();
+                    }
+                break;
+                case 3:
+                    if($plan_3_subscribed){
+                        // Do nothing
+                    }
+                    else{
+                        $suscription->save();
+                    }
+                break;
+                case 4:
+                    if($whatsapp_subscribed){
 
-                    if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
-                    }else{
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
-                    } 
-                }
-                else{
-                    $suscription->expires_at = \Carbon\Carbon::now()->addDays(30);
-                    $suscription->save();
-                }
-            break;
-            case 7:
-                if($plan_7dias_subscribed){
-                    // Do nothing
-                }
-                else{
-                    $suscription->save();
-                }
-            break;
+                        if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
+                            $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
+                        }else{
+                            $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
+                        } 
+                    }
+                    else{
+                        $suscription->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $suscription->save();
+                    }
+                break;
+                case 7:
+                    if($plan_7dias_subscribed){
+                        // Do nothing
+                    }
+                    else{
+                        $suscription->save();
+                    }
+                break;
+            }
         }
-
     }
 
 
@@ -329,13 +330,17 @@ class PaymentController extends Controller
     public function approvedPaypal(Request $request, Plan $plan){
 
         //Log::info($request);
-        $user_id = $request->custom;
-        $plan_id = $request->item_number;
-
-        $user = User::find($user_id);
-        $plan = Plan::find($plan_id);
+        
 
         if ($request->payment_status == "Completed") {
+
+
+            $user_id = $request->custom;
+            $plan_id = $request->item_number;
+
+            $user = User::find($user_id);
+            $plan = Plan::find($plan_id);
+
             $suscription = new Subscription();
             $suscription->user_id = $user->id;
             $suscription->plan_id = $plan->id;

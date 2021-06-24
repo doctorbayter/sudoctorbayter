@@ -3374,6 +3374,7 @@ class PaymentController extends Controller
     public function sql()
     {
         DB::insert("SELECT setval(pg_get_serial_sequence('subscriptions', 'id'), max(id)) FROM subscriptions");
+        DB::insert("SELECT setval(pg_get_serial_sequence('fase_user', 'id'), max(id)) FROM fase_user");
     }
 
     public function fasedos(){

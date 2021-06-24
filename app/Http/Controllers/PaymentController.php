@@ -119,7 +119,7 @@ class PaymentController extends Controller
 
     public function approvedPayu(Request $request){
         
-        if($request->state_pol == 4){
+        if($request->state_pol == 4 ){
             //Log::info($request);
             $extra1 = $request->extra1;
             $extra2 = $request->extra2;

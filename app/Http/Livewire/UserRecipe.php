@@ -11,9 +11,12 @@ class UserRecipe extends Component
 {
     use AuthorizesRequests;
 
-    public $recipe;
+    public $recipe, $user_fases;
 
     public function mount(Recipe $recipe){
+        if(auth()->user()->subscription){
+            $this->user_fases = auth()->user()->subscription->plan->fases;
+        }
         $this->recipe = $recipe;
     }
     public function render(){

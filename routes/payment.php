@@ -1,0 +1,22 @@
+<?php
+
+
+use App\Http\Controllers\PaymentController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+Route::get('{plan}/checkout', [PaymentController::class, 'checkout'] )->middleware(['auth' , 'verified'])->name('checkout');
+
+Route::get('{plan}/pay/paypal', [PaymentController::class, 'paypal'] )->middleware(['auth' , 'verified'])->name('paypal'); 
+Route::get('{plan}/pay/paypal/response', [PaymentController::class, 'responsePaypal'] )->middleware(['auth' , 'verified'])->name('paypal.response');
+Route::post('/pay/paypal/approved', [PaymentController::class, 'approvedPaypal'] )->name('paypal.approved');
+
+Route::post('{plan}/pay/payu', [PaymentController::class, 'payu'] )->middleware(['auth' , 'verified'])->name('payu');
+Route::get('{plan}/pay/payu/response', [PaymentController::class, 'responsePayu'] )->middleware(['auth' , 'verified'])->name('payu.response');
+Route::post('pay/payu/approved', [PaymentController::class, 'approvedPayu'] )->name('payu.approved');
+
+Route::post('{plan}/pay/epayco', [PaymentController::class, 'epayco'] )->middleware(['auth' , 'verified'])->name('epayco');
+Route::get('{plan}/pay/epayco/response', [PaymentController::class, 'responseEpayco'] )->middleware(['auth' , 'verified'])->name('epayco.response');
+Route::post('pay/epayco/approved', [PaymentController::class, 'approvedEpayco'] )->name('epayco.approved');
+
+Route::get('prueba', [PaymentController::class, 'prueba'] )->name('prueba.approved');

@@ -11,10 +11,14 @@ class Plan extends Model
 
     protected $guarded = ['id'];
 
+    //URL's Amigables
+    public function getRouteKeyName(){
+        return "slug";
+    }
 
     public function getFinalPriceAttribute(){
         
-        if ($this->discount) {
+        if ($this->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($this->discount->expires_at))->gt(\Carbon\Carbon::now()) ) {
             if ($this->discount->type == 1) {
                 return number_format($this->discount->value, 2);
             }

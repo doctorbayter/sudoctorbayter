@@ -7,8 +7,12 @@ use Livewire\Component;
 
 class UserSalsitas extends Component
 {
+    public $user_fases;
     public function render()
     {
+        if(auth()->user()->subscription){
+            $this->user_fases = auth()->user()->subscription->plan->fases;
+        }
         $salsitas = Recipe::where('type', '4')->get();
         return view('livewire.user-salsitas', compact('salsitas'));
     }

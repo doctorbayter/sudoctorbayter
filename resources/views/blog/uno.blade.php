@@ -15,7 +15,7 @@
 
                 <div class="my-8">
                     <figure class="h-48 md:h-96 block">
-                        <img src="{{asset('img/blog/heros/appletvplus_hero.jpg')}}" alt="" class=" object-cover w-full my-auto block">
+                        <img src="{{asset('img/blog/heros/que-comer.jpg')}}" alt="" class=" object-cover w-full my-auto block">
                     </figure>
                 </div>
 
@@ -24,7 +24,7 @@
                     <h3 class="text-lg mt-8 text-gray-900 font-semibold my-1 md:text-3xl">¿Qué debes evitar?</h3>
                     <p class="mt-8 text-lg">Alimentos con un alto índice glucémico y que contienen muchos carbohidratos, tanto azucarados como almidonados. El pan, la pasta, el arroz o la papa deben ser evitados (por lo menos, en fase 1).</p>
                     <div class="my-16">
-                        <figure class="h-48 md:h-96 block">
+                        <figure class="h-48 md:h-96 block hidden">
                             <img src="{{asset('img/blog/heros/post_uno_1.jpg')}}" alt="" class=" object-cover w-full my-auto block">
                         </figure>
                     </div>
@@ -32,7 +32,7 @@
                     <p class="mt-8 text-lg">Recuerda que debes optar por tu salud, y que eres lo que comes. Alcanzar tu objetivo sublime significa dejar eso que te gusta para escoger aquello que te conviene.</p>
                     <h3 class="text-lg mt-8 text-gray-900 font-semibold my-1 md:text-3xl">¿Qué puedes beber?</h3>
                     <div class="my-16">
-                        <figure class="h-48 md:h-96 block">
+                        <figure class="h-48 md:h-96 block hidden">
                             <img src="{{asset('img/blog/heros/post_uno_2.jpg')}}" alt="" class=" object-cover w-full my-auto block">
                         </figure>
                     </div>

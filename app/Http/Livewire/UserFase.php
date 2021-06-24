@@ -12,12 +12,14 @@ class UserFase extends Component
 {
     use AuthorizesRequests;
     
-    public $fase , $day, $current, $carbs, $snacks, $snack;
+    public $fase , $day, $current, $carbs, $snacks, $snack, $user_fases;
 
     public function mount(Fase $fase){
-        $this->fase = $fase;
-
         
+        $this->fase = $fase;
+        if(auth()->user()->subscription){
+            $this->user_fases = auth()->user()->subscription->plan->fases;
+        }
 
         foreach($fase->days as $day){
             if($day->users()->find(auth()->user()->id)){

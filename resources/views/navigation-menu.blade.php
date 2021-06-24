@@ -130,9 +130,15 @@
                                     {{ __('Manage Account') }}
                                 </div>
 
-                                <x-jet-dropdown-link href="{{ route('plan.index') }}">
-                                    {{ __('Método DKP') }}
-                                </x-jet-dropdown-link>
+                                @can('enrolled', auth()->user()->subscription)
+                                    <x-jet-dropdown-link href="{{ route('plan.index') }}">
+                                        <b>{{ __('Entrar a método') }}</b>
+                                    </x-jet-dropdown-link>
+                                @else
+                                    <x-jet-dropdown-link href="{{ route('dkp') }}">
+                                        {{ __('Adquiere un plan') }}
+                                    </x-jet-dropdown-link>
+                                @endcan
 
 
                                 <x-jet-dropdown-link href="{{ route('profile.show') }}">
@@ -207,9 +213,16 @@
 
     <div class="mt-3 space-y-1">
         <!-- Account Management -->
-        <x-jet-responsive-nav-link href="{{ route('plan.index') }}" :active="request()->routeIs('plan.fase')">
-            {{ __('Método DKP') }}
-        </x-jet-responsive-nav-link>
+        
+        @can('enrolled', auth()->user()->subscription)
+            <x-jet-responsive-nav-link href="{{ route('plan.index') }}" :active="request()->routeIs('plan.fase')">
+                <b>{{ __('Entrar a método') }}</b>
+            </x-jet-responsive-nav-link>
+        @else
+            <x-jet-responsive-nav-link href="{{ route('dkp') }}" :active="request()->routeIs('dkp')">
+                {{ __('Adquiere un plan') }}
+            </x-jet-responsive-nav-link>
+        @endcan
 
         <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
             {{ __('Profile') }}

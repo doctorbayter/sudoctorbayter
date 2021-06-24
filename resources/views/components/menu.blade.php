@@ -14,12 +14,12 @@
         </div>
         <div>
             @foreach ($fases as $fase)
-                @can('enrolled', $fase)
-                    <a href="{{route('plan.fase', $fase)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$fase->name}} " >
-                        <i class=" text-lg fas fa-layer-group mr-2"></i>
-                        <div class="flex-1 whitespace-nowrap"> <b >{!!$fase->sub_name!!}</b></div>
-                    </a>
-                @endcan                
+                
+                <a href="{{route('plan.fase', $fase)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$fase->name}} " >
+                    <i class=" text-lg fas fa-layer-group mr-2"></i>
+                    <div class="flex-1 whitespace-nowrap"> <b >{!!$fase->sub_name!!}</b></div>
+                </a>
+                            
             @endforeach
         </div>
 
@@ -39,7 +39,7 @@
             </a>
             <a href="{{route('plan.snacks')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                 <i class=" text-lg fas fa-cookie-bite mr-2"></i>
-                <span>Snakcs</span>
+                <span>Snacks</span>
             </a>
         </div>
 
@@ -49,7 +49,7 @@
                 <span class="text-xs">Adicionales</span>
             </button>
             </div>
-            <a class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+            <a href="{{route('plan.whatsapp')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                 <i class=" text-lg fab fa-whatsapp-square mr-2"></i>
                 <span>Whatsapp</span>
             </a>

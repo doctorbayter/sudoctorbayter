@@ -58,7 +58,7 @@
                     </figure>
                     <div class="flex-1 pr-4">
                         <h2 class=" leading-none font-black text-3xl lg:text-xl xl:text-2xl text-white">Eventos en Vivo</h2>
-                        <a href="https://doctorbayter.ac-page.com/dkp" class=" inline-block mt-4 lg:mt-2 xl:mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Adquíerelos<span class="inline-block md:hidden xl:inline-block ml-2">aquí</span></a>
+                        <a class=" inline-block mt-4 lg:mt-2 xl:mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Próximamente<span class="inline-block md:hidden xl:inline-block ml-2">aquí</span></a>
                     </div>
                 </article>
                 <article class=" bg-gray-900 flex items-center rounded-lg shadow-md ">
@@ -204,7 +204,7 @@
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 flex relative overflow-hidden">
             <div class=" py-12 md:py-20 px-6 md:px-0">
                 <p class="text-gray-50 mt-4 mb-4 text-xl text-center md:text-4xl md:text-left flex-1 font-bold">No te pierdas mi próximo evento en vivo DKP y aprende todo sobre la Dieta Keto Perfecta</p>
-                <a href="https://doctorbayter.ac-page.com/dkp" target="_blank" class="inline-block w-full md:w-auto text-center text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:bg-transparent hover:border-white">Aparta tu cupo en preventa</a>
+                <a  target="_blank" class="inline-block w-full md:w-auto text-center text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:bg-transparent hover:border-white">Espera nuestro próximo evento</a>
             </div>
         </div>
     </section>
@@ -231,7 +231,7 @@
                 <div>
                     <a href="{{route('blog.uno')}}">
                         <figure>
-                            <img src="{{asset('img/blog/heros/appletvplus_hero.jpg')}}" alt="">
+                            <img src="{{asset('img/blog/heros/que-comer.jpg')}}" alt="">
                             <p class="bg-gray-50 text-xs text-gray-400 font-medium py-2 pl-2"><span class="mr-2 font-semibold text-gray-600">Tips de alimentacion</span> 14 de mayo de 2021</p>
                         </figure>
                         <div>

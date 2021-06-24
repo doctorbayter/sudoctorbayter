@@ -1,11 +1,18 @@
 <x-app-layout>
+
+    @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
+
     <section class="bg-fixed bg-cover" style="background-image: url({{asset('img/backgrounds/bg_red.jpg')}})">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 flex relative overflow-hidden">
             <div class="max-w-lg my-24">
                 <header class="">
                     <h1 class="text-gray-50 leading-none font-black text-2xl md:text-5xl">Bienvenido al Método DKP de la Dieta <span class="text-red-700">Keto</span> Perfecta</h1>
                     <p class="text-gray-50 mt-8 mb-4 md:text-xl">Descubre el método de la Dieta Keto Perfecta que con san solo 4 fases te convertira en una verdadera máquina quema grasa.</p>
-                    <a href="#" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ya!</a>
+                    <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ya!</a>
                 </header>
             </div>
             <figure class="absolute right-0 bottom-0 w-6/12">
@@ -38,7 +45,10 @@
                     <p class="mt-3 font-bold text-2xl">¿Por qué de esta manera?</p>
                     <p class="mt-4 text-base text-justify">Porque tu cuerpo es una máquina hermosa y perfecta, que no se puede medir y está demostrado científicamente que esta maquinaria vive para adaptarse. Adaptarse al estrés, a las bajas de calorías, a los ayunos y a todo aquello que hace que pueda ocurrir algo malo en tu cuerpo, adaptando todo su sistema hormonal y metabólico en tan solo 21 días.</p>
                 </div>
-                <iframe src="https://player.vimeo.com/video/542233951?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-56 md:h-96 rounded-xl flex-1"></iframe>
+                <figure class=" max-w-2xl">
+                    <img src="{{asset('img/billboards/metodo_dkp.jpg')}}" alt="" class=" object-cover">
+                </figure>
+                <iframe src="https://player.vimeo.com/video/542233951?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-56 md:h-96 rounded-xl flex-1 hidden"></iframe>
             </div>
             <div class=" pb-20"> 
                 <p class="mt-6 text-base text-justify">Por esto cada fase tiene <b>21 días</b>, para evitar la adaptación que es la principal forma como tu cuerpo no deja que sigas bajando de peso. Cuando yo digo, voy a hacer fases de 21 días, lo que quiero es que tu cuerpo nunca se adapte, sigas bajando y perpetúe bajando de peso. Para mi y para las más de 2300 personas que han pasado en el chat con un 97% efectividad.</p>
@@ -334,25 +344,48 @@
             </div>
         </div>
     </section>
-    <section class="bg-white">
+    <section class="bg-white" id="go">
         <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
             <header>
                 <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Toma la decisión ahora</h2>
                 <p class="text-center text-lg font-semibold">Da el primer paso. Yo te acompañaré el resto del camino.</p>
             </header>
+            
+            
             <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
                 <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span></h2>
                 <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
-                <P class="text-center font-extrabold text-6xl">$297 USD</P>
-                <small class="text-center block line-through text-gray-700 text-sm">Precio Real $697 USD</small>
+
+                @if ($plan_premium->discount)
+
+                
+
+                    @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                        
+                            <p class="text-center font-extrabold text-6xl">{{round($plan_premium->finalPrice)}} US$</p>
+                            <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small>
+                        <div class="text-center">
+                            <p class="text-base text-gray-700 mb-2">Oferta {{$plan_premium->discount->name}}</p>
+                            <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                        </div>
+                        @else
+                        <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
+                    @endif
+                @else
+                    <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
+                @endif
+
+
+                
                 <div class="mt-4">
                     <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                     <ul>
-                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida al método DKP y futuras actualizaciones</p></li>
-                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat 100% gratis por 30 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal $37 USD/mes)</b></p></li>
-                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Curso 100% gratis ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal $19 USD)</b></p>
+                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida al método DKP y futuras actualizaciones <b class=" text-sm text-gray-600 block font-medium">(Precio normal 147 US$)</b></p></li>
+                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
+                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">1 Sesión grupal vía Zoom <b class=" text-sm text-gray-600 block font-medium">(Precio normal 200 US$)</b></p></li>
+                        <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
                     </ul>
-                    <a href="#" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                    <a href="{{route('payment.checkout', $plan_premium)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                 </div>
             </div>
         </div>

@@ -54,7 +54,7 @@
                     </div>
                 </a>
 
-                <a href="{{route('dkp')}}" class="block mb-6 p-4 rounded-lg shadow-xs bg-gray-900">
+                <a  class="block mb-6 p-4 rounded-lg shadow-xs bg-gray-900">
                     <div class="flex flex-col md:flex-row items-center h-full">
                         <figure class=" h-56 w-full md:w-40 md:h-40 object-cover  overflow-hidden rounded-xl">
                             <img src="{{asset('img/resources/covers/recurso_06.jpg')}}" alt="">
@@ -63,12 +63,12 @@
                             
                             <h2 class="text-2xl text-gray-50 font-semibold my-1 flex-1 leading-5">Grupo Selecto</h2>
                             <p class="text-gray-500">Para los que quieren más</p>
-                            <button class="bg-red-700 text-white border font-bold border-red-700 text-xs rounded-full mt-4 py-2 uppercase transition ease-in-out duration-300 hover:bg-transparent hover:text-red-700" >Más Información</button>
+                            <button class="bg-red-700 text-white border font-bold border-red-700 text-xs rounded-full mt-4 py-2 uppercase transition ease-in-out duration-300 hover:bg-transparent hover:text-red-700" >Próximamente</button>
                         </div>
                     </div>
                 </a>
                
-                <a href="https://doctorbayter.ac-page.com/dkp" class="block mb-6 p-4 rounded-lg shadow-xs bg-gray-900">
+                <a  class="block mb-6 p-4 rounded-lg shadow-xs bg-gray-900">
                     <div class="flex flex-col md:flex-row items-center h-full">
                         <figure class=" h-56 w-full md:w-40 md:h-40 object-cover  overflow-hidden rounded-xl">
                             <img src="{{asset('img/resources/covers/recurso_05.jpg')}}" alt="">
@@ -77,7 +77,7 @@
                             
                             <h2 class="text-2xl text-gray-50 font-semibold my-1 flex-1 leading-5">Eventos Virtuales</h2>
                             <p class="text-gray-500">Aprende de la mejor manera</p>
-                            <button class="bg-red-700 text-white border font-bold border-red-700 text-xs rounded-full mt-4 py-2 uppercase transition ease-in-out duration-300 hover:bg-transparent hover:text-red-700" >Más Información</button>
+                            <button class="bg-red-700 text-white border font-bold border-red-700 text-xs rounded-full mt-4 py-2 uppercase transition ease-in-out duration-300 hover:bg-transparent hover:text-red-700" >Próximamente</button>
                         </div>
                     </div>
                 </a>

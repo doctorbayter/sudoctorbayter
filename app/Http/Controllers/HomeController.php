@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Plan;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $recipes = Recipe::whereIn('id', [1,2,3,4])->get();
+        $recipes = Recipe::whereIn('id', [1,2,10,4])->get();
         return  view('welcome', compact('recipes'));
     }
     public function doctor()
@@ -18,7 +19,9 @@ class HomeController extends Controller
     }
     public function dkp()
     {
-        return  view('dkp');
+        $plan_premium = Plan::find(1);
+        $plan_fase_uno = Plan::find(2);
+        return  view('dkp', compact('plan_premium'));
     }
     public function programas()
     {
@@ -46,6 +49,7 @@ class HomeController extends Controller
     }
     public function cita()
     {
-        return  view('cita');
+        $planesWhatsapp = Plan::whereIn('id', [5,6])->get();
+        return  view('cita', compact('planesWhatsapp'));
     }
 }

@@ -16,7 +16,7 @@
                 <a href="{{route('blog.uno')}}" class="block mb-6 md:col-span-3 md:mb-10 border border-gray-200 rounded-xl">
                     <div class="flex flex-col md:flex-row overflow-hidden rounded-xl bg-gray-50 shadow-xs h-full">
                         <figure class="flex-1 h-96">
-                            <img src="{{asset('img/blog/heros/appletvplus_hero.jpg')}}" alt="" class=" object-cover w-full my-auto">
+                            <img src="{{asset('img/blog/heros/que-comer.jpg')}}" alt="" class=" object-cover w-full my-auto">
                         </figure>
                         <div class="px-6 py-8  flex flex-col md:w-2/6 ">
                             <span class="uppercase text-xs font-medium text-gray-500">Tips</span>

@@ -1,6 +1,6 @@
 <section x-data="{ openMenu: false }" >
     <div class="flex">
-        <x-menu :fases="auth()->user()->subscription->plan->fases" />
+        <x-menu :fases="$user_fases" />
             <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="bg-white  ml-auto">
             <header class="shadow-lg relative">
                 

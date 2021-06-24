@@ -22,10 +22,17 @@ class DiscountSeeder extends Seeder
             'user_id' => 1,
         ]);
         Discount::create([
-            'name' => 'Black Friday 75% OFF',
-            'type' => 2,
-            'value' => 75.00,
-            'expires_at' =>  '2021-06-05 00:00:00',
+            'name' => 'Lanzamiento Página + Charla Virtual',
+            'type' => 1,
+            'value' => 110,
+            'expires_at' =>  '2021-06-26 23:59:59',
+            'user_id' => 1,
+        ]);
+        Discount::create([
+            'name' => 'Lanzamiento Página Web',
+            'type' => 1,
+            'value' => 110,
+            'expires_at' =>  '2021-07-01 23:59:59',
             'user_id' => 1,
         ]);
     }

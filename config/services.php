@@ -29,5 +29,29 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'payu' => [
+        'base_uri' => env('PAYU_BASE_URI'),
+        'api_uri' => env('PAYU_API_URI'),
+        'account_id' => env('PAYU_BASE_ACCOUNT_ID'),
+        'merchant_id' => env('PAYU_BASE_MERCHANT_ID'),
+        'key' => env('PAYU_KEY'),
+        'secret' => env('PAYU_SECRET'),
+        'base_currency' => env('PAYU_CURRENCY'),
+        'test' => env('PAYU_IS_TEST'),
+        'response_page' => env('PAYU_RESPONSE'),
+        'confirmation_page' => env('PAYU_CONFIRMATION'),
+    ],
+    'paypal' => [
+        'business' => env('PAYPAL_BUSINESS'),
+        'base_uri' => env('PAYPAL_BASE_URI'),
+        'currency_code' => env('PAYPAL_CURRENCY_CODE')
+    ],
+    'epayco' => [
+        'client_id' => env('EPAYCO_CLIENT_ID'),
+        'p_key' => env('EPAYCO_P_KEY'),
+        'public_key' => env('EPAYCO_PUBLIC_KEY'),
+        'private_key' => env('EPAYCO_PRIVATE_KEY'),
+        'currency' => env('EPAYCO_CURRENCY')
+    ],
 
 ];

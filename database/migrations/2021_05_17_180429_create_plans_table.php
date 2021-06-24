@@ -16,7 +16,7 @@ class CreatePlansTable extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-
+            $table->string('slug');
             $table->unsignedBigInteger('price_id')->nullable();
             $table->unsignedBigInteger('discount_id')->nullable();
 

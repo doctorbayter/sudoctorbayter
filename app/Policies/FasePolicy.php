@@ -19,7 +19,7 @@ class FasePolicy
         //
     }
 
-    public function enrolled(User $user, Fase $fase){
+    public function enrolledFase(User $user, Fase $fase){
         return $fase->clients->contains($user->id);
     }
 }

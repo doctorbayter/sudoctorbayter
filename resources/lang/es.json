@@ -190,5 +190,7 @@
     "My Account": "Mi Cuenta",
     "Billing": "Facturación",
     "Notifications": "Notificaciones",
-    "I agree to the :terms_of_service and :privacy_policy": "Acepto los :terms_of_service y :privacy_policy"
+    "I agree to the :terms_of_service and :privacy_policy": "Acepto los :terms_of_service y :privacy_policy",
+    "Create a new account": "Crea una cuenta nueva",
+    "Whoops! Something is not right.": "Opps! algo no está bien."
 }

@@ -97,7 +97,7 @@
       @case(3)
         <div class="absolute left-6/12 top-6/12 transform -translate-x-6/12 -translate-y-6/12 w-full">
           <div class="mx-auto max-w-4xl shadow-lg rounded-md overflow-hidden flex">
-            <div class="bg-primary-400 px-12 text-gray-900 max-w-sm flex-col flex justify-center items-center">
+            <div class="bg-yellow-500 px-12 text-gray-900 max-w-sm flex-col flex justify-center items-center">
               <div>
                 <div class="text-accent-400">
                   <svg class="w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,7 +128,7 @@
                   
                   <hr class="my-8">
                   <div>
-                    <a class="block text-center w-full bg-secundary-700 text-gray-50 transition ease-in-out duration-300 font-bold p-4 rounded hover:bg-transparent hover:text-secundary-700 border-secundary-700 border" href="{{route('home')}}">
+                    <a class="block text-center w-full bg-red-700 text-gray-50 transition ease-in-out duration-300 font-bold p-4 rounded hover:bg-transparent hover:text-red-700 border-red-700 border" href="{{route('home')}}">
                       Regresa a la página de inicio
                     </a>
                   </div>

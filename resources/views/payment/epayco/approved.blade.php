@@ -38,7 +38,7 @@
 
                     
                     @can('enrolled', auth()->user()->subscription)
-                      <a class="block text-center w-full bg-green-500 hover:bg-green-600 text-white font-bold p-4 rounded" href="{{route('plans.status', $plan )}}">
+                      <a class="block text-center w-full bg-green-500 hover:bg-green-600 text-white font-bold p-4 rounded" href="{{route('plan.index', $plan )}}">
                         Empieza a aprender
                       </a>
                     @else

@@ -362,7 +362,6 @@ class PaymentController extends Controller
     public function approvedPaypal(Request $request, Plan $plan){
 
         //Log::info($request);
-        
 
         if ($request->payment_status == "Completed") {
 
@@ -466,8 +465,7 @@ class PaymentController extends Controller
     
     }
 
-    public function sql()
-    {
+    public function sql() {
         DB::insert("SELECT setval(pg_get_serial_sequence('subscriptions', 'id'), max(id)) FROM subscriptions");
         DB::insert("SELECT setval(pg_get_serial_sequence('fase_user', 'id'), max(id)) FROM fase_user");
     }
@@ -3387,8 +3385,7 @@ class PaymentController extends Controller
         $fase->clients()->attach($user->id);
         
     }
-
-    
+ 
     public function fasedos(){
         $user = User::create([ 'name' => 'Marí Carmen Amat Segura', 'email' => 'yosoyfelizahora7@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
@@ -32293,7 +32290,6 @@ class PaymentController extends Controller
                         $fase_one->clients()->attach($user->id);
                     break;
                 }
-
                 if($whatsapp){
                     $whatsApp30 = new Subscription();
                     $whatsApp30->user_id = $user->id;
@@ -32301,9 +32297,7 @@ class PaymentController extends Controller
                     $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
                     $whatsApp30->save();
                 }
-
                 return 'Do it';
-
             }
         }else{
             return 'Usuario no encontrado';

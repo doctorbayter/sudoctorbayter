@@ -3994,6 +3994,8 @@ class PaymentController extends Controller
 
     public function fasecuatro(){
 
+        /* Agregados Manualmente
+
         $user = User::create([ 'name' => 'Hector Barroeta', 'email' => 'abghectorb@gmail.com', 'password' => bcrypt('H1e85tmar')]);
         $suscription = new Subscription();
         $suscription->user_id = $user->id;
@@ -4008,7 +4010,8 @@ class PaymentController extends Controller
         $whatsApp30->plan_id = 4;
         $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
         $whatsApp30->save();
-
+        
+        Fin Agregados Manualmente */ 
         
 
         /*$user = User::create([ 'name' => 'Mendez Zuñiga', 'email' => 'mendezzuniga@hotmail.com', 'password' => bcrypt('01020304')]);
@@ -32259,8 +32262,55 @@ class PaymentController extends Controller
         dd($users->email);
     }
 
-    public function add(){
+    public function add($email, $plan, $whatsapp){
         
+        $user = User::where('email', $email)->first();
+    
+        if($user){
+    
+            $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan)->first();
+
+            if($is_subscribed){
+                return 'Ya está registrado';
+            }else {
+
+                $suscription = new Subscription();
+                $suscription->user_id = $user->id;
+                $suscription->plan_id = $plan;
+                
+                $all_fases = Fase::all();
+                $fase_one = Fase::find(1);
+
+                switch ($plan) {
+                    case 1:
+                        $suscription->save();
+                        foreach($all_fases as $fase){
+                            $fase->clients()->attach($user->id);
+                        }
+                    break;
+                    case 2:
+                        $suscription->save();
+                        $fase_one->clients()->attach($user->id);
+                    break;
+                }
+
+                if($whatsapp){
+                    $whatsApp30 = new Subscription();
+                    $whatsApp30->user_id = $user->id;
+                    $whatsApp30->plan_id = 4;
+                    $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                    $whatsApp30->save();
+                }
+
+                return 'Do it';
+
+            }
+        }else{
+            return 'Usuario no encontrado';
+        }
+
+        
+
     }
 
 }

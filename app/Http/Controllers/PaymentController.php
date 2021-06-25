@@ -398,6 +398,11 @@ class PaymentController extends Controller
                     }
                     else{
                         $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
                         foreach($all_fases as $fase){
                             $fase->clients()->attach($user->id);
                         }
@@ -413,6 +418,11 @@ class PaymentController extends Controller
                     }
                     else{
                         $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
                         $fase_one->clients()->attach($user->id);
                     }
                 break;
@@ -31266,7 +31276,7 @@ class PaymentController extends Controller
         $fasedos = Fase::find(2);
         $fasedos->clients()->attach($user->id);
         */
-
+        /*
         $user = User::create([ 'name' => 'Yolanda Rodríguez', 'email' => 'yolanda.rdz2@gmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
         $suscription->user_id = $user->id;
@@ -32216,6 +32226,7 @@ class PaymentController extends Controller
         $faseuno->clients()->attach($user->id);
         $fasedos = Fase::find(2);
         $fasedos->clients()->attach($user->id);
+        */
 
     }
 
@@ -32228,6 +32239,10 @@ class PaymentController extends Controller
     public function users(){
         $users = User::orderBy('id', 'DESC')->first();
         dd($users->email);
+    }
+
+    public function add(){
+        
     }
 
 }

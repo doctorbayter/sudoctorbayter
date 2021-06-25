@@ -13,9 +13,9 @@
         @endif
 
         @if (session('error'))
-            <div class="font-medium text-red-600">{{__('Whoops! Something is not right.')}}</div>
-            <div class="mb-4 font-medium text-sm text-red-600">
-                {{ session('error') }}
+            <div class="font-medium text-green-600">Excelente! vas por buen camino.</div>
+            <div class="mb-4 font-medium text-sm text-green-600">
+                <b>{{ session('error') }}</b>
             </div>
         @endif
 

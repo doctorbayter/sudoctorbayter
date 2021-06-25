@@ -3993,6 +3993,24 @@ class PaymentController extends Controller
     }
 
     public function fasecuatro(){
+
+        $user = User::create([ 'name' => 'Hector Barroeta', 'email' => 'abghectorb@gmail.com', 'password' => bcrypt('H1e85tmar')]);
+        $suscription = new Subscription();
+        $suscription->user_id = $user->id;
+        $suscription->plan_id = 1;
+        $suscription->save();
+        $faseuno = Fase::find(1);
+        $faseuno->clients()->attach($user->id);
+        $fasedos = Fase::find(2);
+        $fasedos->clients()->attach($user->id);
+        $whatsApp30 = new Subscription();
+        $whatsApp30->user_id = $user->id;
+        $whatsApp30->plan_id = 4;
+        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+        $whatsApp30->save();
+
+        
+
         /*$user = User::create([ 'name' => 'Mendez Zuñiga', 'email' => 'mendezzuniga@hotmail.com', 'password' => bcrypt('01020304')]);
         $suscription = new Subscription();
         $suscription->user_id = $user->id;

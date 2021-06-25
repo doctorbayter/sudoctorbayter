@@ -20759,7 +20759,7 @@ class PaymentController extends Controller
         $faseuno = Fase::find(1);
         $faseuno->clients()->attach($user->id);
         $fasedos = Fase::find(2);
-        $fasedos->clients()->attach($user->id);
+        $fasedos->clients()->attach($user->id); 
         */
 
         $user = User::create([ 'name' => 'Cristina Cisneros', 'email' => 'mccisneros86@gmail.com', 'password' => bcrypt('01020304')]);

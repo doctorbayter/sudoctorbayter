@@ -529,7 +529,7 @@ class PaymentController extends Controller
         $fase = Fase::find($fase);
 
         if($user){
-            $is_subscribed = $fase->clients()->contains($user->id);
+            $is_subscribed = $fase->clients->contains($user->id);
             if($is_subscribed){
                 return 'Ya está registrado';
             }else {

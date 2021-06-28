@@ -544,6 +544,7 @@ class PaymentController extends Controller
     public function query()
     {
         $discount = Discount::find(2);
+        $discount->name = 'Oferta Lanzamiento Página';
         $discount->expires_at =  '2021-07-01 23:59:59';
         $discount->save();
     }

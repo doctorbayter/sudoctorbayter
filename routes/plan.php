@@ -19,3 +19,6 @@ Route::get('/bebidas', UserBebidas::class )->name('bebidas');
 Route::get('/salsitas', UserSalsitas::class )->name('salsas');
 Route::get('/snacks', UserSnacks::class )->name('snacks');
 Route::get('/whatsapp', UserWhatsapp::class )->name('whatsapp');
+Route::get('/tutorial', function(){
+    return view('plan.tutorial');
+} )->name('tutorial');

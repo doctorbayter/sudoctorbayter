@@ -132,7 +132,7 @@
 
                                 @can('enrolled', auth()->user()->subscription)
                                     <x-jet-dropdown-link href="{{ route('plan.index') }}">
-                                        <b>{{ __('Entrar a método') }}</b>
+                                        <b class="text-red-700">{{ __('Mi Página') }}</b>
                                     </x-jet-dropdown-link>
                                 @else
                                     <x-jet-dropdown-link href="{{ route('dkp') }}">
@@ -216,7 +216,7 @@
         
         @can('enrolled', auth()->user()->subscription)
             <x-jet-responsive-nav-link href="{{ route('plan.index') }}" :active="request()->routeIs('plan.fase')">
-                <b>{{ __('Entrar a método') }}</b>
+                <b class="text-red-700">{{ __('Mi Página') }}</b>
             </x-jet-responsive-nav-link>
         @else
             <x-jet-responsive-nav-link href="{{ route('dkp') }}" :active="request()->routeIs('dkp')">

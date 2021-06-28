@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ApprovedPurchase;
 use App\Models\Fase;
 use App\Models\Plan;
 use App\Models\Subscription;
@@ -13,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -20,7 +22,7 @@ class PaymentController extends Controller
 
         $suscription = Subscription::where('user_id', auth()->user()->id)->where('plan_id', $plan->id)->first();
 
-        return view('payment.checkout', compact('plan', 'suscription' ));
+        return view('payment.checkout', compact('plan', 'suscription'));
     }
 
 
@@ -209,6 +211,9 @@ class PaymentController extends Controller
                     }
                 break;
             }
+            //Enviar Correo 
+            $mail = new ApprovedPurchase($plan);
+            Mail::to($user->email)->send($mail);
         }
     }
 
@@ -348,6 +353,11 @@ class PaymentController extends Controller
                             }
                         break;
                     }
+
+                    //Enviar Correo 
+                    $mail = new ApprovedPurchase($plan);
+                    Mail::to($user->email)->send($mail);
+
                 break;
             }
         }
@@ -462,15 +472,27 @@ class PaymentController extends Controller
                     }
                 break;
             }
+
+            //Enviar Correo 
+            $mail = new ApprovedPurchase($plan);
+            Mail::to($user->email)->send($mail);
+
         }
     
+    }
+
+    public function send(){
+        $user = User::find(1);
+        $plan = Plan::find(1);
+        //Enviar Correo 
+        $mail = new ApprovedPurchase($plan);
+        Mail::to($user->email)->send($mail);
     }
 
     public function sql() {
         DB::insert("SELECT setval(pg_get_serial_sequence('subscriptions', 'id'), max(id)) FROM subscriptions");
         DB::insert("SELECT setval(pg_get_serial_sequence('fase_user', 'id'), max(id)) FROM fase_user");
     }
-
 
     public function users(){
         $users = User::orderBy('id', 'DESC')->first();
@@ -523,8 +545,7 @@ class PaymentController extends Controller
 
     }
 
-    public function fase($email, $fase)
-    {
+    public function fase($email, $fase){
         $user = User::where('email', $email)->first();
         $fase = Fase::find($fase);
 
@@ -541,8 +562,7 @@ class PaymentController extends Controller
         }
     }
 
-    public function query()
-    {
+    public function query(){
         $discount = Discount::find(2);
         $discount->name = 'Oferta Lanzamiento Página';
         $discount->expires_at =  '2021-07-01 23:59:59';

@@ -17,7 +17,7 @@
                             <div class="grid grid-cols-1 xl:grid-cols-{{$user_fases->count()}}  gap-8 pt-8">
                                 
                                 @foreach ($user_fases as $fase)
-                                   <a href="{{route('plan.fase', $fase)}}" class="bg-white px-8 py-12 shadow-sm rounded-lg hover:bg-gray-900 hover:text-gray-50 transition-all ease-in-out">
+                                   <a href="{{route('plan.fase', $fase)}}" class=" px-8 py-12 shadow-sm rounded-lg bg-gray-900 hover:bg-gray-800 text-gray-50 transition-all ease-in-out">
                                         <div>
                                             <small class="mb-2 text-base"> Entra aquí a la {{$fase->name}}</small>
                                             <h2 class="text-3xl lg:text-5xl font-semibold mb-2">{!!$fase->sub_name!!}</h2>
@@ -130,6 +130,28 @@
                                 </div>
                             </div>
                             @endif
+
+                            <div class=" bg-gradient-to-r from-gray-800 to-gray-900 border py-12 px-6 rounded-lg inline-block shadow-sm">
+                                <div class=" flex items-center">
+                                    <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
+                                        <img src="{{asset('img/billboards/tutorial.jpg')}}" alt="" class="w-full object-cover">
+                                    </figure>
+                                    <div class="text-gray-50 flex-1 flex flex-col ">
+                                        <div class="flex-1 flex flex-col">
+                                            <p class=" mb-1">¿Estás perdido o no sabes donde empezar?</p>
+                                            <h2 class="font-bold text-2xl text-red-700">Mira los tutoriales aquí</h2>
+                                            <h2 class="font-bold text-2xl text-red-700 mb-2"></h2>
+                                            <p class="text-base  text-gray-50">Aquí encontrarás la guía básica de uso de nuestra página para que no te pierdas ningún detalle.</p>
+                                        </div>
+                                        <div class="">
+                                            <a href="{{route('plan.tutorial')}}" class=" block cursor-pointer mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out  hover:bg-red-500 hover:text-gray-50">
+                                                Entra aquí para aprender
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </section>
                         
                     </div>

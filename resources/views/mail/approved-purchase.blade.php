@@ -73,16 +73,16 @@
                     <table role="presentation" style="border-collapse:collapse;border:0;border-spacing:0;">
                       <tr>
                         <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="http://www.facebook.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/facebook.svg')}}" alt="Facebook" width="38" style="height:auto;display:block;border:0;" /></a>
+                            <a href="https://www.facebook.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/facebook.svg')}}" alt="Facebook" width="38" style="height:auto;display:block;border:0;" /></a>
                         </td>
                         <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="http://www.instagram.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/instagram.svg')}}" alt="Instagram" width="38" style="height:auto;display:block;border:0;" /></a>
+                            <a href="https://www.instagram.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/instagram.svg')}}" alt="Instagram" width="38" style="height:auto;display:block;border:0;" /></a>
                         </td>
                         <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="http://www.youtube.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/youtube.svg')}}" alt="Youtube" width="38" style="height:auto;display:block;border:0;" /></a>
+                            <a href="https://www.youtube.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/youtube.svg')}}" alt="Youtube" width="38" style="height:auto;display:block;border:0;" /></a>
                         </td>
                         <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="http://www.tiktok.com/@/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/tiktok.svg')}}" alt="TikTok" width="38" style="height:auto;display:block;border:0;" /></a>
+                            <a href="https://www.tiktok.com/@doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/tiktok.svg')}}" alt="TikTok" width="38" style="height:auto;display:block;border:0;" /></a>
                         </td>
                       </tr>
                     </table>

@@ -22,7 +22,7 @@ class PaymentController extends Controller
 
         $suscription = Subscription::where('user_id', auth()->user()->id)->where('plan_id', $plan->id)->first();
 
-        return view('payment.checkout', compact('plan', 'suscription'));
+        return view('payment.checkout', compact('plan', 'suscription' ));
     }
 
 
@@ -212,8 +212,8 @@ class PaymentController extends Controller
                 break;
             }
             //Enviar Correo 
-            $mail = new ApprovedPurchase($plan);
-            Mail::to($user->email)->send($mail);
+            $mail = new ApprovedPurchase($plan, $user);
+            Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
         }
     }
 
@@ -355,8 +355,8 @@ class PaymentController extends Controller
                     }
 
                     //Enviar Correo 
-                    $mail = new ApprovedPurchase($plan);
-                    Mail::to($user->email)->send($mail);
+                    $mail = new ApprovedPurchase($plan, $user);
+                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
 
                 break;
             }
@@ -474,19 +474,29 @@ class PaymentController extends Controller
             }
 
             //Enviar Correo 
-            $mail = new ApprovedPurchase($plan);
-            Mail::to($user->email)->send($mail);
+            $mail = new ApprovedPurchase($plan, $user);
+            Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
 
         }
     
     }
 
-    public function send(){
-        $user = User::find(1);
-        $plan = Plan::find(1);
-        //Enviar Correo 
-        $mail = new ApprovedPurchase($plan);
-        Mail::to($user->email)->send($mail);
+    public function send($email, $plan){
+        
+        $plan = Plan::find($plan);
+        
+        $user = User::where('email', $email)->first();
+    
+        if($user){
+            //Enviar Correo 
+            $mail = new ApprovedPurchase($plan, $user);
+            Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            return 'Mensaje enviado';
+        }else{
+            return 'Usuario no encontrado';
+        }        
+
+        //return view('mail.approved-purchase', compact('plan','user'));
     }
 
     public function sql() {

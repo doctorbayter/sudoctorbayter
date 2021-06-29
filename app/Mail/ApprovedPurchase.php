@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Models\Plan;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,15 +13,16 @@ class ApprovedPurchase extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $plan;
+    public $plan, $user;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Plan $plan)
+    public function __construct(Plan $plan, User $user)
     {
         $this->plan = $plan;
+        $this->user = $user;
     }
 
     /**

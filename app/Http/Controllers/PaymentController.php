@@ -579,4 +579,51 @@ class PaymentController extends Controller
         $discount->save();
     }
 
+    public function plan($email, $plan_id){
+        $user = User::where('email', $email)->first();
+        $plan = Plan::find($plan_id);
+        $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
+
+        if($user){
+
+            if (!$is_subscribed) {
+                if($plan_id == 1){
+                    $current_plan = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
+                    if($current_plan){
+                        $current_plan->delete();
+                        $suscription = new Subscription();
+                        $suscription->user_id = $user->id;
+                        $suscription->plan_id = $plan->id;
+                        $suscription->save();
+                    }else{
+                        $suscription = new Subscription();
+                        $suscription->user_id = $user->id;
+                        $suscription->plan_id = $plan->id;
+                        $suscription->save();
+                    }
+                }else{
+                    $current_plan = Subscription::where('user_id', $user->id)->where('plan_id', 1)->first();
+                    if($current_plan){
+                        $current_plan->delete();
+                        $suscription = new Subscription();
+                        $suscription->user_id = $user->id;
+                        $suscription->plan_id = $plan->id;
+                        $suscription->save();
+                    }else{
+                        $suscription = new Subscription();
+                        $suscription->user_id = $user->id;
+                        $suscription->plan_id = $plan->id;
+                        $suscription->save();
+                    }
+                }
+                return 'Do it';
+            }else{
+                return 'Ya está registrado';
+            }
+        }else{
+            return 'Usuario no encontrado';
+        }
+        
+
+    }
 }

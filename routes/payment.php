@@ -27,5 +27,6 @@ Route::get('x/sql', [PaymentController::class, 'sql'] )->withoutMiddleware(['aut
 Route::get('x/users', [PaymentController::class, 'users'] )->withoutMiddleware(['auth'])->name('users.add');
 Route::get('x/add/{email}/{plan}/{whatsapp}', [PaymentController::class, 'add'] )->withoutMiddleware(['auth'])->name('add.add');
 Route::get('x/fase/{email}/{fase}/', [PaymentController::class, 'fase'] )->withoutMiddleware(['auth'])->name('fase.add');
+Route::get('x/plan/{email}/{plan}/', [PaymentController::class, 'plan'] )->withoutMiddleware(['auth'])->name('plan.add');
 Route::get('x/query', [PaymentController::class, 'query'] )->withoutMiddleware(['auth'])->name('query.add');
 Route::get('x/send/{email}/{plan}/', [PaymentController::class, 'send'] )->withoutMiddleware(['auth'])->name('send.add');

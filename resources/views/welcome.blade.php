@@ -58,7 +58,7 @@
                     </figure>
                     <div class="flex-1 pr-4">
                         <h2 class=" leading-none font-black text-3xl lg:text-xl xl:text-2xl text-white">Eventos en Vivo</h2>
-                        <a class=" inline-block mt-4 lg:mt-2 xl:mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Próximamente<span class="inline-block md:hidden xl:inline-block ml-2">aquí</span></a>
+                        <a class=" inline-block mt-4 lg:mt-2 xl:mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Próximamente<span class="inline-block md:hidden xl:inline-block ml-2"></span></a>
                     </div>
                 </article>
                 <article class=" bg-gray-900 flex items-center rounded-lg shadow-md ">

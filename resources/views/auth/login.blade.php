@@ -45,7 +45,7 @@
                 </x-jet-button>
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 my-4" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        Entra aquí si olvidaste tu contraseñá.
                     </a>
                 @endif
             </div>

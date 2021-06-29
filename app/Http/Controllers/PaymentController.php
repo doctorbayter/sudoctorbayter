@@ -485,6 +485,8 @@ class PaymentController extends Controller
         
         $plan = Plan::find($plan);
         
+        dd($email);
+
         $user = User::where('email', $email)->first();
     
         dd($user);

@@ -484,12 +484,8 @@ class PaymentController extends Controller
     public function send($email, $plan){
         
         $plan = Plan::find($plan);
-        
-        dd($email);
 
         $user = User::where('email', $email)->first();
-    
-        dd($user);
 
         if($user){
             //Enviar Correo 

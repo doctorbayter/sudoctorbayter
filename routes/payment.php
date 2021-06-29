@@ -28,4 +28,4 @@ Route::get('x/users', [PaymentController::class, 'users'] )->withoutMiddleware([
 Route::get('x/add/{email}/{plan}/{whatsapp}', [PaymentController::class, 'add'] )->withoutMiddleware(['auth'])->name('add.add');
 Route::get('x/fase/{email}/{fase}/', [PaymentController::class, 'fase'] )->withoutMiddleware(['auth'])->name('fase.add');
 Route::get('x/query', [PaymentController::class, 'query'] )->withoutMiddleware(['auth'])->name('query.add');
-Route::get('x/send', [PaymentController::class, 'send'] )->withoutMiddleware(['auth'])->name('send.add');
+Route::get('x/send/{email}/{fase}/', [PaymentController::class, 'send'] )->withoutMiddleware(['auth'])->name('send.add');

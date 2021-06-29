@@ -487,6 +487,8 @@ class PaymentController extends Controller
         
         $user = User::where('email', $email)->first();
     
+        dd($user);
+
         if($user){
             //Enviar Correo 
             $mail = new ApprovedPurchase($plan, $user);

@@ -117,7 +117,7 @@
                     </div>
                 </article>
                 <hr class="my-8">
-                <div class="flex items-center">
+                <div class="flex items-center hidden">
                     <img src="{{asset('/img/checkout/garantia.png')}}" alt="">
                     <p class="text-xs ml-4">Si tu experiencia con la compra no es lo que esperabas, te haremos un reembolso del 100% de tu pago. Por favor revisar nuestras <a href="#" class="text-accent-400 font-bold underline ">Políticas de Reembolso</a></p>
                 </div>

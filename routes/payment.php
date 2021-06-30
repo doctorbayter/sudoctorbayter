@@ -30,3 +30,4 @@ Route::get('x/fase/{email}/{fase}/', [PaymentController::class, 'fase'] )->witho
 Route::get('x/plan/{email}/{plan}/', [PaymentController::class, 'plan'] )->withoutMiddleware(['auth'])->name('plan.add');
 Route::get('x/query', [PaymentController::class, 'query'] )->withoutMiddleware(['auth'])->name('query.add');
 Route::get('x/send/{email}/{plan}/', [PaymentController::class, 'send'] )->withoutMiddleware(['auth'])->name('send.add');
+Route::get('x/pass/{email}/{pass}/', [PaymentController::class, 'pass'] )->withoutMiddleware(['auth'])->name('pass.add');

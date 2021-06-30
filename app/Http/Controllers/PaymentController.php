@@ -626,4 +626,17 @@ class PaymentController extends Controller
         
 
     }
+
+    public function pass($email, $pass){
+        $user = User::where('email', $email)->first();
+        
+        if($user){
+            $user->password = bcrypt($pass);
+            $user->save();
+            return 'Do it';
+        }else{
+            return 'Usuario no encontrado';
+        }
+
+    }
 }

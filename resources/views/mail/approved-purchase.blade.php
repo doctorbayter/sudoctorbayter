@@ -145,7 +145,7 @@
                         <td style="width:260px;padding:0;vertical-align:top;color:#153643;">
                           <p style="margin:0 0 25px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><img src="{{asset('img/mails/mail_whatsapp.jpg')}}" alt="" width="260" style="height:auto;display:block;" /></p>
                           <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Nunca estarás solo aquiere mi acompañamiento en grupo entra ya al chat grupal vía WhatsApp.</p>
-                          <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="{{route('plan.whatsapp')}}" style="color:#a30000;text-decoration:underline;">Entra aquí al chat</a></p>
+                          <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://wa.me/573172326835" style="color:#a30000;text-decoration:underline;">Entra aquí al chat</a></p>
                         </td>
                       </tr>
                     </table>

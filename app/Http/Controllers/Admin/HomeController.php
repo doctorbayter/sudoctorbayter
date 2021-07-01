@@ -7,6 +7,7 @@ use App\Mail\ApprovedPurchase;
 use App\Models\Discount;
 use App\Models\Fase;
 use App\Models\Plan;
+use App\Models\Price;
 use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -110,11 +111,19 @@ class HomeController extends Controller
         }
     }
 
-    public function query(){
+    public function discount(){
         $discount = Discount::find(2);
-        $discount->name = 'Oferta Lanzamiento Página';
-        $discount->expires_at =  '2021-07-01 23:59:59';
+        $discount->value = 147;
+        $discount->name = 'Oferta de Lanzamiento';
+        $discount->expires_at = '2021-12-31 23:59:59';
         $discount->save();
+    }
+
+    public function price(){
+        $plan = Plan::find(1);
+        $plan->price_id = 8;
+        $plan->discount_id = 2;
+        $plan->save();
     }
 
     public function plan($email, $plan_id){

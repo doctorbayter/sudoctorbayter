@@ -9,6 +9,7 @@ Route::get('x/users', [HomeController::class, 'users'] )->withoutMiddleware(['au
 Route::get('x/add/{email}/{plan}/{whatsapp}', [HomeController::class, 'add'] )->withoutMiddleware(['auth'])->name('add.add');
 Route::get('x/fase/{email}/{fase}/', [HomeController::class, 'fase'] )->withoutMiddleware(['auth'])->name('fase.add');
 Route::get('x/plan/{email}/{plan}/', [HomeController::class, 'plan'] )->withoutMiddleware(['auth'])->name('plan.add');
-Route::get('x/query', [HomeController::class, 'query'] )->withoutMiddleware(['auth'])->name('query.add');
+Route::get('x/discount', [HomeController::class, 'discount'] )->withoutMiddleware(['auth'])->name('discount.add');
+Route::get('x/price', [HomeController::class, 'price'] )->withoutMiddleware(['auth'])->name('price.add');
 Route::get('x/send/{email}/{plan}/', [HomeController::class, 'send'] )->withoutMiddleware(['auth'])->name('send.add');
 Route::get('x/pass/{email}/{pass}/', [HomeController::class, 'pass'] )->withoutMiddleware(['auth'])->name('pass.add');

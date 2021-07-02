@@ -43,7 +43,7 @@
                             <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small>
                         <div class="text-center">
                             <p class="text-base text-gray-700 mb-2">Oferta {{$plan_premium->discount->name}}</p>
-                            <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                            <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
                         </div>
                         @else
                         <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
@@ -414,7 +414,7 @@
                             <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small>
                         <div class="text-center">
                             <p class="text-base text-gray-700 mb-2">Oferta {{$plan_premium->discount->name}}</p>
-                            <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                            <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
                         </div>
                         @else
                         <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>

@@ -35,7 +35,7 @@ Route::get('/what', [HomeController::class, 'what'])->name('what');
 Route::get('/recipe/{recipe}', UserRecipe::class)->name('recipe');
 
 Route::get('/110', function () {
-    return redirect()->route('dkp');
+    return view('no-disponible');
 });
 
 //php artisan migrate:fresh --seed --force

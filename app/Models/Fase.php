@@ -43,7 +43,7 @@ class Fase extends Model
 
     public function weeks()
     {
-        return $this->belongsToMany('\App\Models\Week');
+        return $this->belongsToMany('\App\Models\Week')->withPivot(['resource']);
     }
 
     // Relacion uno a uno polimorfica

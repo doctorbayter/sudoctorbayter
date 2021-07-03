@@ -49,7 +49,7 @@ Route::get('/110', function () {
 
 Route::get('x/sql', function(){
     
-    $fase = Fase::find(1);
+    $fase = Fase::find(3);
     foreach ($fase->weeks as $key => $week){
         dd($week->pivot->resource);
         //dd($week);
@@ -59,10 +59,10 @@ Route::get('x/sql', function(){
 
 Route::get('x/query', function(){
 
-    echo "Inicio de tarea...";
 
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
-    
+
+    /*
     Day::create([
         'day' => 1,
         'fase_id' => 3,
@@ -218,14 +218,11 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
     (6, 'Lista de Alimentos Fase 3', 'files/pdf/lista-de-alimentos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL),
     (7, 'Secretos Fase 3', 'files/pdf/secretos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
-
+*/
 
     DB::insert("ALTER TABLE day_recipe CHANGE meal meal ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL");
 
-
-    echo "Final de la tarea";
-
-
+    echo "fin";
 
 /*
     $recipe = Recipe::create([

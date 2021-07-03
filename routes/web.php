@@ -224,11 +224,11 @@ Route::get('x/query', function(){
 
     //DB::statement("ALTER TABLE day_recipe CHANGE COLUMN meal ENUM('1','2','3','4','5') NOT NULL DEFAULT 'day_recipe'");
 
-    DB::statement("ALTER TABLE `day_recipe` CHANGE `meal` `meal` ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ");
+    //DB::statement("ALTER TABLE `day_recipe` CHANGE `meal` `meal` ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ");
 
-    echo "fin";
+    
 
-/*
+
     $recipe = Recipe::create([
         'name' => 'Huevos cocidos',
         'slug' => 'huevos-cocidos',
@@ -278,10 +278,10 @@ Route::get('x/query', function(){
     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (169, '43', $recipe->id, '5', CURRENT_TIMESTAMP, NULL)");
-*/
+    (169, '43', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-/*
+
+
 
     $recipe = Recipe::create([
         'name' => 'Robalo con mariscos',
@@ -444,9 +444,9 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     (170, '43', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
-*/
 
-/*
+
+
     $recipe = Recipe::create([
         'name' => 'Champialbahaca',
         'slug' => 'champialbahaca',
@@ -529,7 +529,7 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     (171, '43', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
-*/
+
 
 //HASTA AQUI
 

@@ -59,8 +59,9 @@ Route::get('x/sql', function(){
 
 Route::get('x/query', function(){
 
+    echo "Inicio de tarea...";
 
-    DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (NULL, '3', '1', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
     
     Day::create([
         'day' => 1,
@@ -221,6 +222,8 @@ Route::get('x/query', function(){
 
     DB::insert("ALTER TABLE day_recipe CHANGE meal meal ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL");
 
+
+    echo "Final de la tarea";
 
 
 

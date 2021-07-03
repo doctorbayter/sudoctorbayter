@@ -78,7 +78,7 @@
             <div class="flex relative">
                 <div class="max-w-xl my-16 xl:my-28">
                     <header class="mx-6 xl:mx-0">
-                        <h1 class="text-white leading-none font-black text-2xl md:text-5xl">¿Quién es el Doctor Bayter?</h1>
+                        <h1 class="text-white leading-none font-black text-2xl md:text-5xl">¿Quién es tu Doctor Bayter?</h1>
                         <p class="text-white mt-8 mb-4 text-lg">Médico Especialista en Medicina Crítica y Cuidado IntensivoMédico Especialista en Anestesiólogos y Reanimación.</p>
                         <a href="{{route('doctor')}}" class=" inline-block mt-2 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Conoce más sobre tu Doctor aquí</a>
                     </header>

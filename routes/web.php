@@ -220,7 +220,9 @@ Route::get('x/query', function(){
     (7, 'Secretos Fase 3', 'files/pdf/secretos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 */
 
-    DB::statement("alter table day_recipe modify column meal ENUM('1','2','3','4','5') not null");
+   // DB::statement("alter table day_recipe modify column meal ENUM('1','2','3','4','5') not null");
+
+    DB::statement("ALTER TABLE day_recipe CHANGE COLUMN meal ENUM('1','2','3','4','5') NOT NULL DEFAULT 'day_recipe'");
 
     echo "fin";
 

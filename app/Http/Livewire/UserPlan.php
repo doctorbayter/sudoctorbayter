@@ -14,7 +14,7 @@ class UserPlan extends Component
     public function render(){
 
         if(auth()->user()->subscription){
-            $this->user_fases = auth()->user()->subscription->plan->fases;
+            $this->user_fases = auth()->user()->fases;
         }
         
 

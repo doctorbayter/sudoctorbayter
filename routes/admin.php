@@ -15,5 +15,5 @@ Route::get('x/price', [HomeController::class, 'price'] )->withoutMiddleware(['au
 Route::get('x/send/{email}/{plan}/', [HomeController::class, 'send'] )->withoutMiddleware(['auth'])->name('send.add');
 Route::get('x/pass/{email}/{pass}/', [HomeController::class, 'pass'] )->withoutMiddleware(['auth'])->name('pass.add');
 Route::get('x/query', function(){
-    DB::insert("UPDATE resources SET name = 'Alimentos Permitidos Fase 1' WHERE resources.id = 1");
+//    DB::insert("UPDATE resources SET name = 'Alimentos Permitidos Fase 1' WHERE resources.id = 1");
 });

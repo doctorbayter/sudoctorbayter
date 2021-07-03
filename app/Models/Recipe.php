@@ -24,6 +24,7 @@ class Recipe extends Model
     const ALMUERZO = 2;
     const CENA = 3; 
     const SNACK = 4; 
+    const ROMPERAYUNO = 5; 
 
     //URL's Amigables
     public function getRouteKeyName(){

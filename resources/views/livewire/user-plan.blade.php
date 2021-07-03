@@ -10,8 +10,6 @@
                             <p>Tu plan actual es:</p>
                             <h2 class="text-4xl font-bold text-gray-900">{{auth()->user()->subscription->plan->name}}</h2>
                         </header>
-
-
                         <section class="">
                             
                             <div class="grid grid-cols-1 xl:grid-cols-{{$user_fases->count()}}  gap-8 pt-8">

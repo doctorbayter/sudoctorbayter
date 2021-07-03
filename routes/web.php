@@ -2,7 +2,12 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Livewire\UserRecipe;
+use App\Models\Day;
 use App\Models\Fase;
+use App\Models\Image;
+use App\Models\Ingredient;
+use App\Models\Instruction;
+use App\Models\Recipe;
 use App\Models\Week;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -54,9 +59,478 @@ Route::get('x/sql', function(){
 
 Route::get('x/query', function(){
 
-    DB::insert("UPDATE fase_week SET resource = 'files/pdf/lista-de-alimentos-fase-2-1-dkp.pdf' WHERE fase_week.id = 4");
-    DB::insert("UPDATE fase_week SET resource = 'files/pdf/lista-de-alimentos-fase-2-2-dkp.pdf' WHERE fase_week.id = 5");
-    DB::insert("UPDATE fase_week SET resource = 'files/pdf/lista-de-alimentos-fase-2-3-dkp.pdf' WHERE fase_week.id = 6");
+
+    DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (NULL, '3', '1', CURRENT_TIMESTAMP, NULL)");
+    
+    Day::create([
+        'day' => 1,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 2,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 3,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 4,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 5,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 6,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 7,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 8,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 9,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 10,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 11,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 12,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 13,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 14,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 15,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 16,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 17,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 18,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 19,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+    Day::create([
+        'day' => 20,
+        'fase_id' => 3,
+    ]);
+    Day::create([
+        'day' => 21,
+        'fase_id' => 3,
+        'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
+    ]);
+
+
+
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (43, '3', '43', CURRENT_TIMESTAMP, NULL),
+    (44, '3', '44', CURRENT_TIMESTAMP, NULL),
+    (45, '3', '45', CURRENT_TIMESTAMP, NULL),
+    (46, '3', '46', CURRENT_TIMESTAMP, NULL),
+    (47, '3', '47', CURRENT_TIMESTAMP, NULL), 
+    (48, '3', '48', CURRENT_TIMESTAMP, NULL),
+    (49, '3', '49', CURRENT_TIMESTAMP, NULL),
+    (50, '3', '50', CURRENT_TIMESTAMP, NULL),
+    (51, '3', '51', CURRENT_TIMESTAMP, NULL),
+    (52, '3', '52', CURRENT_TIMESTAMP, NULL),
+    (53, '3', '53', CURRENT_TIMESTAMP, NULL),
+    (54, '3', '54', CURRENT_TIMESTAMP, NULL),
+    (55, '3', '55', CURRENT_TIMESTAMP, NULL),
+    (56, '3', '56', CURRENT_TIMESTAMP, NULL),
+    (57, '3', '57', CURRENT_TIMESTAMP, NULL),
+    (58, '3', '58', CURRENT_TIMESTAMP, NULL),
+    (59, '3', '59', CURRENT_TIMESTAMP, NULL),
+    (60, '3', '60', CURRENT_TIMESTAMP, NULL),
+    (61, '3', '61', CURRENT_TIMESTAMP, NULL),
+    (62, '3', '62', CURRENT_TIMESTAMP, NULL),
+    (63, '3', '63', CURRENT_TIMESTAMP, NULL)");
+
+
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES 
+    (43, '43', '1', CURRENT_TIMESTAMP, NULL),
+    (44, '44', '1', CURRENT_TIMESTAMP, NULL),
+    (45, '45', '1', CURRENT_TIMESTAMP, NULL),
+    (46, '46', '1', CURRENT_TIMESTAMP, NULL),
+    (47, '47', '1', CURRENT_TIMESTAMP, NULL),
+    (48, '48', '1', CURRENT_TIMESTAMP, NULL),
+    (49, '49', '1', CURRENT_TIMESTAMP, NULL),
+    (50, '50', '2', CURRENT_TIMESTAMP, NULL),
+    (51, '51', '2', CURRENT_TIMESTAMP, NULL),
+    (52, '52', '2', CURRENT_TIMESTAMP, NULL),
+    (53, '53', '2', CURRENT_TIMESTAMP, NULL),
+    (54, '54', '2', CURRENT_TIMESTAMP, NULL),
+    (55, '55', '2', CURRENT_TIMESTAMP, NULL),
+    (56, '56', '2', CURRENT_TIMESTAMP, NULL),
+    (57, '57', '3', CURRENT_TIMESTAMP, NULL),
+    (58, '58', '3', CURRENT_TIMESTAMP, NULL),
+    (59, '59', '3', CURRENT_TIMESTAMP, NULL),
+    (60, '60', '3', CURRENT_TIMESTAMP, NULL),
+    (61, '61', '3', CURRENT_TIMESTAMP, NULL),
+    (62, '62', '3', CURRENT_TIMESTAMP, NULL),
+    (63, '63', '3', CURRENT_TIMESTAMP, NULL);");
+
+
+    DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
+    (7, '3', '1', 'files/pdf/lista-de-alimentos-fase-3-1-dkp.pdf', CURRENT_TIMESTAMP, NULL),
+    (8, '3', '2', 'files/pdf/lista-de-alimentos-fase-3-2-dkp.pdf', CURRENT_TIMESTAMP, NULL),
+    (9, '3', '3', 'files/pdf/lista-de-alimentos-fase-3-3-dkp.pdf', CURRENT_TIMESTAMP, NULL)");
+
+
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (6, 'Lista de Alimentos Fase 3', 'files/pdf/lista-de-alimentos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL),
+    (7, 'Secretos Fase 3', 'files/pdf/secretos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+
+
+    DB::insert("ALTER TABLE day_recipe CHANGE meal meal ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL");
+
+
+
+
+/*
+    $recipe = Recipe::create([
+        'name' => 'Huevos cocidos',
+        'slug' => 'huevos-cocidos',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 7,
+        'type' => 1,
+    ]);
+    $image = Image::create([
+        'url' => 'recipes/huevos-cocidos.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
+
+    Ingredient::create([
+        'name' => '2 huevos cocidos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '2(20 gramos) queso parmesano',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '2 cucharadas de aceite de oliva aromatizado',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Salpimienta',
+        'recipe_id' => $recipe->id
+    ]);
+
+    $x = 0;
+    Instruction::create([
+        'name' => 'Haces los huevos en agua hirviendo y los dejas de 10 a 15 minutos según tu gusto',
+        'step' =>  $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Divides los huevos, le agregamos encima el queso parmesano',
+        'step' =>  $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Sal Pimienta al gusto y añades aceite de oliva',
+        'step' =>  $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (169, '43', $recipe->id, '5', CURRENT_TIMESTAMP, NULL)");
+*/
+
+/*
+
+    $recipe = Recipe::create([
+        'name' => 'Robalo con mariscos',
+        'slug' => 'robalo-con-mariscos',
+        'indice'=> 1,
+        'carbs' => 15.32,
+        'time' => 25,
+        'type' => 1,
+    ]);
+    $image = Image::create([
+        'url' => 'recipes/robalo-con-mariscos.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
+
+    Ingredient::create([
+        'name' => 'Filete de robalo 160 a 180 gramos para mujer y de 200 a 250 gramos para hombres, previamente sazonado al gusto',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '50 gramos de camarones limpios y precocidos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '50 gramos de anillos de calamar precocidos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '40 gramos de tomate picado en cuadritos (1,56 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '1 (2 gramos) diente de ajo finamente picado (0,48 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '3 (30 gramos) cucharadas de queso crema',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '3 (30 gramo cucharadas de queso parmesano',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo o aceite de coco',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Ingredientes ensalada',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '60 gramos de espinacas limpias y enteras (0,84 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '50 gramos de rúcula entera (2 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '60 gramos de champiñones picados en láminas (1,98 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '60 gramos de pepino en láminas (2,16 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '30 ml (2 cucharadas) de zumo de limón (2 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '100 gramos de aguacate picada a la juliana (8,5 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '2 cucharadas de mayonesa casera',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '1 huevo cocido picado en trozos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Aceite de oliva aromatizado',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Salpimienta',
+        'recipe_id' => $recipe->id
+    ]);
+    
+    $x = 0;
+    Instruction::create([
+        'name' => 'En un sartén con un poco de mantequilla y a fuego alto, sellar el filete por lado y lado y dejas a parte en una refractaria previa con mantequilla',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'En este mismo sartén y con un poco más de mantequilla agregamos el tomate y el ajo',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Dejas que se so frite por unos minutos',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Y añades el queso crema, salpimientas revuelves y dejas por 1 minutos más',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Le agregas los camarones, anillos y dejas por unos minutos más a fuego bajo y apagas',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'En la refractaria donde tienes el robalo, lo bañas con la salsa del sartén',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Le agregas el queso parmesano y llevamos al horno por 10 minutos o hasta que gratine',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Sirves con la rica ensalada',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Preparación ensalada',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Pones en un tazón las espinacas, rúcula, champiñones, pepinos revuelves y salpimientas',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Agregamos el zumo de limón, mayonesa un chorrito de aceite y revuelves una vez más',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Agregar al aguacate, espolvoreamos con el huevo y sal pimentas ',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Antes de servir con el robalo bañas con un poco más de aceite de oliva',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (170, '43', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+
+*/
+
+/*
+    $recipe = Recipe::create([
+        'name' => 'Champialbahaca',
+        'slug' => 'champialbahaca',
+        'indice'=> 1,
+        'carbs' => 5.58,
+        'time' => 15,
+        'type' => 1,
+    ]);
+    $image = Image::create([
+        'url' => 'recipes/champialbahaca.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
+
+    Ingredient::create([
+        'name' => '80 gramos de champiñones enteros (2,64 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '60 gramos de espinacas enteras (0,84 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '20 gramos de cebolla finamente picada (1,86 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => ' 1 (1 gramos) diente de ajo finamente picado (0, 24 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '1 cucharadita de albahaca finamente picada',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Mantequilla de vaca 100% de pastoreo',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '2(20 gramos) cucharadas de queso parmesano',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'salpimienta',
+        'recipe_id' => $recipe->id
+    ]);
+
+    $x = 0;
+    Instruction::create([
+        'name' => 'En un sartén con un poco mantequilla y a fuego bajo pones a sofreír el ajo y la cebolla',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Una vez doraditos agregamos los champiñones, albahaca y espinacas',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Si ves que están muy secos le puedes poner un poco más de mantequilla',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Salpimientas y revuelves',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Dejamos sofreír por 8 minutos',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Servimos de inmediato y espolvoreamos con el queso parmesano',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (171, '43', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+
+*/
+
+//HASTA AQUI
+
+
+    //DB::insert("UPDATE fase_week SET resource = 'files/pdf/lista-de-alimentos-fase-2-1-dkp.pdf' WHERE fase_week.id = 4");
     
 
     /* DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at)VALUES (1, '1', '1', CURRENT_TIMESTAMP, NULL), (2, '1', '2', CURRENT_TIMESTAMP, NULL), (3, '1', '3', CURRENT_TIMESTAMP, NULL), (4, '1', '4', CURRENT_TIMESTAMP, NULL), (5, '1', '5', CURRENT_TIMESTAMP, NULL), (6, '1', '6', CURRENT_TIMESTAMP, NULL), (7, '1', '7', CURRENT_TIMESTAMP, NULL), (8, '1', '8', CURRENT_TIMESTAMP, NULL), (9, '1', '9', CURRENT_TIMESTAMP, NULL), (10, '1', '10', CURRENT_TIMESTAMP, NULL), (11, '1', '11', CURRENT_TIMESTAMP, NULL), (12, '1', '12', CURRENT_TIMESTAMP, NULL), (13, '1', '13', CURRENT_TIMESTAMP, NULL), (14, '1', '14', CURRENT_TIMESTAMP, NULL), (15, '1', '15', CURRENT_TIMESTAMP, NULL), (16, '1', '16', CURRENT_TIMESTAMP, NULL), (17, '1', '17', CURRENT_TIMESTAMP, NULL), (18, '1', '18', CURRENT_TIMESTAMP, NULL), (19, '1', '19', CURRENT_TIMESTAMP, NULL), (20, '1', '20', CURRENT_TIMESTAMP, NULL), (21, '1', '21', CURRENT_TIMESTAMP, NULL)");

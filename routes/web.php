@@ -61,7 +61,7 @@ Route::get('x/query', function(){
 
     echo "Inicio de tarea...";
 
-    DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
     
     Day::create([
         'day' => 1,

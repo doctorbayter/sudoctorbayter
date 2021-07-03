@@ -220,7 +220,7 @@ Route::get('x/query', function(){
     (7, 'Secretos Fase 3', 'files/pdf/secretos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 */
 
-    DB::insert("ALTER TABLE day_recipe CHANGE meal meal ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL");
+ DB::statement("ALTER TABLE day_recipe MODIFY COLUMN meal ENUM('1','2','3','4','5')");
 
     echo "fin";
 

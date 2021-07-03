@@ -18,7 +18,7 @@ class UserFase extends Component
         
         $this->fase = $fase;
         if(auth()->user()->subscription){
-            $this->user_fases = auth()->user()->subscription->plan->fases;
+            $this->user_fases = auth()->user()->fases;
         }
 
         foreach($fase->days as $day){

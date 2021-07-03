@@ -11,7 +11,7 @@ class UserWhatsapp extends Component
     public function render()
     {
         if(auth()->user()->subscription){
-            $this->user_fases = auth()->user()->subscription->plan->fases;
+            $this->user_fases = auth()->user()->fases;
         }
         $planWhatsapp = Plan::find(4);
         $whatsapp = auth()->user()->subscriptions->where('plan_id', 4)->first();

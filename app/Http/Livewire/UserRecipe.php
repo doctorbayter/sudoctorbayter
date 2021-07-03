@@ -15,7 +15,7 @@ class UserRecipe extends Component
 
     public function mount(Recipe $recipe){
         if(auth()->user()->subscription){
-            $this->user_fases = auth()->user()->subscription->plan->fases;
+            $this->user_fases = auth()->user()->fases;
         }
         $this->recipe = $recipe;
     }

@@ -534,7 +534,7 @@ Route::get('x/query', function(){
 //HASTA AQUI
 
 //DB::statement('ALTER TYPE day_recipe ADD VALUE "5" -- appends to list');
-DB::statement('ALTER TABLE day_recipe CHANGE meal meal ENUM("1","2","3","4","5") CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL');
+DB::statement('ALTER TABLE day_recipe CHANGE meal meal ENUM("1","2","3","4","5")');
 
 
 

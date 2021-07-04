@@ -9,8 +9,10 @@ use App\Models\Ingredient;
 use App\Models\Instruction;
 use App\Models\Recipe;
 use App\Models\Week;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 
 /*
 |--------------------------------------------------------------------------
@@ -532,11 +534,6 @@ Route::get('x/query', function(){
 
 
 //HASTA AQUI
-
-//DB::statement('ALTER TYPE day_recipe ADD VALUE "5" -- appends to list');
-DB::statement('ALTER TABLE day_recipe CHANGE meal meal ENUM("1","2","3","4","5")');
-
-
 
     //DB::insert("UPDATE fase_week SET resource = 'files/pdf/lista-de-alimentos-fase-2-1-dkp.pdf' WHERE fase_week.id = 4");
     

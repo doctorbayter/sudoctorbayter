@@ -79,7 +79,11 @@
                                                         
                                                         @switch($recipe->days[0]->pivot->meal)
                                                             @case(1)
-                                                                <p>Desayuno</p>              
+                                                                    @if ($fase->id == 3 && ( ($this->day->day % 2)== 0  ) )
+                                                                        <p>Desayuno</p>     
+                                                                    @else
+                                                                        <p>Romper ayuno</p>   
+                                                                    @endif           
                                                                 @break
                                                             @case(2)
                                                                 <p>Almuerzo</p>

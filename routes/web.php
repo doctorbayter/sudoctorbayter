@@ -224,11 +224,11 @@ Route::get('x/query', function(){
 
     //DB::statement("ALTER TABLE day_recipe CHANGE COLUMN meal ENUM('1','2','3','4','5') NOT NULL DEFAULT 'day_recipe'");
 
-    //DB::statement("ALTER TABLE `day_recipe` CHANGE `meal` `meal` ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ");
+    //DB::statement("ALTER TABLE day_recipe CHANGE meal meal ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ");
 
     
 
-
+/*
     $recipe = Recipe::create([
         'name' => 'Huevos cocidos',
         'slug' => 'huevos-cocidos',
@@ -528,10 +528,14 @@ Route::get('x/query', function(){
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     (171, '43', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
-
+*/
 
 
 //HASTA AQUI
+
+//DB::statement('ALTER TYPE day_recipe ADD VALUE "5" -- appends to list');
+DB::statement('ALTER TABLE day_recipe CHANGE meal meal ENUM("1","2","3","4","5") CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL');
+
 
 
     //DB::insert("UPDATE fase_week SET resource = 'files/pdf/lista-de-alimentos-fase-2-1-dkp.pdf' WHERE fase_week.id = 4");

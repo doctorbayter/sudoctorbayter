@@ -760,9 +760,93 @@ Instruction::create([
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
-*/
+
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(173, '44', 158, '2', CURRENT_TIMESTAMP, NULL)");
+(173, '44', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+
+*/
+
+//DIA 3
+
+$recipe = Recipe::create([
+    'name' => 'Huevitos en salsita',
+    'slug' => 'huevitos-en-salsita',
+    'indice'=> 1,
+    'carbs' => 0.24,
+    'time' => 10,
+    'type' => 1,
+]);
+$image = Image::create([
+    'url' => 'recipes/huevitos-en-salsita.jpg',
+    'imageable_id' => $recipe->id,
+    'imageable_type' => 'App\Models\Recipe',
+]);
+
+Ingredient::create([
+    'name' => '9 huevos de codorniz cocidos duros',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '1 (1 gramo) ajo finamente picado (0,24 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '1 cucharadita de perejil finamente picado',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '2 cucharadas de queso creman o crema agria o mayonesa casera',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '2 cucharadas de mantequilla de vaca 100% de pastoreo ',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Aceite de oliva extra virgen',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'salpimienta',
+    'recipe_id' => $recipe->id
+]);
+
+$x = 0;
+Instruction::create([
+    'name' => 'Pelamos los huevos los dejas en un plato',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'En un sartén caliente con mantequilla pones a sofreír el ajo',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Cuando este doradito le agregamos el perejil, la crema agria o queso crema',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Salpimientas y revuelves por no más de 1 minuto',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Agregamos los huevos, revuelves para que se incorporen en la salsita',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Sirves de inmediato',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+
+DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+(174, '44', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+
+
 
 //HASTA AQUI
 

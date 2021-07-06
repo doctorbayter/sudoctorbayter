@@ -71,7 +71,7 @@
                                     <p class="mb-4 text-gray-500"><img src="{{asset('img/icons/gfx/pie-chart.svg')}}" alt="" class="w-4 mr-1 inline opacity-40">Gramos de carbohidratos día <b>{{$this->carbs}}</b></p>
                                 </header>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-10 divide-y-2 md:divide-y-0 ">
-                                    @foreach ($this->day->recipes->where('type', '==', 1) as $key => $recipe)
+                                    @foreach ($this->day->recipes->where('type', '==', 1)->sortByDesc('meal') as $key => $recipe)
                                         <div class="pt-12 md:pt-0">
                                             <a href="{{route('plan.recipe', $recipe)}}">
                                                 <div class="relative h-62"> 

@@ -82,7 +82,7 @@
                                                                     @if ($fase->id == 3 && ( ($this->day->day % 2)== 0  ) )
                                                                         <p>Desayuno</p>     
                                                                     @else
-                                                                        <p>Romper ayuno</p>   
+                                                                        <p>Desayuno</p>   
                                                                     @endif           
                                                                 @break
                                                             @case(2)

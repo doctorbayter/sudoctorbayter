@@ -4,7 +4,7 @@
             @can('enrolledFase', $fase)
                 <x-menu :fases="$user_fases" />
                 <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="bg-white  ml-auto">
-                
+                    
                     <header class="bg-fixed bg-cover shadow-lg" style="background-image: url({{asset('img/backgrounds/meal_plan_top_banner_2-1-1.jpg')}})">
                         <div class="w-11/12 mx-auto py-10">
                             <h3 class="font-bold text-white text-lg md:text-xl px-2 inline-block bg-red-700"> {{$fase->name}}</h3>
@@ -18,6 +18,27 @@
                             </section>
                         </div>
                     </header>  
+
+                    @if ($fase->id == 3)
+                    <div class="flex flex-col space-y-4 min-w-screen py-8 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
+                        <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="w-16 h-16 rounded-2xl p-3 border border-yellow-100 text-yellow-400 bg-yellow-50" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="flex flex-col ml-3">
+                                        <div class=" leading-none font-bold text-red-700">¡Aviso Importante!</div>
+                                        <p class="text-sm text-gray-600 leading-none mt-1">Estamos actualizando la <b>fase 3</b> por ahora podrás acceder solo a la <b>semana 1</b> próximante habilitaremos más información.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
 
                     <section class="bg-gradient-to-t from-gray-100 pb-8 md:pb-14 ">
                         @php

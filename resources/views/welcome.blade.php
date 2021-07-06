@@ -8,13 +8,13 @@
                 </header>
                 <div class="flex mt-12">
                     <figure class="bg-gray-200 rounded-xl w-28 h-36 overflow-hidden shadow-md">
-                        <img src="{{asset('img/billboards/reto_7.jpg')}}" alt="" class="w-full object-cover">
+                        <img src="{{asset('img/billboards/banner_dkp.jpg')}}" alt="" class="w-full object-cover">
                     </figure>
                     <div class="flex-1 ml-4">
-                        <h3 class="font-bold"><span class="text-red-700">Nuevo</span> Reto:</h3>
-                        <h2 class="font-bold">Reto 7 A Otro Nivel</h2>
-                        <p class="mt-2 text-sm">!Este Reto de 7 Días es la mejor manera de comenzar tu viaje hacia una vida más saludable!</p>
-                        <a href="https://doctorbayter.ac-page.com/registro-reto-7" class=" inline-block mt-2 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Inscribete al reto gratis</a>
+                        <h3 class="font-bold"><span class="text-red-700">Únete</span> Ya:</h3>
+                        <h2 class="font-bold">Método DKP <span class="text-red-700">(Dieta Keto Perfecta)</span></h2>
+                        <p class="mt-2 text-sm">Que con tan solo 4 fases te convertira en una verdadera máquina quema grasa!</p>
+                        <a href="{{route('dkp')}}" class="inline-block mt-2 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Adquiere aquí tu Plan</a>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
             <div class="w-full px-6 md:w-3/6 md:px-0 mt-4 md:mt-0">
                 <h2 class="text-gray-900 leading-none font-black text-2xl md:text-5xl">Descubre el Método <span class="text-red-700">DKP</span></h2>
                 <p class="mt-4">Descubre el método de la <b>Dieta Keto Perfecta</b> que con san solo 4 fases te convertira en una verdadera máquina quema grasa</p>
-                <a href="{{route('dkp')}}" class=" inline-block mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Inicia el método DKP hoy</a>
+                <a href="{{route('dkp')}}" class=" inline-block mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Aquiere el método DKP hoy</a>
             </div>
             <figure class="rounded-xl flex-1">
                 <img src="{{asset('img/resources/keto-app-mobile-web.png')}}" alt="" class="w-full object-cover">
@@ -212,12 +212,14 @@
         <div class="max-w-5xl mx-auto relative py-16 md:py-24 px-6 xl:px-0">
             <div class="flex items-center flex-col md:flex-row">
                 <div class="flex-1">
-                    <iframe src="https://player.vimeo.com/video/542233951?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-72"></iframe>
+                    <iframe src="https://player.vimeo.com/video/571757470" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 4 - Video Invitaci&amp;oacute;n" class="w-full h-72"></iframe>
+                    
                 </div>
                 <div class="flex-1 w-full md:w-3/6 md:ml-8 text-center md:text-left">
-                    <h2 class="text-3xl mb-4 font-bold text-gray-900">¿Estás listo para iniciar?</h2>
-                    <p class="mt-4">Te ayudaré a tomar las decisiones correctas en cuanto a la alimentación y  paso a paso te mostraré cómo implementar el plan de la dieta keto perfecta que te llevará a obtener mejores resultados en tan sólo 7 días.</p>
-                    <a href="https://doctorbayter.ac-page.com/registro-reto-7" class="inline-block mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Inicia ya el Reto 7 gratis</a>
+                    <h2 class="text-5xl mb-4 font-bold text-red-700">Desinflama tu cuerpo en 4 días</h2>
+                    <h2 class="text-2xl mb-4 font-bold text-gray-900">¿Estás listo para el Reto?</h2>
+                    <p class="mt-4">Te ayudaré a tomar las decisiones correctas en cuanto a la alimentación y  paso a paso te mostraré cómo implementar el plan de la dieta keto perfecta que te llevará a obtener mejores resultados.</p>
+                    <a href="https://doctorbayter.co/reto4" class="inline-block mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Inicia ya el Reto 4 gratis</a>
                 </div>
             </div>
         </div>

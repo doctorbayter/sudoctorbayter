@@ -522,6 +522,7 @@ Route::get('x/query', function(){
 
 
 //DIA 2
+/*
 
 $recipe = Recipe::create([
     'name' => 'Empanadas de pollo',
@@ -584,7 +585,184 @@ Instruction::create([
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
 (172, '44', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
+*/
 
+// DIA 3
+
+$recipe = Recipe::create([
+    'name' => 'Sobregrille',
+    'slug' => 'sobregrille',
+    'indice'=> 1,
+    'carbs' => 21.34,
+    'time' => 25,
+    'type' => 1,
+]);
+$image = Image::create([
+    'url' => 'recipes/sobregrille.jpg',
+    'imageable_id' => $recipe->id,
+    'imageable_type' => 'App\Models\Recipe',
+]);
+
+Ingredient::create([
+    'name' => 'Sobrebarriga o carne de falda entre 180 a 220 gramos para mujer y de 200 a 280 gramos para hombres, previamente sazonado al gusto',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '30 gramos de cebolla (2,79 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '1 (2 gramos) diente de ajo finamente picado (0,48 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '1 taza de consomé de pollo ',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '1 cucharadita de perejil',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '1 cucharadita de tomillo',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '1 cucharadita de orégano',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Aceite de oliva extra virgen',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'salpimienta',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Ingredientes ensalada',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '60 gramos de espinacas picada en trozos (0,84 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '60 gramos de rúcula picada en trozos (2,4 gr. CH) ',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '80 gramos de champiñones picados en láminas (2,64 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '100 gramos de lechuga romana picada en trozos (2,9 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '40 gramos de tomate cherry (1,56 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '30 gramos de coliflor partido en trozos (0,93 gr. CH) ',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '60 gramos de aguacate picada a la juliana (6,8 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '2 cucharadas de mantequilla de vaca 100% de pastoreo y liquida (la pones por unos minutos en el sartén caliente o el horno microondas)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '2 cucharadas de vinagre de sidra de manzana',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Aceite de oliva aromatizado',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Salpimienta',
+    'recipe_id' => $recipe->id
+]);
+
+
+$x = 0;
+Instruction::create([
+    'name' => 'Preparación sobrebarriga',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'En un tazón pones la sobrebarriga con un buen chorro de aceite de oliva, el tomillo, perejil, orégano, ajo y sal pimientas ',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Revuelves y dejas conservar 2 horas mínimo (esta es una manera de sazonar o la puedes hacer a tu gusto)',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Después de este tiempo en una olla a presión ponemos el caldo de pollo, sobrebarriga con todas las especies',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Y dejas cocinar por 1 hora o hasta que la carne ablande',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Si debes añadir más líquido y no tienes más consomé puedes poner agua',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Cuando ya esté blanda la carne, la pones a la parrilla, ojo con un poco de mantequilla para evitar quemarse',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Las asas por ambos lados hasta que esté doradita',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Sirves con una rica ensalada',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Preparación ensalada',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Pones en un tazón las espinacas, rúcula, lechuga, champiñones, revuelves y salpimientas',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Agregamos la mantequilla líquida, vinagre, un chorrito de aceite y revuelves una vez más',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Agregar al aguacate, salpimientas y pones otro poco de aceite de oliva',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Sirves con tu plato principal ',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+
+DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+(172, '44', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 //HASTA AQUI
 

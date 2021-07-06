@@ -24,7 +24,7 @@ class Day extends Model
     //Relacion muchos a muchos
     public function recipes()
     {
-        return $this->belongsToMany('\App\Models\Recipe');
+        return $this->belongsToMany('\App\Models\Recipe')->withPivot(['meal'])->orderBy('day_recipe.meal');
     }
 
     public function users(){

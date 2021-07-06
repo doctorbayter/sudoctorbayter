@@ -588,7 +588,7 @@ DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, upd
 */
 
 // DIA 3
-
+/*
 $recipe = Recipe::create([
     'name' => 'Sobregrille',
     'slug' => 'sobregrille',
@@ -760,9 +760,9 @@ Instruction::create([
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
-
+*/
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(172, '44', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+(173, '44', 158, '2', CURRENT_TIMESTAMP, NULL)");
 
 //HASTA AQUI
 

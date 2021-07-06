@@ -51,22 +51,15 @@ Route::get('/110', function () {
 
 Route::get('x/sql', function(){
     
-    $fase = Fase::find(3);
-    foreach ($fase->weeks as $key => $week){
-        dd($week->pivot->resource);
-        //dd($week);
-    }
+    $weeks = DB::table('fase_week')->get();
+    dd($weeks);
  
 });
 
 Route::get('x/query', function(){
 
 
-    $row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
-    $row = DB::table('day_recipe')->where('id', '=', '37')->update(['meal' => 2]);
-    $row = DB::table('day_recipe')->where('id', '=', '38')->update(['meal' => 3]);
-
-    dd($row);
+    //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
 
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
@@ -228,13 +221,6 @@ Route::get('x/query', function(){
     (7, 'Secretos Fase 3', 'files/pdf/secretos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 */
 
-   // DB::statement("alter table day_recipe modify column meal ENUM('1','2','3','4','5') not null");
-
-    //DB::statement("ALTER TABLE day_recipe CHANGE COLUMN meal ENUM('1','2','3','4','5') NOT NULL DEFAULT 'day_recipe'");
-
-    //DB::statement("ALTER TABLE day_recipe CHANGE meal meal ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ");
-
-    
 
 /*
     $recipe = Recipe::create([
@@ -287,8 +273,6 @@ Route::get('x/query', function(){
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     (169, '43', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-
 
 
     $recipe = Recipe::create([
@@ -453,8 +437,6 @@ Route::get('x/query', function(){
     (170, '43', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
-
-
     $recipe = Recipe::create([
         'name' => 'Champialbahaca',
         'slug' => 'champialbahaca',
@@ -537,6 +519,10 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     (171, '43', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 */
+
+
+
+
 
 
 //HASTA AQUI

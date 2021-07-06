@@ -12,7 +12,7 @@
                             <p class="text-base text-gray-600 mt-2">{{$fase->descripcion}}</p>
                             <section class=" flex items-center flex-col md:flex-row mt-4 ">
 
-                                @foreach ($fase->resources as $resource)
+                                @foreach ($fase->resources->sortBy('created_at') as $resource)
                                         <a  href="{{asset($resource->url)}}" target="_blank" class="text-white text-xs mt-4 md:mt-0 md:text-sm xl:text-base border @if ($loop->first) md:mr-3 @endif cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-6 py-2 rounded-full">Descargar {{$resource->name}}</a>        
                                 @endforeach
                             </section>
@@ -35,10 +35,25 @@
                                 <div class="grid grid-cols-{{$fase->weeks->count()}} text-center">
 
                                     @foreach ($fase->weeks as $key => $week)
+                                    
+
+                                    
                                         <div class="border border-gray-100 font-bold cursor-pointer bg-gray-50 rounded-tl-md relative">
+
+                                            
+                                            
                                             <div class="text-red-700 border-b-4 text-xs md:text-base  hover:text-red-700" @click="selected = {{$key}}" x-bind:class="{ 'border-red-700 py-4': selected == {{$key}}, 'border-gray-400 py-4': selected !== {{$key}} }">
                                                 <img src="{{asset('img/icons/gfx/calendar_color.svg')}}" alt="" class="w-3 md:w-5 mr-2 inline"> {{$week->name}}
                                             </div>
+
+                                            @if ($week->pivot->resource)
+                                                <div>
+                                                    <a href="{{asset($week->pivot->resource)}}" target="_blank" class=" text-sm py-2 w-full block text-white" x-bind:class="{ 'bg-gray-900 ': selected == {{$key}}, 'bg-gray-200 ': selected !== {{$key}} }">
+                                                        Descargar lista de alimentos 
+                                                    </a>
+                                                </div>
+                                            @endif
+                                            
                                             <div class="grid overflow-hidden h-0 md:h-auto grid-cols-7 text-center shadow-md  absolute w-full " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
                                                 @foreach ($week->days as $day)
                                                 
@@ -78,11 +93,15 @@
                                             <a href="{{route('plan.recipe', $recipe)}}">
                                                 <div class="relative h-62"> 
                                                     <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 ">
-                                                        
+                                                    
                                                         @switch($recipe->days[0]->pivot->meal)
                                                             @case(1)
-                                                                    @if ($fase->id == 3 && ( ($this->day->day % 2)== 0  ) )
-                                                                        <p>Desayuno</p>     
+                                                                    @if ($fase->id == 3  )
+                                                                        @if ( ($this->day->day % 2)== 0 )
+                                                                            <p>Desayuno</p>
+                                                                            @else
+                                                                            <p>Romper ayuno</p>
+                                                                        @endif    
                                                                     @else
                                                                         <p>Desayuno</p>   
                                                                     @endif           
@@ -192,13 +211,18 @@
                                                 </aside> 
                                             </section>
                                         </div>
-                                    @endif                            
-                                    <div class=" flex-1 ">
-                                        <h2 class="text-4xl font-bold mb-4 text-red-700">¡Notas!</h2>
-                                        <div class="text-gray-600">
-                                            {!!$this->day->note!!}
-                                        </div>
-                                    </div>
+                                    @endif    
+                                    
+                                    @if ($this->day->note != "<p></p>")
+                                        <div class=" flex-1 ">
+                                            <h2 class="text-4xl font-bold mb-4 text-red-700">¡Notas!</h2>
+                                            <div class="text-gray-600">
+                                                {!!$this->day->note!!}
+                                            </div>
+                                        </div>    
+                                    @endif
+                                    
+                                    
                                 </div>
                                 @if ($this->day->video)
                                     <div class="relative w-full mt-8 h-52 md:h-96 xl:min-h-video video-iframe">

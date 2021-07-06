@@ -219,128 +219,120 @@ Route::get('x/query', function(){
 */
 
 
+
 $recipe = Recipe::create([
-    'name' => 'Tarta espinaranja',
-    'slug' => 'tarta-espinaranja',
+    'name' => 'Amor revuelto a la mexicana',
+    'slug' => 'amor-revuelto-a-la-mexicana',
     'indice'=> 1,
-    'carbs' => 14.03,
-    'time' => 15,
+    'carbs' => 3.42,
+    'time' => 10,
     'type' => 1,
 ]);
 $image = Image::create([
-    'url' => 'recipes/tarta-espinaranja.jpg',
+    'url' => 'recipes/amor-revuelto-a-la-mexicana.jpg',
     'imageable_id' => $recipe->id,
     'imageable_type' => 'App\Models\Recipe',
 ]);
 
 Ingredient::create([
-    'name' => '60 gramos de espinacas (0,84 gr. CH)',
+    'name' => '20 gramos de cebolla finamente picada (1,86 gr. CH)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '50 gramos de champiñones laminados (1,65 gr. CH)',
+    'name' => '1(2 gramos) chili o ají o jalapeño finamente picado',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '2 huevos',
+    'name' => '40 gramos de tomate finamente picado (1,56 gr. CH)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '3 cucharadas, (30 gramos), de queso crema',
+    'name' => '3 huevos',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1 diente de ajo, (1 gramo), finamente picado (0,24 gr. CH)',
+    'name' => '2 (20 gramos) cucharadas de crema agria o queso crema',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '20 gramos de cebolla picada a la juliana (1,86 gr. CH)',
+    'name' => 'Mantequilla de vaca 100% de pastoreo o aceite de coco',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1 (80 gramos) de naranja (9,44 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Ralladura de naranja',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo o aceite de coco',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Aceite de oliva extra virgen',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Sal pimienta ',
+    'name' => 'Sal',
     'recipe_id' => $recipe->id
 ]);
 
 $x = 0;
 Instruction::create([
-    'name' => 'En un sartén con mantequilla y a fuego bajo sofríes el ajo y la cebolla por 1 minuto o hasta que dore',
+    'name' => '1Pones los huevos en un tazón, los bates y dejas conservando',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Añades las espinacas, champiñones, queso crema y salpimientas, revuelves  ',
+    'name' => '2En un sartén pones un poco de mantequilla o aceite',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Una vez estén cocidas las espinacas y champiñones, añades la ralladura de la naranja ',
+    'name' => '3Añades la cebolla, chili, tomate y sofritas por 1 minuto o hasta que la cebolla esté doradita',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Revolvemos y dejamos 1 minuto más y apagamos',
+    'name' => '4Agregamos el queso crema, revuelves y dejas por 1 minuto',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'En un tazón pones los huevos, agregamos lo que cocinaste en el sartén y revuelves (espinacas y champiñones)  ',
+    'name' => '5Viertes el huevo, agregamos sal y revuelves durante 2 minutos más',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Seguido viertes todo en una refractaria previamente con mantequilla',
+    'name' => '6O hasta que esté la consistencia según tu gusto',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Llevas al horno por 15 minutos o hasta que cuando introduzcas un cuchillo este salga ',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Sirves de inmediato con la naranja partida en 4',
+    'name' => '7Sirves de inmediato',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(185, '48', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+(188, '49', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 //Fin Receta
 
 $recipe = Recipe::create([
-    'name' => 'Sencillamente mollejas',
-    'slug' => 'sencillamente-mollejas',
+    'name' => 'Langostinos habichuelados',
+    'slug' => 'langostinos-habichuelados',
     'indice'=> 1,
-    'carbs' => 23.1,
-    'time' => 25,
+    'carbs' => 17.08,
+    'time' => 20,
     'type' => 1,
 ]);
 $image = Image::create([
-    'url' => 'recipes/sencillamente-mollejas.jpg',
+    'url' => 'recipes/langostinos-habichuelados.jpg',
     'imageable_id' => $recipe->id,
     'imageable_type' => 'App\Models\Recipe',
 ]);
 
 Ingredient::create([
-    'name' => '180 a 220 de gramos de mollejas para mujer y 220 a 260 gramos para hombre',
+    'name' => '160 a 180 de gramos de langostinos para mujer y 200 a 230 gramos para hombre pre cocidos',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '100 gramos de habichuelas o ejotes picados',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '1 ( 2 gramos) diente de ajo finamente picado ( 0,48 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo o aceite de coco',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
@@ -348,175 +340,84 @@ Ingredient::create([
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '40 gramos de cebolla partida en dos (4,72 gr. CH)',
+    'name' => 'Tomillo',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '25 gramos de pimentón partido en dos (1,9 gr. CH)',
+    'name' => 'Hojas de laurel preferiblemente frescas',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1(4 gramos) diente de ajo finamente picado (0,98 gr. CH)',
+    'name' => 'medio pocillo de caldo de pescado o pollo',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '50 gramos de apio en rama, todo el tallo y la hoja (1,55 gr. CH)',
+    'name' => '20 gramos de cebolla finamente picada ( 1,86 gr. CH)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '50 gramos de tomate partido en dos (1,95 gr. CH)',
+    'name' => '40 gramos de tomate finamente picado(1,56 gr. CH finamente picado)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => ' Hojas de laurel',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Cilantro',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Caldo de pollo o carne',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Ingredientes para el arroz de coliflor',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '120 gramos de coliflor (3,72 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '1 (2 gramos) diente de ajo finamente picado (0,48 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '1-2 cucharadita de perejil finamente picada',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo o aceite de coco',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Salpimienta',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Ingredientes ensalada',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '80 gramos de aguacate (6,8 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '7 a 10 aceitunas (1 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Media cucharadita de cilantro finamente picada ',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Aceite de oliva extra virgen',
+    'name' => 'salpimienta',
     'recipe_id' => $recipe->id
 ]);
 
+
 $x = 0;
 Instruction::create([
-    'name' => 'Preparación de las mollejas',
+    'name' => 'Preparación langostinos habichuelados',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Limpias las mollejas muy bien y dejas en agua limón por 30 minutos mínimo',
+    'name' => '1.	Pones a calentar agua con sal y zumo de limón',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Simultáneamente pones en la licuadora o procesadora, el tomate, pimentón, rama de apio, cebolla licuas y dejas conservando',
+    'name' => '2.	Una vez el agua esté hirviendo pones los langostinos por 2 minutos, los retiras del agua y dejas conservando',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Secas las mollejas y cortas a la mitad o en tres si están muy grandes',
+    'name' => '3.	Mientras en un sartén a fuego bajo con un poco de mantequilla pones el ajo a sofreír por dos minutos',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'En un sartén con mantequilla o manteca de cero y a fuego alto sellas las mollejas',
+    'name' => '4.	Le agregas las habichuelas, las hojas de laurel revuelves por 1 minuto más',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Una vez selladas bajas el fuego y añades media taza de caldo y dejas cocinar por 15 minutos, hasta que el caldo reduzca',
+    'name' => '5.	Agregamos el caldo y dejas cocinar por 15 minutos o hasta cuando las habichuelas estén al gusto',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'En otro sartén y a fuego bajo pones a sofreír en mantequilla o manteca el ajo por dos minutos',
+    'name' => '6.	Dejas conservando',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Añades las mollejas, las hojas de laurel, la otra mitad del caldo, el licuado de cebolla, apio, pimenton, tomate que tenias conservando y salpimientas ',
+    'name' => '7.	Simultáneamente en otro sartén a fuego bajo con otro poco de mantequilla pones la cebolla, tomate un poco más de albahaca a   sofreír por 1 minuto',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Cocinas durante 35 minutos a fuego medio y vas revolviendo constantemente para evitar que se pegue',
+    'name' => '8.	Le agregamos los langostinos revuelves por 1 minuto más ',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Durante este tiempo vas probando si las mollejas están blandas, si están bien de sal',
+    'name' => '9.	Agregar las habichuelas, salpimientas, revuelves por otro minuto más',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Una vez blandas, le aumentas la llama al máximo y dejas por 7 minutos más',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Apagas y tapas',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Preparación del arroz de coliflor',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Limpiamos la coliflor y dejas solo la parte blanca',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Pones la coliflor en un procesador o licuadora y lo dejas en pedacitos es decir bien licuado',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Si no tienes esta opción lo puedes hacer manual con un rallador por la parte de los huecos gruesa',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'En un sartén con mantequilla o aceite de coco sofreímos el ajo y el perejil por 1 minuto',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Agregamos la coliflor revuelves y cocinas por 2 minutos más',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Antes de apagar le agregas media cucharadita de mantequilla de vaca, apagas y tapas',
+    'name' => '10.	Sirves de inmediato',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
@@ -526,88 +427,110 @@ Instruction::create([
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Pones en un tazón el aguacate, anexas las aceitunas',
+    'name' => '1.	En un tazón pones el yogur, el perejil y un chorro de aceite',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Rocias con el cilantro, salpimentar y bañar con aceite y revuelves',
+    'name' => '2.	Revuelves muy bien para que todo se incorporé y dejas conservados',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Ya con todo listo sirves las mollejas, el arroz de coliflor y la ensalada ',
+    'name' => '3.	Seguido en otro tazón pones las lechugas, tomate salpimientas y revuelves',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => '4.	Le agregas la salsa de yogur, salpimientas y revuelves una vez más',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => '5.	Antes de servir agregamos el aguacate y un poco más de aceite de oliva',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => '6.	Sirves con tu plato fuerte de langostinos',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(186, '48', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+(189, '49', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 //Fin Receta
 
 
 $recipe = Recipe::create([
-    'name' => 'Tociaquesados',
-    'slug' => 'tociaquesados',
+    'name' => 'Bolitas de champiñones',
+    'slug' => 'bolitas-de-champinones',
     'indice'=> 1,
-    'carbs' => 0,
+    'carbs' => 2.88,
     'time' => 10,
     'type' => 1,
 ]);
 $image = Image::create([
-    'url' => 'recipes/tociaquesados.jpg',
+    'url' => 'recipes/bolitas-de-champinones.jpg',
     'imageable_id' => $recipe->id,
     'imageable_type' => 'App\Models\Recipe',
 ]);
 
 Ingredient::create([
-    'name' => '2 porciones de queso para asar o el que tengas en casa cada uno de 35 gramos',
+    'name' => '80 gramos de champiñones enteros y limpios (2,64 gr. CH)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '2 (50 gramos) lonjas o lonjas de tocino',
+    'name' => '1(1 gramos) ajo finamente picado (0,24 gr. CH)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => 'Aceite de oliva aromatizado',
+    'name' => '50 gramos de tocino finamente picado  ',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Mantequilla de vaca 100% de pastoreo',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Salpimienta',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Aceite de oliva extra virgen',
     'recipe_id' => $recipe->id
 ]);
 
 $x = 0;
 Instruction::create([
-    'name' => 'Debes dejar en el congelado cada uno de los quesos mínimo 1 hora',
+    'name' => 'Pones a hervir agua con sal, y cuando el agua esté burbujeando agregas los champiñones por 5 minutos',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Una vez congelados, envuelves cada uno de los quesos con las lonjas de tocino',
+    'name' => 'Apagas, retiras y dejas conservando',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'En un sartén pequeño con un poquito de mantequilla pones cada uno de los envueltos de queso a sofreír',
+    'name' => 'En un sartén con mantequilla a fuego bajo pones el ajo y el tocino a sofreír por 2 minutos',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Dejas hasta que el tocino esté dorado y el queso empiece a derretir',
+    'name' => 'Agregamos los champiñones, revuelves y cocinas por 3 minutos más',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Estar atento pues el queso debe quedar derretido, pero no deshecho',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Sirves de inmediato',
+    'name' => 'Antes de servir le roseas una buena cantidad de aceite aromatizado',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(187, '48', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+(190, '49', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 //Fin Receta
 

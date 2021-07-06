@@ -58,7 +58,6 @@ Route::get('x/sql', function(){
 
 Route::get('x/query', function(){
 
-
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
 
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
@@ -160,8 +159,6 @@ Route::get('x/query', function(){
         'note' => '<p>Esta es la fase de ayunos, recuerda no vas a desayunar rompes el ayuno con algo ligero (snack) y una o dos horas después almuerzas.</p>',
     ]);
 
-
-
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
     (43, '3', '43', CURRENT_TIMESTAMP, NULL),
     (44, '3', '44', CURRENT_TIMESTAMP, NULL),
@@ -223,79 +220,63 @@ Route::get('x/query', function(){
 
 
 $recipe = Recipe::create([
-    'name' => 'Deditos de queso con tocino',
-    'slug' => 'deditos-de-queso-con-tocino',
+    'name' => 'Tortilla con queso',
+    'slug' => 'tortilla-con-queso',
     'indice'=> 1,
-    'carbs' => 0,
+    'carbs' => 1,
     'time' => 10,
     'type' => 1,
 ]);
 $image = Image::create([
-    'url' => 'recipes/deditos-de-queso-con-tocino.jpg',
+    'url' => 'recipes/tortilla-con-queso.jpg',
     'imageable_id' => $recipe->id,
     'imageable_type' => 'App\Models\Recipe',
 ]);
 
 Ingredient::create([
-    'name' => '20 gramos de queso doble crema o el que tengas en tu casa ',
+    'name' => '2 huevos',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1 huevo',
+    'name' => '7 a 10 aceitunas partidas a la mitad (1 gr. CH)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1 (25 gramos) lonjas o lonchas o tiras de tocino o panceta bien delgadita o bacon',
+    'name' => '40 gramos de queso manchego o el que tengas en casa, pero graso',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => 'Mantequilla de vaca 100% de pastoreo o manteca de cerdo o aceite de coco',
+    'name' => '1 cucharadita de Albahaca seca y orégano (o la especie al gusto)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Salpimienta',
     'recipe_id' => $recipe->id
 ]);
 
 $x = 0;
 Instruction::create([
-    'name' => 'Cortar el queso en palito, similar al tamaño de un dedo',
+    'name' => 'Batir muy bien los huevos y salpimentar.',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Dejas el queso mínimo 1 hora en el congelador',
+    'name' => 'En un sartén preferiblemente redondo con un poco de mantequilla',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'En un tazón batir el huevo',
+    'name' => 'Colocamos los huevos y dejas por 5 minutos que se haga la tortilla',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Envuelves el dedo de queso en la loncha de tocino',
+    'name' => 'Das vuelta a la tortilla y agregas el queso, aceitunas, espolvorear con especies y tapas',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Y pasas el dedo envuelto',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Por el tazón con el huevo, lo cubres muy bien',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'En un sartén caliente con un poco de mantequilla',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Pones el dedito y le rocías el huevo que quedó en el tazón',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Das vueltas por lado y lado al dedito de queso hasta que dore',
+    'name' => 'Dejas unos minutos más hasta que el queso derrita',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
@@ -306,50 +287,142 @@ Instruction::create([
 ]);
 
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(175, '45', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+(178, '46', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-//DIA 5
+//Fin Receta
 
 $recipe = Recipe::create([
-    'name' => 'Alitas verdosas',
-    'slug' => 'alitas-verdosas',
+    'name' => 'Diablitos ketozuquinis',
+    'slug' => 'diablitos-ketozuquinis',
     'indice'=> 1,
-    'carbs' => 19.88,
+    'carbs' => 18.32,
     'time' => 30,
     'type' => 1,
 ]);
 $image = Image::create([
-    'url' => 'recipes/alitas-verdosas.jpg',
+    'url' => 'recipes/diablitos-ketozuquinis.jpg',
     'imageable_id' => $recipe->id,
     'imageable_type' => 'App\Models\Recipe',
 ]);
 
 Ingredient::create([
-    'name' => '3 alas de pollo grandes para mujer o 4 alas de pollo para hombre ',
+    'name' => '150 a 180 gramos de camarones grandes, precocidos y limpios (lo puedes cambiar por la proteína de tu gusto)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1(4 gramos) dientes de ajo finamente picado (0,98 gr. CH)',
+    'name' => '30 gramos de cebolla roja finamente picada (2,79 gr. CH) ',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1 cucharadita de tomillo seco en polvo',
+    'name' => '1(2 gramos) diente de ajo finamente picado (0,48 gr. CH)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1 cucharadita de perejil fresco finamente picado',
+    'name' => 'Media taza de consomé de pollo o pescado',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => 'Aceite de oliva extra virgen',
+    'name' => '2 cucharada de pasta de tomate casera',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1 taza de caldo de pollo natural',
+    'name' => 'Media cucharadita de ají o jalapeño o salsa picante',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '100 gramos de aguacate (8,5 gr. CH)',
+    'name' => 'Mantequilla de vaca 100% de pastoreo',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '250 gramos de zucchini (8,25 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '80 gramos de aguacate (6,8 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'Media cucharadita de albahaca finamente picado',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => 'salpimienta',
+    'recipe_id' => $recipe->id
+]);
+
+$x = 0;
+Instruction::create([
+    'name' => 'En un sartén con mantequilla y a fuego bajo pones a sofreír la cebolla y ajo hasta que esté doradito',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Añades el consomé y cuando esté hirviendo y bien reducido',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Incorporamos la pasta de tomate, ají y dejas por dos minutos más',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Agregas los camarones revuelves y cocinas por otros 5 minutos apagas y dejas tapado',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Simultáneamente en otro sartén con un poco de mantequilla y bien caliente',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Pones los zucchinis salpimientas y rocías con la albahaca y revuelves dejas por 1 a 2 minutos máximo ',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Una vez lista la pasta de zucchini sirves, agregas la salsa de camarones ',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Espolvoreamos con el queso parmesano',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'sirves de inmediato con la porción de aguacate',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+
+DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+(179, '46', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+
+//Fin Receta
+
+
+$recipe = Recipe::create([
+    'name' => 'Champialbahaca con tocineta',
+    'slug' => 'champialbahaca-con-tocineta',
+    'indice'=> 1,
+    'carbs' => 4.92,
+    'time' => 15,
+    'type' => 1,
+]);
+$image = Image::create([
+    'url' => 'recipes/champialbahaca-con-tocineta.jpg',
+    'imageable_id' => $recipe->id,
+    'imageable_type' => 'App\Models\Recipe',
+]);
+
+Ingredient::create([
+    'name' => '60 gramos de champiñones enteros (1,98 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '60 gramos de espinacas enteras (0,84 gr. CH)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
@@ -357,209 +430,65 @@ Ingredient::create([
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '1 cucharadita de cilantro finamente picado',
+    'name' => '1 (1 gramos) diente de ajo finamente picado (0, 24 gr. CH)',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => '2 (30 ml) de zumo de limón (2 gr. CH)',
+    'name' => '50 gramos de tocineta o panceta picado en trozos',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => 'Aceite de oliva extra virgen',
+    'name' => '1 cucharadita de albahaca finamente picada',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
-    'name' => 'Gotas de ají o chili (opcional)',
+    'name' => 'Mantequilla de vaca 100% de pastoreo',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '2(20 gramos) cucharadas de queso parmesano',
     'recipe_id' => $recipe->id
 ]);
 Ingredient::create([
     'name' => 'salpimienta',
     'recipe_id' => $recipe->id
 ]);
-Ingredient::create([
-    'name' => 'Ingredientes para la ensalada',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '7 a 10 aceitunas partidas a la mitad (1 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '35 gramos de pepino picados a la juliana (1,26 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '30 gramos de apio en rama picado en cuadritos (0,93 gr. CH) ',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '50 gramos de col rizado (2,1 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '40 gramos de lechuga morada o crespa (1,16 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '30 gramos de rábano picado a la juliana (1.02 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Aceite de oliva extra-virgen aromatizado',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '1 cucharada de vinagre balsámico',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Sal pimienta',
-    'recipe_id' => $recipe->id
-]);
 
 $x = 0;
 Instruction::create([
-    'name' => 'Preparación alitas verdosas',
+    'name' => 'En un sartén con un poco mantequilla y a fuego bajo ponemos a sofreír el ajo y la cebolla',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Antes de hacer las alitas debes preparar la salsa verde',
+    'name' => 'una vez doraditos agregamos los champiñones, albahaca, espinacas y los trocitos de tocino ',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Pon en una licuadora el aguacate, cebolla, cilantro, limón, aceite y las gotas de ají y licuas muy bien',
+    'name' => 'Si ves que están muy secos le puedes poner un poco más de mantequilla',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Si notas que esté espeso le puedes agregar un poquito de agua',
+    'name' => 'Salpimientas y revuelves',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'Sal pimentas, revuelves nuevamente y conservar hasta que estén las alitas',
+    'name' => 'Dejas sofreír por 8 minutos',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 Instruction::create([
-    'name' => 'En un tazón pones una buena cantidad de aceite de oliva, el ajo, tomillo y perejil',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Pones las alitas sal pimentas, revuelves para que se penetre todo y dejas marinando por lo menos 1 hora',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Pasado este tiempo pones en un sartén un poco de mantequilla y pones las alas a fuego bajo',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Agregamos el caldo y dejas cocinar por 45 minutos o hasta que las alitas estén cocidas y ya este totalmente reducido el caldo',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Agregamos la salsa verde sobre las alitas y dejamos calentar por 5 minutos para servir todo bien caliente.',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Preparación ensalada',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Pones en un tazón todos los ingredientes, salpimientas y revuelves muy bien',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Agregas vinagre, aceite de oliva, sal pimienta y revuelves una vez más',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Sirves con tus alitas verdosas',
+    'name' => 'Sirves de inmediato y espolvoreamos con el queso parmesano',
     'step' => $x = $x + 1,
     'recipe_id' => $recipe->id,
 ]);
 
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(176, '45', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+(180, '46', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
-// DIA 6
-
-$recipe = Recipe::create([
-    'name' => 'Rollitos de especies',
-    'slug' => 'rollitos-de-especies',
-    'indice'=> 1,
-    'carbs' => 0,
-    'time' => 10,
-    'type' => 1,
-]);
-$image = Image::create([
-    'url' => 'recipes/rollitos-de-especies.jpg',
-    'imageable_id' => $recipe->id,
-    'imageable_type' => 'App\Models\Recipe',
-]);
-
-Ingredient::create([
-    'name' => '30 gramos (3 cucharadas) de queso parmesano, para hacer el rollito',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '50 gramos de pollo desmechado',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '1 cucharada de mayonesa casera',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Especies de tu gusto',
-    'recipe_id' => $recipe->id
-]);
-
-
-$x = 0;
-Instruction::create([
-    'name' => 'Antes de hacer el rollito revolvemos el pollo con la mayonesa y dejamos conservando.',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'En un sartén pequeño colocas el queso bien esparcido a fuego bajo y se espolvorea con especies.',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Cuando esté burbujeando lo volteas.',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Dejas por 1 minuto le agregas el pollo y se empiezan a enrollar con cuidado para que no se deshaga.',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Lo dejas un minuto más en la sartén.',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Retiras y dejas endurecer antes de servir.',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(177, '45', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
-
+//Fin Receta
 
 }); 

@@ -521,7 +521,68 @@ Route::get('x/query', function(){
 */
 
 
+//DIA 2
 
+$recipe = Recipe::create([
+    'name' => 'Empanadas de pollo',
+    'slug' => 'empanadas-de-pollo',
+    'indice'=> 1,
+    'carbs' => 3.4,
+    'time' => 15,
+    'type' => 1,
+]);
+$image = Image::create([
+    'url' => 'recipes/empanadas-de-pollo.jpg',
+    'imageable_id' => $recipe->id,
+    'imageable_type' => 'App\Models\Recipe',
+]);
+
+Ingredient::create([
+    'name' => '3 cucharadas (30 gramos) de queso parmesano',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '1 lonja o loncha (25 gramos) de queso mozzarella ',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '60 gramos de pollo desmechado (ya pre hecho)',
+    'recipe_id' => $recipe->id
+]);
+Ingredient::create([
+    'name' => '40 gramos de aguacate picado a la juliana (3,4 gr. CH)',
+    'recipe_id' => $recipe->id
+]);
+
+$x = 0;
+Instruction::create([
+    'name' => 'Ponemos las cucharadas de queso en un sartén redondo a fuego bajo y bien esparcido',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Con anterioridad has realizado el pollo ',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Cuando el queso esté burbujeando le agregas la lonja de queso y tapas unos segundos ',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Seguido le agregas el pollo y el aguacate se cierra el queso en forma de empanada',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+Instruction::create([
+    'name' => 'Dejas otros segundos, apagas y sirves de inmediato',
+    'step' => $x = $x + 1,
+    'recipe_id' => $recipe->id,
+]);
+
+DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+(172, '44', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
 

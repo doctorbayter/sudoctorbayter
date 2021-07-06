@@ -219,75 +219,8 @@ Route::get('x/query', function(){
 */
 
 
-$recipe = Recipe::create([
-    'name' => 'Tortilla con queso',
-    'slug' => 'tortilla-con-queso',
-    'indice'=> 1,
-    'carbs' => 1,
-    'time' => 10,
-    'type' => 1,
-]);
-$image = Image::create([
-    'url' => 'recipes/tortilla-con-queso.jpg',
-    'imageable_id' => $recipe->id,
-    'imageable_type' => 'App\Models\Recipe',
-]);
-
-Ingredient::create([
-    'name' => '2 huevos',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '7 a 10 aceitunas partidas a la mitad (1 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '40 gramos de queso manchego o el que tengas en casa, pero graso',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '1 cucharadita de Albahaca seca y orégano (o la especie al gusto)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Salpimienta',
-    'recipe_id' => $recipe->id
-]);
-
-$x = 0;
-Instruction::create([
-    'name' => 'Batir muy bien los huevos y salpimentar.',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'En un sartén preferiblemente redondo con un poco de mantequilla',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Colocamos los huevos y dejas por 5 minutos que se haga la tortilla',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Das vuelta a la tortilla y agregas el queso, aceitunas, espolvorear con especies y tapas',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Dejas unos minutos más hasta que el queso derrita',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Sirves de inmediato',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(178, '46', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+(179, '46', 166, '1', CURRENT_TIMESTAMP, NULL)");
 
 //Fin Receta
 
@@ -398,7 +331,7 @@ Instruction::create([
 ]);
 
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(179, '46', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+(180, '46', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 //Fin Receta
 
@@ -487,7 +420,7 @@ Instruction::create([
 ]);
 
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(180, '46', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+(181, '46', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 //Fin Receta
 

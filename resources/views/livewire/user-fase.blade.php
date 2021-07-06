@@ -56,12 +56,8 @@
                                 <div class="grid grid-cols-{{$fase->weeks->count()}} text-center">
 
                                     @foreach ($fase->weeks as $key => $week)
-                                    
-
-                                    
+                                                                        
                                         <div class="border border-gray-100 font-bold cursor-pointer bg-gray-50 rounded-tl-md relative">
-
-                                            
                                             
                                             <div class="text-red-700 border-b-4 text-xs md:text-base  hover:text-red-700" @click="selected = {{$key}}" x-bind:class="{ 'border-red-700 py-4': selected == {{$key}}, 'border-gray-400 py-4': selected !== {{$key}} }">
                                                 <img src="{{asset('img/icons/gfx/calendar_color.svg')}}" alt="" class="w-3 md:w-5 mr-2 inline"> {{$week->name}}
@@ -76,8 +72,8 @@
                                             @endif
                                             
                                             <div class="grid overflow-hidden h-0 md:h-auto grid-cols-7 text-center shadow-md  absolute w-full " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
-                                                @foreach ($week->days as $day)
-                                                
+                                                @foreach ($week->days->sortBy('day') as $day)
+
                                                     @if ($day->fase->id == $fase->id)
                                                         <div wire:click="setDay({{$day}})" class="font-semibold text-xs @if ($this->day->day == $day->day) bg-red-700 text-red-100 cursor-default @else bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer @endif  py-2   "><span class="hidden md:block xl:inline">Día</span> {{$day->day}}</div>
                                                     @endif

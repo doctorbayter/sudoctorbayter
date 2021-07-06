@@ -58,11 +58,6 @@ Route::get('x/sql', function(){
 
 Route::get('x/query', function(){
 
-
-    DB::table('instructions')->where('id', '=', '487')->update(['name' => 'Sirve caliente con la porción de queso y por fin tu café con leche de almendras']);
-    
-    DB::table('days')->where('id', '=', '23')->update(['note' => '<p>CARBOHIDRATO ADICIONAL leche de almendras esta es una opción, pero tú lo puedes cambiar, sin embargo, ten en cuenta, que todos los días debes probar un carbohidrato diferente, de esta manera aprendes a conocer tu cuerpo y hacer alianzas con los alimentos</p>\r\n <p><br/></p><p>lo ideal es que iniciando la DKP sigas los menús, pero, si decides hacer algún cambio conserva las cantidades.</p>']);
-
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
 
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");

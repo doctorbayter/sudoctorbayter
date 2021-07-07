@@ -64,12 +64,15 @@ Route::get('x/query', function(){
     $fase = Fase::find(3);
 
     foreach($users as $user){
-        if ($user->subscription->plan->id == 1 ) {
 
-            if ($fase->clients->contains($user->id)) {
-                //Do Nohing
-            }else{
-                $fase->clients()->attach($user->id);
+        if ($user->subscription) {
+            if ($user->subscription->plan->id == 1 ) {
+
+                if ($fase->clients->contains($user->id)) {
+                    //Do Nohing
+                }else{
+                    $fase->clients()->attach($user->id);
+                }
             }
         }
     }

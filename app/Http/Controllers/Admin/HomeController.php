@@ -120,10 +120,14 @@ class HomeController extends Controller
     }
 
     public function price(){
-        $plan = Plan::find(1);
+
+        $prices = Price::all();
+        dd($prices);
+
+        /*$plan = Plan::find(1);
         $plan->price_id = 8;
         $plan->discount_id = 2;
-        $plan->save();
+        $plan->save();*/
     }
 
     public function plan($email, $plan_id){

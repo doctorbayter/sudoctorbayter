@@ -8,6 +8,7 @@ use App\Models\Image;
 use App\Models\Ingredient;
 use App\Models\Instruction;
 use App\Models\Recipe;
+use App\Models\User;
 use App\Models\Week;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -51,12 +52,27 @@ Route::get('/110', function () {
 
 Route::get('x/sql', function(){
     
-    $weeks = DB::table('fase_week')->get();
-    dd($weeks);
+    //$weeks = DB::table('fase_week')->get();
+    $users = User::where('email','!=','null')->get();
+    dd($users);
  
 });
 
 Route::get('x/query', function(){
+
+    $users = User::where('email','!=','null')->skip(0)->take(500)->get();
+    $fase = Fase::find(3);
+
+    foreach($users as $user){
+        if ($user->subscription->plan->id == 1 ) {
+
+            if ($fase->clients->contains($user->id)) {
+                //Do Nohing
+            }else{
+                $fase->clients()->attach($user->id);
+            }
+        }
+    }
 
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
 

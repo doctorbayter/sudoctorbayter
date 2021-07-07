@@ -18,14 +18,7 @@ use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
-    public function checkout(Plan $plan){
-
-        $suscription = Subscription::where('user_id', auth()->user()->id)->where('plan_id', $plan->id)->first();
-
-        return view('payment.checkout', compact('plan', 'suscription' ));
-    }
-
-
+    
     public function responsePayu(Request $request, Plan $plan){
         $response = Http::acceptJson()->post(config('services.payu.api_uri'), [
             "test" => config('services.payu.test'),
@@ -44,9 +37,36 @@ class PaymentController extends Controller
 
             if ($response['result']['payload']) {
                 if ($response['result']['payload'][0]['status'] == "CAPTURED") {
-                    $user_id = $response['result']['payload'][0]['transactions'][0]['extraParameters']['EXTRA1'];
-                    
-                    $user = User::find($user_id);
+
+                    $user_data =  explode('~',$response['result']['payload'][0]['transactions'][0]['extraParameters']['EXTRA1']);
+                    $user_name = $user_data[0];
+                    $user_email = $user_data[1];
+                    $user_password = $user_data[2];
+                    $user_auth = $user_data[3];
+
+
+                    if ($user_auth == 0) {
+
+                        $user_exist = User::where('email', $user_email)->first();
+
+                        if($user_exist){
+                            
+                            $user_exist->password = bcrypt($user_password);
+                            $user_exist->save();
+
+                            $user = $user_exist;
+                            
+                        }else{
+                            $user = User::create([
+                                'name' => $user_name,
+                                'email' => $user_email,
+                                'password' => bcrypt($user_password)
+                            ]);
+                        }
+                    }else {
+                        $user = User::where('email', $user_email)->first();
+                    }
+
 
                     $suscription = new Subscription();
                     $suscription->user_id = $user->id;
@@ -129,7 +149,34 @@ class PaymentController extends Controller
             $extra1 = $request->extra1;
             $extra2 = $request->extra2;
 
-            $user = User::find($extra1);
+            $user_data =  explode('~',$extra1);
+            $user_name = $user_data[0];
+            $user_email = $user_data[1];
+            $user_password = $user_data[2];
+            $user_auth = $user_data[3];
+
+            if ($user_auth == 0) {
+
+                $user_exist = User::where('email', $user_email)->first();
+
+                if($user_exist){
+                    
+                    $user_exist->password = bcrypt($user_password);
+                    $user_exist->save();
+
+                    $user = $user_exist;
+                    
+                }else{
+                    $user = User::create([
+                        'name' => $user_name,
+                        'email' => $user_email,
+                        'password' => bcrypt($user_password)
+                    ]);
+                }
+            }else {
+                $user = User::where('email', $user_email)->first();
+            }
+
             $plan = Plan::find($extra2);
 
             $suscription = new Subscription();
@@ -264,7 +311,35 @@ class PaymentController extends Controller
         $x_id_invoice   = $request->x_id_invoice;
         $x_autorizacion = $request->x_approval_code;
 
-        $user = User::find($x_extra1);
+
+        $user_data =  explode('~',$x_extra1);
+        $user_name = $user_data[0];
+        $user_email = $user_data[1];
+        $user_password = $user_data[2];
+        $user_auth = $user_data[3];
+
+        if ($user_auth == 0) {
+
+            $user_exist = User::where('email', $user_email)->first();
+
+            if($user_exist){
+                
+                $user_exist->password = bcrypt($user_password);
+                $user_exist->save();
+
+                $user = $user_exist;
+                
+            }else{
+                $user = User::create([
+                    'name' => $user_name,
+                    'email' => $user_email,
+                    'password' => bcrypt($user_password)
+                ]);
+            }
+        }else {
+            $user = User::where('email', $user_email)->first();
+        }
+
         $plan = Plan::find($x_extra2);
 
         //Validamos la firma
@@ -377,10 +452,37 @@ class PaymentController extends Controller
         if ($request->payment_status == "Completed") {
 
 
-            $user_id = $request->custom;
+            $user_data = $request->custom;
             $plan_id = $request->item_number;
 
-            $user = User::find($user_id);
+            $user_data =  explode('~',$user_data);
+            $user_name = $user_data[0];
+            $user_email = $user_data[1];
+            $user_password = $user_data[2];
+            $user_auth = $user_data[3];
+
+            if ($user_auth == 0) {
+
+                $user_exist = User::where('email', $user_email)->first();
+
+                if($user_exist){
+                    
+                    $user_exist->password = bcrypt($user_password);
+                    $user_exist->save();
+
+                    $user = $user_exist;
+                    
+                }else{
+                    $user = User::create([
+                        'name' => $user_name,
+                        'email' => $user_email,
+                        'password' => bcrypt($user_password)
+                    ]);
+                }
+            }else {
+                $user = User::where('email', $user_email)->first();
+            }
+            
             $plan = Plan::find($plan_id);
 
             $suscription = new Subscription();
@@ -481,5 +583,4 @@ class PaymentController extends Controller
     
     }
 
-    
 }

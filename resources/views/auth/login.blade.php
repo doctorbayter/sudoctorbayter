@@ -45,11 +45,11 @@
                 </x-jet-button>
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 my-4" href="{{ route('password.request') }}">
-                        Entra aquí si olvidaste tu contraseñá.
+                        Entra aquí si no sirve tu contraseña.
                     </a>
                 @endif
             </div>
-            <div class="block mt-4 text-center">
+            <div class="_block mt-4 text-center hidden">
                 <hr>
                 <a href="{{ route('register') }}" class=" mt-6 w-full mb-2 block items-center px-4 py-3 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">{{ __('Create a new account') }}</a>
             </div>

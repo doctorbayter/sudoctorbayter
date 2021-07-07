@@ -1,32 +1,36 @@
-<x-app-layout>
+<div  x-data="{$payMethod: 'payu', $route : '{{route('payment.payu', $plan)}}' }">
     <div class="max-w-6xl px-6 mx-auto md:px-8 grid grid-cols-1 md:grid-cols-9 md:gap-8 mt-8 md:min-h-screen">
-        <div class="md:col-span-5">
+        <div class="md:col-span-5" >
             
-
+            @if (auth()->user())
+                
+            @else
             <section class="mt-4">
                 <header class=" mb-2 md:mb-4 ">
                     <h3 class="text-2xl font-bold text-gray-800 mb-1"><span class="text-red-700">Paso 1:</span> Crea tus datos de acceso a la página</h3>
                     <p class="text-gray-600 font-medium lowercase text-xs italic">Los datos que escribas aquí serán los que vas a usar para ingresar a la página una vez realices la compra</p>
                 </header>
-                <form autocomplete="off">
-                    
+                
+                    <form>
                     <div class="flex flex-wrap -mx-3 mb-3">
                         <div class="w-full  px-3">
                           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-name">
                             Nombre Completo
                           </label>
-                          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-name" type="text" placeholder="Escribe tu nombre">
-                          <p class="text-red-500 text-xs italic">Por favor ecribe tu nombre.</p>
+                          <input wire:model="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-name" type="text" placeholder="Escribe tu nombre"
+                          @error('name') autofocus="autofocus" @enderror>
+                          @error('name')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
-
 
                     <div class="flex flex-wrap -mx-3 mb-3">
                         <div class="w-full  px-3">
                           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-email">
                             Correo electrónico
                           </label>
-                          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-email" type="text" placeholder="Escribe tu correo">
+                          <input wire:model="email" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-email" type="text" placeholder="Escribe tu correo"
+                          @error('email') autofocus="autofocus" @enderror>
+                          @error('email')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
 
@@ -35,7 +39,9 @@
                           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-re-email">
                             Verifica tu correo
                           </label>
-                          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-re-email" type="text" placeholder="Escribe tu correo otra vez">
+                          <input wire:model="email_confirmation" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-re-email" type="text" placeholder="Escribe tu correo otra vez"
+                          @error('email_confirmation') autofocus="autofocus" @enderror>
+                          @error('email_confirmation')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
 
@@ -45,8 +51,9 @@
                             Crear Contraseña de ingreso
                             <p class="text-gray-600 font-medium lowercase text-xs italic">Esta será la contraseña con la que entrarás a la página</p>
                           </label>
-                          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************">
-                          
+                          <input wire:model="password" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************"
+                          @error('password') autofocus="autofocus" @enderror>
+                          @error('password')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
 
@@ -55,18 +62,17 @@
                           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-re-password">
                             Verificar contraseña
                           </label>
-                          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-re-password" type="password" placeholder="******************">
-                          
+                          <input wire:model="password_confirmation" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-re-password" type="password" placeholder="******************"
+                          @error('password_confirmation') autofocus="autofocus" @enderror>
+                          @error('password_confirmation')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
-                      
+                
                 </form>
             </section>
+            @endif
 
-
-            <div 
-                x-data="{$payMethod: 'payu', $route : '{{route('payment.payu', $plan)}}' }"    
-                class="mt-4 md:mt-6">
+            <div class="mt-4 md:mt-6">
                 <h3 class="text-2xl font-bold mb-2 md:mb-8 text-gray-800"> <span class="text-red-700">Paso 2:</span> Elige tu medio de pago</h3>
                 <ul class=" mb-4 flex w-full items-center justify-between sm:justify-start">
 
@@ -102,7 +108,6 @@
                    
                 </ul>
 
-                
 
                 <div class=" mt-6 md:mt-8">
 
@@ -128,53 +133,78 @@
                             </div>    
                             <a 
                             class="disabled w-full mt-2 cursor-default bg-gray-300 rounded-lg font-bold text-white text-center inline-block px-8 py-4 text-lg ">No puedes comprar este plan</a>
-                            
                         @else
                             <div class="my-6">
                                 <label class="inline-flex items-center text-sm">
                                     <input type="checkbox" class="form-checkbox h-5 w-5 text-secundary-400 " checked disabled><span class="ml-2 text-gray-700">Al completar la compra, aceptas estos <a href="#" class="text-secundary-400 font-bold underline"> Términos y condiciones</a></span>
                                 </label>
                             </div>
-                            <div x-show="$payMethod == 'payu'" >
-                                <form action="{{config('services.payu.base_uri')}}" method="post">
-                                    @csrf
-
-                                    <x-payu-form :plan="$plan"/>
-                                                            
-                                    <button type="submit"
-                                    class=" bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Comprar ahora con PayU</button> 
-
-                                </form>
-                            </div>
-                            <div x-show="$payMethod == 'paypal'" >
+                            @if ($can_continued)
+                            <div>
                                 
-                                <form action="{{config('services.paypal.base_uri')}}" method="post">
-                                    @csrf
-
-                                    <x-paypal-form :plan="$plan"/>
+                                <div x-show="$payMethod == 'payu'" >
+                                    <form action="{{config('services.payu.base_uri')}}" method="post">
+                                        @csrf
+                                       
+                                        <x-payu-form :plan="$plan" :dataSend="$data_send"/>
+                                                                
+                                        <button type="submit"
+                                        class=" bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Ya puedes continuar tu compra con PayU</button> 
+    
+                                    </form>
+                                </div>
+                                <div x-show="$payMethod == 'paypal'" >
                                     
-
-                                    <button type="submit"
-                                    class="bg-blue-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-blue-800  text-lg w-full">Comprar ahora con PayPal</button> 
-
-                                </form>
-
+                                    <form action="{{config('services.paypal.base_uri')}}" method="post">
+                                        @csrf
+                                        <x-paypal-form :plan="$plan" :dataSend="$data_send"/>
+                                        <button type="submit"
+                                        class="bg-blue-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-blue-800  text-lg w-full">Ya puedes continuar tu compra con PayPal</button> 
+                                    </form>
+    
+                                </div>
+                                <div x-show="$payMethod == 'epayco'"> 
+                                    <button x-on:click="handler.open(
+                                        {
+                                            name: '{{$plan->name}}',
+                                            description: '{{$plan->name}}',
+                                            invoice: '{{Str::random(8)}}',
+                                            currency: '{{config('services.epayco.currency')}}',
+                                            amount: '{{$plan->finalPrice}}',
+                                            tax_base: '0',
+                                            tax: '0',
+                                            country: 'co',
+                                            lang: 'es',
+                                            external: 'true',
+                                            extra1: '{{$data_send}}',
+                                            extra2: '{{$plan->id}}',
+                                            confirmation: '{{route('payment.epayco.approved')}}',
+                                            response: '{{route('payment.epayco.response', $plan)}}', 
+                                            methodsDisable: ['SP','CASH', 'MPD', 'DP']
+                                        })"
+                                        type="button"
+                                        class="bg-yellow-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-yellow-700  text-lg w-full">Ya puedes continuar tu compra con Epayco</button> 
+                                </div>
                             </div>
-                            <div x-show="$payMethod == 'epayco'"> 
-                                <button x-on:click="handler.open(data)"
-                                    type="button"
-                                    class="bg-yellow-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-yellow-700  text-lg w-full">Comprar ahora con Epayco</button> 
-                            </div>
+                            @else
+                                <button
+                                wire:click="confirmData"
+                                class=" bg-red-500 rounded-lg font-bold text-white cursor-pointer text-center inline-block px-8 py-4 text-lg w-full">{{$error_button}}</button> 
+                                
+                                
+                                @if($errors->all())
+                                    <span class="text-red-500 text-sm mt-2 inline-block font-semibold ">{{$error_message}}</span>
+                                @endif
+                            @endif
                         @endcan
-
-                        
-
+                    
                     <div class="mt-8 flex items-center cursor-default mb-8">
                         <div class="bg-gray-100 border border-gray-200 rounded-full p-3 mr-3">
                             <i class="fas fa-shield-alt text-3xl text-secundary-400"></i>
                         </div>
-                        <p class="text-secundary-400 font-extrabold leading-4" >Pago 100% seguro<br/><span class="text-sm text-secundary-400 font-normal">protegemos tus datos.</span></p>
+                        <p class="text-secundary-400 font-extrabold leading-4" >Tu pago es 100% seguro<br/><span class="text-sm text-secundary-400 font-normal">protegemos tus datos.</span></p>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -205,28 +235,8 @@
                 key: '{{config('services.epayco.public_key')}}',
                 test: false
             })
-            let data={
-            //Parametros compra (obligatorio)
-            name: "{{$plan->name}}",
-            description: "{{$plan->name}}",
-            invoice: "{{Str::random(8)}}",
-            currency: "{{config('services.epayco.currency')}}",
-            amount: "{{$plan->finalPrice}}",
-            tax_base: "0",
-            tax: "0",
-            country: "co",
-            lang: "es",
-            external: "false",
-            //Atributos opcionales
-            extra1: "", //Client id
-            extra2: "{{$plan->id}}", // plan id
-            confirmation: "{{route('payment.epayco.approved')}}",
-            response: "{{route('payment.epayco.response', $plan)}}",
-            //atributo deshabilitación metodo de pago
-            methodsDisable: ["SP","CASH", "MPD", "DP"],
-            }
-            
+                        
         </script>
     @endpush
 
-</x-app-layout>
+</div>

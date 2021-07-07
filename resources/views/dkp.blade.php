@@ -11,7 +11,7 @@
             <div class="max-w-lg my-24">
                 <header class="">
                     <h1 class="text-gray-50 leading-none font-black text-2xl md:text-5xl">Método DKP de la Dieta <span class="text-red-700">Keto</span> Perfecta</h1>
-                    <p class="text-gray-50 mt-6 mb-4 md:text-xl">Descubre el método de la Dieta Keto Perfecta que con san solo 4 fases te convertira en una verdadera máquina quema grasa.</p>
+                    <p class="text-gray-50 mt-6 mb-4 md:text-xl">Descubre el método de la Dieta Keto Perfecta que con tan solo 4 fases te convertira en una verdadera máquina quema grasa.</p>
 
                     @auth
                         @can('enrolled', auth()->user()->subscription)

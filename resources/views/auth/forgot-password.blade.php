@@ -11,6 +11,9 @@
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
+                <p class="text-red-500 mt-4">
+                    <b>IMPORTANTE:</b> En ocasiones el mensaje puede tarde hasta <b>10 minutos</b> en llegar a tu correo. si no recibes el mensaje recuerda revisar tu <b>correo no deseado</b> o <b>Spam</b>
+                </p>
             </div>
         @endif
 
@@ -24,7 +27,7 @@
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-center mt-4">
                 <x-jet-button>
                     {{ __('Email Password Reset Link') }}
                 </x-jet-button>

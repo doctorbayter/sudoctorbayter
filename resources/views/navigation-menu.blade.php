@@ -280,7 +280,7 @@
 @else
     <div class="pt-4 pb-4 border-b border-gray-100 bg-gray-50 ">
         <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')" class="text-primary-400">
-            {{__('login')}}
+            Iniciar Sesión
         </x-jet-responsive-nav-link>
     </div>
 @endauth

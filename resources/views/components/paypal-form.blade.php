@@ -4,7 +4,7 @@
     <input type="hidden" name="lc" value="AL">
     <input type="hidden" name="item_name" value="{{$plan->name}}">
     <input type="hidden" name="item_number" value="{{$plan->id}}">
-    <input type="hidden" name="custom" value="{{auth()->user()->id}}">
+    <input type="hidden" name="custom" value="{{$dataSend}}">
     <input type="hidden" name="amount" value="{{$plan->finalPrice}}">
     <input type="hidden" name="currency_code" value="{{config('services.paypal.currency_code')}}">
     <input type="hidden" name="button_subtype" value="services">

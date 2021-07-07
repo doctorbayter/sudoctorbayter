@@ -160,6 +160,7 @@ return [
         'day'                   => 'día',
         'description'           => 'descripción',
         'email'                 => 'correo electrónico',
+        'email_confirmation'    => 'confirmación del correo electrónico',
         'excerpt'               => 'extracto',
         'first_name'            => 'nombre',
         'gender'                => 'género',

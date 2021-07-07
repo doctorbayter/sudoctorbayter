@@ -60,7 +60,7 @@ Route::get('x/sql', function(){
 
 Route::get('x/query', function(){
 
-    $users = User::where('email','!=','null')->skip(1500)->take(1000)->get();
+    $users = User::where('email','!=','null')->skip(2500)->take(1000)->get();
     $fase = Fase::find(3);
 
     foreach($users as $user){

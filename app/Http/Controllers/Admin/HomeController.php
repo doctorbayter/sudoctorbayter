@@ -121,8 +121,8 @@ class HomeController extends Controller
 
     public function price(){
 
-        $prices = Price::all();
-        dd($prices);
+        //$prices = Price::all();
+
 
         /*$plan = Plan::find(1);
         $plan->price_id = 8;

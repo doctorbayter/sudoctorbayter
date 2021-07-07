@@ -40,7 +40,7 @@
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
                                 @endif
                             </div>
-                            <a href="#go" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya desde 87 US$ !</a>
+                            <a href="#go" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere tu plan desde 87 US$ !</a>
                         @endcan
                     @else
                         <div class="text-white text-left py-2 hidden">
@@ -67,7 +67,7 @@
                             @endif
                         </div>
                         
-                        <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya desde 87 US$ !</a>
+                        <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere tu plan desde 87 US$ !</a>
                     @endauth
                     
                 </header>

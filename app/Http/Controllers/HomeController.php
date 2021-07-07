@@ -21,7 +21,7 @@ class HomeController extends Controller
     {
         $plan_premium = Plan::find(1);
         $plan_fase_uno = Plan::find(2);
-        return  view('dkp', compact('plan_premium'));
+        return  view('dkp', compact('plan_premium','plan_fase_uno'));
     }
     public function programas()
     {

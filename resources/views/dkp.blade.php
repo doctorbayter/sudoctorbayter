@@ -40,7 +40,7 @@
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
                                 @endif
                             </div>
-                            <a href="{{route('payment.checkout', $plan_premium)}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya!</a>
+                            <a href="#go" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya!</a>
                         @endcan
                     @else
                         <div class="text-white text-left py-2">
@@ -66,7 +66,7 @@
                                 <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
                             @endif
                         </div>
-                        <a href="{{route('payment.checkout', $plan_premium)}}" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya!</a>
+                        <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya!</a>
                     @endauth
                     
                 </header>
@@ -405,7 +405,7 @@
     <section class="bg-white" id="go">
         @auth
             @can('enrolled', auth()->user()->subscription)
-                <div class="text-center py-20       "> 
+                <div class="text-center py-20 "> 
                     <header>
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Ya estás dentro</h2>
                         <p class="text-center text-lg font-semibold">tu plan actual es {{auth()->user()->subscription->plan->name}}</p>
@@ -426,8 +426,6 @@
 
                         @if ($plan_premium->discount)
 
-                        
-
                             @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                 
                                     <p class="text-center font-extrabold text-6xl">{{round($plan_premium->finalPrice)}} US$</p>
@@ -442,13 +440,11 @@
                         @else
                             <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
                         @endif
-
-
                         
                         <div class="mt-4">
                             <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                             <ul>
-                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida al método DKP y futuras actualizaciones <b class=" text-sm text-gray-600 block font-medium">(Precio normal 262 US$)</b></p></li>
+                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida al método DKP (4 Fases)<b class=" text-sm text-gray-600 block font-medium">(Precio normal 262 US$)</b></p></li>
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg hidden">1 Sesión grupal vía Zoom <b class=" text-sm text-gray-600 block font-medium">(Precio normal 200 US$)</b></p></li>
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg hidden">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
@@ -464,44 +460,77 @@
                     <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Toma la decisión ahora</h2>
                     <p class="text-center text-lg font-semibold">Da el primer paso. Yo te acompañaré el resto del camino.</p>
                 </header>
-                
-                
-                <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
-                    <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span></h2>
-                    <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
-
-                    @if ($plan_premium->discount)
-
-                    
-
-                        @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                            
-                                <p class="text-center font-extrabold text-6xl">{{round($plan_premium->finalPrice)}} US$</p>
-                                <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small>
-                            <div class="text-center">
-                                <p class="text-base text-gray-700 mb-2">Oferta {{$plan_premium->discount->name}}</p>
-                                <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
-                            </div>
+                       
+                <section class="flex flex-col-reverse lg:flex-row items-center justify-center"> 
+                    <article class="lg:mr-8">
+                        <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
+                            <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> Fase 1</h2>
+                            <p class="text-center mt-4 font-bold text-3xl text-yellow-500">PAGO ÚNICO</p>
+        
+                            @if ($plan_fase_uno->discount)
+        
+                                @if ($plan_fase_uno->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_fase_uno->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                                    
+                                        <p class="text-center font-extrabold text-6xl">{{round($plan_fase_uno->finalPrice)}} US$</p>
+                                        <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_fase_uno->price->name}}</small>
+                                    <div class="text-center">
+                                        <p class="text-base text-gray-700 mb-2">Oferta {{$plan_fase_uno->discount->name}}</p>
+                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_fase_uno->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                    </div>
+                                    @else
+                                    <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_fase_uno->price->name}}</p>
+                                @endif
                             @else
-                            <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
-                        @endif
-                    @else
-                        <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
-                    @endif
-
-
-                    
-                    <div class="mt-4">
-                        <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
-                        <ul>
-                            <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida al método DKP y futuras actualizaciones <b class=" text-sm text-gray-600 block font-medium">(Precio normal 262 US$)</b></p></li>
-                            <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
-                            <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg hidden">1 Sesión grupal vía Zoom <b class=" text-sm text-gray-600 block font-medium">(Precio normal 200 US$)</b></p></li>
-                            <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg hidden">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
-                        </ul>
-                        <a href="{{route('payment.checkout', $plan_premium)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
-                    </div>
-                </div>
+                                <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_fase_uno->price->name}}</p>
+                            @endif
+        
+                            <div class="mt-4">
+                                <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con la <span class="text-red-700">Fase 1</span>?</h3>
+                                <ul>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida a la fase 1 del método DKP<b class=" text-sm text-gray-600 block font-medium">(Precio normal 110 US$)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg hidden">1 Sesión grupal vía Zoom <b class=" text-sm text-gray-600 block font-medium">(Precio normal 200 US$)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg hidden">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
+                                </ul>
+                                <a href="{{route('payment.checkout', $plan_fase_uno)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="mt-12 border-black border-8 max-w-md mx-auto px-8 py-6 rounded-2xl bg-gray-900 text-white ">
+                            <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> 4 Fases</h2>
+                            <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
+        
+                            @if ($plan_premium->discount)
+        
+                                @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                                    
+                                        <p class="text-center font-extrabold text-6xl">{{round($plan_premium->finalPrice)}} US$</p>
+                                        <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small>
+                                    <div class="text-center">
+                                        <p class="text-base text-gray-400 mb-2">Oferta {{$plan_premium->discount->name}}</p>
+                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                    </div>
+                                    @else
+                                    <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
+                                @endif
+                            @else
+                                <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
+                            @endif
+        
+                            <div class="mt-4">
+                                <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
+                                <ul>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso inmediato y de por vida al método DKP (4 Fases)<b class=" text-sm text-gray-400 block font-medium">(Precio normal 262 US$)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-400 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg hidden">1 Sesión grupal vía Zoom <b class=" text-sm text-gray-400 block font-medium">(Precio normal 200 US$)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg hidden">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-400 block font-medium">(Precio normal 19 US$)</b></p>
+                                </ul>
+                                <a href="{{route('payment.checkout', $plan_premium)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                            </div>
+                        </div>
+                    </article>
+                </section>
             </div>
         @endauth
     </section>

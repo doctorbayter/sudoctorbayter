@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class PlanCheckout extends Component
 {
 
-    public $plan, $suscription;
+    public $plan, $suscription, $plan_upsale;
     public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send;
     public $can_continued = false;
     public $error_message = "* Tenemos un error, revisa la información suminitrada anteriormente";

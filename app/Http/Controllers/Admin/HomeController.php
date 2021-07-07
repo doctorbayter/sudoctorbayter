@@ -112,17 +112,18 @@ class HomeController extends Controller
     }
 
     public function discount(){
-        $discount = Discount::find(2);
-        $discount->value = 147;
-        $discount->name = 'Oferta de Lanzamiento';
+        $discount = Discount::find(1);
+        $discount->value = 87;
+        $discount->type = 1;
+        $discount->name = 'Lanzamiento Página web';
         $discount->expires_at = '2099-12-31 23:59:59';
         $discount->save();
     }
 
     public function price(){
-        $plan = Plan::find(1);
-        $plan->price_id = 8;
-        $plan->discount_id = 2;
+        $plan = Plan::find(2);
+        $plan->price_id = 4;
+        $plan->discount_id = 1;
         $plan->save();
     }
 

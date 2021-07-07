@@ -60,7 +60,7 @@ Route::get('x/sql', function(){
 
 Route::get('x/query', function(){
 
-    $users = User::where('email','!=','null')->skip(0)->take(500)->get();
+    $users = User::where('email','!=','null')->skip(500)->take(500)->get();
     $fase = Fase::find(3);
 
     foreach($users as $user){
@@ -73,6 +73,10 @@ Route::get('x/query', function(){
             }
         }
     }
+
+    DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
+
+    echo "Do it";
 
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
 

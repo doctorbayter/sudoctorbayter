@@ -342,7 +342,7 @@
         </div>
     </section>
     
-    @push('scripts')
+    
     <script>
         const CLASS_AD = sessionStorage.getItem('classAd');
         let classAdDiv = document.getElementById("classAd");
@@ -353,6 +353,5 @@
             classAdDiv.classList.add('opacity-100')
         }
     </script>
-    @endpush
-
+    
 </x-app-layout>

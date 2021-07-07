@@ -115,7 +115,7 @@ class HomeController extends Controller
         $discount = Discount::find(1);
         $discount->value = 87;
         $discount->type = 1;
-        $discount->name = 'Lanzamiento Página web';
+        $discount->name = 'Lanzamiento Página Web';
         $discount->expires_at = '2099-12-31 23:59:59';
         $discount->save();
     }

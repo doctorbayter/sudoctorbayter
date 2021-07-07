@@ -17,7 +17,7 @@
                         @can('enrolled', auth()->user()->subscription)
                         <a href="{{route('plan.index')}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">Entra aquí a tu plan</a>
                         @else
-                            <div class="text-white text-left py-2">
+                            <div class="text-white text-left py-2 hidden">
                                 @if ($plan_premium->discount)
                                     @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                         
@@ -40,10 +40,10 @@
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
                                 @endif
                             </div>
-                            <a href="#go" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya!</a>
+                            <a href="#go" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya desde 87 US$ !</a>
                         @endcan
                     @else
-                        <div class="text-white text-left py-2">
+                        <div class="text-white text-left py-2 hidden">
                             @if ($plan_premium->discount)
                                 @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                     
@@ -66,7 +66,8 @@
                                 <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
                             @endif
                         </div>
-                        <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya!</a>
+                        
+                        <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya desde 87 US$ !</a>
                     @endauth
                     
                 </header>

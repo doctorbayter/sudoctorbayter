@@ -74,8 +74,6 @@ Route::get('x/query', function(){
         }
     }
 
-    DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
-
     echo "Do it";
 
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);

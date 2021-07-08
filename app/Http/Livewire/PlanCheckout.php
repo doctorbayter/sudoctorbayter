@@ -16,6 +16,7 @@ class PlanCheckout extends Component
     public $can_continued = false;
     public $error_message = "* Tenemos un error, revisa la información suminitrada anteriormente";
     public $error_button = "Toca aquí para confirmar la información";
+    public $toogle_promo = null;
 
     protected $rules = [
         'name' => 'required',
@@ -36,6 +37,9 @@ class PlanCheckout extends Component
 
     public function mount(Plan $plan){
 
+        if ($this->plan->id == 9) {
+            $this->toogle_promo = 1;
+        }
 
         if ($this->plan->id == 4 || $this->plan->id == 5 || $this->plan->id == 6) { // Whatsapp ~ Cita 40 mins ~ Cita 60 mins
             if (!auth()->user()) {
@@ -88,6 +92,17 @@ class PlanCheckout extends Component
         $this->can_continued = true;
         $this->data_send = "$this->name~$email~$this->password~0";
         
+    }
+
+    public function tooglePromo()
+    {
+        if ($this->plan->id == 8 || $this->plan->id == 9) {
+            if ($this->toogle_promo) {
+                $this->plan = Plan::find(9);
+            }else{
+                $this->plan = Plan::find(8);
+            }
+        }
     }
 
 }

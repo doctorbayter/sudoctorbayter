@@ -1,29 +1,24 @@
 <x-app-layout>
 
-    @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
-
+    @if (\Carbon\Carbon::createFromTimeStamp(strtotime($promo_time['date']))->gt(\Carbon\Carbon::now()))
     <section class="py-16">
         <header class="text-center">
-            <h2 class="text-red-700 text-4xl font-bold">¡Felicidades! eres parte del 10% ¿Quieres saber que significa?</h2>
-            <p class="text-4xl my-4 font-semibold">Mira el siguiente video</p>
+            <h2 class="text-red-700 text-2xl lg:text-4xl  font-bold">¡Felicidades! eres parte del 10% ¿Quieres saber que significa?</h2>
+            <p class="text-xl lg:text-4xl  my-4 font-semibold">Mira el siguiente video</p>
         </header>
         <iframe class="w-full h-64 lg:min-h-video" src="https://player.vimeo.com/video/572593198?autoplay=1&loop=0&autopause=0"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen ></iframe>
     </section>
-
+    @endif
     
     <div id="promoAdReto4">
 
-        <div  class="flex items-center justify-center flex-col px-4 py-8 max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
+        <div  class="flex items-center justify-center flex-col px-4 py-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
             <!-- <i  x-on:click="$open = !$open; localStorage.setItem('promoAd', false)" class="fas fa-times absolute right-0 top-0 mr-2 mt-2 cursor-pointer" title="Cerrar"></i>  -->
 
-            <h3 class="text-4xl font-bold uppercase">🎁 Adquiere esta oferta exclusita</h3>
+            <h3 class="text-2xl lg:text-4xl text-center font-bold uppercase">🎁 Adquiere esta oferta exclusita</h3>
             <p class="text-base  text-gray-400 uppercase my-2">La oferta termina en:</p>
-            <div data-countdown="" id="countdown" class="font-bold text-4xl grid grid-cols-4 gap-x-4 h-16 mb-12"></div>
-            <a href="{{route('payment.checkout', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border  rounded uppercase">Adquierelo tu plan fase 1 ahora</a>
+            <div data-countdown="" id="countdown" class="font-bold text-4xl grid grid-cols-4 gap-x-4 h-16 mb-6"></div>
+            <a href="{{route('payment.checkout', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu plan fase 1 ahora</a>
         </div>
 
     </div>
@@ -409,26 +404,24 @@
         <div class="max-w-5xl mx-auto text-gray-50">
             <p class="uppercase text-gray-200 font-medium text-sm md:text-lg">¿Estas listo para iniciar?</p>
             <a href="{{route('payment.checkout', $plan_oferta)}}" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline ">
-                <span class="text-yellow-500 ">¡Adquiere tu Fase 1 ahora!</span>
+                <span class="text-yellow-500" >¡Adquiere tu Fase 1 ahora!</span>
             </a>
         </div>
     </section>
 
+
     
 
     <script>
-
-console.log(document.cookie.replace(/(?:(?:^|.*;\s*)promoAdReto4\s*\=\s*([^;]*).*$)|^.*$/, "$1"))
-
         
         let promoAdDiv = document.getElementById("promoAdReto4");
-
-
             
             // Set the date we're counting down to
             let countdown = document.getElementById('countdown');
-            let countdownData = '{{$promo_time['date']}}'
+            let promoText = document.getElementById('promoText');
+            let countdownData = '{{$promo_time["date"]}}'
             var countDownDate = new Date(countdownData).getTime();
+
             // Update the count down every 1 second
             var x = setInterval(function() {
             // Get today's date and time
@@ -441,16 +434,17 @@ console.log(document.cookie.replace(/(?:(?:^|.*;\s*)promoAdReto4\s*\=\s*([^;]*).
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
             // Time validate and HTML
-            let daysHtml = "<span class='leading-none text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'>"+ days.toString().padStart(2, '0') + " <small class='block text-xs px-1'>DIAS</small> </span>";
-            let hoursHtml = "<span class='leading-none text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'>"+ hours.toString().padStart(2, '0') + "  <small class='block text-xs px-1'>HORAS</small> </span>";
-            let minutesHtml = "<span class='leading-none text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'> "+ minutes.toString().padStart(2, '0') + "  <small class='block text-xs px-1'>MINUTOS</small> </span>";
-            let secondsHtml = "<span class='leading-none text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'>"+ seconds.toString().padStart(2, '0') + " <small class='block text-xs px-1'>SEGUNDOS</small> </span>";
+            let daysHtml = "<span class='leading-none inline-block text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'>"+ days.toString().padStart(2, '0') + " <small class='block text-xs px-1'>DIAS</small> </span>";
+            let hoursHtml = "<span class='leading-none inline-block text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'>"+ hours.toString().padStart(2, '0') + "  <small class='block text-xs px-1'>HORAS</small> </span>";
+            let minutesHtml = "<span class='leading-none inline-block text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'> "+ minutes.toString().padStart(2, '0') + "  <small class='block text-xs px-1'>MINUTOS</small> </span>";
+            let secondsHtml = "<span class='leading-none inline-block text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'>"+ seconds.toString().padStart(2, '0') + " <small class='block text-xs px-1'>SEGUNDOS</small> </span>";
             // Display the result in the element with id="demo"
             countdown.innerHTML = daysHtml + hoursHtml  + minutesHtml + secondsHtml;
             // If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(x);
-                countdown.innerHTML = "<p class='col-span-7 mt-auto mb-auto'>Esta oferta ha expirado</p>";
+                countdown.innerHTML = "<p class='col-span-4 text-center mt-auto mb-auto text-red-700'>Tu oferta ha expirado <br> <span class='text-center text-gray-900 w-full font-medium text-xl'>Si realmente deseas adquirir tu plan</span></p>";
+                promoText.innerText = "¡Ingresa y compra aquí ya!";
             }
             }, 1000);
         

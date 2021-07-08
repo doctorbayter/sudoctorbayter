@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Plan;
 use App\Models\Recipe;
 use Carbon\Carbon;
-use Illuminate\Http\Client\Response;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Cookie;
@@ -31,21 +30,20 @@ class HomeController extends Controller
     public function dkpOferta(Request $request)
     {
 
-        $time = Carbon::now()->addHours(24);
+        $time = Carbon::now()->addHours(24)->format('Y/m/d H:i:s');
         $plan_oferta = Plan::find(8);
         $cookie = Cookie::get('promoAdReto4');
 
         
         if ($cookie != null) {
-            
             $promo_time['date'] = $cookie;
             return view('dkp-oferta', compact('plan_oferta', 'promo_time'));
         }else{
 
-            
-            $promo_time['date']  = Carbon::now()->addHours(24);
+            //$promo_time['date']  = Carbon::now()->addHours(24);
+            $promo_time['date']  = $time;
             $response = new HttpResponse(view('dkp-oferta', compact('plan_oferta', 'promo_time')));
-            $response->withCookie(cookie()->forever('promoAdReto4', $time->format('Y-m-d H:i:s'))); // this will last five years
+            $response->withCookie(cookie()->forever('promoAdReto4', $time)); // this will last five years
             
             return $response;
             

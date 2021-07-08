@@ -74,7 +74,7 @@
 
             <div class="mt-4 md:mt-6">
                 <h3 class="text-2xl font-bold mb-2 md:mb-8 text-gray-800"> <span class="text-red-700">Paso 2:</span> Elige tu medio de pago</h3>
-                <ul class=" mb-4 flex w-full items-center justify-between sm:justify-start">
+                <ul class=" mb-4 flex w-full items-center justify-between sm:justify-start flex-wrap">
 
                     <li class="max-w-200 mr-4 ">
                         <div 
@@ -96,7 +96,7 @@
                         </div>
                     </li>
 
-                    <li class="max-w-200 mr-4 ">
+                    <li class="max-w-200 mr-4 mt-8 ld:mt-0">
                         <div 
                             x-on:click="$payMethod = 'epayco' ; $dispatch('route-change', { value: '{{route('payment.epayco', $plan)}}' }) " 
                             :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'epayco' }"
@@ -113,6 +113,66 @@
 
                     <h3 class="text-2xl font-bold mb-2 md:mb-8 text-gray-800"> <span class="text-red-700">Paso 3:</span> Pagar</h3>
 
+
+                    @if ($plan->id == 8 || $plan->id == 9)
+                    
+                        <section>
+                            <div  class="flex flex-col lg:flex-row justify-center px-4 py-8 my-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
+                                <figure class=" hidden lg:block mr-4 w-auto flex-1">
+                                    <img src="{{asset('/img/billboards/banner_dkp.jpg')}}" alt="Método DKP">
+                                </figure>
+                                <div class="w-full lg:w-7/12">
+                                    <h3 class="text-xl font-bold">¡Ahorrar más! Adquiere el <b class="text-red-700">Método DKP</b> 4 fases hoy por solo <span class="text-red-700">99 US$</span></h3>
+                                    <p class="text-sm text-gray-800  my-2">Adquiere hoy el Plan Premium del Método DKP y obtendrás</p>
+                                    <ul class="text-sm">
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso inmediato a las 4 fases</li>
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 30 días al chat</li>
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Curso cómo leer las etiquetas</li>
+                                    </ul>
+                                    
+                                    <p class="mt-1 text-base font-semibold">Precio normal <span class=" line-through">299 US$</span></p>
+
+                                    <div class="flex w-full mt-4">
+                                        
+                                        <style>
+                                            /* Toggle  */
+                                            input:checked ~ .dot {
+                                            transform: translateX(100%);
+                                            background-color: #48bb78;
+                                            }
+
+
+                                        </style>
+
+                                        <label 
+                                        for="tooglePromo"
+                                        class="flex items-center cursor-pointer"
+                                        >
+                                        <!-- toggle -->
+                                        <div class="relative">
+                                            <!-- input -->
+                                            <input id="tooglePromo" wire:model="toogle_promo" wire:click="tooglePromo" type="checkbox" class="sr-only" />
+                                            <!-- line -->
+                                            <div class="w-10 h-4 bg-gray-400 rounded-full shadow-inner"></div>
+                                            <!-- dot -->
+                                            <div class="dot absolute w-6 h-6 bg-white rounded-full shadow -left-1 -top-1 transition"></div>
+                                        </div>
+                                        <!-- label -->
+                                        <div class="ml-3 text-gray-700 font-semibold">
+                                            Hoy solo pagas 99 US$
+                                        </div>
+                                        </label>
+                                        
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            
+                        </section>
+                    
+                    @endif
+
+                    
                     <div class="flex items-center flex-wrap md:flex-no-wrap py-8 bg-gray-50 pl-4 rounded-xl mt-4">
                         <h2 class="text-gray-700 text-3xl font-bold w-full md:w-auto">Total a pagar:</h2>
                         <div class="md:ml-4">
@@ -217,7 +277,7 @@
                     </div>
                 </article>
                 <hr class="my-8">
-                <div class="flex items-center hidden">
+                <div class="flex_ items-center hidden">
                     <img src="{{asset('/img/checkout/garantia.png')}}" alt="">
                     <p class="text-xs ml-4">Si tu experiencia con la compra no es lo que esperabas, te haremos un reembolso del 100% de tu pago. Por favor revisar nuestras <a href="#" class="text-accent-400 font-bold underline ">Políticas de Reembolso</a></p>
                 </div>

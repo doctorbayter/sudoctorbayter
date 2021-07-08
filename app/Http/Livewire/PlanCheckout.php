@@ -74,11 +74,13 @@ class PlanCheckout extends Component
 
             if($this->plan->id != 4 || $this->plan->id != 5 || $this->plan->id != 6){ // Whatsapp ~ Cita 40 mins ~ Cita 60 mins
 
-                if ($user->subscription->plan->id == $this->plan->id) {
-                    $this->can_continued = false;
-                    $this->error_button = "No puedes continuar con la compra, el usuario $email ya está registrado a este plan";
-    
-                    return;
+                if ($user->subscription) {
+                    if ($user->subscription->plan->id == $this->plan->id) {
+                        $this->can_continued = false;
+                        $this->error_button = "No puedes continuar con la compra, el usuario $email ya está registrado a este plan";
+        
+                        return;
+                    }
                 }
             }
         }

@@ -7,8 +7,8 @@
     @endif
 
     <section class="bg-fixed bg-cover" style="background-image: url({{asset('img/backgrounds/bg_red.jpg')}})">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8 flex relative overflow-hidden">
-            <div class="max-w-lg my-24">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row relative overflow-hidden">
+            <div class="max-w-lg mt-20 mb-4 lg:my-24">
                 <header class="">
                     <h1 class="text-gray-50 leading-none font-black text-2xl md:text-5xl">Método DKP de la Dieta <span class="text-red-700">Keto</span> Perfecta</h1>
                     <p class="text-gray-50 mt-6 mb-4 md:text-xl">Descubre el método de la Dieta Keto Perfecta que con tan solo 4 fases te convertira en una verdadera máquina quema grasa.</p>
@@ -72,7 +72,7 @@
                     
                 </header>
             </div>
-            <figure class="absolute right-0 bottom-0 w-6/12">
+            <figure class="lg:absolute right-0 bottom-0 w-full lg:w-6/12">
                 <img src="{{asset('img/photos/doctor_bayter_dkp.png')}}" alt="" class="w-full object-cover">
             </figure>
         </div>
@@ -85,12 +85,12 @@
                 <figure class="rounded-xl flex-1">
                     <img src="{{asset('img/photos/doctor_bayter_dkp_2.png')}}" alt="" class="w-full object-cover">
                 </figure>
-                <div class="w-full md:w-5/12 ml-4">
+                <div class="w-full md:w-5/12 px-4 md:ml-4">
                     <h2 class="text-gray-900 mb-8 leading-none font-black text-2xl md:text-5xl">Primero te voy a decir que <b class="text-red-700">NO</b> es</h2>
-                    <p class="mt-3 text-base ">No es una dieta más sobre las típicas recetas que encuentras en internet o en los libros de tu abuelita, aún cuando debo reconocer que sí encontrarás parte de esto.</p>
-                    <p class="mt-3 text-base ">No es la dieta que te va a hacer perder peso mágicamente en corto tiempo, aún cuando debo reconocer que sí pasará parte de esto.</p>
-                    <p class="mt-3 text-base ">No es la dieta te exija ir al gym para tener resultados, aún cuando debo reconocer que si tendrás que hacer parte de esto.</p>
-                    <p class="mt-3 text-base ">No es una dieta que te va a prohibir comer algunos alimentos, aún cuando debo reconocer que si llegaremos a alguno de estos.</p>
+                    <p class="mt-3 text-base text-justify">No es una dieta más sobre las típicas recetas que encuentras en internet o en los libros de tu abuelita, aún cuando debo reconocer que sí encontrarás parte de esto.</p>
+                    <p class="mt-3 text-base text-justify">No es la dieta que te va a hacer perder peso mágicamente en corto tiempo, aún cuando debo reconocer que sí pasará parte de esto.</p>
+                    <p class="mt-3 text-base text-justify">No es la dieta te exija ir al gym para tener resultados, aún cuando debo reconocer que si tendrás que hacer parte de esto.</p>
+                    <p class="mt-3 text-base text-justify">No es una dieta que te va a prohibir comer algunos alimentos, aún cuando debo reconocer que si llegaremos a alguno de estos.</p>
                 </div>
             </div>
         </div>

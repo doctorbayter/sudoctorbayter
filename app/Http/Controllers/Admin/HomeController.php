@@ -121,9 +121,41 @@ class HomeController extends Controller
 
     public function price(){
 
+        $discount = Discount::create([
+            'name' => 'Obsequio Reto 4 Fase 1',
+            'type' => 1,
+            'value' => 47,
+            'expires_at' =>  '2099-07-01 23:59:59',
+            'user_id' => 1,
+        ]);
+
+        $plan = Plan::create([
+            'name' => 'Plan Fase 1 - Oferta Método DKP',
+            'slug' => 'plan-fase-1-oferta',
+            'price_id' => 4,
+            'discount_id' => $discount->id
+        ]);
+
+        $discount = Discount::create([
+            'name' => 'Obsequio Reto 4 Método DKP',
+            'type' => 1,
+            'value' => 99,
+            'expires_at' =>  '2099-07-01 23:59:59',
+            'user_id' => 1,
+        ]);
+
+        $plan = Plan::create([
+            'name' => 'Plan 4 Fases - Oferta Método DKP',
+            'slug' => 'plan-4-fases-oferta',
+            'price_id' => 8,
+            'discount_id' => $discount->id
+        ]);
+
+
+        $plans = Plan::all();
+        dd($plans);
+
         //$prices = Price::all();
-
-
         /*$plan = Plan::find(1);
         $plan->price_id = 8;
         $plan->discount_id = 2;

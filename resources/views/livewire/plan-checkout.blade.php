@@ -74,9 +74,9 @@
 
             <div class="mt-4 md:mt-6">
                 <h3 class="text-2xl font-bold mb-2 md:mb-8 text-gray-800"> <span class="text-red-700">Paso 2:</span> Elige tu medio de pago</h3>
-                <ul class=" mb-4 flex w-full items-center justify-between sm:justify-start flex-wrap">
+                <ul class=" mb-4 flex flex-col lg:flex-row w-full items-center justify-between sm:justify-start flex-wrap">
 
-                    <li class="max-w-200 mr-4 ">
+                    <li class="max-w-200 lg:mr-4 ">
                         <div 
                             x-on:click="$payMethod = 'payu' ; $dispatch('route-change', { value: '{{route('payment.payu', $plan)}}' }) " 
                             :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'payu' }"
@@ -86,7 +86,7 @@
                         </div>
                     </li>
 
-                    <li class="max-w-200 mr-4 ">
+                    <li class="max-w-200 lg:mr-4 mt-6 ld:mt-0">
                         <div 
                             x-on:click="$payMethod = 'paypal' ; $dispatch('route-change', { value: '{{route('payment.paypal', $plan)}}' }) " 
                             :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'paypal' }"
@@ -96,7 +96,7 @@
                         </div>
                     </li>
 
-                    <li class="max-w-200 mr-4 mt-8 ld:mt-0">
+                    <li class="max-w-200 lg:mr-4 mt-6 ld:mt-0">
                         <div 
                             x-on:click="$payMethod = 'epayco' ; $dispatch('route-change', { value: '{{route('payment.epayco', $plan)}}' }) " 
                             :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'epayco' }"
@@ -249,9 +249,7 @@
                             @else
                                 <button
                                 wire:click="confirmData"
-                                class=" bg-red-500 rounded-lg font-bold text-white cursor-pointer text-center inline-block px-8 py-4 text-lg w-full">{{$error_button}}</button> 
-                                
-                                
+                                class=" bg-red-500 rounded-lg font-bold text-white cursor-pointer text-center inline-block px-8 py-4 text-base lg:text-lg w-full">{{$error_button}}</button> 
                                 @if($errors->all())
                                     <span class="text-red-500 text-sm mt-2 inline-block font-semibold ">{{$error_message}}</span>
                                 @endif
@@ -269,9 +267,9 @@
             </div>
         </div>
         <div class="md:col-span-4 my-6 md:my-0">
-            <div class="bg-white md:shadow md:px-8 py-4">
+            <div class="bg-white shadow px-4 md:px-8 py-4">
                 <article class="flex flex-wrap md:flex-no-wrap items-start text-gray-600">
-                    <div class="ml-4 mt-4 md:mt-0">
+                    <div class="mt-2 md:mt-0">
                         <small>Estás comprado:</small>
                         <h2 class="text-2xl font-bold">{{$plan->name}}</h2>
                     </div>

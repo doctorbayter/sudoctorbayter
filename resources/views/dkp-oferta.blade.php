@@ -6,11 +6,33 @@
         </div>
     @endif
 
+    <section class="py-16">
+        <header class="text-center">
+            <h2 class="text-red-700 text-4xl font-bold">¡Felicidades! eres parte del 10% ¿Quieres saber que significa?</h2>
+            <p class="text-4xl my-4 font-semibold">Mira el siguiente video</p>
+        </header>
+        <iframe class="w-full h-64 lg:min-h-video" src="https://player.vimeo.com/video/572593198?autoplay=1&loop=0&autopause=0"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen ></iframe>
+    </section>
+
+    
+    <div id="promoAdReto4">
+
+        <div  class="flex items-center justify-center flex-col px-4 py-8 max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
+            <!-- <i  x-on:click="$open = !$open; localStorage.setItem('promoAd', false)" class="fas fa-times absolute right-0 top-0 mr-2 mt-2 cursor-pointer" title="Cerrar"></i>  -->
+
+            <h3 class="text-4xl font-bold uppercase">🎁 Adquiere esta oferta exclusita</h3>
+            <p class="text-base  text-gray-400 uppercase my-2">La oferta termina en:</p>
+            <div data-countdown="" id="countdown" class="font-bold text-4xl grid grid-cols-4 gap-x-4 h-16 mb-12"></div>
+            <a href="{{route('payment.checkout', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border  rounded uppercase">Adquierelo tu plan fase 1 ahora</a>
+        </div>
+
+    </div>
+
     <section class="bg-fixed bg-cover" style="background-image: url({{asset('img/backgrounds/bg_red.jpg')}})">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row relative overflow-hidden">
             <div class="max-w-lg mt-20 mb-4 lg:my-24">
                 <header class="">
-                    <h1 class="text-gray-50 leading-none font-black text-2xl md:text-5xl">Método DKP de la Dieta <span class="text-red-700">Keto</span> Perfecta</h1>
+                    <h1 class="text-gray-50 leading-none font-black text-2xl md:text-5xl">Método DKP - <span class="text-red-700">Fase</span> 1</h1>
                     <p class="text-gray-50 mt-6 mb-4 md:text-xl">Descubre la primera fase del método de la Dieta Keto Perfecta que te convertira en una verdadera máquina quema grasa.</p>
 
                     @auth
@@ -40,7 +62,7 @@
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
                                 @endif
                             </div>
-                            <a href="#go" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
+                            <a href="{{route('payment.checkout', $plan_oferta)}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
                         @endcan
                     @else
                         <div class="text-white text-left py-2">
@@ -67,126 +89,116 @@
                             @endif
                         </div>
                         
-                        <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
+                        <a href="{{route('payment.checkout', $plan_oferta)}}" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
                     @endauth
                     
                 </header>
             </div>
-            <figure class="lg:absolute right-0 bottom-0 w-full lg:w-6/12">
-                <img src="{{asset('img/photos/doctor_bayter_dkp.png')}}" alt="" class="w-full object-cover">
+            <figure class="lg:absolute right-0 bottom-0 w-full lg:w-5/12">
+                <img src="{{asset('img/photos/doctor_bayter_dkp_3.png')}}" alt="" class="w-full object-cover">
             </figure>
         </div>
     </section>
 
+    <section class="bg-white" id="go">
+        @auth
+            @can('enrolled', auth()->user()->subscription)
+                <div class="text-center py-20 "> 
+                    <header>
+                        <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Ya estás dentro</h2>
+                        <p class="text-center text-lg font-semibold">tu plan actual es {{auth()->user()->subscription->plan->name}}</p>
+                    </header>
+                    <a href="{{route('plan.index')}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">Entra aquí a tu plan</a>
+                </div>
+            @else
+                <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
+                    <header>
+                        <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Da el primer paso. Yo te acompañaré el resto del camino.</h2>
+                    
+                    </header>
+                    
+                    
+                    <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
+                        <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span></h2>
+                        <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
 
-    <section class="bg-white ">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex relative overflow-hidden py-16 md:py-24">
-            <div class="flex flex-col md:flex-row">
-                <figure class="rounded-xl flex-1">
-                    <img src="{{asset('img/photos/doctor_bayter_dkp_2.png')}}" alt="" class="w-full object-cover">
-                </figure>
-                <div class="w-full md:w-5/12 px-4 md:ml-4">
-                    <h2 class="text-gray-900 mb-8 leading-none font-black text-2xl md:text-5xl">Primero te voy a decir que <b class="text-red-700">NO</b> es</h2>
-                    <p class="mt-3 text-base text-justify">No es una dieta más sobre las típicas recetas que encuentras en internet o en los libros de tu abuelita, aún cuando debo reconocer que sí encontrarás parte de esto.</p>
-                    <p class="mt-3 text-base text-justify">No es la dieta que te va a hacer perder peso mágicamente en corto tiempo, aún cuando debo reconocer que sí pasará parte de esto.</p>
-                    <p class="mt-3 text-base text-justify">No es la dieta te exija ir al gym para tener resultados, aún cuando debo reconocer que si tendrás que hacer parte de esto.</p>
-                    <p class="mt-3 text-base text-justify">No es una dieta que te va a prohibir comer algunos alimentos, aún cuando debo reconocer que si llegaremos a alguno de estos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="max-w-7xl mx-auto px-6 lg:px-8  relative overflow-hidden pt-16 md:pt-24">
-            <div class="flex flex-col-reverse md:flex-row">
-                <div class="w-full md:w-5/12 md:mr-8 mt-8 md:mt-0">
-                    <h2 class="text-gray-900 mb-4 leading-none font-black text-2xl md:text-5xl">¿Qué es el Método<b class="text-red-700">DKP</b>?</h2>
-                    <p class=" text-base text-justify ">Ahora si, <b>DKP</b> es la <strong>Dieta Keto Perfecta</strong>, la única dieta del mundo creada por fases (<b>4 fases</b>). 3 fases de 21 días y 1 una de 7 días.</p>
-                    <p class="mt-3 font-bold text-2xl">¿Por qué de esta manera?</p>
-                    <p class="mt-4 text-base text-justify">Porque tu cuerpo es una máquina hermosa y perfecta, que no se puede medir y está demostrado científicamente que esta maquinaria vive para adaptarse. Adaptarse al estrés, a las bajas de calorías, a los ayunos y a todo aquello que hace que pueda ocurrir algo malo en tu cuerpo, adaptando todo su sistema hormonal y metabólico en tan solo 21 días.</p>
-                </div>
-                <figure class=" max-w-2xl">
-                    <img src="{{asset('img/billboards/metodo_dkp.jpg')}}" alt="" class=" object-cover">
-                </figure>
-                <iframe src="https://player.vimeo.com/video/542233951?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-56 md:h-96 rounded-xl flex-1 hidden"></iframe>
-            </div>
-            <div class=" pb-20"> 
-                <p class="mt-6 text-base text-justify">Por esto cada fase tiene <b>21 días</b>, para evitar la adaptación que es la principal forma como tu cuerpo no deja que sigas bajando de peso. Cuando yo digo, voy a hacer fases de 21 días, lo que quiero es que tu cuerpo nunca se adapte, sigas bajando y perpetúe bajando de peso. Para mi y para las más de 2300 personas que han pasado en el chat con un 97% efectividad.</p>
-            </div>
-        </div>
-    </section>
-    <section class="bg-gradient-to-t from-white">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8 pb-24">
-            <div>
-                <div class=" flex items-center flex-col md:flex-row ">
-                    <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
-                        <header>
-                            <h2 class="text-2xl md:text-3xl font-bold mb-2"><span class="font-medium text-gray-600 mr-2">FASE 1</span> KETO<span class="text-red-700">BAYTER</span></h2>
-                        </header>
-                        <div>
-                            <p class="text-gray-700 text-justify">La fase 1, está diseñada de una forma fácil y sencilla. En los primeros 21 días vas a empezar a tener una armonía hormonal la cual se logra cuando decides dejar el dulce. Esta fase tiene un objetivo sublime: dejar la adicción a todo aquello que te está haciendo daño, a todo aquello que está haciendo que tus hormonas estén desordenadas.</p>
-                        </div>
-                    </div>
-                    <figure class="hidden md:block flex-1 ml-4">
-                        <img src="{{asset('img/resources/smartmockups_kkok833x.png')}}" alt="" class="w-full object-cover">
-                    </figure>
-                </div>
-            </div>
-            <div class="mt-12">
-                <div class=" flex items-center flex-col md:flex-row ">
-                    <figure class="hidden md:block flex-1 mr-4">
-                        <img src="{{asset('img/resources/smartmockups_klog63x.png')}}" alt="" class="w-full object-cover">
-                    </figure>
-                    <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
-                        <header>
-                            <h2 class="text-2xl md:text-3xl font-bold mb-2"><span class="font-medium text-gray-600 mr-2">FASE 2</span> LIPO<span class="text-red-700">BAYTER</span></h2>
-                        </header>
-                        <div>
-                            <p class="text-gray-700 text-justify">Para este momento ya has logrado vencer tus adicciones, tienes claro que no vas a contar calorías, ni a pesar tus alimentos (visualmente ya aprendiste a conocer las cantidades) y tienes los lineamientos básicos. Sin embargo, falta camino por recorrer y aún cuando ya estás disfrutando los beneficios de la dieta Keto Perfecta, todavía te falta conocer tu cuerpo y ver cómo va a reaccionar ahora que reincorporarás por los siguientes 21 días otros alimentos a la dieta.</p>
+                        @if ($plan_oferta->discount)
+
+                            @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                                
+                                    <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p>
+                                    <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
+                                <div class="text-center">
+                                    <p class="text-base text-gray-700 mb-2">Oferta {{$plan_oferta->discount->name}}</p>
+                                    <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                </div>
+                                @else
+                                <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
+                            @endif
+                        @else
+                            <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
+                        @endif
+                        
+                        <div class="mt-4">
+                            <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con la fase 1 del Método <span class="text-red-700">DKP</span>?</h3>
+                            <ul>
+                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida a la Fase 1 del Método DKP<b class=" text-sm text-gray-600 block font-medium">(Precio normal 110 US$)</b></p></li>
+                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
+                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
+                            </ul>
+                            <a href="{{route('payment.checkout', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="mt-12">
-                <div class=" flex items-center flex-col md:flex-row ">
-                    <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
-                        <header>
-                            <h2 class="text-2xl md:text-3xl font-bold mb-2"><span class="font-medium text-gray-600 mr-2">FASE 3</span> INTER<span class="text-red-700">BAYTER</span></h2>
-                        </header>
-                        <div>
-                            <p class="text-gray-700 text-justify">En este momento después de 42 días, viene la otra cachetada a tu organismo. Vas a iniciar los ayunos intermitentes (¡cuando ya no te da hambre!). Por eso los ketobayter iniciamos el ayuno después de 42 días, porque el ayuno debe ser algo natural y vas a aprovechar los beneficios que proporcionan los ayunos al cuerpo. Esta fase es una combinación de la fase 1 más ayunos de lunes a viernes, más la fase 2 los sábados y domingos.</p>
+            @endcan
+        @else
+            <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
+                <header>
+                    <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Da el primer paso. Yo te acompañaré el resto del camino.</h2>
+                </header>
+                       
+                <section class="flex flex-col-reverse lg:flex-row items-center justify-center"> 
+                    <article>
+                        <div class="mt-12 border-black border-8 max-w-md mx-auto px-8 py-6 rounded-2xl bg-gray-900 text-white ">
+                            <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> Fase 1</h2>
+                            <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
+        
+                            @if ($plan_oferta->discount)
+        
+                                @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                                    
+                                        <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p>
+                                        <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
+                                    <div class="text-center">
+                                        <p class="text-base text-gray-400 mb-2">Oferta {{$plan_oferta->discount->name}}</p>
+                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                    </div>
+                                    @else
+                                    <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
+                                @endif
+                            @else
+                                <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
+                            @endif
+        
+                            <div class="mt-4">
+                                <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el la fase 1 del Método <span class="text-red-700">DKP</span>?</h3>
+                                <ul>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso inmediato y de por vida a la Fase 1 del Método DKP<b class=" text-sm text-gray-400 block font-medium">(Precio normal 110 US$)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-400 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-400 block font-medium">(Precio normal 19 US$)</b></p>
+                                </ul>
+                                <a href="{{route('payment.checkout', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                            </div>
                         </div>
-                    </div>
-                    <figure class="hidden md:block flex-1 ml-4">
-                        <img src="{{asset('img/resources/smartmockups_kkojy9m7-1-.png')}}" alt="" class="w-full object-cover">
-                    </figure>
-                </div>
+                    </article>
+                </section>
             </div>
-            <div class="mt-12">
-                <div class=" flex items-center flex-col md:flex-row ">
-                    <figure class="hidden md:block flex-1 mr-4">
-                        <img src="{{asset('img/resources/smartmockups_olpd97x.png')}}" alt="" class="w-full object-cover">
-                    </figure>
-                    <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
-                        <header>
-                            <h2 class="text-2xl md:text-3xl font-bold mb-2"><span class="font-medium text-gray-600 mr-2">FASE 4</span> KETO<span class="text-red-700">METABOLISMO</span></h2>
-                        </header>
-                        <div>
-                            <p class="text-gray-700 text-justify">Es la fase mas dura, aquí solo por 7 días y tan solo con 11 alimentos naturales, vas a activar de nuevo una perdida de peso impresionante, pues vamos a desintoxicar tu organismo. ¿Para qué? Para prepararte a la segunda vuelta de la fase 1, o tantas cuanto necesites para cambiar tu energía, cambiar tu vida, cambiar tu salud y como efecto secundario, bajar de peso.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endauth
     </section>
-    <section class="bg-gray-900">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8 py-12 md:py-20  flex flex-col">
-            <h2 class="text-xl md:text-3xl font-bold text-gray-50 text-center">
-                SE NECESITAN <span class="text-red-700">7 DÍAS</span> PARA INICIAR UN RETO, <span class="text-red-700">21 DÍAS</span> PARA DESARROLLAR UN HÁBITO, <span class="text-red-700">90 DÍAS</span> PARA DESARROLLAR UN ESTILO DE VIDA Y <span class="text-red-700">210 DÍAS </span>PARA DESARROLLAR UN ESTILO DE VIDA KETOBAYTER PERFECTO.
-            </h2>
-        </div>
-    </section>
+
+
     <section class="bg-white">
-        <div class="max-w-5xl mx-auto px-6 lg:px-8 py-24">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8 pt-12 pb-24">
             <header class="py-4">
                 <h2 class="text-xl md:text-3xl text-center mb-4 font-bold text-gray-900">Únete a miles de personas que han alcanzado sus objetivos de pérdida de peso y salud con el Método DKP</h2>
                 <p class="text-center max-w-2xl mx-auto mb-8">Estamos muy orgullosos de los miembros de nuestra familia <b>KetoBayter</b> por haber alcanzado sus objetivos de pérdida de peso y salud. Te queremos compartir algunos de ellos.</p>
@@ -243,31 +255,20 @@
             </div>
         </div>
     </section>
-    <section class="bg-gray-900 ">
-        <div class="max-w-7xl mx-auto relative px-6 md:px-0">
-            <div class="flex relative">
-                <div class="max-w-xl my-12 md:my-28">
-                    <header>
-                        <h1 class="text-white leading-none font-black text-2xl md:text-5xl">¿Quién es el Doctor Bayter?</h1>
-                        <p class="text-white mt-8 mb-4 text-lg">Médico Especialista en Medicina Crítica y Cuidado IntensivoMédico Especialista en Anestesiólogos y Reanimación.</p>
-                        <a href="{{route('doctor')}}" class=" inline-block mt-2 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Conoce más sobre tu Doctor aquí</a>
-                    </header>
-                </div>
-            </div>
-            <div class="md:absolute right-0 bottom-0">
-                <figure class="">
-                    <img src="{{asset('img/photos/doctor_bayter_triatleta.png')}}" alt="" class="object-cover w-full md:w-10/12 ml-auto">
-                </figure>
-            </div>
-        </div>
-    </section>
+ 
     <section class="bg-white">
+
+        <header class="bg-gray-900 py-12">
+            <h2 class="text-gray-50 text-center font-black text-2xl md:text-5xl max-w-5xl mx-auto">¿Qué incluye y cómo funciona la suscripción a la fase 1 del Método <span class="text-red-700">DKP</span>?</h2>
+            
+        </header>
+        
         <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
-            <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">¿Qué incluye y cómo funciona la suscripción al Método <span class="text-red-700">DKP</span>?</h2>
+            
             <div class="mt-16 md:mt-8">
                 <div class=" flex items-center flex-col-reverse md:flex-row ">
                     <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
-                        <p class="text-gray-900 text-justify">Te guiaremos y acompañaremos para que cambies tu vida. con el <b>Método DKP</b> encontrarás las mejores recetas de desayunos, snacks, almuerzos y cenas con los gramos exactos de grasas, proteinas y carbohidratos que necesitas en tu día a día con más de 140 deliciosas opciones diferentes y faciles de preparar.</p>
+                        <p class="text-gray-900 text-justify">Te guiaremos y acompañaremos con la <b>Fase 1</b> encontrarás las mejores recetas de desayunos, snacks, almuerzos y cenas con los gramos exactos de grasas, proteinas y carbohidratos que necesitas en tu día a día con más de 70 deliciosas opciones diferentes y faciles de preparar.</p>
                     </div>
                     <figure class="mb-4 md:mb-0 flex-1 md:ml-12 overflow-hidden rounded-lg shadow-lg">
                         <img src="{{asset('img/resources/metodo_dkp_37sx.jpg')}}" alt="" class="w-full object-cover">
@@ -403,108 +404,56 @@
             </div>
         </div>
     </section>
-    <section class="bg-white" id="go">
-        @auth
-            @can('enrolled', auth()->user()->subscription)
-                <div class="text-center py-20 "> 
-                    <header>
-                        <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Ya estás dentro</h2>
-                        <p class="text-center text-lg font-semibold">tu plan actual es {{auth()->user()->subscription->plan->name}}</p>
-                    </header>
-                    <a href="{{route('plan.index')}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">Entra aquí a tu plan</a>
-                </div>
-            @else
-                <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
-                    <header>
-                        <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Toma la decisión ahora</h2>
-                        <p class="text-center text-lg font-semibold">Da el primer paso. Yo te acompañaré el resto del camino.</p>
-                    </header>
-                    
-                    
-                    <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
-                        <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span></h2>
-                        <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
-
-                        @if ($plan_oferta->discount)
-
-                            @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                
-                                    <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p>
-                                    <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
-                                <div class="text-center">
-                                    <p class="text-base text-gray-700 mb-2">Oferta {{$plan_oferta->discount->name}}</p>
-                                    <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>    
-                                </div>
-                                @else
-                                <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
-                            @endif
-                        @else
-                            <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
-                        @endif
-                        
-                        <div class="mt-4">
-                            <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
-                            <ul>
-                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida al método DKP (4 Fases)<b class=" text-sm text-gray-600 block font-medium">(Precio normal 262 US$)</b></p></li>
-                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
-                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
-                            </ul>
-                            <a href="{{route('payment.checkout', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
-                        </div>
-                    </div>
-                </div>
-            @endcan
-        @else
-            <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
-                <header>
-                    <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Toma la decisión ahora</h2>
-                    <p class="text-center text-lg font-semibold">Da el primer paso. Yo te acompañaré el resto del camino.</p>
-                </header>
-                       
-                <section class="flex flex-col-reverse lg:flex-row items-center justify-center"> 
-                    <article>
-                        <div class="mt-12 border-black border-8 max-w-md mx-auto px-8 py-6 rounded-2xl bg-gray-900 text-white ">
-                            <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> 4 Fases</h2>
-                            <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
-        
-                            @if ($plan_oferta->discount)
-        
-                                @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                    
-                                        <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p>
-                                        <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
-                                    <div class="text-center">
-                                        <p class="text-base text-gray-400 mb-2">Oferta {{$plan_oferta->discount->name}}</p>
-                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>    
-                                    </div>
-                                    @else
-                                    <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
-                                @endif
-                            @else
-                                <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
-                            @endif
-        
-                            <div class="mt-4">
-                                <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
-                                <ul>
-                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso inmediato y de por vida al método DKP (4 Fases)<b class=" text-sm text-gray-400 block font-medium">(Precio normal 262 US$)</b></p></li>
-                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso al chat WhatsApp por 30 días <b class=" text-sm text-gray-400 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
-                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-400 block font-medium">(Precio normal 19 US$)</b></p>
-                                </ul>
-                                <a href="{{route('payment.checkout', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
-                            </div>
-                        </div>
-                    </article>
-                </section>
-            </div>
-        @endauth
-    </section>
+    
     <section class="py-8 md:py-16 bg-gray-900 bg-opacity-95 px-6 md:px-0">
         <div class="max-w-5xl mx-auto text-gray-50">
-            <p class="uppercase text-yellow-500 font-medium text-sm md:text-lg">¿Tienes dudas adicionales?</p>
-            <a href="https://chat.whatsapp.com/FACKQp2A72U9idC2xiUfsR" target="_blank" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline " title="Escríbemele a mi equipo">
-                <span  class="">Entra al grupo de WhatsApp</span>
+            <p class="uppercase text-gray-200 font-medium text-sm md:text-lg">¿Estas listo para iniciar?</p>
+            <a href="{{route('payment.checkout', $plan_oferta)}}" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline ">
+                <span class="text-yellow-500 ">¡Adquiere tu Fase 1 ahora!</span>
             </a>
         </div>
     </section>
+
+    
+
+    <script>
+
+console.log(document.cookie.replace(/(?:(?:^|.*;\s*)promoAdReto4\s*\=\s*([^;]*).*$)|^.*$/, "$1"))
+
+        
+        let promoAdDiv = document.getElementById("promoAdReto4");
+
+
+            
+            // Set the date we're counting down to
+            let countdown = document.getElementById('countdown');
+            let countdownData = '{{$promo_time['date']}}'
+            var countDownDate = new Date(countdownData).getTime();
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            // Time calculations for days, hours, minutes and seconds
+            var days = (Math.floor(distance / (1000 * 60 * 60 * 24)));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Time validate and HTML
+            let daysHtml = "<span class='leading-none text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'>"+ days.toString().padStart(2, '0') + " <small class='block text-xs px-1'>DIAS</small> </span>";
+            let hoursHtml = "<span class='leading-none text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'>"+ hours.toString().padStart(2, '0') + "  <small class='block text-xs px-1'>HORAS</small> </span>";
+            let minutesHtml = "<span class='leading-none text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'> "+ minutes.toString().padStart(2, '0') + "  <small class='block text-xs px-1'>MINUTOS</small> </span>";
+            let secondsHtml = "<span class='leading-none text-center px-2 py-4 bg-red-700 pt-4 rounded-lg text-gray-50'>"+ seconds.toString().padStart(2, '0') + " <small class='block text-xs px-1'>SEGUNDOS</small> </span>";
+            // Display the result in the element with id="demo"
+            countdown.innerHTML = daysHtml + hoursHtml  + minutesHtml + secondsHtml;
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                countdown.innerHTML = "<p class='col-span-7 mt-auto mb-auto'>Esta oferta ha expirado</p>";
+            }
+            }, 1000);
+        
+    </script>
+
 </x-app-layout>

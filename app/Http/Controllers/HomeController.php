@@ -23,6 +23,14 @@ class HomeController extends Controller
         $plan_fase_uno = Plan::find(2);
         return  view('dkp', compact('plan_premium','plan_fase_uno'));
     }
+
+    public function dkpOferta()
+    {
+        $plan_oferta = Plan::find(8);
+        return  view('dkp-oferta', compact('plan_oferta'));
+    }
+
+
     public function programas()
     {
         return  view('programas');

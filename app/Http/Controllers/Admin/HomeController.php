@@ -121,8 +121,6 @@ class HomeController extends Controller
 
     public function price(){
 
-        
-
         DB::table('plans')->where('id', '=', '2')->update(['price_id' => 5]);
         
         //$prices = Price::all();

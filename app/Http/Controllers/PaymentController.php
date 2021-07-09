@@ -72,11 +72,16 @@ class PaymentController extends Controller
                     $suscription->user_id = $user->id;
                     $suscription->plan_id = $plan->id;
                     $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-                    $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->first();
+                    $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->orWhere('plan_id', 8)->first();
                     $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
                     $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
+                    $plan_8_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
+                    $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
                     $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
                     $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
+                    $all_fases = Fase::all();
+                    $fase_one = Fase::find(1);
+                    
                     switch ($plan->id) {
                         case 1:
                             if($is_subscribed){
@@ -84,9 +89,25 @@ class PaymentController extends Controller
                             }else if($previous_subscribed){
                                 $previous_subscribed->delete();
                                 $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                foreach($all_fases as $fase){
+                                    $fase->clients()->attach($user->id);
+                                }
                             }
                             else{
                                 $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                foreach($all_fases as $fase){
+                                    $fase->clients()->attach($user->id);
+                                }
                             }
                         break;
                         case 2:
@@ -95,9 +116,21 @@ class PaymentController extends Controller
                             }else if($plan_7dias_subscribed){
                                 $plan_7dias_subscribed->delete();
                                 $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                $fase_one->clients()->attach($user->id);
                             }
                             else{
                                 $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                $fase_one->clients()->attach($user->id);
                             }
                         break;
                         case 3:
@@ -106,6 +139,11 @@ class PaymentController extends Controller
                             }
                             else{
                                 $suscription->save();
+                                foreach($all_fases as $fase){
+                                    if($fase->id != 1){
+                                     $fase->clients()->attach($user->id);
+                                    }
+                                }
                             }
                         break;
                         case 4:
@@ -128,6 +166,56 @@ class PaymentController extends Controller
                             }
                             else{
                                 $suscription->save();
+                            }
+                        break;
+                        case 8:
+                            if($plan_8_subscribed || $plan_2_subscribed){
+                                // Do nothing
+                            }else if($plan_7dias_subscribed){
+                                $plan_7dias_subscribed->delete();
+                                $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                $fase_one->clients()->attach($user->id);
+                            }
+                            else{
+                                $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                $fase_one->clients()->attach($user->id);
+                            }
+                        break;
+                        case 9:
+                            if($plan_9_subscribed || $is_subscribed){
+                                // Do nothing
+                            }else if($previous_subscribed){
+                                $previous_subscribed->delete();
+                                $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                foreach($all_fases as $fase){
+                                    $fase->clients()->attach($user->id);
+                                }
+                            }
+                            else{
+                                $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                foreach($all_fases as $fase){
+                                    $fase->clients()->attach($user->id);
+                                }
                             }
                         break;
                     }
@@ -183,9 +271,11 @@ class PaymentController extends Controller
             $suscription->user_id = $user->id;
             $suscription->plan_id = $plan->id;
             $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-            $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->first();
+            $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->orWhere('plan_id', 8)->first();
             $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
             $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
+            $plan_8_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
+            $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
             $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
             $all_fases = Fase::all();
@@ -198,12 +288,22 @@ class PaymentController extends Controller
                     }else if($previous_subscribed){
                         $previous_subscribed->delete();
                         $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
                         foreach($all_fases as $fase){
                             $fase->clients()->attach($user->id);
                         }
                     }
                     else{
                         $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
                         foreach($all_fases as $fase){
                             $fase->clients()->attach($user->id);
                         }
@@ -215,10 +315,20 @@ class PaymentController extends Controller
                     }else if($plan_7dias_subscribed){
                         $plan_7dias_subscribed->delete();
                         $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
                         $fase_one->clients()->attach($user->id);
                     }
                     else{
                         $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
                         $fase_one->clients()->attach($user->id);
                     }
                 break;
@@ -255,6 +365,60 @@ class PaymentController extends Controller
                     }
                     else{
                         $suscription->save();
+                    }
+                break;
+                case 8:
+                    if($plan_8_subscribed || $plan_2_subscribed){
+                        // Do nothing
+                    }else if($plan_7dias_subscribed){
+                        $plan_7dias_subscribed->delete();
+                        $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    else{
+                        $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
+                        $fase_one->clients()->attach($user->id);
+                    }
+                break;
+                case 9:
+                    if($plan_9_subscribed || $is_subscribed){
+                        // Do nothing
+                    }else if($previous_subscribed){
+                        $previous_subscribed->delete();
+                        $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
+                        foreach($all_fases as $fase){
+                            if($fase->id != 1){
+                             $fase->clients()->attach($user->id);
+                            }
+                        }
+                    }
+                    else{
+                        $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
+                        foreach($all_fases as $fase){
+                            if($fase->id != 1){
+                             $fase->clients()->attach($user->id);
+                            }
+                        }
                     }
                 break;
             }
@@ -353,9 +517,11 @@ class PaymentController extends Controller
                     $suscription->user_id = $user->id;
                     $suscription->plan_id = $plan->id;
                     $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-                    $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->first();
+                    $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->orWhere('plan_id', 8)->first();
                     $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
                     $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
+                    $plan_8_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
+                    $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
                     $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
                     $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
                     $all_fases = Fase::all();
@@ -368,12 +534,22 @@ class PaymentController extends Controller
                             }else if($previous_subscribed){
                                 $previous_subscribed->delete();
                                 $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
                                 foreach($all_fases as $fase){
                                     $fase->clients()->attach($user->id);
                                 }
                             }
                             else{
                                 $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
                                 foreach($all_fases as $fase){
                                     $fase->clients()->attach($user->id);
                                 }
@@ -385,10 +561,20 @@ class PaymentController extends Controller
                             }else if($plan_7dias_subscribed){
                                 $plan_7dias_subscribed->delete();
                                 $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
                                 $fase_one->clients()->attach($user->id);
                             }
                             else{
                                 $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
                                 $fase_one->clients()->attach($user->id);
                             }
                         break;
@@ -425,6 +611,60 @@ class PaymentController extends Controller
                             }
                             else{
                                 $suscription->save();
+                            }
+                        break;
+                        case 8:
+                            if($plan_8_subscribed || $plan_2_subscribed){
+                                // Do nothing
+                            }else if($plan_7dias_subscribed){
+                                $plan_7dias_subscribed->delete();
+                                $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                $fase_one->clients()->attach($user->id);
+                            }
+                            else{
+                                $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                $fase_one->clients()->attach($user->id);
+                            }
+                        break;
+                        case 9:
+                            if($plan_9_subscribed || $is_subscribed){
+                                // Do nothing
+                            }else if($previous_subscribed){
+                                $previous_subscribed->delete();
+                                $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                foreach($all_fases as $fase){
+                                    if($fase->id != 1){
+                                     $fase->clients()->attach($user->id);
+                                    }
+                                 }
+                            }
+                            else{
+                                $suscription->save();
+                                $whatsApp30 = new Subscription();
+                                $whatsApp30->user_id = $user->id;
+                                $whatsApp30->plan_id = 4;
+                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                                $whatsApp30->save();
+                                foreach($all_fases as $fase){
+                                    if($fase->id != 1){
+                                     $fase->clients()->attach($user->id);
+                                    }
+                                 }
                             }
                         break;
                     }
@@ -489,9 +729,11 @@ class PaymentController extends Controller
             $suscription->user_id = $user->id;
             $suscription->plan_id = $plan->id;
             $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-            $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->first();
+            $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->orWhere('plan_id', 8)->first();
             $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
             $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
+            $plan_8_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
+            $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
             $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
             $all_fases = Fase::all();
@@ -526,6 +768,11 @@ class PaymentController extends Controller
                     }else if($plan_7dias_subscribed){
                         $plan_7dias_subscribed->delete();
                         $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
                         $fase_one->clients()->attach($user->id);
                     }
                     else{
@@ -571,6 +818,56 @@ class PaymentController extends Controller
                     }
                     else{
                         $suscription->save();
+                    }
+                break;
+                case 8:
+                    if($plan_8_subscribed || $plan_2_subscribed){
+                        // Do nothing
+                    }else if($plan_7dias_subscribed){
+                        $plan_7dias_subscribed->delete();
+                        $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    else{
+                        $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
+                        $fase_one->clients()->attach($user->id);
+                    }
+                break;
+                case 9:
+                    if($plan_9_subscribed || $is_subscribed){
+                        // Do nothing
+                    }else if($previous_subscribed){
+                        $previous_subscribed->delete();
+                        $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
+                        foreach($all_fases as $fase){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    else{
+                        $suscription->save();
+                        $whatsApp30 = new Subscription();
+                        $whatsApp30->user_id = $user->id;
+                        $whatsApp30->plan_id = 4;
+                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
+                        $whatsApp30->save();
+                        foreach($all_fases as $fase){
+                            $fase->clients()->attach($user->id);
+                        }
                     }
                 break;
             }

@@ -31,7 +31,7 @@
                         <hr class="my-16">
 
                         <section class="grid grid-cols-1 xl:grid-cols-2 gap-8 my-8 bg">
-                            @if (auth()->user()->subscription->plan->id != 1)
+                            @if (auth()->user()->subscription->plan->id != 1 || auth()->user()->subscription->plan->id != 9)
                                 <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg inline-block shadow-sm ">
                                     <div class=" flex items-center">
                                         <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">

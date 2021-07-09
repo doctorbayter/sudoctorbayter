@@ -121,12 +121,9 @@ class HomeController extends Controller
 
     public function price(){
 
-        $price = Price::create([
-            'name' => '166 US$',
-            'value' => 166
-        ]);
+        
 
-        DB::table('plans')->where('id', '=', '8')->update(['price_id' => $price->id]);
+        DB::table('plans')->where('id', '=', '2')->update(['price_id' => 5]);
         
         //$prices = Price::all();
         /*$plan = Plan::find(1);

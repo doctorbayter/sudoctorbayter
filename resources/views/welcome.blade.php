@@ -4,7 +4,7 @@
             <div class="max-w-lg my-24">
                 <header class="">
                     <h1 class="text-gray-900 leading-none font-black text-4xl md:text-5xl">Bienvenido a la Dieta <span class="text-red-700">Keto</span> Perfecta</h1>
-                    <p class="text-gray-900 mt-4 md:mt-8 mb-4 md:text-xl">Con tu <b>Doctor Bayter</b> el que más sabe de la dieta keto en español del mundo</p>
+                    <p class="text-gray-900 mt-4 md:mt-8 mb-4 md:text-xl">Con tu <b>Doctor Bayter</b> el que más sabe de la dieta keto en español del mundo.</p>
                 </header>
                 <div class="flex mt-12">
                     <figure class="bg-gray-200 rounded-xl w-28 h-36 overflow-hidden shadow-md">

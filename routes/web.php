@@ -8,6 +8,7 @@ use App\Models\Image;
 use App\Models\Ingredient;
 use App\Models\Instruction;
 use App\Models\Recipe;
+use App\Models\Subscription;
 use App\Models\User;
 use App\Models\Week;
 use Illuminate\Database\Schema\Blueprint;
@@ -49,14 +50,17 @@ Route::get('/110', function () {
     return view('no-disponible');
 });
 
-//php artisan migrate:fresh --seed --force 
+//php artisan migrate:fresh --seed --force
 
 Route::get('x/sql', function(){
-    
+
     //$weeks = DB::table('fase_week')->get();
-    $users = User::where('email','!=','null')->get();
-    dd($users);
- 
+    $plan_8 = Subscription::where('plan_id','=','8')->get();
+    $plan_9 = Subscription::where('plan_id','=','9')->get();
+    echo $plan_8->count(). " Plan Fase 1 47 us";
+    echo "<br>";
+    echo $plan_9->count(). " Plan 4 Fases 99 us";
+
 });
 
 Route::get('x/query', function(){
@@ -186,7 +190,7 @@ Route::get('x/query', function(){
     (44, '3', '44', CURRENT_TIMESTAMP, NULL),
     (45, '3', '45', CURRENT_TIMESTAMP, NULL),
     (46, '3', '46', CURRENT_TIMESTAMP, NULL),
-    (47, '3', '47', CURRENT_TIMESTAMP, NULL), 
+    (47, '3', '47', CURRENT_TIMESTAMP, NULL),
     (48, '3', '48', CURRENT_TIMESTAMP, NULL),
     (49, '3', '49', CURRENT_TIMESTAMP, NULL),
     (50, '3', '50', CURRENT_TIMESTAMP, NULL),
@@ -205,7 +209,7 @@ Route::get('x/query', function(){
     (63, '3', '63', CURRENT_TIMESTAMP, NULL)");
 
 
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES 
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
     (43, '43', '1', CURRENT_TIMESTAMP, NULL),
     (44, '44', '1', CURRENT_TIMESTAMP, NULL),
     (45, '45', '1', CURRENT_TIMESTAMP, NULL),
@@ -278,4 +282,4 @@ DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, upd
 
 */
 
-}); 
+});

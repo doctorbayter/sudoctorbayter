@@ -49,7 +49,7 @@ Route::get('/110', function () {
     return view('no-disponible');
 });
 
-//php artisan migrate:fresh --seed --force
+//php artisan migrate:fresh --seed --force 
 
 Route::get('x/sql', function(){
     

@@ -7,6 +7,7 @@ use App\Models\Fase;
 use App\Models\Image;
 use App\Models\Ingredient;
 use App\Models\Instruction;
+use App\Models\Plan;
 use App\Models\Recipe;
 use App\Models\Subscription;
 use App\Models\User;
@@ -55,6 +56,8 @@ Route::get('/110', function () {
 Route::get('x/sql', function(){
 
     //$weeks = DB::table('fase_week')->get();
+    $plans = Plan::all();
+    dd($plans);
     $plan_8 = Subscription::where('plan_id','=','8')->get();
     $plan_9 = Subscription::where('plan_id','=','9')->get();
     echo $plan_8->count(). " Plan Fase 1 47 us";

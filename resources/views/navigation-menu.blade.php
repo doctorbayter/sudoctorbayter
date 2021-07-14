@@ -50,7 +50,7 @@
                 @endforeach
 
             </div>
-            
+
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
@@ -130,7 +130,7 @@
                                     {{ __('Manage Account') }}
                                 </div>
 
-                                @can('enrolled', auth()->user()->subscription)
+                                @can('enrolled', auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9])->first())
                                     <x-jet-dropdown-link href="{{ route('plan.index') }}">
                                         <b class="text-red-700">{{ __('Mi Página') }}</b>
                                     </x-jet-dropdown-link>
@@ -186,7 +186,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
 
-        
+
 
         <div class="pt-2 pb-3 space-y-1">
             @foreach ($nav_links as $nav_link)
@@ -213,8 +213,8 @@
 
     <div class="mt-3 space-y-1">
         <!-- Account Management -->
-        
-        @can('enrolled', auth()->user()->subscription)
+
+        @can('enrolled', auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9])->first())
             <x-jet-responsive-nav-link href="{{ route('plan.index') }}" :active="request()->routeIs('plan.fase')">
                 <b class="text-red-700">{{ __('Mi Página') }}</b>
             </x-jet-responsive-nav-link>
@@ -284,6 +284,6 @@
         </x-jet-responsive-nav-link>
     </div>
 @endauth
-        
+
     </div>
 </nav>

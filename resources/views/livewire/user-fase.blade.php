@@ -1,10 +1,10 @@
 <div x-data="{ openMenu: false }" >
     <div class="flex">
-        @can('enrolled', auth()->user()->subscription)
+        @can('enrolled', auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9])->first())
             @can('enrolledFase', $fase)
                 <x-menu :fases="$user_fases" />
                 <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="bg-white  ml-auto">
-                    
+
                     <header class="bg-fixed bg-cover shadow-lg" style="background-image: url({{asset('img/backgrounds/meal_plan_top_banner_2-1-1.jpg')}})">
                         <div class="w-11/12 mx-auto py-10">
                             <h3 class="font-bold text-white text-lg md:text-xl px-2 inline-block bg-red-700"> {{$fase->name}}</h3>
@@ -13,11 +13,11 @@
                             <section class=" flex items-center flex-col md:flex-row mt-4 ">
 
                                 @foreach ($fase->resources->sortBy('created_at') as $resource)
-                                        <a  href="{{asset($resource->url)}}" target="_blank" class="text-white text-xs mt-4 md:mt-0 md:text-sm xl:text-base border @if ($loop->first) md:mr-3 @endif cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-6 py-2 rounded-full">Descargar {{$resource->name}}</a>        
+                                        <a  href="{{asset($resource->url)}}" target="_blank" class="text-white text-xs mt-4 md:mt-0 md:text-sm xl:text-base border @if ($loop->first) md:mr-3 @endif cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-6 py-2 rounded-full">Descargar {{$resource->name}}</a>
                                 @endforeach
                             </section>
                         </div>
-                    </header>  
+                    </header>
 
                     @if ($fase->id == 3)
                     <div class="flex flex-col space-y-4 min-w-screen py-8 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
@@ -51,14 +51,14 @@
                             }
                         @endphp
                         <div class="w-11/12 mx-auto my-10" x-data="{selected:{{$selected}}}">
-                        
+
                             <section class="mt-8 mb-20">
                                 <div class="grid grid-cols-{{$fase->weeks->count()}} text-center">
 
                                     @foreach ($fase->weeks as $key => $week)
-                                                                        
+
                                         <div class="border border-gray-100 font-bold cursor-pointer bg-gray-50 rounded-tl-md relative">
-                                            
+
                                             <div class="text-red-700 border-b-4 text-xs md:text-base  hover:text-red-700" @click="selected = {{$key}}" x-bind:class="{ 'border-red-700 py-4': selected == {{$key}}, 'border-gray-400 py-4': selected !== {{$key}} }">
                                                 <img src="{{asset('img/icons/gfx/calendar_color.svg')}}" alt="" class="w-3 md:w-5 mr-2 inline"> {{$week->name}}
                                             </div>
@@ -66,11 +66,11 @@
                                             @if ($week->pivot->resource)
                                                 <div>
                                                     <a href="{{asset($week->pivot->resource)}}" target="_blank" class=" text-sm py-2 w-full block text-white" x-bind:class="{ 'bg-gray-900 ': selected == {{$key}}, 'bg-gray-200 ': selected !== {{$key}} }">
-                                                        Descargar lista de alimentos 
+                                                        Descargar lista de alimentos
                                                     </a>
                                                 </div>
                                             @endif
-                                            
+
                                             <div class="grid overflow-hidden h-0 md:h-auto grid-cols-7 text-center shadow-md  absolute w-full " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
                                                 @foreach ($week->days->sortBy('day') as $day)
 
@@ -78,7 +78,7 @@
                                                         <div wire:click="setDay({{$day}})" class="font-semibold text-xs @if ($this->day->day == $day->day) bg-red-700 text-red-100 cursor-default @else bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer @endif  py-2   "><span class="hidden md:block xl:inline">Día</span> {{$day->day}}</div>
                                                     @endif
 
-                                                    
+
                                                 @endforeach
                                             </div>
                                         </div>
@@ -103,14 +103,14 @@
                                     <p class="mb-4 text-gray-500"><img src="{{asset('img/icons/gfx/pie-chart.svg')}}" alt="" class="w-4 mr-1 inline opacity-40">Gramos de carbohidratos día <b>{{$this->carbs}}</b></p>
                                 </header>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-10 divide-y-2 md:divide-y-0 ">
-                                    
-                                    
+
+
                                     @foreach ($this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal') as $key => $recipe)
                                         <div class="pt-12 md:pt-0">
                                             <a href="{{route('plan.recipe', $recipe)}}">
-                                                <div class="relative h-62"> 
+                                                <div class="relative h-62">
                                                     <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 ">
-                                                    
+
                                                         @switch($recipe->days[0]->pivot->meal)
                                                             @case(1)
                                                                     @if ($fase->id == 3  )
@@ -118,19 +118,19 @@
                                                                             <p>Desayuno</p>
                                                                             @else
                                                                             <p>Romper ayuno</p>
-                                                                        @endif    
+                                                                        @endif
                                                                     @else
-                                                                        <p>Desayuno</p>   
-                                                                    @endif           
+                                                                        <p>Desayuno</p>
+                                                                    @endif
                                                                 @break
                                                             @case(2)
                                                                 <p>Almuerzo</p>
                                                                 @break
                                                             @case(3)
                                                                 <p>Cena</p>
-                                                                @break    
+                                                                @break
                                                         @endswitch
-                                                        
+
                                                     </div>
                                                     <img src="{{asset('img/'.$recipe->image->url)}}" alt="" class="rounded-2xl object-cover">
                                                 </div>
@@ -149,10 +149,10 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </div>  
+                                        </div>
                                     @endforeach
                                 </div>
-                                <hr class="my-12"> 
+                                <hr class="my-12">
                                 <div class="flex flex-col xl:flex-row" x-data="{ modalIsShowing: false }" >
 
                                     @if ($this->day->recipes->where('type', '==', 2)->count() > 0 )
@@ -187,16 +187,16 @@
                                                     x-transition:leave-end="opacity-0"
                                                     >
                                                     <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50" x-on:click="modalIsShowing = false"></div>
-                                                    
+
                                                     <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-                                                        
+
                                                         <div x-on:click="modalIsShowing = false" class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"  >
                                                             <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
                                                                 <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
                                                             </svg>
-                                                            
+
                                                         </div>
-                                                
+
                                                         <!-- Add margin if you want to see some of the overlay behind the modal-->
                                                         <div class="modal-content py-4 text-left px-6">
 
@@ -225,21 +225,21 @@
                                                             @endif
                                                         </div>
                                                     </div>
-                                                </aside> 
+                                                </aside>
                                             </section>
                                         </div>
-                                    @endif    
-                                    
+                                    @endif
+
                                     @if ($this->day->note != "<p></p>")
                                         <div class=" flex-1 ">
                                             <h2 class="text-4xl font-bold mb-4 text-red-700">¡Notas!</h2>
                                             <div class="text-gray-600">
                                                 {!!$this->day->note!!}
                                             </div>
-                                        </div>    
+                                        </div>
                                     @endif
-                                    
-                                    
+
+
                                 </div>
                                 @if ($this->day->video)
                                     <div class="relative w-full mt-8 h-52 md:h-96 xl:min-h-video video-iframe">

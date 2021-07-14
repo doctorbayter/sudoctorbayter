@@ -1,18 +1,18 @@
 <div x-data="{ openMenu: false }" >
     <div class="flex">
-        @can('enrolled', auth()->user()->subscription)
+        @can('enrolled', auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9])->first())
             <x-menu :fases="$user_fases" />
             <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="w-11/12 bg-white">
-                
+
                 <section class="bg-gradient-to-t from-gray-100 " style="height: 100%">
                     <div class="w-10/12 mx-auto py-10">
 
                         <section class="grid grid-cols-1 gap-8 my-8 bg max-w-5xl mx-auto">
-                            
+
                             @if ($whatsapp && $whatsapp->count() > 0 && auth()->user()->subscription->plan->id != 5 && \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now()))
                                 <div class="bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm relative">
                                     <div class=" flex items-center">
-                                        
+
                                         <div class="text-gray-50 flex-1 flex flex-col ">
                                             <div class="flex-1 flex flex-col">
                                                 <p class=" mb-1">Tu acceso al chat grupal termina dentro <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->diffForHumans() }}</b></p>
@@ -25,7 +25,7 @@
                                                             <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planWhatsapp->price->name}}</span>
                                                         </div>
                                                         <small class="text-gray-100">{{$planWhatsapp->discount->name}}</small>
-                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>    
+                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>
                                                     </div>
                                                 @else
                                                     <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$planWhatsapp->price->name}}</p>
@@ -42,10 +42,10 @@
                                         </figure>
                                     </div>
                                 </div>
-                            @else 
+                            @else
                                     <div class=" bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 lg:px-12 rounded-lg inline-block shadow-sm relative">
                                         <div class=" flex items-center ">
-                                            
+
                                             <div class="text-gray-50 flex-1 flex flex-col ">
                                                 <div class="flex-1 flex flex-col">
                                                     <p class=" mb-1">Nunca estarás solo aquiere mi acompañamiento inscríbete ya</p>
@@ -59,7 +59,7 @@
                                                                 <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planWhatsapp->price->name}}</span>
                                                             </div>
                                                             <small class="text-gray-100">{{$planWhatsapp->discount->name}}</small>
-                                                            <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>    
+                                                            <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>
                                                         </div>
                                                     @else
                                                         <p class="text-4xl md:text-4xl font-bold text-gray-50">{{$planWhatsapp->price->name}}</p>

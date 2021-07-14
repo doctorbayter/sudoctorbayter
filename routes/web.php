@@ -55,11 +55,6 @@ Route::get('/110', function () {
 
 Route::get('x/sql', function(){
 
-    //$weeks = DB::table('fase_week')->get();
-    $user = User::where('email','piedadmaria3@hotmail.com')->first();
-
-    dd($user->subscription);
-
     $plan_8 = Subscription::where('plan_id','=','8')->get();
     $plan_9 = Subscription::where('plan_id','=','9')->get();
     echo $plan_8->count(). " Plan Fase 1 47 us";

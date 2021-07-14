@@ -1,9 +1,9 @@
 <div x-data="{ openMenu: false }" >
     <div class="flex">
-        @can('enrolled', auth()->user()->subscription)
+        @can('enrolled', auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9])->first())
             <x-menu :fases="$user_fases" />
             <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="w-11/12 bg-white">
-                
+
                 <section class="bg-gradient-to-t from-gray-100 " style="height: 100%">
                     <div class="w-10/12 mx-auto py-10">
                         <header>
@@ -11,9 +11,9 @@
                             <h2 class="text-4xl font-bold text-gray-900">{{auth()->user()->subscription->plan->name}}</h2>
                         </header>
                         <section class="">
-                            
+
                             <div class="grid grid-cols-1 xl:grid-cols-{{$user_fases->count()}}  gap-8 pt-8">
-                                
+
                                 @foreach ($user_fases as $fase)
                                    <a href="{{route('plan.fase', $fase)}}" class=" px-8 py-12 shadow-sm rounded-lg bg-gray-900 hover:bg-gray-800 text-gray-50 transition-all ease-in-out">
                                         <div>
@@ -49,7 +49,7 @@
                                                             <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planUpdate->price->name}}</span>
                                                         </div>
                                                         <small class="text-gray-100">{{$planUpdate->discount->name}}</small>
-                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planUpdate->discount->expires_at))->diffForHumans() }}</b>!</p>    
+                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planUpdate->discount->expires_at))->diffForHumans() }}</b>!</p>
                                                     </div>
                                                 @else
                                                     <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$planUpdate->price->name}}</p>
@@ -60,7 +60,7 @@
                                     </div>
                                 </div>
                             @endif
-                            
+
                             @if ($whatsapp && $whatsapp->count() > 0 && auth()->user()->subscription->plan->id != 4 && \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now()))
 
                                 <div class="bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm">
@@ -80,7 +80,7 @@
                                                             <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planWhatsapp->price->name}}</span>
                                                         </div>
                                                         <small class="text-gray-100">{{$planWhatsapp->discount->name}}</small>
-                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>    
+                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>
                                                     </div>
                                                 @else
                                                     <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$planWhatsapp->price->name}}</p>
@@ -113,7 +113,7 @@
                                                         <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planWhatsapp->price->name}}</span>
                                                     </div>
                                                     <small class="text-gray-100">{{$planWhatsapp->discount->name}}</small>
-                                                    <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>    
+                                                    <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>
                                                 </div>
                                             @else
                                                 <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$planWhatsapp->price->name}}</p>
@@ -151,10 +151,10 @@
                             </div>
 
                         </section>
-                        
+
                     </div>
                 </section>
-                
+
             </div>
 
         @else
@@ -166,7 +166,7 @@
 
 
     @push('styles')
-        <style>            
+        <style>
             #countdown{
                 grid-template-columns: 1fr 10px 1fr 10px 1fr 10px 1fr;
             }
@@ -196,13 +196,13 @@
         <script>
             const PROMO_AD = sessionasset('img/('promoAd');
             let promoAdDiv = document.getElementById("promoAd");
-            
+
             if(PROMO_AD == "false"){
                 promoAdDiv.remove();
             } else{
 
-                promoAdDiv.innerHTML= '<div data-countdown="'+promoAdDiv.dataset.date+'" id="countdown" class="font-bold text-center text-xl inline-flex items-center justify-center mb-2"></div>';      
-                
+                promoAdDiv.innerHTML= '<div data-countdown="'+promoAdDiv.dataset.date+'" id="countdown" class="font-bold text-center text-xl inline-flex items-center justify-center mb-2"></div>';
+
                 // Set the date we're counting down to
                 let countdown = document.getElementById('countdown');
                 let countdownData = countdown.dataset.countdown;
@@ -231,7 +231,7 @@
                     countdown.innerHTML = "<p class='col-span-7 mt-auto mb-auto'>EXPIRED</p>";
                 }
                 }, 1000);
-            }   
+            }
         </script>
     @endif
 @endpush

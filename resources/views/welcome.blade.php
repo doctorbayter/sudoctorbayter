@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <section class="xl:bg-fixed bg-cover bg-right" style="background-image: url({{asset('img/backgrounds/hero.jpg')}})">
         <div class="max-w-6xl px-6 mx-auto sm:px-6 lg:px-8 flex relative overflow-hidden">
             <div class="max-w-lg my-24">
@@ -24,6 +25,8 @@
                 </figure>
             </div>
         </div>
+
+
     </section>
     <section class="bg-white">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 flex relative overflow-hidden py-12 md:py-24">
@@ -158,7 +161,7 @@
             @foreach ($recipes as $recipe)
             <li>
                 <a >
-                    <div class="relative overflow-hidden h-52"> 
+                    <div class="relative overflow-hidden h-52">
                         <div class="absolute bottom-0 ml-4 mb-4 font-bold text-lg leading-none text-white z-20">
                             <div class="mt-2 ml-2">
                                 <p class="text-lg font-bold text-white">{{$recipe->name}}</p>
@@ -182,7 +185,7 @@
             </li>
             @endforeach
 
-            
+
         </ul>
     </section>
     <section class="bg-white">
@@ -213,7 +216,7 @@
             <div class="flex items-center flex-col md:flex-row">
                 <div class="flex-1">
                     <iframe src="https://player.vimeo.com/video/571757470" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 4 - Video Invitaci&amp;oacute;n" class="w-full h-72"></iframe>
-                    
+
                 </div>
                 <div class="flex-1 w-full md:w-3/6 md:ml-8 text-center md:text-left">
                     <h2 class="text-5xl mb-4 font-bold text-red-700">Desinflama tu cuerpo en 4 días</h2>
@@ -264,7 +267,7 @@
     <section class="pb-4 md:pb-16 pt-10 text-center flex items-center justify-center bg-gray-50">
         <div class="max-w-5xl mx-auto px-6 md:px-0 ">
             <header class="py-4">
-                <h2 class="text-2xl md:text-5xl text-center mb-4 font-bold text-gray-900">Escucha mi <strong class="text-red-700">Podcast Keto</strong> de la semana</h2>    
+                <h2 class="text-2xl md:text-5xl text-center mb-4 font-bold text-gray-900">Escucha mi <strong class="text-red-700">Podcast Keto</strong> de la semana</h2>
             </header>
             <iframe src="https://anchor.fm/doctor-bayter/embed" class="w-full md:shadow-xl md:border " frameborder="0" scrolling="no"></iframe>
         </div>
@@ -272,7 +275,7 @@
     <section class="bg-white">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8 py-12">
             <header class="py-4">
-                <h2 class="text-xl md:text-4xl text-center mb-4 font-bold text-gray-900">Sígueme en todas mis redes</h2>    
+                <h2 class="text-xl md:text-4xl text-center mb-4 font-bold text-gray-900">Sígueme en todas mis redes</h2>
             </header>
             <ul class="flex items-center justify-between max-w-xs md:max-w-sm mx-auto">
                 <li class="mr-2">
@@ -301,7 +304,7 @@
     <section class="bg-gray-900">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-16">
             <header class="py-4">
-                <h2 class="text-2xl md:text-5xl text-center mb-4 font-bold text-gray-50">Nuevos videos todas las semanas</h2>    
+                <h2 class="text-2xl md:text-5xl text-center mb-4 font-bold text-gray-50">Nuevos videos todas las semanas</h2>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-5 px-6 md:px-0">
                 <div>
@@ -316,7 +319,7 @@
                 <div>
                     <iframe class="w-full h-48 md:h-auto" src="https://www.youtube-nocookie.com/embed/WgDgkNf8nuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-               
+
             </div>
         </div>
     </section>
@@ -338,20 +341,20 @@
                     <button x-on:click="$open = !$open; sessionStorage.setItem('classAd', false)" class=" mt-4 md:ml-3 md:mt-0 inline-block font-bold text-lg text-red-700 hover:underline outline-none" >Cerrar mensaje</button>
                 </div>
             </div>
-            
+
         </div>
     </section>
-    
-    
+
+
     <script>
         const CLASS_AD = sessionStorage.getItem('classAd');
         let classAdDiv = document.getElementById("classAd");
-        
+
         if(CLASS_AD == "false"){
             classAdDiv.remove();
         } else{
             classAdDiv.classList.add('opacity-100')
         }
     </script>
-    
+
 </x-app-layout>

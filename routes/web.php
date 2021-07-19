@@ -83,6 +83,9 @@ Route::get('x/plan/{user}', function($user){
 
 Route::get('x/query', function(){
 
+    return array(Plan::all());
+
+    /*
     $users = User::where('email','!=','null')->skip(3500)->take(1000)->get();
     $fase = Fase::find(3);
 
@@ -100,7 +103,7 @@ Route::get('x/query', function(){
         }
     }
 
-    echo "Do it";
+    echo "Do it";*/
 
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
 

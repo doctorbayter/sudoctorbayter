@@ -53,7 +53,25 @@ Route::get('/110', function () {
 
 //php artisan migrate:fresh --seed --force
 
-Route::get('x/sql', function(){
+Route::get('x/sql/', function(){
+
+    $plan_8 = Subscription::where('plan_id','=','8')->get();
+    $plan_9 = Subscription::where('plan_id','=','9')->get();
+    echo $plan_8->count(). " Plan Fase 1 47 us";
+    echo "<br>";
+    echo $plan_9->count(). " Plan 4 Fases 99 us";
+
+});
+
+Route::get('x/plan/{user}', function($user){
+
+    $user = User::where('email',$user)->first();
+
+    if($user){
+        return array($user->subscriptions);
+    }else{
+        return "Usuario no registrado";
+    }
 
     $plan_8 = Subscription::where('plan_id','=','8')->get();
     $plan_9 = Subscription::where('plan_id','=','9')->get();
@@ -242,44 +260,44 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
     (6, 'Lista de Alimentos Fase 3', 'files/pdf/lista-de-alimentos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL),
     (7, 'Secretos Fase 3', 'files/pdf/secretos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
-*/
-/*
+    */
+    /*
 
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(190, '49', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (190, '49', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 
-$recipe = Recipe::create([
-    'name' => '',
-    'slug' => '',
-    'indice'=> 1,
-    'carbs' => ,
-    'time' => ,
-    'type' => 1,
-]);
-$image = Image::create([
-    'url' => 'recipes/.jpg',
-    'imageable_id' => $recipe->id,
-    'imageable_type' => 'App\Models\Recipe',
-]);
+    $recipe = Recipe::create([
+        'name' => '',
+        'slug' => '',
+        'indice'=> 1,
+        'carbs' => ,
+        'time' => ,
+        'type' => 1,
+    ]);
+    $image = Image::create([
+        'url' => 'recipes/.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
 
-Ingredient::create([
-    'name' => '',
-    'recipe_id' => $recipe->id
-]);
+    Ingredient::create([
+        'name' => '',
+        'recipe_id' => $recipe->id
+    ]);
 
-$x = 0;
-Instruction::create([
-    'name' => '',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
+    $x = 0;
+    Instruction::create([
+        'name' => '',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
 
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(, '', $recipe->id, '', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (, '', $recipe->id, '', CURRENT_TIMESTAMP, NULL)");
 
-//Fin Receta
+    //Fin Receta
 
-*/
+    */
 
 });

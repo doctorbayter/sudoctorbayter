@@ -116,7 +116,11 @@ class HomeController extends Controller
         $discounts = Discount::all();
         dd($discounts);
 
-        /*$discount = Discount::find(2);
+        $discount = Discount::find(4);
+        $discount->name = '21 días Dieta Keto - Fase 1';
+        $discount->save();
+
+        /*$discount = Discount::find(4);
         $discount->value = 147;
         $discount->name = 'Lanzamiento Página Web';
         $discount->expires_at = '2099-12-31 23:59:59';

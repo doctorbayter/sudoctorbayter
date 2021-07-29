@@ -113,8 +113,7 @@ class HomeController extends Controller
 
     public function discount(){
 
-        $discounts = Discount::all();
-        dd($discounts);
+
 
         $discount = Discount::find(4);
         $discount->name = '21 días Dieta Keto - Fase 1';

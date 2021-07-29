@@ -22,19 +22,19 @@ class HomeController extends Controller
     }
 
     public function send($email, $plan){
-        
+
         $plan = Plan::find($plan);
 
         $user = User::where('email', $email)->first();
 
         if($user){
-            //Enviar Correo 
+            //Enviar Correo
             $mail = new ApprovedPurchase($plan, $user);
             Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             return 'Mensaje enviado';
         }else{
             return 'Usuario no encontrado';
-        }        
+        }
         //return view('mail.approved-purchase', compact('plan','user'));
     }
 
@@ -49,11 +49,11 @@ class HomeController extends Controller
     }
 
     public function add($email, $plan, $whatsapp){
-        
+
         $user = User::where('email', $email)->first();
-    
+
         if($user){
-    
+
             $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan)->first();
 
             if($is_subscribed){
@@ -63,7 +63,7 @@ class HomeController extends Controller
                 $suscription = new Subscription();
                 $suscription->user_id = $user->id;
                 $suscription->plan_id = $plan;
-                
+
                 $all_fases = Fase::all();
                 $fase_one = Fase::find(1);
 
@@ -112,17 +112,21 @@ class HomeController extends Controller
     }
 
     public function discount(){
-        $discount = Discount::find(2);
+
+        $discounts = Discount::all();
+        dd($discounts);
+
+        /*$discount = Discount::find(2);
         $discount->value = 147;
         $discount->name = 'Lanzamiento Página Web';
         $discount->expires_at = '2099-12-31 23:59:59';
-        $discount->save();
+        $discount->save();*/
     }
 
     public function price(){
 
         DB::table('plans')->where('id', '=', '2')->update(['price_id' => 5]);
-        
+
         //$prices = Price::all();
         /*$plan = Plan::find(1);
         $plan->price_id = 8;
@@ -174,13 +178,13 @@ class HomeController extends Controller
         }else{
             return 'Usuario no encontrado';
         }
-        
+
 
     }
 
     public function pass($email, $pass){
         $user = User::where('email', $email)->first();
-        
+
         if($user){
             $user->password = bcrypt($pass);
             $user->save();

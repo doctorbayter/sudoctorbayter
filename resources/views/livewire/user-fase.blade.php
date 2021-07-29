@@ -25,14 +25,14 @@
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="w-16 h-16 rounded-2xl p-3 border border-yellow-100 text-yellow-400 bg-yellow-50" fill="none"
+                                        class="hidden md:block w-16 h-16 rounded-2xl p-3 border border-yellow-100 text-yellow-400 bg-yellow-50" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                     <div class="flex flex-col ml-3">
                                         <div class=" leading-none font-bold text-red-700">¡Aviso Importante!</div>
-                                        <p class="text-sm text-gray-600 leading-none mt-1">Estamos actualizando la <b>fase 3</b> por ahora podrás acceder solo a la <b>semana 1</b> próximante habilitaremos más información.</p>
+                                        <p class="text-sm text-gray-600 leading-none mt-1">Estamos actualizando la <b>fase 3</b> por ahora podrás acceder solo a la <b>semana 1 y semana 2</b> próximante habilitaremos más información.</p>
                                     </div>
                                 </div>
                             </div>
@@ -59,14 +59,18 @@
 
                                         <div class="border border-gray-100 font-bold cursor-pointer bg-gray-50 rounded-tl-md relative">
 
-                                            <div class="text-red-700 border-b-4 text-xs md:text-base  hover:text-red-700" @click="selected = {{$key}}" x-bind:class="{ 'border-red-700 py-4': selected == {{$key}}, 'border-gray-400 py-4': selected !== {{$key}} }">
-                                                <img src="{{asset('img/icons/gfx/calendar_color.svg')}}" alt="" class="w-3 md:w-5 mr-2 inline"> {{$week->name}}
+                                            <div class="text-red-700 border-b-4 text-xs md:text-base py-3 md:py-4  hover:text-red-700" @click="selected = {{$key}}" x-bind:class="{ 'bg-red-800 border-gray-700   ': selected == {{$key}}, 'border-gray-300 ': selected !== {{$key}} }">
+                                                <img src="{{asset('img/icons/gfx/calendar_color.svg')}}" alt="" class="w-3 md:w-5 mr-2 inline">
+                                                <span x-bind:class="{ ' text-gray-50  ': selected == {{$key}}, 'text-red-700': selected !== {{$key}} }">
+                                                    {{$week->name}}
+                                                </span>
                                             </div>
 
                                             @if ($week->pivot->resource)
                                                 <div>
-                                                    <a href="{{asset($week->pivot->resource)}}" target="_blank" class=" text-sm py-2 w-full block text-white" x-bind:class="{ 'bg-gray-900 ': selected == {{$key}}, 'bg-gray-200 ': selected !== {{$key}} }">
-                                                        Descargar lista de alimentos
+                                                    <a href="{{asset($week->pivot->resource)}}" target="_blank" class=" font-semibold md:font-bold md:text-sm text-xs py-2 w-full block text-white" x-bind:class="{ 'bg-gray-900 ': selected == {{$key}}, 'bg-gray-200 ': selected !== {{$key}} }">
+                                                        <span class="hidden md:inline">Descargar lista de alimentos</span>
+                                                        <span class="md:hidden">Lista alimentos</span>
                                                     </a>
                                                 </div>
                                             @endif

@@ -19,7 +19,7 @@
                         </div>
                     </header>
 
-                    @if ($fase->id == 3)
+                    @if ($fase->id == 99999)
                     <div class="flex flex-col space-y-4 min-w-screen py-8 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
                         <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
                             <div class="flex items-center justify-between">

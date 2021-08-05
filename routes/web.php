@@ -166,7 +166,6 @@ Route::get('x/query', function(){
     */
 
     /*
-
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
     (64, '4', '92', CURRENT_TIMESTAMP, NULL),
     (65, '4', '93', CURRENT_TIMESTAMP, NULL),
@@ -176,7 +175,6 @@ Route::get('x/query', function(){
     (69, '4', '97', CURRENT_TIMESTAMP, NULL),
     (70, '4', '98', CURRENT_TIMESTAMP, NULL)");
 
-
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
     (64, '92', '1', CURRENT_TIMESTAMP, NULL),
     (65, '93', '1', CURRENT_TIMESTAMP, NULL),
@@ -184,54 +182,260 @@ Route::get('x/query', function(){
     (67, '95', '1', CURRENT_TIMESTAMP, NULL),
     (68, '96', '1', CURRENT_TIMESTAMP, NULL),
     (69, '97', '1', CURRENT_TIMESTAMP, NULL),
-    (70, '98', '1', CURRENT_TIMESTAMP, NULL);");
-
+    (70, '98', '1', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (10, '4', '1', 'files/pdf/lista-de-alimentos-fase-4-1-dkp.pdf', CURRENT_TIMESTAMP, NULL)");
 
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (6, 'Lista de Alimentos Fase 3', 'files/pdf/lista-de-alimentos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL),
+    (7, 'Secretos Fase 3', 'files/pdf/secretos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+
     */
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (236, '93', 243 , '1', CURRENT_TIMESTAMP, NULL)");
+
+
+    // Inicio Receta
+
+    $recipe = Recipe::create([
+        'name' => 'Tortilla',
+        'slug' => 'tortilla',
+        'indice'=> 1,
+        'carbs' => 0.85,
+        'time' => 15,
+        'type' => 1,
+    ]);
+    $image = Image::create([
+        'url' => 'recipes/tortilla.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
+
+    Ingredient::create([
+        'name' => '5 gramos De apio en rama (puede ser la hoja o el tallo o las dos) finamente picado (0,15 gr)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '50 gramos de espinacas finamente picado (0,70 gr)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '2 huevos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '20 gramos queso partido en trocitos de su gusto, pero graso',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '2 cucharadas de mantequilla de vaca 100% de pastoreo',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'sal pimienta',
+        'recipe_id' => $recipe->id
+    ]);
+
+    $x = 0;
+    Instruction::create([
+        'name' => 'En un sarten con mantequilla a fuego medio sofreír el apio y espinacas por unos minutos',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Verter los huevos en el sarten',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Revolver y añadir el queso y salpimentar, dejar que se forme la tortilla',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (237, '93', 244, '2', CURRENT_TIMESTAMP, NULL)");
+    (248, '97', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    // Fin Receta
+
+
+    // Inicio Receta
+
+    $recipe = Recipe::create([
+        'name' => 'Salpicón Bayter',
+        'slug' => 'salpicon-bayter',
+        'indice'=> 1,
+        'carbs' => 3.65,
+        'time' => 20,
+        'type' => 1,
+    ]);
+    $image = Image::create([
+        'url' => 'recipes/salpicon-bayter.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
+
+    Ingredient::create([
+        'name' => '1 cucharada de mantequilla de vaca 100% de pastoreo',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '180 a 200 gramos de salmón partido en trocitos y adobado a su gusto',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '15 gramos de apio en rama picado en trocitos (0,45 g. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '50 gramos de brócoli picado (2,2 g. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '1 diente de ajo (1gr.) finamente picado (1 gramo de carbohidrato)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '1 cucharadita de especies de su gusto',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '30 gramos (3cucharadas) de queso parmesano',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Salpimienta',
+        'recipe_id' => $recipe->id
+    ]);
+
+    $x = 0;
+    Instruction::create([
+        'name' => 'Precalentar el horno a 180 grados',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'En una sartén grande a fuego medio-alto, dorar los trocitos de salmón con la mantequilla.',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Cuando esté el salmón, añadir los trocitos de apio, el brócoli, el ajo, especies salpimentar.',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Continuar cocinando por no mas de 10 minutos o hasta que el apio y el brócoli estén tiernos, pero no blandos.',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Retirar del fuego y reservar.',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'En una refractaria, colocar el salmón y espolvorear con el queso parmesano.',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Hornear durante 10 minutos o cuando esté dorado',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (238, '93', 57, '3', CURRENT_TIMESTAMP, NULL)");
+    (249, '97', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
+    // Fin Receta
+
+
+
+    // Inicio Receta
+
+    $recipe = Recipe::create([
+        'name' => 'Pizzeta de Queso',
+        'slug' => 'pizzeta-de-queso',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 20,
+        'type' => 1,
+    ]);
+    $image = Image::create([
+        'url' => 'recipes/pizzeta-de-queso.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
+
+    Ingredient::create([
+        'name' => '2 huevos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '50gr. Queso partido o en lonjas o lonchas',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '1 cucharadita de Albahaca seca o romero o laurel ( o la especie de su gusto)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Sal pimienta',
+        'recipe_id' => $recipe->id
+    ]);
+
+    $x = 0;
+    Instruction::create([
+        'name' => 'Precalentar el horno a 180 grados centigrados',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Batir muy bien los huevos y salpimentar.',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'En una bandeja que pueda llevar al horno redonda y pequena colocar el huevo y dejar por 5 minutos que se haga la tortilla',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Sacar y agregar el queso y espolvorear con la especie y dejar unos minutos mas hasta que los bordes esten crocantes.',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
 
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (239, '94', 245, '1', CURRENT_TIMESTAMP, NULL)");
+    (250, '97', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+
+    // Fin Receta
+
+
+    // Inicio Receta
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (240, '94', 30, '2', CURRENT_TIMESTAMP, NULL)");
+    (251, '98', 243, '1', CURRENT_TIMESTAMP, NULL)");
+
+    // Fin Receta
+
+    // Inicio Receta
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (241, '94', 246, '3', CURRENT_TIMESTAMP, NULL)");
+    (250, '98', 30, '2', CURRENT_TIMESTAMP, NULL)");
 
+    // Fin Receta
 
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (242, '95', 247, '1', CURRENT_TIMESTAMP, NULL)");
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (243, '95', 15, '2', CURRENT_TIMESTAMP, NULL)");
+    // Inicio Receta
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (244, '95', 27, '3', CURRENT_TIMESTAMP, NULL)");
+    (251, '98', 27, '3', CURRENT_TIMESTAMP, NULL)");
 
+    // Fin Receta
 
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (245, '96', 248, '1', CURRENT_TIMESTAMP, NULL)");
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (246, '96', 249, '2', CURRENT_TIMESTAMP, NULL)");
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (247, '96', 242, '3', CURRENT_TIMESTAMP, NULL)");
 
 });

@@ -104,13 +104,10 @@ Route::get('x/plan/{user}', function($user){
 });
 
 
-
-
-
 Route::get('x/query', function(){
 
 
-    $users = User::where('email','!=','null')->skip(0)->take(1000)->get();
+    $users = User::where('email','!=','null')->skip(1000)->take(1000)->get();
     $fase = Fase::find(4);
 
     foreach($users as $user){

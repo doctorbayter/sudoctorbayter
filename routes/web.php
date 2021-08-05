@@ -166,32 +166,30 @@ Route::get('x/query', function(){
     */
 
 
-    DB::table('days')->where('id', '=', 91)->delete();
 
 
-/*
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (64, '4', '91', CURRENT_TIMESTAMP, NULL),
-    (65, '4', '92', CURRENT_TIMESTAMP, NULL),
-    (66, '4', '93', CURRENT_TIMESTAMP, NULL),
-    (67, '4', '94', CURRENT_TIMESTAMP, NULL),
-    (68, '4', '95', CURRENT_TIMESTAMP, NULL),
-    (69, '4', '96', CURRENT_TIMESTAMP, NULL),
-    (70, '4', '97', CURRENT_TIMESTAMP, NULL)");
+    (64, '4', '92', CURRENT_TIMESTAMP, NULL),
+    (65, '4', '93', CURRENT_TIMESTAMP, NULL),
+    (66, '4', '94', CURRENT_TIMESTAMP, NULL),
+    (67, '4', '95', CURRENT_TIMESTAMP, NULL),
+    (68, '4', '96', CURRENT_TIMESTAMP, NULL),
+    (69, '4', '97', CURRENT_TIMESTAMP, NULL),
+    (70, '4', '98', CURRENT_TIMESTAMP, NULL)");
 
 
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (64, '91', '1', CURRENT_TIMESTAMP, NULL),
-    (65, '92', '1', CURRENT_TIMESTAMP, NULL),
-    (66, '93', '1', CURRENT_TIMESTAMP, NULL),
-    (67, '94', '1', CURRENT_TIMESTAMP, NULL),
-    (68, '95', '1', CURRENT_TIMESTAMP, NULL),
-    (69, '96', '1', CURRENT_TIMESTAMP, NULL),
-    (70, '97', '1', CURRENT_TIMESTAMP, NULL);");
+    (64, '92', '1', CURRENT_TIMESTAMP, NULL),
+    (65, '93', '1', CURRENT_TIMESTAMP, NULL),
+    (66, '94', '1', CURRENT_TIMESTAMP, NULL),
+    (67, '95', '1', CURRENT_TIMESTAMP, NULL),
+    (68, '96', '1', CURRENT_TIMESTAMP, NULL),
+    (69, '97', '1', CURRENT_TIMESTAMP, NULL),
+    (70, '98', '1', CURRENT_TIMESTAMP, NULL);");
 
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (10, '4', '1', 'files/pdf/lista-de-alimentos-fase-4-1-dkp.pdf', CURRENT_TIMESTAMP, NULL)");
-*/
+
 
 });

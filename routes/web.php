@@ -165,8 +165,7 @@ Route::get('x/query', function(){
     ]);
     */
 
-
-
+    /*
 
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
     (64, '4', '92', CURRENT_TIMESTAMP, NULL),
@@ -191,5 +190,15 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (10, '4', '1', 'files/pdf/lista-de-alimentos-fase-4-1-dkp.pdf', CURRENT_TIMESTAMP, NULL)");
 
+    */
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (233, '92', 240, '1', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (234, '92', 241, '2', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (235, '92', 242, '3', CURRENT_TIMESTAMP, NULL)");
 
 });

@@ -109,9 +109,9 @@ Route::get('x/plan/{user}', function($user){
 
 Route::get('x/query', function(){
 
-    /*
-    $users = User::where('email','!=','null')->skip(3500)->take(1000)->get();
-    $fase = Fase::find(3);
+
+    $users = User::where('email','!=','null')->skip(0)->take(1000)->get();
+    $fase = Fase::find(4);
 
     foreach($users as $user){
 
@@ -127,7 +127,7 @@ Route::get('x/query', function(){
         }
     }
 
-    echo "Do it";*/
+    echo "Do it";
 
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
@@ -194,19 +194,7 @@ Route::get('x/query', function(){
     */
 
 
-    // Inicio Receta
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (252, '98', 30, '2', CURRENT_TIMESTAMP, NULL)");
-
-    // Fin Receta
-
-    // Inicio Receta
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (253, '98', 27, '3', CURRENT_TIMESTAMP, NULL)");
-
-    // Fin Receta
 
 
 });

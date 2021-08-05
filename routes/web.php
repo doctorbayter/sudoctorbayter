@@ -76,39 +76,11 @@ Route::get('x/recipes/', function(){
 
 Route::get('x/api/', function(){
 
-    $response = Http::withHeaders([
-        'Api-Token' => '278f19882caf7646e414e5a2f1c8696a24809757437b7973cabcbba6742ca309d6eca018'
-    ]);
+    $days = Day::all();
 
-    $getUserByEmail = $response->GET('https://mediasocial.api-us1.com/api/3/contacts/',[
-        "email" => "yefer.cote@hotmail.com",
-        "orders[email]" => "ASC"
-    ]);
-
-    $getUserByEmail = $getUserByEmail['contacts'];
-
-    if($getUserByEmail){
-        return $getUserByEmail[0];
-    }
-    return  $getUserByEmail;
-
-    /**
-     *
-    $addTagUser = $response->POST('https://mediasocial.api-us1.com/api/3/contactTags',[
-        "contactTag" => [
-            "contact" => 38,
-            "tag" => 4
-
-        ]
-    ]);
-    return $addTagUser;
-    */
+    echo $days;
 
 });
-
-
-
-
 
 
 
@@ -130,6 +102,10 @@ Route::get('x/plan/{user}', function($user){
     echo $plan_9->count(). " Plan 4 Fases 99 us";
 
 });
+
+
+
+
 
 Route::get('x/query', function(){
 
@@ -154,12 +130,11 @@ Route::get('x/query', function(){
     echo "Do it";*/
 
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
-
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
 
 
-    /*
+
     Day::create([
         'day' => 1,
         'fase_id' => 4,
@@ -202,8 +177,6 @@ Route::get('x/query', function(){
     (70, '4', '70', CURRENT_TIMESTAMP, NULL)");
 
 
-
-
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
     (64, '64', '1', CURRENT_TIMESTAMP, NULL),
     (65, '65', '1', CURRENT_TIMESTAMP, NULL),
@@ -214,13 +187,10 @@ Route::get('x/query', function(){
     (70, '70', '1', CURRENT_TIMESTAMP, NULL);");
 
 
-
-
-
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (10, '4', '1', 'files/pdf/lista-de-alimentos-fase-4-1-dkp.pdf', CURRENT_TIMESTAMP, NULL)");
 
-    */
+
 
 
     /*
@@ -235,9 +205,6 @@ Route::get('x/query', function(){
     */
 
 
-
-
-    /*
 
     // Inicio Receta
 
@@ -297,8 +264,6 @@ Route::get('x/query', function(){
     (233, '64', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
     // Fin Receta
-
-
 
 
     // Inicio Receta
@@ -836,7 +801,7 @@ Route::get('x/query', function(){
 
     // Fin Receta
 
-*/
+
 
     // Inicio Receta
 

@@ -169,33 +169,33 @@ Route::get('x/query', function(){
 
 
 
-    DB::table('day')->where('id', '=', 64)->delete();
-    DB::table('day')->where('id', '=', 65)->delete();
-    DB::table('day')->where('id', '=', 66)->delete();
-    DB::table('day')->where('id', '=', 67)->delete();
-    DB::table('day')->where('id', '=', 68)->delete();
-    DB::table('day')->where('id', '=', 69)->delete();
-    DB::table('day')->where('id', '=', 70)->delete();
-    DB::table('day')->where('id', '=', 71)->delete();
-    DB::table('day')->where('id', '=', 72)->delete();
-    DB::table('day')->where('id', '=', 73)->delete();
-    DB::table('day')->where('id', '=', 74)->delete();
-    DB::table('day')->where('id', '=', 75)->delete();
-    DB::table('day')->where('id', '=', 76)->delete();
-    DB::table('day')->where('id', '=', 77)->delete();
-    DB::table('day')->where('id', '=', 78)->delete();
-    DB::table('day')->where('id', '=', 79)->delete();
-    DB::table('day')->where('id', '=', 80)->delete();
-    DB::table('day')->where('id', '=', 81)->delete();
-    DB::table('day')->where('id', '=', 82)->delete();
-    DB::table('day')->where('id', '=', 83)->delete();
-    DB::table('day')->where('id', '=', 84)->delete();
-    DB::table('day')->where('id', '=', 85)->delete();
-    DB::table('day')->where('id', '=', 86)->delete();
-    DB::table('day')->where('id', '=', 87)->delete();
-    DB::table('day')->where('id', '=', 88)->delete();
-    DB::table('day')->where('id', '=', 89)->delete();
-    DB::table('day')->where('id', '=', 90)->delete();
+    DB::table('days')->where('id', '=', 64)->delete();
+    DB::table('days')->where('id', '=', 65)->delete();
+    DB::table('days')->where('id', '=', 66)->delete();
+    DB::table('days')->where('id', '=', 67)->delete();
+    DB::table('days')->where('id', '=', 68)->delete();
+    DB::table('days')->where('id', '=', 69)->delete();
+    DB::table('days')->where('id', '=', 70)->delete();
+    DB::table('days')->where('id', '=', 71)->delete();
+    DB::table('days')->where('id', '=', 72)->delete();
+    DB::table('days')->where('id', '=', 73)->delete();
+    DB::table('days')->where('id', '=', 74)->delete();
+    DB::table('days')->where('id', '=', 75)->delete();
+    DB::table('days')->where('id', '=', 76)->delete();
+    DB::table('days')->where('id', '=', 77)->delete();
+    DB::table('days')->where('id', '=', 78)->delete();
+    DB::table('days')->where('id', '=', 79)->delete();
+    DB::table('days')->where('id', '=', 80)->delete();
+    DB::table('days')->where('id', '=', 81)->delete();
+    DB::table('days')->where('id', '=', 82)->delete();
+    DB::table('days')->where('id', '=', 83)->delete();
+    DB::table('days')->where('id', '=', 84)->delete();
+    DB::table('days')->where('id', '=', 85)->delete();
+    DB::table('days')->where('id', '=', 86)->delete();
+    DB::table('days')->where('id', '=', 87)->delete();
+    DB::table('days')->where('id', '=', 88)->delete();
+    DB::table('days')->where('id', '=', 89)->delete();
+    DB::table('days')->where('id', '=', 90)->delete();
 
 
 

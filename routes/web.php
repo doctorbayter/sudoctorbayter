@@ -193,42 +193,45 @@ Route::get('x/query', function(){
     */
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (236, '65', 243 , '1', CURRENT_TIMESTAMP, NULL)");
+    (236, '93', 243 , '1', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (237, '65', 244, '2', CURRENT_TIMESTAMP, NULL)");
+    (237, '93', 244, '2', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (238, '65', 57, '3', CURRENT_TIMESTAMP, NULL)");
-
-
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (239, '66', 245, '1', CURRENT_TIMESTAMP, NULL)");
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (240, '66', 30, '2', CURRENT_TIMESTAMP, NULL)");
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (241, '66', 246, '3', CURRENT_TIMESTAMP, NULL)");
+    (238, '93', 57, '3', CURRENT_TIMESTAMP, NULL)");
 
 
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (242, '67', 247, '1', CURRENT_TIMESTAMP, NULL)");
+    (239, '94', 245, '1', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (243, '67', 15, '2', CURRENT_TIMESTAMP, NULL)");
+    (240, '94', 30, '2', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (244, '67', 27, '3', CURRENT_TIMESTAMP, NULL)");
+    (241, '94', 246, '3', CURRENT_TIMESTAMP, NULL)");
 
 
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (245, '68', 248, '1', CURRENT_TIMESTAMP, NULL)");
+    (242, '95', 247, '1', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (246, '68', 249, '2', CURRENT_TIMESTAMP, NULL)");
+    (243, '95', 15, '2', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (244, '95', 27, '3', CURRENT_TIMESTAMP, NULL)");
+
+
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (245, '96', 248, '1', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (246, '96', 249, '2', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (247, '96', 242, '3', CURRENT_TIMESTAMP, NULL)");
 
 });

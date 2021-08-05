@@ -132,64 +132,58 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-
+ /*
     Day::create([
-        'id' => 64,
         'day' => 1,
         'fase_id' => 4,
     ]);
     Day::create([
-        'id' => 65,
         'day' => 2,
         'fase_id' => 4,
     ]);
     Day::create([
-        'id' => 66,
         'day' => 3,
         'fase_id' => 4,
 
     ]);
     Day::create([
-        'id' => 67,
         'day' => 4,
         'fase_id' => 4,
     ]);
     Day::create([
-        'id' => 68,
         'day' => 5,
         'fase_id' => 4,
 
     ]);
     Day::create([
-        'id' => 69,
         'day' => 6,
         'fase_id' => 4,
     ]);
     Day::create([
-        'id' => 70,
         'day' => 7,
         'fase_id' => 4,
     ]);
+    */
 
 
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (64, '4', '64', CURRENT_TIMESTAMP, NULL),
-    (65, '4', '65', CURRENT_TIMESTAMP, NULL),
-    (66, '4', '66', CURRENT_TIMESTAMP, NULL),
-    (67, '4', '67', CURRENT_TIMESTAMP, NULL),
-    (68, '4', '68', CURRENT_TIMESTAMP, NULL),
-    (69, '4', '69', CURRENT_TIMESTAMP, NULL),
-    (70, '4', '70', CURRENT_TIMESTAMP, NULL)");
+    (64, '4', '91', CURRENT_TIMESTAMP, NULL),
+    (65, '4', '92', CURRENT_TIMESTAMP, NULL),
+    (66, '4', '93', CURRENT_TIMESTAMP, NULL),
+    (67, '4', '94', CURRENT_TIMESTAMP, NULL),
+    (68, '4', '95', CURRENT_TIMESTAMP, NULL),
+    (69, '4', '96', CURRENT_TIMESTAMP, NULL),
+    (70, '4', '97', CURRENT_TIMESTAMP, NULL)");
 
 
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (64, '64', '1', CURRENT_TIMESTAMP, NULL),
-    (65, '65', '1', CURRENT_TIMESTAMP, NULL),
-    (66, '66', '1', CURRENT_TIMESTAMP, NULL),
-    (67, '67', '1', CURRENT_TIMESTAMP, NULL),
-    (68, '68', '1', CURRENT_TIMESTAMP, NULL),
-    (69, '69', '1', CURRENT_TIMESTAMP, NULL),
-    (70, '70', '1', CURRENT_TIMESTAMP, NULL);");
+    (64, '91', '1', CURRENT_TIMESTAMP, NULL),
+    (65, '92', '1', CURRENT_TIMESTAMP, NULL),
+    (66, '93', '1', CURRENT_TIMESTAMP, NULL),
+    (67, '94', '1', CURRENT_TIMESTAMP, NULL),
+    (68, '95', '1', CURRENT_TIMESTAMP, NULL),
+    (69, '96', '1', CURRENT_TIMESTAMP, NULL),
+    (70, '97', '1', CURRENT_TIMESTAMP, NULL);");
 
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES

@@ -169,10 +169,12 @@ Route::get('x/query', function(){
 
 
 
-    $query = DB::table('day_fase')
+    $query = DB::table('day_week')
     ->get();
 
     echo $query;
+
+    //DB::table('day_fase')->where('id', '=', 64)->delete();
 
 
     /*

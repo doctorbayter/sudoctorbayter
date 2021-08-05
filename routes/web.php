@@ -168,32 +168,12 @@ Route::get('x/query', function(){
     */
 
 
-    DB::insert("DELETE FROM day_fase WHERE id = 64");
-    DB::insert("DELETE FROM day_fase WHERE id = 65");
-    DB::insert("DELETE FROM day_fase WHERE id = 66");
-    DB::insert("DELETE FROM day_fase WHERE id = 67");
-    DB::insert("DELETE FROM day_fase WHERE id = 68");
-    DB::insert("DELETE FROM day_fase WHERE id = 69");
-    DB::insert("DELETE FROM day_fase WHERE id = 70");
 
+    $query = DB::table('day_fase')
+    ->get();
 
-    DB::insert("DELETE FROM day_week WHERE id = 64");
-    DB::insert("DELETE FROM day_week WHERE id = 65");
-    DB::insert("DELETE FROM day_week WHERE id = 66");
-    DB::insert("DELETE FROM day_week WHERE id = 67");
-    DB::insert("DELETE FROM day_week WHERE id = 68");
-    DB::insert("DELETE FROM day_week WHERE id = 69");
-    DB::insert("DELETE FROM day_week WHERE id = 70");
+    echo $query;
 
-
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (64, '64', '1', CURRENT_TIMESTAMP, NULL),
-    (65, '65', '1', CURRENT_TIMESTAMP, NULL),
-    (66, '66', '1', CURRENT_TIMESTAMP, NULL),
-    (67, '67', '1', CURRENT_TIMESTAMP, NULL),
-    (68, '68', '1', CURRENT_TIMESTAMP, NULL),
-    (69, '69', '1', CURRENT_TIMESTAMP, NULL),
-    (70, '70', '1', CURRENT_TIMESTAMP, NULL);");
 
     /*
 

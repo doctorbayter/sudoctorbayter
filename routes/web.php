@@ -166,6 +166,10 @@ Route::get('x/query', function(){
     */
 
 
+    DB::table('days')->where('id', '=', 91)->delete();
+
+
+/*
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
     (64, '4', '91', CURRENT_TIMESTAMP, NULL),
     (65, '4', '92', CURRENT_TIMESTAMP, NULL),
@@ -188,6 +192,6 @@ Route::get('x/query', function(){
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (10, '4', '1', 'files/pdf/lista-de-alimentos-fase-4-1-dkp.pdf', CURRENT_TIMESTAMP, NULL)");
-
+*/
 
 });

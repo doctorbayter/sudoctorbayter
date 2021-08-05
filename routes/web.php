@@ -133,73 +133,44 @@ Route::get('x/query', function(){
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
 
-
-    /*
     Day::create([
+        'id' => 64,
         'day' => 1,
         'fase_id' => 4,
     ]);
     Day::create([
+        'id' => 65,
         'day' => 2,
         'fase_id' => 4,
     ]);
     Day::create([
+        'id' => 66,
         'day' => 3,
         'fase_id' => 4,
 
     ]);
     Day::create([
+        'id' => 67,
         'day' => 4,
         'fase_id' => 4,
     ]);
     Day::create([
+        'id' => 68,
         'day' => 5,
         'fase_id' => 4,
 
     ]);
     Day::create([
+        'id' => 69,
         'day' => 6,
         'fase_id' => 4,
     ]);
     Day::create([
+        'id' => 70,
         'day' => 7,
         'fase_id' => 4,
     ]);
-    */
 
-
-
-    DB::table('days')->where('id', '=', 64)->delete();
-    DB::table('days')->where('id', '=', 65)->delete();
-    DB::table('days')->where('id', '=', 66)->delete();
-    DB::table('days')->where('id', '=', 67)->delete();
-    DB::table('days')->where('id', '=', 68)->delete();
-    DB::table('days')->where('id', '=', 69)->delete();
-    DB::table('days')->where('id', '=', 70)->delete();
-    DB::table('days')->where('id', '=', 71)->delete();
-    DB::table('days')->where('id', '=', 72)->delete();
-    DB::table('days')->where('id', '=', 73)->delete();
-    DB::table('days')->where('id', '=', 74)->delete();
-    DB::table('days')->where('id', '=', 75)->delete();
-    DB::table('days')->where('id', '=', 76)->delete();
-    DB::table('days')->where('id', '=', 77)->delete();
-    DB::table('days')->where('id', '=', 78)->delete();
-    DB::table('days')->where('id', '=', 79)->delete();
-    DB::table('days')->where('id', '=', 80)->delete();
-    DB::table('days')->where('id', '=', 81)->delete();
-    DB::table('days')->where('id', '=', 82)->delete();
-    DB::table('days')->where('id', '=', 83)->delete();
-    DB::table('days')->where('id', '=', 84)->delete();
-    DB::table('days')->where('id', '=', 85)->delete();
-    DB::table('days')->where('id', '=', 86)->delete();
-    DB::table('days')->where('id', '=', 87)->delete();
-    DB::table('days')->where('id', '=', 88)->delete();
-    DB::table('days')->where('id', '=', 89)->delete();
-    DB::table('days')->where('id', '=', 90)->delete();
-
-
-
-    /*
 
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
     (64, '4', '64', CURRENT_TIMESTAMP, NULL),
@@ -209,8 +180,8 @@ Route::get('x/query', function(){
     (68, '4', '68', CURRENT_TIMESTAMP, NULL),
     (69, '4', '69', CURRENT_TIMESTAMP, NULL),
     (70, '4', '70', CURRENT_TIMESTAMP, NULL)");
-*/
-    /*
+
+
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
     (64, '64', '1', CURRENT_TIMESTAMP, NULL),
     (65, '65', '1', CURRENT_TIMESTAMP, NULL),
@@ -223,10 +194,6 @@ Route::get('x/query', function(){
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (10, '4', '1', 'files/pdf/lista-de-alimentos-fase-4-1-dkp.pdf', CURRENT_TIMESTAMP, NULL)");
-
-
-
-    */
 
 
 });

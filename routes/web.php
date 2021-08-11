@@ -106,7 +106,7 @@ Route::get('x/plan/{user}', function($user){
 
 Route::get('x/query', function(){
 
-
+    /*
     $users = User::where('email','!=','null')->skip(4000)->take(1000)->get();
     $fase = Fase::find(4);
 
@@ -125,6 +125,7 @@ Route::get('x/query', function(){
     }
 
     echo "Do it";
+    */
 
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
@@ -188,6 +189,42 @@ Route::get('x/query', function(){
     (6, 'Lista de Alimentos Fase 3', 'files/pdf/lista-de-alimentos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL),
     (7, 'Secretos Fase 3', 'files/pdf/secretos-fase-3-dkp.pdf', '3', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
+    */
+
+    /*
+    // Inicio Receta
+
+    $recipe = Recipe::create([
+        'name' => '',
+        'slug' => '',
+        'indice'=> 1,
+        'carbs' => ,
+        'time' => ,
+        'type' => 1,
+    ]);
+    $image = Image::create([
+        'url' => 'recipes/.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
+
+    Ingredient::create([
+        'name' => '',
+        'recipe_id' => $recipe->id
+    ]);
+
+    $x = 0;
+    Instruction::create([
+        'name' => '',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (, '', $recipe->id, '', CURRENT_TIMESTAMP, NULL)");
+
+    // Fin Receta\
     */
 
 

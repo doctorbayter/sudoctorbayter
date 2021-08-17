@@ -20,8 +20,6 @@ class UserPlan extends Component
         $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9])->first();
 
 
-
-
         $planPremium = Plan::find(1);
         $planUpdate = Plan::find(3);
         $planWhatsapp = Plan::find(4);

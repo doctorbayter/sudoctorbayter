@@ -106,6 +106,27 @@ Route::get('x/plan/{user}', function($user){
 
 Route::get('x/query', function(){
 
+    /*
+    $users = User::where('email','!=','null')->skip(4000)->take(1000)->get();
+    $fase = Fase::find(4);
+    foreach($users as $user){
+        if ($user->subscription) {
+            if ($user->subscription->plan->id == 1 ) {
+                if ($fase->clients->contains($user->id)) {
+                    //Do Nohing
+                }else{
+                    $fase->clients()->attach($user->id);
+                }
+            }
+        }
+    }
+    echo "Do it";
+    */
+
+    //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
+    //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
+
+    /*
     Fase::create([
         'name' => '7 Días Keto',
         'sub_name' => 'Iniciemos<span class="text-red-700">Keto</span>',
@@ -160,6 +181,10 @@ Route::get('x/query', function(){
     (76, '104', '1', CURRENT_TIMESTAMP, NULL),
     (77, '105', '1', CURRENT_TIMESTAMP, NULL)");
 
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (8, 'Lista de Alimentos Semana Keto', 'files/pdf/lista-de-alimentos-fase-0-dkp.pdf', '5', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL),
+    (9, 'Secretos Semana Keto', 'files/pdf/secretos-fase-0-dkp.pdf', '5', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    */
 
     /*
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
@@ -167,64 +192,99 @@ Route::get('x/query', function(){
     */
 
 
-    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (8, 'Lista de Alimentos Semana Keto', 'files/pdf/lista-de-alimentos-fase-0-dkp.pdf', '5', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL),
-    (9, 'Secretos Semana Keto', 'files/pdf/secretos-fase-0-dkp.pdf', '5', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
-
-
-
-    /*
-    $users = User::where('email','!=','null')->skip(4000)->take(1000)->get();
-    $fase = Fase::find(4);
-    foreach($users as $user){
-        if ($user->subscription) {
-            if ($user->subscription->plan->id == 1 ) {
-                if ($fase->clients->contains($user->id)) {
-                    //Do Nohing
-                }else{
-                    $fase->clients()->attach($user->id);
-                }
-            }
-        }
-    }
-    echo "Do it";
-    */
-
-    //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
-    //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
-
-    /*
     // Inicio Receta
     $recipe = Recipe::create([
-        'name' => '',
-        'slug' => '',
+        'name' => 'Aguatón',
+        'slug' => 'aguaton',
         'indice'=> 1,
-        'carbs' => ,
-        'time' => ,
+        'carbs' => 5.1,
+        'time' => 20,
         'type' => 1,
     ]);
 
     $image = Image::create([
-        'url' => 'recipes/.jpg',
+        'url' => 'recipes/aguaton.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
     ]);
 
     Ingredient::create([
-        'name' => '',
+        'name' => '60 gramos de aguacate, dejas el aguacate con todo y cáscara (5,1 gramos de carbohidratos)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'lo ideal es que sea un aguacate pequeño, para que lo puedas partir a la mitad y te quede la porción con el hueco cuando le retires la pepa',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '2 (50 gramos) de tocino finamente picado',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Media cucharadita de perejil',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '35 gramos de queso holandés partido en cuadritos o el queso de tu gusto preferiblemente graso',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Media cucharadita de mantequilla de vaca 100% de pastoreo',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Aceite de oliva extra virgen si es aromatizado mejor aun',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Orégano',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Salpimienta',
         'recipe_id' => $recipe->id
     ]);
 
     $x = 0;
     Instruction::create([
-        'name' => '',
+        'name' => 'Precalentamos el horno a 180oC',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => '1.	En un sartén con un poquito de mantequilla ponemos a sofreír el tocino',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => '2.	Cuando estén doraditos agregamos el perejil revolvemos, dejamos por 1 minuto más apagamos y tapamos',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => '3.	A la mitad del aguacate, ya sin pepa le rociamos un poco de aceite de oliva, orégano y sal pimiento',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => '4.	Rellenamos la cavidad del aguacate con la tocineta y los trozos de queso',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => '5.	Espolvoreamos con más orégano y llevamos al horno por 8 minutos o hasta que el queso derrita',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => '6.	Retiramos del horno y antes de servir salpimentamos nuevamente y agregamos un buen chorro de aceite de oliva ',
         'step' => $x = $x + 1,
         'recipe_id' => $recipe->id,
     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (, '', $recipe->id, '', CURRENT_TIMESTAMP, NULL)");
-    // Fin Receta\
-    */
+    (247, '99', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+    // Fin Receta
+
 
 });

@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class UserPlan extends Component
 {
-    public $user_fases;
+    public $user_fases, $user_plan;
 
     public function render(){
 
@@ -21,14 +21,18 @@ class UserPlan extends Component
 
 
         $planPremium = Plan::find(1);
-        $planUpdate = Plan::find(3);
+
         $planWhatsapp = Plan::find(4);
         $whatsapp = auth()->user()->subscriptions->where('plan_id', 4)->first();
         $dkp = auth()->user()->subscriptions->where('plan_id', 5)->first();
 
+        $this->user_plan = $planUser->plan->id;
+
         if($planUser->plan->id == 7){
+            $planUpdate = Plan::find(2);
             return view('livewire.user-plan-week', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
         }else{
+            $planUpdate = Plan::find(3);
             return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
         }
 

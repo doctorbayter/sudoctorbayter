@@ -8,14 +8,23 @@ use Livewire\Component;
 class UserSnacks extends Component
 {
 
-    public $user_fases;
-    
+    public $user_fases, $user_plan;
+
     public function render()
     {
+        $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9])->first();
+        $this->user_plan = $planUser->plan->id;
         if(auth()->user()->subscription){
             $this->user_fases = auth()->user()->fases;
         }
-        $snacks = Recipe::where('type', '2')->get();
+
+        if($planUser->plan->id == 7){
+            $snacks = Recipe::where('type', '2')->take(7)->get();
+        }else{
+            $snacks = Recipe::where('type', '2')->get();
+        }
+
+
         return view('livewire.user-snacks', compact('snacks'));
     }
 }

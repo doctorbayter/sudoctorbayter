@@ -58,12 +58,8 @@ Route::get('/110', function () {
 
 Route::get('x/sql/', function(){
 
-    $plan_8 = Subscription::where('plan_id','=','8')->get();
-    $plan_9 = Subscription::where('plan_id','=','9')->get();
-    echo $plan_8->count(). " Plan Fase 1 47 us";
-    echo "<br>";
-    echo $plan_9->count(). " Plan 4 Fases 99 us";
-
+    $day_recipes= DB::select("SELECT * FROM day_recipe");
+    print_r(json_encode($day_recipes));
 });
 
 
@@ -185,7 +181,7 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
     (8, 'Lista de Alimentos Semana Keto', 'files/pdf/lista-de-alimentos-fase-0-dkp.pdf', '5', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL),
     (9, 'Secretos Semana Keto', 'files/pdf/secretos-fase-0-dkp.pdf', '5', 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
-*/
+
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (11, '5', '1', 'files/pdf/lista-de-alimentos-fase-0-1-dkp.pdf', CURRENT_TIMESTAMP, NULL)");
@@ -280,9 +276,9 @@ Route::get('x/query', function(){
         'step' => $x = $x + 1,
         'recipe_id' => $recipe->id,
     ]);
-
+*/
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (247, '99', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+    (247, '99', 253, '1', CURRENT_TIMESTAMP, NULL)");
     // Fin Receta
 
 

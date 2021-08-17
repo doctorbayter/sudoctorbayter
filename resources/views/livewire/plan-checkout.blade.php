@@ -1,16 +1,16 @@
 <div  x-data="{$payMethod: 'payu', $route : '{{route('payment.payu', $plan)}}' }">
     <div class="max-w-6xl px-6 mx-auto md:px-8 grid grid-cols-1 md:grid-cols-9 md:gap-8 mt-8 md:min-h-screen">
         <div class="md:col-span-5" >
-            
+
             @if (auth()->user())
-                
+
             @else
             <section class="mt-4">
                 <header class=" mb-2 md:mb-4 ">
                     <h3 class="text-2xl font-bold text-gray-800 mb-1"><span class="text-red-700">Paso 1:</span> Crea tus datos de acceso a la página</h3>
                     <p class="text-gray-600 font-medium lowercase text-xs italic">Los datos que escribas aquí serán los que vas a usar para ingresar a la página una vez realices la compra</p>
                 </header>
-                
+
                     <form>
                     <div class="flex flex-wrap -mx-3 mb-3">
                         <div class="w-full  px-3">
@@ -67,7 +67,7 @@
                           @error('password_confirmation')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
-                
+
                 </form>
             </section>
             @endif
@@ -77,8 +77,8 @@
                 <ul class=" mb-4 flex flex-col lg:flex-row w-full items-center justify-between sm:justify-start flex-wrap">
 
                     <li class="max-w-200 lg:mr-4 ">
-                        <div 
-                            x-on:click="$payMethod = 'payu' ; $dispatch('route-change', { value: '{{route('payment.payu', $plan)}}' }) " 
+                        <div
+                            x-on:click="$payMethod = 'payu' ; $dispatch('route-change', { value: '{{route('payment.payu', $plan)}}' }) "
                             :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'payu' }"
                             class="border rounded h-20 w-40 cursor-pointer bg-gray-50 flex justify-center items-center hover:bg-blue-50 hover:border-blue-200 focus:bg-gray-100 focus:border-blue-400 "
                             name="Paga con PayU">
@@ -87,8 +87,8 @@
                     </li>
 
                     <li class="max-w-200 lg:mr-4 mt-6 ld:mt-0">
-                        <div 
-                            x-on:click="$payMethod = 'paypal' ; $dispatch('route-change', { value: '{{route('payment.paypal', $plan)}}' }) " 
+                        <div
+                            x-on:click="$payMethod = 'paypal' ; $dispatch('route-change', { value: '{{route('payment.paypal', $plan)}}' }) "
                             :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'paypal' }"
                             class="border rounded h-20 w-40 cursor-pointer bg-gray-50 flex justify-center items-center hover:bg-blue-50 hover:border-blue-200 focus:bg-gray-100 focus:border-blue-400 "
                             name="Paga con PayPal">
@@ -97,15 +97,15 @@
                     </li>
 
                     <li class="max-w-200 lg:mr-4 mt-6 ld:mt-0">
-                        <div 
-                            x-on:click="$payMethod = 'epayco' ; $dispatch('route-change', { value: '{{route('payment.epayco', $plan)}}' }) " 
+                        <div
+                            x-on:click="$payMethod = 'epayco' ; $dispatch('route-change', { value: '{{route('payment.epayco', $plan)}}' }) "
                             :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'epayco' }"
                             class="border rounded h-20 w-40 cursor-pointer bg-gray-50 flex justify-center items-center hover:bg-blue-50 hover:border-blue-200 focus:bg-gray-100 focus:border-blue-400 "
                             name="Paga con PayPal">
                             <img class="h-6 object-cover" src="{{asset('/img/checkout/epayco_logo.png')}}" alt="">
                         </div>
                     </li>
-                   
+
                 </ul>
 
 
@@ -115,7 +115,7 @@
 
 
                     @if ($plan->id == 8 || $plan->id == 9)
-                    
+
                         <section>
                             <div  class="flex flex-col lg:flex-row justify-center px-4 py-8 my-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
                                 <figure class=" hidden lg:block mr-4 w-auto flex-1">
@@ -129,11 +129,11 @@
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 30 días al chat</li>
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Curso cómo leer las etiquetas</li>
                                     </ul>
-                                    
+
                                     <p class="mt-1 text-base font-semibold">Precio normal <span class=" line-through">299 US$</span></p>
 
                                     <div class="flex w-full mt-4">
-                                        
+
                                         <style>
                                             /* Toggle  */
                                             input:checked ~ .dot {
@@ -144,7 +144,7 @@
 
                                         </style>
 
-                                        <label 
+                                        <label
                                         for="tooglePromo"
                                         class="flex items-center cursor-pointer"
                                         >
@@ -162,17 +162,18 @@
                                             Hoy solo pagas 99 US$
                                         </div>
                                         </label>
-                                        
+
                                     </div>
                                 </div>
-                            
+
                             </div>
-                            
+
                         </section>
-                    
+
                     @endif
 
-                    
+
+
                     <div class="flex items-center flex-wrap md:flex-no-wrap py-8 bg-gray-50 pl-4 rounded-xl mt-4">
                         <h2 class="text-gray-700 text-3xl font-bold w-full md:w-auto">Total a pagar:</h2>
                         <div class="md:ml-4">
@@ -190,8 +191,8 @@
                         @can('enrolled', $suscription)
                             <div class="flex flex-col justify-start w-full mt-2">
                                 <h3 class="text-lg font-bold text-gray-600"> <i class="fas fa-info-circle mr-1 text-blue-400"></i>Ya estás inscrito a este plan</h3>
-                            </div>    
-                            <a 
+                            </div>
+                            <a
                             class="disabled w-full mt-2 cursor-default bg-gray-300 rounded-lg font-bold text-white text-center inline-block px-8 py-4 text-lg ">No puedes comprar este plan</a>
                         @else
                             <div class="my-6">
@@ -201,29 +202,29 @@
                             </div>
                             @if ($can_continued)
                             <div>
-                                
+
                                 <div x-show="$payMethod == 'payu'" >
                                     <form action="{{config('services.payu.base_uri')}}" method="post">
                                         @csrf
-                                       
+
                                         <x-payu-form :plan="$plan" :dataSend="$data_send"/>
-                                                                
+
                                         <button type="submit"
-                                        class=" bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Ya puedes continuar tu compra con PayU</button> 
-    
+                                        class=" bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Ya puedes continuar tu compra con PayU</button>
+
                                     </form>
                                 </div>
                                 <div x-show="$payMethod == 'paypal'" >
-                                    
+
                                     <form action="{{config('services.paypal.base_uri')}}" method="post">
                                         @csrf
                                         <x-paypal-form :plan="$plan" :dataSend="$data_send"/>
                                         <button type="submit"
-                                        class="bg-blue-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-blue-800  text-lg w-full">Ya puedes continuar tu compra con PayPal</button> 
+                                        class="bg-blue-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-blue-800  text-lg w-full">Ya puedes continuar tu compra con PayPal</button>
                                     </form>
-    
+
                                 </div>
-                                <div x-show="$payMethod == 'epayco'"> 
+                                <div x-show="$payMethod == 'epayco'">
                                     <button x-on:click="handler.open(
                                         {
                                             name: '{{$plan->name}}',
@@ -239,30 +240,30 @@
                                             extra1: '{{$data_send}}',
                                             extra2: '{{$plan->id}}',
                                             confirmation: '{{route('payment.epayco.approved')}}',
-                                            response: '{{route('payment.epayco.response', $plan)}}', 
+                                            response: '{{route('payment.epayco.response', $plan)}}',
                                             methodsDisable: ['SP','CASH', 'MPD', 'DP']
                                         })"
                                         type="button"
-                                        class="bg-yellow-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-yellow-700  text-lg w-full">Ya puedes continuar tu compra con Epayco</button> 
+                                        class="bg-yellow-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-yellow-700  text-lg w-full">Ya puedes continuar tu compra con Epayco</button>
                                 </div>
                             </div>
                             @else
                                 <button
                                 wire:click="confirmData"
-                                class=" bg-red-500 rounded-lg font-bold text-white cursor-pointer text-center inline-block px-8 py-4 text-base lg:text-lg w-full">{{$error_button}}</button> 
+                                class=" bg-red-500 rounded-lg font-bold text-white cursor-pointer text-center inline-block px-8 py-4 text-base lg:text-lg w-full">{{$error_button}}</button>
                                 @if($errors->all())
                                     <span class="text-red-500 text-sm mt-2 inline-block font-semibold ">{{$error_message}}</span>
                                 @endif
                             @endif
                         @endcan
-                    
+
                     <div class="mt-8 flex items-center cursor-default mb-8">
                         <div class="bg-gray-100 border border-gray-200 rounded-full p-3 mr-3">
                             <i class="fas fa-shield-alt text-3xl text-secundary-400"></i>
                         </div>
                         <p class="text-secundary-400 font-extrabold leading-4" >Tu pago es 100% seguro<br/><span class="text-sm text-secundary-400 font-normal">protegemos tus datos.</span></p>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -284,16 +285,16 @@
             </div>
         </div>
     </div>
-    
+
     @push('scripts')
-    
+
         <script type="text/javascript" src="https://checkout.epayco.co/checkout.js"></script>
         <script>
             let handler = ePayco.checkout.configure({
                 key: '{{config('services.epayco.public_key')}}',
                 test: false
             })
-                        
+
         </script>
     @endpush
 

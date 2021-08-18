@@ -19,7 +19,7 @@ class UserSnacks extends Component
         }
 
         if($planUser->plan->id == 7){
-            $snacks = Recipe::where('type', '2')->take(7)->get();
+            $snacks = Recipe::where('type', '2')->take(3)->get();
         }else{
             $snacks = Recipe::where('type', '2')->get();
         }

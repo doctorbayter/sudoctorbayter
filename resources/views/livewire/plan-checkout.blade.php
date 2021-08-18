@@ -114,7 +114,7 @@
                     <h3 class="text-2xl font-bold mb-2 md:mb-8 text-gray-800"> <span class="text-red-700">Paso 3:</span> Pagar</h3>
 
 
-                    @if ($plan->id == 8 || $plan->id == 9)
+                    @if (($plan->id == 8 || $plan->id == 9) && $is_week == false)
 
                         <section>
                             <div  class="flex flex-col lg:flex-row justify-center px-4 py-8 my-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
@@ -172,6 +172,64 @@
 
                     @endif
 
+                    @if (($plan->id == 7 || $plan->id == 8) && $is_week == true)
+
+                        <section>
+                            <div  class="flex flex-col lg:flex-row justify-center px-4 py-8 my-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
+                                <figure class=" hidden lg:block mr-4 w-auto flex-1">
+                                    <img src="{{asset('/img/billboards/banner_dkp.jpg')}}" alt="Método DKP">
+                                </figure>
+                                <div class="w-full lg:w-7/12">
+                                    <h3 class="text-xl font-bold">¡Ahorrar más! Adquiere la <b class="text-red-700">Fase 1 </b> del Método DKP hoy por solo <span class="text-red-700">47 US$</span></h3>
+                                    <p class="text-sm text-gray-800  my-2">Adquiere hoy el Plan de 21 días del Método DKP y obtendrás</p>
+                                    <ul class="text-sm">
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso inmediato a la fase 1</li>
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>21 días de menús y recetas</li>
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 30 días al chat</li>
+
+                                    </ul>
+
+                                    <p class="mt-1 text-base font-semibold">Precio normal <span class=" line-through">47 US$</span></p>
+
+                                    <div class="flex w-full mt-4">
+
+                                        <style>
+                                            /* Toggle  */
+                                            input:checked ~ .dot {
+                                            transform: translateX(100%);
+                                            background-color: #48bb78;
+                                            }
+
+
+                                        </style>
+
+                                        <label
+                                        for="tooglePromo"
+                                        class="flex items-center cursor-pointer"
+                                        >
+                                        <!-- toggle -->
+                                        <div class="relative">
+                                            <!-- input -->
+                                            <input id="tooglePromo" wire:model="toogle_promo" wire:click="tooglePromo" type="checkbox" class="sr-only" />
+                                            <!-- line -->
+                                            <div class="w-10 h-4 bg-gray-400 rounded-full shadow-inner"></div>
+                                            <!-- dot -->
+                                            <div class="dot absolute w-6 h-6 bg-red-700 rounded-full shadow -left-1 -top-1 transition"></div>
+                                        </div>
+                                        <!-- label -->
+                                        <div class="ml-3 text-gray-700 font-semibold">
+                                            Hoy solo pagas 47 US$
+                                        </div>
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    @endif
 
 
                     <div class="flex items-center flex-wrap md:flex-no-wrap py-8 bg-gray-50 pl-4 rounded-xl mt-4">

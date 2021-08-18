@@ -13,6 +13,7 @@ class PlanCheckout extends Component
 
     public $plan, $suscription, $plan_upsale;
     public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send;
+    public $is_week = false;
     public $can_continued = false;
     public $error_message = "* Tenemos un error, revisa la información suminitrada anteriormente";
     public $error_button = "Toca aquí para confirmar la información";
@@ -32,13 +33,17 @@ class PlanCheckout extends Component
         $this->can_continued = false;
         $this->reset(['error_button']);
         $this->validateOnly($propertyName);
-        
+
     }
 
     public function mount(Plan $plan){
 
         if ($this->plan->id == 9) {
             $this->toogle_promo = 1;
+        }
+
+        if ($this->plan->id == 7) {
+            $this->is_week = true;
         }
 
         if ($this->plan->id == 4 || $this->plan->id == 5 || $this->plan->id == 6) { // Whatsapp ~ Cita 40 mins ~ Cita 60 mins
@@ -53,7 +58,7 @@ class PlanCheckout extends Component
         if (auth()->user()) {
             $user = User::find(auth()->user()->id);
             $this->data_send =  "$user->name~$user->email~NotChange~1";
-            
+
             if ($this->plan->id == 4 || $this->plan->id == 5 || $this->plan->id == 6) { // Whatsapp ~ Cita 40 mins ~ Cita 60 mins
                 $this->can_continued = true;
             }
@@ -63,7 +68,7 @@ class PlanCheckout extends Component
     }
 
     public function confirmData(){
-     
+
         if (auth()->user()) {
             $user_exist = auth()->user();
             $email = $user_exist->email;
@@ -82,25 +87,45 @@ class PlanCheckout extends Component
                     if ($user->subscription->plan->id == $this->plan->id) {
                         $this->can_continued = false;
                         $this->error_button = "No puedes continuar con la compra, el usuario $email ya está registrado a este plan";
-        
+
                         return;
                     }
                 }
             }
         }
-    
+
         $this->can_continued = true;
         $this->data_send = "$this->name~$email~$this->password~0";
-        
+
     }
 
     public function tooglePromo()
     {
         if ($this->plan->id == 8 || $this->plan->id == 9) {
-            if ($this->toogle_promo) {
-                $this->plan = Plan::find(9);
+            if($this->is_week == false){
+
+                if ($this->toogle_promo) {
+                    $this->plan = Plan::find(9);
+                }else{
+                    $this->plan = Plan::find(8);
+                }
             }else{
+                if($this->plan->id == 8){
+
+                    if ($this->toogle_promo) {
+                        $this->plan = Plan::find(8);
+                    }else{
+                        $this->plan = Plan::find(7);
+                    }
+                }
+            }
+
+        }else if ($this->plan->id == 7) {
+            if ($this->toogle_promo) {
+
                 $this->plan = Plan::find(8);
+            }else{
+                $this->plan = Plan::find(7);
             }
         }
     }

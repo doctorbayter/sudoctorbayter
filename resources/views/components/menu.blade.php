@@ -29,7 +29,7 @@
                 <span class="text-xs">Extras</span>
             </button>
             </div>
-            @if ($userPlan != 7)
+
             <a href="{{route('plan.bebidas')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-mediu text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                 <i class=" text-lg fas fa-cocktail mr-2"></i>
                 <span class="whitespace-nowrap">Bebidas Keto</span>
@@ -38,7 +38,7 @@
                 <i class=" text-lg fas fa-coffee mr-2"></i>
                 <span>Salsitas</span>
             </a>
-            @endif
+
             <a href="{{route('plan.snacks')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                 <i class=" text-lg fas fa-cookie-bite mr-2"></i>
                 <span>Snacks</span>

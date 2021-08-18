@@ -29,7 +29,7 @@ class UserPlan extends Component
         $this->user_plan = $planUser->plan->id;
 
         if($planUser->plan->id == 7){
-            $planUpdate = Plan::find(2);
+            $planUpdate = Plan::find(8);
             return view('livewire.user-plan-week', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
         }else{
             $planUpdate = Plan::find(3);

@@ -16,7 +16,13 @@ class UserSalsitas extends Component
         if(auth()->user()->subscription){
             $this->user_fases = auth()->user()->fases;
         }
-        $salsitas = Recipe::where('type', '4')->take(1)->get();
+
+        if($planUser->plan->id == 7){
+            $salsitas = Recipe::where('type', '4')->take(3)->get();
+        }else{
+            $salsitas = Recipe::where('type', '4')->get();
+        }
+
         return view('livewire.user-salsitas', compact('salsitas'));
     }
 }

@@ -17,7 +17,12 @@ class UserBebidas extends Component
         if(auth()->user()->subscription){
             $this->user_fases = auth()->user()->fases;
         }
-        $bebidas = Recipe::where('type', '3')->take(2)->get();
+
+        if($planUser->plan->id == 7){
+            $bebidas = Recipe::where('type', '3')->take(3)->get();
+        }else{
+            $bebidas = Recipe::where('type', '3')->get();
+        }
         return view('livewire.user-bebidas', compact('bebidas'));
     }
 }

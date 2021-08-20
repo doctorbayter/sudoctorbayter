@@ -16,7 +16,7 @@ class UserSalsitas extends Component
         if(auth()->user()->subscription){
             $this->user_fases = auth()->user()->fases;
         }
-        $salsitas = Recipe::where('type', '4')->take(3)->get();
+        $salsitas = Recipe::where('type', '4')->take(1)->get();
         return view('livewire.user-salsitas', compact('salsitas'));
     }
 }

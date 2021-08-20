@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Livewire\Masterclass;
 use App\Http\Livewire\UserRecipe;
 use App\Models\Day;
 use App\Models\Fase;
@@ -49,6 +50,11 @@ Route::get('/recursos', [HomeController::class, 'recursos'])->name('recursos');
 Route::get('/cita', [HomeController::class, 'cita'])->name('cita');
 Route::get('/what', [HomeController::class, 'what'])->name('what');
 Route::get('/recipe/{recipe}', UserRecipe::class)->name('recipe');
+
+Route::get('masterclass/dkp/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
+Route::get('masterclass/dkp/register', Masterclass::class)->name('masterclass.register');
+Route::get('masterclass/dkp/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
+
 
 Route::get('/110', function () {
     return view('no-disponible');

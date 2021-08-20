@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ApprovedPurchase;
+use App\Mail\ApprovedPurchaseNoChat;
 use App\Models\Fase;
 use App\Models\Plan;
 use App\Models\Subscription;
@@ -427,9 +428,16 @@ class PaymentController extends Controller
                     }
                 break;
             }
-            //Enviar Correo
-            $mail = new ApprovedPurchase($plan, $user);
-            Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            if($plan->id ==7){
+                //Enviar Correo
+                $mail = new ApprovedPurchaseNoChat($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            }
+            else{
+                //Enviar Correo
+                $mail = new ApprovedPurchase($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            }
         }
     }
 
@@ -676,9 +684,16 @@ class PaymentController extends Controller
                         break;
                     }
 
-                    //Enviar Correo
-                    $mail = new ApprovedPurchase($plan, $user);
-                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                    if($plan->id ==7){
+                        //Enviar Correo
+                        $mail = new ApprovedPurchaseNoChat($plan, $user);
+                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                    }
+                    else{
+                        //Enviar Correo
+                        $mail = new ApprovedPurchase($plan, $user);
+                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                    }
 
                 break;
             }
@@ -882,9 +897,16 @@ class PaymentController extends Controller
                 break;
             }
 
-            //Enviar Correo
-            $mail = new ApprovedPurchase($plan, $user);
-            Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            if($plan->id ==7){
+                //Enviar Correo
+                $mail = new ApprovedPurchaseNoChat($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            }
+            else{
+                //Enviar Correo
+                $mail = new ApprovedPurchase($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            }
 
         }
 

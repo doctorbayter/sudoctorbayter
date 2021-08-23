@@ -428,7 +428,7 @@ class PaymentController extends Controller
                     }
                 break;
             }
-            if($plan->id ==7){
+            if($plan->id == 7){
                 //Enviar Correo
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
@@ -897,7 +897,7 @@ class PaymentController extends Controller
                 break;
             }
 
-            if($plan->id ==7){
+            if($plan->id == 7){
                 //Enviar Correo
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);

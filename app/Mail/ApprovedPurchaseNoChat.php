@@ -13,6 +13,7 @@ class ApprovedPurchaseNoChat extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $plan, $user;
     /**
      * Create a new message instance.
      *

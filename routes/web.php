@@ -76,6 +76,8 @@ Route::get('x/recipes/', function(){
 Route::get('x/api/', function(){
     $days = Day::all();
     echo $days;
+    //$fase_week = Fase::find(2);
+    //dd($fase_week->clients());
 });
 
 

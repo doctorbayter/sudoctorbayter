@@ -82,7 +82,7 @@ class PaymentController extends Controller
                     $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
                     $all_fases = Fase::all();
                     $fase_one = Fase::find(1);
-                    $fase_week = Fase::find(7);
+                    $fase_week = Fase::find(5);
 
 
                     switch ($plan->id) {
@@ -284,7 +284,7 @@ class PaymentController extends Controller
             $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
             $all_fases = Fase::all();
             $fase_one = Fase::find(1);
-            $fase_week = Fase::find(7);
+            $fase_week = Fase::find(5);
 
             switch ($plan->id) {
                 case 1:
@@ -539,7 +539,7 @@ class PaymentController extends Controller
                     $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
                     $all_fases = Fase::all();
                     $fase_one = Fase::find(1);
-                    $fase_week = Fase::find(7);
+                    $fase_week = Fase::find(5);
 
                     switch ($plan->id) {
                         case 1:

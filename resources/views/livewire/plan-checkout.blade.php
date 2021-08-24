@@ -189,7 +189,7 @@
 
                                     </ul>
 
-                                    <p class="mt-1 text-base font-semibold">Precio normal <span class=" line-through">47 US$</span></p>
+                                    <p class="mt-1 text-base font-semibold">Precio normal <span class=" line-through">87 US$</span></p>
 
                                     <div class="flex w-full mt-4">
 

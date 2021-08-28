@@ -65,43 +65,43 @@ Route::get('/110', function () {
 Route::get('x/sql/', function(){
 
 
-    Day::create([
+    Video::create([
         'iframe' => '<iframe src="https://player.vimeo.com/video/593568312" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => 99,
         'videoable_type' => 'App\Models\Day'
     ]);
 
-    Day::create([
+    Video::create([
         'iframe' => '<iframe src="https://player.vimeo.com/video/593568414" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => 100,
         'videoable_type' => 'App\Models\Day'
     ]);
 
-    Day::create([
+    Video::create([
         'iframe' => '<iframe src="https://player.vimeo.com/video/593568460" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => 101,
         'videoable_type' => 'App\Models\Day'
     ]);
 
-    Day::create([
+    Video::create([
         'iframe' => '<iframe src="https://player.vimeo.com/video/593568484" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => 102,
         'videoable_type' => 'App\Models\Day'
     ]);
 
-    Day::create([
+    Video::create([
         'iframe' => '<iframe src="https://player.vimeo.com/video/593568547" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => 103,
         'videoable_type' => 'App\Models\Day'
     ]);
 
-    Day::create([
+    Video::create([
         'iframe' => '<iframe src="https://player.vimeo.com/video/593568569" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => 104,
         'videoable_type' => 'App\Models\Day'
     ]);
 
-    Day::create([
+    Video::create([
         'iframe' => '<iframe src="https://player.vimeo.com/video/593568599" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => 105,
         'videoable_type' => 'App\Models\Day'

@@ -64,33 +64,49 @@ Route::get('/110', function () {
 
 Route::get('x/sql/', function(){
 
-    $video = Video::find(1);
-    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568312" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
-    $video->save();
 
-    $video = Video::find(2);
-    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568414" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
-    $video->save();
+    Day::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/593568312" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => 99,
+        'videoable_type' => 'App\Models\Day'
+    ]);
 
-    $video = Video::find(3);
-    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568460" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
-    $video->save();
+    Day::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/593568414" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => 100,
+        'videoable_type' => 'App\Models\Day'
+    ]);
 
-    $video = Video::find(4);
-    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568484" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
-    $video->save();
+    Day::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/593568460" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => 101,
+        'videoable_type' => 'App\Models\Day'
+    ]);
 
-    $video = Video::find(5);
-    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568547" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
-    $video->save();
+    Day::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/593568484" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => 102,
+        'videoable_type' => 'App\Models\Day'
+    ]);
 
-    $video = Video::find(6);
-    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568569" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
-    $video->save();
+    Day::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/593568547" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => 103,
+        'videoable_type' => 'App\Models\Day'
+    ]);
 
-    $video = Video::find(7);
-    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568599" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
-    $video->save();
+    Day::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/593568569" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => 104,
+        'videoable_type' => 'App\Models\Day'
+    ]);
+
+    Day::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/593568599" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => 105,
+        'videoable_type' => 'App\Models\Day'
+    ]);
+
 
     //$day_recipes= DB::select("SELECT * FROM day_recipe");
     //print_r(json_encode($day_recipes));

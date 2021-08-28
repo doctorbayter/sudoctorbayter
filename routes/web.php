@@ -63,8 +63,37 @@ Route::get('/110', function () {
 //php artisan migrate:fresh --seed --force
 
 Route::get('x/sql/', function(){
-    $day_recipes= DB::select("SELECT * FROM day_recipe");
-    print_r(json_encode($day_recipes));
+
+    $video = Video::find(1);
+    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568312" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
+    $video->save();
+
+    $video = Video::find(2);
+    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568414" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
+    $video->save();
+
+    $video = Video::find(3);
+    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568460" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
+    $video->save();
+
+    $video = Video::find(4);
+    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568484" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
+    $video->save();
+
+    $video = Video::find(5);
+    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568547" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
+    $video->save();
+
+    $video = Video::find(6);
+    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568569" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
+    $video->save();
+
+    $video = Video::find(7);
+    $video->iframe = '<iframe src="https://player.vimeo.com/video/593568599" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>';
+    $video->save();
+
+    //$day_recipes= DB::select("SELECT * FROM day_recipe");
+    //print_r(json_encode($day_recipes));
 });
 
 

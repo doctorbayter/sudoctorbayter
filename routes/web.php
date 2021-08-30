@@ -64,8 +64,8 @@ Route::get('/110', function () {
 
 Route::get('x/sql/', function(){
 
-    $all_fases = Fase::all();
-    dd($all_fases);
+    $fases = Fase::all();
+    dd($fases);
 /*
     $users = User::where('email','!=','null')->skip(3000)->take(1000)->get();
     $userc= 0;

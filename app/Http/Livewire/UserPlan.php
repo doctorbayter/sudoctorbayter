@@ -14,7 +14,7 @@ class UserPlan extends Component
     public function render(){
 
         if(auth()->user()->subscription){
-            $this->user_fases = auth()->user()->fases;
+            $this->user_fases = auth()->user()->fases->sortBy('id');
         }
 
         $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9])->first();

@@ -65,7 +65,7 @@ Route::get('/110', function () {
 Route::get('x/sql/', function(){
 
 
-    $users = User::where('email','!=','null')->skip(4000)->take(1000)->get();
+    $users = User::where('email','!=','null')->skip(1000)->take(1000)->get();
     $userc= 0;
     foreach($users as $user){
 

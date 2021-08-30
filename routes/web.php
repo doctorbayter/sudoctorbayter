@@ -65,6 +65,8 @@ Route::get('/110', function () {
 Route::get('x/sql/', function(){
 
     Schema::rename('subscriptions', 'subscription');
+
+    return "do it";
 /*
     $users = User::where('email','!=','null')->skip(3000)->take(1000)->get();
     $userc= 0;

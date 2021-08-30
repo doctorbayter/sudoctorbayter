@@ -64,7 +64,9 @@ Route::get('/110', function () {
 
 Route::get('x/sql/', function(){
 
-
+    $all_fases = Fase::all();
+    dd($all_fases);
+/*
     $users = User::where('email','!=','null')->skip(3000)->take(1000)->get();
     $userc= 0;
     foreach($users as $user){
@@ -123,7 +125,7 @@ Route::get('x/sql/', function(){
     }
 
     echo $userc;
-
+*/
     // Video::create([
     //     'iframe' => '<iframe src="https://player.vimeo.com/video/593568599" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
     //     'videoable_id' => 105,

@@ -64,10 +64,7 @@ Route::get('/110', function () {
 
 Route::get('x/sql/', function(){
 
-    $fase6 = Fase::find(6)->delete();
-
-    $fases = Fase::all();
-    dd($fases);
+    Schema::rename('subscriptions', 'subscription');
 /*
     $users = User::where('email','!=','null')->skip(3000)->take(1000)->get();
     $userc= 0;

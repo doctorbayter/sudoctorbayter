@@ -9,6 +9,7 @@ class Subscription extends Model
 {
     use HasFactory;
 
+    protected $table = 'subscription';
     protected $guarded = ['id'];
 
     //Relacion uno a muchos

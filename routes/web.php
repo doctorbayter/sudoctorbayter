@@ -65,47 +65,70 @@ Route::get('/110', function () {
 Route::get('x/sql/', function(){
 
 
-    Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/593568312" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-        'videoable_id' => 99,
-        'videoable_type' => 'App\Models\Day'
-    ]);
+    $users = User::all();
+    $userc= 0;
+    foreach($users as $user){
 
-    Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/593568414" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-        'videoable_id' => 100,
-        'videoable_type' => 'App\Models\Day'
-    ]);
+        $user_fases = $user->fases;
+        $f1=0;
+        $f2=0;
+        $f3=0;
+        $f4=0;
+        $f5=0;
+        $fase1=0;
+        $fase2=0;
+        $fase3=0;
+        $fase4=0;
+        $fase5=0;
 
-    Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/593568460" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-        'videoable_id' => 101,
-        'videoable_type' => 'App\Models\Day'
-    ]);
+        foreach($user_fases as $user_fase){
+            if($user_fase->id = 1){
+                $f1 = $f1+1;
+                $fase1=$user_fase;
+            }else if($user_fase->id = 2){
+                $f2 = $f2+1;
+                $fase2=$user_fase;
+            }else if($user_fase->id = 3){
+                $f3 = $f3+1;
+                $fase3=$user_fase;
+            }else if($user_fase->id = 4){
+                $f4 = $f4+1;
+                $fase4=$user_fase;
+            }else if($user_fase->id = 5){
+                $f5 = $f5+1;
+                $fase5=$user_fase;
+            }
+        }
 
-    Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/593568484" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-        'videoable_id' => 102,
-        'videoable_type' => 'App\Models\Day'
-    ]);
+        if($f1 > 1){
+            $fase1->clients()->detach(auth()->user()->id);
+            $fase1->clients()->attach(auth()->user()->id);
+        }else if($f2 > 1){
+            $fase2->clients()->detach(auth()->user()->id);
+            $fase2->clients()->attach(auth()->user()->id);
+        }
+        else if($f3 > 1){
+            $fase3->clients()->detach(auth()->user()->id);
+            $fase3->clients()->attach(auth()->user()->id);
+        }
+        else if($f4 > 1){
+            $fase4->clients()->detach(auth()->user()->id);
+            $fase4->clients()->attach(auth()->user()->id);
+        }
+        else if($f5 > 1){
+            $fase5->clients()->detach(auth()->user()->id);
+            $fase5->clients()->attach(auth()->user()->id);
+        }
+        $userc = $userc + 1;
+    }
 
-    Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/593568547" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-        'videoable_id' => 103,
-        'videoable_type' => 'App\Models\Day'
-    ]);
+    echo $userc;
 
-    Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/593568569" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-        'videoable_id' => 104,
-        'videoable_type' => 'App\Models\Day'
-    ]);
-
-    Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/593568599" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-        'videoable_id' => 105,
-        'videoable_type' => 'App\Models\Day'
-    ]);
+    // Video::create([
+    //     'iframe' => '<iframe src="https://player.vimeo.com/video/593568599" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+    //     'videoable_id' => 105,
+    //     'videoable_type' => 'App\Models\Day'
+    // ]);
 
 
     //$day_recipes= DB::select("SELECT * FROM day_recipe");

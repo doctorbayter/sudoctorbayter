@@ -12,7 +12,7 @@
                         </header>
                         <section class="">
 
-                            <div class="grid grid-cols-1 xl:grid-cols-{{$user_fases->count()}}  gap-8 pt-8">
+                            <div class="grid grid-cols-1 xl:grid-cols-2  gap-8 pt-8">
 
                                 @foreach ($user_fases as $fase)
                                    <a href="{{route('plan.fase', $fase)}}" class=" px-8 py-12 shadow-sm rounded-lg bg-gray-900 hover:bg-gray-800 text-gray-50 transition-all ease-in-out">

@@ -4,11 +4,12 @@
     @php
         if(auth()->user()->subscription){
             $user_fases = auth()->user()->subscription->plan->fases;
+            $user_plan = auth()->user()->subscription->plan->id;
         }
     @endphp
 
     <div class="flex">
-        <x-menu :fases="$user_fases" />
+        <x-menu :fases="$user_fases" :userPlan="$user_plan" />
         <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="bg-white  ml-auto">
 
             <header class="bg-fixed bg-cover shadow-lg" style="background-image: url({{asset('img/backgrounds/meal_plan_top_banner_2-1-1.jpg')}})">
@@ -18,17 +19,17 @@
 
                 </div>
 
-            </header>  
+            </header>
 
             <section class="bg-gradient-to-t from-gray-100 pb-14 ">
                 <div class="w-10/12 mx-auto my-10" x-data="{selected:1}">
                     <section class="mt-0">
                         <div class="">
-                          
+
                             <section class="">
                                 <div class=" mx-auto py-6 md:py-12">
                                     <div class="mx-auto" x-data="{selected:null}">
-                                        <ul class="text-gray-50">          
+                                        <ul class="text-gray-50">
                                             <li class="relative mb-4 rounded-lg bg-gray-800">
                                                 <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 2 ? selected = 2 : selected = null">
                                                     <div class="flex items-center justify-between">
@@ -38,7 +39,7 @@
                                                 </button>
                                                 <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
                                                     <div class="px-6 pt-4 pb-6 bg-gray-100">
-                                                        <div class="text-gray-900"> 
+                                                        <div class="text-gray-900">
                                                             <div class="">
                                                                 <p class="text-base mb-4">Lo primero que necesitas es conocer la anatomía de nuestra página. para que puedas sacar el máximo provecho y no te pierdas ningún detalle o información.<br/>A continuación verás una imagen de la página web y la explicación de cada uno de sus puntos.</p>
                                                                 <figure>
@@ -102,7 +103,7 @@
                                                 </button>
                                                 <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
                                                     <div class="px-6 pt-4 pb-6 bg-gray-100">
-                                                        <div class="text-gray-900"> 
+                                                        <div class="text-gray-900">
                                                             <div class="">
                                                                 <p class="text-base mb-4">Ahora que ya conoces la estrucura de la página veamos como funcionan las fases y como debes consumir el contenido.</p>
                                                                 <figure>
@@ -111,7 +112,7 @@
                                                                 <ul class="list-decimal px-6 divide-y-2">
                                                                     <li class="text-base py-6">
                                                                         <p class="text-red-700 text-xl mb-2"><b>Listado de días</b></p>
-                                                                        <p>Aquí encontrarás cada uno de los días de la fase dividido por semanas. Para acceder al día solo debes oprimir la semana y el día que deseas y listo. Sabrás en cual día estás ya que este se pondrá de color rojo. </p> 
+                                                                        <p>Aquí encontrarás cada uno de los días de la fase dividido por semanas. Para acceder al día solo debes oprimir la semana y el día que deseas y listo. Sabrás en cual día estás ya que este se pondrá de color rojo. </p>
                                                                     </li>
                                                                     <li class="text-base py-6">
                                                                         <p class="text-red-700 text-xl mb-2"><b>Menú del día</b></p>
@@ -144,7 +145,7 @@
                                                 </button>
                                                 <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
                                                     <div class="px-6 pt-4 pb-6 bg-gray-100">
-                                                        <div class="text-gray-900"> 
+                                                        <div class="text-gray-900">
                                                             <div class="">
                                                                 <p class="text-base mb-4">Además de cambiar tu clave tambien podrás cambiar tu correo electrónico (te recomendamos cambiar el correo solo si es estrictamente necesario). para actualizar tu información o cambiar tu clave desde ingresar <a href="{{route('profile.show')}}" class="text-blue-500">aquí</a> o seguir los pasos que verás a continuación.</p>
                                                                 <figure>
@@ -153,7 +154,7 @@
                                                                 <ul class="list-decimal px-6 divide-y-2">
                                                                     <li class="text-base py-6">
                                                                         <p class="text-red-700 text-xl mb-2"><b>Entra al menú de acceso</b></p>
-                                                                        <p>Entra al menú de acceso que encuentra en la parte superior derecha y entra al link <b>Perfil</b></p> 
+                                                                        <p>Entra al menú de acceso que encuentra en la parte superior derecha y entra al link <b>Perfil</b></p>
                                                                     </li>
                                                                     <li class="text-base py-6">
                                                                         <p class="text-red-700 text-xl mb-2"><b>Información de perfil</b></p>
@@ -163,7 +164,7 @@
                                                                         <p class="text-red-700 text-xl mb-2"><b>Actualizar contraseña</b></p>
                                                                         <p>Aquí podrás cambiar contraseña, para hacerlo, bedes primero ingresar tu contraseña actual. Después, ingresar tu clave nueva y la compruebas en el siguiente campo. Una vez hagas los cambios que desees oprimer el botín <b>Guardar</b> que encontrarás debajo del formulario.</p>
                                                                     </li>
-                                                                   
+
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -174,7 +175,7 @@
                                     </div>
                                 </div>
                             </section>
-                            
+
                         </div>
                     </section>
                 </div>

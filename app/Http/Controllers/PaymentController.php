@@ -80,7 +80,7 @@ class PaymentController extends Controller
                     $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
                     $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
                     $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-                    $all_fases = Fase::all();
+                    $all_fases = Fase::where('id', '!=', 5)->get();
                     $fase_one = Fase::find(1);
                     $fase_week = Fase::find(5);
 
@@ -282,7 +282,7 @@ class PaymentController extends Controller
             $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
             $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-            $all_fases = Fase::all();
+            $all_fases = Fase::where('id', '!=', 5)->get();
             $fase_one = Fase::find(1);
             $fase_week = Fase::find(5);
 
@@ -537,7 +537,7 @@ class PaymentController extends Controller
                     $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
                     $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
                     $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-                    $all_fases = Fase::all();
+                    $all_fases = Fase::where('id', '!=', 5)->get();
                     $fase_one = Fase::find(1);
                     $fase_week = Fase::find(5);
 
@@ -758,7 +758,7 @@ class PaymentController extends Controller
             $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
             $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-            $all_fases = Fase::all();
+            $all_fases = Fase::where('id', '!=', 5)->get();
             $fase_one = Fase::find(1);
             $fase_week = Fase::find(1);
 

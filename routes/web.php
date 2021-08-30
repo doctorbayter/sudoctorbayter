@@ -149,8 +149,6 @@ Route::get('x/api/', function(){
 });
 
 
-
-
 Route::get('x/plan/{user}', function($user){
 
     $user = User::where('email',$user)->first();

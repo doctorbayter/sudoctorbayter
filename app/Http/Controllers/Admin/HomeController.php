@@ -111,6 +111,23 @@ class HomeController extends Controller
         }
     }
 
+    public function noFase($email, $fase){
+        $user = User::where('email', $email)->first();
+        $fase = Fase::find($fase);
+
+        if($user){
+            $is_subscribed = $fase->clients->contains($user->id);
+            if($is_subscribed){
+                $fase->clients()->detach($user->id);
+                return 'Do it';
+            }else {
+                return 'No está registrado';
+            }
+        }else{
+            return 'Usuario no encontrado';
+        }
+    }
+
     public function discount(){
 
 

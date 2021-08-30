@@ -64,6 +64,8 @@ Route::get('/110', function () {
 
 Route::get('x/sql/', function(){
 
+    $fase6 = Fase::find(6)->delete();
+
     $fases = Fase::all();
     dd($fases);
 /*

@@ -61,7 +61,7 @@ Route::get('masterclass/dkp/thanks', [Masterclass::class, 'thanks'])->name('mast
 Route::get('/selecto', function () {
     $plan = Plan::find(10);
     return redirect()->route('payment.pay', ['plan'=>$plan]);
-});
+})->name('selecto');
 
 
 Route::get('/110', function () {

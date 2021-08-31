@@ -154,6 +154,7 @@ class ProductPay extends Component
             }
 
         } catch (Exception $e) {
+            dd($e);
             $this->emit('errorStripePayment');
         }
     }

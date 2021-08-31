@@ -154,6 +154,7 @@ class HomeController extends Controller
         $plan->save();*/
     }
 
+
     public function plan($email, $plan_id){
         $user = User::where('email', $email)->first();
         $plan = Plan::find($plan_id);
@@ -194,6 +195,25 @@ class HomeController extends Controller
                 return 'Do it';
             }else{
                 return 'Ya está registrado';
+            }
+        }else{
+            return 'Usuario no encontrado';
+        }
+
+
+    }
+
+    public function noPlan($email, $plan_id){
+        $user = User::where('email', $email)->first();
+        $plan = Plan::find($plan_id);
+        $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
+
+        if($user){
+            if ($is_subscribed) {
+                $is_subscribed->delete();
+                return 'Do it';
+            }else{
+                return 'No está registrado';
             }
         }else{
             return 'Usuario no encontrado';

@@ -111,12 +111,13 @@ class ProductPay extends Component
                                                 ->orWhere('plan_id', 3)
                                                 ->orWhere('plan_id', 7)
                                                 ->orWhere('plan_id', 8)
+                                                ->orWhere('plan_id', 9)
                                                 ->first();
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
 
-            if($this->plan->id == 9){ //Grupo selecto
+            if($this->plan->id == 10){ //Grupo selecto
 
                 if($previous_subscribed){
                     $previous_subscribed->delete();

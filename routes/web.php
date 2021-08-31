@@ -67,33 +67,6 @@ Route::get('/110', function () {
 Route::get('x/sql/', function(){
 
 
-    $price = Price::create([
-        'name' => '1692 US$',
-        'value' => 1692
-    ]);
-
-    $discount = Discount::create([
-        'name' => 'Lanzamiento',
-        'type' => 1,
-        'value' => 557,
-        'expires_at' => '2021-09-05 23:59:59',
-        'user_id' => 1,
-    ]);
-
-    $discount_two = Discount::create([
-        'name' => 'Lanzamiento',
-        'type' => 1,
-        'value' => 657,
-        'expires_at' => '2099-08-05 23:59:59',
-        'user_id' => 1,
-    ]);
-
-    Plan::create([
-        'name' => 'Grupo Selecto',
-        'slug' => 'grupo-selecto',
-        'price_id' => $price->id,
-        'discount_id' => $discount->id
-    ]);
 
     // Schema::rename('subscriptions', 'subscription');
     // return "ok";

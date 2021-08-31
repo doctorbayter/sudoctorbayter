@@ -1,7 +1,7 @@
 <x-app-layout :plan="$plan">
   <div class="max-w-7xl mx-auto px-8 relative" style="height : calc(100vh - 4.1rem);">
     @switch($pay_data['transactionState'])
-      @case(4)  
+      @case(4)
         <div class="absolute left-6/12 top-6/12 transform -translate-x-6/12 -translate-y-6/12 w-full">
           <div class="mx-auto max-w-4xl shadow-lg rounded-md overflow-hidden flex">
             <div class="bg-green-500 px-12 text-white max-w-sm flex-col flex justify-center items-center">
@@ -20,7 +20,7 @@
             <div class="bg-gray-50 p-12 text-gray-700 w-full flex-col flex justify-center items-center">
                 <div>
                   <div class="flex mb-8">
-                    
+
                     <div class="ml-4">
                       <p class="text-base font-bold">{{$plan->name}} </p>
                     </div>
@@ -31,7 +31,7 @@
                     <p class="text-xl"><b class="text-base text-gray-700">Fecha de compra:</b> <br> {{\Carbon\Carbon::parse($pay_data['processingDate'])->isoFormat('MMMM D YYYY')}} </p>
                     <p class="text-xl mt-2"><b class="text-base text-gray-700">Pago final:</b> <br> {{$pay_data['TX_VALUE']}} ${{$pay_data['currency']}} </p>
                   </div>
-                  
+
                   <hr class="my-8">
                   <div>
                     @can('enrolled', $plan)
@@ -45,7 +45,7 @@
                 </div>
             </div>
           </div>
-          <div 
+          <div
             x-data="{$open : false}"
             x-show="$open">
             <div class="fixed bottom-4 left-6/12 transform -translate-x-6/12 flex flex-col sm:flex-row sm:items-center bg-white shadow rounded-md py-5 pl-6 pr-8 sm:pr-6">
@@ -61,7 +61,7 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       @break
       @case(6)
@@ -83,17 +83,17 @@
             <div class="bg-gray-50 p-12 text-gray-700 w-full flex-col flex justify-center items-center">
                 <div>
                   <div class="flex mb-8">
-                    
+
                     <div class="ml-4">
                       <p class="text-base font-bold">{{$plan->name}} </p>
-                      
+
                     </div>
                   </div>
                   <hr class="my-8">
                   <div class="mb-4 text-gray-500">
                     <p class="mb-4 text-sm text-gray-500 font-bold">Detalle de transacción:</p>
                     <p class="text-xl"><b class="text-base text-gray-700">Respuesta de la entidad:</b> <br>
-                    
+
                       @switch($pay_data['lapResponseCode'])
                           @case("PAYMENT_NETWORK_REJECTED")
                               Transacción rechazada por entidad financiera
@@ -106,7 +106,7 @@
                             @break
                           @case("INVALID_CARD")
                               Tarjeta inválida
-                            @break 
+                            @break
                           @case("CONTACT_THE_ENTITY")
                             Contactar entidad financiera
                             @break
@@ -121,25 +121,25 @@
                             @break
                           @case("INVALID_BANK_ACCOUNT")
                             Débito automático no permitido
-                            @break 
+                            @break
                           @case("INVALID_BANK")
                             Débito automático no permitido
-                            @break 
+                            @break
                           @case("EXPIRED_CARD")
                             Tarjeta vencida
-                            @break 
+                            @break
                           @case("RESTRICTED_CARD")
                             Tarjeta restringida
-                            @break 
+                            @break
                           @case("INVALID_EXPIRATION_DATE_OR_SECURITY_CODE")
                             Fecha de expiración o código de seguridadinválidos
                             @break
                           @case("REPEAT_TRANSACTION")
                             Reintentar pago
-                            @break 
+                            @break
                           @case("INVALID_TRANSACTION")
                             Transacción inválida
-                            @break 
+                            @break
                           @case("EXCEEDED_AMOUNT")
                             El valor excede el máximo permitido por la entidad
                             @break
@@ -151,36 +151,36 @@
                             @break
                           @case("ANTIFRAUD_REJECTED")
                             Transacción rechazada por sospecha de fraude
-                            @break 
+                            @break
                           @case("BANK_FRAUD_REJECTED")
                             Transacción rechazada debido a sospecha de fraude en la entidad financiera
-                            @break 
+                            @break
                           @case("DIGITAL_CERTIFICATE_NOT_FOUND")
                             Certificado digital no encotnrado
-                            @break 
+                            @break
                           @case("BANK_UNREACHABLE")
                             Error tratando de cominicarse con el banco
-                            @break 
+                            @break
                           @case("ENTITY_MESSAGING_ERROR")
                             Error comunicándose con la entidad financiera
-                            @break 
+                            @break
                           @case("NOT_ACCEPTED_TRANSACTION")
                             Transacción no permitida al tarjetahabiente
-                            @break 
+                            @break
                           @case("INTERNAL_PAYMENT_PROVIDER_ERROR")
                             Error
-                            @break 
+                            @break
                           @case("INACTIVE_PAYMENT_PROVIDER")
                             Error
-                            @break 
+                            @break
                           @default
                               Rechazo desconocido
                       @endswitch
-                      
+
                     </p>
                     <p class="text-xl mt-2"><b class="text-base text-gray-700">Estado:</b> <br> {{$pay_data['lapTransactionState']}}</p>
                   </div>
-                  
+
                   <hr class="my-8">
                   <div>
                     <a class="block text-center w-full bg-red-500 hover:bg-red-600 text-white font-bold p-4 rounded" href="{{route('payment.checkout', $plan )}}">
@@ -190,7 +190,7 @@
                 </div>
             </div>
           </div>
-          
+
         </div>
       @break
       @case(7)
@@ -212,10 +212,10 @@
             <div class="bg-gray-50 p-12 text-gray-700 w-full flex-col flex justify-center items-center">
                 <div>
                   <div class="flex mb-8">
-                    
+
                     <div class="ml-4">
                       <p class="text-base font-bold">{{$plan->name}} </p>
-                      
+
                     </div>
                   </div>
                   <hr class="my-8">
@@ -234,7 +234,7 @@
                           @break
                         @case("PENDING_TRANSACTION_TRANSMISSION")
                             Transacción no permitida
-                          @break 
+                          @break
                         @case("PENDING_PAYMENT_IN_ENTITY")
                           Recibo de pago generado. En espera de pago
                           @break
@@ -249,15 +249,15 @@
                           @break
                         @case("PENDING_NOTIFYING_ENTITY")
                           Recibo de pago generado. En espera de pago
-                          @break 
+                          @break
                         @default
                             En espera de confirmación
                       @endswitch
-                    
+
                     </p>
                     <p class="text-xl mt-2"><b class="text-base text-gray-700">Estado:</b> <br> {{$pay_data['lapTransactionState']}}</p>
                   </div>
-                  
+
                   <hr class="my-8">
                   <div>
                     <a class="block text-center w-full bg-red-700 text-gray-50 transition ease-in-out duration-300 font-bold p-4 rounded hover:bg-transparent hover:text-red-700 border-red-700 border" href="{{route('home')}}">
@@ -267,7 +267,7 @@
                 </div>
             </div>
           </div>
-          
+
         </div>
       @break
     @endswitch

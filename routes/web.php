@@ -4,11 +4,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Livewire\Masterclass;
 use App\Http\Livewire\UserRecipe;
 use App\Models\Day;
+use App\Models\Discount;
 use App\Models\Fase;
 use App\Models\Image;
 use App\Models\Ingredient;
 use App\Models\Instruction;
 use App\Models\Plan;
+use App\Models\Price;
 use App\Models\Recipe;
 use App\Models\Subscription;
 use App\Models\User;
@@ -64,9 +66,38 @@ Route::get('/110', function () {
 
 Route::get('x/sql/', function(){
 
-    Schema::rename('subscriptions', 'subscription');
-    return "ok";
-/*
+
+    $price = Price::create([
+        'name' => '1692 US$',
+        'value' => 1692
+    ]);
+
+    $discount = Discount::create([
+        'name' => 'Lanzamiento',
+        'type' => 1,
+        'value' => 557,
+        'expires_at' => '2021-09-05 23:59:59',
+        'user_id' => 1,
+    ]);
+
+    $discount_two = Discount::create([
+        'name' => 'Lanzamiento',
+        'type' => 1,
+        'value' => 657,
+        'expires_at' => '2099-08-05 23:59:59',
+        'user_id' => 1,
+    ]);
+
+    Plan::create([
+        'name' => 'Grupo Selecto',
+        'slug' => 'grupo-selecto',
+        'price_id' => $price->id,
+        'discount_id' => $discount->id
+    ]);
+
+    // Schema::rename('subscriptions', 'subscription');
+    // return "ok";
+    /*
     $users = User::where('email','!=','null')->skip(3000)->take(1000)->get();
     $userc= 0;
     foreach($users as $user){
@@ -125,7 +156,7 @@ Route::get('x/sql/', function(){
     }
 
     echo $userc;
-*/
+    */
     // Video::create([
     //     'iframe' => '<iframe src="https://player.vimeo.com/video/593568599" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
     //     'videoable_id' => 105,
@@ -144,8 +175,12 @@ Route::get('x/recipes/', function(){
 });
 
 Route::get('x/api/', function(){
-    $days = Day::all();
-    echo $days;
+
+    $plans = Plan::all();
+    dd($plans);
+
+    // $days = Day::all();
+    // echo $days;
     //$fase_week = Fase::find(2);
     //dd($fase_week->clients());
 });
@@ -192,7 +227,7 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-/*
+    /*
     Fase::create([
         'name' => '7 Días Keto',
         'sub_name' => 'Iniciemos<span class="text-red-700">Keto</span>',
@@ -2108,258 +2143,258 @@ Route::get('x/query', function(){
     // Fin Receta
 
 
-// Inicio Receta
-$recipe = Recipe::create([
-    'name' => 'Consomé de huevo',
-    'slug' => 'consome-de-huevo',
-    'indice'=> 1,
-    'carbs' => 2.1,
-    'time' => 10,
-    'type' => 1,
-]);
+    // Inicio Receta
+    $recipe = Recipe::create([
+        'name' => 'Consomé de huevo',
+        'slug' => 'consome-de-huevo',
+        'indice'=> 1,
+        'carbs' => 2.1,
+        'time' => 10,
+        'type' => 1,
+    ]);
 
-$image = Image::create([
-    'url' => 'recipes/consome-de-huevo.jpg',
-    'imageable_id' => $recipe->id,
-    'imageable_type' => 'App\Models\Recipe',
-]);
+    $image = Image::create([
+        'url' => 'recipes/consome-de-huevo.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
 
-Ingredient::create([
-    'name' => '2(700ml) tazas de consomé de pollo tradicional',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '2 huevos',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '1 cucharada de cilantro finamente picado',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '1 cucharada de perejil finamente picado',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '30 gramos de cebollín o cebolla larga finamente picada (2,1 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
+    Ingredient::create([
+        'name' => '2(700ml) tazas de consomé de pollo tradicional',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '2 huevos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '1 cucharada de cilantro finamente picado',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '1 cucharada de perejil finamente picado',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '30 gramos de cebollín o cebolla larga finamente picada (2,1 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
 
-$x = 0;
-Instruction::create([
-    'name' => 'Ponemos en una olla a fuego bajo el consomé de pollo con media cucharadita de cilantro, 15 gramos de cebollín, guardamos los otros 15 gramos y el perejil',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'A parte en un tazón ponemos uno de los dos huevos salpimentamos al gusto y batimos',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Cuando el consomé está calentando, pero no hirviendo agregamos los huevos que tenemos el tazón y empezamos a revolverlos dentro del consomé',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Seguimos revolviendo por lo menos por 10 minutos hasta que el huevo quede desechos y quede como una telita blanca',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Cuando empiece a hervir, reventamos el otro huevo dentro del caldo este si debe ir entero',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Subimos el fuego para que rápidamente el huevo se cocine y quede entero dejamos que hierva',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Con una cuchara mueves un poquito el huevo completo para evitar que se pegue, apagamos y tapamos por 3 minutos',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Servimos de inmediato agregándole por encima el cilantro y cebollín que tenemos conservando.',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
+    $x = 0;
+    Instruction::create([
+        'name' => 'Ponemos en una olla a fuego bajo el consomé de pollo con media cucharadita de cilantro, 15 gramos de cebollín, guardamos los otros 15 gramos y el perejil',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'A parte en un tazón ponemos uno de los dos huevos salpimentamos al gusto y batimos',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Cuando el consomé está calentando, pero no hirviendo agregamos los huevos que tenemos el tazón y empezamos a revolverlos dentro del consomé',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Seguimos revolviendo por lo menos por 10 minutos hasta que el huevo quede desechos y quede como una telita blanca',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Cuando empiece a hervir, reventamos el otro huevo dentro del caldo este si debe ir entero',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Subimos el fuego para que rápidamente el huevo se cocine y quede entero dejamos que hierva',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Con una cuchara mueves un poquito el huevo completo para evitar que se pegue, apagamos y tapamos por 3 minutos',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Servimos de inmediato agregándole por encima el cilantro y cebollín que tenemos conservando.',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
 
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(272, '105', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
-// Fin Receta
-
-
-// Inicio Receta
-$recipe = Recipe::create([
-    'name' => 'Tazón',
-    'slug' => 'tazon',
-    'indice'=> 1,
-    'carbs' => 12.74,
-    'time' => 20,
-    'type' => 1,
-]);
-
-$image = Image::create([
-    'url' => 'recipes/tazon.jpg',
-    'imageable_id' => $recipe->id,
-    'imageable_type' => 'App\Models\Recipe',
-]);
-
-Ingredient::create([
-    'name' => '60 gramos de lechuga romana partida en trozos (1,74 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '40 gramos de lechuga morada partida en trozos (1,16 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '60 gramos de rúcula partida en trozos (2,4 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '60 gramos de aguacate picado en trocitos (5,1 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '100 gramos de pollo desmechado ya listo',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '100 gramos de lomo de cerdo o res partido en trocitos ya listo',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '3 huevos de codorniz ya listos',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '40 gramos de chicharrón natural partido en trocitos',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '3 (30 gramos) queso crema o crema agria o de las dos',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Salsa de tomate con albahaca (1 tomate entero de no mas de 60 gramos, 1 cucharadita de albahaca finamente picada (2,34 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Aceite de oliva extra-virgen natural o aromatizado',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Salpimienta',
-    'recipe_id' => $recipe->id
-]);
-
-$x = 0;
-Instruction::create([
-    'name' => 'Ponemos en un tazón, la mitad de cada uno de los ingredientes salpimentamos, y revolvemos',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Agregamos la otra mitad de los ingredientes, y esta vez le agregamos una buena cantidad de aceite de oliva',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Revolvemos y servimos de inmediato',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-
-Video::create([
-    'iframe' => '<iframe src="https://player.vimeo.com/video/588488166" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-    'videoable_id' => $recipe->id,
-    'videoable_type' => 'App\Models\Recipe',
-]);
-
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(273, '105', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
-// Fin Receta
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (272, '105', $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+    // Fin Receta
 
 
-// Inicio Receta
-$recipe = Recipe::create([
-    'name' => 'Sencillamente champiñones',
-    'slug' => 'sencillamente-champinones',
-    'indice'=> 1,
-    'carbs' => 2.22,
-    'time' => 10,
-    'type' => 1,
-]);
+    // Inicio Receta
+    $recipe = Recipe::create([
+        'name' => 'Tazón',
+        'slug' => 'tazon',
+        'indice'=> 1,
+        'carbs' => 12.74,
+        'time' => 20,
+        'type' => 1,
+    ]);
 
-$image = Image::create([
-    'url' => 'recipes/sencillamente-champinones.jpg',
-    'imageable_id' => $recipe->id,
-    'imageable_type' => 'App\Models\Recipe',
-]);
+    $image = Image::create([
+        'url' => 'recipes/tazon.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
 
-Ingredient::create([
-    'name' => '60 gramos de champiñones enteros y limpios (1,98 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '1(1 gramos) ajo finamente picado (0,24 gr. CH)',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => '2 (50 gramos) lonjas o lonchas de tocino o tocineta finamente picada',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Mantequilla de vaca 100% de pastoreo',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Sal pimienta',
-    'recipe_id' => $recipe->id
-]);
-Ingredient::create([
-    'name' => 'Aceite de oliva extra virgen natural o aromatizado',
-    'recipe_id' => $recipe->id
-]);
+    Ingredient::create([
+        'name' => '60 gramos de lechuga romana partida en trozos (1,74 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '40 gramos de lechuga morada partida en trozos (1,16 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '60 gramos de rúcula partida en trozos (2,4 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '60 gramos de aguacate picado en trocitos (5,1 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '100 gramos de pollo desmechado ya listo',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '100 gramos de lomo de cerdo o res partido en trocitos ya listo',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '3 huevos de codorniz ya listos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '40 gramos de chicharrón natural partido en trocitos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '3 (30 gramos) queso crema o crema agria o de las dos',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Salsa de tomate con albahaca (1 tomate entero de no mas de 60 gramos, 1 cucharadita de albahaca finamente picada (2,34 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Aceite de oliva extra-virgen natural o aromatizado',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Salpimienta',
+        'recipe_id' => $recipe->id
+    ]);
 
-$x = 0;
-Instruction::create([
-    'name' => 'En una olla hirviendo ponemos los champiñones enteros para que se cocinen por no más de dos minutos',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Ponemos en un sartén con 1 cucharada de mantequilla, a sofreír el ajo por 1 minuto',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Agregamos la tocineta, salpimentamos y revolvemos',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Pasado dos minutos agregamos los champiñones y revolvemos para que todo se penetre',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Dejamos sofreír por dos minutos más o hasta que la tocineta esté bien crujiente',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
-Instruction::create([
-    'name' => 'Servimos de inmediato bañados aceite de oliva',
-    'step' => $x = $x + 1,
-    'recipe_id' => $recipe->id,
-]);
+    $x = 0;
+    Instruction::create([
+        'name' => 'Ponemos en un tazón, la mitad de cada uno de los ingredientes salpimentamos, y revolvemos',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Agregamos la otra mitad de los ingredientes, y esta vez le agregamos una buena cantidad de aceite de oliva',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Revolvemos y servimos de inmediato',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
 
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(274, '105', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
-// Fin Receta
-*/
+    Video::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/588488166" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => $recipe->id,
+        'videoable_type' => 'App\Models\Recipe',
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (273, '105', $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    // Fin Receta
+
+
+    // Inicio Receta
+    $recipe = Recipe::create([
+        'name' => 'Sencillamente champiñones',
+        'slug' => 'sencillamente-champinones',
+        'indice'=> 1,
+        'carbs' => 2.22,
+        'time' => 10,
+        'type' => 1,
+    ]);
+
+    $image = Image::create([
+        'url' => 'recipes/sencillamente-champinones.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
+
+    Ingredient::create([
+        'name' => '60 gramos de champiñones enteros y limpios (1,98 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '1(1 gramos) ajo finamente picado (0,24 gr. CH)',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => '2 (50 gramos) lonjas o lonchas de tocino o tocineta finamente picada',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Mantequilla de vaca 100% de pastoreo',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Sal pimienta',
+        'recipe_id' => $recipe->id
+    ]);
+    Ingredient::create([
+        'name' => 'Aceite de oliva extra virgen natural o aromatizado',
+        'recipe_id' => $recipe->id
+    ]);
+
+    $x = 0;
+    Instruction::create([
+        'name' => 'En una olla hirviendo ponemos los champiñones enteros para que se cocinen por no más de dos minutos',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Ponemos en un sartén con 1 cucharada de mantequilla, a sofreír el ajo por 1 minuto',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Agregamos la tocineta, salpimentamos y revolvemos',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Pasado dos minutos agregamos los champiñones y revolvemos para que todo se penetre',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Dejamos sofreír por dos minutos más o hasta que la tocineta esté bien crujiente',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+    Instruction::create([
+        'name' => 'Servimos de inmediato bañados aceite de oliva',
+        'step' => $x = $x + 1,
+        'recipe_id' => $recipe->id,
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (274, '105', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    // Fin Receta
+    */
 });

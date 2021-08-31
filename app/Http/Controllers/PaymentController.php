@@ -269,6 +269,7 @@ class PaymentController extends Controller
                 $user = User::where('email', $user_email)->first();
             }
 
+
             $plan = Plan::find($extra2);
 
             $suscription = new Subscription();
@@ -517,6 +518,7 @@ class PaymentController extends Controller
             $user = User::where('email', $user_email)->first();
         }
 
+
         $plan = Plan::find($x_extra2);
 
         //Validamos la firma
@@ -744,6 +746,7 @@ class PaymentController extends Controller
             }else {
                 $user = User::where('email', $user_email)->first();
             }
+
 
             $plan = Plan::find($plan_id);
 

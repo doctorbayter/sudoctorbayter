@@ -8,13 +8,14 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap" rel="stylesheet">       
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap" rel="stylesheet">
         <style>
         body {
             font-family: 'Poppins' !important;
             }
         </style>
         @stack('style')
+        @stack('scriptsHead')
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -59,9 +60,11 @@
             </main>
         </div>
 
+        @livewireScripts
+
         @stack('modals')
         @stack('scripts')
 
-        @livewireScripts
+
     </body>
 </html>

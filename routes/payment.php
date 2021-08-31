@@ -3,12 +3,16 @@
 
 use App\Http\Controllers\PaymentController;
 use App\Http\Livewire\PlanCheckout;
+use App\Http\Livewire\ProductPay;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('{plan}/checkout', PlanCheckout::class )->withoutMiddleware(['auth'])->name('checkout');
-Route::get('{plan}/pay/paypal', [PaymentController::class, 'paypal'] )->middleware(['auth' , 'verified'])->name('paypal'); 
+
+Route::get('{plan}/pay', ProductPay::class )->withoutMiddleware(['auth'])->name('pay');
+
+Route::get('{plan}/pay/paypal', [PaymentController::class, 'paypal'] )->middleware(['auth' , 'verified'])->name('paypal');
 Route::get('{plan}/pay/paypal/response', [PaymentController::class, 'responsePaypal'] )->middleware(['auth' , 'verified'])->name('paypal.response');
 Route::post('/pay/paypal/approved', [PaymentController::class, 'approvedPaypal'] )->withoutMiddleware(['auth'])->name('paypal.approved');
 

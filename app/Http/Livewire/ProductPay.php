@@ -43,6 +43,7 @@ class ProductPay extends Component
     }
 
     public function render() {
+
         return view('livewire.product-pay');
     }
 
@@ -149,7 +150,7 @@ class ProductPay extends Component
                 $mail = new ApprovedPurchase($this->plan, $user);
                 Mail::to($user->email)->bcc('hello@jeffcote.me', 'Doctor Bayter')->send($mail);
 
-                return view('payment.stripe.approved', compact($this->plan, $this->name, $this->email));
+                return view('payment.stripe.approved')->with(['plan', $this->plan], ['name', $this->name], ['email', $this->email]);
 
             }
 

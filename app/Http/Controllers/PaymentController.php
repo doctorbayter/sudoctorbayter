@@ -915,5 +915,8 @@ class PaymentController extends Controller
 
     }
 
+    public function approvedStripe(Request $request, Plan $plan){
+        return view('payment.stripe.approved', compact('request', 'plan'));
+    }
 
 }

@@ -1,4 +1,4 @@
-<div :plan="$plan" :name="$name" :email="$email">
+<x-app-layout :plan="$plan">
     <div class="max-w-7xl mx-auto px-8 mt-8 lg:mt-16 relative" style="height : calc(100vh - 16.1rem);">
       <div class="absolute left-6/12 top-6/12 transform -translate-x-6/12 -translate-y-6/12 w-full">
           <div class="mx-auto max-w-4xl shadow-lg rounded-md overflow-hidden flex">
@@ -9,9 +9,9 @@
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                   </svg>
                 </div>
-                <p class="text-xl mt-2 mb-4">Hola {{$name}},</p>
+                <p class="text-xl mt-2 mb-4">Hola {{$request->name}},</p>
                 <h3 class="text-4xl leading-10 font-extrabold">Muchas gracias por tu compra.</h3>
-                <p class="mt-4">Enviaremos a tu correo electrónico <b>{{$email}}</b> los detalles de compra en los próximos minutos.</p>
+                <p class="mt-4">Enviaremos a tu correo electrónico <b>{{$request->email}}</b> los detalles de compra en los próximos minutos.</p>
 
               </div>
             </div>
@@ -34,7 +34,7 @@
                   <div>
                     @can('enrolled', $plan)
                       <a class="block text-center w-full bg-green-500 hover:bg-green-600 text-white font-bold p-4 rounded" href="{{route('plan.index', $plan )}}">
-                        Empieza a aprender
+                        Entra aquí para iniciar
                       </a>
                     @else
                       <p><b>Tu pago se ha procesado correctamente</b>, en las próximas horas tendrás acceso al contenido. Ingresa la página de <a href="{{route('plan.index')}}" class="font-bold underline">tu plan</a> con tu correo y contraseña.</p>
@@ -64,4 +64,4 @@
 
     </div>
   <x-slot name="js"></x-slot>
-  </div>
+</x-app-layout>

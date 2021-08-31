@@ -4,7 +4,7 @@
     @php
         if(auth()->user()->subscription){
             $user_fases = auth()->user()->subscription->plan->fases;
-            $user_plan = auth()->user()->subscription->plan->id;
+            $user_plan = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10])->first();
         }
     @endphp
 

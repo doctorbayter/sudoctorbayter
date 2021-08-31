@@ -19,7 +19,7 @@ class UserRecipe extends Component
         }
         $this->recipe = $recipe;
 
-        $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9])->first();
+        $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10])->first();
         $this->user_plan = $planUser->plan->id;
 
     }

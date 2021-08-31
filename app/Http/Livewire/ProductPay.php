@@ -150,14 +150,13 @@ class ProductPay extends Component
                 }
 
                 $mail = new ApprovedPurchase($this->plan, $user);
-                Mail::to($user->email)->bcc('hello@jeffcote.me', 'Doctor Bayter')->send($mail);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
 
             }
 
         } catch (Exception $e) {
-
             $this->emit('errorStripePayment');
         }
     }

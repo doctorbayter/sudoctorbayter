@@ -130,10 +130,12 @@ class HomeController extends Controller
 
     public function discount(){
 
+        $discount = Discount::find(2);
+        $discount->value = 110;
+        $discount->save();
 
-
-        $discount = Discount::find(4);
-        $discount->name = '21 días Dieta Keto - Fase 1';
+        $discount = Discount::find(1);
+        $discount->value = 75;
         $discount->save();
 
         /*$discount = Discount::find(4);

@@ -20,18 +20,18 @@
                             <div class="text-white text-left py-2 hidden">
                                 @if ($plan_premium->discount)
                                     @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                        
+
                                     <div class="font-medium text-6xl flex items-center">
                                         <p class="mr-4 blocktext-gray-100 relative">
                                             <span>{{round($plan_premium->price->value)}}<small class="text-3xl">US$</small> </span>
                                             <span class="w-full h-1 block absolute left-0 top-2/4 transform -rotate-6 border-b-4 border-red-700"></span>
-                                        </p> 
+                                        </p>
                                         <p class="">{{round($plan_premium->finalPrice)}}<small class="text-3xl">US$</small></p>
                                     </div>
-                                            
+
                                         <div class="">
                                             <p class="text-base text-gray-300 mb-2 ">Oferta {{$plan_premium->discount->name}}</p>
-                                            <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                            <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>
                                         </div>
                                         @else
                                         <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
@@ -40,24 +40,24 @@
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
                                 @endif
                             </div>
-                            <a href="#go" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere tu plan desde 87 US$ !</a>
+                            <a href="#go" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere tu plan desde 75 US$ !</a>
                         @endcan
                     @else
                         <div class="text-white text-left py-2 hidden">
                             @if ($plan_premium->discount)
                                 @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                    
+
                                 <div class="font-medium text-6xl flex items-center">
                                     <p class="mr-4 blocktext-gray-100 relative">
                                         <span>{{round($plan_premium->price->value)}}<small class="text-3xl">US$</small> </span>
                                         <span class="w-full h-1 block absolute left-0 top-2/4 transform -rotate-6 border-b-4 border-red-700"></span>
-                                    </p> 
+                                    </p>
                                     <p class="">{{round($plan_premium->finalPrice)}}<small class="text-3xl">US$</small></p>
                                 </div>
-                                        
+
                                     <div class="">
                                         <p class="text-base text-gray-300 mb-2 ">Oferta {{$plan_premium->discount->name}}</p>
-                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>
                                     </div>
                                     @else
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
@@ -66,10 +66,10 @@
                                 <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
                             @endif
                         </div>
-                        
-                        <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere tu plan desde 87 US$ !</a>
+
+                        <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere tu plan desde 75 US$ !</a>
                     @endauth
-                    
+
                 </header>
             </div>
             <figure class="lg:absolute right-0 bottom-0 w-full lg:w-6/12">
@@ -109,7 +109,7 @@
                 </figure>
                 <iframe src="https://player.vimeo.com/video/542233951?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-56 md:h-96 rounded-xl flex-1 hidden"></iframe>
             </div>
-            <div class=" pb-20"> 
+            <div class=" pb-20">
                 <p class="mt-6 text-base text-justify">Por esto cada fase tiene <b>21 días</b>, para evitar la adaptación que es la principal forma como tu cuerpo no deja que sigas bajando de peso. Cuando yo digo, voy a hacer fases de 21 días, lo que quiero es que tu cuerpo nunca se adapte, sigas bajando y perpetúe bajando de peso. Para mi y para las más de 2300 personas que han pasado en el chat con un 97% efectividad.</p>
             </div>
         </div>
@@ -283,7 +283,7 @@
                         <p class="text-gray-900 text-justify">Encontrarás recursos, herramientas y los secretos mejor guardados de tu <b>Doctor Bayter</b> para mejorar y alcanzar tus objetivos de peso y salud. También encontrarás  consejos y recomendaciones para que mantengas los resultados en el tiempo.</p>
                         <p class="mt-2 text-gray-900 font-bold">Tendrás acceso ilimitado a la pagina, y siempre que existan modificaciones, cambios, tu podrás contar con ellos.</p>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="mt-16 md:mt-8">
@@ -312,7 +312,7 @@
         <div class="max-w-5xl mx-auto py-12 md:py-20">
             <h2 class="text-center font-extrabold text-3xl md:text-5xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">¿Tienes dudas?</h2>
             <div class=" max-w-4xl mx-auto" x-data="{selected:null}">
-                <ul class="text-gray-50">          
+                <ul class="text-gray-50">
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 2 ? selected = 2 : selected = null">
                             <div class="flex items-center justify-between">
@@ -406,7 +406,7 @@
     <section class="bg-white" id="go">
         @auth
             @can('enrolled', auth()->user()->subscription)
-                <div class="text-center py-20 "> 
+                <div class="text-center py-20 ">
                     <header>
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Ya estás dentro</h2>
                         <p class="text-center text-lg font-semibold">tu plan actual es {{auth()->user()->subscription->plan->name}}</p>
@@ -419,8 +419,8 @@
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Toma la decisión ahora</h2>
                         <p class="text-center text-lg font-semibold">Da el primer paso. Yo te acompañaré el resto del camino.</p>
                     </header>
-                    
-                    
+
+
                     <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span></h2>
                         <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
@@ -428,12 +428,12 @@
                         @if ($plan_premium->discount)
 
                             @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                
+
                                     <p class="text-center font-extrabold text-6xl">{{round($plan_premium->finalPrice)}} US$</p>
                                     <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small>
                                 <div class="text-center">
                                     <p class="text-base text-gray-700 mb-2">Oferta {{$plan_premium->discount->name}}</p>
-                                    <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                    <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>
                                 </div>
                                 @else
                                 <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
@@ -441,7 +441,7 @@
                         @else
                             <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
                         @endif
-                        
+
                         <div class="mt-4">
                             <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                             <ul>
@@ -461,22 +461,22 @@
                     <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Toma la decisión ahora</h2>
                     <p class="text-center text-lg font-semibold">Da el primer paso. Yo te acompañaré el resto del camino.</p>
                 </header>
-                       
-                <section class="flex flex-col-reverse lg:flex-row items-center justify-center"> 
+
+                <section class="flex flex-col-reverse lg:flex-row items-center justify-center">
                     <article class="lg:mr-8">
                         <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
                             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> Fase 1</h2>
                             <p class="text-center mt-4 font-bold text-3xl text-yellow-500">PAGO ÚNICO</p>
-        
+
                             @if ($plan_fase_uno->discount)
-        
+
                                 @if ($plan_fase_uno->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_fase_uno->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                    
+
                                         <p class="text-center font-extrabold text-6xl">{{round($plan_fase_uno->finalPrice)}} US$</p>
                                         <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_fase_uno->price->name}}</small>
                                     <div class="text-center">
                                         <p class="text-base text-gray-700 mb-2">Oferta {{$plan_fase_uno->discount->name}}</p>
-                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_fase_uno->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_fase_uno->discount->expires_at))->diffForHumans() }}</b>! </p>
                                     </div>
                                     @else
                                     <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_fase_uno->price->name}}</p>
@@ -484,7 +484,7 @@
                             @else
                                 <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_fase_uno->price->name}}</p>
                             @endif
-        
+
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con la <span class="text-red-700">Fase 1</span>?</h3>
                                 <ul>
@@ -499,16 +499,16 @@
                         <div class="mt-12 border-black border-8 max-w-md mx-auto px-8 py-6 rounded-2xl bg-gray-900 text-white ">
                             <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> 4 Fases</h2>
                             <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
-        
+
                             @if ($plan_premium->discount)
-        
+
                                 @if ($plan_premium->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                    
+
                                         <p class="text-center font-extrabold text-6xl">{{round($plan_premium->finalPrice)}} US$</p>
                                         <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small>
                                     <div class="text-center">
                                         <p class="text-base text-gray-400 mb-2">Oferta {{$plan_premium->discount->name}}</p>
-                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>
                                     </div>
                                     @else
                                     <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
@@ -516,7 +516,7 @@
                             @else
                                 <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
                             @endif
-        
+
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                                 <ul>

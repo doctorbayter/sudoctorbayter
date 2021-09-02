@@ -29,38 +29,26 @@ class HomeController extends Controller
 
     public function dkpOferta(Request $request) {
 
-        $time = Carbon::now()->addHours(24)->format('Y/m/d H:i:s');
+        $time = Carbon::now()->addDays(5)->format('Y/m/d H:i:s');
         $plan_oferta = Plan::find(8);
         $cookie = Cookie::get('promoAdReto4');
-
 
         if ($cookie != null) {
             $promo_time['date'] = $cookie;
             return view('dkp-oferta', compact('plan_oferta', 'promo_time'));
         }else{
-
-            //$promo_time['date']  = Carbon::now()->addHours(24);
             $promo_time['date']  = $time;
             $response = new HttpResponse(view('dkp-oferta', compact('plan_oferta', 'promo_time')));
             $response->withCookie(cookie()->forever('promoAdReto4', $time)); // this will last five years
-
             return $response;
-
         }
-
     }
 
     public function dkpTiktok(Request $request)
     {
-
         $plan_oferta = Plan::find(8);
-
         return view('dkp-tiktok', compact('plan_oferta'));
-
     }
-
-
-
 
     public function programas()
     {

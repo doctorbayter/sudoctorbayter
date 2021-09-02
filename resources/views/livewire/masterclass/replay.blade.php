@@ -1,4 +1,5 @@
 <x-app-layout>
+    @if ($data['online'])
     <section class="bg-fixed bg-cover min-h-screen" style="background-image: url({{asset('img/backgrounds/ea857aff-1a05-4f66.jpg')}})">
         <div class="w-full md:w-3/4 lg:w-3/4 text-center mx-auto py-12 ">
             <div class="w-full md:w-3/4 lg:w-3/4 text-center mx-auto">
@@ -42,5 +43,5 @@
     </section>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0" nonce="9GjBGApj"></script>
-
+    @endif
 </x-app-layout>

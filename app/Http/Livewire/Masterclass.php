@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class Masterclass extends Component
 {
-    public $plan, $name, $email, $terms = true, $error_message = false;
+    public $masterclass, $list_id, $data, $name, $email, $terms = true, $error_message = false;
 
     protected $rules = [
         'name' => 'required',
@@ -16,8 +16,47 @@ class Masterclass extends Component
         'terms' => 'accepted'
     ];
 
-    public function mount(Plan $plan) {
-        $this->plan = $plan;
+    public function mount($masterclass) {
+        $this->$masterclass = $masterclass;
+        switch ($masterclass) {
+            case 'dkp':
+                $this->list_id = 15;
+                break;
+            case 'reto-4':
+                $this->list_id = 14;
+                break;
+            default:
+                $this->list_id = null;
+                break;
+        }
+    }
+
+    public function masterclassData($masterclass)    {
+        switch ($masterclass) {
+            case 'dkp':
+                return $this->data = [
+                    'title' => 'Dieta Keto',
+                    'subtitle'=> 'Método DKP - Doctor Bayter',
+                    'type' => 'Taller online',
+                    'online' => true,
+                    'billdoard' => null,
+                    'video' => '596134885?h=c36783dde8'
+                ];
+                break;
+            case 'reto-4':
+                return $this->data = [
+                    'title' => 'Desinflama tu cuerpo',
+                    'subtitle'=> 'en solo 4 días',
+                    'online' => false,
+                    'type' => 'Masterclass',
+                    'billdoard' => null,
+                    'video' => '596134885?h=c36783dde8'
+                ];
+                break;
+            default:
+                return null;
+                break;
+        }
     }
 
     public function updated($propertyName) {
@@ -25,24 +64,41 @@ class Masterclass extends Component
     }
 
     public function render() {
-        return view('livewire.masterclass.register');
+        switch ($this->masterclass) {
+            case 'dkp':
+                return view('livewire.masterclass.dkp.register');
+                break;
+            case 'reto-4':
+                return view('livewire.masterclass.reto-4.register');
+                break;
+            default:
+                return view('livewire.masterclass.no-disponible');
+                break;
+        }
     }
 
     public function confirmData() {
         $this->validate();
         if($this->activeCampaign()) {
-            return redirect()->route('masterclass.thanks');
+            return redirect()->route('masterclass.thanks', ['masterclass'=>$this->masterclass , 'data'=>$this->data]);
         } else {
             $this->error_message = true;
         }
     }
 
-    public function replay(Plan $plan) {
-        return view('livewire.masterclass.replay');
+    public function replay($masterclass) {
+
+        $data = $this->masterclassData($masterclass);
+
+        return view('livewire.masterclass.replay', ['masterclass'=>$this->masterclass , 'data'=>$data]);
     }
 
-    public function thanks(Plan $plan) {
-        return view('livewire.masterclass.thanks');
+    public function thanks($masterclass) {
+
+
+        $data = $this->masterclassData($masterclass);
+
+        return view('livewire.masterclass.thanks', ['masterclass'=>$masterclass, 'data'=>$data]);
     }
 
     function splitName($name) {
@@ -84,44 +140,44 @@ class Masterclass extends Component
 
         $userLists = $getUserLists['contactLists'];
 
-
-
-
         if(count($userLists) > 0) {
-
-
 
             foreach($userLists as $userList ) {
 
-                if($userList['list'] == 13 && $userList['status'] == 1) {
-                    return false;
-                }
-                else if($userList['list'] == "13" && $userList['status']== "2") {
 
-                    $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                        "contactList" => [
-                            "list" => 13,
-                            "contact" => $userId,
-                            "status" => 1,
-                            "sourceid" => 4
-                        ]
-                    ]);
+
+                if($userList['list'] == $this->list_id){
+
+                    if($userList['status'] == 1){
+                       return false;
+                    }else if($userList['status'] == "2") {
+                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                            "contactList" => [
+                                "list" => $this->list_id,
+                                "contact" => $userId,
+                                "status" => 1,
+                                "sourceid" => 4
+                            ]
+                        ]);
+                    }
                     return true;
+                    break;
                 }else{
                     $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                         "contactList" => [
-                            "list" => 13,
+                            "list" => $this->list_id,
                             "contact" => $userId,
                             "status" => 1
                         ]
                     ]);
-                    return true;
                 }
             }
+            return true;
+
         }else{
             $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                 "contactList" => [
-                    "list" => 13,
+                    "list" => $this->list_id,
                     "contact" => $userId,
                     "status" => 1
                 ]

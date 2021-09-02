@@ -68,6 +68,14 @@ Route::get('/110', function () {
     return view('no-disponible');
 });
 
+Route::get('x/clientes', function () {
+    $users = User::all();
+    foreach($users as $user){
+        echo $user->email;
+        echo"<br/><br/>";
+    }
+});
+
 //php artisan migrate:fresh --seed --force
 
 Route::get('x/sql/', function(){
@@ -2377,3 +2385,4 @@ Route::get('x/query', function(){
     // Fin Receta
     */
 });
+

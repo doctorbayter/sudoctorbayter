@@ -70,7 +70,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="block mb-6 border border-gray-200 rounded-xl">
+                <a href="#" class="block mb-6 border border-gray-200 rounded-xl hidden">
                     <div class="flex flex-col overflow-hidden rounded-xl bg-gray-50 shadow-xs h-full">
                         <figure class="">
                             <img src="{{asset('img/blog/heros/efectos_secundarios.jpg')}}" alt="">

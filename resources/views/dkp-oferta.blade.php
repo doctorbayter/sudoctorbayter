@@ -9,7 +9,7 @@
         <iframe class="w-full h-64 lg:min-h-video" src="https://player.vimeo.com/video/572593198?autoplay=1&loop=0&autopause=0"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen ></iframe>
     </section>
     @endif
-    
+
     <div id="promoAdReto4">
 
         <div  class="flex items-center justify-center flex-col px-4 py-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
@@ -37,18 +37,18 @@
                             <div class="text-white text-left py-2 ">
                                 @if ($plan_oferta->discount)
                                     @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                        
+
                                     <div class="font-medium text-6xl flex items-center">
                                         <p class="mr-4 blocktext-gray-100 relative">
                                             <span>{{round($plan_oferta->price->value)}}<small class="text-3xl">US$</small> </span>
                                             <span class="w-full h-1 block absolute left-0 top-2/4 transform -rotate-6 border-b-4 border-red-700"></span>
-                                        </p> 
+                                        </p>
                                         <p class="">{{round($plan_oferta->finalPrice)}}<small class="text-3xl">US$</small></p>
                                     </div>
-                                            
+
                                         <div class="">
                                             <p class="text-base text-gray-300 mb-2 ">Oferta {{$plan_oferta->discount->name}}</p>
-                                            <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                            <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>
                                         </div>
                                         @else
                                         <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
@@ -63,18 +63,18 @@
                         <div class="text-white text-left py-2">
                             @if ($plan_oferta->discount)
                                 @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                    
+
                                 <div class="font-medium text-6xl flex items-center">
                                     <p class="mr-4 blocktext-gray-100 relative">
                                         <span>{{round($plan_oferta->price->value)}}<small class="text-3xl">US$</small> </span>
                                         <span class="w-full h-1 block absolute left-0 top-2/4 transform -rotate-6 border-b-4 border-red-700"></span>
-                                    </p> 
+                                    </p>
                                     <p class="">{{round($plan_oferta->finalPrice)}}<small class="text-3xl">US$</small></p>
                                 </div>
-                                        
+
                                     <div class="">
                                         <p class="text-base text-gray-300 mb-2 ">Oferta {{$plan_oferta->discount->name}}</p>
-                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>
                                     </div>
                                     @else
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
@@ -83,10 +83,10 @@
                                 <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
                             @endif
                         </div>
-                        
+
                         <a href="{{route('payment.checkout', $plan_oferta)}}" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
                     @endauth
-                    
+
                 </header>
             </div>
             <figure class="lg:absolute right-0 bottom-0 w-full lg:w-5/12">
@@ -98,7 +98,7 @@
     <section class="bg-white" id="go">
         @auth
             @can('enrolled', auth()->user()->subscription)
-                <div class="text-center py-20 "> 
+                <div class="text-center py-20 ">
                     <header>
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Ya estás dentro</h2>
                         <p class="text-center text-lg font-semibold">tu plan actual es {{auth()->user()->subscription->plan->name}}</p>
@@ -109,10 +109,10 @@
                 <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
                     <header>
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Da el primer paso. Yo te acompañaré el resto del camino.</h2>
-                    
+
                     </header>
-                    
-                    
+
+
                     <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span></h2>
                         <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
@@ -120,12 +120,12 @@
                         @if ($plan_oferta->discount)
 
                             @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                
+
                                     <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p>
                                     <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
                                 <div class="text-center">
                                     <p class="text-base text-gray-700 mb-2">Oferta {{$plan_oferta->discount->name}}</p>
-                                    <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                    <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>
                                 </div>
                                 @else
                                 <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
@@ -133,7 +133,7 @@
                         @else
                             <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
                         @endif
-                        
+
                         <div class="mt-4">
                             <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con la fase 1 del Método <span class="text-red-700">DKP</span>?</h3>
                             <ul>
@@ -151,22 +151,22 @@
                 <header>
                     <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Da el primer paso. Yo te acompañaré el resto del camino.</h2>
                 </header>
-                       
-                <section class="flex flex-col-reverse lg:flex-row items-center justify-center"> 
+
+                <section class="flex flex-col-reverse lg:flex-row items-center justify-center">
                     <article>
                         <div class="mt-12 border-black border-8 max-w-md mx-auto px-8 py-6 rounded-2xl bg-gray-900 text-white ">
                             <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> Fase 1</h2>
                             <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
-        
+
                             @if ($plan_oferta->discount)
-        
+
                                 @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                    
+
                                         <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p>
                                         <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
                                     <div class="text-center">
                                         <p class="text-base text-gray-400 mb-2">Oferta {{$plan_oferta->discount->name}}</p>
-                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>    
+                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>
                                     </div>
                                     @else
                                     <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
@@ -174,7 +174,7 @@
                             @else
                                 <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
                             @endif
-        
+
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el la fase 1 del Método <span class="text-red-700">DKP</span>?</h3>
                                 <ul>
@@ -205,7 +205,7 @@
                     </figure>
                     <div>
                         <header class="flex my-4 items-end">
-                            <h4 class="font-bold text-xl">Claudia carlos magno</h4>
+                            <h4 class="font-bold text-xl">Claudia carlomagno</h4>
                             <p class="ml-2 text-gray-600">2 años en Keto</p>
                         </header>
                         <p class="text-sm text-justify"></p>
@@ -250,16 +250,16 @@
             </div>
         </div>
     </section>
- 
+
     <section class="bg-white">
 
         <header class="bg-gray-900 py-12">
             <h2 class="text-gray-50 text-center font-black text-2xl md:text-5xl max-w-5xl mx-auto">¿Qué incluye y cómo funciona la suscripción a la fase 1 del Método <span class="text-red-700">DKP</span>?</h2>
-            
+
         </header>
-        
+
         <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
-            
+
             <div class="mt-16 md:mt-8">
                 <div class=" flex items-center flex-col-reverse md:flex-row ">
                     <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
@@ -279,7 +279,7 @@
                         <p class="text-gray-900 text-justify">Encontrarás recursos, herramientas y los secretos mejor guardados de tu <b>Doctor Bayter</b> para mejorar y alcanzar tus objetivos de peso y salud. También encontrarás  consejos y recomendaciones para que mantengas los resultados en el tiempo.</p>
                         <p class="mt-2 text-gray-900 font-bold">Tendrás acceso ilimitado a la pagina, y siempre que existan modificaciones, cambios, tu podrás contar con ellos.</p>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="mt-16 md:mt-8">
@@ -308,7 +308,7 @@
         <div class="max-w-5xl mx-auto py-12 md:py-20">
             <h2 class="text-center font-extrabold text-3xl md:text-5xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">¿Tienes dudas?</h2>
             <div class=" max-w-4xl mx-auto" x-data="{selected:null}">
-                <ul class="text-gray-50">          
+                <ul class="text-gray-50">
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 2 ? selected = 2 : selected = null">
                             <div class="flex items-center justify-between">
@@ -399,7 +399,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="py-8 md:py-16 bg-gray-900 bg-opacity-95 px-6 md:px-0">
         <div class="max-w-5xl mx-auto text-gray-50">
             <p class="uppercase text-gray-200 font-medium text-sm md:text-lg">¿Estas listo para iniciar?</p>
@@ -410,12 +410,12 @@
     </section>
 
 
-    
+
 
     <script>
-        
+
         let promoAdDiv = document.getElementById("promoAdReto4");
-            
+
             // Set the date we're counting down to
             let countdown = document.getElementById('countdown');
             let promoText = document.getElementById('promoText');
@@ -447,7 +447,7 @@
                 promoText.innerText = "¡Ingresa y compra aquí ya!";
             }
             }, 1000);
-        
+
     </script>
 
 </x-app-layout>

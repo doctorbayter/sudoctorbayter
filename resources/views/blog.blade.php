@@ -46,7 +46,7 @@
                         <div class="px-6 py-8 flex-1 flex flex-col">
                             <span class="uppercase text-xs font-medium text-gray-500">Tips</span>
                             <h2 class="text-lg text-gray-900 font-semibold my-1 flex-1 leading-5">Cómo saber si estás en cetosis</h2>
-                            <small class="text-gray-500">Mayo 17, 2021</small>
+                            <small class="text-gray-500">Mayo 18, 2021</small>
                         </div>
                     </div>
                 </a>

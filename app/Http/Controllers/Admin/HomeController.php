@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ApprovedPurchase;
+use App\Mail\ApprovedPurchaseNoChat;
 use App\Models\Discount;
 use App\Models\Fase;
 use App\Models\Plan;
@@ -13,29 +14,12 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         return view('admin.index');
-    }
-
-    public function send($email, $plan){
-
-        $plan = Plan::find($plan);
-
-        $user = User::where('email', $email)->first();
-
-        if($user){
-            //Enviar Correo
-            $mail = new ApprovedPurchase($plan, $user);
-            Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            return 'Mensaje enviado';
-        }else{
-            return 'Usuario no encontrado';
-        }
-        //return view('mail.approved-purchase', compact('plan','user'));
     }
 
     public function sql() {
@@ -43,55 +27,16 @@ class HomeController extends Controller
         DB::insert("SELECT setval(pg_get_serial_sequence('fase_user', 'id'), max(id)) FROM fase_user");
     }
 
-    public function users(){
-        $users = User::orderBy('id', 'DESC')->first();
-        dd($users->email);
-    }
-
-    public function add($email, $plan, $whatsapp){
+    public function add($email, $plan_id){
 
         $user = User::where('email', $email)->first();
-
+        $plan = Plan::find($plan_id);
         if($user){
-
-            $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan)->first();
-
-            if($is_subscribed){
-                return 'Ya está registrado';
-            }else {
-
-                $suscription = new Subscription();
-                $suscription->user_id = $user->id;
-                $suscription->plan_id = $plan;
-
-                $all_fases = Fase::all();
-                $fase_one = Fase::find(1);
-
-                switch ($plan) {
-                    case 1:
-                        $suscription->save();
-                        foreach($all_fases as $fase){
-                            $fase->clients()->attach($user->id);
-                        }
-                    break;
-                    case 2:
-                        $suscription->save();
-                        $fase_one->clients()->attach($user->id);
-                    break;
-                }
-                if($whatsapp){
-                    $whatsApp30 = new Subscription();
-                    $whatsApp30->user_id = $user->id;
-                    $whatsApp30->plan_id = 4;
-                    $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                    $whatsApp30->save();
-                }
-                return 'Do it';
-            }
+            $this->setUserData($user, $plan);
+            $this->send($user->email, $plan->id);
         }else{
             return 'Usuario no encontrado';
         }
-
     }
 
     public function fase($email, $fase){
@@ -128,72 +73,17 @@ class HomeController extends Controller
         }
     }
 
-    public function discount(){
-
-        $discount = Discount::find(2);
-        $discount->value = 110;
-        $discount->save();
-
-        $discount = Discount::find(1);
-        $discount->value = 75;
-        $discount->save();
-
-        /*$discount = Discount::find(4);
-        $discount->value = 147;
-        $discount->name = 'Lanzamiento Página Web';
-        $discount->expires_at = '2099-12-31 23:59:59';
-        $discount->save();*/
-    }
-
-    public function price(){
-
-        //DB::table('plans')->where('id', '=', '1')->update(['price_id' => 5]);
-
-        //$prices = Price::all();
-        $plan = Plan::find(10);
-        //$plan->price_id = 8;
-        $plan->discount_id = 7;
-        $plan->save();
-    }
-
-
     public function plan($email, $plan_id){
         $user = User::where('email', $email)->first();
         $plan = Plan::find($plan_id);
         $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
 
         if($user){
-
             if (!$is_subscribed) {
-                if($plan_id == 1){
-                    $current_plan = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
-                    if($current_plan){
-                        $current_plan->delete();
-                        $suscription = new Subscription();
-                        $suscription->user_id = $user->id;
-                        $suscription->plan_id = $plan->id;
-                        $suscription->save();
-                    }else{
-                        $suscription = new Subscription();
-                        $suscription->user_id = $user->id;
-                        $suscription->plan_id = $plan->id;
-                        $suscription->save();
-                    }
-                }else{
-                    $current_plan = Subscription::where('user_id', $user->id)->where('plan_id', 1)->first();
-                    if($current_plan){
-                        $current_plan->delete();
-                        $suscription = new Subscription();
-                        $suscription->user_id = $user->id;
-                        $suscription->plan_id = $plan->id;
-                        $suscription->save();
-                    }else{
-                        $suscription = new Subscription();
-                        $suscription->user_id = $user->id;
-                        $suscription->plan_id = $plan->id;
-                        $suscription->save();
-                    }
-                }
+                $suscription = new Subscription();
+                $suscription->user_id = $user->id;
+                $suscription->plan_id = $plan->id;
+                $suscription->save();
                 return 'Do it';
             }else{
                 return 'Ya está registrado';
@@ -201,8 +91,6 @@ class HomeController extends Controller
         }else{
             return 'Usuario no encontrado';
         }
-
-
     }
 
     public function noPlan($email, $plan_id){
@@ -224,9 +112,47 @@ class HomeController extends Controller
 
     }
 
-    public function pass($email, $pass){
+    public function discount(){
+        /*$discount = Discount::find(4);
+        $discount->value = 147;
+        $discount->name = 'Lanzamiento Página Web';
+        $discount->expires_at = '2099-12-31 23:59:59';
+        $discount->save();*/
+    }
+
+    public function price(){
+        //DB::table('plans')->where('id', '=', '1')->update(['price_id' => 5]);
+        //$prices = Price::all();
+        //$plan = Plan::find(10);
+        //$plan->price_id = 8;
+        //$plan->discount_id = 7;
+        //$plan->save();
+    }
+
+    public function send($email, $plan_id){
+
+        $plan = Plan::find($plan_id);
         $user = User::where('email', $email)->first();
 
+        if($user){
+            switch ($plan->id) {
+                case 7:
+                    $mail = new ApprovedPurchaseNoChat($plan, $user);
+                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                    break;
+                default:
+                    $mail = new ApprovedPurchase($plan, $user);
+                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                    break;
+            }
+            return 'Mensaje enviado';
+        }else{
+            return 'Usuario no encontrado';
+        }
+    }
+
+    public function pass($email, $pass){
+        $user = User::where('email', $email)->first();
         if($user){
             $user->password = bcrypt($pass);
             $user->save();
@@ -237,4 +163,209 @@ class HomeController extends Controller
 
     }
 
+    public function activeCampaign($email, $list_id) {
+
+        $response = Http::withHeaders([
+            'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
+        ]);
+        $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
+            "email" => $email,
+            "orders[email]" => "ASC"
+        ]);
+        $userData = $getUserByEmail['contacts'];
+
+        if(!$userData){
+            return ;
+        }
+
+        $userListsLink = $userData[0]['links']['contactLists'];
+        $userId = $userData[0]['id'];
+
+        $getUserLists =  $response->GET($userListsLink);
+
+        $userLists = $getUserLists['contactLists'];
+
+        if(count($userLists) > 0) {
+
+            foreach($userLists as $userList ) {
+
+                if($userList['list'] == $list_id){
+
+                    if($userList['status'] == 1){
+                       return false;
+                    }else if($userList['status'] == "2") {
+                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                            "contactList" => [
+                                "list" => $list_id,
+                                "contact" => $userId,
+                                "status" => 1,
+                                "sourceid" => 4
+                            ]
+                        ]);
+                    }
+                    return true;
+                    break;
+                }else{
+                    $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                        "contactList" => [
+                            "list" => $list_id,
+                            "contact" => $userId,
+                            "status" => 1
+                        ]
+                    ]);
+                }
+            }
+            return true;
+
+        }else{
+            $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                "contactList" => [
+                    "list" => $list_id,
+                    "contact" => $userId,
+                    "status" => 1
+                ]
+            ]);
+            return true;
+        }
+    }
+
+    public function addWhatsApp($user_id, $days) {
+
+        $whatsapp_subscribed = Subscription::where('user_id', $user_id)->where('plan_id', 4)->first();
+
+        if($whatsapp_subscribed){
+            if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
+                $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays($days)]);
+            }else{
+                $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays($days)]);
+            }
+            $whatsapp_subscribed->save();
+        }else{
+            $suscription_whatsApp           = new Subscription();
+            $suscription_whatsApp->user_id  = $user_id;
+            $suscription_whatsApp->plan_id  = 4;
+            $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays($days);
+            $suscription_whatsApp->save();
+        }
+
+    }
+
+    public function setUserData(User $user, Plan $plan){
+
+        $is_already_subscribed      = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
+        $previous_plan_premium      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(2, 7, 8))->first();
+        $previous_plan_selecto      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10))->first();
+        $previous_plan_week         = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10))->first();
+        $subscribed_plan_1          = Subscription::where('user_id', $user->id)->where('plan_id', 1)->first();
+        $subscribed_plan_2          = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
+        $subscribed_plan_7          = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
+        $subscribed_plan_8          = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
+        $subscribed_plan_9          = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
+        $subscribed_plan_10         = Subscription::where('user_id', $user->id)->where('plan_id', 10)->first();
+        $fases_premium              = Fase::whereIn('id', array(1, 2, 3, 4))->get();
+        $fase_one                   = Fase::find(1);
+        $fase_week                  = Fase::find(5);
+
+        if(!$is_already_subscribed){
+            switch ($plan->id) {
+                case 1:
+                    if($previous_plan_premium){
+                        $previous_plan_premium->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
+                case 2:
+                    if($subscribed_plan_7){
+                        $subscribed_plan_7->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    break;
+                case 3:
+                    if($subscribed_plan_2){
+                        $subscribed_plan_2->delete();
+                    }else if($subscribed_plan_8){
+                        $subscribed_plan_8->delete();
+                    }
+                    $this->addSuscription($user->id, 1);
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
+                case 4:
+                    $this->addWhatsApp($user->id, 30);
+                    break;
+                case 7:
+                    if(!$previous_plan_week){
+                        $this->addSuscription($user->id, $plan->id);
+                    }
+                    if(!$fase_week->clients->contains($user->id)){
+                        $fase_week->clients()->attach($user->id);
+                    }
+                    break;
+                case 8:
+                    if($subscribed_plan_7){
+                        $subscribed_plan_7->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    break;
+                case 9:
+                    if($previous_plan_premium){
+                        $previous_plan_premium->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
+                case 10:
+                    if($previous_plan_selecto){
+                        $previous_plan_selecto->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 60);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
+            }
+        }
+
+        if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 ){
+            $this->activeCampaign($user->email, 16);
+        }
+
+    }
+
+    public function addSuscription($user_id, $plan_id) {
+        $suscription_plan           = new Subscription();
+        $suscription_plan->user_id  = $user_id;
+        $suscription_plan->plan_id  = $plan_id;
+        $suscription_plan->save();
+    }
 }

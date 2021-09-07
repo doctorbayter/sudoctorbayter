@@ -264,7 +264,9 @@ class PaymentController extends Controller
                     break;
             }
         }
-        $this->activeCampaign($user->name, $user->email, 16);
+        if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 ){
+            $this->activeCampaign($user->email, 16);
+        }
     }
 
     public function getUserData($user_data){
@@ -328,7 +330,7 @@ class PaymentController extends Controller
         return array($first_name, $last_name);
     }
 
-    public function activeCampaign($name, $email, $list_id) {
+    public function activeCampaign($email, $list_id) {
 
         $response = Http::withHeaders([
             'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'

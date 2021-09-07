@@ -109,14 +109,14 @@ Route::get('x/sql/', function(){
         'name' => 'Chat Grupal WhatsApp 3 meses',
         'slug' => '3-meses-chat-grupal-whatsapp',
         'price_id' => 12,
-        'discount_id' => 2
+        'discount_id' => 8
     ]);
 
     Plan::create([
         'name' => 'Chat Grupal WhatsApp 6 meses',
         'slug' => '6-meses-chat-grupal-whatsapp',
         'price_id' => 13,
-        'discount_id' => 2
+        'discount_id' => 9
     ]);
 
 });

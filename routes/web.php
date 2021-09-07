@@ -68,129 +68,56 @@ Route::get('/110', function () {
     return view('no-disponible');
 });
 
-Route::get('x/clientes', function () {
-    $users = User::all();
-    foreach($users as $user){
-        echo $user->email;
-        echo"<br/><br/>";
+Route::get('x/plan/{user}', function($user){
+    $user = User::where('email',$user)->first();
+    if($user){
+        return array($user->subscriptions);
+    }else{
+        return "Usuario no registrado";
     }
 });
-
-//php artisan migrate:fresh --seed --force
-
-Route::get('x/sql/', function(){
-
-    $discounts = Discount::all();
-    dd($discounts);
-
-    // Schema::rename('subscriptions', 'subscription');
-    // return "ok";
-    /*
-    $users = User::where('email','!=','null')->skip(3000)->take(1000)->get();
-    $userc= 0;
-    foreach($users as $user){
-
-        $user_fases = $user->fases;
-        $f1=0;
-        $f2=0;
-        $f3=0;
-        $f4=0;
-        $f5=0;
-        $fase1=0;
-        $fase2=0;
-        $fase3=0;
-        $fase4=0;
-        $fase5=0;
-
-        foreach($user_fases as $user_fase){
-            if($user_fase->id = 1){
-                $f1 = $f1+1;
-                $fase1=$user_fase;
-            }else if($user_fase->id = 2){
-                $f2 = $f2+1;
-                $fase2=$user_fase;
-            }else if($user_fase->id = 3){
-                $f3 = $f3+1;
-                $fase3=$user_fase;
-            }else if($user_fase->id = 4){
-                $f4 = $f4+1;
-                $fase4=$user_fase;
-            }else if($user_fase->id = 5){
-                $f5 = $f5+1;
-                $fase5=$user_fase;
-            }
-        }
-
-        if($f1 > 1){
-            $fase1->clients()->detach(auth()->user()->id);
-            $fase1->clients()->attach(auth()->user()->id);
-        }else if($f2 > 1){
-            $fase2->clients()->detach(auth()->user()->id);
-            $fase2->clients()->attach(auth()->user()->id);
-        }
-        else if($f3 > 1){
-            $fase3->clients()->detach(auth()->user()->id);
-            $fase3->clients()->attach(auth()->user()->id);
-        }
-        else if($f4 > 1){
-            $fase4->clients()->detach(auth()->user()->id);
-            $fase4->clients()->attach(auth()->user()->id);
-        }
-        else if($f5 > 1){
-            $fase5->clients()->detach(auth()->user()->id);
-            $fase5->clients()->attach(auth()->user()->id);
-        }
-        $userc = $userc + 1;
-    }
-
-    echo $userc;
-    */
-    // Video::create([
-    //     'iframe' => '<iframe src="https://player.vimeo.com/video/593568599" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-    //     'videoable_id' => 105,
-    //     'videoable_type' => 'App\Models\Day'
-    // ]);
-
-
-    //$day_recipes= DB::select("SELECT * FROM day_recipe");
-    //print_r(json_encode($day_recipes));
-});
-
 
 Route::get('x/recipes/', function(){
     $recipes = Recipe::all();
     print_r($recipes);
 });
 
-Route::get('x/api/', function(){
+Route::get('x/clients', function () {
+    $users = User::all();
+    foreach($users as $user){
+        echo $user->email;
+        echo"<br/>";
+    }
+});
 
+Route::get('x/plans/', function(){
     $plans = Plan::all();
     dd($plans);
-
-    // $days = Day::all();
-    // echo $days;
     //$fase_week = Fase::find(2);
     //dd($fase_week->clients());
 });
 
+Route::get('x/prices/', function(){
+    $prices = Price::all();
+    dd($prices);
+});
 
-Route::get('x/plan/{user}', function($user){
+Route::get('x/sql/', function(){
+    Plan::create([
+        'name' => 'Chat Grupal WhatsApp 3 meses',
+        'slug' => '3-meses-chat-grupal-whatsapp',
+        'price_id' => 3
+    ]);
 
-    $user = User::where('email',$user)->first();
-
-    if($user){
-        return array($user->subscriptions);
-    }else{
-        return "Usuario no registrado";
-    }
-
-    $plan_8 = Subscription::where('plan_id','=','8')->get();
-    $plan_9 = Subscription::where('plan_id','=','9')->get();
-    echo $plan_8->count(). " Plan Fase 1 47 us";
-    echo "<br>";
-    echo $plan_9->count(). " Plan 4 Fases 99 us";
+    Plan::create([
+        'name' => 'Chat Grupal WhatsApp 6 meses',
+        'slug' => '6-meses-chat-grupal-whatsapp',
+        'price_id' => 3
+    ]);
 
 });
+
+
 
 
 Route::get('x/query', function(){

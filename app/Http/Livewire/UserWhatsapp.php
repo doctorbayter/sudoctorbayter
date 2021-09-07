@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class UserWhatsapp extends Component
 {
-    public $user_fases, $user_plan;
+    public $user_fases, $user_plan, $subscribed_whatsapp = false, $planWhatsapp3meses, $planWhatsapp6meses;
     public function render()
     {
         $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10])->first();
@@ -16,7 +16,18 @@ class UserWhatsapp extends Component
             $this->user_fases = auth()->user()->fases;
         }
         $planWhatsapp = Plan::find(4);
+        $this->planWhatsapp3meses = Plan::find(11);
+        $this->planWhatsapp6meses = Plan::find(12);
+
+
         $whatsapp = auth()->user()->subscriptions->where('plan_id', 4)->first();
+
+        if($whatsapp){
+            if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now())){
+                $this->subscribed_whatsapp = \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->diffInDays(\Carbon\Carbon::now());
+            }
+        }
+
         return view('livewire.user-whatsapp', compact('planWhatsapp', 'whatsapp'));
     }
 }

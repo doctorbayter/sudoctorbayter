@@ -91,53 +91,17 @@
                                 </div>
                             @endif
 
-
-
-                            @if ($whatsapp && $whatsapp->count() > 0 && auth()->user()->subscription->plan->id != 4 && \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now()))
-
-                                <div class="bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm">
-                                    <div class=" flex items-center">
-                                        <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
-                                            <img src="{{asset('img/billboards/whatsapp.jpg')}}" alt="" class="w-full object-cover">
-                                        </figure>
-                                        <div class="text-gray-50 flex-1 flex flex-col ">
-                                            <div class="flex-1 flex flex-col">
-                                                <p class=" mb-1">Tu acceso al chat grupal termina dentro <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->diffForHumans() }}</b></p>
-                                                <h2 class="font-bold text-2xl text-green-900">{{$whatsapp->plan->name}}</h2>
-                                                <small>Compra 1 mes más</small>
-                                                @if ($planWhatsapp->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                                    <div>
-                                                        <div class="ml-auto flex items-center">
-                                                            <p class="text-4xl md:text-2xl font-bold text-green-900">{{$planWhatsapp->finalPrice}} US$</p>
-                                                            <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planWhatsapp->price->name}}</span>
-                                                        </div>
-                                                        <small class="text-gray-100">{{$planWhatsapp->discount->name}}</small>
-                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>
-                                                    </div>
-                                                @else
-                                                    <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$planWhatsapp->price->name}}</p>
-                                                @endif
-                                            </div>
-                                            <div class="">
-                                                <a href="{{route('payment.checkout', $planWhatsapp)}}" class="block cursor-pointer mt-8 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
-                                                   Adquiere 30 días más de chat
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @else
                             <div class=" bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm">
-                                <div class=" flex items-center">
+                                <div class="flex items-center">
                                     <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
                                         <img src="{{asset('img/billboards/whatsapp.jpg')}}" alt="" class="w-full object-cover">
                                     </figure>
                                     <div class="text-gray-50 flex-1 flex flex-col ">
                                         <div class="flex-1 flex flex-col">
-                                            <p class=" mb-1">Nunca estarás solo aquiere mi acompañamiento inscríbete ya</p>
+                                            <p class=" mb-1">¿Ya estás inscrito al <b>Chat</b>?</p>
                                             <h2 class="font-bold text-2xl text-green-900">{{$planWhatsapp->name}}</h2>
                                             <h2 class="font-bold text-2xl text-green-900 mb-2"></h2>
-                                            <small>Pagas 1 vez al mes</small>
+                                            <small>Adquiere el acompañamiento grupal del Dr. Bayter</small>
                                             @if ($planWhatsapp->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                                 <div>
                                                     <div class="ml-auto flex items-center">
@@ -148,18 +112,23 @@
                                                     <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>
                                                 </div>
                                             @else
-                                                <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$planWhatsapp->price->name}}</p>
+                                                <p class="text-4xl md:text-2xl  text-gray-50">Desde <b>{{$planWhatsapp->price->name}}</b> al mes</p>
                                             @endif
                                         </div>
                                         <div class="">
-                                            <a href="{{route('payment.checkout', $planWhatsapp)}}" class=" block cursor-pointer mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
-                                                Adquiere tu mensualidad
+                                            <a href="{{route('plan.whatsapp')}}" class=" block cursor-pointer mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
+                                                @if ($subscribed_whatsapp)
+                                                    Agrega más días a tu chat
+                                                @else
+                                                    Adquiere tu mensualidad
+                                                @endif
+
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            @endif
+
 
                             <div class=" bg-gradient-to-r from-gray-800 to-gray-900 border py-12 px-6 rounded-lg inline-block shadow-sm">
                                 <div class=" flex items-center">

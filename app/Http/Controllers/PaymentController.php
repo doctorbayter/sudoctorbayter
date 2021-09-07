@@ -262,6 +262,12 @@ class PaymentController extends Controller
                         }
                     }
                     break;
+                case 11:
+                    $this->addWhatsApp($user->id, 90);
+                    break;
+                case 12:
+                    $this->addWhatsApp($user->id, 180);
+                    break;
             }
         }
         if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 ){
@@ -304,7 +310,7 @@ class PaymentController extends Controller
 
     public function addWhatsApp($user_id, $days) {
 
-        $whatsapp_subscribed = Subscription::where('user_id', $user_id)->where('plan_id', 4)->first();
+        $whatsapp_subscribed = Subscription::where('user_id', $user_id)->whereIn('plan_id', array(4, 11, 12))->first();
 
         if($whatsapp_subscribed){
             if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){

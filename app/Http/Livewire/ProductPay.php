@@ -116,7 +116,7 @@ class ProductPay extends Component
                                                 ->orWhere('plan_id', 8)
                                                 ->orWhere('plan_id', 9)
                                                 ->first();
-            $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
+            $whatsapp_subscribed = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(4, 11, 12))->first();
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
 

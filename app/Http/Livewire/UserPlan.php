@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class UserPlan extends Component
 {
-    public $user_fases, $user_plan, $is_premium, $plan_week, $subscribed_fase_week;
+    public $user_fases, $user_plan, $is_premium, $plan_week, $subscribed_fase_week, $subscribed_whatsapp;
 
     public function render(){
 
@@ -31,6 +31,12 @@ class UserPlan extends Component
                                                 ->orWhere('plan_id', 10)
                                                 ->first();
 
+        if($whatsapp){
+            if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now())){
+                $this->subscribed_whatsapp = true;
+            }
+        }
+
         $this->plan_week = Plan::find(7);
         $fase_week = Fase::find(5);
         $this->subscribed_fase_week = $fase_week->clients->contains(auth()->user()->id);
@@ -44,8 +50,5 @@ class UserPlan extends Component
             $planUpdate = Plan::find(3);
             return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
         }
-
-
-
     }
 }

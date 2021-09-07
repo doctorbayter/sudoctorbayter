@@ -80,6 +80,9 @@ Route::get('x/clientes', function () {
 
 Route::get('x/sql/', function(){
 
+    $discounts = Discount::all();
+    dd($discounts);
+
     // Schema::rename('subscriptions', 'subscription');
     // return "ok";
     /*

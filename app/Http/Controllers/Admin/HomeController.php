@@ -147,13 +147,13 @@ class HomeController extends Controller
 
     public function price(){
 
-        DB::table('plans')->where('id', '=', '2')->update(['price_id' => 5]);
+        //DB::table('plans')->where('id', '=', '1')->update(['price_id' => 5]);
 
         //$prices = Price::all();
-        /*$plan = Plan::find(1);
-        $plan->price_id = 8;
-        $plan->discount_id = 2;
-        $plan->save();*/
+        $plan = Plan::find(10);
+        //$plan->price_id = 8;
+        $plan->discount_id = 7;
+        $plan->save();
     }
 
 

@@ -61,6 +61,38 @@
                                 </div>
                             @endif
 
+                            @if (!$subscribed_fase_week)
+                                <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg inline-block shadow-sm ">
+                                    <div class=" flex items-center">
+                                        <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
+                                            <img src="{{asset('img/billboards/plan_week.jpg')}}" alt="" class="w-full object-cover">
+                                        </figure>
+                                        <div class="text-gray-50 flex-1 flex flex-col">
+                                            <div class="flex-1 flex flex-col">
+                                                <p class="mb-1">Disfruta de las nuevas recetas</p>
+                                                <h2 class="text-2xl  text-blue-300 mb-2"><strong>{{$plan_week->name}}</strong></h2>
+                                                <small>Pago único de</small>
+                                                @if ($plan_week->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_week->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                                                    <div>
+                                                        <div class="ml-auto flex items-center">
+                                                            <p class="text-4xl md:text-2xl font-bold text-green-400">{{$plan_week->finalPrice}} US$</p>
+                                                            <span class=" text-base font-bold ml-2 line-through text-red-500">{{$plan_week->price->name}}</span>
+                                                        </div>
+                                                        <small class="text-gray-100">{{$plan_week->discount->name}}</small>
+                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_week->discount->expires_at))->diffForHumans() }}</b>!</p>
+                                                    </div>
+                                                @else
+                                                    <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$plan_week->price->name}}</p>
+                                                @endif
+                                            </div>
+                                            <a href="{{route('payment.checkout', $plan_week)}}" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Adquieres ya</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+
+
+
                             @if ($whatsapp && $whatsapp->count() > 0 && auth()->user()->subscription->plan->id != 4 && \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now()))
 
                                 <div class="bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm">
@@ -157,6 +189,42 @@
 
             </div>
 
+
+            @if (!$subscribed_fase_week)
+                <section class="pb-4 fixed bottom-0 mr-4 right-0  z-50 transition duration-500 delay-3000 ease-in-out opacity-0"
+                    id="classAd"
+                    x-data="{$open : true}"
+                    x-show="$open"
+                    x-cloak>
+                    <div class=" w-11/12 md:w-full max-w-2xl mx-auto py-8 px-6 md:px-12  bg-yellow-400 rounded-2xl md:flex shadow-2xl bg-hero-pattern bg-cover bg-center">
+                        <div class="md:mr-8 flex-1">
+                            <h3 class="text-yellow-100 bg-red-700 uppercase font-bold inline-block text-base px-4 py-1 rounded-xl mb-4">¿Ya probaste las nuevas recetas?</h3>
+                            <h2 class=" hidden text-accent-400 text-3xl mb-4 md:my-2 md:text-6xl font-extrabold leading-none">
+                                LA <span class="text-red-700">MEJOR</span> DIETA
+                            </h2>
+                            <p class="text-gray-900 text-sm md:text-base mb-4">Hemos creado una deliciosa lista de recetas para <b>desayuno, almuerzo y cena </b> nuevas para toda una semana por solo <b>{{$plan_week->finalPrice}} US$</b></p>
+                            <div class=" text-center md:flex items-center">
+                                <a href="{{ route('password.request') }}" target="_blank" class="inline-block font-bold px-8 py-2 text-lg border border-red-700  bg-red-700 bg-accent-400 text-yellow-400 rounded-xl hover:bg-transparent hover:text-red-700" >Aquierelas aquí</a>
+                                <button x-on:click="$open = !$open; localStorage.setItem('classAd', false)" class=" mt-4 md:ml-3 md:mt-0 inline-block font-bold text-lg text-red-700 hover:underline outline-none" >No me interesa</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <script>
+                    const CLASS_AD = localStorage.getItem('classAd');
+                    let classAdDiv = document.getElementById("classAd");
+
+                    if(CLASS_AD == "false"){
+                        classAdDiv.remove();
+                    } else{
+                        classAdDiv.classList.add('opacity-100')
+                    }
+                </script>
+            @endif
+
+
         @else
             @php
                return redirect()->route('dkp')
@@ -192,9 +260,9 @@
 
     @push('scripts')
 
-    @if ($planPremium->discount)
+    @if ($planPremium->discount && true == false)
         <script>
-            const PROMO_AD = sessionasset('img/('promoAd');
+            const PROMO_AD = false //sessionasset(`img/(${promoAd})`);
             let promoAdDiv = document.getElementById("promoAd");
 
             if(PROMO_AD == "false"){

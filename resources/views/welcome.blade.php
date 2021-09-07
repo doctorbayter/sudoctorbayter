@@ -324,37 +324,4 @@
         </div>
     </section>
 
-    <section class="pb-4 fixed bottom-0 mr-4 right-0  z-50 transition duration-500 delay-3000 ease-in-out opacity-0"
-    id="classAd"
-    x-data="{$open : true}"
-    x-show="$open"
-    x-cloak>
-        <div class=" w-11/12 md:w-full max-w-2xl mx-auto py-8 px-6 md:px-12  bg-yellow-400 rounded-2xl md:flex shadow-2xl bg-hero-pattern bg-cover bg-center">
-            <div class="md:mr-8 flex-1">
-                <h3 class="text-yellow-100 bg-red-700 uppercase font-bold inline-block text-base px-4 py-1 rounded-xl mb-4">Aviso importante</h3>
-                <h2 class=" hidden text-accent-400 text-3xl mb-4 md:my-2 md:text-6xl font-extrabold leading-none">
-                    LA <span class="text-red-700">MEJOR</span> DIETA
-                </h2>
-                <p class="text-gray-900 text-sm md:text-base mb-4">Si compraste la página con cualquiera de los planes de <b>tu Doctor Bayter</b> antes del día <b class="text-red-700">1 de julio de 2021</b> podrás ingresar a esta página nueva, pero antes debes hacer la actualización de tu contraseña.</p>
-                <div class=" text-center md:flex items-center">
-                    <a href="{{ route('password.request') }}" target="_blank" class="inline-block font-bold px-8 py-2 text-lg border border-red-700  bg-red-700 bg-accent-400 text-yellow-400 rounded-xl hover:bg-transparent hover:text-red-700" >Actualiza aquí tu contraseña</a>
-                    <button x-on:click="$open = !$open; sessionStorage.setItem('classAd', false)" class=" mt-4 md:ml-3 md:mt-0 inline-block font-bold text-lg text-red-700 hover:underline outline-none" >Cerrar mensaje</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <script>
-        const CLASS_AD = sessionStorage.getItem('classAd');
-        let classAdDiv = document.getElementById("classAd");
-
-        if(CLASS_AD == "false"){
-            classAdDiv.remove();
-        } else{
-            classAdDiv.classList.add('opacity-100')
-        }
-    </script>
-
 </x-app-layout>

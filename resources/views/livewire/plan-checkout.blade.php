@@ -86,7 +86,7 @@
                         </div>
                     </li>
 
-                    <li class="max-w-200 lg:mr-4 mt-6 ld:mt-0">
+                    <li class="max-w-200 lg:mr-4 mt-6 lg:mt-0">
                         <div
                             x-on:click="$payMethod = 'paypal' ; $dispatch('route-change', { value: '{{route('payment.paypal', $plan)}}' }) "
                             :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'paypal' }"
@@ -96,7 +96,7 @@
                         </div>
                     </li>
 
-                    <li class="max-w-200 lg:mr-4 mt-6 ld:mt-0">
+                    <li class="max-w-200 lg:mr-4 mt-6 lg:mt-0">
                         <div
                             x-on:click="$payMethod = 'epayco' ; $dispatch('route-change', { value: '{{route('payment.epayco', $plan)}}' }) "
                             :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'epayco' }"
@@ -172,7 +172,7 @@
 
                     @endif
 
-                    @if (($plan->id == 7 || $plan->id == 8) && $is_week == true)
+                    @if (($plan->id == 7 || $plan->id == 8) && $is_week == true && true == false)
 
                         <section>
                             <div  class="flex flex-col lg:flex-row justify-center px-4 py-8 my-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">

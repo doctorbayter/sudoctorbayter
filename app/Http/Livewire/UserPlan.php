@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Fase;
 use App\Models\Plan;
 use App\Models\Subscription;
 use App\Models\User;
@@ -10,7 +11,7 @@ use Livewire\Component;
 
 class UserPlan extends Component
 {
-    public $user_fases, $user_plan, $is_premium;
+    public $user_fases, $user_plan, $is_premium, $plan_week, $subscribed_fase_week;
 
     public function render(){
 
@@ -19,35 +20,20 @@ class UserPlan extends Component
         }
 
         $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10])->first();
-
-
-
         $planPremium = Plan::find(1);
-
-
-
         $planWhatsapp = Plan::find(4);
-
         $whatsapp = auth()->user()->subscriptions->where('plan_id', 4)->first();
-
-
-
         $dkp = auth()->user()->subscriptions->where('plan_id', 5)->first();
-
-
-
-
         $this->user_plan = $planUser->plan->id;
-
-
-
         $this->is_premium = Subscription::where('user_id', auth()->user()->id)
                                                 ->where('plan_id', 1)
                                                 ->orWhere('plan_id', 9)
                                                 ->orWhere('plan_id', 10)
                                                 ->first();
 
-
+        $this->plan_week = Plan::find(7);
+        $fase_week = Fase::find(5);
+        $this->subscribed_fase_week = $fase_week->clients->contains(auth()->user()->id);
 
         if($planUser->plan->id == 7){
 
@@ -58,6 +44,7 @@ class UserPlan extends Component
             $planUpdate = Plan::find(3);
             return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
         }
+
 
 
     }

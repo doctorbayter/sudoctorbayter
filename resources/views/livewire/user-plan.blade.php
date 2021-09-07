@@ -204,7 +204,7 @@
                             </h2>
                             <p class="text-gray-900 text-sm md:text-base mb-4">Hemos creado una deliciosa lista de recetas para <b>desayuno, almuerzo y cena </b> nuevas para toda una semana por solo <b>{{$plan_week->finalPrice}} US$</b></p>
                             <div class=" text-center md:flex items-center">
-                                <a href="{{ route('password.request') }}" target="_blank" class="inline-block font-bold px-8 py-2 text-lg border border-red-700  bg-red-700 bg-accent-400 text-yellow-400 rounded-xl hover:bg-transparent hover:text-red-700" >Aquierelas aquí</a>
+                                <a href="{{ route('payment.checkout', $plan_week )}}" target="_blank" class="inline-block font-bold px-8 py-2 text-lg border border-red-700  bg-red-700 bg-accent-400 text-yellow-400 rounded-xl hover:bg-transparent hover:text-red-700" >Aquierelas aquí</a>
                                 <button x-on:click="$open = !$open; localStorage.setItem('classAd', false)" class=" mt-4 md:ml-3 md:mt-0 inline-block font-bold text-lg text-red-700 hover:underline outline-none" >No me interesa</button>
                             </div>
                         </div>

@@ -57,13 +57,10 @@ Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('mast
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
 
-
 Route::get('/selecto', function () {
     $plan = Plan::find(10);
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('selecto');
-
-
 Route::get('/110', function () {
     return view('no-disponible');
 });
@@ -102,23 +99,27 @@ Route::get('x/prices/', function(){
     dd($prices);
 });
 
+Route::get('x/discounts/', function(){
+    $discounts = Discount::all();
+    dd($discounts);
+});
+
 Route::get('x/sql/', function(){
     Plan::create([
         'name' => 'Chat Grupal WhatsApp 3 meses',
         'slug' => '3-meses-chat-grupal-whatsapp',
-        'price_id' => 3
+        'price_id' => 12,
+        'discount_id' => 2
     ]);
 
     Plan::create([
         'name' => 'Chat Grupal WhatsApp 6 meses',
         'slug' => '6-meses-chat-grupal-whatsapp',
-        'price_id' => 3
+        'price_id' => 13,
+        'discount_id' => 2
     ]);
 
 });
-
-
-
 
 Route::get('x/query', function(){
 

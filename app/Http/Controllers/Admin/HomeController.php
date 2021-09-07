@@ -114,22 +114,6 @@ class HomeController extends Controller
 
     public function discount(){
 
-        Discount::create([
-            'name' => 'Paquete suscripción 3 meses',
-            'type' => 1,
-            'value' => 77,
-            'expires_at' =>  '2099-12-31 23:59:59',
-            'user_id' => 1,
-        ]);
-
-        Discount::create([
-            'name' => 'Paquete suscripción 6 meses',
-            'type' => 1,
-            'value' => 127,
-            'expires_at' =>  '2099-12-31 23:59:59',
-            'user_id' => 1,
-        ]);
-
         /*$discount = Discount::find(4);
         $discount->value = 147;
         $discount->name = 'Lanzamiento Página Web';
@@ -138,15 +122,6 @@ class HomeController extends Controller
     }
 
     public function price(){
-
-        Price::create([
-            'name' => '111 US$',
-            'value' => 111
-        ]);
-        Price::create([
-            'name' => '222 US$',
-            'value' => 222
-        ]);
 
         //DB::table('plans')->where('id', '=', '1')->update(['price_id' => 5]);
         //$prices = Price::all();

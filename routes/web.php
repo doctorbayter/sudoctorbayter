@@ -80,8 +80,6 @@ Route::get('x/clientes', function () {
 
 Route::get('x/sql/', function(){
 
-
-
     // Schema::rename('subscriptions', 'subscription');
     // return "ok";
     /*

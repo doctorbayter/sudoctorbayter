@@ -39,199 +39,17 @@ class PaymentController extends Controller
             if ($response['result']['payload']) {
                 if ($response['result']['payload'][0]['status'] == "CAPTURED") {
 
-                    $user_data =  explode('~',$response['result']['payload'][0]['transactions'][0]['extraParameters']['EXTRA1']);
-                    $user_name = $user_data[0];
-                    $user_email = $user_data[1];
-                    $user_password = $user_data[2];
-                    $user_auth = $user_data[3];
+                    $user_data                  = explode('~',$response['result']['payload'][0]['transactions'][0]['extraParameters']['EXTRA1']);
+                    $user                       = $this->getUserData($user_data);
+                    $this->setUserData($user, $plan);
 
-
-                    if ($user_auth == 0) {
-
-                        $user_exist = User::where('email', $user_email)->first();
-
-                        if($user_exist){
-
-                            $user_exist->password = bcrypt($user_password);
-                            $user_exist->save();
-
-                            $user = $user_exist;
-
-                        }else{
-                            $user = User::create([
-                                'name' => $user_name,
-                                'email' => $user_email,
-                                'password' => bcrypt($user_password)
-                            ]);
-                        }
-                    }else {
-                        $user = User::where('email', $user_email)->first();
-                    }
-
-
-                    $suscription = new Subscription();
-                    $suscription->user_id = $user->id;
-                    $suscription->plan_id = $plan->id;
-                    $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-                    $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->orWhere('plan_id', 8)->first();
-                    $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
-                    $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
-                    $plan_8_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
-                    $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
-                    $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
-                    $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-                    $all_fases = Fase::where('id', '!=', 5)->get();
-                    $fase_one = Fase::find(1);
-                    $fase_week = Fase::find(5);
-
-
-                    switch ($plan->id) {
-                        case 1:
-                            if($is_subscribed){
-                                // Do nothing
-                            }else if($previous_subscribed){
-                                $previous_subscribed->delete();
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                foreach($all_fases as $fase){
-                                    $fase->clients()->attach($user->id);
-                                }
-                            }
-                            else{
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                foreach($all_fases as $fase){
-                                    $fase->clients()->attach($user->id);
-                                }
-                            }
-                        break;
-                        case 2:
-                            if($plan_2_subscribed){
-                                // Do nothing
-                            }else if($plan_7dias_subscribed){
-                                $plan_7dias_subscribed->delete();
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                $fase_one->clients()->attach($user->id);
-                            }
-                            else{
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                $fase_one->clients()->attach($user->id);
-                            }
-                        break;
-                        case 3:
-                            if($plan_3_subscribed){
-                                // Do nothing
-                            }
-                            else{
-                                $suscription->save();
-                                foreach($all_fases as $fase){
-                                    if($fase->id != 1){
-                                     $fase->clients()->attach($user->id);
-                                    }
-                                }
-                            }
-                        break;
-                        case 4:
-                            if($whatsapp_subscribed){
-
-                                if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                                    $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
-                                }else{
-                                    $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
-                                }
-                            }
-                            else{
-                                $suscription->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $suscription->save();
-                            }
-                        break;
-                        case 7:
-                            if($plan_7dias_subscribed){
-                                // Do nothing
-                            }
-                            else{
-                                $fase_week->clients()->attach($user->id);
-                                $suscription->save();
-                            }
-                        break;
-                        case 8:
-                            if($plan_8_subscribed || $plan_2_subscribed){
-                                // Do nothing
-                            }else if($plan_7dias_subscribed){
-                                $plan_7dias_subscribed->delete();
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                $fase_one->clients()->attach($user->id);
-                            }
-                            else{
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                $fase_one->clients()->attach($user->id);
-                            }
-                        break;
-                        case 9:
-                            if($plan_9_subscribed || $is_subscribed){
-                                // Do nothing
-                            }else if($previous_subscribed){
-                                $previous_subscribed->delete();
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                foreach($all_fases as $fase){
-                                    $fase->clients()->attach($user->id);
-                                }
-                            }
-                            else{
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                foreach($all_fases as $fase){
-                                    $fase->clients()->attach($user->id);
-                                }
-                            }
-                        break;
-                    }
                 }else if($response['result']['payload'][0]['status'] == "IN_PROGRESS"){
                     //
                 }
             }
         }
         $pay_data = $request;
-
         return view('payment.payu.approved', compact('plan', 'pay_data'));
-
     }
 
     public function approvedPayu(Request $request){
@@ -242,206 +60,13 @@ class PaymentController extends Controller
             $extra2 = $request->extra2;
 
             $user_data =  explode('~',$extra1);
-            $user_name = $user_data[0];
-            $user_email = $user_data[1];
-            $user_password = $user_data[2];
-            $user_auth = $user_data[3];
-
-            if ($user_auth == 0) {
-
-                $user_exist = User::where('email', $user_email)->first();
-
-                if($user_exist){
-
-                    $user_exist->password = bcrypt($user_password);
-                    $user_exist->save();
-
-                    $user = $user_exist;
-
-                }else{
-                    $user = User::create([
-                        'name' => $user_name,
-                        'email' => $user_email,
-                        'password' => bcrypt($user_password)
-                    ]);
-                }
-            }else {
-                $user = User::where('email', $user_email)->first();
-            }
-
-
             $plan = Plan::find($extra2);
 
-            $suscription = new Subscription();
-            $suscription->user_id = $user->id;
-            $suscription->plan_id = $plan->id;
-            $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-            $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->orWhere('plan_id', 8)->first();
-            $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
-            $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
-            $plan_8_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
-            $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
-            $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
-            $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-            $all_fases = Fase::where('id', '!=', 5)->get();
-            $fase_one = Fase::find(1);
-            $fase_week = Fase::find(5);
-
-            switch ($plan->id) {
-                case 1:
-                    if($is_subscribed){
-                        // Do nothing
-                    }else if($previous_subscribed){
-                        $previous_subscribed->delete();
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        foreach($all_fases as $fase){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    else{
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        foreach($all_fases as $fase){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                break;
-                case 2:
-                    if($plan_2_subscribed){
-                        // Do nothing
-                    }else if($plan_7dias_subscribed){
-                        $plan_7dias_subscribed->delete();
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    else{
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        $fase_one->clients()->attach($user->id);
-                    }
-                break;
-                case 3:
-                    if($plan_3_subscribed){
-                        // Do nothing
-                    }
-                    else{
-                        $suscription->save();
-                        foreach($all_fases as $fase){
-                            if($fase->id != 1){
-                             $fase->clients()->attach($user->id);
-                            }
-                         }
-                    }
-                break;
-                case 4:
-                    if($whatsapp_subscribed){
-
-                        if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                            $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
-                        }else{
-                            $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
-                        }
-                    }
-                    else{
-                        $suscription->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $suscription->save();
-                    }
-                break;
-                case 7:
-                    if($plan_7dias_subscribed){
-                        // Do nothing
-                    }
-                    else{
-                        $fase_week->clients()->attach($user->id);
-                        $suscription->save();
-                    }
-                break;
-                case 8:
-                    if($plan_8_subscribed || $plan_2_subscribed){
-                        // Do nothing
-                    }else if($plan_7dias_subscribed){
-                        $plan_7dias_subscribed->delete();
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    else{
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        $fase_one->clients()->attach($user->id);
-                    }
-                break;
-                case 9:
-                    if($plan_9_subscribed || $is_subscribed){
-                        // Do nothing
-                    }else if($previous_subscribed){
-                        $previous_subscribed->delete();
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        foreach($all_fases as $fase){
-                            if($fase->id != 1){
-                             $fase->clients()->attach($user->id);
-                            }
-                        }
-                    }
-                    else{
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        foreach($all_fases as $fase){
-                            if($fase->id != 1){
-                             $fase->clients()->attach($user->id);
-                            }
-                        }
-                    }
-                break;
-            }
-            if($plan->id == 7){
-                //Enviar Correo
-                $mail = new ApprovedPurchaseNoChat($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            }
-            else{
-                //Enviar Correo
-                $mail = new ApprovedPurchase($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            }
+            $user = $this->getUserData($user_data);
+            $this->setUserData($user, $plan);
+            $this->sendMail($user, $plan);
         }
     }
-
 
     public function responseEpayco(Request $request, Plan $plan){
 
@@ -469,7 +94,6 @@ class PaymentController extends Controller
 
     public function approvedePayco(Request $request){
 
-
         $p_cust_id_cliente = config('services.epayco.client_id');
         $p_key             = config('services.epayco.p_key');
 
@@ -491,22 +115,171 @@ class PaymentController extends Controller
 
 
         $user_data =  explode('~',$x_extra1);
+        $plan = Plan::find($x_extra2);
+
+        //Validamos la firma
+        if ($x_signature == $signature) {
+            /*Si la firma esta bien podemos verificar los estado de la transacción*/
+            $x_cod_response = $request->x_cod_response;
+            switch ((int) $x_cod_response) {
+                case 1:
+                    // "transacción aceptada"
+                    $user = $this->getUserData($user_data);
+                    $this->setUserData($user, $plan);
+                    $this->sendMail($user, $plan);
+                break;
+            }
+        }
+    }
+
+    public function responsePaypal(Request $request, Plan $plan){
+
+        return view('payment.paypal.approved', compact('plan'));
+
+    }
+
+    public function approvedPaypal(Request $request, Plan $plan){
+
+        if ($request->payment_status == "Completed") {
+
+            $user_data = $request->custom;
+            $plan_id = $request->item_number;
+
+            $user_data =  explode('~',$user_data);
+            $plan = Plan::find($plan_id);
+
+            $user = $this->getUserData($user_data);
+            $this->setUserData($user, $plan);
+            $this->sendMail($user, $plan);
+
+        }
+    }
+
+    public function approvedStripe(Request $request, Plan $plan){
+        return view('payment.stripe.approved', compact('request', 'plan'));
+    }
+
+    public function setUserData(User $user, Plan $plan){
+
+        $is_already_subscribed      = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
+        $previous_plan_premium      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(2, 7, 8))->first();
+        $previous_plan_selecto      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10))->first();
+        $previous_plan_week         = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10))->first();
+        $subscribed_plan_1          = Subscription::where('user_id', $user->id)->where('plan_id', 1)->first();
+        $subscribed_plan_2          = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
+        $subscribed_plan_7          = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
+        $subscribed_plan_8          = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
+        $subscribed_plan_9          = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
+        $subscribed_plan_10         = Subscription::where('user_id', $user->id)->where('plan_id', 10)->first();
+        $fases_premium              = Fase::whereIn('id', array(1, 2, 3, 4))->get();
+        $fase_one                   = Fase::find(1);
+        $fase_week                  = Fase::find(5);
+
+        if(!$is_already_subscribed){
+            switch ($plan->id) {
+                case 1:
+                    if($previous_plan_premium){
+                        $previous_plan_premium->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
+                case 2:
+                    if($subscribed_plan_7){
+                        $subscribed_plan_7->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    break;
+                case 3:
+                    if($subscribed_plan_2){
+                        $subscribed_plan_2->delete();
+                    }else if($subscribed_plan_8){
+                        $subscribed_plan_8->delete();
+                    }
+                    $this->addSuscription($user->id, 1);
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
+                case 4:
+                    $this->addWhatsApp($user->id, 30);
+                    break;
+                case 7:
+                    if(!$previous_plan_week){
+                        $this->addSuscription($user->id, $plan->id);
+                    }
+                    if(!$fase_week->clients->contains($user->id)){
+                        $fase_week->clients()->attach($user->id);
+                    }
+                    break;
+                case 8:
+                    if($subscribed_plan_7){
+                        $subscribed_plan_7->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    break;
+                case 9:
+                    if($previous_plan_premium){
+                        $previous_plan_premium->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
+                case 10:
+                    if($previous_plan_selecto){
+                        $previous_plan_selecto->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 60);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
+            }
+        }
+        $this->activeCampaign($user->name, $user->email, 16);
+    }
+
+    public function getUserData($user_data){
+
         $user_name = $user_data[0];
         $user_email = $user_data[1];
         $user_password = $user_data[2];
         $user_auth = $user_data[3];
 
         if ($user_auth == 0) {
-
             $user_exist = User::where('email', $user_email)->first();
-
             if($user_exist){
-
                 $user_exist->password = bcrypt($user_password);
                 $user_exist->save();
-
                 $user = $user_exist;
-
             }else{
                 $user = User::create([
                     'name' => $user_name,
@@ -517,406 +290,120 @@ class PaymentController extends Controller
         }else {
             $user = User::where('email', $user_email)->first();
         }
+        return $user;
+    }
 
+    public function addSuscription($user_id, $plan_id) {
+        $suscription_plan           = new Subscription();
+        $suscription_plan->user_id  = $user_id;
+        $suscription_plan->plan_id  = $plan_id;
+        $suscription_plan->save();
+    }
 
-        $plan = Plan::find($x_extra2);
+    public function addWhatsApp($user_id, $days) {
 
-        //Validamos la firma
-        if ($x_signature == $signature) {
-            /*Si la firma esta bien podemos verificar los estado de la transacción*/
-            $x_cod_response = $request->x_cod_response;
-            switch ((int) $x_cod_response) {
-                case 1:
-                   // "transacción aceptada"
-                    $suscription = new Subscription();
-                    $suscription->user_id = $user->id;
-                    $suscription->plan_id = $plan->id;
-                    $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-                    $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->orWhere('plan_id', 8)->first();
-                    $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
-                    $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
-                    $plan_8_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
-                    $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
-                    $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
-                    $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-                    $all_fases = Fase::where('id', '!=', 5)->get();
-                    $fase_one = Fase::find(1);
-                    $fase_week = Fase::find(5);
+        $whatsapp_subscribed = Subscription::where('user_id', $user_id)->where('plan_id', 4)->first();
 
-                    switch ($plan->id) {
-                        case 1:
-                            if($is_subscribed){
-                                // Do nothing
-                            }else if($previous_subscribed){
-                                $previous_subscribed->delete();
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                foreach($all_fases as $fase){
-                                    $fase->clients()->attach($user->id);
-                                }
-                            }
-                            else{
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                foreach($all_fases as $fase){
-                                    $fase->clients()->attach($user->id);
-                                }
-                            }
-                        break;
-                        case 2:
-                            if($plan_2_subscribed){
-                                // Do nothing
-                            }else if($plan_7dias_subscribed){
-                                $plan_7dias_subscribed->delete();
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                $fase_one->clients()->attach($user->id);
-                            }
-                            else{
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                $fase_one->clients()->attach($user->id);
-                            }
-                        break;
-                        case 3:
-                            if($plan_3_subscribed){
-                                // Do nothing
-                            }
-                            else{
-                                $suscription->save();
-                                foreach($all_fases as $fase){
-                                   if($fase->id != 1){
-                                    $fase->clients()->attach($user->id);
-                                   }
-                                }
-                            }
-                        break;
-                        case 4:
-                            if($whatsapp_subscribed){
-
-                                if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                                    $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
-                                }else{
-                                    $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
-                                }
-                            }
-                            else{
-                                $suscription->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $suscription->save();
-                            }
-                        break;
-                        case 7:
-                            if($plan_7dias_subscribed){
-                                // Do nothing
-                            }
-                            else{
-                                $fase_week->clients()->attach($user->id);
-                                $suscription->save();
-                            }
-                        break;
-                        case 8:
-                            if($plan_8_subscribed || $plan_2_subscribed){
-                                // Do nothing
-                            }else if($plan_7dias_subscribed){
-                                $plan_7dias_subscribed->delete();
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                $fase_one->clients()->attach($user->id);
-                            }
-                            else{
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                $fase_one->clients()->attach($user->id);
-                            }
-                        break;
-                        case 9:
-                            if($plan_9_subscribed || $is_subscribed){
-                                // Do nothing
-                            }else if($previous_subscribed){
-                                $previous_subscribed->delete();
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                foreach($all_fases as $fase){
-                                    if($fase->id != 1){
-                                     $fase->clients()->attach($user->id);
-                                    }
-                                 }
-                            }
-                            else{
-                                $suscription->save();
-                                $whatsApp30 = new Subscription();
-                                $whatsApp30->user_id = $user->id;
-                                $whatsApp30->plan_id = 4;
-                                $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                                $whatsApp30->save();
-                                foreach($all_fases as $fase){
-                                    if($fase->id != 1){
-                                     $fase->clients()->attach($user->id);
-                                    }
-                                 }
-                            }
-                        break;
-                    }
-
-                    if($plan->id == 7){
-                        //Enviar Correo
-                        $mail = new ApprovedPurchaseNoChat($plan, $user);
-                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                    }
-                    else{
-                        //Enviar Correo
-                        $mail = new ApprovedPurchase($plan, $user);
-                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                    }
-
-                break;
+        if($whatsapp_subscribed){
+            if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
+                $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays($days)]);
+            }else{
+                $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays($days)]);
             }
+            $whatsapp_subscribed->save();
+        }else{
+            $suscription_whatsApp           = new Subscription();
+            $suscription_whatsApp->user_id  = $user_id;
+            $suscription_whatsApp->plan_id  = 4;
+            $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays($days);
+            $suscription_whatsApp->save();
         }
-    }
-
-
-    public function responsePaypal(Request $request, Plan $plan){
-
-        return view('payment.paypal.approved', compact('plan'));
 
     }
 
-    public function approvedPaypal(Request $request, Plan $plan){
+    public function splitName($name) {
+        $name = trim($name);
+        $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+        $first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );
+        return array($first_name, $last_name);
+    }
 
-        //Log::info($request);
+    public function activeCampaign($name, $email, $list_id) {
 
-        if ($request->payment_status == "Completed") {
+        $response = Http::withHeaders([
+            'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
+        ]);
+        $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
+            "email" => $email,
+            "orders[email]" => "ASC"
+        ]);
+        $userData = $getUserByEmail['contacts'];
 
+        if(!$userData){
+            return ;
+        }
 
-            $user_data = $request->custom;
-            $plan_id = $request->item_number;
+        $userListsLink = $userData[0]['links']['contactLists'];
+        $userId = $userData[0]['id'];
 
-            $user_data =  explode('~',$user_data);
-            $user_name = $user_data[0];
-            $user_email = $user_data[1];
-            $user_password = $user_data[2];
-            $user_auth = $user_data[3];
+        $getUserLists =  $response->GET($userListsLink);
 
-            if ($user_auth == 0) {
+        $userLists = $getUserLists['contactLists'];
 
-                $user_exist = User::where('email', $user_email)->first();
+        if(count($userLists) > 0) {
 
-                if($user_exist){
+            foreach($userLists as $userList ) {
 
-                    $user_exist->password = bcrypt($user_password);
-                    $user_exist->save();
+                if($userList['list'] == $list_id){
 
-                    $user = $user_exist;
-
+                    if($userList['status'] == 1){
+                       return false;
+                    }else if($userList['status'] == "2") {
+                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                            "contactList" => [
+                                "list" => $list_id,
+                                "contact" => $userId,
+                                "status" => 1,
+                                "sourceid" => 4
+                            ]
+                        ]);
+                    }
+                    return true;
+                    break;
                 }else{
-                    $user = User::create([
-                        'name' => $user_name,
-                        'email' => $user_email,
-                        'password' => bcrypt($user_password)
+                    $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                        "contactList" => [
+                            "list" => $list_id,
+                            "contact" => $userId,
+                            "status" => 1
+                        ]
                     ]);
                 }
-            }else {
-                $user = User::where('email', $user_email)->first();
             }
+            return true;
 
+        }else{
+            $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                "contactList" => [
+                    "list" => $list_id,
+                    "contact" => $userId,
+                    "status" => 1
+                ]
+            ]);
+            return true;
+        }
+    }
 
-            $plan = Plan::find($plan_id);
-
-            $suscription = new Subscription();
-            $suscription->user_id = $user->id;
-            $suscription->plan_id = $plan->id;
-            $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-            $previous_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->orWhere('plan_id', 7)->orWhere('plan_id', 8)->first();
-            $plan_2_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
-            $plan_3_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 3)->first();
-            $plan_8_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
-            $plan_9_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
-            $whatsapp_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 4)->first();
-            $plan_7dias_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-            $all_fases = Fase::where('id', '!=', 5)->get();
-            $fase_one = Fase::find(1);
-            $fase_week = Fase::find(1);
-
-
-            switch ($plan->id) {
-                case 1:
-                    if($is_subscribed){
-                        // Do nothing
-                    }else if($previous_subscribed){
-                        $previous_subscribed->delete();
-                        $suscription->save();
-                        foreach($all_fases as $fase){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    else{
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        foreach($all_fases as $fase){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                break;
-                case 2:
-                    if($plan_2_subscribed){
-                        // Do nothing
-                    }else if($plan_7dias_subscribed){
-                        $plan_7dias_subscribed->delete();
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    else{
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        $fase_one->clients()->attach($user->id);
-                    }
-                break;
-                case 3:
-                    if($plan_3_subscribed){
-                        // Do nothing
-                    }
-                    else{
-                        $suscription->save();
-                        foreach($all_fases as $fase){
-                            if($fase->id != 1){
-                             $fase->clients()->attach($user->id);
-                            }
-                         }
-                    }
-                break;
-                case 4:
-                    if($whatsapp_subscribed){
-
-                        if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                            $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
-                        }else{
-                            $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
-                        }
-                    }
-                    else{
-                        $suscription->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $suscription->save();
-                    }
-                break;
-                case 7:
-                    if($plan_7dias_subscribed){
-                        // Do nothing
-                    }
-                    else{
-                        $fase_week->clients()->attach($user->id);
-                        $suscription->save();
-                    }
-                break;
-                case 8:
-                    if($plan_8_subscribed || $plan_2_subscribed){
-                        // Do nothing
-                    }else if($plan_7dias_subscribed){
-                        $plan_7dias_subscribed->delete();
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    else{
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        $fase_one->clients()->attach($user->id);
-                    }
-                break;
-                case 9:
-                    if($plan_9_subscribed || $is_subscribed){
-                        // Do nothing
-                    }else if($previous_subscribed){
-                        $previous_subscribed->delete();
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        foreach($all_fases as $fase){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    else{
-                        $suscription->save();
-                        $whatsApp30 = new Subscription();
-                        $whatsApp30->user_id = $user->id;
-                        $whatsApp30->plan_id = 4;
-                        $whatsApp30->expires_at = \Carbon\Carbon::now()->addDays(30);
-                        $whatsApp30->save();
-                        foreach($all_fases as $fase){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                break;
-            }
-
-            if($plan->id == 7){
-                //Enviar Correo
+    public function sendMail(User $user, Plan $plan){
+        switch ($plan->id) {
+            case 7:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            }
-            else{
-                //Enviar Correo
+                break;
+            default:
                 $mail = new ApprovedPurchase($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            }
-
+                break;
         }
-
     }
-
-    public function approvedStripe(Request $request, Plan $plan){
-        return view('payment.stripe.approved', compact('request', 'plan'));
-    }
-
 }

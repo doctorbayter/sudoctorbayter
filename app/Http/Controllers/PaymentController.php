@@ -270,7 +270,7 @@ class PaymentController extends Controller
                     break;
             }
         }
-        if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 ){
+        if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 || $plan->id != 7 || $plan->id != 11 || $plan->id != 12 ){
             $this->activeCampaign($user->email, 16);
         }
     }

@@ -536,8 +536,8 @@
     <section class="py-8 md:py-16 bg-gray-900 bg-opacity-95 px-6 md:px-0">
         <div class="max-w-5xl mx-auto text-gray-50">
             <p class="uppercase text-yellow-500 font-medium text-sm md:text-lg">¿Tienes dudas adicionales?</p>
-            <a href="https://chat.whatsapp.com/FACKQp2A72U9idC2xiUfsR" target="_blank" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline " title="Escríbemele a mi equipo">
-                <span  class="">Entra al grupo de WhatsApp</span>
+            <a href="https://wa.me/573147281252" target="_blank" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline " title="Escríbemele a mi equipo">
+                <span  class="">Escríbenos vía WhatsApp</span>
             </a>
         </div>
     </section>

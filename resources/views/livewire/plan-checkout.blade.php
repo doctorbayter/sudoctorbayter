@@ -73,7 +73,10 @@
             @endif
 
             <div class="mt-4 md:mt-6">
-                <h3 class="text-2xl font-bold mb-2 md:mb-8 text-gray-800"> <span class="text-red-700">Paso 2:</span> Elige tu medio de pago</h3>
+                <h3 class="text-2xl font-bold mb-2 md:mb-4 text-gray-800"> <span class="text-red-700">Paso 2:</span> Elige tu medio de pago</h3>
+
+                <p class="text-sm mb-6">* Si deseas pagar con <b>tarjeta de crédito</b> o <b>transferencia</b> puedes elegir el método de pago <b class="text-green-500">PayU</b> o <b class=" text-red-500">ePayco</b></p>
+
                 <ul class=" mb-4 flex flex-col lg:flex-row w-full items-center justify-between sm:justify-start flex-wrap">
 
                     <li class="max-w-200 lg:mr-4 ">
@@ -117,12 +120,24 @@
                     @if (($plan->id == 8 || $plan->id == 9) && $is_week == false)
 
                         <section>
+
+                                <article class=" flex items-center">
+                                    <div class="text-red-700  font-bold text-sx lg:text-xl leading-tight pr-6">
+                                        <h3 class="text-4xl lg:text-5xl font-extrabold uppercase">¡Ahorra más!</h3>
+                                        <p class="">Aprovecha esta oportunidad y</p>
+                                        <p>adquiere el Método DKP completo</p>
+                                    </div>
+                                    <div class="w-36">
+                                        <img src="{{asset('/img/gfx/arrow_down.png')}}" alt="" class="w-full">
+                                    </div>
+                                </article>
+
                             <div  class="flex flex-col lg:flex-row justify-center px-4 py-8 my-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
                                 <figure class=" hidden lg:block mr-4 w-auto flex-1">
                                     <img src="{{asset('/img/billboards/banner_dkp.jpg')}}" alt="Método DKP">
                                 </figure>
                                 <div class="w-full lg:w-7/12">
-                                    <h3 class="text-xl font-bold">¡Ahorrar más! Adquiere el <b class="text-red-700">Método DKP</b> 4 fases hoy por solo <span class="text-red-700">99 US$</span></h3>
+                                    <h3 class="text-xl font-bold">Adquiere el <b class="text-red-700">Método DKP</b> 4 fases hoy por solo <span class="text-red-700">99 US$</span></h3>
                                     <p class="text-sm text-gray-800  my-2">Adquiere hoy el Plan Premium del Método DKP y obtendrás</p>
                                     <ul class="text-sm">
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso inmediato a las 4 fases</li>
@@ -180,7 +195,7 @@
                                     <img src="{{asset('/img/billboards/banner_dkp.jpg')}}" alt="Método DKP">
                                 </figure>
                                 <div class="w-full lg:w-7/12">
-                                    <h3 class="text-xl font-bold">¡Ahorrar más! Adquiere la <b class="text-red-700">Fase 1 </b> del Método DKP hoy por solo <span class="text-red-700">47 US$</span></h3>
+                                    <h3 class="text-xl font-bold">¡Ahorra más! Adquiere la <b class="text-red-700">Fase 1 </b> del Método DKP hoy por solo <span class="text-red-700">47 US$</span></h3>
                                     <p class="text-sm text-gray-800  my-2">Adquiere hoy el Plan de 21 días del Método DKP y obtendrás</p>
                                     <ul class="text-sm">
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso inmediato a la fase 1</li>
@@ -315,11 +330,21 @@
                             @endif
                         @endcan
 
-                    <div class="mt-8 flex items-center cursor-default mb-8">
+                    <div class="mt-8 flex__ items-center cursor-default mb-8 hidden">
                         <div class="bg-gray-100 border border-gray-200 rounded-full p-3 mr-3">
                             <i class="fas fa-shield-alt text-3xl text-secundary-400"></i>
                         </div>
                         <p class="text-secundary-400 font-extrabold leading-4" >Tu pago es 100% seguro<br/><span class="text-sm text-secundary-400 font-normal">protegemos tus datos.</span></p>
+                    </div>
+
+                    <div class="my-12 cursor-default  text-center w-full">
+                        <p class="text-secundary-400 text-2xl lg:text-3xl  font-bold text-center">Si tuviste problemas con tu compra o tu tarjeta escríbenos</p>
+                        <div class="my-4">
+                            <a href="https://wa.me/573147281252" target="_blank" class=" inline-flex px-6 py-4 rounded-full text-white font-bold bg-green-600 text-3xl lg:text-4xl">
+                                <i class="fab fa-whatsapp mr-4"></i>
+                                <p class="">+57 314 728 1252</p>
+                            </a>
+                        </div>
                     </div>
 
                 </div>

@@ -2300,4 +2300,3 @@ Route::get('x/query', function(){
     // Fin Receta
     */
 });
-

@@ -2300,3 +2300,30 @@ Route::get('x/query', function(){
     // Fin Receta
     */
 });
+
+Route::get('x/whatsapp/', function(){
+
+    $client = new \GuzzleHttp\Client(['headers' => ['Content-Type' => 'application/x-www-form-urlencoded', 'apikey'=>'b07192ca25814406c42867e0376518d0']]);
+
+    $response = $client->get('https://api.gupshup.io/sm/api/v1/users/MYCXAPP');
+
+    echo ($response->getBody());
+return;
+    $data = array(
+    'channel' => 'whatsapp',
+    'source' => '917834811114',
+    'destination' => '573155217037',
+    'src.name'=> 'MYCXAPP',
+    'message' => '{
+        "type":"quick_reply",
+        "msgid":"qr1",
+        "content":{ "type":"text", "header":"Bienvenido al area comercial del doctor X", "text":"Acontinuación encontrarás una lista de opciones", "caption":"Por favor elije una y con mucho gusto te atenderemos" },
+        "options":[ { "type":"text", "title":"Cotizar Cirugia" }, { "type":"text", "title":"Solicitar Consulta" }, { "type":"text", "title":"Otro" } ]}'
+    );
+
+    $response = $client->post('https://api.gupshup.io/sm/api/v1/msg',[
+        'body'  => http_build_query($data),
+    ]);
+
+    dd($response);
+});

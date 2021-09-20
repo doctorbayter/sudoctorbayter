@@ -319,7 +319,6 @@
                 <div>
                     <iframe class="w-full h-48 md:h-auto" src="https://www.youtube-nocookie.com/embed/WgDgkNf8nuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-
             </div>
         </div>
     </section>

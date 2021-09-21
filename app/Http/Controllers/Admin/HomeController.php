@@ -122,12 +122,8 @@ class HomeController extends Controller
     }
 
     public function price(){
-        $price = Price::create([
-            'name' => '9.99 US$',
-            'value' => 9.99
-        ]);
         $plan = Plan::find(7);
-        $plan->price_id = $price->id;
+        $plan->price_id = 2;
         $plan->save();
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Mail\ApprovedPurchase;
+use App\Mail\ApprovedPurchaseNoChat;
 use App\Models\Fase;
 use App\Models\Plan;
 use App\Models\User;
@@ -120,8 +121,27 @@ class ProductPay extends Component
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
 
-            if($this->plan->id == 10){ //Grupo selecto
 
+            if($this->plan->id == 7){ //Reto 7
+
+                $previous_plan_week = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10))->first();
+                $fase_week          = Fase::find(5);
+
+                if(!$previous_plan_week){
+                    $this->addSuscription($user->id, $this->plan->id);
+                }
+                if(!$fase_week->clients->contains($user->id)){
+                    $fase_week->clients()->attach($user->id);
+                }
+
+                $mail = new ApprovedPurchaseNoChat($this->plan, $user);
+                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+
+                return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
+            }
+
+            /*
+            if($this->plan->id == 10){ //Grupo selecto
                 if($previous_subscribed){
                     $previous_subscribed->delete();
                 }
@@ -149,12 +169,20 @@ class ProductPay extends Component
                     $whatsApp60->save();
                 }
 
-                $mail = new ApprovedPurchase($this->plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                switch ($this->plan->id) {
+                    case 7:
+                        $mail = new ApprovedPurchaseNoChat($this->plan, $user);
+                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                        break;
+                    default:
+                        $mail = new ApprovedPurchase($this->plan, $user);
+                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                        break;
+                }
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
-
             }
+            */
 
         } catch (Exception $e) {
             $this->emit('errorStripePayment');

@@ -66,6 +66,10 @@ Route::get('/selecto', function () {
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('selecto');
 
+Route::get('/reto', function () {
+    return redirect()->route('reto.register', ['reto'=>'7-dias']);
+})->name('reto');
+
 
 Route::get('/110', function () {
     return view('no-disponible');

@@ -123,7 +123,7 @@ class HomeController extends Controller
 
     public function price(){
         $plan = Plan::find(7);
-        $plan->price_id = 2;
+        $plan->price_id = 14;
         $plan->save();
     }
 

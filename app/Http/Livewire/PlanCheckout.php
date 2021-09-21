@@ -46,7 +46,7 @@ class PlanCheckout extends Component
             $this->is_week = true;
         }
 
-        if ($this->plan->id == 4 || $this->plan->id == 5 || $this->plan->id == 6) { // Whatsapp ~ Cita 40 mins ~ Cita 60 mins
+        if ($this->plan->id == 4 ) { // Whatsapp
             if (!auth()->user()) {
 
                 session()->flash('status', 'Para realizar la compra de '.$this->plan->name .' es necesario que inicies sesión');

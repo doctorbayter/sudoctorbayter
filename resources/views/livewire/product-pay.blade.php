@@ -96,6 +96,16 @@
                         </div>
                     </li>
 
+                    <li class="max-w-200 lg:mr-4 ">
+                        <div
+                            x-on:click="$payMethod = 'payu' ; $dispatch('route-change', { value: '{{route('payment.payu', $plan)}}' }) "
+                            :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'payu' }"
+                            class="border rounded h-20 w-40 cursor-pointer bg-gray-50 flex justify-center items-center hover:bg-blue-50 hover:border-blue-200 focus:bg-gray-100 focus:border-blue-400 "
+                            name="Paga con PayU">
+                            <img class="h-10 object-cover" src="{{asset('/img/checkout/payu_logo.png')}}" alt="">
+                        </div>
+                    </li>
+
 
 
                 </ul>
@@ -185,6 +195,15 @@
 
                                 </div>
 
+                                <div x-show="$payMethod == 'payu'" >
+                                    <form action="{{config('services.payu.base_uri')}}" method="post">
+                                        @csrf
+                                        <x-payu-form :plan="$plan" :dataSend="$data_send"/>
+                                        <button type="submit"
+                                        class=" bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Ya puedes continuar tu compra con PayU</button>
+
+                                    </form>
+                                </div>
                             </div>
                             @else
                                 <button

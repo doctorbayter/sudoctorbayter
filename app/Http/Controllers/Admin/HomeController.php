@@ -122,13 +122,13 @@ class HomeController extends Controller
     }
 
     public function price(){
-
-        //DB::table('plans')->where('id', '=', '1')->update(['price_id' => 5]);
-        //$prices = Price::all();
-        //$plan = Plan::find(10);
-        //$plan->price_id = 8;
-        //$plan->discount_id = 7;
-        //$plan->save();
+        $price = Price::create([
+            'name' => '9.99 US$',
+            'value' => 9.99
+        ]);
+        $plan = Plan::find(7);
+        $plan->price_id = $price->id;
+        $plan->save();
     }
 
     public function send($email, $plan_id){

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Livewire\Masterclass;
+use App\Http\Livewire\Reto;
 use App\Http\Livewire\UserRecipe;
 use App\Models\Day;
 use App\Models\Discount;
@@ -57,10 +58,15 @@ Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('mast
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
 
+Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
+
+
 Route::get('/selecto', function () {
     $plan = Plan::find(10);
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('selecto');
+
+
 Route::get('/110', function () {
     return view('no-disponible');
 });

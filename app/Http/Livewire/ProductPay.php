@@ -78,7 +78,6 @@ class ProductPay extends Component
 
     }
 
-
     public function paymentMethodCreate($paymentMethod){
 
         try {
@@ -104,10 +103,6 @@ class ProductPay extends Component
             $suscription->user_id = $user->id;
             $suscription->plan_id = $this->plan->id;
 
-            $whatsApp60 = new Subscription();
-            $whatsApp60->user_id = $user->id;
-            $whatsApp60->plan_id = 4;
-
             $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $this->plan->id)->first();
             $previous_subscribed = Subscription::where('user_id', $user->id)
                                                 ->where('plan_id', 1)
@@ -121,20 +116,20 @@ class ProductPay extends Component
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
 
-                $previous_plan_week = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10))->first();
-                $fase_week          = Fase::find(5);
+            $previous_plan_week = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10))->first();
+            $fase_week          = Fase::find(5);
 
-                if(!$previous_plan_week){
-                    $this->addSuscription($user->id, $this->plan->id);
-                }
-                if(!$fase_week->clients->contains($user->id)){
-                    $fase_week->clients()->attach($user->id);
-                }
+            if(!$previous_plan_week){
+                $suscription->save();
+            }
+            if(!$fase_week->clients->contains($user->id)){
+                $fase_week->clients()->attach($user->id);
+            }
 
-                $mail = new ApprovedPurchaseNoChat($this->plan, $user);
-                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            $mail = new ApprovedPurchaseNoChat($this->plan, $user);
+            Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
 
-                return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
+            return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
 
             /*
             if($this->plan->id == 10){ //Grupo selecto

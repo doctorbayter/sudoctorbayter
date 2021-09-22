@@ -122,7 +122,6 @@ class ProductPay extends Component
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
 
 
-            if($this->plan->id == 7){ //Reto 7
 
                 $previous_plan_week = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10))->first();
                 $fase_week          = Fase::find(5);
@@ -138,7 +137,7 @@ class ProductPay extends Component
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
-            }
+
 
             /*
             if($this->plan->id == 10){ //Grupo selecto

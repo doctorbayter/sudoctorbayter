@@ -38,7 +38,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/doctor-bayter', [HomeController::class, 'doctor'])->name('doctor');
 Route::get('/metodo-dkp', [HomeController::class, 'dkp'])->name('dkp');
@@ -58,18 +57,22 @@ Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('mast
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
 
-Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
+//Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
 
+Route::get('reto/{reto}/register', function () {
+    return view('no-disponible');
+});
 
 Route::get('/selecto', function () {
     $plan = Plan::find(10);
-    return redirect()->route('payment.pay', ['plan'=>$plan]);
+    //return redirect()->route('payment.pay', ['plan'=>$plan]);
+    return view('no-disponible');
 })->name('selecto');
 
 Route::get('/reto', function () {
-    return redirect()->route('reto.register', ['reto'=>'7-dias']);
+    //return redirect()->route('reto.register', ['reto'=>'7-dias']);
+    return view('no-disponible');
 })->name('reto');
-
 
 Route::get('/110', function () {
     return view('no-disponible');
@@ -2319,7 +2322,7 @@ Route::get('x/whatsapp/', function(){
     $response = $client->get('https://api.gupshup.io/sm/api/v1/users/MYCXAPP');
 
     echo ($response->getBody());
-return;
+    return;
     $data = array(
     'channel' => 'whatsapp',
     'source' => '917834811114',

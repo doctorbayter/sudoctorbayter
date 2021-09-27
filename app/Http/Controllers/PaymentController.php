@@ -291,7 +291,7 @@ class PaymentController extends Controller
             }else{
                 $user = User::create([
                     'name' => $user_name,
-                    'email' => $user_email,
+                    'email' => strtolower($user_email),
                     'password' => bcrypt($user_password)
                 ]);
             }

@@ -90,7 +90,7 @@ class ProductPay extends Component
             }else{
                 $user = User::create([
                     'name' => $this->name,
-                    'email' => $this->email,
+                    'email' => strtolower($this->email),
                     'password' => bcrypt($this->password)
                 ]);
             }

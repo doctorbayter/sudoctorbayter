@@ -115,6 +115,7 @@ Route::get('x/discounts/', function(){
 });
 
 Route::get('x/sql/', function(){
+    DB::insert("UPDATE users SET email = LOWER(email)");
 });
 
 Route::get('x/query', function(){

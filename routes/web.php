@@ -2313,6 +2313,23 @@ Route::get('x/query', function(){
     (274, '105', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
     // Fin Receta
     */
+
+    Instruction::create([
+        'name' => 'Preparación de los takos',
+        'step' => 9,
+        'recipe_id' => 260,
+    ]);
+    Instruction::create([
+        'name' => 'Fácil le agregas a cada uno de los takos los ingredientes combinados, según tu gusto',
+        'step' => 10,
+        'recipe_id' => 260,
+    ]);
+    Instruction::create([
+        'name' => 'Antes de servir le róseas una Buena cantidad de aceite de oliva aromatizado',
+        'step' => 11,
+        'recipe_id' => 260,
+    ]);
+
 });
 
 Route::get('x/whatsapp/', function(){

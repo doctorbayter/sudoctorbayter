@@ -53,11 +53,40 @@
         src="https://www.facebook.com/tr?id=1557165744425673&ev=PageView&noscript=1"
         /></noscript>
         <!-- End Facebook Pixel Code -->
+
+{{--
+    intl-tel-input CODE
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.min.js"></script>
+--}}
     </head>
     <body class="font-sans antialiased">
 
-
-
+{{--
+    intl-tel-input CODE
+<div class="container">
+<div class="col-md-8 mt-4">
+<input type="text" id="phone" />
+</div>
+</div>
+<script>
+var input = document.querySelector("#phone");
+intlTelInput(input, {
+initialCountry: "auto",
+preferredCountries:["us", "es", "mx", "co"],
+geoIpLookup: function (success, failure) {
+$.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
+var countryCode = (resp && resp.country) ? resp.country : "us";
+success(countryCode);
+});
+},
+});
+</script>
+--}}
         <x-jet-banner />
 
         <div class="min-h-screen bg-white">

@@ -3,11 +3,11 @@
 @section('title', 'Administrador Doctor Bayter')
 
 @section('content_header')
-    <h1>Lista de recetas</h1>
+    <h1>Crear receta</h1>
 @stop
 
 @section('content')
-    Admin Dashboard
+    @livewire('admin-recipes')
 @stop
 
 @section('css')

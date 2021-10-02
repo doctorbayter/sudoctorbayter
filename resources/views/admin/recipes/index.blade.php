@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    Admin Dashboard
+    @livewire('admin-recipes')
 @stop
 
 @section('css')

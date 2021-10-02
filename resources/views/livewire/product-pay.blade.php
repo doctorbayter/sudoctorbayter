@@ -6,6 +6,7 @@
 
             @else
             <section class="mt-4">
+
                 <header class=" mb-2 md:mb-4 ">
                     <h3 class="text-2xl font-bold text-gray-800 mb-1"><span class="text-red-700">Paso 1:</span> Crea tus datos de acceso a la página</h3>
                     <p class="text-gray-600 font-medium lowercase text-xs italic">Los datos que escribas aquí serán los que vas a usar para ingresar a la página una vez realices la compra</p>
@@ -121,7 +122,7 @@
                         <div class="md:ml-4">
                             @if ($plan->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($plan->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                 <div class="ml-auto flex items-center">
-                                    <p class="text-4xl md:text-2xl font-bold text-accent-400">{{$plan->finalPrice}} US$</p>
+                                    <p class="text-4xl md:text-2xl font-bold text-accent-400">{{round($flash_sale)}} US$</p>
                                     <span class=" text-base ml-2 line-through text-gray-500">{{$plan->price->name}}</span>
                                 </div>
                             @else
@@ -188,7 +189,7 @@
 
                                     <form action="{{config('services.paypal.base_uri')}}" method="post">
                                         @csrf
-                                        <x-paypal-form :plan="$plan" :dataSend="$data_send"/>
+                                        <x-paypal-form :plan="$plan" :dataSend="$data_send" :flashSale="$flash_sale"/>
                                         <button type="submit"
                                         class="bg-blue-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-blue-800  text-lg w-full">Ya puedes continuar tu compra con PayPal</button>
                                     </form>
@@ -198,7 +199,7 @@
                                 <div x-show="$payMethod == 'payu'" >
                                     <form action="{{config('services.payu.base_uri')}}" method="post">
                                         @csrf
-                                        <x-payu-form :plan="$plan" :dataSend="$data_send"/>
+                                        <x-payu-form :plan="$plan" :dataSend="$data_send" :flashSale="$flash_sale"/>
                                         <button type="submit"
                                         class=" bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Ya puedes continuar tu compra con PayU</button>
 

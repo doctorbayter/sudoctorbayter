@@ -1,11 +1,15 @@
 <div class=" max-w-lg h-0">
+    @php
+        if($flashSale){$plan_price = $flashSale;}
+        else{$plan_price = $plan->finalPrice;}
+    @endphp
     <input type="hidden" name="cmd" value="_xclick">
     <input type="hidden" name="business" value="{{config('services.paypal.business')}}">
     <input type="hidden" name="lc" value="AL">
     <input type="hidden" name="item_name" value="{{$plan->name}}">
     <input type="hidden" name="item_number" value="{{$plan->id}}">
     <input type="hidden" name="custom" value="{{$dataSend}}">
-    <input type="hidden" name="amount" value="{{$plan->finalPrice}}">
+    <input type="hidden" name="amount" value="{{$plan_price}}">
     <input type="hidden" name="currency_code" value="{{config('services.paypal.currency_code')}}">
     <input type="hidden" name="button_subtype" value="services">
     <input type="hidden" name="no_note" value="1">

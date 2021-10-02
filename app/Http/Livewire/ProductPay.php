@@ -14,7 +14,7 @@ use Exception;
 
 class ProductPay extends Component
 {
-    public $plan, $suscription;
+    public $plan, $suscription, $flash_sale;
     public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send;
     public $can_continued = false;
     public $error_message = "* Tenemos un error, revisa la información suminitrada anteriormente";
@@ -35,18 +35,15 @@ class ProductPay extends Component
         $this->can_continued = false;
         $this->reset(['error_button']);
         $this->validateOnly($propertyName);
-
     }
 
     public function mount(Plan $plan){
 
         $this->plan = $plan;
-
+        $this->flash_sale = "67";
     }
 
     public function render() {
-
-
         return view('livewire.product-pay');
     }
 
@@ -97,7 +94,7 @@ class ProductPay extends Component
 
             $user->createOrGetStripeCustomer();
 
-            $user->charge( $this->plan->finalPrice * 100 , $paymentMethod);
+            $user->charge( $this->flash_sale * 100 , $paymentMethod);
 
             $suscription = new Subscription();
             $suscription->user_id = $user->id;
@@ -105,8 +102,7 @@ class ProductPay extends Component
 
             $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $this->plan->id)->first();
             $previous_subscribed = Subscription::where('user_id', $user->id)
-                                                ->where('plan_id', 1)
-                                                ->orWhere('plan_id', 2)
+                                                ->where('plan_id', 2)
                                                 ->orWhere('plan_id', 3)
                                                 ->orWhere('plan_id', 7)
                                                 ->orWhere('plan_id', 8)
@@ -116,23 +112,8 @@ class ProductPay extends Component
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
 
-            $previous_plan_week = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10))->first();
-            $fase_week          = Fase::find(5);
 
-            if(!$previous_plan_week){
-                $suscription->save();
-            }
-            if(!$fase_week->clients->contains($user->id)){
-                $fase_week->clients()->attach($user->id);
-            }
-
-            $mail = new ApprovedPurchaseNoChat($this->plan, $user);
-            Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-
-            return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
-
-            /*
-            if($this->plan->id == 10){ //Grupo selecto
+            if($this->plan->id == 1){
                 if($previous_subscribed){
                     $previous_subscribed->delete();
                 }
@@ -150,14 +131,17 @@ class ProductPay extends Component
 
                 if($whatsapp_subscribed){
                     if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(60)]);
+                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
                     }else{
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(60)]);
+                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
                     }
                     $whatsapp_subscribed->save();
                 }else{
-                    $whatsApp60->expires_at = \Carbon\Carbon::now()->addDays(60);
-                    $whatsApp60->save();
+                    $suscription_whatsApp             = new Subscription();
+                    $suscription_whatsApp->user_id    = $user->id;
+                    $suscription_whatsApp->plan_id    = 4;
+                    $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays(30);
+                    $suscription_whatsApp->save();
                 }
 
                 switch ($this->plan->id) {
@@ -173,7 +157,7 @@ class ProductPay extends Component
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
             }
-            */
+
 
         } catch (Exception $e) {
             $this->emit('errorStripePayment');

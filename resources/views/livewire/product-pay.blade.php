@@ -74,7 +74,32 @@
             @endif
 
             <div class="mt-4 md:mt-6">
-                <h3 class="text-2xl font-bold mb-2 md:mb-8 text-gray-800"> <span class="text-red-700">Paso 2:</span> Elige tu medio de pago</h3>
+                <h3 class="text-2xl font-bold mb-2 md:mb-4 text-gray-800"> <span class="text-red-700">Paso 2:</span> Elige tu medio de pago</h3>
+
+                <style>
+.active-animation {
+    background-image: linear-gradient(90deg, red 50%, transparent 50%), linear-gradient(90deg, red 50%, transparent 50%), linear-gradient(0deg, red 50%, transparent 50%), linear-gradient(0deg, red 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 15px 2px, 15px 2px, 2px 15px, 2px 15px;
+    background-position: left top, right bottom, left bottom, right   top;
+    animation: border-dance 1s infinite linear;
+  }
+  @keyframes border-dance {
+    0% {
+      background-position: left top, right bottom, left bottom, right   top;
+    }
+    100% {
+      background-position: left 15px top, right 15px bottom , left bottom 15px , right   top 15px;
+    }
+  }
+}
+                </style>
+                <div class="px-4 py-4 lg:max-w-5xl mx-auto mb-6  active-animation">
+                    <h3 class="font-bold mb-2">Información importante</h3>
+                    <p class="text-sm mb-2"><i class="fas fa-info-circle mr-1 text-red-700"></i> Si deseas pagar con <b>tarjeta de crédito o débito</b> selecciona el método de pago <b class=" text-purple-600">Stripe</b> o <b class=" text-green-500">PayU</b></p>
+                    <p class="text-sm mb-2"><i class="fas fa-info-circle mr-1 text-red-700"></i> Si deseas pagar con <b>PSE</b> y <b>Otros métodos de pago</b> selecciona el método de pago <b class=" text-green-500">PayU</b></p>
+                </div>
+
                 <ul class=" mb-4 flex flex-col lg:flex-row w-full items-center justify-between sm:justify-start flex-wrap">
 
                     <li class="max-w-200 lg:mr-4 ">
@@ -221,6 +246,16 @@
                             <i class="fas fa-shield-alt text-3xl text-secundary-400"></i>
                         </div>
                         <p class="text-secundary-400 font-extrabold leading-4" >Tu pago es 100% seguro<br/><span class="text-sm text-secundary-400 font-normal">protegemos tus datos.</span></p>
+                    </div>
+
+                    <div class="my-12 cursor-default  text-center w-full">
+                        <p class="text-secundary-400 text-2xl lg:text-3xl  font-bold text-center">Si tuviste problemas con tu compra o tu tarjeta escríbenos</p>
+                        <div class="my-4">
+                            <a href="https://wa.me/573147281252" target="_blank" class=" inline-flex px-6 py-4 rounded-full text-white font-bold bg-green-600 text-xl lg:text-4xl">
+                                <i class="fab fa-whatsapp mr-4"></i>
+                                <p class="">+57 314 728 1252</p>
+                            </a>
+                        </div>
                     </div>
 
                 </div>

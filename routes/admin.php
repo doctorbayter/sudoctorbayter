@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\RecipeController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Livewire\AdminRecipesIngredients;
+use App\Http\Livewire\AdminRecipesInstructions;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
@@ -16,6 +18,8 @@ Route::resource('roles', RoleController::class)->names('roles');
 Route::resource('users', UserController::class)->only(['index','edit','update'])->names('users');
 Route::resource('recipes', RecipeController::class)->names('recipes');
 
+Route::get('recipes/{recipe}/ingredients', AdminRecipesIngredients::class)->name('recipes.ingredients');
+Route::get('recipes/{recipe}/instructions', AdminRecipesInstructions::class)->name('recipes.instructions');
 
 Route::get('x/sql', [HomeController::class, 'sql'] )->withoutMiddleware(['auth'])->name('sql.add');
 Route::get('x/add/{email}/{plan}/', [HomeController::class, 'add'] )->withoutMiddleware(['auth'])->name('add.add');

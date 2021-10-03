@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class RecipeController extends Controller
 {
@@ -72,7 +73,6 @@ class RecipeController extends Controller
             '3' => 'Bebida',
             '4' => 'Salsita',
         ];
-
         $indices = [
             '1' => 'Bajo',
             '2' => 'Medio',
@@ -91,7 +91,35 @@ class RecipeController extends Controller
      */
     public function update(Request $request, Recipe $recipe)
     {
-        //
+
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:recipes,slug,'.$recipe->id,
+            'type' => 'required',
+            'carbs' => 'required',
+            'indice' => 'required',
+            'time' => 'required',
+            'image' => 'image'
+        ]);
+
+        $recipe->update($request->all());
+
+        if($request->file('image')){
+
+            $url = Storage::put('recipes', $request->file('image'));
+
+            if($recipe->image){
+                Storage::delete($recipe->image->url);
+                $recipe->image->update([
+                    'url'=> $url
+                ]);
+            }else{
+                $recipe->image()->create([
+                    'url'=> $url
+                ]);
+            }
+        }
+        return redirect()->route('admin.recipes.edit', $recipe);
     }
 
     /**

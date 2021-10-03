@@ -60,7 +60,7 @@
                                         </h2>
                                         <div class="text-gray-600">
                                             @foreach ($recipe->tips as $tip)
-                                                <p class="mb-4">{{$tip->name}}</p>
+                                                <p class="mb-4"> <i class="fas fa-check mr-2"></i> {{$tip->name}}</p>
                                             @endforeach
                                         </div>
                                     </div>

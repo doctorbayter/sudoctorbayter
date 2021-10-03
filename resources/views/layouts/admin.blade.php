@@ -13,13 +13,16 @@
             <div class="list-group">
                 <a href="{{route('admin.recipes.edit', $recipe)}}" class="list-group-item list-group-item-action @routeIs('admin.recipes.edit', $recipe) active @endif ">
                    Información
-               </a>
+                </a>
                 <a href="{{route('admin.recipes.ingredients', $recipe)}}" class="list-group-item list-group-item-action @routeIs('admin.recipes.ingredients', $recipe) active @endif">
                    Ingredientes
-               </a>
+                </a>
                 <a href="{{route('admin.recipes.instructions', $recipe)}}" class="list-group-item list-group-item-action @routeIs('admin.recipes.instructions', $recipe) active @endif">
-                   Preparación
-               </a>
+                    Preparación
+                </a>
+                <a href="{{route('admin.recipes.tips', $recipe)}}" class="list-group-item list-group-item-action @routeIs('admin.recipes.tips', $recipe) active @endif">
+                    Tips
+                </a>
             </div>
         </aside>
         <div class="col-10 card">

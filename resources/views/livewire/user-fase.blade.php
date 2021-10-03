@@ -136,7 +136,7 @@
                                                         @endswitch
 
                                                     </div>
-                                                    <img src="{{asset('img/'.$recipe->image->url)}}" alt="" class="rounded-2xl object-cover">
+                                                    <img src="@if (Storage::exists($recipe->image->url)) {{Storage::url($recipe->image->url)}} @else {{asset('img/'.$recipe->image->url)}} @endif" alt="" class="rounded-2xl object-cover">
                                                 </div>
                                                 <div class="mt-2 ml-4">
                                                     <p class="text-2xl mb-2 font-bold text-gray-900">{{$recipe->name}}</p>

@@ -19,7 +19,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="absolute w-full h-full bg-fixed bg-cover bg-center top-0 left-0 opacity-40" style="background-image: url({{asset('img/'.$recipe->image->url)}})"></div>
+                <div class="absolute w-full h-full bg-fixed bg-cover bg-center top-0 left-0 opacity-40" style="background-image: url(@if (Storage::exists($recipe->image->url)) {{Storage::url($recipe->image->url)}} @else {{asset('img/'.$recipe->image->url)}} @endif)"></div>
             </header>
             <aside class="w-10/12 mx-auto mt-10">
                 <a href="{{ url()->previous() }}" class="text-red-700 font-bold text-lg px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg"> <i class="fas fa-chevron-left mr-2"></i> Volver al menú</a>
@@ -30,8 +30,12 @@
                             <div class=" w-full xl:w-4/12">
                                 <figure class="rounded-t-xl overflow-hidden">
 
-                                    <img src="{{asset('img/'.$recipe->image->url)}}" alt="" class=" w-full object-cover">
-                                    {{--<img src="{{Storage::url($recipe->image->url)}}" alt="" class=" w-full object-cover">--}}
+                                    @if (Storage::exists($recipe->image->url))
+                                        <img src="{{Storage::url($recipe->image->url)}}" alt="" class=" w-full object-cover">
+                                    @else
+                                        <img src="{{asset('img/'.$recipe->image->url)}}" alt="" class=" w-full object-cover">
+                                    @endif
+
                                 </figure>
 
                                 <div class=" bg-gray-200 rounded-b-xl px-4 py-8">

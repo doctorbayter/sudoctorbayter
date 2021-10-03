@@ -16,7 +16,9 @@ class AdminRecipes extends Component
     public function render()
     {
         $recipes =  Recipe::where('name', 'LIKE', '%'. $this->search.'%')
-                        ->paginate(25);
+                            ->orderBy('id')
+                            ->paginate(25);
+
         return view('livewire.admin-recipes', compact('recipes'));
     }
 

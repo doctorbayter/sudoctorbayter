@@ -63,7 +63,7 @@
             <h2>Foto de la receta</h2>
             <div class="row">
                 <figure class="col-5">
-                    <img id="picture" src="{{Storage::url($recipe->image->url)}}" alt="" class="w-100">
+                    <img id="picture" src="@if (Storage::exists($recipe->image->url)) {{Storage::url($recipe->image->url)}} @else {{asset('img/'.$recipe->image->url)}} @endif" alt="" class="w-100">
                 </figure>
                 <div class="col-7">
                     <p> <b class="text-red"> <i class="fas fa-exclamation-triangle mr-1"></i> Importante:</b> La foto de la receta debe ser una imagen en formato <b>JPG</b> o <b>PNG</b> con medidas de <b>500px de ancho por 275px de alto</b>.</p>

@@ -41,7 +41,7 @@
                                 <div class=" bg-gray-200 rounded-b-xl px-4 py-8">
                                     <h3 class="text-3xl md:text-4xl text-gray-900 font-bold">Ingredientes</h3>
                                     <ul class="mt-6 text-sm text-gray-600">
-                                        @foreach ($recipe->ingredients->sortBy('created_at') as $ingredient)
+                                        @foreach ($recipe->ingredients->sortBy('id') as $ingredient)
                                             <li class="mb-6 leading-snug relative pl-6"> <i class="fas fa-check text-red-700 absolute left-0"></i>{{$ingredient->name}}</li>
                                         @endforeach
                                     </ul>

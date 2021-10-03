@@ -99,7 +99,7 @@ class RecipeController extends Controller
             'carbs' => 'required',
             'indice' => 'required',
             'time' => 'required',
-            'image' => 'image'
+            'image' => 'image|dimensions:max_width=500,max_height=275,min_width=500,min_height=275'
         ]);
 
         $recipe->update($request->all());

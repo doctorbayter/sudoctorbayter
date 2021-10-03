@@ -276,6 +276,7 @@ return [
         [
             'text'    => 'Método DKP',
             'icon'    => 'fas fa-fw fa-share',
+            'can'     =>  'Leer Fases',
             'submenu' => [
                 [
                     'text' => 'Fase 1',

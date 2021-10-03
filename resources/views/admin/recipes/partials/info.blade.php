@@ -67,7 +67,7 @@
                 </figure>
                 <div class="col-7">
                     <p> <b class="text-red"> <i class="fas fa-exclamation-triangle mr-1"></i> Importante:</b> La foto de la receta debe ser una imagen en formato <b>JPG</b> o <b>PNG</b> con medidas de <b>500px de ancho por 275px de alto</b>.</p>
-                    {!! Form::file('image', ['class'=> 'form-control-file border w-100 py-3 px-2' , 'id'=>'image', 'accept'=> 'image/*' ]) !!}
+                    {!! Form::file('image', ['id'=>'image', 'accept'=> 'image/*', 'class'=> 'form-control-file border  w-100 py-3 px-2'. ($errors->has('image') ? ' border-danger' : '')  ]) !!}
                     @error('image')
                         <div class=""> <small class="text-danger font-weight-bold">{{$message}}</small></div>
                     @enderror

@@ -280,7 +280,7 @@
                                     <form action="{{config('services.payu.base_uri')}}" method="post">
                                         @csrf
 
-                                        <x-payu-form :plan="$plan" :dataSend="$data_send"/>
+                                        <x-payu-form :plan="$plan" :dataSend="$data_send" :flashSale="null" />
 
                                         <button type="submit"
                                         class=" bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Ya puedes continuar tu compra con PayU</button>
@@ -291,7 +291,7 @@
 
                                     <form action="{{config('services.paypal.base_uri')}}" method="post">
                                         @csrf
-                                        <x-paypal-form :plan="$plan" :dataSend="$data_send"/>
+                                        <x-paypal-form :plan="$plan" :dataSend="$data_send" :flashSale="null"  />
                                         <button type="submit"
                                         class="bg-blue-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-blue-800  text-lg w-full">Ya puedes continuar tu compra con PayPal</button>
                                     </form>

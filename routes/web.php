@@ -70,8 +70,9 @@ Route::get('/selecto', function () {
 })->name('selecto');
 
 Route::get('/67', function () {
-    $plan = Plan::find(1);
-    return redirect()->route('payment.pay', ['plan'=>$plan]);
+    return view('no-disponible');
+    //$plan = Plan::find(1);
+    //return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
 Route::get('/reto', function () {

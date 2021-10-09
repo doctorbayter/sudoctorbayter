@@ -59,6 +59,8 @@ Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->
 
 //Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
 
+
+
 Route::get('reto/{reto}/register', function () {
     return view('no-disponible');
 });
@@ -68,6 +70,10 @@ Route::get('/selecto', function () {
     //return redirect()->route('payment.pay', ['plan'=>$plan]);
     return view('no-disponible');
 })->name('selecto');
+
+Route::get('/10', function () {
+    return redirect('https://biz.payulatam.com/L0bdc052728EC33');
+});
 
 Route::get('/67', function () {
     return view('no-disponible');

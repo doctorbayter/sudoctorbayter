@@ -11,11 +11,11 @@
                     <h1 class="text-3xl md:text-5xl font-bold leading-none pt-2">Desinflama tu cuerpo</h1>
                     <h2 class="text-base md:text-2xl">En tan solo 4 días</h2>
                 </header>
-                <p class="my-4 text-sm md:text-base">¿Sabías que tu cuerpo puede retener hasta <b>6 litros de líquido</b> adicionales en tu cuerpo que se traduce en más peso para ti? En este reto te diré que hacer y cómo decirle adiós a esa retención de líquidos que te está enfermando.</p>
+                <p class="my-4 text-sm md:text-base">¿Sabías que tu cuerpo puede retener hasta <b>6 litros de líquido</b> adicionales en tu cuerpo que se traduce en más peso para ti? En este reto te diré que hacer y cómo decirle adiós a esa retención de líquidos que son los que te están enfermando.</p>
                 <div class="relative">
                     @if ($error_message)
                         <div class="px-4 py-6 bg-yellow-100 rounded-xl border border-yellow-400 text-sm">
-                            <h3 class="text-lg font-bold mb-2"><i class="fas fa-exclamation-triangle text-red-400  mr-1"></i> Opps! no hemos logrado completar la inscripción</h3>
+                            <h3 class="text-lg font-bold mb-2"><i class="fas fa-exclamation-triangle text-red-400  mr-1"></i>Opps! no hemos logrado completar la inscripción</h3>
                             <p>{{$name}}, no hemos podido registrarte al taller online por que tu correo <b>{{$email}}</b> ya se encuentra inscrito.</p>
                             <h3 class="mt-4 text-lg font-bold">¿Qué debes hacer?</h3>
                             <p>Revisar tu correo electrónico, ahí encontrarás toda la información para que puedas acceder al taller.</p>

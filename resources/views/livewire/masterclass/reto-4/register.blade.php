@@ -11,7 +11,7 @@
                     <h1 class="text-3xl md:text-5xl font-bold leading-none pt-2">Desinflama tu cuerpo</h1>
                     <h2 class="text-base md:text-2xl">En tan solo 4 días</h2>
                 </header>
-                <p class="my-4 text-sm md:text-base">¿Sabías que tu cuerpo puede almacenar hasta <b>6 kilos de líquido</b> que se traduce en más peso para ti? En este reto te diré que hacer y cómo decirle adiós a esos kilos de más que te están enfermando.</p>
+                <p class="my-4 text-sm md:text-base">¿Sabías que tu cuerpo puede almacenar hasta <b>6 kilos de líquido</b> adicionales que se traduce en más peso para ti? En este reto te diré que hacer y cómo decirle adiós a esa retención de liquidos que te está enfermando.</p>
                 <div class="relative">
                     @if ($error_message)
                         <div class="px-4 py-6 bg-yellow-100 rounded-xl border border-yellow-400 text-sm">

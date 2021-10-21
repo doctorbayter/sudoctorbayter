@@ -12,7 +12,7 @@ class Masterclass extends Component
 
     protected $rules = [
         'name' => 'required',
-        'email' => 'required|email',
+        'email' => 'required',
         'terms' => 'accepted'
     ];
 

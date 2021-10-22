@@ -307,21 +307,43 @@
             <header class="py-4">
                 <h2 class="text-2xl md:text-5xl text-center mb-4 font-bold text-gray-50">Nuevos videos todas las semanas</h2>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-5 px-6 md:px-0">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 px-6 md:px-0">
                 <div>
-                    <iframe class="w-full h-48 md:h-auto" src="https://www.youtube-nocookie.com/embed/hDRuAWkjorQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="latestVideoEmbed w-full h-48 md:h-60" vnum='0' cid="UCHDctAK-3r_Rjg7j8ABuYeg" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+
                 </div>
                 <div>
-                    <iframe class="w-full h-48 md:h-auto" src="https://www.youtube-nocookie.com/embed/fbkjaG7uhCw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="latestVideoEmbed w-full h-48 md:h-60" vnum='1' cid="UCHDctAK-3r_Rjg7j8ABuYeg" width="600" height="340" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div>
-                    <iframe class="w-full h-48 md:h-auto" src="https://www.youtube-nocookie.com/embed/DBylYSPUeNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="latestVideoEmbed w-full h-48 md:h-60" vnum='2' cid="UCHDctAK-3r_Rjg7j8ABuYeg" width="600" height="340" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div>
-                    <iframe class="w-full h-48 md:h-auto" src="https://www.youtube-nocookie.com/embed/WgDgkNf8nuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+
             </div>
         </div>
     </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+
+        var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+
+        function loadVideo(iframe) {
+        $.getJSON(reqURL + iframe.getAttribute('cid'),
+            function(data) {
+            var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+            console.log(videoNumber);
+            var link = data.items[videoNumber].link;
+            id = link.substr(link.indexOf("=") + 1);
+            iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1");
+            }
+        );
+        }
+
+        var iframes = document.getElementsByClassName('latestVideoEmbed');
+        for (var i = 0, len = iframes.length; i < len; i++) {
+        loadVideo(iframes[i]);
+        }
+        </script>
 
 </x-app-layout>

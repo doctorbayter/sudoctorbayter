@@ -136,6 +136,131 @@ Route::get('x/sql/', function(){
 
 Route::get('x/query', function(){
 
+
+    $price = Price::create([
+        "name" => "9.99 US$",
+        "value" => 9.99
+    ]);
+
+    $plan = Plan::create([
+        "name" => "5 Desayunos sin huevo",
+        "slug" => "5-desayunos-sin-huevo",
+        "price_id" => $price->id
+    ]);
+
+
+    $fase = Fase::create([
+        'name' => '5 Desayunos sin huevo',
+        'sub_name' => '5 Desayunos <span class="text-red-700">Keto</span>',
+        'descripcion' => '5 opciones diferentes de desayunos',
+        'slug' => '5-desayunos-sin-huevo',
+    ]);
+
+    $day = Day::create([
+        'day' => 1,
+        'fase_id' => $fase->id,
+    ]);
+
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (78, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+
+
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (78, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+
+    $recipe = Recipe::create([
+        'name' => 'Berebayteer',
+        'slug' => 'berebayteer',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 15,
+        'type' => 1,
+    ]);
+
+    Video::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/638688272" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => $recipe->id,
+        'videoable_type' => 'App\Models\Recipe',
+    ]);
+
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (275, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $recipe = Recipe::create([
+        'name' => 'Pimbayter',
+        'slug' => 'pimbayter',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 15,
+        'type' => 1,
+    ]);
+
+    Video::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/638689272" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => $recipe->id,
+        'videoable_type' => 'App\Models\Recipe',
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (276, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $recipe = Recipe::create([
+        'name' => 'Pizza con lo que hay',
+        'slug' => 'pizza-con-lo-que-hay',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 15,
+        'type' => 1,
+    ]);
+
+    Video::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/638690523" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => $recipe->id,
+        'videoable_type' => 'App\Models\Recipe',
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (277, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $recipe = Recipe::create([
+        'name' => 'Portobellisimo',
+        'slug' => 'portobellisimo',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 15,
+        'type' => 1,
+    ]);
+
+    Video::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/638691718" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => $recipe->id,
+        'videoable_type' => 'App\Models\Recipe',
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (278, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $recipe = Recipe::create([
+        'name' => 'Picañones',
+        'slug' => 'picanones',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 15,
+        'type' => 1,
+    ]);
+
+    Video::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/638693117" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => $recipe->id,
+        'videoable_type' => 'App\Models\Recipe',
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (279, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+
     /*
     $users = User::where('email','!=','null')->skip(4000)->take(1000)->get();
     $fase = Fase::find(4);
@@ -2326,7 +2451,6 @@ Route::get('x/query', function(){
     (274, '105', $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
     // Fin Receta
     */
-
 
 });
 

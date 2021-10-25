@@ -174,6 +174,7 @@ class PaymentController extends Controller
         $fases_premium              = Fase::whereIn('id', array(1, 2, 3, 4))->get();
         $fase_one                   = Fase::find(1);
         $fase_week                  = Fase::find(5);
+        $five_recipes                  = Fase::find(6);
 
         if(!$is_already_subscribed){
             switch ($plan->id) {
@@ -267,6 +268,11 @@ class PaymentController extends Controller
                     break;
                 case 12:
                     $this->addWhatsApp($user->id, 180);
+                    break;
+                case 13:
+                    if(!$five_recipes->clients->contains($user->id)){
+                        $five_recipes->clients()->attach($user->id);
+                    }
                     break;
             }
         }

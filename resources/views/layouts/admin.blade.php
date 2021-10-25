@@ -23,6 +23,9 @@
                 <a href="{{route('admin.recipes.tips', $recipe)}}" class="list-group-item list-group-item-action @routeIs('admin.recipes.tips', $recipe) active @endif">
                     Tips
                 </a>
+                <a href="{{route('admin.recipes.video', $recipe)}}" class="list-group-item list-group-item-action @routeIs('admin.recipes.video', $recipe) active @endif">
+                    Video
+                </a>
             </div>
         </aside>
         <div class="col-10 card">

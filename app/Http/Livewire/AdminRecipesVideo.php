@@ -43,7 +43,7 @@ class AdminRecipesVideo extends Component
             'video_name' => 'required'
         ]);
 
-        //<iframe src="https://player.vimeo.com/video/638688272?h=b6cc59c9af" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+        //<iframe src="https://player.vimeo.com/video/638693117?h=d5c97f5b2c" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
         Video::create([
             'iframe' => $this->video_name,
             'videoable_id' => $this->recipe->id,

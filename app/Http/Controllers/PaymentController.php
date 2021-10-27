@@ -174,7 +174,7 @@ class PaymentController extends Controller
         $fases_premium              = Fase::whereIn('id', array(1, 2, 3, 4))->get();
         $fase_one                   = Fase::find(1);
         $fase_week                  = Fase::find(5);
-        $five_recipes                  = Fase::find(6);
+        $five_recipes               = Fase::find(7);
 
         if(!$is_already_subscribed){
             switch ($plan->id) {

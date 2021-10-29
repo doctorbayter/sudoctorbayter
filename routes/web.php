@@ -81,10 +81,10 @@ Route::get('/67', function () {
     //return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
-Route::get('/reto', function () {
-    //return redirect()->route('reto.register', ['reto'=>'7-dias']);
-    return view('no-disponible');
-})->name('reto');
+Route::get('/reto4', function () {
+    return redirect()->route('masterclass.register', ['masterclass'=>'reto-4']);
+    //return view('no-disponible');
+})->name('reto4');
 
 
 Route::get('/110', function () {

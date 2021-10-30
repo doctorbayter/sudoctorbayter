@@ -231,8 +231,15 @@ Route::get('x/whatsapp/', function(){
 
 Route::get('x/users/{skip?}', function($skip = 0){
 
-    $users = User::where('email','!=','null')->skip($skip)->take(6000)->get();
-    $i=1;
+    $users = User::where('email','!=','null')->skip($skip)->take(3500)->get();
+
+    if($skip == 0){
+        $i=1;
+    }else{
+        $i = $skip;
+    }
+
+
     foreach($users as $user){
 
         if ($user->subscription) {

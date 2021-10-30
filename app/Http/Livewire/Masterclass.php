@@ -12,7 +12,7 @@ class Masterclass extends Component
 
     protected $rules = [
         'name' => 'required',
-        'email' => 'required',
+        'email' => 'required|email',
         'terms' => 'accepted'
     ];
 
@@ -59,9 +59,9 @@ class Masterclass extends Component
         }
     }
 
-    public function updated($propertyName) {
+    /*public function updated($propertyName) {
         $this->validateOnly($propertyName);
-    }
+    }*/
 
     public function render() {
         switch ($this->masterclass) {

@@ -232,12 +232,13 @@ Route::get('x/whatsapp/', function(){
 Route::get('x/users/', function(){
 
     $users = User::where('email','!=','null')->skip(0)->take(6000)->get();
+    $i=1;
     foreach($users as $user){
 
         if ($user->subscription) {
             echo "---------<br>";
 
-            echo "User id ". $user->id."<br/>";
+            echo $i++ ." User id ". $user->id."<br/>";
             echo $user->name." - ".$user->email."<br/>";
             foreach ($user->subscriptions as $subscription) {
                 if($subscription){

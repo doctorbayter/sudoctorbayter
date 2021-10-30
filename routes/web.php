@@ -139,38 +139,6 @@ Route::get('x/sql/', function(){
 
 Route::get('x/query', function(){
 
-
-    $users = User::where('email','!=','null')->skip(0)->take(6000)->get();
-
-    foreach($users as $user){
-
-        if ($user->subscription) {
-            echo "---------<br>";
-
-            echo "User id ". $user->id." ".$user->email."<br/>";
-            foreach ($user->subscriptions as $subscription) {
-                if($subscription){
-                    if($subscription->plan->id == 4 || $subscription->plan->id == 12 || $subscription->plan->id == 13 ){
-
-                        if(\Carbon\Carbon::createFromTimeStamp(strtotime($subscription->expires_at))->gt(\Carbon\Carbon::now())){
-                            $whatsapp = "Expira en ".\Carbon\Carbon::createFromTimeStamp(strtotime($subscription->expires_at))->diffForHumans();
-                        }else{
-                            $whatsapp = "Expiró";
-                        }
-
-                        echo "Plan id ".$subscription->plan->id." ".$subscription->plan->name." ".$whatsapp."<br/>";
-
-                    }else{
-
-                        echo "Plan id ".$subscription->plan->id." ".$subscription->plan->name."<br/>";
-                    }
-                }
-            }
-            echo "---------<br>";
-            echo "*********<br>";
-        }
-    }
-
     /******
     $plan = Plan::create([
         "name" => "5 Desayunos sin huevo",
@@ -259,3 +227,40 @@ Route::get('x/whatsapp/', function(){
 
     dd($response);
 });
+
+
+Route::get('x/users/', function(){
+
+    $users = User::where('email','!=','null')->skip(0)->take(6000)->get();
+    foreach($users as $user){
+
+        if ($user->subscription) {
+            echo "---------<br>";
+
+            echo "User id ". $user->id."<br/>";
+            echo $user->name." - ".$user->email."<br/>";
+            foreach ($user->subscriptions as $subscription) {
+                if($subscription){
+                    if($subscription->plan->id == 4 || $subscription->plan->id == 12 || $subscription->plan->id == 13 ){
+
+                        if(\Carbon\Carbon::createFromTimeStamp(strtotime($subscription->expires_at))->gt(\Carbon\Carbon::now())){
+                            $whatsapp = "Expira en ".\Carbon\Carbon::createFromTimeStamp(strtotime($subscription->expires_at))->diffForHumans();
+                        }else{
+                            $whatsapp = "Expiró";
+                        }
+
+                        echo "Plan id ".$subscription->plan->id." ".$subscription->plan->name." ".$whatsapp."<br/>";
+
+                    }else{
+
+                        echo "Plan id ".$subscription->plan->id." ".$subscription->plan->name."<br/>";
+                    }
+                }
+            }
+            echo "---------<br>";
+            echo "*********<br>";
+        }
+    }
+
+});
+

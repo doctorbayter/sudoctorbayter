@@ -231,7 +231,7 @@ Route::get('x/whatsapp/', function(){
 
 Route::get('x/users/{skip?}', function($skip = 0){
 
-    $users = User::where('email','!=','null')->skip($skip)->take(2000)->get();
+    $users = User::where('email','!=','null')->skip($skip)->take(1500)->get();
 
     if($skip == 0){
         $i=1;

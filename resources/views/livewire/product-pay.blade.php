@@ -145,7 +145,8 @@
                     <div class="flex items-center flex-wrap md:flex-no-wrap py-8 bg-gray-50 pl-4 rounded-xl mt-4">
                         <h2 class="text-gray-700 text-3xl font-bold w-full md:w-auto">Total a pagar:</h2>
                         <div class="md:ml-4">
-                            @if ($plan->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($plan->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                            {{-- @if ($plan->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($plan->discount->expires_at))->gt(\Carbon\Carbon::now()))--}}
+                            @if ($flash_sale)
                                 <div class="ml-auto flex items-center">
                                     <p class="text-4xl md:text-2xl font-bold text-accent-400">{{round($flash_sale)}} US$</p>
                                     <span class=" text-base ml-2 line-through text-gray-500">{{$plan->price->name}}</span>

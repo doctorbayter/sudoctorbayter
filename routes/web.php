@@ -57,6 +57,12 @@ Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('mast
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
 
+
+Route::get('privado', function () {
+    $plan = Plan::find(14);
+    return view('en-privado', ['plan'=>$plan]);
+});
+
 //Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
 
 
@@ -139,13 +145,19 @@ Route::get('x/sql/', function(){
 
 Route::get('x/query', function(){
 
-    /******
+
+    $price = Price::create([
+        'name' => '499 US$',
+        'value' => 499
+    ]);
+
     $plan = Plan::create([
-        "name" => "5 Desayunos sin huevo",
-        "slug" => "5-desayunos-sin-huevo",
+        "name" => "En Privado con tu Doctor Bayter",
+        "slug" => "en-privado",
         "price_id" => $price->id
     ]);
 
+    /****
     $fase = Fase::create([
         'name' => '5 Desayunos sin huevo',
         'sub_name' => '5 Desayunos <span class="text-red-700">Keto</span>',
@@ -197,8 +209,8 @@ Route::get('x/query', function(){
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     (279, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
-    ******/
 
+    **/
 });
 
 Route::get('x/whatsapp/', function(){
@@ -227,7 +239,6 @@ Route::get('x/whatsapp/', function(){
 
     dd($response);
 });
-
 
 Route::get('x/users/{skip?}', function($skip = 0){
 

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('{plan}/checkout', PlanCheckout::class )->withoutMiddleware(['auth'])->name('checkout');
 
-Route::get('{plan}/pay', ProductPay::class )->withoutMiddleware(['auth'])->name('pay');
+Route::get('{plan}/pay/{sale?}', ProductPay::class )->withoutMiddleware(['auth'])->name('pay');
 
 Route::get('{plan}/pay/paypal', [PaymentController::class, 'paypal'] )->middleware(['auth' , 'verified'])->name('paypal');
 Route::get('{plan}/pay/paypal/response', [PaymentController::class, 'responsePaypal'] )->middleware(['auth' , 'verified'])->name('paypal.response');

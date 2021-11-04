@@ -11,6 +11,7 @@ use Livewire\Component;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Mail;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class ProductPay extends Component
 {
@@ -37,10 +38,16 @@ class ProductPay extends Component
         $this->validateOnly($propertyName);
     }
 
-    public function mount(Plan $plan){
+    public function mount(Plan $plan, $sale = null){
+
+        if($sale == "sale" || Auth::user() ){
+            $this->flash_sale = "399";
+        }else{
+            $this->flash_sale = false;
+        }
 
         $this->plan = $plan;
-        $this->flash_sale = "67";
+
     }
 
     public function render() {

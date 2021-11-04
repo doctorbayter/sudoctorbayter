@@ -120,7 +120,7 @@ class ProductPay extends Component
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
 
 
-            if($this->plan->id == 1){
+            if($this->plan->id == 14){
                 if($previous_subscribed){
                     $previous_subscribed->delete();
                 }
@@ -138,9 +138,9 @@ class ProductPay extends Component
 
                 if($whatsapp_subscribed){
                     if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
+                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(60)]);
                     }else{
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
+                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(60)]);
                     }
                     $whatsapp_subscribed->save();
                 }else{

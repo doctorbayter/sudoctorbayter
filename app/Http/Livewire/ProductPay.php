@@ -40,11 +40,7 @@ class ProductPay extends Component
 
     public function mount(Plan $plan, $sale = null){
 
-        if($sale == "sale" || Auth::user() ){
-            $this->flash_sale = "399";
-        }else{
-            $this->flash_sale = false;
-        }
+        $this->flash_sale = false;
 
         $this->plan = $plan;
 

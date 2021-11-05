@@ -146,16 +146,14 @@ Route::get('x/sql/', function(){
 Route::get('x/query', function(){
 
 
-    $price = Price::create([
-        'name' => '499 US$',
-        'value' => 499
-    ]);
+    $price = Price::find(14);
+    $price->name =  "247 US$";
+    $price->value = 499;
+    $price->save();
 
-    $plan = Plan::create([
-        "name" => "En Privado con tu Doctor Bayter",
-        "slug" => "en-privado",
-        "price_id" => $price->id
-    ]);
+    $plan = Plan::find(14);
+    $plan->price_id = $price->id;
+    $plan->save();
 
     /****
     $fase = Fase::create([

@@ -146,7 +146,7 @@ Route::get('x/sql/', function(){
 Route::get('x/query', function(){
 
 
-    $price = Price::find(14);
+    $price = Price::find(16);
     $price->name =  "247 US$";
     $price->value = 499;
     $price->save();

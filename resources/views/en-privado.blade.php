@@ -23,7 +23,7 @@
             <div class="mt-8 md:mt-0 w-6/12 ">
                 <img src="{{asset('img/billboards/banner_facts.png')}}" alt="" class="mx-auto">
                 <div class="mt-4">
-                    <a href="{{route('payment.pay', $plan)}}" class="bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Adquiere tu cupo $499 USD</a>
+                    <a href="{{route('payment.pay', $plan)}}" class="bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Adquiere tu cupo $247 USD</a>
                 </div>
             </div>
             <div class="text-gray-50  w-8/12  ml-4 mr-4 md:mr-0 md:ml-10">
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="mt-4">
-                <a href="{{route('payment.pay', $plan)}}" class="bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Adquiere tu cupo $499 USD</a>
+                <a href="{{route('payment.pay', $plan)}}" class="bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Adquiere tu cupo $247 USD</a>
             </div>
         </div>
     </section>

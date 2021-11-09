@@ -408,7 +408,7 @@
     <section class="bg-gray-100">
         <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
             <header>
-                <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl max-w-2xl mx-auto">¿No estás seguro si Dieta Keto es para ti?</h2>
+                <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl max-w-2xl mx-auto">¿No estás seguro si el método DKP (Dieta Keto Perfecta) de tu dr. Bayter es para ti?</h2>
                 <p class="text-center max-w-lg mx-auto mt-4 text-lg font-semibold">Agenda una llamada gratuita con nosotro equipo y obtén respuestas a tus preguntas</p>
             </header>
             <div>

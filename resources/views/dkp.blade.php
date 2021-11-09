@@ -412,16 +412,14 @@
                     es para ti?</h2>
                 <p class="text-center max-w-lg mx-auto mt-4 text-lg font-semibold">Agenda una llamada gratuita con nosotro equipo y obtén respuestas a tus preguntas</p>
             </header>
-
             <div>
 <!-- Principio del widget integrado de Calendly -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/doctorbayter/llamada?hide_gdpr_banner=1" style="min-width:320px;height:630px;"></div>
+<div class="calendly-inline-widget" data-url="https://calendly.com/doctorbayter/llamada?hide_gdpr_banner=1" style="min-width:300px;height:630px;"></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <!-- Final del widget integrado de Calendly -->
             </div>
         </div>
     </section>
-
 
     <section class="bg-white" id="go">
         @auth

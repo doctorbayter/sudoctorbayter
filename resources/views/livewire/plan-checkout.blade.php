@@ -125,7 +125,7 @@
                                     <div class="text-red-700  font-bold text-sx lg:text-xl leading-tight pr-6">
                                         <h3 class="text-4xl lg:text-5xl font-extrabold uppercase">¡Ahorra más!</h3>
                                         <p class="">Aprovecha esta oportunidad y</p>
-                                        <p>adquiere el Método DKP completo</p>
+                                        <p>adquiere el Método DKP completo a un precio único.</p>
                                     </div>
                                     <div class="w-36">
                                         <img src="{{asset('/img/gfx/arrow_down.png')}}" alt="" class="w-full">
@@ -137,8 +137,8 @@
                                     <img src="{{asset('/img/billboards/banner_dkp.jpg')}}" alt="Método DKP">
                                 </figure>
                                 <div class="w-full lg:w-7/12">
-                                    <h3 class="text-xl font-bold">Adquiere el <b class="text-red-700">Método DKP</b> 4 fases hoy por solo <span class="text-red-700">99 US$</span></h3>
-                                    <p class="text-sm text-gray-800  my-2">Adquiere hoy el Plan Premium del Método DKP y obtendrás</p>
+                                    <h3 class="text-xl font-bold">Aprovecha hoy por solo <span class="text-red-700">$52USD</span> más puedes adquirir todo <b class="text-red-700">Método DKP</b> 4 fases. <br> <span class=" text-sm text-gray-400 line-through"> Precio normal ($147USD)</span> </h3>
+                                    <p class="text-sm text-gray-800  my-2">Con el Plan Premium del Método DKP obtendrás</p>
                                     <ul class="text-sm">
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso inmediato a las 4 fases</li>
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 30 días al chat</li>

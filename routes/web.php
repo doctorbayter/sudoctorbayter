@@ -59,6 +59,9 @@ Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->
 
 
 Route::get('privado', function () {
+
+    return view('no-disponible');
+
     $plan = Plan::find(14);
     return view('en-privado', ['plan'=>$plan]);
 });

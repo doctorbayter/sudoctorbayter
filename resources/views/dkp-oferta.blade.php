@@ -95,6 +95,8 @@
         </div>
     </section>
 
+
+
     <section class="bg-white" id="go">
         @auth
             @can('enrolled', auth()->user()->subscription)
@@ -396,6 +398,23 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-100">
+        <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
+            <header>
+                <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl max-w-2xl mx-auto">¿No estás seguro de si este método
+                    es para ti?</h2>
+                <p class="text-center max-w-lg mx-auto mt-4 text-lg font-semibold">Agenda una llamada gratuita con nosotro equipo y obtén respuestas a tus preguntas</p>
+            </header>
+
+            <div>
+<!-- Principio del widget integrado de Calendly -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/doctorbayter/llamada?hide_gdpr_banner=1" style="min-width:320px;height:630px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Final del widget integrado de Calendly -->
             </div>
         </div>
     </section>

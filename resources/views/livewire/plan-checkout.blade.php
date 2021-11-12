@@ -142,7 +142,7 @@
                                     <ul class="text-sm">
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso inmediato a las 4 fases</li>
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 30 días al chat</li>
-                                        <li> <i class="fas fa-check-circle text-red-700 mr-2 hidden"></i>Curso cómo leer las etiquetas</li>
+                                        <li class="hidden"> <i class="fas fa-check-circle text-red-700 mr-2 "></i>Curso cómo leer las etiquetas</li>
                                     </ul>
 
                                     <p class="mt-1 text-base font-semibold">Precio normal <span class=" line-through">299 US$</span></p>

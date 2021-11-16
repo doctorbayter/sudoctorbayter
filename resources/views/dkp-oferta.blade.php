@@ -393,7 +393,7 @@
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container7" x-bind:style="selected == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg">Los beneficios de una dieta cetogénica han sido bien documentados para quienes viven con diabetes tipo 2. La dieta no solo ayuda a controlar el azúcar en la sangre, sino que también promueve la pérdida de peso. Muchas personas con diabetes que siguen la dieta keto han descubierto que reducen significativamente o incluso descontinúan por completo el uso de insulina y otros medicamentos para la diabetes. Una dieta keto también puede reducir el colesterol y la presión arterial.</p>
+                                <p class="text-base md:text-lg">Los beneficios de una dieta cetogénica han sido bien documentados para quienes viven con diabetes tipo 2. La dieta no solo ayuda a controlar el azúcar en la sangre, sino que también promueve la pérdida de peso. Muchas personas con diabetes que siguen la dieta keto han descubierto que reducen significativamente o incluso descontinúan por completo el uso de insulina y otros medicamentos para la diabetes. Una dieta keto también puede reducir el colesterol y la presión arterial. </p>
                             </div>
                         </div>
                     </li>

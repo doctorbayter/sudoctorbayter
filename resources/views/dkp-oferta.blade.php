@@ -407,7 +407,7 @@
             <header>
                 <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl max-w-2xl mx-auto">¿No estás seguro de si este método
                     es para ti?</h2>
-                <p class="text-center max-w-lg mx-auto mt-4 text-lg font-semibold">Agenda una llamada gratuita con nosotro equipo y obtén respuestas a tus preguntas</p>
+                <p class="text-center max-w-lg mx-auto mt-4 text-lg font-semibold">Agenda una llamada gratuita con nuestro equipo y obtén respuestas a tus preguntas</p>
             </header>
 
             <div>

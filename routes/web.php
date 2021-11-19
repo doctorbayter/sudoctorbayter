@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Livewire\CursoGratis;
 use App\Http\Livewire\Masterclass;
 use App\Http\Livewire\Reto;
 use App\Http\Livewire\UserRecipe;
@@ -56,6 +57,10 @@ Route::get('/recipe/{recipe}', UserRecipe::class)->name('recipe');
 Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('masterclass.register');
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
+
+Route::get('curso-keto', CursoGratis::class)->name('cursos.keto.register');
+Route::get('curso-keto/go',[CursoGratis::class,'go'])->name('cursos.keto.go');
+Route::get('curso-keto/thanks', [CursoGratis::class,'thanks'])->name('cursos.keto.gracias');
 
 
 Route::get('privado', function () {

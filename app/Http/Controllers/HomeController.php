@@ -76,7 +76,7 @@ class HomeController extends Controller
     }
     public function cita()
     {
-        $planesWhatsapp = Plan::whereIn('id', [5,6])->get();
+        $planesWhatsapp = Plan::whereIn('id', [6])->get();
         return  view('cita', compact('planesWhatsapp'));
     }
 }

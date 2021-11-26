@@ -98,6 +98,16 @@ Route::get('/67', function () {
     //return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
+
+Route::get('/bf', function () {
+    $plan = Plan::find(19);
+    $plan2 = Plan::find(20);
+    return view('black-friday', ['plan'=>$plan, 'plan2'=>$plan2]);
+})->name('reto.blackFriday');
+
+
+
+
 Route::get('/reto4', function () {
     return redirect()->route('masterclass.register', ['masterclass'=>'reto-4']);
     //return view('no-disponible');
@@ -156,7 +166,7 @@ Route::get('x/query', function(){
 
     $dis = Discount::create([
         'name' => 'BLACK FRIDAY',
-        'type' => 2,
+        'type' => 1,
         'value' => 67,
         'expires_at' =>  '2099-12-31 00:00:00',
         'user_id' => 1,
@@ -171,7 +181,7 @@ Route::get('x/query', function(){
 
     $dis = Discount::create([
         'name' => 'BLACK FRIDAY',
-        'type' => 2,
+        'type' => 1,
         'value' => 47,
         'expires_at' =>  '2099-12-31 00:00:00',
         'user_id' => 1,

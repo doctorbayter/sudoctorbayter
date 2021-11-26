@@ -8,7 +8,7 @@
                     <div class="w-10/12 mx-auto py-10">
                         <header>
                             <p>Tu plan actual es:</p>
-                            <h2 class="text-4xl font-bold text-gray-900">{{auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10])->first()->plan->name}}</h2>
+                            <h2 class="text-4xl font-bold text-gray-900">{{auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first()->plan->name}}</h2>
                         </header>
                         <section class="">
 

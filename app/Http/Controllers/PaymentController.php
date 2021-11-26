@@ -274,6 +274,46 @@ class PaymentController extends Controller
                         $five_recipes->clients()->attach($user->id);
                     }
                     break;
+                case 15:
+                    if($previous_plan_premium){
+                        $previous_plan_premium->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+
+                    if(!$five_recipes->clients->contains($user->id)){
+                        $five_recipes->clients()->attach($user->id);
+                    }
+
+                    if(!$fase_week->clients->contains($user->id)){
+                        $fase_week->clients()->attach($user->id);
+                    }
+
+                    break;
+                case 16:
+                    if($subscribed_plan_7){
+                        $subscribed_plan_7->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    if(!$five_recipes->clients->contains($user->id)){
+                        $five_recipes->clients()->attach($user->id);
+                    }
+
+                    if(!$fase_week->clients->contains($user->id)){
+                        $fase_week->clients()->attach($user->id);
+                    }
+                    break;
             }
         }
         if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 || $plan->id != 7 || $plan->id != 11 || $plan->id != 12 ){

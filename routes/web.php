@@ -153,9 +153,41 @@ Route::get('x/sql/', function(){
 
 Route::get('x/query', function(){
 
-    $plan = Plan::find(5);
-    $plan->price_id = 16;
-    $plan->save();
+
+    $dis = Discount::create([
+        'name' => 'BLACK FRIDAY',
+        'type' => 2,
+        'value' => 67,
+        'expires_at' =>  '2099-12-31 00:00:00',
+        'user_id' => 1,
+    ]);
+
+    Plan::create([
+        'name' => 'Black Friday 4 Fases - Método DKP',
+        'slug' => 'black-friday-4-fases',
+        'price_id' => 9,
+        'discount_id' => $dis->id
+    ]);
+
+    $dis = Discount::create([
+        'name' => 'BLACK FRIDAY',
+        'type' => 2,
+        'value' => 47,
+        'expires_at' =>  '2099-12-31 00:00:00',
+        'user_id' => 1,
+    ]);
+
+    Plan::create([
+        'name' => 'Black Friday Fase 1 - Método DKP',
+        'slug' => 'black-friday-fase-1',
+        'price_id' => 4,
+        'discount_id' =>  $dis->id
+    ]);
+
+
+    // $plan = Plan::find(5);
+    // $plan->price_id = 16;
+    // $plan->save();
 
     /****
     $fase = Fase::create([

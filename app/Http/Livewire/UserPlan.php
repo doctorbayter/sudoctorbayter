@@ -19,7 +19,7 @@ class UserPlan extends Component
             $this->user_fases = auth()->user()->fases->sortBy('id');
         }
 
-        $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10])->first();
+        $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first();
         $planPremium = Plan::find(1);
         $planWhatsapp = Plan::find(4);
         $whatsapp = auth()->user()->subscriptions->where('plan_id', 4)->first();

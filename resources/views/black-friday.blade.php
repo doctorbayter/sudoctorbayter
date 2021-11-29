@@ -6,7 +6,7 @@
                     <h1 class="text-gray-50 leading-none font-black text-2xl md:text-6xl">CYBER <span class="text-red-700">LUNES</span></h1>
                     <p class="text-gray-50 mt-6 mb-4 md:text-xl">Llego el momento de tomar acción y dar el primer paso hacia tu nuevo estilo de vida lleno de mucha energía, más salud y sobre todo menos peso. <b class="block mt-2">Flash Sale por 24 horas en los planes y cursos del método DKP</b></p>
 
-                    <img src="http://gen.sendtric.com/countdown/v4geearc9e" style="display: block;" />
+                    <img src="http://gen.sendtric.com/countdown/uyi7mp0o14" style="display: block;" />
 
                 </header>
             </div>

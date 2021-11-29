@@ -100,11 +100,18 @@ Route::get('/67', function () {
 
 
 Route::get('/bf', function () {
-    return view('no-disponible');
+    //return view('no-disponible');
     $plan = Plan::find(15);
     $plan2 = Plan::find(16);
     return view('black-friday', ['plan'=>$plan, 'plan2'=>$plan2]);
 })->name('reto.blackFriday');
+
+Route::get('/lunes', function () {
+    //return view('no-disponible');
+    $plan = Plan::find(15);
+    $plan2 = Plan::find(16);
+    return view('black-friday', ['plan'=>$plan, 'plan2'=>$plan2]);
+})->name('reto.ciberLunes');
 
 
 

@@ -24,7 +24,7 @@ class Reto extends Component
                 $this->list_id = 15;
             break;
             case 'navidad':
-                $this->plan = Plan::find(21);
+                $this->plan = Plan::find(17);
                 $this->list_id = 15;
                 break;
             default:

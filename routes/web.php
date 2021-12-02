@@ -414,7 +414,7 @@ Route::get('x/users/reto/send/{skip?}', function($skip = 0){
 
 Route::get('x/users/reto/list/{skip?}', function($skip = 0){
 
-    $users = User::where('email','!=','null')->skip($skip)->get();
+    $users = User::where('email','!=','null')->skip($skip)->take(500)->get();
 
     if($skip == 0){
         $i=1;

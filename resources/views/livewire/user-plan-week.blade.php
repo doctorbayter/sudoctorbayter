@@ -1,6 +1,6 @@
 <div x-data="{ openMenu: false }" >
     <div class="flex">
-        @can('enrolled', auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first())
+        @can('enrolled', auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first())
             <x-menu :fases="$user_fases" :userPlan="$user_plan" />
             <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="w-11/12 bg-white">
 
@@ -8,7 +8,7 @@
                     <div class="w-10/12 mx-auto py-10">
                         <header>
                             <p>Tu plan actual es:</p>
-                            <h2 class="text-4xl font-bold text-gray-900">{{auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first()->plan->name}}</h2>
+                            <h2 class="text-4xl font-bold text-gray-900">{{auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first()->plan->name}}</h2>
                         </header>
                         <section class="">
 
@@ -62,9 +62,9 @@
                                 </div>
                             @endif
 
-                            @if ($user_plan !=7)
-                                    @if ($whatsapp && $whatsapp->count() > 0 && auth()->user()->subscription->plan->id != 4 && \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now()))
 
+                            @if ($user_plan != 7 && $user_plan != 17)
+                                @if ($whatsapp && $whatsapp->count() > 0 && auth()->user()->subscription->plan->id != 4 && \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now()))
                                     <div class="bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm">
                                         <div class=" flex items-center">
                                             <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
@@ -97,42 +97,40 @@
                                         </div>
                                     </div>
                                 @else
-                                <div class=" bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm">
-                                    <div class=" flex items-center">
-                                        <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
-                                            <img src="{{asset('img/billboards/whatsapp.jpg')}}" alt="" class="w-full object-cover">
-                                        </figure>
-                                        <div class="text-gray-50 flex-1 flex flex-col ">
-                                            <div class="flex-1 flex flex-col">
-                                                <p class=" mb-1">Nunca estarás solo aquiere mi acompañamiento inscríbete ya</p>
-                                                <h2 class="font-bold text-2xl text-green-900">{{$planWhatsapp->name}}</h2>
-                                                <h2 class="font-bold text-2xl text-green-900 mb-2"></h2>
-                                                <small>Pagas 1 vez al mes</small>
-                                                @if ($planWhatsapp->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                                    <div>
-                                                        <div class="ml-auto flex items-center">
-                                                            <p class="text-4xl md:text-2xl font-bold text-green-900">{{$planWhatsapp->finalPrice}} US$</p>
-                                                            <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planWhatsapp->price->name}}</span>
+                                    <div class=" bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm">
+                                        <div class=" flex items-center">
+                                            <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
+                                                <img src="{{asset('img/billboards/whatsapp.jpg')}}" alt="" class="w-full object-cover">
+                                            </figure>
+                                            <div class="text-gray-50 flex-1 flex flex-col ">
+                                                <div class="flex-1 flex flex-col">
+                                                    <p class=" mb-1">Nunca estarás solo aquiere mi acompañamiento inscríbete ya</p>
+                                                    <h2 class="font-bold text-2xl text-green-900">{{$planWhatsapp->name}}</h2>
+                                                    <h2 class="font-bold text-2xl text-green-900 mb-2"></h2>
+                                                    <small>Pagas 1 vez al mes</small>
+                                                    @if ($planWhatsapp->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                                                        <div>
+                                                            <div class="ml-auto flex items-center">
+                                                                <p class="text-4xl md:text-2xl font-bold text-green-900">{{$planWhatsapp->finalPrice}} US$</p>
+                                                                <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planWhatsapp->price->name}}</span>
+                                                            </div>
+                                                            <small class="text-gray-100">{{$planWhatsapp->discount->name}}</small>
+                                                            <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>
                                                         </div>
-                                                        <small class="text-gray-100">{{$planWhatsapp->discount->name}}</small>
-                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>
-                                                    </div>
-                                                @else
-                                                    <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$planWhatsapp->price->name}}</p>
-                                                @endif
-                                            </div>
-                                            <div class="">
-                                                <a href="{{route('payment.checkout', $planWhatsapp)}}" class=" block cursor-pointer mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
-                                                    Adquiere tu mensualidad
-                                                </a>
+                                                    @else
+                                                        <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$planWhatsapp->price->name}}</p>
+                                                    @endif
+                                                </div>
+                                                <div class="">
+                                                    <a href="{{route('payment.checkout', $planWhatsapp)}}" class=" block cursor-pointer mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
+                                                        Adquiere tu mensualidad
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endif
                             @endif
-
-
 
                             <div class=" bg-gradient-to-r from-gray-800 to-gray-900 border py-12 px-6 rounded-lg inline-block shadow-sm">
                                 <div class=" flex items-center">

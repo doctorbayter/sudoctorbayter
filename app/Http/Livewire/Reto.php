@@ -22,6 +22,10 @@ class Reto extends Component
             case '7-dias':
                 $this->plan = Plan::find(7);
                 $this->list_id = 15;
+            break;
+            case 'navidad':
+                $this->plan = Plan::find(21);
+                $this->list_id = 15;
                 break;
             default:
                 $this->list_id = null;
@@ -40,7 +44,17 @@ class Reto extends Component
                     'billdoard' => null,
                     'video' => null,
                 ];
-                break;
+            break;
+            case 'navidad':
+                return $this->data = [
+                    'title' => 'Reto 7 días Navidad',
+                    'subtitle'=> 'Doctor Bayter',
+                    'type' => 'Reto Online',
+                    'online' => true,
+                    'billdoard' => null,
+                    'video' => null,
+                ];
+            break;
             default:
                 return null;
                 break;
@@ -55,7 +69,10 @@ class Reto extends Component
         switch ($this->reto) {
             case '7-dias':
                 return view('livewire.reto.7-dias.register');
-                break;
+            break;
+            case 'navidad':
+                return view('livewire.reto.7-dias.register');
+            break;
             default:
                 return view('livewire.masterclass.no-disponible');
                 break;

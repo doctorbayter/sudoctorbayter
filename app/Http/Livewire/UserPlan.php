@@ -19,7 +19,7 @@ class UserPlan extends Component
             $this->user_fases = auth()->user()->fases->sortBy('id');
         }
 
-        $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first();
+        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first();
         $planPremium = Plan::find(1);
         $planWhatsapp = Plan::find(4);
         $whatsapp = auth()->user()->subscriptions->where('plan_id', 4)->first();
@@ -43,10 +43,13 @@ class UserPlan extends Component
         $this->subscribed_fase_week = $fase_week->clients->contains(auth()->user()->id);
 
         if($planUser->plan->id == 7){
-
             $planUpdate = Plan::find(8);
             return view('livewire.user-plan-week', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
-        }else{
+        }else if($planUser->plan->id == 21){
+            $planUpdate = Plan::find(2);
+            return view('livewire.user-plan-week', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
+        }
+        else{
 
             $planUpdate = Plan::find(3);
             return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));

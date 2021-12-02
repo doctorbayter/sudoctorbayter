@@ -1,6 +1,6 @@
 <div x-data="{ openMenu: false }" >
     <div class="flex">
-        @can('enrolled', auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first())
+        @can('enrolled', auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first())
             <x-menu :fases="$user_fases" :userPlan="$user_plan" />
             <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="w-11/12 bg-white">
 
@@ -8,7 +8,7 @@
                     <div class="w-10/12 mx-auto py-10">
                         <header>
                             <p>Tu plan actual es:</p>
-                            <h2 class="text-4xl font-bold text-gray-900">{{auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first()->plan->name}}</h2>
+                            <h2 class="text-4xl font-bold text-gray-900">{{auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first()->plan->name}}</h2>
                         </header>
                         <section class="">
 

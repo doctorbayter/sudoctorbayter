@@ -5,20 +5,25 @@
             <div class="w-full">
                 <img src="{{asset('img/billboards/doctor_reto.png')}}" alt="" class="w-full my-4 md:w-96 md:my-0"/>
             </div>
-            <div class="pl-4 pr-4 mb-8 md:pl-12 md:pr-0 md:mb-0 ">
+            <div class="pl-2 pr-2 mb-8 md:pl-12 md:pr-0 md:mb-0 ">
                 <header class="leading-tight">
                     <p class="text-sm md:text-xl inline bg-red-700 text-gray-50 px-4"><b>Nuevo Reto</b> 100% Online</p>
-                    <h1 class="text-3xl md:text-5xl font-bold leading-none pt-2">Reto 7 Días Keto</h1>
-                    <h2 class="text-base md:text-2xl">Doctor Bayter</h2>
+                    <h1 class="text-3xl md:text-5xl font-bold leading-none pt-2">Reto 7 Días Navidad</h1>
+                    <h2 class="text-base md:text-2xl">Keto Loca sin remordimiento</h2>
                 </header>
-                <p class="my-4 text-sm md:text-base text-justify">Durante 7 días te voy a llevar de la mano, donde juntos vamos a conseguir lo que por separado no has logrado: cambiar tus hábitos alimenticios, que dejes de satanizar las grasas,  logres  disminuir  los carbohidratos a su mínima expresión y dejes  la adicción al azúcar.<br/>Te voy a demostrar que tan solo en 7 días se desinflamará tu cuerpo, mejorarás tu digestión, mejorarás tu energía y lo más increíble: <b class="text-lg">BAJARÁS DE PESO.</b> </p>
+                <p class="my-4 text-sm md:text-base text-justify">¿Se puede comer sin remordimientos y no ganar peso en navidad? </p>
+                <p class="my-4 text-sm md:text-base text-justify">Se acercan las mejores fiestas del año y en las que más se come. Hacer dieta por esos días es complicado así que preparemos nuestro cuerpo para sobrevivir a esta época del año y superarla sin kilos de más. </p><p class="my-4 text-sm md:text-base text-justify"> 7 días te voy a llevar de la mano en un camino maravilloso en el que lograrás disminuir los carbohidratos a su mínima expresión, y acompañado de ayuno intermitente, preparar tu cuerpo para lo que se viene… porque en esta Navidad ¡SÍ hay postres! </p>
                 <div class="relative">
                     <a href="{{ route('payment.pay', $plan) }}"
                     wire:loading.attr="disabled"
-                    class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-sm lg:text-lg w-full">Sí! Quiero registrarme al Reto 7</a>
+                    class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-sm lg:text-lg w-full">Sí! Quiero registrarme al Reto Navidad</a>
                 </div>
             </div>
         </div>
+        <div class="bg-gray-50 py-8">
+            <p class="my-4 text-md mb-8 md:text-3xl max-w-5xl mx-auto text-center">Te voy a demostrar que tan solo en 7 días tu cuerpo estará listo para comer delicioso <b>SIN SUBIR DE PESO.</b> </p>
+        </div>
+
     </section>
     <section class="bg-gray-900 py-12">
         <div class="max-w-4xl mx-auto flex w-full flex-col-reverse md:flex-row">
@@ -26,19 +31,19 @@
                 <img src="{{asset('img/billboards/banner_facts.png')}}" alt="" class="mx-auto">
             </div>
             <div class="text-gray-50  w-full lg:w-8/12  px-4 md:mr-0 md:ml-10">
-                <h2 class="font-bold mb-4 text-2xl leading-none">¿Qué incluye esta oferta?</h2>
+                <h2 class="font-bold mb-4 text-2xl leading-none">¿Qué incluye este reto?</h2>
                 <ul class="text-sm md:text-base">
                     <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
-                        <span class="">Todas las recetas: desayuno, almuerzo, cena de tu día a día, opciones de snacks, bebidas y salsitas; lista de alimentos y los mejores secretos para ser un <b>KETOPERFECTO</b>.</span>
+                        <span class="">Menú de tu día a día durante los 7 días del reto.</span>
                     </li>
                      <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
-                        <span>Acceso a un grupo de Whatsapp dirigido por el EQUIPO DE NUTRICIÓN de tu Doctor Bayter para resolver todas tus dudas y acompañarte durante estos 7 días</span>
+                        <span>Acceso a un grupo de WhatsApp dirigido por el EQUIPO de tu Doctor Bayter para resolver todas tus dudas y acompañarte durante estos 7 días.</span>
                     </li>
                      <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
-                        <span>Dos reuniones por Zoom con tu Doctor Bayter donde aprenderás todos los beneficios de hacer una dieta cetogénica, te compartirá también, los errores más comunes al hacer esta dieta y todos los secretos para que lo hagas perfecto.</span>
+                        <span>Dos reuniones por Zoom con tu Doctor Bayter donde aprenderás todos los secretos para no subir de peso en Navidad. Te compartirá también, los errores más comunes al hacer ayunos y todo lo que necesitas para hacerlo perfecto.</span>
                     </li>
 
                 </ul>
@@ -55,15 +60,15 @@
             <div class="flex flex-col-reverse lg:flex-row items-center justify-between mb-16">
                 <div class="lg:mr-10 px-4 lg:px-4">
                     <h2 class="font-semibold text-2xl lg:text-3xl mb-4 text-red-700">Videos prácticos</h2>
-                    <p class="text-justify ">Tu Doctor Bayter estará contigo a través de videos educativos durante todo el proceso y te compartirá todo lo que necesitas saber. Además contarás con divertidos videos para que disfrutes preparando tus almuerzos, de forma práctica y sencilla.</p>
+                    <p class="text-justify ">Contarás con divertidos videos para que disfrutes preparando tus almuerzos, de forma práctica y sencilla.</p>
                 </div>
                 <i class="fab fa-youtube text-9xl text-gray-300"></i>
             </div>
             <div class="flex flex-col lg:flex-row items-center justify-between mb-16">
                 <i class="fas fa-trophy text-9xl text-gray-300"></i>
                 <div class="lg:ml-10 px-4 lg:px-4">
-                    <h2 class="font-semibold text-2xl lg:text-3xl mb-4 text-red-700">Aprende a hacer una dieta cetogénica</h2>
-                    <p class="text-justify ">No solo serán 7 días de recetas, serán 7 días de un acompañamiento exclusivo con el Equipo de Nutrición Keto Bayter, además de las reuniones privadas por zoom en compañía del que más sabe de keto, Tu Doctor Bayter. </p>
+                    <h2 class="font-semibold text-2xl lg:text-3xl mb-4 text-red-700">Conoce y domina lo que es hacer ayuno intermitente</h2>
+                    <p class="text-justify ">No solo serán 7 días de recetas, serán 7 días de un acompañamiento exclusivo con el Equipo Keto Bayter, además de las reuniones privadas por zoom en compañía del que más sabe de keto, Tu Doctor Bayter.</p>
                 </div>
             </div>
             <div class="flex flex-col-reverse lg:flex-row items-center justify-between mb-16">
@@ -78,37 +83,37 @@
         <article class="max-w-3xl mx-auto text-gray-50 px-6 ">
             <div class="mb-8 ">
                 <h2 class="font-semibold text-3xl mb-4 leading-none">¿Cómo serán estos 7 días?</h2>
-                <h3 class="text-lg text-gray-200 leading-none"><b class="text-yellow-400">Fecha de inicio:</b> Lunes 27 de septiembre</h3>
+                <h3 class="text-lg text-gray-200 leading-none"><b class="text-yellow-400">Fecha de inicio:</b> Lunes 13 de diciembre</h3>
             </div>
             <p class="text-xl font-light mb-8">Esto es lo que verás en cada uno de los días del reto:</p>
             <ul>
                 <li class="mb-3 flex ">
                     <p class=""><b class="mr-4 text-yellow-400">Día 1:</b></p>
-                    <p class=" flex-1">Reunión privada de zoom con tu Doctor Bayter + plan de alimentación + video receta + video de Tu Doctor Bayter</p>
+                    <p class=" flex-1">Reunión privada de zoom con tu Doctor Bayter + plan de alimentación + video receta almuerzo </p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 2:</b></p>
-                    <p class=" flex-1">Plan de alimentación + video receta + video de Tu Doctor Bayter</p>
+                    <p class=" flex-1">Plan de alimentación + video receta almuerzo </p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 3:</b></p>
-                    <p class=" flex-1">Plan de alimentación + video receta + video de Tu Doctor Bayter</p>
+                    <p class=" flex-1">Plan de alimentación + video receta almuerzo </p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 4:</b></p>
-                    <p class=" flex-1">Plan de alimentación + video receta + video de Tu Doctor Bayter</p>
+                    <p class=" flex-1">Plan de alimentación + video receta almuerzo </p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 5:</b></p>
-                    <p class=" flex-1">Plan de alimentación + video receta + video de Tu Doctor Bayter</p>
+                    <p class=" flex-1">Plan de alimentación + video receta almuerzo </p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 6:</b></p>
-                    <p class=" flex-1">Reunión privada de zoom con tu Doctor Bayter + plan de alimentación + video receta + video de Tu Doctor Bayter</p>
+                    <p class=" flex-1">Reunión privada de zoom con tu Doctor Bayter + plan de alimentación + video receta almuerzo</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 7:</b></p>
-                    <p class=" flex-1">Plan de alimentación + video receta + video de Tu Doctor Bayter</p>
+                    <p class=" flex-1">Plan de alimentación + video receta almuerzo</p>
                 </li>
             </ul>
         </article>
@@ -134,7 +139,7 @@
             <div class="my-8">
                 <a href="{{ route('payment.pay', $plan) }}"
                 wire:loading.attr="disabled"
-                class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-lg w-full">Sí! Quiero registrarme al Reto 7</a>
+                class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-lg w-full">Sí! Quiero registrarme al Reto de Navidad</a>
             </div>
         </div>
     </section>

@@ -11,7 +11,7 @@ class UserBebidas extends Component
     public function render()
     {
 
-        $planUser = auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first();
+        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first();
         $this->user_plan = $planUser->plan->id;
 
         if(auth()->user()->subscription){

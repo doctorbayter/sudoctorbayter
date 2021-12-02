@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ApprovedPurchase;
 use App\Mail\ApprovedPurchaseNoChat;
+use App\Mail\ApprovedPurchaseReto;
 use App\Models\Fase;
 use App\Models\Plan;
 use App\Models\Subscription;
@@ -163,8 +164,9 @@ class PaymentController extends Controller
 
         $is_already_subscribed      = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
         $previous_plan_premium      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(2, 7, 8))->first();
-        $previous_plan_selecto      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10))->first();
-        $previous_plan_week         = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10))->first();
+        $previous_plan_selecto      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16))->first();
+        $previous_plan_week         = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10, 15, 16))->first();
+        $previous_plan_navidad      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16))->first();
         $subscribed_plan_1          = Subscription::where('user_id', $user->id)->where('plan_id', 1)->first();
         $subscribed_plan_2          = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
         $subscribed_plan_7          = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
@@ -175,6 +177,7 @@ class PaymentController extends Controller
         $fase_one                   = Fase::find(1);
         $fase_week                  = Fase::find(5);
         $five_recipes               = Fase::find(7);
+        $keto_navidad               = Fase::find(8);
 
         if(!$is_already_subscribed){
             switch ($plan->id) {
@@ -312,6 +315,14 @@ class PaymentController extends Controller
 
                     if(!$fase_week->clients->contains($user->id)){
                         $fase_week->clients()->attach($user->id);
+                    }
+                    break;
+                case 17:
+                    if(!$previous_plan_navidad){
+                        $this->addSuscription($user->id, $plan->id);
+                    }
+                    if(!$keto_navidad->clients->contains($user->id)){
+                        $keto_navidad->clients()->attach($user->id);
                     }
                     break;
             }
@@ -453,7 +464,11 @@ class PaymentController extends Controller
             case 7:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                break;
+            break;
+            case 17:
+                $mail = new ApprovedPurchaseReto($this->plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            break;
             default:
                 $mail = new ApprovedPurchase($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);

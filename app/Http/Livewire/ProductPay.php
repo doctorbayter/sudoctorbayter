@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Mail\ApprovedPurchase;
 use App\Mail\ApprovedPurchaseNoChat;
+use App\Mail\ApprovedPurchaseReto;
 use App\Models\Fase;
 use App\Models\Plan;
 use App\Models\User;
@@ -41,9 +42,7 @@ class ProductPay extends Component
     public function mount(Plan $plan, $sale = null){
 
         $this->flash_sale = false;
-
         $this->plan = $plan;
-
     }
 
     public function render() {
@@ -97,7 +96,7 @@ class ProductPay extends Component
 
             $user->createOrGetStripeCustomer();
 
-            $user->charge( $this->flash_sale * 100 , $paymentMethod);
+            $user->charge( $this->plan->finalPrice * 100 , $paymentMethod);
 
             $suscription = new Subscription();
             $suscription->user_id = $user->id;
@@ -114,48 +113,54 @@ class ProductPay extends Component
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(4, 11, 12))->first();
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
+            $fase = Fase::find(8);
 
 
-            if($this->plan->id == 14){
-                if($previous_subscribed){
-                    $previous_subscribed->delete();
-                }
+            if($this->plan->id == 17){
+                // if($previous_subscribed){
+                //     $previous_subscribed->delete();
+                // }
 
                 if(!$is_subscribed){
                     $suscription->save();
-                    foreach($fases_premium as $fase){
+                    // foreach($fases_premium as $fase){
 
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
+                    //     if(!$fase->clients->contains($user->id)){
+                    //         $fase->clients()->attach($user->id);
+                    //     }
 
-                    }
+                    // }
+                    $fase->clients()->attach($user->id);
                 }
 
-                if($whatsapp_subscribed){
-                    if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(60)]);
-                    }else{
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(60)]);
-                    }
-                    $whatsapp_subscribed->save();
-                }else{
-                    $suscription_whatsApp             = new Subscription();
-                    $suscription_whatsApp->user_id    = $user->id;
-                    $suscription_whatsApp->plan_id    = 4;
-                    $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays(30);
-                    $suscription_whatsApp->save();
-                }
+                // if($whatsapp_subscribed){
+                //     if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
+                //         $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(60)]);
+                //     }else{
+                //         $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(60)]);
+                //     }
+                //     $whatsapp_subscribed->save();
+                // }else{
+                //     $suscription_whatsApp             = new Subscription();
+                //     $suscription_whatsApp->user_id    = $user->id;
+                //     $suscription_whatsApp->plan_id    = 4;
+                //     $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays(30);
+                //     $suscription_whatsApp->save();
+                // }
 
                 switch ($this->plan->id) {
                     case 7:
                         $mail = new ApprovedPurchaseNoChat($this->plan, $user);
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                        break;
+                    break;
+                    case 17:
+                        $mail = new ApprovedPurchaseReto($this->plan, $user);
+                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                    break;
                     default:
                         $mail = new ApprovedPurchase($this->plan, $user);
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                        break;
+                    break;
                 }
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);

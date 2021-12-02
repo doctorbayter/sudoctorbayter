@@ -130,7 +130,7 @@
                                     {{ __('Manage Account') }}
                                 </div>
 
-                                @can('enrolled', auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first())
+                                @can('enrolled', auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first())
                                     <x-jet-dropdown-link href="{{ route('plan.index') }}">
                                         <b class="text-red-700">{{ __('Mi Página') }}</b>
                                     </x-jet-dropdown-link>
@@ -216,7 +216,7 @@
 
 
 
-        @can('enrolled', auth()->user()->subscriptions->whereIn('plan_id', [1, 2, 7, 8, 9, 10, 15, 16])->first())
+        @can('enrolled', auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first())
             <x-jet-responsive-nav-link href="{{ route('plan.index') }}" :active="request()->routeIs('plan.fase')">
                 <b class="text-red-700">{{ __('Mi Página') }}</b>
             </x-jet-responsive-nav-link>

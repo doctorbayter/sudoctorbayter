@@ -466,7 +466,7 @@ class PaymentController extends Controller
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 17:
-                $mail = new ApprovedPurchaseReto($this->plan, $user);
+                $mail = new ApprovedPurchaseReto($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             default:

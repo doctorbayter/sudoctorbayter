@@ -378,7 +378,7 @@ Route::get('x/users/{skip?}', function($skip = 0){
 
 });
 
-Route::get('x/users/reto/{skip?}', function($skip = 0){
+Route::get('x/users/reto/send/{skip?}', function($skip = 0){
 
     $users = User::where('email','!=','null')->skip($skip)->get();
 
@@ -391,22 +391,55 @@ Route::get('x/users/reto/{skip?}', function($skip = 0){
     foreach($users as $user){
 
         if ($user->subscription) {
-            echo "---------<br>";
-
-            echo $i++ ." User id ". $user->id."<br/>";
-            echo $user->name." - ".$user->email."<br/>";
             foreach ($user->subscriptions as $subscription) {
                 if($subscription){
                     if($subscription->plan->id == 17 ){
+                        echo "---------<br>";
+
+                        echo $i++ ." User id ". $user->id."<br/>";
+                        echo $user->name." - ".$user->email."<br/>";
                         $mail = new ApprovedPurchaseReto($subscription->plan, $user);
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+
+                        echo "---------<br>";
+                        echo "*********<br>";
                     }
                 }
             }
-            echo "---------<br>";
-            echo "*********<br>";
+
         }
     }
 
 });
 
+Route::get('x/users/reto/list/{skip?}', function($skip = 0){
+
+    $users = User::where('email','!=','null')->skip($skip)->get();
+
+    if($skip == 0){
+        $i=1;
+    }else{
+        $i = $skip;
+    }
+
+    foreach($users as $user){
+
+        if ($user->subscription) {
+            foreach ($user->subscriptions as $subscription) {
+                if($subscription){
+                    if($subscription->plan->id == 17 ){
+                        echo "---------<br>";
+
+                        echo $i++ ." User id ". $user->id."<br/>";
+                        echo $user->name." - ".$user->email."<br/>";
+
+                        echo "---------<br>";
+                        echo "*********<br>";
+                    }
+                }
+            }
+
+        }
+    }
+
+});

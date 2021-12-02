@@ -5,6 +5,7 @@ use App\Http\Livewire\CursoGratis;
 use App\Http\Livewire\Masterclass;
 use App\Http\Livewire\Reto;
 use App\Http\Livewire\UserRecipe;
+use App\Mail\ApprovedPurchaseReto;
 use App\Models\Day;
 use App\Models\Discount;
 use App\Models\Fase;
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,9 +77,6 @@ Route::get('x/mail', function () {
 
     return view('mail.approved-purchase-reto', ['plan'=>$plan, 'user'=>$user]);
 });
-
-
-
 
 
 Route::get('/dieta', function () {
@@ -336,6 +335,7 @@ Route::get('x/whatsapp/', function(){
     dd($response);
 });
 
+
 Route::get('x/users/{skip?}', function($skip = 0){
 
     $users = User::where('email','!=','null')->skip($skip)->take(500)->get();
@@ -368,6 +368,38 @@ Route::get('x/users/{skip?}', function($skip = 0){
                     }else{
 
                         echo "Plan id ".$subscription->plan->id." ".$subscription->plan->name."<br/>";
+                    }
+                }
+            }
+            echo "---------<br>";
+            echo "*********<br>";
+        }
+    }
+
+});
+
+Route::get('x/users/reto/{skip?}', function($skip = 0){
+
+    $users = User::where('email','!=','null')->skip($skip)->get();
+
+    if($skip == 0){
+        $i=1;
+    }else{
+        $i = $skip;
+    }
+
+    foreach($users as $user){
+
+        if ($user->subscription) {
+            echo "---------<br>";
+
+            echo $i++ ." User id ". $user->id."<br/>";
+            echo $user->name." - ".$user->email."<br/>";
+            foreach ($user->subscriptions as $subscription) {
+                if($subscription){
+                    if($subscription->plan->id == 17 ){
+                        $mail = new ApprovedPurchaseReto($subscription->plan, $user);
+                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     }
                 }
             }

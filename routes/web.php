@@ -380,7 +380,11 @@ Route::get('x/users/{skip?}', function($skip = 0){
 
 Route::get('x/users/reto/send/{skip?}', function($skip = 0){
 
-    $users = User::where('email','!=','null')->skip($skip)->get();
+
+
+    $users = User::whereIn('id', [3351,4072,3069,2763,4533,4476,4492,4474,4477,4475,4479,4480,4481,4482,4489,4490,4486,4493,4491,4485,4487,4484,4483,4494,4502,4513,4505,4506,4519,4496,4478,4497,4520,4511,4510,4495,4512,4522,4524,4514,4521,4516,4503,4515,4517,4501,4509,4527,4525,4518,4523,4507,4526,4528,4529,4508,4499,4504,4531,4532,4534,4537,4553,4554,4555,4535,4536,4538,4539,4540,4530,4541,4498,4542,4543,4556,4544,4545,4548,4550,4549,4551,4552,4557])->get();
+
+    return $users;
 
     if($skip == 0){
         $i=1;
@@ -389,7 +393,6 @@ Route::get('x/users/reto/send/{skip?}', function($skip = 0){
     }
 
     foreach($users as $user){
-
         if ($user->subscription) {
             foreach ($user->subscriptions as $subscription) {
                 if($subscription){

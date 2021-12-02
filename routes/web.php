@@ -428,13 +428,7 @@ Route::get('x/users/reto/list/{skip?}', function($skip = 0){
             foreach ($user->subscriptions as $subscription) {
                 if($subscription){
                     if($subscription->plan->id == 17 ){
-                        echo "---------<br>";
-
-                        echo $i++ ." User id ". $user->id."<br/>";
-                        echo $user->name." - ".$user->email."<br/>";
-
-                        echo "---------<br>";
-                        echo "*********<br>";
+                        echo $user->id.",";
                     }
                 }
             }

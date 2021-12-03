@@ -378,21 +378,29 @@ Route::get('x/users/{skip?}', function($skip = 0){
 
 });
 
-Route::get('x/users/reto/{email}/send/', function($email){
+Route::get('x/users/reto/add/{email}/', function($email){
 
     $user = User::where('email',$email)->first();
-    if ($user->subscription) {
-        foreach ($user->subscriptions as $subscription) {
-            if($subscription){
-                if($subscription->plan->id == 17 ){
-                    echo "---------<br>";
-                    echo " User id ". $user->id."<br/>";
-                    echo $user->name." - ".$user->email."<br/>";
-                    $mail = new ApprovedPurchaseReto($subscription->plan, $user);
-                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                    echo "*********<br>";
-                }
-            }
+    $plan                   = Plan::find(17);
+
+    $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
+    $previous_plan_navidad  = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16))->first();
+    $keto_navidad           = Fase::find(8);
+
+    if(!$is_already_subscribed){
+        if(!$previous_plan_navidad){
+            $this->addSuscription($user->id, $plan->id);
         }
+        if(!$keto_navidad->clients->contains($user->id)){
+            $keto_navidad->clients()->attach($user->id);
+        }
+
+        $mail = new ApprovedPurchaseReto($plan, $user);
+        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+
+        echo "---------<br>";
+        echo "Correo enviado a ". $user->name." - ".$user->email."<br/>";
+        echo "*********<br>";
+
     }
 });

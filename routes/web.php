@@ -378,18 +378,20 @@ Route::get('x/users/{skip?}', function($skip = 0){
 
 });
 
-Route::get('x/users/reto/add/{email}/', function($email){
+Route::get('x/users/reto/add/{email}', function($email){
 
-    $user = User::where('email',$email)->first();
+    $user                   = User::where('email',$email)->first();
     $plan                   = Plan::find(17);
-
     $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
     $previous_plan_navidad  = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16))->first();
     $keto_navidad           = Fase::find(8);
 
     if(!$is_already_subscribed){
         if(!$previous_plan_navidad){
-            $this->addSuscription($user->id, $plan->id);
+            $suscription_plan           = new Subscription();
+            $suscription_plan->user_id  = $user->id;
+            $suscription_plan->plan_id  = $plan->id;
+            $suscription_plan->save();
         }
         if(!$keto_navidad->clients->contains($user->id)){
             $keto_navidad->clients()->attach($user->id);

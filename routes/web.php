@@ -155,6 +155,17 @@ Route::get('x/clients', function () {
         echo"<br/>";
     }
 });
+Route::get('x/clients/navidad', function () {
+    $users = User::all();
+    foreach($users as $user){
+
+        $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', 17)->first();
+        if($is_already_subscribed){
+            echo $user->email;
+            echo"<br/>";
+        }
+    }
+});
 
 Route::get('x/plans/', function(){
     $plans = Plan::all();

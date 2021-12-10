@@ -179,6 +179,11 @@ Route::get('x/prices/', function(){
     dd($prices);
 });
 
+Route::get('x/days/', function(){
+    $day = Day::all();
+    dd($day);
+});
+
 Route::get('x/discounts/', function(){
     $discounts = Discount::all();
     dd($discounts);
@@ -190,6 +195,7 @@ Route::get('x/sql/', function(){
 
 Route::get('x/query', function(){
 
+    /*
     $plan = Plan::create([
         'name' => 'Reto Keto Navidad',
         'slug' => 'reto-navidad',
@@ -289,33 +295,34 @@ Route::get('x/query', function(){
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
+    */
 
 
-    /**
-        $recipe = Recipe::create([
-            'name' => 'Picañones',
-            'slug' => 'picanones',
-            'indice'=> 1,
-            'carbs' => 0,
-            'time' => 15,
-            'type' => 1,
-        ]);
 
-        $image = Image::create([
-            'url' => 'recipes/aguaton.jpg',
-            'imageable_id' => $recipe->id,
-            'imageable_type' => 'App\Models\Recipe',
-        ]);
+    $recipe = Recipe::create([
+        'name' => 'Picañones',
+        'slug' => 'picanones',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 15,
+        'type' => 1,
+    ]);
 
-        $video = Video::create([
-            'iframe' => '<iframe src="https://player.vimeo.com/video/638693117" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-            'videoable_id' => $recipe->id,
-            'videoable_type' => 'App\Models\Recipe',
-        ]);
+    $image = Image::create([
+        'url' => 'recipes/aguaton.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+    ]);
 
-        DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-        (279, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
-    **/
+    $video = Video::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/638693117" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => $recipe->id,
+        'videoable_type' => 'App\Models\Recipe',
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (279, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
 
 });
 

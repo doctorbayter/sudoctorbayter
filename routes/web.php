@@ -298,7 +298,7 @@ Route::get('x/query', function(){
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
     */
 
-    /**
+    /*
         $recipe = Recipe::create([
             'name' => 'Picañones',
             'slug' => 'picanones',

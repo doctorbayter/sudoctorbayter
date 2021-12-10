@@ -321,7 +321,7 @@ Route::get('x/query', function(){
     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (279, 999, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+    (279, 1, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
 });

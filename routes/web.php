@@ -148,6 +148,12 @@ Route::get('x/recipes/', function(){
     print_r($recipes);
 });
 
+Route::get('x/days/', function(){
+    $days = Day::all();
+    print_r($days);
+});
+
+
 Route::get('x/clients', function () {
     $users = User::all();
     foreach($users as $user){

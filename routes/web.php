@@ -190,6 +190,7 @@ Route::get('x/sql/', function(){
 
 Route::get('x/query', function(){
 
+    /*
     $plan = Plan::create([
         'name' => 'Reto Keto Navidad',
         'slug' => 'reto-navidad',
@@ -288,8 +289,8 @@ Route::get('x/query', function(){
     (13, 'Secretos Keto Navidad', 'files/pdf/secretos-fase-0-dkp.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL) ");
-
+    (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
+    */
 
     /**
         $recipe = Recipe::create([

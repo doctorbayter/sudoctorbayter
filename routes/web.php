@@ -143,9 +143,9 @@ Route::get('x/plan/{user}', function($user){
     }
 });
 
-Route::get('x/recipes/', function(){
+Route::get('x/recipes', function(){
     $recipes = Recipe::all();
-    print_r($recipes) ;
+    print_r($recipes);
 });
 
 Route::get('x/days/', function(){

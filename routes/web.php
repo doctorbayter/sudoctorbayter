@@ -299,7 +299,7 @@ Route::get('x/query', function(){
     */
 
     /*
-        $recipe = Recipe::create([
+        $recipe =  Recipe::create([
             'name' => 'Picañones',
             'slug' => 'picanones',
             'indice'=> 1,

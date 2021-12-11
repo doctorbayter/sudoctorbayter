@@ -164,7 +164,6 @@ Route::get('x/clients', function () {
 Route::get('x/clients/navidad', function () {
     $users = User::all();
     foreach($users as $user){
-
         $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', 17)->first();
         if($is_already_subscribed){
             echo $user->email;
@@ -195,7 +194,6 @@ Route::get('x/sql/', function(){
 });
 
 Route::get('x/query', function(){
-
     /*
     $plan = Plan::create([
         'name' => 'Reto Keto Navidad',

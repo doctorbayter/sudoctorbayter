@@ -296,7 +296,7 @@ Route::get('x/query', function(){
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
     */
 
-    /**
+    /*
         $recipe = Recipe::create([
             'name' => 'Picañones',
             'slug' => 'picanones',
@@ -320,7 +320,7 @@ Route::get('x/query', function(){
 
         DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
         (279, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
-    **/
+    */
 
 });
 

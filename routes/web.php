@@ -294,7 +294,6 @@ Route::get('x/query', function(){
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
 */
 
-/*
 
 ////
 $recipe = Recipe::create([
@@ -306,12 +305,12 @@ $recipe = Recipe::create([
 'type' => 1,
 ]);
 $image = Image::create([
-'url' => 'recipes/d301.jpg',
+'url' => 'recipes/d401.jpg',
 'imageable_id' => $recipe->id,
 'imageable_type' => 'App\Models\Recipe',
 ]);
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(286, 124, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+(289, 125, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
 ////
@@ -324,15 +323,16 @@ $recipe = Recipe::create([
 'type' => 1,
 ]);
 $image = Image::create([
-'url' => 'recipes/d302.jpg',
+'url' => 'recipes/d402.jpg',
 'imageable_id' => $recipe->id,
 'imageable_type' => 'App\Models\Recipe',
 ]);
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(287, 124, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+(290, 125, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
 ////
+/*
 $recipe = Recipe::create([
 'name' => 'Canastilla de codorniz',
 'slug' => 'canastilla-de-codorniz',
@@ -342,22 +342,16 @@ $recipe = Recipe::create([
 'type' => 1,
 ]);
 $image = Image::create([
-'url' => 'recipes/d303.jpg',
+'url' => 'recipes/d403.jpg',
 'imageable_id' => $recipe->id,
 'imageable_type' => 'App\Models\Recipe',
 ]);
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(288, 124, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
-
 */
-
-DB::table('day_recipe')->where('id', 288)->delete();
-
-$x = Recipe::find(288);
-$x->delete();
-
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(288, 124, 282, '3', CURRENT_TIMESTAMP, NULL)");
+(291, 125, 283, '3', CURRENT_TIMESTAMP, NULL)");
+
+
+
 
 });
 

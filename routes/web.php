@@ -298,6 +298,7 @@ Route::get('x/query', function(){
     */
 
     /*
+    
         $recipe = Recipe::create([
             'name' => 'Picañones',
             'slug' => 'picanones',

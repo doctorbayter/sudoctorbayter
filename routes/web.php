@@ -312,25 +312,25 @@ $image = Image::create([
 ]);
 */
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(294, 127, 289, '1', CURRENT_TIMESTAMP, NULL)");
+(297, 128, 286, '1', CURRENT_TIMESTAMP, NULL)");
 
 
 ////
 $recipe = Recipe::create([
-'name' => 'Pollín envueltico',
-'slug' => 'pollin-envueltico',
+'name' => 'Deliciosa trucha',
+'slug' => 'deliciosa-trucha',
 'indice'=> 1,
-'carbs' => 10.38,
+'carbs' => 16.84,
 'time' => 30,
 'type' => 1,
 ]);
 $image = Image::create([
-'url' => 'recipes/d602.jpg',
+'url' => 'recipes/d702.jpg',
 'imageable_id' => $recipe->id,
 'imageable_type' => 'App\Models\Recipe',
 ]);
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(295, 127, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+(298, 128, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
 ////
@@ -350,7 +350,7 @@ $image = Image::create([
 ]);
 */
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(296, 127, 285, '3', CURRENT_TIMESTAMP, NULL)");
+(299, 128, 283, '3', CURRENT_TIMESTAMP, NULL)");
 
 
 });

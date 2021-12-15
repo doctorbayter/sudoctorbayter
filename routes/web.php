@@ -294,59 +294,61 @@ Route::get('x/query', function(){
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
 */
 
-////
-$recipe = Recipe::create([
-'name' => 'Cordonizchampiñonado',
-'slug' => 'cordonizchampinonado',
-'indice'=> 1,
-'carbs' => 6.24,
-'time' => 15,
-'type' => 1,
-]);
-$image = Image::create([
-'url' => 'recipes/aguaton.jpg',
-'imageable_id' => $recipe->id,
-'imageable_type' => 'App\Models\Recipe',
-]);
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(283, 123, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
-
+$x = Recipe::find(280);
+$x->delete();
 
 ////
 $recipe = Recipe::create([
-'name' => 'El único rellenito',
-'slug' => 'el-unico-rellenito',
-'indice'=> 1,
-'carbs' => 10.68,
-'time' => 25,
-'type' => 1,
-]);
-$image = Image::create([
-'url' => 'recipes/aguaton.jpg',
-'imageable_id' => $recipe->id,
-'imageable_type' => 'App\Models\Recipe',
-]);
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(284, 123, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
-
-
-////
-$recipe = Recipe::create([
-'name' => 'Empanada de huevo y queso',
-'slug' => 'empanada-de-huevo-y-queso',
+'name' => '2 huevos cocidos con café',
+'slug' => '2-huevos-cocidos',
 'indice'=> 1,
 'carbs' => 0,
 'time' => 10,
 'type' => 1,
 ]);
 $image = Image::create([
-'url' => 'recipes/aguaton.jpg',
+'url' => 'recipes/d301.jpg',
 'imageable_id' => $recipe->id,
 'imageable_type' => 'App\Models\Recipe',
 ]);
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(285, 123, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+(286, 124, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
+
+////
+$recipe = Recipe::create([
+'name' => 'Comunmente salmón',
+'slug' => 'comunmente-salmon',
+'indice'=> 1,
+'carbs' => 6.45,
+'time' => 25,
+'type' => 1,
+]);
+$image = Image::create([
+'url' => 'recipes/d302.jpg',
+'imageable_id' => $recipe->id,
+'imageable_type' => 'App\Models\Recipe',
+]);
+DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+(287, 124, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+
+
+////
+$recipe = Recipe::create([
+'name' => 'Canastilla de codorniz',
+'slug' => 'canastilla-de-codorniz',
+'indice'=> 1,
+'carbs' => 0,
+'time' => 10,
+'type' => 1,
+]);
+$image = Image::create([
+'url' => 'recipes/d303.jpg',
+'imageable_id' => $recipe->id,
+'imageable_type' => 'App\Models\Recipe',
+]);
+DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+(288, 124, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

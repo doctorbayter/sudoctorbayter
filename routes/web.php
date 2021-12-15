@@ -149,7 +149,7 @@ Route::get('x/recipes/', function(){
     print_r($recipes);
 });
 
-Route::get('x/day/', function(){
+Route::get('x/days/', function(){
     $days = Day::all();
     print_r($days);
 });
@@ -297,17 +297,18 @@ Route::get('x/query', function(){
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
     */
 
-    /*
+
 
         $recipe = Recipe::create([
-            'name' => 'Picañones',
-            'slug' => 'picanones',
+            'name' => 'Envueltillo en crema de toronjil',
+            'slug' => 'envueltillo-en-crema-de-toronjil',
             'indice'=> 1,
             'carbs' => 0,
             'time' => 15,
             'type' => 1,
         ]);
 
+        /*
         $image = Image::create([
             'url' => 'recipes/aguaton.jpg',
             'imageable_id' => $recipe->id,
@@ -318,11 +319,11 @@ Route::get('x/query', function(){
             'iframe' => '<iframe src="https://player.vimeo.com/video/638693117" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
             'videoable_id' => $recipe->id,
             'videoable_type' => 'App\Models\Recipe',
-        ]);
+        ]);*/
 
         DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-        (279, $day->id, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
-    */
+        (280, 122, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
 
 });
 
@@ -356,7 +357,7 @@ Route::get('x/whatsapp/', function(){
 
 Route::get('x/users/{skip?}', function($skip = 0){
 
-    $users = User::where('email','!=','null')->skip($skip)->take(500)->get();
+    $users = User::where('email','!=','null')->skip($skip)->take(400)->get();
 
     if($skip == 0){
         $i=1;

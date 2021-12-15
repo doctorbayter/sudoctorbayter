@@ -86,8 +86,9 @@ Route::get('/dieta', function () {
 Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
 
 Route::get('/navidad', function () {
+    return view('no-disponible');
     return redirect()->route('reto.register', ['reto'=>'navidad']);
-    //return view('no-disponible');
+
 })->name('reto.navidad');
 
 Route::get('/selecto', function () {

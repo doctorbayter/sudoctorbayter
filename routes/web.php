@@ -294,13 +294,12 @@ Route::get('x/query', function(){
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
 */
 
-$x = Recipe::find(280);
-$x->delete();
+/*
 
 ////
 $recipe = Recipe::create([
-'name' => '2 huevos cocidos con café',
-'slug' => '2-huevos-cocidos',
+'name' => 'El infaltable',
+'slug' => 'el-infaltable',
 'indice'=> 1,
 'carbs' => 0,
 'time' => 10,
@@ -317,11 +316,11 @@ DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, upd
 
 ////
 $recipe = Recipe::create([
-'name' => 'Comunmente salmón',
-'slug' => 'comunmente-salmon',
+'name' => 'Tartara de berenjena con punta de anca',
+'slug' => 'tartara-de-berenjena-con-punta-de-anca',
 'indice'=> 1,
-'carbs' => 6.45,
-'time' => 25,
+'carbs' => 15.36,
+'time' => 30,
 'type' => 1,
 ]);
 $image = Image::create([
@@ -349,6 +348,16 @@ $image = Image::create([
 ]);
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
 (288, 124, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+
+*/
+
+DB::table('day_recipe')->where('id', 288)->delete();
+
+$x = Recipe::find(288);
+$x->delete();
+
+DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+(288, 124, 282, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

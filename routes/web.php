@@ -64,7 +64,6 @@ Route::get('curso-keto', CursoGratis::class)->name('cursos.keto.register');
 Route::get('curso-keto/go',[CursoGratis::class,'go'])->name('cursos.keto.go');
 Route::get('curso-keto/thanks', [CursoGratis::class,'thanks'])->name('cursos.keto.gracias');
 
-
 Route::get('privado', function () {
     return view('no-disponible');
     $plan = Plan::find(14);
@@ -77,7 +76,6 @@ Route::get('x/mail', function () {
 
     return view('mail.approved-purchase-reto', ['plan'=>$plan, 'user'=>$user]);
 });
-
 
 Route::get('/dieta', function () {
     return redirect()->route('plan.index');
@@ -123,8 +121,6 @@ Route::get('/lunes', function () {
 })->name('reto.cyberLunes');
 
 
-
-
 Route::get('/reto4', function () {
     return redirect()->route('masterclass.register', ['masterclass'=>'reto-4']);
     //return view('no-disponible');
@@ -162,6 +158,7 @@ Route::get('x/clients', function () {
         echo"<br/>";
     }
 });
+
 Route::get('x/clients/navidad', function () {
     $users = User::all();
     foreach($users as $user){
@@ -195,7 +192,7 @@ Route::get('x/sql/', function(){
 });
 
 Route::get('x/query', function(){
-    /*
+/*
     $plan = Plan::create([
         'name' => 'Reto Keto Navidad',
         'slug' => 'reto-navidad',
@@ -295,65 +292,64 @@ Route::get('x/query', function(){
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
-    */
+*/
 
-
-
+////
 $recipe = Recipe::create([
-'name' => 'Cerdín pingüen',
-'slug' => 'cerdin-pinguen',
+'name' => 'Cordonizchampiñonado',
+'slug' => 'cordonizchampinonado',
 'indice'=> 1,
-'carbs' => 11.39,
-'time' => 25,
-'type' => 1,
-]);
-
-
-$image = Image::create([
-'url' => 'recipes/aguaton.jpg',
-'imageable_id' => $recipe->id,
-'imageable_type' => 'App\Models\Recipe',
-]);
-
-/*
-$video = Video::create([
-'iframe' => '<iframe src="https://player.vimeo.com/video/638693117" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-'videoable_id' => $recipe->id,
-'videoable_type' => 'App\Models\Recipe',
-]);*/
-
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(281, 122, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
-
-
-$recipe = Recipe::create([
-'name' => 'Canastilla de codorniz',
-'slug' => 'canastilla-de-codorniz',
-'indice'=> 1,
-'carbs' => 0,
+'carbs' => 6.24,
 'time' => 15,
 'type' => 1,
 ]);
-
-
 $image = Image::create([
 'url' => 'recipes/aguaton.jpg',
 'imageable_id' => $recipe->id,
 'imageable_type' => 'App\Models\Recipe',
 ]);
-
-/*
-$video = Video::create([
-'iframe' => '<iframe src="https://player.vimeo.com/video/638693117" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-'videoable_id' => $recipe->id,
-'videoable_type' => 'App\Models\Recipe',
-]);*/
-
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(282, 122, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+(283, 123, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+
+////
+$recipe = Recipe::create([
+'name' => 'El único rellenito',
+'slug' => 'el-unico-rellenito',
+'indice'=> 1,
+'carbs' => 10.68,
+'time' => 25,
+'type' => 1,
+]);
+$image = Image::create([
+'url' => 'recipes/aguaton.jpg',
+'imageable_id' => $recipe->id,
+'imageable_type' => 'App\Models\Recipe',
+]);
+DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+(284, 123, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+
+
+////
+$recipe = Recipe::create([
+'name' => 'Empanada de huevo y queso',
+'slug' => 'empanada-de-huevo-y-queso',
+'indice'=> 1,
+'carbs' => 0,
+'time' => 10,
+'type' => 1,
+]);
+$image = Image::create([
+'url' => 'recipes/aguaton.jpg',
+'imageable_id' => $recipe->id,
+'imageable_type' => 'App\Models\Recipe',
+]);
+DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+(285, 123, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 
 });
+
 
 Route::get('x/whatsapp/', function(){
 

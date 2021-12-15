@@ -149,7 +149,7 @@ Route::get('x/recipes/', function(){
     print_r($recipes);
 });
 
-Route::get('x/days/', function(){
+Route::get('x/day/', function(){
     $days = Day::all();
     print_r($days);
 });
@@ -298,7 +298,7 @@ Route::get('x/query', function(){
     */
 
     /*
-    
+
         $recipe = Recipe::create([
             'name' => 'Picañones',
             'slug' => 'picanones',

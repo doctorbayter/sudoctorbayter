@@ -299,30 +299,31 @@ Route::get('x/query', function(){
 
 
 
-        $recipe = Recipe::create([
-            'name' => 'Envueltillo en crema de toronjil',
-            'slug' => 'envueltillo-en-crema-de-toronjil',
-            'indice'=> 1,
-            'carbs' => 0,
-            'time' => 15,
-            'type' => 1,
-        ]);
+        // $recipe = Recipe::create([
+        //     'name' => 'Envueltillo en crema de toronjil',
+        //     'slug' => 'envueltillo-en-crema-de-toronjil',
+        //     'indice'=> 1,
+        //     'carbs' => 0,
+        //     'time' => 15,
+        //     'type' => 1,
+        // ]);
 
-        /*
+
         $image = Image::create([
             'url' => 'recipes/aguaton.jpg',
-            'imageable_id' => $recipe->id,
+            'imageable_id' => 279,
             'imageable_type' => 'App\Models\Recipe',
         ]);
 
+        /*
         $video = Video::create([
             'iframe' => '<iframe src="https://player.vimeo.com/video/638693117" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
             'videoable_id' => $recipe->id,
             'videoable_type' => 'App\Models\Recipe',
         ]);*/
 
-        DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-        (280, 122, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+        // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+        // (280, 122, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
 });

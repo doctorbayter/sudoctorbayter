@@ -296,6 +296,7 @@ Route::get('x/query', function(){
 
 
 ////
+/*
 $recipe = Recipe::create([
 'name' => 'El infaltable',
 'slug' => 'el-infaltable',
@@ -309,26 +310,27 @@ $image = Image::create([
 'imageable_id' => $recipe->id,
 'imageable_type' => 'App\Models\Recipe',
 ]);
+*/
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(289, 125, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+(292, 126, 279, '1', CURRENT_TIMESTAMP, NULL)");
 
 
 ////
 $recipe = Recipe::create([
-'name' => 'Tartara de berenjena con punta de anca',
-'slug' => 'tartara-de-berenjena-con-punta-de-anca',
+'name' => 'Panza panceta',
+'slug' => 'panza-panceta',
 'indice'=> 1,
-'carbs' => 15.36,
+'carbs' => 14.8,
 'time' => 30,
 'type' => 1,
 ]);
 $image = Image::create([
-'url' => 'recipes/d402.jpg',
+'url' => 'recipes/d502.jpg',
 'imageable_id' => $recipe->id,
 'imageable_type' => 'App\Models\Recipe',
 ]);
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(290, 125, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+(293, 126, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
 ////
@@ -346,10 +348,10 @@ $image = Image::create([
 'imageable_id' => $recipe->id,
 'imageable_type' => 'App\Models\Recipe',
 ]);
-*/
+
 DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
 (291, 125, 283, '3', CURRENT_TIMESTAMP, NULL)");
-
+*/
 
 
 

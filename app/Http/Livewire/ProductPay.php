@@ -55,6 +55,9 @@ class ProductPay extends Component
             $user_exist = auth()->user();
             $email = $user_exist->email;
         }else{
+
+            $this->email = trim($this->email);
+
             $this->validate();
             $email = strtolower($this->email);
             $user_exist = User::where('email', $email)->first();

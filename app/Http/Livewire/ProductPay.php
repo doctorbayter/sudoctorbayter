@@ -36,8 +36,7 @@ class ProductPay extends Component
     {
         $this->can_continued = false;
         $this->reset(['error_button']);
-        $propertyName= trim($propertyName);
-        $this->validateOnly($propertyName);
+        $this->validateOnly(trim($propertyName));
     }
 
     public function mount(Plan $plan, $sale = null){
@@ -58,6 +57,7 @@ class ProductPay extends Component
         }else{
 
             $this->email = trim($this->email);
+            $this->email_confirmation = trim($this->email_confirmation);
 
             $this->validate();
             $email = strtolower($this->email);

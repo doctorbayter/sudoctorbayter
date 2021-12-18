@@ -100,9 +100,9 @@ Route::get('/10', function () {
 });
 
 Route::get('/67', function () {
-    return view('no-disponible');
-    //$plan = Plan::find(1);
-    //return redirect()->route('payment.pay', ['plan'=>$plan]);
+    //return view('no-disponible');
+    $plan = Plan::find(1);
+    return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
 
@@ -172,19 +172,49 @@ Route::get('x/clients/navidad', function () {
 
 Route::get('x/plans/', function(){
     $plans = Plan::all();
-    dd($plans);
+    foreach ($plans as $plan) {
+        echo "======</br>";
+        echo "Plan ID: ". $plan->id ."</br>";
+        echo $plan->name."</br>";
+        echo $plan->slug ."</br>";
+        echo "Precio ID ". $plan->price_id ." - ". $plan->price->name."</br>";
+        if($plan->discount_id){
+            echo "******************"."</br>";
+            echo "Descuento ID ". $plan->discount_id."</br>";
+            echo $plan->discount->name."</br>";
+            echo "Valor US$ ". $plan->discount->value."</br>";
+            echo "Válido hasta ". $plan->discount->expires_at."</br>";
+            echo "******************"."</br>";
+        }
+        echo "======</br></br>";
+
+    }
     //$fase_week = Fase::find(2);
     //dd($fase_week->clients());
 });
 
 Route::get('x/prices/', function(){
     $prices = Price::all();
-    dd($prices);
+    foreach ($prices as $price) {
+        echo "======</br>";
+        echo "Plan ID: ". $price->id ."</br>";
+        echo $price->name."</br>";
+        echo $price->value ."</br>";
+        echo "======</br></br>";
+    }
 });
 
 Route::get('x/discounts/', function(){
     $discounts = Discount::all();
-    dd($discounts);
+    foreach ($discounts as $discount) {
+        echo "======</br>";
+        echo "Plan ID: ". $discount->id ."</br>";
+        echo $discount->name."</br>";
+        echo $discount->type ."</br>";
+        echo "Valor US$ ".$discount->value ."</br>";
+        echo "Válido hasta ".$discount->expires_at ."</br>";
+        echo "======</br></br>";
+    }
 });
 
 Route::get('x/sql/', function(){
@@ -294,64 +324,25 @@ Route::get('x/query', function(){
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
 */
 
-
 ////
 /*
-$recipe = Recipe::create([
-'name' => 'El infaltable',
-'slug' => 'el-infaltable',
-'indice'=> 1,
-'carbs' => 0,
-'time' => 10,
-'type' => 1,
-]);
-$image = Image::create([
-'url' => 'recipes/d401.jpg',
-'imageable_id' => $recipe->id,
-'imageable_type' => 'App\Models\Recipe',
-]);
+    $recipe = Recipe::create([
+    'name' => 'Canastilla de codorniz',
+    'slug' => 'canastilla-de-codorniz',
+    'indice'=> 1,
+    'carbs' => 0,
+    'time' => 10,
+    'type' => 1,
+    ]);
+    $image = Image::create([
+    'url' => 'recipes/d403.jpg',
+    'imageable_id' => $recipe->id,
+    'imageable_type' => 'App\Models\Recipe',
+    ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (299, 128, 283, '3', CURRENT_TIMESTAMP, NULL)");
 */
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(297, 128, 286, '1', CURRENT_TIMESTAMP, NULL)");
-
-
-////
-$recipe = Recipe::create([
-'name' => 'Deliciosa trucha',
-'slug' => 'deliciosa-trucha',
-'indice'=> 1,
-'carbs' => 16.84,
-'time' => 30,
-'type' => 1,
-]);
-$image = Image::create([
-'url' => 'recipes/d702.jpg',
-'imageable_id' => $recipe->id,
-'imageable_type' => 'App\Models\Recipe',
-]);
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(298, 128, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
-
-
-////
-/*
-$recipe = Recipe::create([
-'name' => 'Canastilla de codorniz',
-'slug' => 'canastilla-de-codorniz',
-'indice'=> 1,
-'carbs' => 0,
-'time' => 10,
-'type' => 1,
-]);
-$image = Image::create([
-'url' => 'recipes/d403.jpg',
-'imageable_id' => $recipe->id,
-'imageable_type' => 'App\Models\Recipe',
-]);
-*/
-DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-(299, 128, 283, '3', CURRENT_TIMESTAMP, NULL)");
-
 
 });
 

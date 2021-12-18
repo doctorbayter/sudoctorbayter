@@ -282,7 +282,7 @@ class PaymentController extends Controller
                         $previous_plan_premium->delete();
                     }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
+                    $this->addWhatsApp($user->id, 45);
 
                     foreach($fases_premium as $fase){
                         if(!$fase->clients->contains($user->id)){
@@ -290,13 +290,13 @@ class PaymentController extends Controller
                         }
                     }
 
-                    if(!$five_recipes->clients->contains($user->id)){
-                        $five_recipes->clients()->attach($user->id);
-                    }
+                    // if(!$five_recipes->clients->contains($user->id)){
+                    //     $five_recipes->clients()->attach($user->id);
+                    // }
 
-                    if(!$fase_week->clients->contains($user->id)){
-                        $fase_week->clients()->attach($user->id);
-                    }
+                    // if(!$fase_week->clients->contains($user->id)){
+                    //     $fase_week->clients()->attach($user->id);
+                    // }
 
                     break;
                 case 16:

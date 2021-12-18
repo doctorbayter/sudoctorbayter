@@ -36,6 +36,7 @@ class ProductPay extends Component
     {
         $this->can_continued = false;
         $this->reset(['error_button']);
+        $propertyName= trim($propertyName);
         $this->validateOnly($propertyName);
     }
 

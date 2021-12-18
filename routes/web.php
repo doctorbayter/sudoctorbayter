@@ -323,7 +323,6 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (12, $fase->id, '1', 'files/pdf/lista-de-alimentos-reto-navidad.pdf', CURRENT_TIMESTAMP, NULL)");
 */
-
 ////
 /*
     $recipe = Recipe::create([
@@ -343,6 +342,14 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     (299, 128, 283, '3', CURRENT_TIMESTAMP, NULL)");
 */
+
+$plan = Plan::find(15);
+$plan->name = "Oferta Reto - Método DKP 4 Fases";
+$plan->slug = "oferta-reto-4-fases";
+$plan->save();
+$discount = Discount::find(10);
+$discount->name = "Oferta Reto";
+$discount->save();
 
 });
 

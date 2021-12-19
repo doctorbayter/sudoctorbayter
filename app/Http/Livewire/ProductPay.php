@@ -105,7 +105,12 @@ class ProductPay extends Component
 
             $user->createOrGetStripeCustomer();
 
-            $user->charge( $this->flash_sale * 100 , $paymentMethod);
+            if($this->flash_sale != false){
+                $user->charge( $this->flash_sale * 100 , $paymentMethod);
+            }else{
+                $user->charge( $this->plan->finalPrice * 100 , $paymentMethod);
+            }
+
 
             $suscription = new Subscription();
             $suscription->user_id = $user->id;

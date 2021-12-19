@@ -83,9 +83,10 @@ Route::get('/dieta', function () {
 
 Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
 
-Route::get('/navidad', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'navidad']);
+Route::get('/regalo', function () {
+    //return view('no-disponible');
+    $plan = Plan::find(1);
+    return redirect()->route('payment.pay', ['plan'=>$plan, 'sale'=>'regalo']);
 
 })->name('reto.navidad');
 

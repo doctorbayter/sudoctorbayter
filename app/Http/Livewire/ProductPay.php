@@ -41,7 +41,7 @@ class ProductPay extends Component
 
     public function mount(Plan $plan, $sale = null){
 
-        if($plan->id == 1 && $sale == "xxxregaloxxx"){
+        if($plan->id == 1 && $sale == "regalo"){
             $this->flash_sale = 77;
         }else{
             $this->flash_sale = false;

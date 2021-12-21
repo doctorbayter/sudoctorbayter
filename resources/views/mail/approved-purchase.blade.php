@@ -85,7 +85,7 @@
                                                                         <p>{{$plan->name}}</p>
                                                                     </td>
                                                                     <td style="padding: 5px 0" width="20%" align="left">
-                                                                        <p>PRECIO EN OFERTA</p>
+                                                                        <p>{{$plan->finalPrice}} US$</p>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -117,7 +117,7 @@
                                                                         <h4>TOTAL</h4>
                                                                     </td>
                                                                     <td width="20%">
-                                                                        <h4>PRECIO EN OFERTA</h4>
+                                                                        <h4>{{$plan->finalPrice}} US$</h4>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>

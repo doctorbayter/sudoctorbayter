@@ -84,9 +84,9 @@ Route::get('/dieta', function () {
 Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
 
 Route::get('/regalo', function () {
-    //return view('no-disponible');
-    $plan = Plan::find(1);
-    return redirect()->route('payment.pay', ['plan'=>$plan, 'sale'=>'regalo']);
+    return view('no-disponible');
+    //$plan = Plan::find(1);
+    //return redirect()->route('payment.pay', ['plan'=>$plan, 'sale'=>'regalo']);
 
 })->name('reto.navidad');
 
@@ -101,9 +101,9 @@ Route::get('/10', function () {
 });
 
 Route::get('/67', function () {
-    //return view('no-disponible');
-    $plan = Plan::find(15);
-    return redirect()->route('payment.pay', ['plan'=>$plan]);
+    return view('no-disponible');
+    //$plan = Plan::find(15);
+    //return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
 
@@ -163,10 +163,32 @@ Route::get('x/clients', function () {
 Route::get('x/clients/navidad', function () {
     $users = User::all();
     foreach($users as $user){
-        $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', 17)->first();
+        $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', 15)->first();
         if($is_already_subscribed){
             echo $user->email;
             echo"<br/>";
+        }
+    }
+});
+
+Route::get('x/clients/eg', function () {
+    $users = User::all();
+    foreach($users as $user){
+        $is_already_subscribed  = Subscription::where('user_id', $user->id)
+                                                ->whereIn('plan_id', [8, 9]
+                                                )->first();
+        if($is_already_subscribed){
+            $plan = Plan::find($is_already_subscribed->plan_id);
+            $date = \Carbon\Carbon::parse($is_already_subscribed->created_at);
+            echo $user->email;
+            echo "<br/>";
+            echo $plan->name;
+            echo "<br/>";
+            echo "Valor del plan ".$plan->finalPrice. " US$";
+            echo "<br/>";
+            echo "Fecha de compra ". $date->format('d-m-Y');
+            echo "<br/>";
+            echo "======</br></br>";
         }
     }
 });

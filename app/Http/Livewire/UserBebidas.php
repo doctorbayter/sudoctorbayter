@@ -18,7 +18,7 @@ class UserBebidas extends Component
             $this->user_fases = auth()->user()->fases;
         }
 
-        if($planUser->plan->id == 7){
+        if($planUser->plan->id == 7 || $planUser->plan->id == 17){
             $bebidas = Recipe::where('type', '3')->take(3)->get();
         }else{
             $bebidas = Recipe::where('type', '3')->get();

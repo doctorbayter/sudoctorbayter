@@ -83,6 +83,7 @@ class ProductPay extends Component
             }
         }
 
+        $this->activeCampaign();
         $this->can_continued = true;
         $this->data_send = "$this->name~$email~$this->password~0";
 

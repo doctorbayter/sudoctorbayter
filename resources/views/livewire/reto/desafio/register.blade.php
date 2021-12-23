@@ -143,22 +143,22 @@
             </div>
             <ul>
                 <li class="mb-3 flex ">
-                    <p class=""><b class="mr-4 text-yellow-400">1:</b> ¿Qué me llega al pagar? </p>
-                    <p class=" flex-1 text-justify">Al momento del pago, te llegará un correo de confirmación para ingresar al grupo de WhatsApp. La información del reto la tendrás disponible el día viernes 7 de enero en tu cuenta. Para acceder a esta, debes iniciar sesión en doctorbayter.com con el correo y contraseña que registraste cuando realizaste el pago.</p>
+                    <p class=""><b class="mr-4 text-yellow-400">1:</b></p>
+                    <p class=" flex-1 text-justify"><b> ¿Qué me llega al pagar? <br></b> Al momento del pago, te llegará un correo de confirmación para ingresar al grupo de WhatsApp. La información del reto la tendrás disponible el día viernes 7 de enero en tu cuenta. Para acceder a esta, debes iniciar sesión en doctorbayter.com con el correo y contraseña que registraste cuando realizaste el pago.</p>
                 </li>
                 <li class="mb-3 flex">
-                    <p class=""><b class="mr-4 text-yellow-400">2:</b> ¿A qué hora serán las reuniones de zoom? </p>
-                    <p class=" flex-1 text-justify">Las reuniones de zoom serán a la 1:00 p.m. hora Colombia. Haz lo posible por conectarte y verlas en vivo</p>
+                    <p class=""><b class="mr-4 text-yellow-400">2:</b></p>
+                    <p class=" flex-1 text-justify"><b>¿A qué hora serán las reuniones de zoom? <br></b> Las reuniones de zoom serán a la 1:00 p.m. hora Colombia. Haz lo posible por conectarte y verlas en vivo</p>
                 </li>
                 <li class="mb-3 flex">
-                    <p class=""><b class="mr-4 text-yellow-400">3:</b> ¿Qué pasa si no puedo asistir al zoom en vivo? </p>
-                    <p class=" flex-1 text-justify">En caso de no poder asistir, serán grabadas y enviadas a través de un link tanto por tu grupo de WhatsApp como por el correo electrónico que registraste.</p>
+                    <p class=""><b class="mr-4 text-yellow-400">3:</b></p>
+                    <p class=" flex-1 text-justify"> <b>¿Qué pasa si no puedo asistir al zoom en vivo? <br></b> En caso de no poder asistir, serán grabadas y enviadas a través de un link tanto por tu grupo de WhatsApp como por el correo electrónico que registraste.</p>
                 </li>
 
                 </p>
                 <li class="mb-3 flex">
-                    <p class=""><b class="mr-4 text-yellow-400">4:</b> ¿Cuánto peso voy a perder en estos 5 días?</p>
-                    <p class=" flex-1 text-justify">En cuanto al PESO: Ten en cuenta que todos los cuerpos son diferentes, algunos podrán bajar más, otros no tanto, todo depende de qué tan enfermo esté tu organismo.</p>
+                    <p class=""><b class="mr-4 text-yellow-400">4:</b></p>
+                    <p class=" flex-1 text-justify"><b>¿Cuánto peso voy a perder en estos 5 días? <br></b> En cuanto al PESO: Ten en cuenta que todos los cuerpos son diferentes, algunos podrán bajar más, otros no tanto, todo depende de qué tan enfermo esté tu organismo.</p>
                 </li>
 
             </ul>

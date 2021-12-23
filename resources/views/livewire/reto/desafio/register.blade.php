@@ -68,7 +68,7 @@
             <div class="flex flex-col lg:flex-row items-center justify-between mb-16">
                 <i class="fas fa-trophy text-9xl text-gray-300"></i>
                 <div class="lg:ml-10 px-4 lg:px-4">
-                    <h2 class="font-semibold text-2xl lg:text-3xl mb-4 text-red-700">CConoce y domina cómo hacer una dieta para bajar de peso</h2>
+                    <h2 class="font-semibold text-2xl lg:text-3xl mb-4 text-red-700">Conoce y domina cómo hacer una dieta para bajar de peso</h2>
                     <p class="text-justify ">No solo serán 5 días de recetas, serán 5 días de un acompañamiento exclusivo con el Equipo Keto Bayter, además de las reuniones privadas por zoom en compañía del que más sabe de keto, Tu Doctor Bayter.</p>
                 </div>
             </div>
@@ -139,19 +139,25 @@
     <section class="bg-gray-700 py-12  ">
         <article class="max-w-3xl mx-auto text-gray-50 px-6 ">
             <div class="mb-8 ">
-                <h2 class="font-semibold text-3xl mb-4 leading-none">Notas Importantes</h2>
+                <h2 class="font-semibold text-3xl mb-4 leading-none">Preguntas Frecuentes</h2>
             </div>
             <ul>
                 <li class="mb-3 flex ">
-                    <p class=""><b class="mr-4 text-yellow-400">1:</b></p>
+                    <p class=""><b class="mr-4 text-yellow-400">1:</b> ¿Qué me llega al pagar? </p>
                     <p class=" flex-1 text-justify">Al momento del pago, te llegará un correo de confirmación para ingresar al grupo de WhatsApp. La información del reto la tendrás disponible el día viernes 7 de enero en tu cuenta. Para acceder a esta, debes iniciar sesión en doctorbayter.com con el correo y contraseña que registraste cuando realizaste el pago.</p>
                 </li>
                 <li class="mb-3 flex">
-                    <p class=""><b class="mr-4 text-yellow-400">2:</b></p>
-                    <p class=" flex-1 text-justify">Las reuniones de zoom serán a la 1:00 p.m. hora Colombia. Haz lo posible por conectarte y verlas en vivo, en caso de no poder asistir, serán grabadas y enviadas a través de un link tanto por tu grupo de WhatsApp como por el correo electrónico que registraste.</p>
+                    <p class=""><b class="mr-4 text-yellow-400">2:</b> ¿A qué hora serán las reuniones de zoom? </p>
+                    <p class=" flex-1 text-justify">Las reuniones de zoom serán a la 1:00 p.m. hora Colombia. Haz lo posible por conectarte y verlas en vivo</p>
                 </li>
                 <li class="mb-3 flex">
-                    <p class=""><b class="mr-4 text-yellow-400">3:</b></p>
+                    <p class=""><b class="mr-4 text-yellow-400">3:</b> ¿Qué pasa si no puedo asistir al zoom en vivo? </p>
+                    <p class=" flex-1 text-justify">En caso de no poder asistir, serán grabadas y enviadas a través de un link tanto por tu grupo de WhatsApp como por el correo electrónico que registraste.</p>
+                </li>
+
+                </p>
+                <li class="mb-3 flex">
+                    <p class=""><b class="mr-4 text-yellow-400">4:</b> ¿Cuánto peso voy a perder en estos 5 días?</p>
                     <p class=" flex-1 text-justify">En cuanto al PESO: Ten en cuenta que todos los cuerpos son diferentes, algunos podrán bajar más, otros no tanto, todo depende de qué tan enfermo esté tu organismo.</p>
                 </li>
 

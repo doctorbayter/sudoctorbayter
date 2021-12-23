@@ -96,6 +96,11 @@ Route::get('/reto', function () {
     //return view('no-disponible');
 })->name('reto.2022');
 
+Route::get('/desafio', function () {
+    return redirect()->route('reto.register', ['reto'=>'desafio']);
+    //return view('no-disponible');
+})->name('desafio.2022');
+
 
 Route::get('/selecto', function () {
     $plan = Plan::find(10);

@@ -152,7 +152,7 @@
                                     <span class=" text-base ml-2 line-through text-gray-500">{{$plan->price->name}}</span>
                                 </div>
                             @else
-                                <p class="text-4xl md:text-2xl font-bold text-accent-400">{{intval($plan->finalPrice)}} US$</p>
+                                <p class="text-4xl md:text-2xl font-bold text-accent-400">{{$plan->finalPrice}} US$</p>
                             @endif
                         </div>
                     </div>

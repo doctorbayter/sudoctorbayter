@@ -12,12 +12,13 @@ use Livewire\Component;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Mail;
 use Exception;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
 
 class ProductPay extends Component
 {
     public $plan, $suscription, $flash_sale;
-    public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send;
+    public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send, $list_id;
     public $can_continued = false;
     public $error_message = "* Tenemos un error, revisa la información suminitrada anteriormente";
     public $error_button = "Toca aquí para confirmar la información";
@@ -47,6 +48,7 @@ class ProductPay extends Component
             $this->flash_sale = false;
         }
 
+        $this->list_id = 18;
         $this->plan = $plan;
     }
 
@@ -85,6 +87,85 @@ class ProductPay extends Component
         $this->data_send = "$this->name~$email~$this->password~0";
 
     }
+
+
+    public function activeCampaign() {
+
+        $response = Http::withHeaders([
+            'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
+        ]);
+        $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
+            "email" => $this->email,
+            "orders[email]" => "ASC"
+        ]);
+        $userData = $getUserByEmail['contacts'];
+
+        if($userData){
+            $userListsLink = $userData[0]['links']['contactLists'];
+            $userId = $userData[0]['id'];
+
+        }else{
+            $user_name = $this->splitName($this->name);
+            $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
+                "contact" => [
+                    "email" => $this->email,
+                    "firstName" => $user_name[0],
+                    "lastName" => $user_name[1],
+                ]
+            ]);
+            $userListsLink = $addUser['contact']['links']['contactLists'];
+            $userId = $addUser['contact']['id'];
+        }
+
+        $getUserLists =  $response->GET($userListsLink);
+
+        $userLists = $getUserLists['contactLists'];
+
+        if(count($userLists) > 0) {
+
+            foreach($userLists as $userList ) {
+
+                if($userList['list'] == $this->list_id){
+
+                    if($userList['status'] == 1){
+                       return false;
+                    }else if($userList['status'] == "2") {
+                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                            "contactList" => [
+                                "list" => $this->list_id,
+                                "contact" => $userId,
+                                "status" => 1,
+                                "sourceid" => 4
+                            ]
+                        ]);
+                    }
+                    return true;
+                    break;
+                }else{
+                    $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                        "contactList" => [
+                            "list" => $this->list_id,
+                            "contact" => $userId,
+                            "status" => 1
+                        ]
+                    ]);
+                }
+            }
+            return true;
+
+        }else{
+            $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                "contactList" => [
+                    "list" => $this->list_id,
+                    "contact" => $userId,
+                    "status" => 1
+                ]
+            ]);
+            return true;
+        }
+    }
+
+
 
     public function paymentMethodCreate($paymentMethod){
 
@@ -127,45 +208,45 @@ class ProductPay extends Component
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(4, 11, 12))->first();
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
-            $fase = Fase::find(8);
+            $fase = Fase::find(9);
 
-            if($this->plan->id == 15){
-                if($previous_subscribed){
-                    $previous_subscribed->delete();
-                }
+            if($this->plan->id == 18){
+                // if($previous_subscribed){
+                //     $previous_subscribed->delete();
+                // }
 
                 if(!$is_subscribed){
                     $suscription->save();
-                    foreach($fases_premium as $fase){
+                    // foreach($fases_premium as $fase){
 
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    //$fase->clients()->attach($user->id);
+                    //     if(!$fase->clients->contains($user->id)){
+                    //         $fase->clients()->attach($user->id);
+                    //     }
+                    // }
+                    $fase->clients()->attach($user->id);
                 }
 
-                if($whatsapp_subscribed){
-                    if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(45)]);
-                    }else{
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(45)]);
-                    }
-                    $whatsapp_subscribed->save();
-                }else{
-                    $suscription_whatsApp             = new Subscription();
-                    $suscription_whatsApp->user_id    = $user->id;
-                    $suscription_whatsApp->plan_id    = 4;
-                    $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays(45);
-                    $suscription_whatsApp->save();
-                }
+                // if($whatsapp_subscribed){
+                //     if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
+                //         $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(45)]);
+                //     }else{
+                //         $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(45)]);
+                //     }
+                //     $whatsapp_subscribed->save();
+                // }else{
+                //     $suscription_whatsApp             = new Subscription();
+                //     $suscription_whatsApp->user_id    = $user->id;
+                //     $suscription_whatsApp->plan_id    = 4;
+                //     $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays(45);
+                //     $suscription_whatsApp->save();
+                // }
 
                 switch ($this->plan->id) {
                     case 7:
                         $mail = new ApprovedPurchaseNoChat($this->plan, $user);
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     break;
-                    case 17:
+                    case 18:
                         $mail = new ApprovedPurchaseReto($this->plan, $user);
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     break;
@@ -174,6 +255,8 @@ class ProductPay extends Component
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     break;
                 }
+
+                $this->activeCampaign();
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
             }

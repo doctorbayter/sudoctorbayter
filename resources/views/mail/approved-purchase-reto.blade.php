@@ -34,8 +34,7 @@
                 <tr>
                   <td style="padding:0 0 36px 0;color:#153643;">
                     <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif; ">Hola! {{$user->name}} Tu pago ha sido confirmado</h1>
-                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Quiero darte la bienvenida al <b>Reto Keto Navidad</b> tu compra ha sido aprobada con éxito y ahora tendrás acceso a toda la información que este reto.</p>
-
+                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Quiero darte la bienvenida al <b>Desafio 2022</b> tu compra ha sido aprobada con éxito y ahora tendrás acceso a toda la información que este reto.</p>
                   </td>
                 </tr>
                 <tr>
@@ -136,11 +135,10 @@
                   <td style="padding-top:1rem;">
                     <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
                       <tr>
-
                         <td style="text-align:center;width:260px;padding:0;vertical-align:top;color:#153643;">
                           <p style="text-align:center;width:100%;margin:0 0 25px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><img src="{{asset('img/mails/mail_whatsapp.jpg')}}" alt="" width="100%" style="height:auto;display:block;" /></p>
                           <p style="margin:0 0 12px 0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;">Accede al grupo del reto con el <b>Equipo del Doctor Bayter</b></p>
-                          <p style="margin:0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://chat.whatsapp.com/ChHmZWBiU5mBVls69M0KfG" style="color:#a30000;text-decoration:underline;">Entra aquí al grupo de WhatsApp</a></p>
+                          <p style="margin:0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://chat.whatsapp.com/HvenER8775WIkgetIqAWYU" style="color:#a30000;text-decoration:underline;">Entra aquí al grupo de WhatsApp</a></p>
                         </td>
                       </tr>
                     </table>

@@ -88,7 +88,14 @@ Route::get('/regalo', function () {
     //$plan = Plan::find(1);
     //return redirect()->route('payment.pay', ['plan'=>$plan, 'sale'=>'regalo']);
 
-})->name('reto.navidad');
+})->name('regalo.navidad');
+
+
+Route::get('/reto', function () {
+    return redirect()->route('reto.register', ['reto'=>'desafio']);
+    //return view('no-disponible');
+})->name('reto.2022');
+
 
 Route::get('/selecto', function () {
     $plan = Plan::find(10);
@@ -245,20 +252,21 @@ Route::get('x/sql/', function(){
 });
 
 Route::get('x/query', function(){
-/*
+
     $plan = Plan::create([
-        'name' => 'Reto Keto Navidad',
-        'slug' => 'reto-navidad',
+        'name' => 'Desafio 2022',
+        'slug' => 'desafio-2022',
         'price_id' => 14
     ]);
 
     $fase = Fase::create([
-        'name' => 'Reto 7 Días Navidad',
-        'sub_name' => 'Reto <span class="text-red-700">Keto</span> Navidad',
+        'name' => 'Desafio 2022',
+        'sub_name' => 'Libérate de la <span class="text-red-700">mierda</span> del 2021',
         'descripcion' => '',
-        'slug' => 'keto-navidad',
+        'slug' => 'desafio-2022',
     ]);
 
+    /*
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
@@ -365,14 +373,6 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     (299, 128, 283, '3', CURRENT_TIMESTAMP, NULL)");
 */
-
-$plan = Plan::find(15);
-$plan->name = "Oferta Reto - Método DKP 4 Fases";
-$plan->slug = "oferta-reto-4-fases";
-$plan->save();
-$discount = Discount::find(10);
-$discount->name = "Oferta Reto";
-$discount->save();
 
 });
 

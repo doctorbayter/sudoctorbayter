@@ -27,6 +27,10 @@ class Reto extends Component
                 $this->plan = Plan::find(17);
                 $this->list_id = 15;
                 break;
+            case 'desafio':
+                    $this->plan = Plan::find(18);
+                    $this->list_id = 18;
+                    break;
             default:
                 $this->list_id = null;
                 break;
@@ -55,6 +59,16 @@ class Reto extends Component
                     'video' => null,
                 ];
             break;
+            case 'desafio':
+                return $this->data = [
+                    'title' => 'Desafio 2022',
+                    'subtitle'=> 'Libérate de la mierda del 2021',
+                    'type' => 'Reto Online',
+                    'online' => true,
+                    'billdoard' => null,
+                    'video' => null,
+                ];
+            break;
             default:
                 return null;
                 break;
@@ -72,6 +86,9 @@ class Reto extends Component
             break;
             case 'navidad':
                 return view('livewire.reto.7-dias.register');
+            break;
+            case 'desafio':
+                return view('livewire.reto.desafio.register');
             break;
             default:
                 return view('livewire.masterclass.no-disponible');
@@ -145,8 +162,6 @@ class Reto extends Component
         if(count($userLists) > 0) {
 
             foreach($userLists as $userList ) {
-
-
 
                 if($userList['list'] == $this->list_id){
 

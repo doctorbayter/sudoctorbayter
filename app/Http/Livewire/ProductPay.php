@@ -257,7 +257,7 @@ class ProductPay extends Component
                     break;
                 }
 
-                $this->activeCampaign();
+                //$this->activeCampaign();
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
             }

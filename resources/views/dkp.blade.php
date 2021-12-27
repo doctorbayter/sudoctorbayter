@@ -413,7 +413,7 @@
             </header>
             <div>
 
-<div data-tf-widget="v900gdXI" data-tf-iframe-props="title=Reunión Equipo Doctor Bayter" style="width:100%;height:400px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
+<div data-tf-widget="v900gdXI" data-tf-iframe-props="title=Reunión Equipo Doctor Bayter" style="width:100%;height:600px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
 
 {{--
 <!-- Principio del widget integrado de Calendly -->

@@ -12,7 +12,7 @@ class UserFase extends Component
 {
     use AuthorizesRequests;
 
-    public $fase , $day, $current, $carbs, $snacks, $snack, $user_fases, $user_plan;
+    public $fase , $day, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan;
 
     public function mount(Fase $fase){
 
@@ -20,6 +20,7 @@ class UserFase extends Component
         if(auth()->user()->subscription){
             $this->user_fases = auth()->user()->fases;
         }
+        $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4])->sortBy('id');
 
         foreach($fase->days as $day){
             if($day->users()->find(auth()->user()->id)){

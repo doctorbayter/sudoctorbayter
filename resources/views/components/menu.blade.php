@@ -7,62 +7,107 @@
         </div>
 
         <nav  class="flex-grow md:block md:px-4 pb-4 md:pb-0 md:overflow-y-auto">
-        <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
-            <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">
-            <span class="text-xs whitespace-nowrap">Método DKP</span>
-            </button>
-        </div>
-        <div>
-            @foreach ($fases as $fase)
 
-                <a href="{{route('plan.fase', $fase)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$fase->name}} " >
-                    <i class=" text-lg fas fa-layer-group mr-2"></i>
-                    <div class="flex-1 whitespace-nowrap"> <b >{!!$fase->sub_name!!}</b></div>
+        @if (auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id')->count() >0)
+            <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
+                <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">
+                <span class="text-xs whitespace-nowrap">Método DKP</span>
+                </button>
+            </div>
+            <div>
+                @foreach (auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id') as $fase)
+
+                    <a href="{{route('plan.fase', $fase)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$fase->name}} " >
+                        <i class=" text-lg fas fa-layer-group mr-2"></i>
+                        <div class="flex-1 whitespace-nowrap"> <b >{!!$fase->sub_name!!}</b></div>
+                    </a>
+
+                @endforeach
+            </div>
+        @endif
+
+        @if (auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id')->count()>0)
+        <div class="md:mt-12">
+            <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
+                <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">
+                <span class="text-xs whitespace-nowrap">Adicionales</span>
+                </button>
+            </div>
+            <div>
+                @foreach (auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id') as $adicional)
+
+                    <a href="{{route('plan.fase', $adicional)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$adicional->name}} " >
+                        <i class=" text-lg fas fa-bullseye mr-2"></i>
+                        <div class="flex-1 whitespace-nowrap"> <b >{!!$adicional->sub_name!!}</b></div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+        @endif
+
+
+
+        @if (auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7])->sortBy('id')->count() >0)
+            <div class="md:mt-12">
+                <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
+                    <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">
+                    <span class="text-xs whitespace-nowrap">Retos</span>
+                    </button>
+                </div>
+                <div>
+                    @foreach (auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7])->sortBy('id') as $reto)
+
+                        <a href="{{route('plan.fase', $reto)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$reto->name}} " >
+                            <i class=" text-lg fas fa-bullseye mr-2"></i>
+                            <div class="flex-1 whitespace-nowrap"> <b >{!!$reto->sub_name!!}</b></div>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
+        @if ($userPlan != 7 && $userPlan != 17 && $userPlan != 18 && $userPlan != 22)
+            <div class="md:mt-12">
+                <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
+                    <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-700 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">
+                    <span class="text-xs">Extras</span>
+                </button>
+                </div>
+
+                <a href="{{route('plan.bebidas')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-mediu text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+                    <i class=" text-lg fas fa-cocktail mr-2"></i>
+                    <span class="whitespace-nowrap">Bebidas Keto</span>
+                </a>
+                <a href="{{route('plan.salsas')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+                    <i class=" text-lg fas fa-coffee mr-2"></i>
+                    <span>Salsitas</span>
                 </a>
 
-            @endforeach
-        </div>
-
-        <div class="md:mt-12">
-            <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
-                <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-700 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">
-                <span class="text-xs">Extras</span>
-            </button>
+                <a href="{{route('plan.snacks')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+                    <i class=" text-lg fas fa-cookie-bite mr-2"></i>
+                    <span>Snacks</span>
+                </a>
             </div>
 
-            <a href="{{route('plan.bebidas')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-mediu text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
-                <i class=" text-lg fas fa-cocktail mr-2"></i>
-                <span class="whitespace-nowrap">Bebidas Keto</span>
-            </a>
-            <a href="{{route('plan.salsas')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
-                <i class=" text-lg fas fa-coffee mr-2"></i>
-                <span>Salsitas</span>
-            </a>
+            <div class="md:mt-12">
+                <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
+                    <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-700 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">
+                    <span class="text-xs">Seguimiento</span>
+                </button>
+                </div>
 
-            <a href="{{route('plan.snacks')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
-                <i class=" text-lg fas fa-cookie-bite mr-2"></i>
-                <span>Snacks</span>
-            </a>
-        </div>
 
-        <div class="md:mt-12">
-            <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
-                <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-700 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">
-                <span class="text-xs">Adicionales</span>
-            </button>
+                <a href="{{route('plan.whatsapp')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+                    <i class=" text-lg fab fa-whatsapp-square mr-2"></i>
+                    <span>Whatsapp</span>
+                </a>
+
+                <a href="{{route('cita')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-mediu text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+                    <i class=" text-lg fas fa-calendar-alt mr-2"></i>
+                    <span class="whitespace-nowrap">Cita Virtual</span>
+                </a>
             </div>
-
-            @if ($userPlan != 7)
-            <a href="{{route('plan.whatsapp')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
-                <i class=" text-lg fab fa-whatsapp-square mr-2"></i>
-                <span>Whatsapp</span>
-            </a>
-            @endif
-            <a href="{{route('cita')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-mediu text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
-                <i class=" text-lg fas fa-calendar-alt mr-2"></i>
-                <span class="whitespace-nowrap">Cita Virtual</span>
-            </a>
-        </div>
+        @endif
 
         <div class="md:mt-12">
             <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
@@ -80,7 +125,6 @@
             </a>
 
         </div>
-
       </nav>
     </div>
     @push('style')

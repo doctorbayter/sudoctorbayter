@@ -1,7 +1,7 @@
 <div x-data="{ openMenu: false }" >
     <div class="flex">
         @can('enrolled', auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first())
-            <x-menu :fases="$user_fases" :userPlan="$user_plan" />
+            <x-menu  :userPlan="$user_plan" />
             <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="w-11/12 bg-white">
 
                 <section class="bg-gradient-to-t from-gray-100 " style="height: 100%">

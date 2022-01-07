@@ -11,20 +11,28 @@ use Livewire\Component;
 
 class UserPlan extends Component
 {
-    public $user_fases, $user_plan, $is_premium, $plan_week, $subscribed_fase_week, $subscribed_whatsapp;
+    public $user_fases, $user_retos, $user_adicionales, $user_plan, $user_plan_data, $is_premium, $plan_week, $subscribed_fase_week, $subscribed_whatsapp;
 
     public function render(){
 
-        if(auth()->user()->subscription){
-            $this->user_fases = auth()->user()->fases->sortBy('id');
-        }
+        $this->user_fases = auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id');
+        $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7])->sortBy('id');
+        $this->user_adicionales = auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id');
 
-        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first();
+        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->sortBy('id')->first();
         $planPremium = Plan::find(1);
         $planWhatsapp = Plan::find(4);
         $whatsapp = auth()->user()->subscriptions->where('plan_id', 4)->first();
         $dkp = auth()->user()->subscriptions->where('plan_id', 5)->first();
-        $this->user_plan = $planUser->plan->id;
+
+        if($planUser){
+            $this->user_plan = $planUser->plan->id ;
+            $this->user_plan_data = $planUser->plan;
+        }else{
+            $this->user_plan = null;
+        }
+
+
         $this->is_premium = Subscription::where('user_id', auth()->user()->id)
                                                 ->where('plan_id', 1)
                                                 ->orWhere('plan_id', 9)
@@ -42,17 +50,7 @@ class UserPlan extends Component
         $fase_week = Fase::find(5);
         $this->subscribed_fase_week = $fase_week->clients->contains(auth()->user()->id);
 
-        if($planUser->plan->id == 7){
-            $planUpdate = Plan::find(8);
-            return view('livewire.user-plan-week', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
-        }else if($planUser->plan->id == 21){
-            $planUpdate = Plan::find(2);
-            return view('livewire.user-plan-week', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
-        }
-        else{
-
-            $planUpdate = Plan::find(3);
-            return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
-        }
+        $planUpdate = Plan::find(3);
+        return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
     }
 }

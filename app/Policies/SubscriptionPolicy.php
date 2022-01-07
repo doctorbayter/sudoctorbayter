@@ -22,7 +22,7 @@ class SubscriptionPolicy
 
     public function enrolled(User $user, Subscription $subscription){
 
-        if($subscription->plan_id == 1 || $subscription->plan_id == 2 || $subscription->plan_id == 7 || $subscription->plan_id == 8 || $subscription->plan_id == 9 || $subscription->plan_id == 10 || $subscription->plan_id == 15 || $subscription->plan_id == 16 || $subscription->plan_id == 17 || $subscription->plan_id == 21) {
+        if($subscription->plan_id == 1 || $subscription->plan_id == 2 || $subscription->plan_id == 7 || $subscription->plan_id == 8 || $subscription->plan_id == 9 || $subscription->plan_id == 10 || $subscription->plan_id == 15 || $subscription->plan_id == 16 || $subscription->plan_id == 17 || $subscription->plan_id == 21 || $subscription->plan_id == 22) {
             if($subscription->user_id == $user->id){
                 return true;
             }

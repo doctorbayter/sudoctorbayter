@@ -172,10 +172,10 @@ Route::get('x/clients', function () {
     }
 });
 
-Route::get('x/clients/navidad', function () {
+Route::get('x/clients/reto', function () {
     $users = User::all();
     foreach($users as $user){
-        $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', 15)->first();
+        $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', 18)->first();
         if($is_already_subscribed){
             echo $user->email;
             echo"<br/>";
@@ -351,13 +351,7 @@ Route::get('x/query', function(){
 
     */
 
-
-
-
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (311, 133, 286, '1', CURRENT_TIMESTAMP, NULL)");
-
+    /*
     $recipe = Recipe::create([
         'name' => 'Apanemos',
         'slug' => 'apanemos',
@@ -377,7 +371,7 @@ Route::get('x/query', function(){
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     (313, 133, 296, '3', CURRENT_TIMESTAMP, NULL)");
-
+    */
 
 
 });

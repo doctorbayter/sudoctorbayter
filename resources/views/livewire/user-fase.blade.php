@@ -55,6 +55,8 @@
                             <section class="mt-8 mb-20">
                                 <div class="grid grid-cols-{{$fase->weeks->count()}} text-center">
 
+
+
                                     @foreach ($fase->weeks as $key => $week)
 
                                         <div class="border border-gray-100 font-bold cursor-pointer bg-gray-50 rounded-tl-md relative">
@@ -75,7 +77,7 @@
                                                 </div>
                                             @endif
 
-                                            <div class="grid overflow-hidden h-0 md:h-auto grid-cols-7 text-center shadow-md  absolute w-full " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
+                                            <div class="grid overflow-hidden h-0 md:h-auto grid-cols-{{$this->days}} text-center shadow-md  absolute w-full " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
                                                 @foreach ($week->days->sortBy('day') as $day)
 
                                                     @if ($day->fase->id == $fase->id)
@@ -90,7 +92,7 @@
 
                                 </div>
                                     @foreach ($fase->weeks as $key => $week)
-                                        <div class="w-10/12 grid md:hidden overflow-hidden grid-cols-7 text-center shadow-md absolute " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
+                                        <div class="w-10/12 grid md:hidden overflow-hidden grid-cols-{{$this->days}} text-center shadow-md absolute " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
                                             @foreach ($week->days as $day)
 
                                                 @if ($day->fase->id == $fase->id)

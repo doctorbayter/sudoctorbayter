@@ -12,7 +12,7 @@ class UserFase extends Component
 {
     use AuthorizesRequests;
 
-    public $fase , $day, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan;
+    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan;
 
     public function mount(Fase $fase){
 
@@ -25,8 +25,6 @@ class UserFase extends Component
         foreach($fase->days as $day){
             if($day->users()->find(auth()->user()->id)){
 
-
-
                 $this->day = $day;
                 break;
             }
@@ -34,6 +32,22 @@ class UserFase extends Component
         if (!$this->day) {
             $this->day = $fase->days->first();
         }
+
+        $day_count = 0;
+        foreach ($fase->weeks as $key => $week){
+            foreach ($week->days->sortBy('day') as $day){
+                if ($day->fase->id == $fase->id){
+                    $day_count = $day_count + 1;
+                }
+            }
+        }
+
+        if($day_count == 5){
+            $this->days = 5;
+        }else{
+            $this->days = 7;
+        }
+
 
         $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first();
         $this->user_plan = $planUser->plan->id;

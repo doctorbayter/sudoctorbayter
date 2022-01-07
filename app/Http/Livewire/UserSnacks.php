@@ -24,7 +24,6 @@ class UserSnacks extends Component
             $snacks = Recipe::where('type', '2')->get();
         }
 
-
         return view('livewire.user-snacks', compact('snacks'));
     }
 }

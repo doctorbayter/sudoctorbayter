@@ -228,6 +228,19 @@ Route::get('x/plans/', function(){
     //dd($fase_week->clients());
 });
 
+Route::get('x/fases/', function(){
+    $fases = Fase::all();
+    foreach ($fases as $fase) {
+        echo "======</br>";
+        echo "Fase ID: ". $fase->id ."</br>";
+        echo $fase->name."</br>";
+        echo "======</br></br>";
+
+    }
+    //$fase_week = Fase::find(2);
+    //dd($fase_week->clients());
+});
+
 Route::get('x/prices/', function(){
     $prices = Price::all();
     foreach ($prices as $price) {

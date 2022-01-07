@@ -19,7 +19,7 @@ class UserPlan extends Component
         $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7])->sortBy('id');
         $this->user_adicionales = auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id');
 
-        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->sortBy('id')->first();
+        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14, 17])->sortBy('id')->first();
         $planPremium = Plan::find(1);
         $planWhatsapp = Plan::find(4);
         $whatsapp = auth()->user()->subscriptions->where('plan_id', 4)->first();

@@ -10,7 +10,7 @@ class UserWhatsapp extends Component
     public $user_fases, $user_plan, $subscribed_whatsapp = false, $planWhatsapp3meses, $planWhatsapp6meses;
     public function render()
     {
-        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first();
+        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14, 17])->first();
         $this->user_plan = $planUser->plan->id;
         if(auth()->user()->subscription){
             $this->user_fases = auth()->user()->fases;

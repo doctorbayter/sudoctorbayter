@@ -49,7 +49,7 @@ class UserFase extends Component
         }
 
 
-        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->first();
+        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14, 17])->first();
         $this->user_plan = $planUser->plan->id;
 
 

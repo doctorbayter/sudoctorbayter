@@ -56,6 +56,11 @@ Route::get('/cita', [HomeController::class, 'cita'])->name('cita');
 Route::get('/what', [HomeController::class, 'what'])->name('what');
 Route::get('/recipe/{recipe}', UserRecipe::class)->name('recipe');
 
+
+Route::get('/privacidad', function(){
+    return view('terms');
+} )->name('privacidad');
+
 Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('masterclass.register');
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');

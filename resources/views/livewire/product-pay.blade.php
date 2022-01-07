@@ -166,7 +166,7 @@
                         @else
                             <div class="my-6">
                                 <label class="inline-flex items-center text-sm">
-                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-secundary-400 " checked disabled><span class="ml-2 text-gray-700">Al completar la compra, aceptas estos <a href="#" class="text-secundary-400 font-bold underline"> Términos y condiciones</a></span>
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-secundary-400 " checked disabled><span class="ml-2 text-gray-700">Al completar la compra, aceptas estos <a href="{{route('privacidad')}}" class="text-secundary-400 font-bold underline"> Términos y condiciones</a></span>
                                 </label>
                             </div>
 

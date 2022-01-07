@@ -290,6 +290,7 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
+    /*
     $day = Day::create([
         'day' => 1,
         'fase_id' => 9,
@@ -300,73 +301,110 @@ Route::get('x/query', function(){
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
     (86, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-$day = Day::create([
-    'day' => 2,
-    'fase_id' => 9,
-]);
-DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-(87, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+        'day' => 2,
+        'fase_id' => 9,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (87, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
 
-DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-(87, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (87, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-$day = Day::create([
-    'day' => 3,
-    'fase_id' => 9,
-]);
-DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-(88, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+        'day' => 3,
+        'fase_id' => 9,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (88, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
 
-DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-(88, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (88, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-$day = Day::create([
-    'day' => 4,
-    'fase_id' => 9,
-]);
-DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-(89, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+        'day' => 4,
+        'fase_id' => 9,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (89, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
 
-DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-(89, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-
-$day = Day::create([
-    'day' => 5,
-    'fase_id' => 9,
-]);
-DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-(90, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
-
-DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-(90, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (89, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
-DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-(14, 'Lista de Alimentos Desafio 2022', 'files/pdf/lista-de-alimentos-desafio-2022.pdf', 9, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+        'day' => 5,
+        'fase_id' => 9,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (90, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
 
-DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-(13, 9, '1', 'files/pdf/lista-de-alimentos-desafio-2022.pdf', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (90, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-////
-/*
+
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (14, 'Lista de Alimentos Desafio 2022', 'files/pdf/lista-de-alimentos-desafio-2022.pdf', 9, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
+    (13, 9, '1', 'files/pdf/lista-de-alimentos-desafio-2022.pdf', CURRENT_TIMESTAMP, NULL)");
+
+    */
+
+
+
     $recipe = Recipe::create([
-    'name' => 'Canastilla de codorniz',
-    'slug' => 'canastilla-de-codorniz',
+    'name' => 'Toston de oregano',
+    'slug' => 'toston-de-oregano',
     'indice'=> 1,
-    'carbs' => 0,
+    'carbs' => 4.25,
     'time' => 10,
     'type' => 1,
     ]);
     $image = Image::create([
-    'url' => 'recipes/d403.jpg',
+    'url' => 'recipes/d22-01.jpg',
     'imageable_id' => $recipe->id,
     'imageable_type' => 'App\Models\Recipe',
     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (299, 128, 283, '3', CURRENT_TIMESTAMP, NULL)");
-*/
+    (300, 129, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $recipe = Recipe::create([
+        'name' => 'Romerosqui acostillado',
+        'slug' => 'romerosqui-acostillado',
+        'indice'=> 1,
+        'carbs' => 14.93,
+        'time' => 30,
+        'type' => 1,
+        ]);
+        $image = Image::create([
+        'url' => 'recipes/d22-02.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (301, 129, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+
+
+    $recipe = Recipe::create([
+        'name' => 'Quesillo caldoso',
+        'slug' => 'quesillo-caldoso',
+        'indice'=> 1,
+        'carbs' => 1.4,
+        'time' => 15,
+        'type' => 1,
+        ]);
+        $image = Image::create([
+        'url' => 'recipes/d22-03.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (302, 129, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+
 
 });
 

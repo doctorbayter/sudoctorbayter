@@ -356,24 +356,27 @@ Route::get('x/query', function(){
 
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (309, 132, 294, '1', CURRENT_TIMESTAMP, NULL)");
+    (311, 133, 286, '1', CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'Costillitas picosas',
-        'slug' => 'costillitas-picosas',
+        'name' => 'Apanemos',
+        'slug' => 'apanemos',
         'indice'=> 1,
-        'carbs' => 18.05,
+        'carbs' => 14.93,
         'time' => 30,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/d22-07.jpg',
+        'url' => 'recipes/d22-08.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (310, 132, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (312, 133, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (313, 133, 296, '3', CURRENT_TIMESTAMP, NULL)");
 
 
 

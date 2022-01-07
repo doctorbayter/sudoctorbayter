@@ -3,7 +3,7 @@
 
     @php
         if(auth()->user()->subscription){
-            $user_plan = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14, 17])->sortBy('id')->first();
+            $user_plan = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->sortBy('plan_id')->first();
         }
     @endphp
 

@@ -10,7 +10,7 @@ class UserSalsitas extends Component
     public $user_fases, $user_plan;
     public function render()
     {
-        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14, 17])->first();
+        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->sortBy('plan_id')->first();
         $this->user_plan = $planUser->plan->id;
 
         if(auth()->user()->subscription){

@@ -356,42 +356,28 @@ Route::get('x/query', function(){
 
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (303, 130, 286, '1', CURRENT_TIMESTAMP, NULL)");
+    (306, 131, 289, '1', CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'Alitas con aroma de...',
-        'slug' => 'alitas-con-aroma-de',
+        'name' => 'La tipica de berenjena',
+        'slug' => 'la-tipica-de-berenjena',
         'indice'=> 1,
-        'carbs' => 17.97,
+        'carbs' => 21.87,
         'time' => 30,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/d22-04.jpg',
+        'url' => 'recipes/d22-06.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (304, 130, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (307, 131, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
-
-    $recipe = Recipe::create([
-        'name' => 'Caldoso huevillo',
-        'slug' => 'Caldoso-huevillo',
-        'indice'=> 1,
-        'carbs' => 1.4,
-        'time' => 15,
-        'type' => 1,
-        ]);
-        $image = Image::create([
-        'url' => 'recipes/d22-05.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (305, 130, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    (308, 131, 296, '3', CURRENT_TIMESTAMP, NULL)");
 
 
 });

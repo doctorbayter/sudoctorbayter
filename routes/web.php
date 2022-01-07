@@ -353,57 +353,45 @@ Route::get('x/query', function(){
 
 
 
-    $recipe = Recipe::create([
-    'name' => 'Toston de oregano',
-    'slug' => 'toston-de-oregano',
-    'indice'=> 1,
-    'carbs' => 4.25,
-    'time' => 10,
-    'type' => 1,
-    ]);
-    $image = Image::create([
-    'url' => 'recipes/d22-01.jpg',
-    'imageable_id' => $recipe->id,
-    'imageable_type' => 'App\Models\Recipe',
-    ]);
+
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (300, 129, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+    (303, 130, 286, '1', CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'Romerosqui acostillado',
-        'slug' => 'romerosqui-acostillado',
+        'name' => 'Alitas con aroma de...',
+        'slug' => 'alitas-con-aroma-de',
         'indice'=> 1,
-        'carbs' => 14.93,
+        'carbs' => 17.97,
         'time' => 30,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/d22-02.jpg',
+        'url' => 'recipes/d22-04.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (301, 129, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (304, 130, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
     $recipe = Recipe::create([
-        'name' => 'Quesillo caldoso',
-        'slug' => 'quesillo-caldoso',
+        'name' => 'Caldoso huevillo',
+        'slug' => 'Caldoso-huevillo',
         'indice'=> 1,
         'carbs' => 1.4,
         'time' => 15,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/d22-03.jpg',
+        'url' => 'recipes/d22-05.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (302, 129, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    (305, 130, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 
 });

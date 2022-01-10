@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class UserPlan extends Component
 {
-    public $user_fases, $user_retos, $user_adicionales, $user_plan, $user_plan_data, $is_premium, $plan_week, $subscribed_fase_week, $subscribed_whatsapp;
+    public $user_fases, $user_retos, $user_adicionales, $user_plan, $user_plan_data, $is_premium, $plan_week, $subscribed_fase_week, $subscribed_desafio, $subscribed_whatsapp;
 
     public function render(){
 
@@ -49,6 +49,9 @@ class UserPlan extends Component
         $this->plan_week = Plan::find(7);
         $fase_week = Fase::find(5);
         $this->subscribed_fase_week = $fase_week->clients->contains(auth()->user()->id);
+
+        $fase_desafio = Fase::find(9);
+        $this->subscribed_desafio = $fase_desafio->clients->contains(auth()->user()->id);
 
         $planUpdate = Plan::find(3);
         return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));

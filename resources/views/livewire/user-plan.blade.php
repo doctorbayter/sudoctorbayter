@@ -42,6 +42,39 @@
                             </header>
                             <section class="">
 
+                                @if ($subscribed_desafio)
+                                    <aside class="mt-8">
+                                        <div class="py-8 px-8 rounded-2xl  border-dashed border-red-700 border-4 bg-gray-200">
+
+                                            <h2 class="text-2xl md:text-4xl font-bold text-red-700">Próximas reuniones de Zoom</h2>
+                                            <p class="mt-4">No te pierdas las reuniones de Zoom del Desafio 2022 <b>Libérate de la mierda del 2021
+                                            </b> A continuación encontrarás los datos de acceso a las reuniones grupales privadas de Zoom con tu doctor Bayter.</p>
+                                            <div class="flex-col md:flex-row justify-around my-8">
+                                                <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
+                                                    <h2>Primera reunión <b>Desafio 2022</b></h2>
+                                                    <hr class="my-2 border-gray-700">
+                                                    <p><b>Hora:</b> 1:00 p.m. Colombia</p>
+                                                    <code>
+                                                        <p><b>ID de reunión:</b> 857 9132 8257</p>
+                                                        <p><b>Código de acceso:</b> 717711</p>
+                                                    </code>
+                                                    <a href="https://us02web.zoom.us/j/85791328257?pwd=NXVOTHJpckhmOGsyNHhkVDB1dThqZz09" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso directo</a>
+                                                </div>
+                                                <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 opacity-75 mb-8">
+                                                    <h2>Segunda reunión <b>Desafio 2022</b></h2>
+                                                    <hr class="my-2 border-gray-700">
+                                                    <p><b>Hora:</b> Disponible próximamente</p>
+                                                    <code>
+                                                        <p><b>ID de reunión:</b> -</p>
+                                                        <p><b>Código de acceso:</b> -</p>
+                                                    </code>
+                                                    <a class="cursor-default inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-gray-700 border-gray-700 text-gray-400 uppercase transition-colors duration-300 ease-in-out">Disponible Próximamente</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                @endif
+
                                 <div class="grid grid-cols-1 xl:grid-cols-2  gap-8 pt-8">
 
                                     @forelse($user_retos as $reto)

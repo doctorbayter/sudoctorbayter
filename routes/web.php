@@ -64,6 +64,9 @@ Route::get('/privacidad', function(){
 Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('masterclass.register');
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
+Route::get('masterclass/{masterclass}/dia-{day}', [Masterclass::class, 'day'])->name('masterclass.day');
+
+
 
 Route::get('curso-keto', CursoGratis::class)->name('cursos.keto.register');
 Route::get('curso-keto/go',[CursoGratis::class,'go'])->name('cursos.keto.go');

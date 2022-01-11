@@ -101,6 +101,74 @@ class Masterclass extends Component
         return view('livewire.masterclass.thanks', ['masterclass'=>$masterclass, 'data'=>$data]);
     }
 
+
+    public function reto4Data($reto4)    {
+        switch ($reto4) {
+            case 'reto-4':
+                return $this->data = [
+                    'title' => 'Reto desinflama tu cuerpo 4 días',
+                    'text'=> '',
+                    'billdoard' => null,
+                    'video' => null,
+                ];
+                break;
+            default:
+                return null;
+                break;
+        }
+    }
+
+    public function reto4DaysData($day)    {
+        switch ($day) {
+            case 1:
+                return $this->data = [
+
+                    'text'=> '<p>Este reto de 4 días lo he diseñado para desinflamar y ponerle fin a esa retención de líquidos que hace que tu célula no funcione bien y te sientas enfermo. Y cuando hablo de desinflamar, no es solo disminuir la hinchazón, es hacerte BAJAR DE PESO.</p><br><p>Te voy a demostrar que en tan solo en 4 días, tu cuerpo se desinflamará, mejorarás tu digestión y le dirás adiós a esos kilos de más que eran solo líquido.</p>',
+                    'video' => null,
+                ];
+                break;
+            case 2:
+                return $this->data = [
+                    'text'=> '<p><b>Recuerda que es MUY importante tomar al menos 3 litros de agua al día, de los cuales al menos 1 debe ser con sal rosada del Himalaya.</b></p>',
+                    'video' => null,
+                ];
+                break;
+            case 3:
+                return $this->data = [
+                    'text'=> '<p>Cada vez estamos más cerca de cumplir nuestro objetivo principal de este reto, <b>Desinflamar nuestro cuerpo y lo mejor, decirle adiós a esos kilos de más que te estaban  ENFERMANDO.</b></p>',
+                    'video' => null,
+                ];
+                break;
+            case 4:
+                return $this->data = [
+                    'text'=> '<p>Hoy darás el último paso en este reto, que a la vez será el primero que te llevará a un nuevo estilo de vida, lleno de energía, más salud,  y lo más importante menos grasa.</p><br><p><b>¿Sabes por qué?</b></p><br><p>Porque si hiciste el Reto día a día y seguiste mis recomendaciones al pie de la letra, comprobaste que comiendo delicioso puedes bajar de peso, aumentar tu energía y ganar salud.</p>',
+                    'video' => null,
+                ];
+                break;
+
+            default:
+                return null;
+                break;
+        }
+    }
+
+
+    public function day($masterclass, $day){
+
+        $data = $this->reto4Data($masterclass);
+
+        $dayData = $this->reto4DaysData($day);
+
+
+        if($day >0 && $day <=4){
+            return view('livewire.masterclass.reto-4.day', ['masterclass' => $this->masterclass, 'day'=> $day, 'day_data' => $dayData, 'data'=> $data]);
+        }else{
+            return view('livewire.masterclass.no-disponible');
+        }
+
+    }
+
+
     function splitName($name) {
         $name = trim($name);
         $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);

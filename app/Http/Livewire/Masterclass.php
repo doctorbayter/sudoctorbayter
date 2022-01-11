@@ -163,7 +163,7 @@ class Masterclass extends Component
         if($day >0 && $day <=4){
             return view('livewire.masterclass.reto-4.day', ['masterclass' => $this->masterclass, 'day'=> $day, 'day_data' => $dayData, 'data'=> $data]);
         }else{
-            return view('livewire.masterclass.no-disponible');
+            return view('no-disponible');
         }
 
     }

@@ -105,8 +105,8 @@ Route::get('/reto', function () {
 })->name('reto.2022');
 
 Route::get('/desafio', function () {
-    //return view('no-disponible');
-    return redirect()->route('reto.register', ['reto'=>'desafio']);
+    return view('no-disponible');
+    //return redirect()->route('reto.register', ['reto'=>'desafio']);
 })->name('desafio.2022');
 
 
@@ -483,3 +483,16 @@ Route::get('x/users/reto/add/{email}', function($email){
 
     }
 });
+
+// Lideres Acutalizado Enero 2022
+// jackie@adn-empresarial.com
+// aberruncio@gmail.com
+// cecibracho@gmail.com
+// ancuta_stancioiu@yahoo.com
+// claudiacarlomagno@gmail.com
+// shanis18@gmail.com
+// carrizalcity1978@gmail.com
+// osvaldodebritos@hotmail.com
+// edithmarcozzi75@gmail.com
+// tata_0825@hotmail.com
+// netcelaya@gmail.com

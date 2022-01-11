@@ -55,7 +55,7 @@ class ProductPay extends Component
     public function render() {
 
         if($this->plan->id == 18){
-            return view('no-disponible');
+            return view('no-disponible-lw');
         }
             return view('livewire.product-pay');
     }

@@ -105,8 +105,8 @@ Route::get('/reto', function () {
 })->name('reto.2022');
 
 Route::get('/desafio', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'desafio']);
+    //return view('no-disponible');
+    return redirect()->route('reto.register', ['reto'=>'desafio']);
 })->name('desafio.2022');
 
 

@@ -100,13 +100,13 @@ Route::get('/regalo', function () {
 
 
 Route::get('/reto', function () {
-    return redirect()->route('reto.register', ['reto'=>'desafio']);
-    //return view('no-disponible');
+    return view('no-disponible');
+    //return redirect()->route('reto.register', ['reto'=>'desafio']);
 })->name('reto.2022');
 
 Route::get('/desafio', function () {
-    return redirect()->route('reto.register', ['reto'=>'desafio']);
-    //return view('no-disponible');
+    return view('no-disponible');
+    //return redirect()->route('reto.register', ['reto'=>'desafio']);
 })->name('desafio.2022');
 
 

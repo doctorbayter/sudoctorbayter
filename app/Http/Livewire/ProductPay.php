@@ -53,7 +53,11 @@ class ProductPay extends Component
     }
 
     public function render() {
-        return view('livewire.product-pay');
+
+        if($this->plan->id == 18){
+            return view('no-disponible');
+        }
+            return view('livewire.product-pay');
     }
 
     public function confirmData(){

@@ -86,7 +86,7 @@ class Masterclass extends Component
         }
     }
 
-    public function replay($masterclass) {
+    public function replay($masterclass, $day) {
 
         $data = $this->masterclassData($masterclass);
 

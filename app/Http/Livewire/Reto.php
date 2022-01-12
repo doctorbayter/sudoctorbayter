@@ -105,15 +105,32 @@ class Reto extends Component
         }
     }
 
-    public function replay($reto) {
+    public function retoData($reto)    {
+        switch ($reto) {
+            case 'desafio':
+                return $this->data = [
+                    'title' => 'Reunión de Zoom',
+                    'subtitle'=> 'Desafio Liberate de la mierda del 2021',
+                    'type' => 'Repetición',
+                    'online' => true,
+                    'video-1' => '665248310?h=e1e1892609',
+                    'video-2' => ''
+                ];
+                break;
+            default:
+                return null;
+                break;
+        }
+    }
 
+    public function replay($reto, $day) {
+        $this->reto = $reto;
         $data = $this->retoData($reto);
 
-        return view('livewire.masterclass.replay', ['masterclass'=>$this->reto , 'data'=>$data]);
+        return view('livewire.reto.replay', ['reto'=>$this->reto,  'day'=>$day, 'data'=>$data]);
     }
 
     public function thanks($reto) {
-
 
         $data = $this->retoData($reto);
 

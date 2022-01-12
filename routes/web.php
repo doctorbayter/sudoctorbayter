@@ -68,6 +68,8 @@ Route::get('masterclass/{masterclass}/dia-{day}', [Masterclass::class, 'day'])->
 
 
 
+
+
 Route::get('curso-keto', CursoGratis::class)->name('cursos.keto.register');
 Route::get('curso-keto/go',[CursoGratis::class,'go'])->name('cursos.keto.go');
 Route::get('curso-keto/thanks', [CursoGratis::class,'thanks'])->name('cursos.keto.gracias');
@@ -90,6 +92,8 @@ Route::get('/dieta', function () {
 })->name('redirect.dieta');
 
 Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
+Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->name('reto.replay');
+
 
 Route::get('/regalo', function () {
     return view('no-disponible');

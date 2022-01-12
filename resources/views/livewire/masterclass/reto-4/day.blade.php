@@ -36,6 +36,29 @@
                     </div>
                 @endif
 
+                <section class="py-6 bg-gray-100">
+                    <div class="w-full md:w-3/4 lg:w-3/4 text-center mx-auto md:mb-8">
+
+                        <section class="text-center mb-24">
+                            <header class="md:mb-8">
+                                <h2 class="font-bold text-xl md:text-2xl text-gray-900 leading-tight">Comparte con nosotros</h2>
+                                <p>Cuentanos cómo ha sido tu experiencia este día del reto.</p>
+                            </header>
+                            <div class="fb-comments" data-href="https://doctorbayter.com/masterclass/reto-4/dia-{{$day}}" data-width="" data-numposts="7"></div>
+                        </section>
+
+                        <div class="flex__ hidden flex-col-reverse md:flex-row items-center max-w-3xl mx-auto shadow-2xl p-8 rounded-lg bg-gray-50 ">
+                            <div class="flex-1 pr-6 mt-4 md:mt-0 text-center md:text-left">
+                                <p class="text-xl  md:text-2xl leading-tight mb-4">Ya está disponible el curso de <strong> </strong></p>
+                                <a href="" target="_blank" class="bg-accent-400 py-2 px-4 text-lg md:text-xl font-bold rounded-full text-white inline-block border-2 border-accent-400 hover:bg-gray-50 hover:text-accent-400">¡Sí, quiero el curso!</a>
+                            </div>
+                            <div class="w-full md:w-48">
+                                <img src="" class="w-full"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <div class="my-8">
                     <p>También puedes ver directamente el contenido del PDF de las recetas del día {{$day}} a continuación:</p>
                     <small>(Si no puedes visualizar correctamente el contenido puedes descargar el contenido en los botones que encuentras arriba de este mensaje)</small>
@@ -51,28 +74,7 @@
         </div>
     </section>
 
-    <section class="pb-12 pt-16 bg-gray-100">
-        <div class="w-full md:w-3/4 lg:w-3/4 text-center mx-auto md:mb-8">
 
-            <section class="text-center mb-24">
-                <header class="md:mb-8">
-                    <h2 class="font-bold text-xl md:text-2xl text-gray-900 leading-tight">Comparte con nosotros</h2>
-                    <p>Cuentanos cómo ha sido tu experiencia este día del reto.</p>
-                </header>
-                <div class="fb-comments" data-href="https://doctorbayter.com/masterclass/reto-4/dia-{{$day}}" data-width="" data-numposts="7"></div>
-            </section>
-
-            <div class="flex__ hidden flex-col-reverse md:flex-row items-center max-w-3xl mx-auto shadow-2xl p-8 rounded-lg bg-gray-50 ">
-                <div class="flex-1 pr-6 mt-4 md:mt-0 text-center md:text-left">
-                    <p class="text-xl  md:text-2xl leading-tight mb-4">Ya está disponible el curso de <strong> </strong></p>
-                    <a href="" target="_blank" class="bg-accent-400 py-2 px-4 text-lg md:text-xl font-bold rounded-full text-white inline-block border-2 border-accent-400 hover:bg-gray-50 hover:text-accent-400">¡Sí, quiero el curso!</a>
-                </div>
-                <div class="w-full md:w-48">
-                    <img src="" class="w-full"/>
-                </div>
-            </div>
-        </div>
-    </section>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0" nonce="9GjBGApj"></script>
     @push('footerText')

@@ -56,15 +56,15 @@
                                                     <p><b>La repetición estará disponible por tiempo limitado</b></p>
                                                     <a href="{{route('reto.replay', ['desafio', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repeticón</a>
                                                 </div>
-                                                <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 opacity-75 mb-8">
+                                                <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
                                                     <h2>Segunda reunión <b>Desafio 2022</b></h2>
                                                     <hr class="my-2 border-gray-700">
-                                                    <p><b>Hora:</b> Disponible próximamente</p>
+                                                    <p><b>Hora:</b> 14 de enero 2022 01:00 p. m. Colombia</p>
                                                     <code>
-                                                        <p><b>ID de reunión:</b> -</p>
-                                                        <p><b>Código de acceso:</b> -</p>
+                                                        <p><b>ID de reunión:</b> 881 2259 7628</p>
+                                                        <p><b>Código de acceso:</b> 189835</p>
                                                     </code>
-                                                    <a class="cursor-default inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-gray-700 border-gray-700 text-gray-400 uppercase transition-colors duration-300 ease-in-out">Disponible Próximamente</a>
+                                                    <a href="https://us02web.zoom.us/j/88122597628?pwd=aVRSNVpxeFVFdVVjV2NrRTdraC9nUT09" class="cursor-default inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-red-400 uppercase transition-colors duration-300 ease-in-out">Ingresar a la reunión</a>
                                                 </div>
                                             </div>
                                         </div>

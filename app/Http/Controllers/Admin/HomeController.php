@@ -357,6 +357,19 @@ class HomeController extends Controller
                 case 12:
                     $this->addWhatsApp($user->id, 180);
                     break;
+                case 15:
+                    if($previous_plan_premium){
+                        $previous_plan_premium->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
             }
         }
 

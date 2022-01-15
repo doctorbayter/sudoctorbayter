@@ -231,20 +231,20 @@ class ProductPay extends Component
                     //$fase->clients()->attach($user->id);
                 }
 
-                // if($whatsapp_subscribed){
-                //     if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                //         $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(45)]);
-                //     }else{
-                //         $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(45)]);
-                //     }
-                //     $whatsapp_subscribed->save();
-                // }else{
-                //     $suscription_whatsApp             = new Subscription();
-                //     $suscription_whatsApp->user_id    = $user->id;
-                //     $suscription_whatsApp->plan_id    = 4;
-                //     $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays(45);
-                //     $suscription_whatsApp->save();
-                // }
+                if($whatsapp_subscribed){
+                    if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
+                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
+                    }else{
+                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
+                    }
+                    $whatsapp_subscribed->save();
+                }else{
+                    $suscription_whatsApp             = new Subscription();
+                    $suscription_whatsApp->user_id    = $user->id;
+                    $suscription_whatsApp->plan_id    = 4;
+                    $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays(30);
+                    $suscription_whatsApp->save();
+                }
 
                 switch ($this->plan->id) {
                     case 7:

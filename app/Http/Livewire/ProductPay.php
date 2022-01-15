@@ -215,20 +215,20 @@ class ProductPay extends Component
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
             $fase = Fase::find(9);
 
-            if($this->plan->id == 18){
-                // if($previous_subscribed){
-                //     $previous_subscribed->delete();
-                // }
+            if($this->plan->id == 15){
+                if($previous_subscribed){
+                    $previous_subscribed->delete();
+                }
 
                 if(!$is_subscribed){
                     $suscription->save();
-                    // foreach($fases_premium as $fase){
+                    foreach($fases_premium as $fase){
 
-                    //     if(!$fase->clients->contains($user->id)){
-                    //         $fase->clients()->attach($user->id);
-                    //     }
-                    // }
-                    $fase->clients()->attach($user->id);
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    //$fase->clients()->attach($user->id);
                 }
 
                 // if($whatsapp_subscribed){

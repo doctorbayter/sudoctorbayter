@@ -14,7 +14,7 @@
                 <section class="grid grid-cols-2 gap-10">
                     <article class="col-span-2 md:col-span-1 bg-cover bg-right-top mb-8 md:mb-2 bg-no-repeat relative rounded-xl overflow-hidden shadow-2xl group " style="background-image: url({{asset('img/billboards/fitness/nivel_1.jpg')}})">
                         <div class="absolute bg-gradient-to-r from-gray-900 to-transparent  inset-0 z-0 transition-opacity group-hover:opacity-75"></div>
-                        <a href="">
+                        <a href="{{route('plan.fitness.level', 1)}}">
                             <div class="p-4 md:px-6 md:py-8 z-50 relative ">
                                 <span class="text-xs inline-flex items-center  font-bold leading-sm uppercase px-3 py-1 bg-blue-400 text-blue-900 rounded-full">21 DÍAS</span>
                                 <div class="mt-4">
@@ -32,7 +32,7 @@
                     </article>
                     <article class=" col-span-2 md:col-span-1 bg-cover bg-right-top mb-8 md:mb-2 bg-no-repeat relative rounded-xl overflow-hidden shadow-2xl group" style="background-image: url({{asset('img/billboards/fitness/nivel_2.jpg')}})">
                         <div class="absolute bg-gradient-to-r from-gray-900 to-transparent inset-0 z-0 transition-opacity group-hover:opacity-75"></div>
-                        <a href="">
+                        <a href="{{route('plan.fitness.level', 2)}}">
                             <div class="p-4 md:px-6 md:py-8 z-50 relative ">
                                 <span class="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-400 text-blue-900 rounded-full">21 DÍAS</span>
                                 <div class="mt-4">
@@ -50,7 +50,7 @@
                     </article>
                     <article class=" col-span-2 md:col-span-1 bg-cover bg-right-top mb-8 md:mb-2 bg-no-repeat relative rounded-xl overflow-hidden shadow-2xl group" style="background-image: url({{asset('img/billboards/fitness/nivel_3.jpg')}})">
                         <div class="absolute bg-gradient-to-r from-gray-900 to-transparent inset-0 z-0 transition-opacity group-hover:opacity-75"></div>
-                        <a href="">
+                        <a href="{{route('plan.fitness.level', 3)}}">
                             <div class="p-4 md:px-6 md:py-8 z-50 relative ">
                                 <span class="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-400 text-blue-900 rounded-full">21 DÍAS</span>
                                 <div class="mt-4">
@@ -68,7 +68,7 @@
                     </article>
                     <article class=" col-span-2 md:col-span-1 bg-cover bg-right-top mb-8 md:mb-2 bg-no-repeat relative rounded-xl overflow-hidden shadow-2xl group" style="background-image: url({{asset('img/billboards/fitness/nivel_4.jpg')}})">
                         <div class="absolute bg-gradient-to-r from-gray-900 to-transparent inset-0 z-0 transition-opacity group-hover:opacity-75"></div>
-                        <a href="">
+                        <a href="{{route('plan.fitness.level', 4)}}">
                             <div class="p-4 md:px-6 md:py-8 z-50 relative ">
                                 <span class="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-400 text-blue-900 rounded-full">7 DÍAS</span>
                                 <div class="mt-4">

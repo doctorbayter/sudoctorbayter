@@ -51,20 +51,16 @@
                                             </b> A continuación encontrarás los datos de acceso a las reuniones grupales privadas de Zoom con tu doctor Bayter.</p>
                                             <div class="flex-col md:flex-row justify-around my-8">
                                                 <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
-                                                    <h2>Repetición Primera reunión <b>Desafio 2022</b></h2>
+                                                    <h2>Repetición Primera Reunión <b>Desafio 2022</b></h2>
                                                     <hr class="my-2 border-gray-700">
                                                     <p><b>La repetición estará disponible por tiempo limitado</b></p>
-                                                    <a href="{{route('reto.replay', ['desafio', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repeticón</a>
+                                                    <a href="{{route('reto.replay', ['desafio', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
                                                 </div>
                                                 <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
-                                                    <h2>Segunda reunión <b>Desafio 2022</b></h2>
+                                                    <h2>Repetición Segunda Reunión <b>Desafio 2022</b></h2>
                                                     <hr class="my-2 border-gray-700">
-                                                    <p><b>Hora:</b> 14 de enero 2022 01:00 p. m. Colombia</p>
-                                                    <code>
-                                                        <p><b>ID de reunión:</b> 881 2259 7628</p>
-                                                        <p><b>Código de acceso:</b> 189835</p>
-                                                    </code>
-                                                    <a href="https://us02web.zoom.us/j/88122597628?pwd=aVRSNVpxeFVFdVVjV2NrRTdraC9nUT09" class="cursor-default inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-red-400 uppercase transition-colors duration-300 ease-in-out">Ingresar a la reunión</a>
+                                                    <p><b>La repetición estará disponible por tiempo limitado</b></p>
+                                                    <a href="{{route('reto.replay', ['desafio', 2])}}" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
                                                 </div>
                                             </div>
                                         </div>

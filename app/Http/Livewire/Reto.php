@@ -114,7 +114,7 @@ class Reto extends Component
                     'type' => 'Repetición',
                     'online' => true,
                     'video-1' => '665248310?h=e1e1892609',
-                    'video-2' => ''
+                    'video-2' => '666617173?h=5e7e646237'
                 ];
                 break;
             default:

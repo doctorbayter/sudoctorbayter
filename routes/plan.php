@@ -3,6 +3,7 @@
 use App\Http\Controllers\Plan\HomeController;
 use App\Http\Livewire\UserBebidas;
 use App\Http\Livewire\UserFase;
+use App\Http\Livewire\UserFitness;
 use App\Http\Livewire\UserPlan;
 use App\Http\Livewire\UserRecipe;
 use App\Http\Livewire\UserSalsitas;
@@ -22,3 +23,5 @@ Route::get('/whatsapp', UserWhatsapp::class )->name('whatsapp');
 Route::get('/tutorial', function(){
     return view('plan.tutorial');
 } )->name('tutorial');
+
+Route::get('/fit', UserFitness::class )->name('fitness');

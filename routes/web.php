@@ -200,7 +200,6 @@ Route::get('x/clients/eg/{month}', function ($month) {
     foreach($users as $user){
         $is_already_subscribed  = Subscription::where('user_id', $user->id)
                                                 ->whereIn('plan_id', [8, 9])
-                                                ->whereYear('created_at', '2022')
                                                 ->whereMonth('created_at', $month)
                                                 ->first();
         if($is_already_subscribed){

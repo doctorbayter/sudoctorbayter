@@ -195,7 +195,7 @@ Route::get('x/clients/reto', function () {
     }
 });
 
-Route::get('x/clients/eg', function ($month) {
+Route::get('x/clients/eg/{month}', function ($month) {
     $users = User::all();
     foreach($users as $user){
         $is_already_subscribed  = Subscription::where('user_id', $user->id)

@@ -26,7 +26,7 @@ class UserFitnessLevel extends Component
     }
 
 
-    public function levelData($level)    {
+    public function levelData($level){
         switch ($level) {
             case 1:
                 return $this->data = [
@@ -40,8 +40,7 @@ class UserFitnessLevel extends Component
         }
     }
 
-    public function setDay($day)
-    {
+    public function setDay($day){
         $this->day = $day;
         if ($this->level == 1) {
             switch ($day) {
@@ -166,7 +165,7 @@ class UserFitnessLevel extends Component
                     $this->time = 40;
                     $this->difficulty = "Fácil";
                     $this->copy = "La combinación perfecta de ejercición para mejorar tu físico, flexibilidad y fuerza";
-                    $this->equipments = array("Manta para ejercicio","Pesas 2 o 5 Kg","Silla pequeña");
+                    $this->equipments = array("Manta para ejercicio","Pesas 2 o 5 Kg");
                     $this->video = "666780109?h=4f0b781330";
                     $this->trainings =[
                         1 => [

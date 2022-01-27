@@ -195,12 +195,14 @@ Route::get('x/clients/reto', function () {
     }
 });
 
-Route::get('x/clients/eg', function () {
+Route::get('x/clients/eg', function ($month) {
     $users = User::all();
     foreach($users as $user){
         $is_already_subscribed  = Subscription::where('user_id', $user->id)
-                                                ->whereIn('plan_id', [8, 9]
-                                                )->first();
+                                                ->whereIn('plan_id', [8, 9])
+                                                ->whereYear('created_at', '2022')
+                                                ->whereMonth('created_at', $month)
+                                                ->first();
         if($is_already_subscribed){
             $plan = Plan::find($is_already_subscribed->plan_id);
             $date = \Carbon\Carbon::parse($is_already_subscribed->created_at);

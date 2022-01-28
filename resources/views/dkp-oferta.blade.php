@@ -415,10 +415,7 @@
 <div data-tf-widget="v900gdXI" data-tf-iframe-props="title=Reunión Equipo Doctor Bayter" style="width:100%;height:600px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
 --}}
 
-<!-- Principio del widget integrado de Calendly -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/doctorbayter/llamada?hide_gdpr_banner=1" style="min-width:300px;height:630px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Final del widget integrado de Calendly -->
+
 
             </div>
         </div>

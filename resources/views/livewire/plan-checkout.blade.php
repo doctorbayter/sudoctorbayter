@@ -276,17 +276,20 @@
                             @if ($can_continued)
                             <div>
 
-                                <div x-show="$payMethod == 'payu'" >
-                                    <form action="{{config('services.payu.base_uri')}}" method="post">
-                                        @csrf
+                                @if ($plan->id != 6) {{-- Plan Cita 40 minutos --}}
+                                    <div x-show="$payMethod == 'payu'" >
+                                        <form action="{{config('services.payu.base_uri')}}" method="post">
+                                            @csrf
 
-                                        <x-payu-form :plan="$plan" :dataSend="$data_send" :flashSale="null" />
+                                            <x-payu-form :plan="$plan" :dataSend="$data_send" :flashSale="null" />
 
-                                        <button type="submit"
-                                        class=" bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Ya puedes continuar tu compra con PayU</button>
+                                            <button type="submit"
+                                            class=" bg-green-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-green-700  text-lg w-full">Ya puedes continuar tu compra con PayU</button>
 
-                                    </form>
-                                </div>
+                                        </form>
+                                    </div>
+                                @endif
+
                                 <div x-show="$payMethod == 'paypal'" >
 
                                     <form action="{{config('services.paypal.base_uri')}}" method="post">
@@ -297,28 +300,30 @@
                                     </form>
 
                                 </div>
-                                <div x-show="$payMethod == 'epayco'">
-                                    <button x-on:click="handler.open(
-                                        {
-                                            name: '{{$plan->name}}',
-                                            description: '{{$plan->name}}',
-                                            invoice: '{{Str::random(8)}}',
-                                            currency: '{{config('services.epayco.currency')}}',
-                                            amount: '{{$plan->finalPrice}}',
-                                            tax_base: '0',
-                                            tax: '0',
-                                            country: 'co',
-                                            lang: 'es',
-                                            external: 'true',
-                                            extra1: '{{$data_send}}',
-                                            extra2: '{{$plan->id}}',
-                                            confirmation: '{{route('payment.epayco.approved')}}',
-                                            response: '{{route('payment.epayco.response', $plan)}}',
-                                            methodsDisable: ['SP','CASH', 'MPD', 'DP']
-                                        })"
-                                        type="button"
-                                        class="bg-yellow-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-yellow-700  text-lg w-full">Ya puedes continuar tu compra con Epayco</button>
-                                </div>
+                                @if ($plan->id != 6) {{-- Plan Cita 40 minutos --}}
+                                    <div x-show="$payMethod == 'epayco'">
+                                        <button x-on:click="handler.open(
+                                            {
+                                                name: '{{$plan->name}}',
+                                                description: '{{$plan->name}}',
+                                                invoice: '{{Str::random(8)}}',
+                                                currency: '{{config('services.epayco.currency')}}',
+                                                amount: '{{$plan->finalPrice}}',
+                                                tax_base: '0',
+                                                tax: '0',
+                                                country: 'co',
+                                                lang: 'es',
+                                                external: 'true',
+                                                extra1: '{{$data_send}}',
+                                                extra2: '{{$plan->id}}',
+                                                confirmation: '{{route('payment.epayco.approved')}}',
+                                                response: '{{route('payment.epayco.response', $plan)}}',
+                                                methodsDisable: ['SP','CASH', 'MPD', 'DP']
+                                            })"
+                                            type="button"
+                                            class="bg-yellow-600 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-yellow-700  text-lg w-full">Ya puedes continuar tu compra con Epayco</button>
+                                    </div>
+                                @endif
                             </div>
                             @else
                                 <button

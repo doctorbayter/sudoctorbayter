@@ -79,15 +79,17 @@
 
                 <ul class=" mb-4 flex flex-col lg:flex-row w-full items-center justify-between sm:justify-start flex-wrap">
 
-                    <li class="max-w-200 lg:mr-4 ">
-                        <div
-                            x-on:click="$payMethod = 'payu' ; $dispatch('route-change', { value: '{{route('payment.payu', $plan)}}' }) "
-                            :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'payu' }"
-                            class="border rounded h-20 w-40 cursor-pointer bg-gray-50 flex justify-center items-center hover:bg-blue-50 hover:border-blue-200 focus:bg-gray-100 focus:border-blue-400 "
-                            name="Paga con PayU">
-                            <img class="h-10 object-cover" src="{{asset('/img/checkout/payu_logo.png')}}" alt="">
-                        </div>
-                    </li>
+                    @if ($plan->id != 6) {{-- Plan Cita 40 minutos --}}
+                        <li class="max-w-200 lg:mr-4 ">
+                            <div
+                                x-on:click="$payMethod = 'payu' ; $dispatch('route-change', { value: '{{route('payment.payu', $plan)}}' }) "
+                                :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'payu' }"
+                                class="border rounded h-20 w-40 cursor-pointer bg-gray-50 flex justify-center items-center hover:bg-blue-50 hover:border-blue-200 focus:bg-gray-100 focus:border-blue-400 "
+                                name="Paga con PayU">
+                                <img class="h-10 object-cover" src="{{asset('/img/checkout/payu_logo.png')}}" alt="">
+                            </div>
+                        </li>
+                    @endif
 
                     <li class="max-w-200 lg:mr-4 mt-6 lg:mt-0">
                         <div
@@ -99,16 +101,17 @@
                         </div>
                     </li>
 
-                    <li class="max-w-200 lg:mr-4 mt-6 lg:mt-0">
-                        <div
-                            x-on:click="$payMethod = 'epayco' ; $dispatch('route-change', { value: '{{route('payment.epayco', $plan)}}' }) "
-                            :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'epayco' }"
-                            class="border rounded h-20 w-40 cursor-pointer bg-gray-50 flex justify-center items-center hover:bg-blue-50 hover:border-blue-200 focus:bg-gray-100 focus:border-blue-400 "
-                            name="Paga con PayPal">
-                            <img class="h-6 object-cover" src="{{asset('/img/checkout/epayco_logo.png')}}" alt="">
-                        </div>
-                    </li>
-
+                    @if ($plan->id != 6) {{-- Plan Cita 40 minutos --}}
+                        <li class="max-w-200 lg:mr-4 mt-6 lg:mt-0">
+                            <div
+                                x-on:click="$payMethod = 'epayco' ; $dispatch('route-change', { value: '{{route('payment.epayco', $plan)}}' }) "
+                                :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'epayco' }"
+                                class="border rounded h-20 w-40 cursor-pointer bg-gray-50 flex justify-center items-center hover:bg-blue-50 hover:border-blue-200 focus:bg-gray-100 focus:border-blue-400 "
+                                name="Paga con PayPal">
+                                <img class="h-6 object-cover" src="{{asset('/img/checkout/epayco_logo.png')}}" alt="">
+                            </div>
+                        </li>
+                    @endif
                 </ul>
 
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Plan\HomeController;
+use App\Http\Livewire\Courses;
 use App\Http\Livewire\UserBebidas;
 use App\Http\Livewire\UserFase;
 use App\Http\Livewire\UserFitness;
@@ -27,3 +28,7 @@ Route::get('/tutorial', function(){
 
 Route::get('/fit', UserFitness::class )->name('fitness');
 Route::get('/fit/nivel-{level}', UserFitnessLevel::class )->name('fitness.level');
+
+
+Route::get('curso/{course}', Courses::class )->name('course.status');
+Route::get('curso/{course}/modulo/{lesson}', Courses::class )->name('course.etiquetas');

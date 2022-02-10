@@ -284,6 +284,10 @@ Route::get('x/sql/', function(){
 
 Route::get('x/query', function(){
 
+    $plan = Plan::find(6);
+    $plan->name = "Cita virtual 40 minutos";
+    $plan->save();
+
     /*
     $plan = Plan::create([
         'name' => 'Desafio 2022',

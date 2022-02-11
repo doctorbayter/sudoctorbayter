@@ -5,6 +5,7 @@ use App\Http\Livewire\CursoGratis;
 use App\Http\Livewire\Masterclass;
 use App\Http\Livewire\Reto;
 use App\Http\Livewire\UserRecipe;
+use App\Mail\ApprovedPurchase;
 use App\Mail\ApprovedPurchaseReto;
 use App\Models\Day;
 use App\Models\Discount;
@@ -498,7 +499,7 @@ Route::get('x/email/{email}/{plan}', function($email , $plan){
     $user = User::where('email',$email)->first();
     $plan = Plan::find($plan);
 
-    $mail = new ApprovedPurchaseReto($plan, $user);
+    $mail = new ApprovedPurchase($plan, $user);
     Mail::to($user->email)->send($mail);
 
     echo "---------<br>";

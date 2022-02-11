@@ -35,39 +35,22 @@
                   <td style="padding:0 0 36px 0;color:#153643;">
                     <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif; ">Hola! {{$user->name}} Tu pago ha sido confirmado</h1>
                     <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Quiero darte la bienvenida al <b>Método DKP</b> tu compra ha sido aprobada con éxito y ahora tendrás acceso a toda la información que este plan incluye.</p>
-                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://doctorbayter.com/" style="color:#a30000;text-decoration:underline;"><b>Entra aquí para acceder a tu contenido</b></a></p>
+                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://doctorbayter.com/plan" style="color:#a30000;text-decoration:underline;"><b>Entra aquí para acceder a tu contenido</b></a></p>
                   </td>
                 </tr>
 
                 <tr>
-                  <td class="esd-structure" align="left">
-                      <table width="100%" cellspacing="0" cellpadding="0">
-                          <tbody>
-                              <tr>
-                                  <td class="esd-container-frame" width="530" valign="top" align="center">
-                                      <table width="100%" cellspacing="0" cellpadding="0">
-                                          <tbody>
-                                              <tr>
-                                                  <td class="esd-block-text " bgcolor="#A30000" align="left">
-                                                      <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
-                                                          <tbody>
-                                                              <tr>
-                                                                  <td width="80%">
-                                                                      <a href="https://wa.me/573172326835"><h4 style="padding-left: 1rem">ENTRA AQUÍ AL CHAT GRUPAL DE SEGUIMIENTO</h4></a>
-                                                                  </td>
-                                                              </tr>
-                                                          </tbody>
-                                                      </table>
-                                                  </td>
-                                              </tr>
-                                          </tbody>
-                                      </table>
-                                  </td>
-                              </tr>
-                          </tbody>
+                    <td style="padding-top:1rem;">
+                      <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+                        <tr>
+                          <td style="text-align:center;width:260px;padding:0;vertical-align:top;color:#153643;">
+                            <p style="margin:0 0 12px 0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;">Accede al chat grupal de seguimiento con <b>tu Doctor Bayter</b></p>
+                            <p style="margin:0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://wa.me/573172326835" style="color:#a30000;text-decoration:underline;">Entra aquí al grupo de WhatsApp</a></p>
+                          </td>
+                        </tr>
                       </table>
-                  </td>
-              </tr>
+                    </td>
+                  </tr>
 
                 <tr>
                     <td class="esd-structure" align="left">

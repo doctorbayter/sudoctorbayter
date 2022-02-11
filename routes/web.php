@@ -493,7 +493,7 @@ Route::get('x/users/reto/add/{email}', function($email){
     }
 });
 
-Route::get('x/email', function($email , $plan){
+Route::get('x/email/{email}/{plan}', function($email , $plan){
 
     $user = User::where('email',$email)->first();
     $plan = Plan::find($plan);

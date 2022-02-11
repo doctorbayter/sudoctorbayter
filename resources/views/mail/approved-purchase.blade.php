@@ -38,9 +38,8 @@
                     <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://doctorbayter.com/plan" style="color:#a30000;text-decoration:underline;"><b>Entra aquí para acceder a tu contenido</b></a></p>
                   </td>
                 </tr>
-
                 <tr>
-                    <td style="padding-top:1rem;">
+                    <td >
                       <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
                         <tr>
                           <td style="text-align:center;width:260px;padding:0;vertical-align:top;color:#153643;">
@@ -53,7 +52,7 @@
                   </tr>
 
                 <tr>
-                    <td class="esd-structure" align="left">
+                    <td class="esd-structure" align="left" style="padding-top:1rem;">
                         <table width="100%" cellspacing="0" cellpadding="0">
                             <tbody>
                                 <tr>

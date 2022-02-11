@@ -493,6 +493,21 @@ Route::get('x/users/reto/add/{email}', function($email){
     }
 });
 
+Route::get('x/email', function($email , $plan){
+
+    $user = User::where('email',$email)->first();
+    $plan = Plan::find($plan);
+
+    $mail = new ApprovedPurchaseReto($plan, $user);
+    Mail::to($user->email)->send($mail);
+
+    echo "---------<br>";
+    echo "Correo enviado a ". $user->name." - ".$user->email."<br/>";
+
+});
+
+
+
 // Lideres Acutalizado Enero 2022
 // jackie@adn-empresarial.com
 // aberruncio@gmail.com

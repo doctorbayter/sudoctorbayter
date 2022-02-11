@@ -38,6 +38,37 @@
                     <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://doctorbayter.com/" style="color:#a30000;text-decoration:underline;"><b>Entra aquí para acceder a tu contenido</b></a></p>
                   </td>
                 </tr>
+
+                <tr>
+                  <td class="esd-structure" align="left">
+                      <table width="100%" cellspacing="0" cellpadding="0">
+                          <tbody>
+                              <tr>
+                                  <td class="esd-container-frame" width="530" valign="top" align="center">
+                                      <table width="100%" cellspacing="0" cellpadding="0">
+                                          <tbody>
+                                              <tr>
+                                                  <td class="esd-block-text " bgcolor="#A30000" align="left">
+                                                      <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td width="80%">
+                                                                      <a href="https://wa.me/573172326835"><h4 style="padding-left: 1rem">ENTRA AQUÍ AL CHAT GRUPAL DE SEGUIMIENTO</h4></a>
+                                                                  </td>
+                                                              </tr>
+                                                          </tbody>
+                                                      </table>
+                                                  </td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </td>
+              </tr>
+
                 <tr>
                     <td class="esd-structure" align="left">
                         <table width="100%" cellspacing="0" cellpadding="0">
@@ -66,7 +97,6 @@
                             </tbody>
                         </table>
                     </td>
-
                 </tr>
                 <tr>
                     <td class="esd-structure  " align="left">

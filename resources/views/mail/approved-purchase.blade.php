@@ -52,7 +52,7 @@
                   </tr>
 
                 <tr>
-                    <td class="esd-structure" align="left" style="padding-top:1rem;">
+                    <td class="esd-structure" align="left" style="padding-top:2rem;">
                         <table width="100%" cellspacing="0" cellpadding="0">
                             <tbody>
                                 <tr>

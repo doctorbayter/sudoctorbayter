@@ -11,8 +11,8 @@
 
                             @if ($subscribed_whatsapp !== false)
                                 <header class="bg-gray-50 py-4 px-6 border border-gray-100 rounded-xl">
-                                    <p class="text-2xl " >Tu mensualidad de whatsapp vence:
-                                        <span class="font-bold text-green-600">
+                                    <p class="text-2xl" >Adquiere tu mensualidad de chat grupal de seguimiento
+                                        <span class="font-bold text-green-600 hidden">
                                             @if ($subscribed_whatsapp == 0) Hoy
                                             @elseif ($subscribed_whatsapp == 1) En {{$subscribed_whatsapp}} Día
                                             @else Dentro de {{$subscribed_whatsapp}} Días @endif

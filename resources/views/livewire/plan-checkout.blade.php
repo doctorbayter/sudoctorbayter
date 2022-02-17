@@ -75,8 +75,9 @@
             <div class="mt-4 md:mt-6">
                 <h3 class="text-2xl font-bold mb-2 md:mb-4 text-gray-800"> <span class="text-red-700">Paso 2:</span> Elige tu medio de pago</h3>
 
-                <p class="text-sm mb-6">* Si deseas pagar con <b>tarjeta de crédito</b> o <b>transferencia</b> puedes elegir el método de pago <b class="text-green-500">PayU</b> o <b class=" text-red-500">ePayco</b></p>
-
+                @if ($plan->id != 6)
+                    <p class="text-sm mb-6">* Si deseas pagar con <b>tarjeta de crédito</b> o <b>transferencia</b> puedes elegir el método de pago <b class="text-green-500">PayU</b> o <b class=" text-red-500">ePayco</b></p>
+                @endif
                 <ul class=" mb-4 flex flex-col lg:flex-row w-full items-center justify-between sm:justify-start flex-wrap">
 
                     @if ($plan->id != 6) {{-- Plan Cita 40 minutos --}}

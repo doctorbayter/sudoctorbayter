@@ -70,23 +70,23 @@
             </div>
 
             <div class="w-full mt-0.5 grid gap-x-0.5   grid-cols-7 text-center shadow-md  text-gray-50 bg-gray-900" x-bind:class="{ 'grid': selected == 2 , 'hidden': selected !== 2 }">
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 8) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 8</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 9) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 9</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 10) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 10</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 11) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 11</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 12) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 12</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 13) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 13</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 14) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 14</div>
+                <div wire:click="setDay(8)"  class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 8) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 8</div>
+                <div wire:click="setDay(9)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 9) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 9</div>
+                <div wire:click="setDay(10)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 10) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 10</div>
+                <div wire:click="setDay(11)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 11) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 11</div>
+                <div wire:click="setDay(12)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 12) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 12</div>
+                <div wire:click="setDay(13)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 13) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 13</div>
+                <div wire:click="setDay(14)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 14) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 14</div>
             </div>
 
             <div class="w-full mt-0.5 grid gap-x-0.5   grid-cols-7 text-center shadow-md  text-gray-50 bg-gray-900" x-bind:class="{ 'grid': selected == 3 , 'hidden': selected !== 3 }">
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 15) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 15</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 16) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 16</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 17) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 17</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 18) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 18</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 19) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 19</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 20) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 20</div>
-                <div class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 21) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 21</div>
+                <div wire:click="setDay(15)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 15) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 15</div>
+                <div wire:click="setDay(16)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 16) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 16</div>
+                <div wire:click="setDay(17)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 17) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 17</div>
+                <div wire:click="setDay(18)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 18) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 18</div>
+                <div wire:click="setDay(19)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 19) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 19</div>
+                <div wire:click="setDay(20)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 20) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 20</div>
+                <div wire:click="setDay(21)" class="font-semibold text-xs py-2 cursor-pointer  @if ($day == 21) text-primary @else bg-blue-900 bg-opacity-25  @endif "><span class="hidden md:inline">Día</span> 21</div>
             </div>
 
             <section class="mt-16 px-4">

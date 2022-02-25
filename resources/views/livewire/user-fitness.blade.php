@@ -18,7 +18,7 @@
                             <div class="p-4 md:px-6 md:py-8 z-50 relative ">
                                 <span class="text-xs inline-flex items-center  font-bold leading-sm uppercase px-3 py-1 bg-blue-400 text-blue-900 rounded-full">21 DÍAS</span>
                                 <div class="mt-4">
-                                    <h3 class="font-bold text-4xl md:text-6xl text-gray-50">Fase Uno</h3>
+                                    <h3 class="font-bold text-4xl md:text-6xl text-gray-50">Fase wire:Uno</h3>
                                     <p class="text-sm text-blue-100 md:text-base">Adaptación al entrenamiento</p>
                                 </div>
                                 <div class="text-right ">
@@ -36,7 +36,7 @@
                             <div class="p-4 md:px-6 md:py-8 z-50 relative ">
                                 <span class="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-400 text-blue-900 rounded-full">21 DÍAS</span>
                                 <div class="mt-4">
-                                    <h3 class="font-bold text-4xl md:text-6xl text-gray-50">Fase Dos</h3>
+                                    <h3 class="font-bold text-4xl md:text-6xl text-gray-50">Fase wire:Dos</h3>
                                     <p class="text-sm text-blue-100 md:text-base">Subiendo la intencidad</p>
                                 </div>
                                 <div class="text-right">
@@ -54,7 +54,7 @@
                             <div class="p-4 md:px-6 md:py-8 z-50 relative ">
                                 <span class="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-400 text-blue-900 rounded-full">21 DÍAS</span>
                                 <div class="mt-4">
-                                    <h3 class="font-bold text-4xl md:text-6xl text-gray-50">Fase Tres</h3>
+                                    <h3 class="font-bold text-4xl md:text-6xl text-gray-50">Fase wire:Tres</h3>
                                     <p class="text-sm text-blue-100 md:text-base">Más fuerza y aguilidad</p>
                                 </div>
                                 <div class="text-right">
@@ -72,7 +72,7 @@
                             <div class="p-4 md:px-6 md:py-8 z-50 relative ">
                                 <span class="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-400 text-blue-900 rounded-full">7 DÍAS</span>
                                 <div class="mt-4">
-                                    <h3 class="font-bold text-4xl md:text-6xl text-gray-50">Fase Cuatro</h3>
+                                    <h3 class="font-bold text-4xl md:text-6xl text-gray-50">Fase wire:Cuatro</h3>
                                     <p class="text-sm text-blue-100 md:text-base">Somos total Fitness</p>
                                 </div>
                                 <div class="text-right">

@@ -25,6 +25,9 @@ class Masterclass extends Component
             case 'reto-4':
                 $this->list_id = 14;
                 break;
+            case 'camus':
+                    $this->list_id = 19;
+                    break;
             default:
                 $this->list_id = null;
                 break;
@@ -53,6 +56,16 @@ class Masterclass extends Component
                     'video' => '596134885?h=c36783dde8'
                 ];
                 break;
+            case 'camus':
+                return $this->data = [
+                    'title' => 'Desinflama tu cuerpo',
+                    'subtitle'=> 'en solo 4 días',
+                    'online' => false,
+                    'type' => 'Masterclass',
+                    'billdoard' => null,
+                    'video' => '596134885?h=c36783dde8'
+                ];
+                break;
             default:
                 return null;
                 break;
@@ -69,6 +82,9 @@ class Masterclass extends Component
                 return view('livewire.masterclass.dkp.register');
                 break;
             case 'reto-4':
+                return view('livewire.masterclass.reto-4.register');
+                break;
+            case 'camus':
                 return view('livewire.masterclass.reto-4.register');
                 break;
             default:
@@ -105,6 +121,14 @@ class Masterclass extends Component
     public function reto4Data($reto4)    {
         switch ($reto4) {
             case 'reto-4':
+                return $this->data = [
+                    'title' => 'Reto desinflama tu cuerpo 4 días',
+                    'text'=> '',
+                    'billdoard' => null,
+                    'video' => null,
+                ];
+                break;
+            case 'camus':
                 return $this->data = [
                     'title' => 'Reto desinflama tu cuerpo 4 días',
                     'text'=> '',

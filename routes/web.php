@@ -153,6 +153,12 @@ Route::get('/reto4', function () {
 })->name('reto4');
 
 
+Route::get('/camus', function () {
+    return redirect()->route('masterclass.register', ['masterclass'=>'camus']);
+    //return view('no-disponible');
+})->name('camus');
+
+
 Route::get('/110', function () {
     return view('no-disponible');
 });

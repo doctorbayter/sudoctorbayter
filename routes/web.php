@@ -202,28 +202,28 @@ Route::get('x/clients/reto', function () {
     }
 });
 
-Route::get('x/clients/eg/{month}', function ($month) {
+Route::get('x/clients/ac', function () {
     $users = User::all();
     foreach($users as $user){
         $is_already_subscribed  = Subscription::where('user_id', $user->id)
-                                                ->whereIn('plan_id', [8, 9])
-                                                ->whereMonth('created_at', $month)
+                                                ->whereIn('plan_id', [18, 17])
+                                                ->whereNotIn('plan_id', [15,16,2,1,8,9,3])
                                                 ->first();
         if($is_already_subscribed){
-            $plan = Plan::find($is_already_subscribed->plan_id);
-            $date = \Carbon\Carbon::parse($is_already_subscribed->created_at);
             echo $user->email;
-            echo "<br/>";
-            echo $plan->name;
-            echo "<br/>";
-            echo "Valor del plan ".$plan->finalPrice. " US$";
-            echo "<br/>";
-            echo "Fecha de compra ". $date->format('d-m-Y');
-            echo "<br/>";
-            echo "======</br></br>";
+            echo"<br/>";
         }
     }
 });
+
+Route::get('x/clients', function () {
+    $users = User::all();
+    foreach($users as $user){
+        echo $user->email;
+        echo"<br/>";
+    }
+});
+
 
 Route::get('x/plans/', function(){
     $plans = Plan::all();

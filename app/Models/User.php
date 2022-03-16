@@ -63,6 +63,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function setEmailAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
+    }
+
     //Relaciones uno a uno
 
     public function profile()

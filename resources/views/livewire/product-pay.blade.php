@@ -30,7 +30,7 @@
                             Correo electrónico
                           </label>
                           <input wire:model="email" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-email" type="text" placeholder="Escribe tu correo"
-                          @error('email') autofocus="autofocus" @enderror>
+                          @error('email') autofocus="autofocus" @enderror onblur="this.value=removeSpaces(this.value);">
                           @error('email')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                             Verifica tu correo
                           </label>
                           <input wire:model="email_confirmation" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-re-email" type="text" placeholder="Escribe tu correo otra vez"
-                          @error('email_confirmation') autofocus="autofocus" @enderror>
+                          @error('email_confirmation') autofocus="autofocus" @enderror onblur="this.value=removeSpaces(this.value);">
                           @error('email_confirmation')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <p class="text-gray-600 font-medium lowercase text-xs italic">Esta será la contraseña con la que entrarás a la página</p>
                           </label>
                           <input wire:model="password" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************"
-                          @error('password') autofocus="autofocus" @enderror>
+                          @error('password') autofocus="autofocus" @enderror onblur="this.value=removeSpaces(this.value);">
                           @error('password')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             Verificar contraseña
                           </label>
                           <input wire:model="password_confirmation" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-re-password" type="password" placeholder="******************"
-                          @error('password_confirmation') autofocus="autofocus" @enderror>
+                          @error('password_confirmation') autofocus="autofocus" @enderror onblur="this.value=removeSpaces(this.value);">
                           @error('password_confirmation')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                         </div>
                     </div>
@@ -285,6 +285,11 @@
 
     <script src="https://js.stripe.com/v3/"></script>
 
+    <script language="javascript" type="text/javascript">
+        function removeSpaces(string) {
+         return string.trim();
+        }
+    </script>
 
 
 

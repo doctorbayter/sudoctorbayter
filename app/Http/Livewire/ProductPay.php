@@ -213,45 +213,44 @@ class ProductPay extends Component
             $whatsapp_subscribed = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(4, 11, 12))->first();
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
-            $fase = Fase::find(9);
+            $fase = Fase::find(10);
 
-            if($this->plan->id == 15){
+            if($this->plan->id == 19){
                 if($previous_subscribed){
                     $previous_subscribed->delete();
                 }
 
                 if(!$is_subscribed){
                     $suscription->save();
-                    foreach($fases_premium as $fase){
-
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    //$fase->clients()->attach($user->id);
+                    // foreach($fases_premium as $fase){
+                    //     if(!$fase->clients->contains($user->id)){
+                    //         $fase->clients()->attach($user->id);
+                    //     }
+                    // }
+                    $fase->clients()->attach($user->id);
                 }
 
-                if($whatsapp_subscribed){
-                    if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
-                    }else{
-                        $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
-                    }
-                    $whatsapp_subscribed->save();
-                }else{
-                    $suscription_whatsApp             = new Subscription();
-                    $suscription_whatsApp->user_id    = $user->id;
-                    $suscription_whatsApp->plan_id    = 4;
-                    $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays(30);
-                    $suscription_whatsApp->save();
-                }
+                // if($whatsapp_subscribed){
+                //     if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
+                //         $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays(30)]);
+                //     }else{
+                //         $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays(30)]);
+                //     }
+                //     $whatsapp_subscribed->save();
+                // }else{
+                //     $suscription_whatsApp             = new Subscription();
+                //     $suscription_whatsApp->user_id    = $user->id;
+                //     $suscription_whatsApp->plan_id    = 4;
+                //     $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays(30);
+                //     $suscription_whatsApp->save();
+                // }
 
                 switch ($this->plan->id) {
                     case 7:
                         $mail = new ApprovedPurchaseNoChat($this->plan, $user);
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     break;
-                    case 18:
+                    case 19:
                         $mail = new ApprovedPurchaseReto($this->plan, $user);
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     break;

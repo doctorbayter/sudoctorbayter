@@ -105,14 +105,9 @@ Route::get('/regalo', function () {
 
 
 Route::get('/reto', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'desafio']);
+    //return view('no-disponible');
+    return redirect()->route('reto.register', ['reto'=>'desafio']);
 })->name('reto.2022');
-
-Route::get('/desafio', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'desafio']);
-})->name('desafio.2022');
 
 
 Route::get('/selecto', function () {
@@ -291,24 +286,24 @@ Route::get('x/sql/', function(){
 
 Route::get('x/query', function(){
 
-    $plan = Plan::find(6);
-    $plan->name = "Cita virtual 40 minutos";
-    $plan->save();
+    //$plan = Plan::find(6);
+    //$plan->name = "Cita virtual 40 minutos";
+    //$plan->save();
 
-    /*
+
     $plan = Plan::create([
-        'name' => 'Desafio 2022',
-        'slug' => 'desafio-2022',
+        'name' => 'Reto Empareja2',
+        'slug' => 'empareja2',
         'price_id' => 14
     ]);
 
     $fase = Fase::create([
-        'name' => 'Desafio 2022',
-        'sub_name' => 'Libérate de la <span class="text-red-700">mierda</span> del 2021',
+        'name' => 'Empareja2',
+        'sub_name' => 'Justos es<span class="text-red-700">más</span> fácil',
         'descripcion' => '',
-        'slug' => 'desafio-2022',
+        'slug' => 'empareja2',
     ]);
-    */
+
 
 
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);

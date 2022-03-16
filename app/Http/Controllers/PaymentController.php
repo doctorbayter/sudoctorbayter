@@ -167,6 +167,7 @@ class PaymentController extends Controller
         $previous_plan_selecto      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16, 17))->first();
         $previous_plan_week         = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10, 15, 16))->first();
         $previous_desafio           = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16, 17))->first();
+        $previous_empareja2         = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16, 17, 18))->first();
         $subscribed_plan_1          = Subscription::where('user_id', $user->id)->where('plan_id', 1)->first();
         $subscribed_plan_2          = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
         $subscribed_plan_7          = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
@@ -179,6 +180,7 @@ class PaymentController extends Controller
         $five_recipes               = Fase::find(7);
         $keto_navidad               = Fase::find(8);
         $fase_desafio               = Fase::find(9);
+        $fase_empareja2             = Fase::find(10);
 
         if(!$is_already_subscribed){
             switch ($plan->id) {
@@ -326,11 +328,18 @@ class PaymentController extends Controller
                         $fase_desafio->clients()->attach($user->id);
                     }
                     break;
+                case 19:
+                    if(!$previous_empareja2){
+                        $this->addSuscription($user->id, $plan->id);
+                    }
+                    if(!$fase_empareja2->clients->contains($user->id)){
+                        $fase_empareja2->clients()->attach($user->id);
+                    }
+                    break;
             }
         }
-        if($plan->id != 18){
+        if($plan->id != 19){
             $this->activeCampaign($user->email, 18);
-
         }else if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 || $plan->id != 7 || $plan->id != 11 || $plan->id != 12 ){
             $this->activeCampaign($user->email, 16);
         }
@@ -469,7 +478,7 @@ class PaymentController extends Controller
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
-            case 18:
+            case 19:
                 $mail = new ApprovedPurchaseReto($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;

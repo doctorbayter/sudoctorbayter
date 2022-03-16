@@ -32,7 +32,7 @@ class Reto extends Component
                     $this->list_id = 18;
                     break;
             case 'empareja2':
-                $this->plan = Plan::find(24);
+                $this->plan = Plan::find(19);
                 $this->list_id = 18;
                 break;
             default:

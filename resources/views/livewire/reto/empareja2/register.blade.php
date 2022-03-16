@@ -2,10 +2,10 @@
     <section class="" style="">
 
         <div class="py-12 flex flex-col-reverse md:flex-row max-w-5xl mx-auto">
-            <div class="w-6/12">
+            <div class=" w-full md:w-6/12">
                 <img src="{{asset('img/billboards/reto_empareja2.png')}}" alt="" class="w-full my-4 md:my-0"/>
             </div>
-            <div class="pl-2 w-6/12 pr-2 mb-8 md:pl-12 md:pr-0 md:mb-0 ">
+            <div class="pl-2 w-full md:w-6/12 pr-2 mb-8 md:pl-12 md:pr-0 md:mb-0 ">
                 <header class="leading-tight">
                     <p class="text-sm md:text-xl inline bg-red-700 text-gray-50 px-4"><b>Nuevo Reto</b> 100% Online</p>
                     <h1 class="text-3xl md:text-5xl font-bold leading-none pt-2">EMPAREJA<span class="text-red-700">2</span></h1>
@@ -28,8 +28,8 @@
     </section>
     <section class="bg-gray-900 py-12">
         <div class="max-w-4xl mx-auto flex w-full flex-col-reverse md:flex-row">
-            <div class="mt-8 md:mt-0 w-4/12 ">
-                <img src="{{asset('img/billboards/banner_facts.png')}}" alt="" class="mx-auto">
+            <div class="mt-8 md:mt-0  w-full md:w-4/12 ">
+                <img src="{{asset('img/billboards/banner_facts.png')}}" alt="" class="mx-auto w-full">
             </div>
             <div class="text-gray-50  w-full lg:w-8/12  px-4 md:mr-0 md:ml-10">
                 <h2 class="font-bold mb-4 text-2xl leading-none">¿Qué incluye este Reto?</h2>

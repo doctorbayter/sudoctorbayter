@@ -198,11 +198,9 @@ Route::get('x/clients/reto', function () {
     }
 });
 
-Route::get('x/clients/ac/{skip?}', function($skip = 0){
+Route::get('x/clients/ac', function(){
 
-    $users = User::where('email','!=','null')->skip($skip)->take(300)->get();
-
-    echo $users->count();
+    $users = User::all();
 
     $list_id = 20;
 
@@ -213,8 +211,6 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
                                                 ->first();
 
         if($is_already_subscribed){
-
-            echo $user->email.'<br/>';
 
             $response = Http::withHeaders([
                 'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'

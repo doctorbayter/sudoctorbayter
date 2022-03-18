@@ -208,17 +208,17 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
     foreach($users as $user){
 
-        echo $user->email.'<br><br>';
+        echo $user->email.' - ';
 
 
-        $is_already_subscribed  = Subscription::where('user_id', $user->id)
+        $is_already_subscribed = Subscription::where('user_id', $user->id)
                                                 ->whereIn('plan_id', [18, 17])
                                                 ->whereNotIn('plan_id', [15,16,2,1,8,9,3])
                                                 ->first();
 
-
-
         if($is_already_subscribed){
+
+            echo 'está.<br><br>';
 
             $response = Http::withHeaders([
                 'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
@@ -230,15 +230,6 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
             ]);
 
             $userData = $getUserByEmail['contacts'];
-
-            if($userData){
-
-                echo 'Si está <br>';
-
-            }else{
-                echo 'No está <br>';
-
-            }
 
             // if($userData){
             //     $userListsLink = $userData[0]['links']['contactLists'];
@@ -313,6 +304,8 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
 
 
+        }else{
+            echo 'no está.<br><br>';
         }
     }
 });

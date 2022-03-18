@@ -200,7 +200,7 @@ Route::get('x/clients/reto', function () {
 
 Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
-    $users = User::where('email','!=','null')->skip($skip)->take(100)->get();
+    $users = User::where('email','!=','null')->skip($skip)->take(300)->get();
 
     $list_id = 20;
 

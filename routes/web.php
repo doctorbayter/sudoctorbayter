@@ -198,9 +198,9 @@ Route::get('x/clients/reto', function () {
     }
 });
 
-Route::get('x/clients/ac', function(){
+Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
-    $users = User::all();
+    $users = User::all()->skip($skip);
 
     $list_id = 20;
 

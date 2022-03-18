@@ -202,6 +202,8 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
     $users = User::where('email','!=','null')->skip($skip)->take(300)->get();
 
+    echo $users->count();
+
     $list_id = 20;
 
     foreach($users as $user){

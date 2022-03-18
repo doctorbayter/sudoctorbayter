@@ -198,9 +198,9 @@ Route::get('x/clients/reto', function () {
     }
 });
 
-Route::get('x/clients/ac/{skip?}', function($skip = 0){
+Route::get('x/clients/ac', function(){
 
-    $users = User::where('email','!=','null')->skip($skip)->take(400)->get();
+    $users = User::all();
 
     $list_id = 20;
 
@@ -266,6 +266,7 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
                             ]);
                         }
 
+                        break;
                     }else{
                         $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                             "contactList" => [

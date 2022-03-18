@@ -200,6 +200,18 @@ Route::get('x/clients/reto', function () {
 
 Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
+
+    $plans = Subscription::whereIn('plan_id', [18, 17])
+                                                ->whereNotIn('plan_id', [15,16,2,1,8,9,3])
+                                                ->get();
+
+
+    dd($plans->count());
+    return;
+
+
+
+
     $users = User::all()->skip($skip)->take(100);
 
     echo $users->count().'<br><br>';
@@ -211,10 +223,9 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
         echo $user->email.' - ';
 
 
-        $is_already_subscribed = Subscription::where('user_id', $user->id)
-                                                ->whereIn('plan_id', [18, 17])
+        $is_already_subscribed = Subscription::whereIn('plan_id', [18, 17])
                                                 ->whereNotIn('plan_id', [15,16,2,1,8,9,3])
-                                                ->first();
+                                                ->get();
 
         if($is_already_subscribed){
 

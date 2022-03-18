@@ -200,7 +200,7 @@ Route::get('x/clients/reto', function () {
 
 Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
-    $users = User::all()->skip($skip);
+    $users = User::all()->skip($skip)->take(100);
 
     echo $users->count().'<br><br>';
 

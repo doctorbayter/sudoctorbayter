@@ -198,9 +198,12 @@ Route::get('x/clients/reto', function () {
     }
 });
 
-Route::get('x/clients/ac', function () {
-    $users = User::all();
+Route::get('x/clients/ac/{skip?}', function($skip = 0){
+
+    $users = User::where('email','!=','null')->skip($skip)->take(100)->get();
+
     $list_id = 20;
+
     foreach($users as $user){
         $is_already_subscribed  = Subscription::where('user_id', $user->id)
                                                 ->whereIn('plan_id', [18, 17])

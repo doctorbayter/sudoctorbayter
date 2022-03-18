@@ -207,6 +207,10 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
     $list_id = 20;
 
     foreach($users as $user){
+
+        echo $user->email.'<br><br>';
+
+
         $is_already_subscribed  = Subscription::where('user_id', $user->id)
                                                 ->whereIn('plan_id', [18, 17])
                                                 ->whereNotIn('plan_id', [15,16,2,1,8,9,3])

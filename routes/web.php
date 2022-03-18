@@ -47,6 +47,7 @@ Route::get('/doctor-bayter', [HomeController::class, 'doctor'])->name('doctor');
 Route::get('/metodo-dkp', [HomeController::class, 'dkp'])->name('dkp');
 Route::get('/metodo-dkp/47', [HomeController::class, 'dkpOferta'])->name('dkp.oferta');
 Route::get('/metodo-dkp/tiktok', [HomeController::class, 'dkpTiktok'])->name('dkp.dkpTiktok');
+Route::get('/thf', [HomeController::class, 'thf'])->name('thf');
 Route::get('/programas', [HomeController::class, 'programas'])->name('programas');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/blog/post/que-comer-y-que-evitar-en-una-dieta-cetogenica', [HomeController::class, 'blog_uno'])->name('blog.uno');
@@ -199,14 +200,95 @@ Route::get('x/clients/reto', function () {
 
 Route::get('x/clients/ac', function () {
     $users = User::all();
+    $list_id = 20;
     foreach($users as $user){
         $is_already_subscribed  = Subscription::where('user_id', $user->id)
                                                 ->whereIn('plan_id', [18, 17])
                                                 ->whereNotIn('plan_id', [15,16,2,1,8,9,3])
                                                 ->first();
+
         if($is_already_subscribed){
-            echo $user->email;
-            echo"<br/>";
+
+            $response = Http::withHeaders([
+                'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
+            ]);
+            $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
+                "email" => $user->email,
+                "orders[email]" => "ASC"
+            ]);
+            $userData = $getUserByEmail['contacts'];
+
+            if($userData){
+                $userListsLink = $userData[0]['links']['contactLists'];
+                $userId = $userData[0]['id'];
+
+            }else{
+
+                $name = trim($user->name);
+                $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+                $first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );
+
+                $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
+                    "contact" => [
+                        "email" => $user->email,
+                        "firstName" => $first_name,
+                        "lastName" => $last_name,
+                    ]
+                ]);
+                $userListsLink = $addUser['contact']['links']['contactLists'];
+                $userId = $addUser['contact']['id'];
+            }
+
+
+            $getUserLists =  $response->GET($userListsLink);
+
+            $userLists = $getUserLists['contactLists'];
+
+            if(count($userLists) > 0) {
+
+                foreach($userLists as $userList ) {
+
+                    if($userList['list'] == $list_id){
+
+                        if($userList['status'] == 1){
+                           return false;
+                        }else if($userList['status'] == "2") {
+                            $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                                "contactList" => [
+                                    "list" => $list_id,
+                                    "contact" => $userId,
+                                    "status" => 1,
+                                    "sourceid" => 4
+                                ]
+                            ]);
+                        }
+                        return true;
+                        break;
+                    }else{
+                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                            "contactList" => [
+                                "list" => $list_id,
+                                "contact" => $userId,
+                                "status" => 1
+                            ]
+                        ]);
+                    }
+                }
+                return true;
+
+            }else{
+                $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                    "contactList" => [
+                        "list" => $list_id,
+                        "contact" => $userId,
+                        "status" => 1
+                    ]
+                ]);
+                return true;
+            }
+
+
+
         }
     }
 });

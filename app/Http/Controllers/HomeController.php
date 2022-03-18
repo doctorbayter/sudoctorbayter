@@ -27,6 +27,11 @@ class HomeController extends Controller
         return  view('dkp', compact('plan_premium','plan_fase_uno'));
     }
 
+    public function thf()
+    {
+        return  view('thf');
+    }
+
     public function dkpOferta(Request $request) {
 
         $time = Carbon::now()->addDays(5)->format('Y/m/d H:i:s');

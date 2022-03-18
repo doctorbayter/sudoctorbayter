@@ -424,7 +424,7 @@ class PaymentController extends Controller
         $userListsLink = $userData[0]['links']['contactLists'];
         $userId = $userData[0]['id'];
 
-        $getUserLists =  $response->GET($userListsLink);
+        $getUserLists = $response->GET($userListsLink);
 
         $userLists = $getUserLists['contactLists'];
 

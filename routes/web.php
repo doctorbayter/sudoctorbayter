@@ -251,7 +251,7 @@ Route::get('x/clients/ac', function () {
                     if($userList['list'] == $list_id){
 
                         if($userList['status'] == 1){
-                           return false;
+
                         }else if($userList['status'] == "2") {
                             $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                                 "contactList" => [
@@ -262,7 +262,7 @@ Route::get('x/clients/ac', function () {
                                 ]
                             ]);
                         }
-                        return true;
+
                         break;
                     }else{
                         $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
@@ -274,7 +274,7 @@ Route::get('x/clients/ac', function () {
                         ]);
                     }
                 }
-                return true;
+
 
             }else{
                 $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
@@ -284,7 +284,7 @@ Route::get('x/clients/ac', function () {
                         "status" => 1
                     ]
                 ]);
-                return true;
+
             }
 
 

@@ -202,6 +202,8 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
     $users = User::all()->skip($skip);
 
+    echo $users->count().'<br><br>';
+
     $list_id = 20;
 
     foreach($users as $user){
@@ -209,6 +211,8 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
                                                 ->whereIn('plan_id', [18, 17])
                                                 ->whereNotIn('plan_id', [15,16,2,1,8,9,3])
                                                 ->first();
+
+
 
         if($is_already_subscribed){
 

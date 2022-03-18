@@ -215,80 +215,93 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
             $response = Http::withHeaders([
                 'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
             ]);
+
             $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
                 "email" => $user->email,
                 "orders[email]" => "ASC"
             ]);
+
             $userData = $getUserByEmail['contacts'];
 
             if($userData){
-                $userListsLink = $userData[0]['links']['contactLists'];
-                $userId = $userData[0]['id'];
-                echo 'está <br>';
-            }else{
-                echo 'no está <br>';
-                $name = trim($user->name);
-                $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-                $first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );
 
-                $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
-                    "contact" => [
-                        "email" => $user->email,
-                        "firstName" => $first_name,
-                        "lastName" => $last_name,
-                    ]
-                ]);
-                $userListsLink = $addUser['contact']['links']['contactLists'];
-                $userId = $addUser['contact']['id'];
-            }
-
-
-            $getUserLists =  $response->GET($userListsLink);
-
-            $userLists = $getUserLists['contactLists'];
-
-            if(count($userLists) > 0) {
-
-                foreach($userLists as $userList ) {
-
-                    if($userList['list'] == $list_id){
-
-                        if($userList['status'] == 1){
-
-                        }else if($userList['status'] == "2") {
-                            $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                                "contactList" => [
-                                    "list" => $list_id,
-                                    "contact" => $userId,
-                                    "status" => 1,
-                                    "sourceid" => 4
-                                ]
-                            ]);
-                        }
-
-                        break;
-                    }else{
-                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                            "contactList" => [
-                                "list" => $list_id,
-                                "contact" => $userId,
-                                "status" => 1
-                            ]
-                        ]);
-                    }
-                }
-
+                echo 'Si está <br>';
 
             }else{
-                $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                    "contactList" => [
-                        "list" => $list_id,
-                        "contact" => $userId,
-                        "status" => 1
-                    ]
-                ]);
+                echo 'No está <br>';
 
             }
+
+            // if($userData){
+            //     $userListsLink = $userData[0]['links']['contactLists'];
+            //     $userId = $userData[0]['id'];
+            //     echo 'está <br>';
+
+            // }else{
+
+            //     echo 'no está <br>';
+            //     $name = trim($user->name);
+            //     $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+            //     $first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );
+
+            //     $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
+            //         "contact" => [
+            //             "email" => $user->email,
+            //             "firstName" => $first_name,
+            //             "lastName" => $last_name,
+            //         ]
+            //     ]);
+            //     $userListsLink = $addUser['contact']['links']['contactLists'];
+            //     $userId = $addUser['contact']['id'];
+            // }
+
+
+            // $getUserLists =  $response->GET($userListsLink);
+
+            // $userLists = $getUserLists['contactLists'];
+
+            // if(count($userLists) > 0) {
+
+            //     foreach($userLists as $userList ) {
+
+            //         if($userList['list'] == $list_id){
+
+            //             if($userList['status'] == 1){
+
+            //             }else if($userList['status'] == "2") {
+            //                 $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+            //                     "contactList" => [
+            //                         "list" => $list_id,
+            //                         "contact" => $userId,
+            //                         "status" => 1,
+            //                         "sourceid" => 4
+            //                     ]
+            //                 ]);
+            //             }
+
+            //             break;
+            //         }else{
+            //             $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+            //                 "contactList" => [
+            //                     "list" => $list_id,
+            //                     "contact" => $userId,
+            //                     "status" => 1
+            //                 ]
+            //             ]);
+            //         }
+            //     }
+
+
+            // }else{
+            //     $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+            //         "contactList" => [
+            //             "list" => $list_id,
+            //             "contact" => $userId,
+            //             "status" => 1
+            //         ]
+            //     ]);
+
+            // }
 
 
 

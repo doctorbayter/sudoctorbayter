@@ -224,9 +224,9 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
             if($userData){
                 $userListsLink = $userData[0]['links']['contactLists'];
                 $userId = $userData[0]['id'];
-
+                echo 'está <br>';
             }else{
-
+                echo 'no está <br>';
                 $name = trim($user->name);
                 $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
                 $first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );

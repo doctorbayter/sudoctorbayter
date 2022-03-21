@@ -48,6 +48,7 @@ Route::get('/metodo-dkp', [HomeController::class, 'dkp'])->name('dkp');
 Route::get('/metodo-dkp/47', [HomeController::class, 'dkpOferta'])->name('dkp.oferta');
 Route::get('/metodo-dkp/tiktok', [HomeController::class, 'dkpTiktok'])->name('dkp.dkpTiktok');
 Route::get('/thf', [HomeController::class, 'thf'])->name('thf');
+Route::get('/revolucion', [HomeController::class, 'event'])->name('event');
 Route::get('/programas', [HomeController::class, 'programas'])->name('programas');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/blog/post/que-comer-y-que-evitar-en-una-dieta-cetogenica', [HomeController::class, 'blog_uno'])->name('blog.uno');
@@ -67,7 +68,6 @@ Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('mast
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
 Route::get('masterclass/{masterclass}/dia-{day}', [Masterclass::class, 'day'])->name('masterclass.day');
-
 
 
 
@@ -94,8 +94,8 @@ Route::get('/dieta', function () {
 })->name('redirect.dieta');
 
 Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
-Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->name('reto.replay');
 
+Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->name('reto.replay');
 
 Route::get('/regalo', function () {
     return view('no-disponible');
@@ -127,7 +127,6 @@ Route::get('/67', function () {
     //return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
-
 Route::get('/bf', function () {
     return view('no-disponible');
     $plan = Plan::find(15);
@@ -142,18 +141,15 @@ Route::get('/lunes', function () {
     return view('black-friday', ['plan'=>$plan, 'plan2'=>$plan2]);
 })->name('reto.cyberLunes');
 
-
 Route::get('/reto4', function () {
     return redirect()->route('masterclass.register', ['masterclass'=>'reto-4']);
     //return view('no-disponible');
 })->name('reto4');
 
-
 Route::get('/camus', function () {
-    return redirect()->route('masterclass.register', ['masterclass'=>'camus']);
-    //return view('no-disponible');
+    //return redirect()->route('masterclass.register', ['masterclass'=>'camus']);
+    return view('no-disponible');
 })->name('camus');
-
 
 Route::get('/110', function () {
     return view('no-disponible');
@@ -178,14 +174,6 @@ Route::get('x/days/', function(){
     print_r($days);
 });
 
-
-Route::get('x/clients', function () {
-    $users = User::all();
-    foreach($users as $user){
-        echo $user->email;
-        echo"<br/>";
-    }
-});
 
 Route::get('x/clients/reto', function () {
     $users = User::all();
@@ -286,9 +274,25 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
     return;
 
+});
 
+Route::get('x/clients/eg/{month}', function ($month) {
 
-
+    $plans = Subscription::whereIn('plan_id', [8, 9])
+    ->whereMonth('created_at', $month)
+    ->get();
+    foreach($plans as $plan){
+            $date = \Carbon\Carbon::parse($plan->created_at);
+            echo $plan->user->email;
+            echo "<br/>";
+            echo $plan->name;
+            echo "<br/>";
+            echo "Valor del plan ".$plan->finalPrice. " US$";
+            echo "<br/>";
+            echo "Fecha de compra ". $date->format('d-m-Y');
+            echo "<br/>";
+            echo "======</br></br>";
+    }
 });
 
 Route::get('x/clients', function () {
@@ -298,7 +302,6 @@ Route::get('x/clients', function () {
         echo"<br/>";
     }
 });
-
 
 Route::get('x/plans/', function(){
     $plans = Plan::all();
@@ -366,23 +369,50 @@ Route::get('x/sql/', function(){
 
 Route::get('x/query', function(){
 
+
+    $price = Price::create([
+        'name' => '47 US$',
+        'value' => 47
+    ]);
+
+    $price = Price::create([
+        'name' => '67 US$',
+        'value' => 67
+    ]);
+
+    $price = Price::create([
+        'name' => '87 US$',
+        'value' => 87
+    ]);
+
+    $price = Price::create([
+        'name' => '99 US$',
+        'value' => 99
+    ]);
+
+    // $plan = Plan::create([
+    //     'name' => 'Evento Revolución 2022 Entrada General',
+    //     'slug' => 'revolucion-general',
+    //     'price_id' => $price->id
+    // ]);
+
     //$plan = Plan::find(6);
     //$plan->name = "Cita virtual 40 minutos";
     //$plan->save();
 
 
-    $plan = Plan::create([
-        'name' => 'Reto Empareja2',
-        'slug' => 'empareja2',
-        'price_id' => 14
-    ]);
+    // $plan = Plan::create([
+    //     'name' => 'Reto Empareja2',
+    //     'slug' => 'empareja2',
+    //     'price_id' => 14
+    // ]);
 
-    $fase = Fase::create([
-        'name' => 'Empareja2',
-        'sub_name' => 'Justos es<span class="text-red-700">más</span> fácil',
-        'descripcion' => '',
-        'slug' => 'empareja2',
-    ]);
+    // $fase = Fase::create([
+    //     'name' => 'Empareja2',
+    //     'sub_name' => 'Justos es<span class="text-red-700">más</span> fácil',
+    //     'descripcion' => '',
+    //     'slug' => 'empareja2',
+    // ]);
 
 
 
@@ -475,7 +505,6 @@ Route::get('x/query', function(){
 
 });
 
-
 Route::get('x/whatsapp/', function(){
 
     $client = new \GuzzleHttp\Client(['headers' => ['Content-Type' => 'application/x-www-form-urlencoded', 'apikey'=>'b07192ca25814406c42867e0376518d0']]);
@@ -502,7 +531,6 @@ Route::get('x/whatsapp/', function(){
 
     dd($response);
 });
-
 
 Route::get('x/users/{skip?}', function($skip = 0){
 
@@ -587,8 +615,6 @@ Route::get('x/email/{email}/{plan}', function($email , $plan){
     echo "Correo enviado a ". $user->name." - ".$user->email."<br/>";
 
 });
-
-
 
 // Lideres Acutalizado Enero 2022
 // jackie@adn-empresarial.com

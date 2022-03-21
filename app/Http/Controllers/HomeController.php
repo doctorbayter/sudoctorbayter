@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Plan;
 use App\Models\Recipe;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
@@ -34,11 +35,25 @@ class HomeController extends Controller
 
     public function event()
     {
-        $plan_premium = Plan::find(1);
-        $plan_fase_uno = Plan::find(2);
-        return  view('event', compact('plan_premium','plan_fase_uno'));
+        $general = Plan::find(20);
+        $vip = Plan::find(21);
+        $plus = Plan::find(22);
+        return  view('event', compact('general','vip','plus'));
     }
 
+    public function eventQr($uid){
+
+        $id = base64_decode($uid);
+        $user = User::where('email', $id)->first();
+
+        if($user){
+
+        }else{
+            echo "No está";
+        }
+
+        return  view('event-qr');
+    }
 
     public function dkpOferta(Request $request) {
 

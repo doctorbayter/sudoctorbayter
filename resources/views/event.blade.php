@@ -13,7 +13,7 @@
                 <img src="{{asset('img/logos/revoluciona_event.png')}}" alt="" class="w-full object-cover text-center">
                 <p class="text-gray-50 mt-2 mb-4 md:text-base">El evento que reunirá a profesionales de la salud, nutricionistas, dietistas, nutriólogos y deportistas quienes durante años han estudiado este estilo de vida, y hoy son los máximos exponentes del mismo frente al mundo.</p>
                 <div class="text-white text-left py-2 hidden">
-                    <p class="text-4xl text-accent-400 font-bold ">{{$plan_premium->price->name}}</p>
+                    <p class="text-4xl text-accent-400 font-bold ">{{$vip->price->name}}</p>
                 </div>
                 <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Preventa disponible ya! desde 47 US$</a>
             </div>
@@ -244,7 +244,7 @@
                     </li>
                 </ul>
                 <div class="flex-1">
-                    <img src="{{asset('img/photos/agora_bog.jpg')}}" alt="">
+                    <img src="{{asset('img/photos/agora_bog_loc.jpg')}}" alt="">
                 </div>
             </article>
         </div>
@@ -264,14 +264,14 @@
                         <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
                             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-2xl">Entrada <span class="text-red-700">General</span></h2>
 
-                            <p class="text-5xl text-accent-400 font-bold text-center">{{$plan_fase_uno->price->name}}</p>
+                            <p class="text-5xl text-accent-400 font-bold text-center">{{$general->price->name}}</p>
 
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que incluye?</h3>
                                 <ul>
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al evento en ubicación general</p></li>
                                 </ul>
-                                <a href="{{route('payment.checkout', $plan_fase_uno)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela Ahora!</a>
+                                <a href="{{route('payment.checkout', $general)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela Ahora!</a>
                             </div>
                         </div>
                     </article>
@@ -279,7 +279,7 @@
                         <div class="mt-12 border-black border-8 max-w-md mx-auto px-8 py-6 rounded-2xl bg-gray-900 text-white ">
                             <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Entrada <span class="text-red-700">VIP</span>+</h2>
 
-                            <p class="text-5xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
+                            <p class="text-5xl text-accent-400 font-bold text-center">{{$plus->price->name}}</p>
 
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que incluye?</h3>
@@ -289,7 +289,7 @@
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Sesión grupal de preguntas<b class=" text-sm text-gray-600 block font-medium">Al finlaizar el evento</b></p></li>
 
                                 </ul>
-                                <a href="{{route('payment.checkout', $plan_premium)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela Ahora!</a>
+                                <a href="{{route('payment.checkout', $plus)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela Ahora!</a>
                             </div>
                         </div>
                     </article>
@@ -297,7 +297,7 @@
                         <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
                             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Entrada <span class="text-red-700">VIP</span></h2>
 
-                            <p class="text-5xl text-accent-400 font-bold text-center">{{$plan_fase_uno->price->name}}</p>
+                            <p class="text-5xl text-accent-400 font-bold text-center">{{$vip->price->name}}</p>
 
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que incluye?</h3>
@@ -305,7 +305,7 @@
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al evento en ubicación <span class="text-red-700">VIP</span></p></li>
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Obsequio de recuerdo del evento</p></li>
                                 </ul>
-                                <a href="{{route('payment.checkout', $plan_fase_uno)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela Ahora!</a>
+                                <a href="{{route('payment.checkout', $vip)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela Ahora!</a>
                             </div>
                         </div>
                     </article>

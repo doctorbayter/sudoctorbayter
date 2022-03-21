@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ApprovedPurchase;
+use App\Mail\ApprovedPurchaseEvent;
 use App\Mail\ApprovedPurchaseNoChat;
 use App\Mail\ApprovedPurchaseReto;
 use App\Models\Fase;
@@ -336,8 +337,18 @@ class PaymentController extends Controller
                         $fase_empareja2->clients()->attach($user->id);
                     }
                     break;
+                case 20:
+                        $this->addSuscription($user->id, $plan->id);
+                    break;
+                case 21:
+                        $this->addSuscription($user->id, $plan->id);
+                    break;
+                case 22:
+                        $this->addSuscription($user->id, $plan->id);
+                    break;
             }
         }
+
         if($plan->id != 19){
             $this->activeCampaign($user->email, 18);
         }else if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 || $plan->id != 7 || $plan->id != 11 || $plan->id != 12 ){
@@ -480,6 +491,19 @@ class PaymentController extends Controller
             break;
             case 19:
                 $mail = new ApprovedPurchaseReto($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            break;
+            case 20:
+                $mail = new ApprovedPurchaseEvent($plan, $user);
+                //Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                Mail::to($user->email)->send($mail);
+            break;
+            case 21:
+                $mail = new ApprovedPurchaseEvent($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            break;
+            case 22:
+                $mail = new ApprovedPurchaseEvent($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             default:

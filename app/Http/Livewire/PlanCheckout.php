@@ -54,6 +54,11 @@ class PlanCheckout extends Component
             }
         }
 
+        if ($this->plan->id == 20 || $this->plan->id == 21 || $this->plan->id == 22){
+            $this->password = "01020304";
+            $this->password_confirmation = "01020304";
+        }
+
 
         if (auth()->user()) {
             $user = User::find(auth()->user()->id);

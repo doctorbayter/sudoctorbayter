@@ -20,12 +20,23 @@ use App\Models\Subscription;
 use App\Models\User;
 use App\Models\Video;
 use App\Models\Week;
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+
+
+use Endroid\QrCode\Color\Color;
+use Endroid\QrCode\Encoding\Encoding;
+use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow;
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Label\Label;
+use Endroid\QrCode\Logo\Logo;
+use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
+use Endroid\QrCode\Writer\PngWriter;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +60,7 @@ Route::get('/metodo-dkp/47', [HomeController::class, 'dkpOferta'])->name('dkp.of
 Route::get('/metodo-dkp/tiktok', [HomeController::class, 'dkpTiktok'])->name('dkp.dkpTiktok');
 Route::get('/thf', [HomeController::class, 'thf'])->name('thf');
 Route::get('/revolucion', [HomeController::class, 'event'])->name('event');
+Route::get('/revolucion/qr/{email}', [HomeController::class, 'eventQr'])->name('event.qr');
 Route::get('/programas', [HomeController::class, 'programas'])->name('programas');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/blog/post/que-comer-y-que-evitar-en-una-dieta-cetogenica', [HomeController::class, 'blog_uno'])->name('blog.uno');
@@ -370,23 +382,33 @@ Route::get('x/sql/', function(){
 Route::get('x/query', function(){
 
 
-    $plan = Plan::create([
-        'name' => 'Evento Revolución 2022 Entrada General',
-        'slug' => 'revolucion-general',
-        'price_id' => 17
-    ]);
+    $writer = new PngWriter();
 
-    $plan = Plan::create([
-        'name' => 'Evento Revolución 2022 Entrada VIP',
-        'slug' => 'revolucion-vip',
-        'price_id' => 18
-    ]);
+// Create QR code
+$qrCode = QrCode::create('www.doctorbayter.com')
+    ->setEncoding(new Encoding('UTF-8'))
+    ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
+    ->setSize(300)
+    ->setMargin(10)
+    ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
+    ->setForegroundColor(new Color(0, 0, 0))
+    ->setBackgroundColor(new Color(255, 255, 255));
 
-    $plan = Plan::create([
-        'name' => 'Evento Revolución 2022 Entrada VIP Plus',
-        'slug' => 'revolucion-vip-plus',
-        'price_id' => 19
-    ]);
+// Create generic logo
+$logo = null;
+
+// Create generic label
+$label = null;
+
+$result = $writer->write($qrCode, $logo, $label);
+
+echo '<img src="'.$result->getDataUri().'" >';
+
+    // $plan = Plan::create([
+    //     'name' => 'Evento Revolución 2022 Entrada General',
+    //     'slug' => 'revolucion-general',
+    //     'price_id' => $price->id
+    // ]);
 
     //$plan = Plan::find(6);
     //$plan->name = "Cita virtual 40 minutos";

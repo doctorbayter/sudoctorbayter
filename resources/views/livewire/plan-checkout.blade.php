@@ -45,28 +45,29 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap -mx-3 mb-3">
-                        <div class="w-full px-3">
-                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                            Crear Contraseña de ingreso
-                            <p class="text-gray-600 font-medium lowercase text-xs italic">Esta será la contraseña con la que entrarás a la página</p>
-                          </label>
-                          <input wire:model="password" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************"
-                          @error('password') autofocus="autofocus" @enderror>
-                          @error('password')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
+                    <div class="flex flex-wrap -mx-3 mb-3  @if ($plan->id == 20 || $plan->id == 21 || $plan->id == 22) hidden @endif ">
+                            <div class="w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                                Crear Contraseña de ingreso
+                                <p class="text-gray-600 font-medium lowercase text-xs italic">Esta será la contraseña con la que entrarás a la página</p>
+                            </label>
+                            <input wire:model="password" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************"
+                            @error('password') autofocus="autofocus" @enderror >
+                            @error('password')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="flex flex-wrap -mx-3 mb-3">
-                        <div class="w-full px-3">
-                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-re-password">
-                            Verificar contraseña
-                          </label>
-                          <input wire:model="password_confirmation" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-re-password" type="password" placeholder="******************"
-                          @error('password_confirmation') autofocus="autofocus" @enderror>
-                          @error('password_confirmation')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
+                        <div class="flex flex-wrap -mx-3 mb-3 @if ($plan->id == 20 || $plan->id == 21 || $plan->id == 22) hidden @endif">
+                            <div class="w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-re-password">
+                                Verificar contraseña
+                            </label>
+                            <input wire:model="password_confirmation" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-re-password" type="password" placeholder="******************"
+                            @error('password_confirmation') autofocus="autofocus" @enderror>
+                            @error('password_confirmation')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
+                            </div>
                         </div>
-                    </div>
+
 
                 </form>
             </section>
@@ -119,6 +120,10 @@
                 <div class=" mt-6 md:mt-8">
 
                     <h3 class="text-2xl font-bold mb-2 md:mb-8 text-gray-800"> <span class="text-red-700">Paso 3:</span> Pagar</h3>
+
+                    @if ($plan->id == 20 || $plan->id == 21 || $plan->id == 22)
+                        <p class="text-sm mb-8 text-justify">* <b class="text-red-700">IMPORTANTE</b> para poder ingresar al evento es obligatorio presentar el carnet con el <b>esquema completo de vacunación</b> contra el <b>COVID-19</b> de lo contrario no será permitido el ingreso por politicas de seguridad y prevención del establecimiento.</p>
+                    @endif
 
 
                     @if (($plan->id == 8 || $plan->id == 9) && $is_week == false)

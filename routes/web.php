@@ -370,31 +370,23 @@ Route::get('x/sql/', function(){
 Route::get('x/query', function(){
 
 
-    $price = Price::create([
-        'name' => '47 US$',
-        'value' => 47
+    $plan = Plan::create([
+        'name' => 'Evento Revolución 2022 Entrada General',
+        'slug' => 'revolucion-general',
+        'price_id' => 17
     ]);
 
-    $price = Price::create([
-        'name' => '67 US$',
-        'value' => 67
+    $plan = Plan::create([
+        'name' => 'Evento Revolución 2022 Entrada VIP',
+        'slug' => 'revolucion-vip',
+        'price_id' => 18
     ]);
 
-    $price = Price::create([
-        'name' => '87 US$',
-        'value' => 87
+    $plan = Plan::create([
+        'name' => 'Evento Revolución 2022 Entrada VIP Plus',
+        'slug' => 'revolucion-vip-plus',
+        'price_id' => 19
     ]);
-
-    $price = Price::create([
-        'name' => '99 US$',
-        'value' => 99
-    ]);
-
-    // $plan = Plan::create([
-    //     'name' => 'Evento Revolución 2022 Entrada General',
-    //     'slug' => 'revolucion-general',
-    //     'price_id' => $price->id
-    // ]);
 
     //$plan = Plan::find(6);
     //$plan->name = "Cita virtual 40 minutos";

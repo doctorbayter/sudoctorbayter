@@ -33,6 +33,6 @@ class ApprovedPurchaseEvent extends Mailable
     public function build()
     {
         return $this->view('mail.approved-purchase-event')
-        ->subject('Ya estás dentro, Revoluciona 2022');
+        ->subject('Revoluciona 2022 - Esta es tu información de ingreso');
     }
 }

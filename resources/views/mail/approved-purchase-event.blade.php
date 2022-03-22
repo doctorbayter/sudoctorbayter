@@ -35,7 +35,7 @@
                   <td style="padding:0 0 36px 0;color:#153643;">
                     <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif; ">Hola! {{$user->name}} Tu pago ha sido confirmado</h1>
                     <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Quiero darte la bienvenida al evento <b>REVOLUCIÓN</b> tu compra ha sido aprobada con éxito.</p>
-                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://doctorbayter.com/revolucion/qr/{{base64_encode($user->email)}}" style="color:#a30000;text-decoration:underline;"><b>Entra aquí para acceder a tu contenido</b></a></p>
+                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://doctorbayter.com/revolucion/qr/{{base64_encode($user->email)}}" style="color:#a30000;text-decoration:underline;"><b>Entra aquí para ver tu ticket único de entrada</b></a></p>
                   </td>
                 </tr>
                 <tr>

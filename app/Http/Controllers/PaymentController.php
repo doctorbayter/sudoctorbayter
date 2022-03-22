@@ -495,8 +495,7 @@ class PaymentController extends Controller
             break;
             case 20:
                 $mail = new ApprovedPurchaseEvent($plan, $user);
-                //Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                Mail::to($user->email)->send($mail);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 21:
                 $mail = new ApprovedPurchaseEvent($plan, $user);

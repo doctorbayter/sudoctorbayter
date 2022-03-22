@@ -25,9 +25,40 @@
                 </figure>
             </div>
         </div>
-
-
     </section>
+
+    <style>
+        .animate-wiggle {
+        -webkit-animation: wiggle 1s infinite;
+        animation: wiggle 1s infinite;
+        }
+
+        @-webkit-keyframes wiggle {
+        0%,
+        100% {
+            transform: scale(1) rotate(1deg);
+        }
+
+        50% {
+            transform: scale(0.95) rotate(-1deg);
+        }
+        }
+
+        @keyframes wiggle {
+        0%,
+        100% {
+            transform: scale(1) rotate(1deg);
+        }
+
+        50% {
+            transform: scale(0.95) rotate(-1deg);
+        }
+}
+    </style>
+    <article class="text-center mt-24">
+        <a href="{{route('event')}}"><img src="{{asset('img/billboards/revolucion_banner.jpg')}}" alt="" class="max-w-5xl mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
+    </article>
+
     <section class="bg-white">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 flex relative overflow-hidden py-12 md:py-24">
 

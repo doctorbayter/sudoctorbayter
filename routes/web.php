@@ -29,14 +29,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 
-use Endroid\QrCode\Color\Color;
-use Endroid\QrCode\Encoding\Encoding;
-use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow;
-use Endroid\QrCode\QrCode;
-use Endroid\QrCode\Label\Label;
-use Endroid\QrCode\Logo\Logo;
-use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
-use Endroid\QrCode\Writer\PngWriter;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -299,7 +292,7 @@ Route::get('x/clients/eg/{month}', function ($month) {
             echo "<br/>";
             echo $plan->name;
             echo "<br/>";
-            echo "Valor del plan ".$plan->finalPrice. " US$";
+            echo "Valor del plan ".$plan->price. " US$";
             echo "<br/>";
             echo "Fecha de compra ". $date->format('d-m-Y');
             echo "<br/>";
@@ -380,29 +373,6 @@ Route::get('x/sql/', function(){
 });
 
 Route::get('x/query', function(){
-
-
-    $writer = new PngWriter();
-
-// Create QR code
-$qrCode = QrCode::create('www.doctorbayter.com')
-    ->setEncoding(new Encoding('UTF-8'))
-    ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
-    ->setSize(300)
-    ->setMargin(10)
-    ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
-    ->setForegroundColor(new Color(0, 0, 0))
-    ->setBackgroundColor(new Color(255, 255, 255));
-
-// Create generic logo
-$logo = null;
-
-// Create generic label
-$label = null;
-
-$result = $writer->write($qrCode, $logo, $label);
-
-echo '<img src="'.$result->getDataUri().'" >';
 
     // $plan = Plan::create([
     //     'name' => 'Evento Revolución 2022 Entrada General',

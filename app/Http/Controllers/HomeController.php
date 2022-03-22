@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Plan;
 use App\Models\Recipe;
+use App\Models\Subscription;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -45,14 +46,18 @@ class HomeController extends Controller
 
         $id = base64_decode($uid);
         $user = User::where('email', $id)->first();
+        //
 
         if($user){
-
+            $plan = Subscription::where('user_id', $user->id)
+            ->whereIn('plan_id', [20, 21, 22])
+            ->first();
         }else{
-            echo "No está";
+            $plan = [];
         }
 
-        return  view('event-qr');
+
+        return  view('event-qr', compact('plan'));
     }
 
     public function dkpOferta(Request $request) {

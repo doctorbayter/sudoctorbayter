@@ -15,7 +15,7 @@
                 <div class="text-white text-left py-2 hidden">
                     <p class="text-4xl text-accent-400 font-bold ">{{$vip->price->name}}</p>
                 </div>
-                <a href="#go" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Preventa disponible ya! desde 47 US$</a>
+                <a href="#go" class=" inline-block mt-2 font-bold px-4 mb-8 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Preventa disponible ya! desde 47 US$</a>
             </div>
         </div>
     </section>
@@ -28,7 +28,7 @@
                     <p class="mt-3 text-base text-justify">Este evento lo hemos programado para desarrollarse de forma presencial el día <b>16 de julio de 2022</b> en Ágora Centro de Convenciones en la ciudad de <b>Bogotá, Colombia</b>; para la fecha todos los asistentes deben estar vacunados contra el COVID-19 y seguiremos las más estrictas medidas de bioseguridad según las recomendaciones nacionales e internacionales.</p>
                     <a href="#go" class=" inline-block mt-8 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">Adquiere tu entrada ahora</a>
                 </div>
-                <figure class="rounded-xl flex-1">
+                <figure class="rounded-xl flex-1 mt-4 mb:mt-0">
                     <img src="{{asset('img/billboards/revoluciona_2022.png')}}" alt="" class="w-full object-cover">
                 </figure>
 
@@ -47,7 +47,7 @@
     <section class="bg-gradient-to-t from-white">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 pb-24 mt-16">
             <div>
-                <div class="grid grid-cols-2 gap-x-6">
+                <div class="grid md:grid-cols-2 gap-6">
                     <div class="w-full bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
                         <header>
                             <h2 class="text-2xl md:text-3xl font-bold mb-2"><span class="text-red-700">Dirigido a</span></h2>
@@ -75,7 +75,7 @@
             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">¿Quieres serán los <span class="text-red-700">Conferencistas</span>?</h2>
 
             <article>
-                <div class="max-w-6xl mt-12 grid grid-cols-3 gap-x-4 mx-auto text-center">
+                <div class="max-w-6xl mt-12 grid md:grid-cols-3 gap-y-4 md:gap-x-4    mx-auto text-center">
                     <div class="w-full">
                         <img src="{{asset('img/photos/alejandrodietista.jpg')}}" alt="Alejandro Dietista">
                         <h2 class="font-bold mt-4 text-xl">Alejando Perez</h2>
@@ -224,8 +224,8 @@
     <section class="bg-gray-100">
         <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Ubicación del <span class="text-red-700">Evento</span></h2>
-            <article class="flex items-center justify-between bg-gray-50 rounded-lg my-8 overflow-hidden shadow-xl">
-                <ul class="w-6/12 ml-8 pr-8 py-4">
+            <article class="md:flex items-center justify-between bg-gray-50 rounded-lg my-8 overflow-hidden shadow-xl">
+                <ul class="md:w-6/12 ml-8 pr-8 py-4">
                     <li class="mb-4 bg-gray-100 py-4 px-2 rounded-xl">
                         <p class="uppercase font-extrabold text-red-700">Dirección</p>
                         <i class="fas fa-map-marker-alt"></i> Ac. 24 #38-47, Bogotá
@@ -260,7 +260,7 @@
                 </header>
 
                 <section class="flex flex-col-reverse lg:flex-row items-center justify-center">
-                    <article class="lg:mr-8 w-4/12">
+                    <article class="lg:mr-8  md:w-4/12">
                         <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
                             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-2xl">Entrada <span class="text-red-700">General</span></h2>
 
@@ -275,7 +275,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="w-4/12">
+                    <article class=" md:w-4/12">
                         <div class="mt-12 border-black border-8 max-w-md mx-auto px-8 py-6 rounded-2xl bg-gray-900 text-white ">
                             <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Entrada <span class="text-red-700">VIP</span>+</h2>
 
@@ -293,7 +293,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="lg:ml-8 w-4/12">
+                    <article class="lg:ml-8  md:w-4/12">
                         <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
                             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Entrada <span class="text-red-700">VIP</span></h2>
 

@@ -15,17 +15,17 @@
                                 <p class="font-semibold ">Comprobante de Ingreso</p>
                                 <small>Evento Revolución - Tu Salud A Otro Nivel Julio 16 2022</small>
                             </div>
-                            <h2 class="text-4xl font-bold  py-4 rounded-xl bg-red-700 mb-6">{{$plan->plan->name}}</h2>
-                            <div class="grid grid-cols-2 gap-4 text-left mb-2">
-                                <p class="font-bold">Nombre participante:</p>
+                            <h2 class="text-xl md:text-4xl font-bold  py-4 rounded-xl bg-red-700 mb-6">{{$plan->plan->name}}</h2>
+                            <div class="grid md:grid-cols-2 md:gap-4 text-left mb-6 md:mb-2">
+                                <p class="font-bold my-0">Nombre participante:</p>
                                 <p>{{$plan->user->name}}</p>
                             </div>
-                            <div class="grid grid-cols-2 gap-4 text-left mb-2">
-                                <p class="font-bold">Correo electrónico:</p>
+                            <div class="grid md:grid-cols-2 md:gap-4 text-left mb-6 md:mb-2">
+                                <p class="font-bold my-0">Correo electrónico:</p>
                                 <p>{{$plan->user->email}}</p>
                             </div>
-                            <div class="grid grid-cols-2 gap-4 text-left mb-2">
-                                <p class="font-bold">Fecha de compra:</p>
+                            <div class="grid md:grid-cols-2 md:gap-4 text-left mb-6 md:mb-2">
+                                <p class="font-bold my-0">Fecha de compra:</p>
                                 <p>{{$plan->created_at}}</p>
                             </div>
 

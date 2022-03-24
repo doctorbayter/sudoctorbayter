@@ -26,6 +26,11 @@
                         <div wire:loading.flex wire:target="confirmData" class="absolute w-full h-full bg-white bg-opacity-75 z-30 items-center justify-center ">
                             <div style="border-top-color:transparent" class="w-16 h-16 border-4 border-red-700 border-solid rounded-full animate-spin"></div>
                         </div>
+                        <script language="javascript" type="text/javascript">
+                            function removeSpaces(string) {
+                             return string.trim();
+                            }
+                        </script>
                         <form>
                             @csrf
                             <div class="flex flex-wrap mb-2">
@@ -34,7 +39,7 @@
                                     Nombre Completo
                                 </label>
                                 <input wire:model="name" class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white" id="grid-name" type="text" placeholder="Escribe tu nombre"
-                                @error('name') autofocus="autofocus" @enderror>
+                                @error('name') autofocus="autofocus" @enderror onblur="this.value=removeSpaces(this.value);">
                                 @error('name')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                                 </div>
                             </div>
@@ -45,7 +50,7 @@
                                     Correo electrónico
                                 </label>
                                 <input wire:model="email" class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-2 leading-tight focus:outline-none focus:bg-white" id="grid-email" type="text" placeholder="Escribe tu correo"
-                                @error('email') autofocus="autofocus" @enderror>
+                                @error('email') autofocus="autofocus" @enderror onblur="this.value=removeSpaces(this.value);">
                                 @error('email')<p class="text-red-500 text-xs italic">{{$message}}</p>@enderror
                                 </div>
                             </div>

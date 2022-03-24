@@ -94,6 +94,9 @@ class Masterclass extends Component
     }
 
     public function confirmData() {
+
+        $this->email = trim($this->email);
+
         $this->validate();
         if($this->activeCampaign()) {
             return redirect()->route('masterclass.thanks', ['masterclass'=>$this->masterclass , 'data'=>$this->data]);

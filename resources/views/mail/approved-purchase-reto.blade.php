@@ -34,7 +34,7 @@
                 <tr>
                   <td style="padding:0 0 36px 0;color:#153643;">
                     <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif; ">Hola! {{$user->name}} Tu pago ha sido confirmado</h1>
-                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Quiero darte la bienvenida al <b>Rento Empareja2</b>tu compra ha sido aprobada con éxito y ahora tendrás acceso a toda la información que este reto.</p>
+                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Quiero darte la bienvenida al <b>Reto Empareja2</b>tu compra ha sido aprobada con éxito y ahora tendrás acceso a toda la información que este reto.</p>
                   </td>
                 </tr>
                 <tr>

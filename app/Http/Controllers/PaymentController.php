@@ -380,6 +380,7 @@ class PaymentController extends Controller
             $user = User::where('email', $user_email)->first();
         }
         return $user;
+        dd($user);
     }
 
     public function addSuscription($user_id, $plan_id) {

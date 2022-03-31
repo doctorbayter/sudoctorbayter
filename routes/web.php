@@ -75,8 +75,6 @@ Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->
 Route::get('masterclass/{masterclass}/dia-{day}', [Masterclass::class, 'day'])->name('masterclass.day');
 
 
-
-
 Route::get('curso-keto', CursoGratis::class)->name('cursos.keto.register');
 Route::get('curso-keto/go',[CursoGratis::class,'go'])->name('cursos.keto.go');
 Route::get('curso-keto/thanks', [CursoGratis::class,'thanks'])->name('cursos.keto.gracias');
@@ -92,6 +90,10 @@ Route::get('x/mail', function () {
     $user = User::find(36);
 
     return view('mail.approved-purchase-reto', ['plan'=>$plan, 'user'=>$user]);
+});
+
+Route::get('x/qr/{email}', function ($email) {
+    echo $qr = base64_encode($email);
 });
 
 Route::get('/dieta', function () {

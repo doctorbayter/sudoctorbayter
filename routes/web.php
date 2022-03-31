@@ -171,18 +171,101 @@ Route::get('x/days/', function(){
 });
 
 Route::get('x/clients/reto', function () {
-    $users = User::all();
-    foreach($users as $user){
-        $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', 18)->first();
-        if($is_already_subscribed){
-            echo $user->email;
-            echo"<br/>";
-        }
+
+    $i = 0;
+    $subscriptions = Subscription::whereIn('plan_id', [19])->get();
+    foreach($subscriptions as $subscription){
+        echo $i = $i++." - ". $subscription->user->email;
+        echo"<br/>";
     }
+
 });
 
-Route::get('x/clients/ac/{skip?}', function($skip = 0){
+Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){
 
+    $plans = Subscription::whereIn('plan_id', [19])
+                            ->skip($skip)->take(250)->get();
+
+    $list_id = 21;
+
+    foreach($plans as $plan){
+
+        $response = Http::withHeaders(['Api-Token' => 'c1d483a96b0fd0f622ed138c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576']);
+
+        $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
+            "email" => $plan->user->email,
+            "orders[email]" => "ASC"
+        ]);
+
+        $userData = $getUserByEmail['contacts'];
+
+        if($userData){
+            $userListsLink = $userData[0]['links']['contactLists'];
+            $userId = $userData[0]['id'];
+        }else{
+
+            $name = trim($plan->user->name);
+            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+            $first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );
+
+            $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
+                "contact" => [
+                    "email" => $plan->user->email,
+                    "firstName" => $first_name,
+                    "lastName" => $last_name,
+                ]
+            ]);
+            $userListsLink = $addUser['contact']['links']['contactLists'];
+            $userId = $addUser['contact']['id'];
+
+        }
+
+        $getUserLists =  $response->GET($userListsLink);
+        $userLists = $getUserLists['contactLists'];
+
+        if(count($userLists) > 0) {
+
+            foreach($userLists as $userList ) {
+                if($userList['list'] == $list_id){
+
+                    if($userList['status'] == "2") {
+                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                            "contactList" => [
+                                "list" => $list_id,
+                                "contact" => $userId,
+                                "status" => 1,
+                                "sourceid" => 4
+                            ]
+                        ]);
+                    }
+                    break;
+                }else{
+                    $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                        "contactList" => [
+                            "list" => $list_id,
+                            "contact" => $userId,
+                            "status" => 1
+                        ]
+                    ]);
+                }
+            }
+
+        }else{
+            $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                "contactList" => [
+                    "list" => $list_id,
+                    "contact" => $userId,
+                    "status" => 1
+                ]
+            ]);
+        }
+    }
+
+    return;
+
+});
+
+Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
 
     $plans = Subscription::whereIn('plan_id', [18, 17])
                             ->whereNotIn('plan_id', [15,16,2,1,8,9,3])
@@ -360,10 +443,6 @@ Route::get('x/discounts/', function(){
 
 Route::get('x/query', function(){
 
-    $fase = Fase::find(10);
-    $fase->sub_name= 'Juntos es <span class="text-red-700">más</span> fácil';
-    $fase->save();
-
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
@@ -465,44 +544,40 @@ Route::get('x/query/reto', function(){
     // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
     // (326, 138, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (326, 138, 302, '1', CURRENT_TIMESTAMP, NULL)");
+    // $recipe = Recipe::create([
+    //     'name' => 'Intento de wrap con mantequilla de aguacate',
+    //     'slug' => 'intento-de-wrap-con-mantequilla-de-aguacate',
+    //     'indice'=> 1,
+    //     'carbs' => 17.27,
+    //     'time' => 30,
+    //     'type' => 1,
+    //     ]);
+    //     $image = Image::create([
+    //     'url' => 'recipes/retoempareja2-dia-5-receta-2.jpg',
+    //     'imageable_id' => $recipe->id,
+    //     'imageable_type' => 'App\Models\Recipe',
+    //     ]);
+
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (327, 138, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
-    $recipe = Recipe::create([
-        'name' => 'Intento de wrap con mantequilla de aguacate',
-        'slug' => 'intento-de-wrap-con-mantequilla-de-aguacate',
-        'indice'=> 1,
-        'carbs' => 17.27,
-        'time' => 30,
-        'type' => 1,
-        ]);
-        $image = Image::create([
-        'url' => 'recipes/retoempareja2-dia-5-receta-2.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'Sencillito el caldito con huevito ponchadito',
+    //     'slug' => 'sencillito-el-caldito-con-huevito-ponchadito',
+    //     'indice'=> 1,
+    //     'carbs' => 17.27,
+    //     'time' => 20,
+    //     'type' => 1,
+    //     ]);
+    //     $image = Image::create([
+    //     'url' => 'recipes/retoempareja2-dia-5-receta-3.jpg',
+    //     'imageable_id' => $recipe->id,
+    //     'imageable_type' => 'App\Models\Recipe',
+    //     ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (327, 138, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
-
-
-    $recipe = Recipe::create([
-        'name' => 'Sencillito el caldito con huevito ponchadito',
-        'slug' => 'sencillito-el-caldito-con-huevito-ponchadito',
-        'indice'=> 1,
-        'carbs' => 17.27,
-        'time' => 20,
-        'type' => 1,
-        ]);
-        $image = Image::create([
-        'url' => 'recipes/retoempareja2-dia-5-receta-3.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
-
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (328, 138, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (328, 138, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

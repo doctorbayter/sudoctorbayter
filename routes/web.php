@@ -449,57 +449,57 @@ Route::get('x/query/reto', function(){
     // Recetas
 
     $recipe = Recipe::create([
-        'name' => 'Quesadillas',
-        'slug' => 'quesadillas',
+        'name' => 'Tradicionalmente',
+        'slug' => 'tradicionalmente',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 20,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/retoempareja2-dia-1-receta-1.jpg',
+        'url' => 'recipes/retoempareja2-dia-2-receta-1.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (314, 134, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+    (317, 135, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
     $recipe = Recipe::create([
-        'name' => 'Alas ensopadas',
-        'slug' => 'alas-ensopadas',
+        'name' => 'Albondigones',
+        'slug' => 'albondigones',
         'indice'=> 1,
-        'carbs' => 29.89,
+        'carbs' => 30.37,
         'time' => 30,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/retoempareja2-dia-1-receta-2.jpg',
+        'url' => 'recipes/retoempareja2-dia-2-receta-2.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (315, 134, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (318, 135, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
     $recipe = Recipe::create([
-        'name' => 'Sencillito el caldito',
-        'slug' => 'sencillito-el-caldito',
+        'name' => 'Livianitos son más ricos',
+        'slug' => 'livianitos-son-mas-ricos',
         'indice'=> 1,
-        'carbs' => 1.4,
-        'time' => 25,
+        'carbs' => 1.05,
+        'time' => 15,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/retoempareja2-dia-1-receta-3.jpg',
+        'url' => 'recipes/retoempareja2-dia-2-receta-3.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (316, 134, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    (319, 135, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

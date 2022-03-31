@@ -172,11 +172,12 @@ Route::get('x/days/', function(){
 
 Route::get('x/clients/reto', function () {
 
-    $i = 0;
+    $i = 1;
     $subscriptions = Subscription::whereIn('plan_id', [19])->get();
     foreach($subscriptions as $subscription){
-        echo $i = $i++." - ". $subscription->user->email;
+        echo $i." - ". $subscription->user->email;
         echo"<br/>";
+        $i += 1;
     }
 
 });

@@ -388,7 +388,7 @@ Route::get('x/query/reto', function(){
     // ]);
 
 
-    // Días
+    // Días Reto
 
     // $day = Day::create([
     //     'day' => 1,
@@ -439,34 +439,67 @@ Route::get('x/query/reto', function(){
 
     // Secretos y lista de alimentos
 
-    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (15, 'Lista de Alimentos Empareja2', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    // (15, 'Lista de Alimentos Empareja2', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
-    DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    (15, 10, '1', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
+    // (15, 10, '1', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
-    /*
     // Recetas
 
     $recipe = Recipe::create([
-        'name' => 'Apanemos',
-        'slug' => 'apanemos',
+        'name' => 'Quesadillas',
+        'slug' => 'quesadillas',
         'indice'=> 1,
-        'carbs' => 14.93,
-        'time' => 30,
+        'carbs' => 0,
+        'time' => 20,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/d22-08.jpg',
+        'url' => 'recipes/retoempareja2-dia-1-receta-1.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (313, 133, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (314, 134, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    */
+
+    $recipe = Recipe::create([
+        'name' => 'Alas ensopadas',
+        'slug' => 'alas-ensopadas',
+        'indice'=> 1,
+        'carbs' => 29.89,
+        'time' => 30,
+        'type' => 1,
+        ]);
+        $image = Image::create([
+        'url' => 'recipes/retoempareja2-dia-1-receta-2.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (315, 134, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+
+
+    $recipe = Recipe::create([
+        'name' => 'Sencillito el caldito',
+        'slug' => 'sencillito-el-caldito',
+        'indice'=> 1,
+        'carbs' => 1.4,
+        'time' => 25,
+        'type' => 1,
+        ]);
+        $image = Image::create([
+        'url' => 'recipes/retoempareja2-dia-1-receta-3.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+        ]);
+
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (316, 134, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 
@@ -512,7 +545,6 @@ Route::get('x/users/{skip?}', function($skip = 0){
     }
 
 });
-
 
 Route::get('x/whatsapp/', function(){
 

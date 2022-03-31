@@ -371,6 +371,9 @@ Route::get('x/query', function(){
 
 Route::get('x/query/reto', function(){
 
+
+    // Plan y Fase del reto
+
     // $plan = Plan::create([
     //     'name' => 'Reto Empareja2',
     //     'slug' => 'empareja2',
@@ -385,62 +388,62 @@ Route::get('x/query/reto', function(){
     // ]);
 
 
+    // Días
 
-    $day = Day::create([
-        'day' => 1,
-        'fase_id' => 10,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (91, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (91, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    // $day = Day::create([
+    //     'day' => 1,
+    //     'fase_id' => 10,
+    // ]);
+    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    // (91, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    // (91, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    $day = Day::create([
-        'day' => 2,
-        'fase_id' => 10,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (92, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (92, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    // $day = Day::create([
+    //     'day' => 2,
+    //     'fase_id' => 10,
+    // ]);
+    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    // (92, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    // (92, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    $day = Day::create([
-        'day' => 3,
-        'fase_id' => 10,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (93, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (93, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    // $day = Day::create([
+    //     'day' => 3,
+    //     'fase_id' => 10,
+    // ]);
+    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    // (93, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    // (93, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    $day = Day::create([
-        'day' => 4,
-        'fase_id' => 10,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (94, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (94, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    // $day = Day::create([
+    //     'day' => 4,
+    //     'fase_id' => 10,
+    // ]);
+    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    // (94, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    // (94, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    $day = Day::create([
-        'day' => 5,
-        'fase_id' => 10,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (95, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (95, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    // $day = Day::create([
+    //     'day' => 5,
+    //     'fase_id' => 10,
+    // ]);
+    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    // (95, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    // (95, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
-    /*
+
     // Secretos y lista de alimentos
 
     DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (14, 'Lista de Alimentos Desafio 2022', 'files/pdf/lista-de-alimentos-desafio-2022.pdf', 9, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    (14, 'Lista de Alimentos Empareja2', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    (13, 9, '1', 'files/pdf/lista-de-alimentos-desafio-2022.pdf', CURRENT_TIMESTAMP, NULL)");
-    */
+    (13, 10, '1', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
     /*

@@ -64,7 +64,6 @@ Route::get('/cita', [HomeController::class, 'cita'])->name('cita');
 Route::get('/what', [HomeController::class, 'what'])->name('what');
 Route::get('/recipe/{recipe}', UserRecipe::class)->name('recipe');
 
-
 Route::get('/privacidad', function(){
     return view('terms');
 } )->name('privacidad');
@@ -74,7 +73,6 @@ Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
 Route::get('masterclass/{masterclass}/dia-{day}', [Masterclass::class, 'day'])->name('masterclass.day');
 
-
 Route::get('curso-keto', CursoGratis::class)->name('cursos.keto.register');
 Route::get('curso-keto/go',[CursoGratis::class,'go'])->name('cursos.keto.go');
 Route::get('curso-keto/thanks', [CursoGratis::class,'thanks'])->name('cursos.keto.gracias');
@@ -83,13 +81,6 @@ Route::get('privado', function () {
     return view('no-disponible');
     $plan = Plan::find(14);
     return view('en-privado', ['plan'=>$plan]);
-});
-
-Route::get('x/mail', function () {
-    $plan = Plan::find(17);
-    $user = User::find(36);
-
-    return view('mail.approved-purchase-reto', ['plan'=>$plan, 'user'=>$user]);
 });
 
 Route::get('x/qr/{email}', function ($email) {
@@ -111,12 +102,10 @@ Route::get('/regalo', function () {
 
 })->name('regalo.navidad');
 
-
 Route::get('/reto', function () {
     //return view('no-disponible');
     return redirect()->route('reto.register', ['reto'=>'empareja2']);
 })->name('reto.2022');
-
 
 Route::get('/selecto', function () {
     $plan = Plan::find(10);
@@ -180,7 +169,6 @@ Route::get('x/days/', function(){
     $days = Day::all();
     print_r($days);
 });
-
 
 Route::get('x/clients/reto', function () {
     $users = User::all();
@@ -370,22 +358,18 @@ Route::get('x/discounts/', function(){
     }
 });
 
-Route::get('x/sql/', function(){
-    DB::insert("UPDATE users SET email = LOWER(email)");
-});
-
 Route::get('x/query', function(){
 
-    // $plan = Plan::create([
-    //     'name' => 'Evento Revolución 2022 Entrada General',
-    //     'slug' => 'revolucion-general',
-    //     'price_id' => $price->id
-    // ]);
+    $fase = Fase::find(10);
+    $fase->sub_name= 'Juntos es <span class="text-red-700">más</span> fácil';
+    $fase->save();
 
-    //$plan = Plan::find(6);
-    //$plan->name = "Cita virtual 40 minutos";
-    //$plan->save();
+    //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
+    //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
+});
+
+Route::get('x/query/reto', function(){
 
     // $plan = Plan::create([
     //     'name' => 'Reto Empareja2',
@@ -402,71 +386,66 @@ Route::get('x/query', function(){
 
 
 
-    //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
-    //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
-
-    /*
     $day = Day::create([
         'day' => 1,
-        'fase_id' => 9,
+        'fase_id' => 10,
     ]);
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (86, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
-
+    (91, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (86, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    (91, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
     $day = Day::create([
         'day' => 2,
-        'fase_id' => 9,
+        'fase_id' => 10,
     ]);
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (87, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
-
+    (92, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (87, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    (92, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
     $day = Day::create([
         'day' => 3,
-        'fase_id' => 9,
+        'fase_id' => 10,
     ]);
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (88, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
-
+    (93, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (88, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    (93, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
     $day = Day::create([
         'day' => 4,
-        'fase_id' => 9,
+        'fase_id' => 10,
     ]);
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (89, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
-
+    (94, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (89, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
+    (94, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
     $day = Day::create([
         'day' => 5,
-        'fase_id' => 9,
+        'fase_id' => 10,
     ]);
     DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (90, 9, $day->id, CURRENT_TIMESTAMP, NULL)");
-
+    (95, 10, $day->id, CURRENT_TIMESTAMP, NULL)");
     DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (90, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    (95, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
+
+    /*
+    // Secretos y lista de alimentos
 
     DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
     (14, 'Lista de Alimentos Desafio 2022', 'files/pdf/lista-de-alimentos-desafio-2022.pdf', 9, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     (13, 9, '1', 'files/pdf/lista-de-alimentos-desafio-2022.pdf', CURRENT_TIMESTAMP, NULL)");
-
     */
 
+
     /*
+    // Recetas
+
     $recipe = Recipe::create([
         'name' => 'Apanemos',
         'slug' => 'apanemos',
@@ -482,41 +461,12 @@ Route::get('x/query', function(){
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (312, 133, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (313, 133, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (313, 133, 296, '3', CURRENT_TIMESTAMP, NULL)");
     */
 
-
 });
 
-Route::get('x/whatsapp/', function(){
-
-    $client = new \GuzzleHttp\Client(['headers' => ['Content-Type' => 'application/x-www-form-urlencoded', 'apikey'=>'b07192ca25814406c42867e0376518d0']]);
-
-    $response = $client->get('https://api.gupshup.io/sm/api/v1/users/MYCXAPP');
-
-    echo ($response->getBody());
-    return;
-    $data = array(
-    'channel' => 'whatsapp',
-    'source' => '917834811114',
-    'destination' => '573155217037',
-    'src.name'=> 'MYCXAPP',
-    'message' => '{
-        "type":"quick_reply",
-        "msgid":"qr1",
-        "content":{ "type":"text", "header":"Bienvenido al area comercial del doctor X", "text":"Acontinuación encontrarás una lista de opciones", "caption":"Por favor elije una y con mucho gusto te atenderemos" },
-        "options":[ { "type":"text", "title":"Cotizar Cirugia" }, { "type":"text", "title":"Solicitar Consulta" }, { "type":"text", "title":"Otro" } ]}'
-    );
-
-    $response = $client->post('https://api.gupshup.io/sm/api/v1/msg',[
-        'body'  => http_build_query($data),
-    ]);
-
-    dd($response);
-});
 
 Route::get('x/users/{skip?}', function($skip = 0){
 
@@ -560,46 +510,32 @@ Route::get('x/users/{skip?}', function($skip = 0){
 
 });
 
-Route::get('x/users/reto/add/{email}', function($email){
 
-    $user                   = User::where('email',$email)->first();
-    $plan                   = Plan::find(17);
-    $is_already_subscribed  = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-    $previous_plan_navidad  = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16))->first();
-    $keto_navidad           = Fase::find(8);
+Route::get('x/whatsapp/', function(){
 
-    if(!$is_already_subscribed){
-        if(!$previous_plan_navidad){
-            $suscription_plan           = new Subscription();
-            $suscription_plan->user_id  = $user->id;
-            $suscription_plan->plan_id  = $plan->id;
-            $suscription_plan->save();
-        }
-        if(!$keto_navidad->clients->contains($user->id)){
-            $keto_navidad->clients()->attach($user->id);
-        }
+    $client = new \GuzzleHttp\Client(['headers' => ['Content-Type' => 'application/x-www-form-urlencoded', 'apikey'=>'b07192ca25814406c42867e0376518d0']]);
 
-        $mail = new ApprovedPurchaseReto($plan, $user);
-        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+    $response = $client->get('https://api.gupshup.io/sm/api/v1/users/MYCXAPP');
 
-        echo "---------<br>";
-        echo "Correo enviado a ". $user->name." - ".$user->email."<br/>";
-        echo "*********<br>";
+    echo ($response->getBody());
+    return;
+    $data = array(
+    'channel' => 'whatsapp',
+    'source' => '917834811114',
+    'destination' => '573155217037',
+    'src.name'=> 'MYCXAPP',
+    'message' => '{
+        "type":"quick_reply",
+        "msgid":"qr1",
+        "content":{ "type":"text", "header":"Bienvenido al area comercial del doctor X", "text":"Acontinuación encontrarás una lista de opciones", "caption":"Por favor elije una y con mucho gusto te atenderemos" },
+        "options":[ { "type":"text", "title":"Cotizar Cirugia" }, { "type":"text", "title":"Solicitar Consulta" }, { "type":"text", "title":"Otro" } ]}'
+    );
 
-    }
-});
+    $response = $client->post('https://api.gupshup.io/sm/api/v1/msg',[
+        'body'  => http_build_query($data),
+    ]);
 
-Route::get('x/email/{email}/{plan}', function($email , $plan){
-
-    $user = User::where('email',$email)->first();
-    $plan = Plan::find($plan);
-
-    $mail = new ApprovedPurchase($plan, $user);
-    Mail::to($user->email)->send($mail);
-
-    echo "---------<br>";
-    echo "Correo enviado a ". $user->name." - ".$user->email."<br/>";
-
+    dd($response);
 });
 
 // Lideres Acutalizado Enero 2022

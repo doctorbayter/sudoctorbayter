@@ -194,7 +194,7 @@ Route::get('x/clients/ac/{skip?}', function($skip = 0){
 
 
         $response = Http::withHeaders([
-            'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
+            'Api-Token' => 'c1d483a96b0fd0f622ed138c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
         ]);
 
         $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
@@ -457,57 +457,52 @@ Route::get('x/query/reto', function(){
     //     'type' => 1,
     //     ]);
     //     $image = Image::create([
-    //     'url' => 'recipes/retoempareja2-dia-4-receta-1.jpg',
+    //     'url' => 'recipes/retoempareja2-dia-5-receta-1.jpg',
     //     'imageable_id' => $recipe->id,
     //     'imageable_type' => 'App\Models\Recipe',
     //     ]);
 
     // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (323, 137, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
-
+    // (326, 138, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (323, 137, 305, '1', CURRENT_TIMESTAMP, NULL)");
+    (326, 138, 302, '1', CURRENT_TIMESTAMP, NULL)");
 
 
     $recipe = Recipe::create([
-        'name' => 'Pescadito de temporada',
-        'slug' => 'pescadito-de-temporada',
+        'name' => 'Intento de wrap con mantequilla de aguacate',
+        'slug' => 'intento-de-wrap-con-mantequilla-de-aguacate',
         'indice'=> 1,
-        'carbs' => 30.87,
+        'carbs' => 17.27,
         'time' => 30,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/retoempareja2-dia-4-receta-2.jpg',
+        'url' => 'recipes/retoempareja2-dia-5-receta-2.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (324, 137, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (327, 138, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Sencillo caldito con queso',
-    //     'slug' => 'sencillo-caldito-con-queso',
-    //     'indice'=> 1,
-    //     'carbs' => 1.4,
-    //     'time' => 20,
-    //     'type' => 1,
-    //     ]);
-    //     $image = Image::create([
-    //     'url' => 'recipes/retoempareja2-dia-4-receta-3.jpg',
-    //     'imageable_id' => $recipe->id,
-    //     'imageable_type' => 'App\Models\Recipe',
-    //     ]);
-
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (325, 137, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    $recipe = Recipe::create([
+        'name' => 'Sencillito el caldito con huevito ponchadito',
+        'slug' => 'sencillito-el-caldito-con-huevito-ponchadito',
+        'indice'=> 1,
+        'carbs' => 17.27,
+        'time' => 20,
+        'type' => 1,
+        ]);
+        $image = Image::create([
+        'url' => 'recipes/retoempareja2-dia-5-receta-3.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+        ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (325, 137, 307, '3', CURRENT_TIMESTAMP, NULL)");
-
+    (328, 138, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

@@ -440,10 +440,10 @@ Route::get('x/query/reto', function(){
     // Secretos y lista de alimentos
 
     DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (14, 'Lista de Alimentos Empareja2', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    (15, 'Lista de Alimentos Empareja2', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    (13, 10, '1', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', CURRENT_TIMESTAMP, NULL)");
+    (16, 10, '1', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
     /*

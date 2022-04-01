@@ -96,12 +96,10 @@
                 </button>
                 </div>
 
-                @if ($userPlan != 7 && $userPlan != 13 && $userPlan != 18 && $userPlan != 19 )
-                    <a href="{{route('plan.whatsapp')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
-                        <i class=" text-lg fab fa-whatsapp-square mr-2"></i>
-                        <span>Whatsapp</span>
-                    </a>
-                @endif
+                <a href="{{route('plan.whatsapp')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+                    <i class=" text-lg fab fa-whatsapp-square mr-2"></i>
+                    <span>Whatsapp</span>
+                </a>
 
                 <a href="{{route('cita')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-mediu text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fas fa-calendar-alt mr-2"></i>

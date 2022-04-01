@@ -184,7 +184,7 @@ Route::get('x/clients/reto', function () {
 
 Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){
 
-    $plans = Subscription::where('plan_id', 20)
+    $plans = Subscription::where('plan_id', 19)
                             ->skip($skip)->take(250)->get();
 
     $list_id = 21;
@@ -193,7 +193,7 @@ Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){
 
 
         $response = Http::withHeaders([
-            'Api-Token' => 'c1d483a96b0fd0f622ed138c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
+            'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
         ]);
 
         $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
@@ -201,7 +201,7 @@ Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){
             "orders[email]" => "ASC"
         ]);
 
-        dd($getUserByEmail);
+
 
         if($getUserByEmail){
             $userData = $getUserByEmail['contacts'];
@@ -288,7 +288,7 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
 
 
         $response = Http::withHeaders([
-            'Api-Token' => 'c1d483a96b0fd0f622ed138c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
+            'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
         ]);
 
         $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[

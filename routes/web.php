@@ -95,6 +95,10 @@ Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
 
 Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->name('reto.replay');
 
+Route::get('reto/{reto}/video', [Reto::class, 'video'])->name('reto.video');
+
+
+
 Route::get('/regalo', function () {
     return view('no-disponible');
     //$plan = Plan::find(1);
@@ -531,6 +535,9 @@ Route::get('x/query/reto', function(){
 
     // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
     // (15, 'Lista de Alimentos Empareja2', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (16, 'Secretos + Receta Base Del Reto', 'files/pdf/secretos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     // DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     // (15, 10, '1', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', CURRENT_TIMESTAMP, NULL)");

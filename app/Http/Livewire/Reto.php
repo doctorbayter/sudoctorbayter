@@ -134,6 +134,18 @@ class Reto extends Component
                     'video-2' => '666617173?h=5e7e646237'
                 ];
                 break;
+            case 'empareja2':
+                return $this->data = [
+                    'title' => 'Reto Empareja2',
+                    'subtitle'=> 'Juntos es mejor',
+                    'type' => 'video',
+                    'online' => true,
+                    'video-1' => '665248310?h=e1e1892609',
+                    'video-2' => '666617173?h=5e7e646237',
+                    'video-title' => 'Video receta Caldo Volador',
+                    'video-base' => '694725486?h=f2f6142350',
+                ];
+                break;
             default:
                 return null;
                 break;
@@ -145,6 +157,13 @@ class Reto extends Component
         $data = $this->retoData($reto);
 
         return view('livewire.reto.replay', ['reto'=>$this->reto,  'day'=>$day, 'data'=>$data]);
+    }
+
+    public function video($reto) {
+        $this->reto = $reto;
+        $data = $this->retoData($reto);
+
+        return view('livewire.reto.video', ['reto'=>$this->reto, 'data'=>$data]);
     }
 
     public function thanks($reto) {

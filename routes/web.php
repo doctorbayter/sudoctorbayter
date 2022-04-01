@@ -376,7 +376,7 @@ Route::get('x/clients/eg/{month}', function ($month) {
             echo "<br/>";
             echo $plan->name;
             echo "<br/>";
-            echo "Valor del plan ".$plan->price. " US$";
+            echo "Valor del plan ".$plan->plan->finalPrice. " US$";
             echo "<br/>";
             echo "Fecha de compra ". $date->format('d-m-Y');
             echo "<br/>";

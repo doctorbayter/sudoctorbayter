@@ -184,12 +184,13 @@ Route::get('x/clients/reto', function () {
 
 Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){
 
-    $plans = Subscription::whereIn('plan_id', [19])
+    $plans = Subscription::where('plan_id', 20)
                             ->skip($skip)->take(250)->get();
 
     $list_id = 21;
 
     foreach($plans as $plan){
+
 
         $response = Http::withHeaders(['Api-Token' => 'c1d483a96b0fd0f622ed138c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576']);
 
@@ -198,7 +199,12 @@ Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){
             "orders[email]" => "ASC"
         ]);
 
-        $userData = $getUserByEmail['contacts'];
+        if($getUserByEmail){
+            $userData = $getUserByEmail['contacts'];
+        }else{
+            $userData = null;
+        }
+
 
         if($userData){
             $userListsLink = $userData[0]['links']['contactLists'];

@@ -192,12 +192,16 @@ Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){
     foreach($plans as $plan){
 
 
-        $response = Http::withHeaders(['Api-Token' => 'c1d483a96b0fd0f622ed138c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576']);
+        $response = Http::withHeaders([
+            'Api-Token' => 'c1d483a96b0fd0f622ed138c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
+        ]);
 
         $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
             "email" => $plan->user->email,
             "orders[email]" => "ASC"
         ]);
+
+        dd($getUserByEmail);
 
         if($getUserByEmail){
             $userData = $getUserByEmail['contacts'];

@@ -461,6 +461,10 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
+    $fase = Fase::find(5);
+    $fase->sub_name = 'Recetas <span class="text-red-700">Adicionales</span>';
+    $fase->save();
+
 });
 
 Route::get('x/query/reto', function(){

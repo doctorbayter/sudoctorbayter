@@ -107,8 +107,8 @@ Route::get('/regalo', function () {
 })->name('regalo.navidad');
 
 Route::get('/reto', function () {
-    //return view('no-disponible');
-    return redirect()->route('reto.register', ['reto'=>'empareja2']);
+    return view('no-disponible');
+    //return redirect()->route('reto.register', ['reto'=>'empareja2']);
 })->name('reto.2022');
 
 Route::get('/selecto', function () {
@@ -129,16 +129,16 @@ Route::get('/67', function () {
 
 Route::get('/bf', function () {
     return view('no-disponible');
-    $plan = Plan::find(15);
-    $plan2 = Plan::find(16);
-    return view('black-friday', ['plan'=>$plan, 'plan2'=>$plan2]);
+    // $plan = Plan::find(15);
+    // $plan2 = Plan::find(16);
+    // return view('black-friday', ['plan'=>$plan, 'plan2'=>$plan2]);
 })->name('reto.blackFriday');
 
 Route::get('/lunes', function () {
     return view('no-disponible');
-    $plan = Plan::find(15);
-    $plan2 = Plan::find(16);
-    return view('black-friday', ['plan'=>$plan, 'plan2'=>$plan2]);
+    // $plan = Plan::find(15);
+    // $plan2 = Plan::find(16);
+    // return view('black-friday', ['plan'=>$plan, 'plan2'=>$plan2]);
 })->name('reto.cyberLunes');
 
 Route::get('/reto4', function () {
@@ -536,8 +536,8 @@ Route::get('x/query/reto', function(){
     // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
     // (15, 'Lista de Alimentos Empareja2', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
-    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (16, 'Secretos + Receta Base Del Reto', 'files/pdf/secretos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    //(16, 'Secretos + Receta Base Del Reto', 'files/pdf/secretos-reto-empareja2.pdf', 10, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     // DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
     // (15, 10, '1', 'files/pdf/lista-de-alimentos-reto-empareja2.pdf', CURRENT_TIMESTAMP, NULL)");

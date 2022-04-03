@@ -462,7 +462,7 @@ Route::get('x/query', function(){
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
     $fase = Fase::find(5);
-    $fase->sub_name = 'Recetas <span class="text-red-700">Adicionales</span>';
+    $fase->descripcion = '21 recetas nuevas y diferentes';
     $fase->save();
 
 });

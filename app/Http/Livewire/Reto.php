@@ -140,8 +140,8 @@ class Reto extends Component
                     'subtitle'=> 'Juntos es mejor',
                     'type' => 'video',
                     'online' => true,
-                    'video-1' => '665248310?h=e1e1892609',
-                    'video-2' => '666617173?h=5e7e646237',
+                    'video-1' => '695887964?h=1cfe264a57',
+                    'video-2' => '',
                     'video-title' => 'Video receta Caldo Volador',
                     'video-base' => '694725486?h=f2f6142350',
                 ];

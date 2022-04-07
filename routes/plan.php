@@ -6,6 +6,7 @@ use App\Http\Livewire\UserBebidas;
 use App\Http\Livewire\UserFase;
 use App\Http\Livewire\UserFitness;
 use App\Http\Livewire\UserFitnessLevel;
+use App\Http\Livewire\UserFitnessReseller;
 use App\Http\Livewire\UserPlan;
 use App\Http\Livewire\UserRecipe;
 use App\Http\Livewire\UserSalsitas;
@@ -26,8 +27,14 @@ Route::get('/tutorial', function(){
     return view('plan.tutorial');
 } )->name('tutorial');
 
-Route::get('/fit', UserFitness::class )->name('fitness');
-Route::get('/fit/nivel-{level}', UserFitnessLevel::class )->name('fitness.level');
+Route::get('/total', UserFitness::class )->name('fitness');
+Route::get('/total/nivel-{level}', UserFitnessLevel::class )->name('fitness.level');
+Route::get('/total/definer/', UserFitnessReseller::class )->name('fitness.reseller');
+Route::get('/total/definer/create', [UserFitnessReseller::class, 'create'] )->name('fitness.create');
+Route::post('/total/definer/store', [UserFitnessReseller::class, 'store'] )->name('fitness.store');
+
+
+
 
 
 Route::get('curso/{course}', Courses::class )->name('course.status');

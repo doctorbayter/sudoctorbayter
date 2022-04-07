@@ -45,7 +45,7 @@
                 </tr>
 
                 <tr>
-                    <td class="esd-structure" align="left" style="padding-top:2rem;">
+                    <td class="esd-structure" align="left" style="padding-top:1rem;">
                         <table width="100%" cellspacing="0" cellpadding="0">
                             <tbody>
                                 <tr>
@@ -87,10 +87,10 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td style="padding: 5px 10px 5px 0" width="80%" align="left">
-                                                                        <p>{{$plan->email}}</p>
+                                                                        <p>{{$user->email}}</p>
                                                                     </td>
                                                                     <td style="padding: 5px 0" width="20%" align="left">
-                                                                        <p>Contraseña de acceso: {{$password}}</p>
+                                                                        <p>Contraseña: <b>{{$password}}</b></p>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>

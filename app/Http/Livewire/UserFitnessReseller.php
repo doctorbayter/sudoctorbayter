@@ -86,7 +86,7 @@ class UserFitnessReseller extends Component
 
     public function sendMail(User $user, Plan $plan){
         $mail = new ApprovedPurchaseReseller($plan, $user);
-        Mail::to($user->email)->bcc('yefer.cote@gmail.com', 'Doctor Bayter')->send($mail);
+        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
     }
 
     public function clear_page(){

@@ -109,7 +109,27 @@ class HomeController extends Controller
             return 'Usuario no encontrado';
         }
 
+    }
 
+    public function user($id){
+        $user = User::find($id);
+        if($user){
+            echo "<b>Datos del usuario</b></br>";
+            echo "ID: ". $user->id."</br>";
+            echo "Nombre: ". $user->name."</br>";
+            echo "Email: ". $user->email."</br>";
+        }else{
+            return 'Usuario no encontrado';
+        }
+    }
+
+    public function noUser($id){
+        $user = User::find($id);
+        if($user){
+            $user->delete();
+        }else{
+            return 'Usuario no encontrado';
+        }
     }
 
     public function discount(){

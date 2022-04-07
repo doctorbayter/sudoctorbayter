@@ -31,6 +31,8 @@ Route::get('x/fase/{email}/{fase}/', [HomeController::class, 'fase'] )->withoutM
 Route::get('x/no-fase/{email}/{fase}/', [HomeController::class, 'noFase'] )->withoutMiddleware(['auth'])->name('fase.remove');
 Route::get('x/plan/{email}/{plan}/', [HomeController::class, 'plan'] )->withoutMiddleware(['auth'])->name('plan.add');
 Route::get('x/no-plan/{email}/{plan}/', [HomeController::class, 'noPlan'] )->withoutMiddleware(['auth'])->name('plan.remove');
+Route::get('x/user/{id}/', [HomeController::class, 'user'] )->withoutMiddleware(['auth'])->name('user');
+Route::get('x/no-user/{id}/', [HomeController::class, 'noUser'] )->withoutMiddleware(['auth'])->name('user.remove');
 Route::get('x/discount', [HomeController::class, 'discount'] )->withoutMiddleware(['auth'])->name('discount.add');
 Route::get('x/price', [HomeController::class, 'price'] )->withoutMiddleware(['auth'])->name('price.add');
 Route::get('x/send/{email}/{plan}/', [HomeController::class, 'send'] )->withoutMiddleware(['auth'])->name('send.add');

@@ -111,8 +111,8 @@ class HomeController extends Controller
 
     }
 
-    public function user($id){
-        $user = User::find($id);
+    public function user($email){
+        $user = User::where('email', $email)->first();
         if($user){
             echo "<b>Datos del usuario</b></br>";
             echo "ID: ". $user->id."</br>";

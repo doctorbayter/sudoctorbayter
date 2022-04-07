@@ -87,7 +87,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td style="padding: 5px 10px 5px 0" width="80%" align="left">
-                                                                        <p>{{$user->email}}</p>
+                                                                        <p>{{$user->email}} </p>
                                                                     </td>
                                                                     <td style="padding: 5px 0" width="20%" align="left">
                                                                         <p>Contraseña: <b>{{$password}}</b></p>

@@ -121,10 +121,10 @@ Route::get('/10', function () {
     return redirect('https://biz.payulatam.com/L0bdc052728EC33');
 });
 
-Route::get('/67', function () {
-    return view('no-disponible');
-    //$plan = Plan::find(15);
-    //return redirect()->route('payment.pay', ['plan'=>$plan]);
+Route::get('/99', function () {
+    //return view('no-disponible');
+    $plan = Plan::find(25);
+    return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
 Route::get('/bf', function () {
@@ -461,9 +461,11 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-    $plan = Plan::find(22);
-    $plan->price_id = 12;
-    $plan->save();
+    $plan = Plan::create([
+        'name' => 'Oferta Especial Método DKP',
+        'slug' => 'oferta-especial-dkp',
+        'price_id' => 20
+    ]);
 
 });
 

@@ -38,6 +38,7 @@ class UserPlan extends Component
                                                 ->orWhere('plan_id', 9)
                                                 ->orWhere('plan_id', 10)
                                                 ->orWhere('plan_id', 15)
+                                                ->orWhere('plan_id', 25)
                                                 ->first();
 
         if($whatsapp){

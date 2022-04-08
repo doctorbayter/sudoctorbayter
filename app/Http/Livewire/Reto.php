@@ -141,7 +141,7 @@ class Reto extends Component
                     'type' => 'video',
                     'online' => true,
                     'video-1' => '695887964?h=1cfe264a57',
-                    'video-2' => '',
+                    'video-2' => '697568971?h=b85e95db54',
                     'video-title' => 'Video receta Caldo Volador',
                     'video-base' => '694725486?h=f2f6142350',
                 ];

@@ -83,11 +83,13 @@
                                                         <a href="https://us02web.zoom.us/j/" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
                                                     </div>
                                                 </div>
-                                                <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8 hidden">
-                                                    <h2>Repetición Segunda Reunión <b>Reto Empareja2</b></h2>
+                                                <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8 ">
+                                                    <h2>Segunda Reunión <b>Reto Empareja2</b></h2>
                                                     <hr class="my-2 border-gray-700">
-                                                    <p><b>La repetición estará disponible por tiempo limitado</b></p>
-                                                    <a href="{{route('reto.replay', ['empareja2', 2])}}" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
+                                                    <p><b>Fecha:</b> Viernes 8 abr 2022 01:00 p.m. Hora Colombia</p>
+                                                    <p><b>ID de reunión:</b> 822 8941 7170</p>
+                                                    <p><b>Código de acceso:</b> 763963</p>
+                                                    <a href="https://us02web.zoom.us/j/82289417170?pwd=ZDUzYkk0bjhFVE91cU84TGR0ZWZxZz09" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
                                                 </div>
                                             </div>
                                         </div>

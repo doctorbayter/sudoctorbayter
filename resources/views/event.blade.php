@@ -265,6 +265,7 @@
                             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-2xl">Entrada <span class="text-red-700">General</span></h2>
 
                             <p class="text-5xl text-accent-400 font-bold text-center">{{$general->price->name}}</p>
+                            <p class="text-center uppercase"><small class="tracking-wide text-gray-600">PRECIO PREVENTA</small></p>
 
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que incluye?</h3>
@@ -280,6 +281,7 @@
                             <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Entrada <span class="text-red-700">VIP</span>+</h2>
 
                             <p class="text-5xl text-accent-400 font-bold text-center">{{$plus->price->name}}</p>
+                            <p class="text-center uppercase"><small class="tracking-wide text-gray-200">PRECIO 2da etapa</small></p>
 
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que incluye?</h3>
@@ -298,7 +300,7 @@
                             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Entrada <span class="text-red-700">VIP</span></h2>
 
                             <p class="text-5xl text-accent-400 font-bold text-center">{{$vip->price->name}}</p>
-
+                            <p class="text-center uppercase"><small class="tracking-wide text-gray-600">PRECIO PREVENTA</small></p>
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que incluye?</h3>
                                 <ul>

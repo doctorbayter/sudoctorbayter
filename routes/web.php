@@ -127,6 +127,12 @@ Route::get('/99', function () {
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
+Route::get('/67', function () {
+    //return view('no-disponible');
+    $plan = Plan::find(15);
+    return redirect()->route('payment.pay', ['plan'=>$plan]);
+})->name('reto.oferta');
+
 Route::get('/bf', function () {
     return view('no-disponible');
     // $plan = Plan::find(15);

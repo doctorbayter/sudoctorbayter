@@ -390,12 +390,23 @@ class HomeController extends Controller
                         }
                     }
                     break;
+                case 25:
+                    if($previous_plan_premium){
+                        $previous_plan_premium->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    break;
             }
         }
 
-        if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 || $plan->id != 7 || $plan->id != 11 || $plan->id != 12 ){
-            $this->activeCampaign($user->email, 16);
-        }
+
 
     }
 

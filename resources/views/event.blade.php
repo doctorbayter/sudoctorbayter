@@ -153,7 +153,7 @@
                                 <div class="text-lg font-bold md:text-xl flex items-center">
                                     <img class="w-20 mr-4 overflow-hidden rounded-full" src="{{asset('img/photos/jorgebayter.jpg')}}" alt="Doctor Bayter">
                                     <div>
-                                        <small class="italic text-sm font-normal opacity-75">9am a 12m</small>
+                                        <small class="italic text-sm font-normal opacity-75">Conferencista</small>
                                         <p>Doctor Bayter</p>
                                         <p class="mt-2 text-sm font-normal opacity-75">Dieta Keto y estilo de vida</p>
                                     </div>
@@ -163,7 +163,7 @@
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500 bg-gray-700" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg mt-4"><span class="font-bold">1.</span> ¿Por qué enfermamos y morimos? ¿cómo predecir mi enfermedad?</p>
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">1.</span> ¿por qué enfermamos y morimos? ¿cómo predecir mi enfermedad? </p>
                                 <p class="text-base md:text-lg mt-4"><span class="font-bold">2.</span> La dieta keto perfecta</p>
                                 <p class="text-base md:text-lg mt-4"><span class="font-bold">3.</span> Mitos de la dieta keto y la verdad de las grasas y el colesterol</p>
                                 <p class="text-base md:text-lg mt-4"><span class="font-bold">4.</span> Estilo de vida keto</p>
@@ -176,7 +176,7 @@
                                 <div class="text-lg font-bold md:text-xl flex items-center">
                                     <img class="w-20 mr-4 overflow-hidden rounded-full" src="{{asset('img/photos/alejandrodietista.jpg')}}" alt="Alejandro Perez">
                                     <div>
-                                        <small class="italic text-sm font-normal opacity-75">12am a 3pm</small>
+                                        <small class="italic text-sm font-normal opacity-75">Conferencista</small>
                                         <p>Alejando Perez</p>
                                         <p class="mt-2 text-sm font-normal opacity-75">Dieta Keto y Alimentación</p>
                                     </div>
@@ -187,9 +187,9 @@
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500 bg-gray-700" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
                                 <p class="text-base md:text-lg mt-4"><span class="font-bold">1.</span> Destruidos por la civilización</p>
-                                <p class="text-base md:text-lg mt-4"><span class="font-bold">2.</span> 5 grandes mentiras de la industria</p>
-                                <p class="text-base md:text-lg mt-4"><span class="font-bold">3.</span> Aplicaciones terapéuticas de keto</p>
-                                <p class="text-base md:text-lg mt-4"><span class="font-bold">4.</span> La clave está en tus dientes</p>
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">2.</span> Aplicaciones terapéuticas de keto</p>
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">3.</span> 5 grandes mentiras de la industria</p>
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">4.</span> Herramientas ancestrales que potencian la salud</p>
                             </div>
                         </div>
                     </li>
@@ -199,7 +199,7 @@
                                 <div class="text-lg font-bold md:text-xl flex items-center">
                                     <img class="w-20 mr-4 overflow-hidden rounded-full" src="{{asset('img/photos/endikamontiel.jpg')}}" alt="Endika Montiel">
                                     <div>
-                                        <small class="italic text-sm font-normal opacity-75">3am a 6pm</small>
+                                        <small class="italic text-sm font-normal opacity-75">Conferencista</small>
                                         <p>Endika Montiel</p>
                                         <p class="mt-2 text-sm font-normal opacity-75">Ayuno y Deporte</p>
                                     </div>
@@ -212,7 +212,7 @@
                                 <p class="text-base md:text-lg mt-4"><span class="font-bold">1.</span> No eres un robot </p>
                                 <p class="text-base md:text-lg mt-4"><span class="font-bold">2.</span> Microbiota, flexibilidad metabólica y sistema hormonal</p>
                                 <p class="text-base md:text-lg mt-4"><span class="font-bold">3.</span> Cronobiología</p>
-                                <p class="text-base md:text-lg mt-4"><span class="font-bold">4.</span> Entrenamiento </p>
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">4.</span> Entrenamiento y ejercicio</p>
                             </div>
                         </div>
                     </li>

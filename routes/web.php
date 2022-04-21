@@ -134,7 +134,7 @@ Route::get('/67', function () {
 })->name('reto.oferta');
 
 Route::get('/oferta', function () {
-    //return view('no-disponible');
+    return view('no-disponible');
     $plan = Plan::find(26);
     return redirect()->route('payment.checkout', ['plan'=>$plan]);
 })->name('evento.oferta');
@@ -473,16 +473,16 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-    $price = Price::create([
-        'name' => '30 US$',
-        'value' => 30
-    ]);
+    // $price = Price::create([
+    //     'name' => '30 US$',
+    //     'value' => 30
+    // ]);
 
-    $plan = Plan::create([
-        'name' => 'Oferta Evento Revolución 2022 Entrada General',
-        'slug' => 'oferta-revolucion-general',
-        'price_id' => $price->id
-    ]);
+    // $plan = Plan::create([
+    //     'name' => 'Oferta Evento Revolución 2022 Entrada General',
+    //     'slug' => 'oferta-revolucion-general',
+    //     'price_id' => $price->id
+    // ]);
 
 
 });

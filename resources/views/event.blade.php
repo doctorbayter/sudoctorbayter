@@ -75,7 +75,7 @@
             <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">¿Quieres serán los <span class="text-red-700">Conferencistas</span>?</h2>
 
             <article>
-                <div class="max-w-6xl mt-12 grid md:grid-cols-3 gap-y-4 md:gap-x-4    mx-auto text-center">
+                <div class="max-w-6xl mt-12 grid md:grid-cols-4 gap-y-4 md:gap-x-4    mx-auto text-center">
                     <div class="w-full">
                         <img src="{{asset('img/photos/alejandrodietista.jpg')}}" alt="Alejandro Dietista">
                         <h2 class="font-bold mt-4 text-xl">Alejando Perez</h2>
@@ -101,6 +101,26 @@
                         <h2 class="font-bold mt-4 text-xl">Jorge E. Bayter</h2>
                         <p class="italic my-2">Médico Cirujano </p>
                         <p class="text-sm my-4">Especialista en Anestesiología y Cuidado Intensivo Creador de la Dieta Keto Perfecta Autor de los libros "Catástrofes en Cirugía Plástica" y "La Dieta Keto Perfecta"</p>
+                        <ul class="flex items-center justify-center mt-4">
+                            <li class="mr-1">
+                                <a href="https://facebook.com/"><img class="w-6 h-6" src="{{asset('img/icons/rrss/facebook.svg')}}"></a>
+                            </li>
+                            <li class="mr-1">
+                                <a href="https://facebook.com/"><img class="w-6 h-6" src="{{asset('img/icons/rrss/instagram.svg')}}"></a>
+                            </li>
+                            <li class="mr-1">
+                                <a href="https://facebook.com/"><img class="w-6 h-6" src="{{asset('img/icons/rrss/tiktok.svg')}}"></a>
+                            </li>
+                            <li class="mr-1">
+                                <a href="https://facebook.com/"><img class="w-6 h-6" src="{{asset('img/icons/rrss/youtube.svg')}}"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="{{asset('img/photos/danielaospina.jpg')}}" alt="Doctor Bayter">
+                        <h2 class="font-bold mt-4 text-xl">Daniela Ospina</h2>
+                        <p class="italic my-2">Empresaria</p>
+                        <p class="text-sm my-4">Modelo,jugadora profesional de voleibol, deportista de alto rendimiento y empresaria colombiana</p>
                         <ul class="flex items-center justify-center mt-4">
                             <li class="mr-1">
                                 <a href="https://facebook.com/"><img class="w-6 h-6" src="{{asset('img/icons/rrss/facebook.svg')}}"></a>
@@ -145,10 +165,10 @@
     <section class="bg-gray-900">
         <div class="max-w-5xl mx-auto py-12 md:py-20">
             <h2 class="text-center font-extrabold text-3xl md:text-5xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Conferencias del evento</h2>
-            <div class=" max-w-4xl mx-auto" x-data="{selected:2}">
+            <div class=" max-w-4xl mx-auto" x-data="{selected:1}">
                 <ul class="text-gray-50">
                     <li class="relative mb-4 rounded-lg bg-gray-800">
-                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 2 ? selected = 2 : selected = null">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 1 ? selected = 1 : selected = null">
                             <div class="flex items-center justify-between">
                                 <div class="text-lg font-bold md:text-xl flex items-center">
                                     <img class="w-20 mr-4 overflow-hidden rounded-full" src="{{asset('img/photos/jorgebayter.jpg')}}" alt="Doctor Bayter">
@@ -158,15 +178,35 @@
                                         <p class="mt-2 text-sm font-normal opacity-75">Dieta Keto y estilo de vida</p>
                                     </div>
                                 </div>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 1 , 'fa-chevron-down': selected !== 1 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500 bg-gray-700" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">1.</span> ¿Por qué enfermamos y morimos? ¿cómo predecir mi enfermedad? </p>
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">2.</span> La dieta keto perfecta</p>
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">3.</span> Mitos de la dieta keto y la verdad de las grasas y el colesterol</p>
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">4.</span> Estilo de vida keto</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 2 ? selected = 2 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <div class="text-lg font-bold md:text-xl flex items-center">
+                                    <img class="w-20 mr-4 overflow-hidden rounded-full" src="{{asset('img/photos/danielaospina.jpg')}}" alt="Doctor Bayter">
+                                    <div>
+                                        <small class="italic text-sm font-normal opacity-75">Conferencista</small>
+                                        <p>Daniela Ospina</p>
+                                        <p class="mt-2 text-sm font-normal opacity-75">Vida saludable</p>
+                                    </div>
+                                </div>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 2 , 'fa-chevron-down': selected !== 2 }"></span>
                             </div>
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500 bg-gray-700" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg mt-4"><span class="font-bold">1.</span> ¿por qué enfermamos y morimos? ¿cómo predecir mi enfermedad? </p>
-                                <p class="text-base md:text-lg mt-4"><span class="font-bold">2.</span> La dieta keto perfecta</p>
-                                <p class="text-base md:text-lg mt-4"><span class="font-bold">3.</span> Mitos de la dieta keto y la verdad de las grasas y el colesterol</p>
-                                <p class="text-base md:text-lg mt-4"><span class="font-bold">4.</span> Estilo de vida keto</p>
+                                <p class="text-base md:text-lg mt-4"><span class="font-bold">1.</span> Disciplina y vida saludable </p>
                             </div>
                         </div>
                     </li>

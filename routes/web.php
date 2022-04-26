@@ -478,11 +478,12 @@ Route::get('x/query', function(){
     //     'value' => 30
     // ]);
 
-    // $plan = Plan::create([
-    //     'name' => 'Oferta Evento Revolución 2022 Entrada General',
-    //     'slug' => 'oferta-revolucion-general',
-    //     'price_id' => $price->id
-    // ]);
+    $fase = Fase::create([
+        'name' => 'Rectivación Desafio 2022',
+        'sub_name' => 'Liberate de la<span class="text-red-700">mierda</span> del 2021',
+        'descripcion' => '',
+        'slug' => 're-desafio-2022',
+    ]);
 
 
 });

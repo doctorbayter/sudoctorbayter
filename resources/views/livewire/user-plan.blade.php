@@ -59,12 +59,12 @@
                                     @endforelse
 
                                     @if ($re_desafio)
-                                        <a href="{{route('plan.fase', $reto)}}" class=" px-8 py-12 shadow-sm rounded-lg bg-yellow-400 hover:bg-yellow-500 text-gray-900 transition-all ease-in-out">
+                                        <a href="{{route('plan.fase', $re_desafio)}}" class=" px-8 py-12 shadow-sm rounded-lg bg-yellow-400 hover:bg-yellow-500 text-gray-900 transition-all ease-in-out">
                                             <div>
-                                                <small class="mb-2 text-base"> Entra aquí a la {{$reto->name}}</small>
-                                                <h2 class="text-3xl lg:text-5xl font-semibold mb-2">{!!$reto->sub_name!!}</h2>
+                                                <small class="mb-2 text-base"> Entra aquí a la {{$re_desafio->name}}</small>
+                                                <h2 class="text-3xl lg:text-5xl font-semibold mb-2">{!!$re_desafio->sub_name!!}</h2>
                                                 <p>
-                                                    {{$reto->descripcion}}
+                                                    {{$re_desafio->descripcion}}
                                                 </p>
                                             </div>
                                         </a>

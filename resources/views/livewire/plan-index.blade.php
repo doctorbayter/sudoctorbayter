@@ -74,7 +74,7 @@
 
                                     </div>
 
-                                    @if ($subscribed_reto_actual)
+                                    @if ($subscribed_reto_actual && true == false)
                                         <aside class="mt-8">
                                             <div class="py-8 px-8 rounded-2xl  border-dashed border-red-700 border-4 bg-gray-200">
 

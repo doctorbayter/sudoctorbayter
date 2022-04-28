@@ -475,16 +475,12 @@ Route::get('x/query', function(){
 
 
 
-    $plan = Plan::find(21);
-    $plan->price_id = 19;
-    $plan->save();
-
     $price = Price::create([
-        'name' => '199 US$',
-        'value' => 199
+        'name' => '49 US$',
+        'value' => 49
     ]);
 
-    $plan = Plan::find(22);
+    $plan = Plan::find(23);
     $plan->price_id = $price->id;
     $plan->save();
 

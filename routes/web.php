@@ -473,17 +473,20 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-    // $price = Price::create([
-    //     'name' => '30 US$',
-    //     'value' => 30
-    // ]);
 
-    $fase = Fase::create([
-        'name' => 'Rectivación Desafio 2022',
-        'sub_name' => 'Liberate de la<span class="text-red-700">mierda</span> del 2021',
-        'descripcion' => '',
-        'slug' => 're-desafio-2022',
+
+    $plan = Plan::find(21);
+    $plan->price_id = 19;
+    $plan->save();
+
+    $price = Price::create([
+        'name' => '199 US$',
+        'value' => 199
     ]);
+
+    $plan = Plan::find(22);
+    $plan->price_id = $price->id;
+    $plan->save();
 
 
 });

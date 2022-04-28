@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Mail\ApprovedPurchaseReseller;
+use App\Models\Fase;
 use App\Models\Plan;
 use App\Models\Subscription;
 use App\Models\User;
@@ -71,6 +72,13 @@ class UserFitnessReseller extends Component
 
         $this->addSuscription($user->id, $plan->id);
         $this->addSuscription($user->id, $plan_reseller->id);
+        $fases_dkp = Fase::whereIn('id', array(1, 2, 3, 4))->get();
+
+        foreach($fases_dkp as $fase){
+            if(!$fase->clients->contains($user->id)){
+                $fase->clients()->attach($user->id);
+            }
+        }
 
         $this->sendMail($user, $plan_reseller);
 

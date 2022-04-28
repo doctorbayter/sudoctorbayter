@@ -26,6 +26,24 @@
             </div>
         @endif
 
+        @if (auth()->user()->subscriptions->whereIn('plan_id', [23, 24, 27])->first() )
+
+        <div class="md:mt-12">
+            <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
+                <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">
+                <span class="text-xs whitespace-nowrap">Deporte</span>
+                </button>
+            </div>
+            <div>
+                <a href="{{route('plan.fitness')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a Total Fitness " >
+                    <i class=" text-lg fas fa-dumbbell mr-2"></i>
+                    <div class="flex-1 whitespace-nowrap"> <b >Total Fitness</b></div>
+                </a>
+
+            </div>
+        </div>
+        @endif
+
         @if (auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id')->count()>0)
         <div class="md:mt-12">
             <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">

@@ -6,18 +6,32 @@ use App\Models\Fase;
 use App\Models\Plan;
 use App\Models\Subscription;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\URL;
 use Livewire\Component;
 
 class UserPlan extends Component
 {
-    public $user_fases, $user_retos, $user_adicionales, $user_plan, $user_plan_data, $is_premium, $plan_week, $subscribed_fase_week, $subscribed_reto_actual, $subscribed_whatsapp , $re_desafio;
+    public $user_fases, $user_retos, $user_adicionales, $user_plan, $user_plan_data, $is_premium, $plan_week, $subscribed_fase_week, $subscribed_reto_actual, $subscribed_whatsapp , $re_desafio, $thf_plan;
 
-    public function render(){
-
+    public function mount(){
         $this->user_fases = auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id');
         $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 9, 11])->sortBy('id');
         $this->user_adicionales = auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id');
+        $this->thf_plan = Plan::find(23);
+
+        $this->is_premium = Subscription::where('user_id', auth()->user()->id)
+                                                ->where('plan_id', 1)
+                                                ->orWhere('plan_id', 9)
+                                                ->orWhere('plan_id', 10)
+                                                ->orWhere('plan_id', 15)
+                                                ->orWhere('plan_id', 25)
+                                                ->first();
+
+    }
+
+    public function render(){
+
 
         $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->sortBy('plan_id')->first();
         $planPremium = Plan::find(1);
@@ -33,13 +47,6 @@ class UserPlan extends Component
         }
 
 
-        $this->is_premium = Subscription::where('user_id', auth()->user()->id)
-                                                ->where('plan_id', 1)
-                                                ->orWhere('plan_id', 9)
-                                                ->orWhere('plan_id', 10)
-                                                ->orWhere('plan_id', 15)
-                                                ->orWhere('plan_id', 25)
-                                                ->first();
 
         if($whatsapp){
             if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now())){
@@ -63,6 +70,17 @@ class UserPlan extends Component
         $this->subscribed_reto_actual = $reto_actual->clients->contains(auth()->user()->id);
 
         $planUpdate = Plan::find(3);
-        return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
+
+        if (Request::route()->getName() == "plan.dkp") {
+            return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
+        } else {
+            return view('livewire.plan-index', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
+
+        }
+
+
+
     }
+
+
 }

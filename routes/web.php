@@ -474,14 +474,10 @@ Route::get('x/query', function(){
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
 
-
-    $price = Price::create([
-        'name' => '49 US$',
-        'value' => 49
-    ]);
-
-    $plan = Plan::find(23);
-    $plan->price_id = $price->id;
+    $plan = Plan::find(27);
+    $plan->name = 'Método DKP + Total Fitness';
+    $plan->slug = 'dkp-total-fitness';
+    $plan->price_id = 5;
     $plan->save();
 
 

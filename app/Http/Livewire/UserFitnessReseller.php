@@ -25,6 +25,13 @@ class UserFitnessReseller extends Component
     public $subscriptions;
 
     public function mount(){
+
+
+        if( auth()->user()->email != "info@totaldefiner.com" || auth()->user()->email != "doctorbayter@gmail.com"){
+            redirect()->route('plan.index');
+            return;
+        }
+
         $this->plan = Plan::find(23);
         $this->plan_reseller = Plan::find(24);
         $this->subscriptions = Subscription::where('plan_id', $this->plan_reseller->id)->get();

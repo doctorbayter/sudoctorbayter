@@ -474,12 +474,6 @@ Route::get('x/query', function(){
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
 
-    $plan = Plan::find(27);
-    $plan->name = 'Método DKP + Total Fitness';
-    $plan->slug = 'dkp-total-fitness';
-    $plan->price_id = 5;
-    $plan->save();
-
 
 });
 
@@ -701,3 +695,4 @@ Route::get('x/whatsapp/', function(){
 // edithmarcozzi75@gmail.com
 // tata_0825@hotmail.com
 // netcelaya@gmail.com
+// reinosomercedes4@gmail.com

@@ -26,7 +26,7 @@
                     <h2 class="text-gray-900 mb-8 leading-none font-black text-2xl md:text-6xl">La <span class="text-red-700">nueva</span> era de la nutrición</h2>
                     <p class="mt-3 text-base text-justify">Organizado por el doctor <b>Jorge Enrique Bayter</b>, en su primera versión, traerá un profundo análisis acerca de la salud y la nutrición en esta nueva era, en donde las grasas se han convertido en el mejor aliado para tener una vida sana, feliz y longeva.</p>
                     <p class="mt-3 text-base text-justify">Este evento lo hemos programado para desarrollarse de forma presencial el día <b>16 de julio de 2022</b> en Ágora Centro de Convenciones en la ciudad de <b>Bogotá, Colombia</b>; seguiremos las más estrictas medidas de bioseguridad según las recomendaciones nacionales e internacionales.</p>
-                    <small class="mt-2"> <b>* Para los asistentes internacionales:</b> Las personas no vacunadas podrán entrar a Colombia presentando una prueba <b>PCR</b> no mayor a 72 horas o una prueba de antígenos no mayor a 48 horas.</small>
+                    <p class="mt-2"><small > <b>* Para los asistentes internacionales:</b> Las personas no vacunadas podrán entrar a Colombia presentando una prueba <b>PCR</b> no mayor a 72 horas o una prueba de antígenos no mayor a 48 horas.</small></p>
                     <a href="#go" class=" inline-block mt-8 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">Adquiere tu entrada ahora</a>
                 </div>
                 <figure class="rounded-xl flex-1 mt-4 mb:mt-0">

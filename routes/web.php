@@ -474,7 +474,6 @@ Route::get('x/query', function(){
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
 
-
 });
 
 Route::get('x/query/reto', function(){

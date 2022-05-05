@@ -36,7 +36,7 @@
                         </div>
 
                         <footer class="leading-none opacity-70 italic">
-                            <small class="text-xs"> Este código fue generado única y exclusivamente para el participante {{$plan->user->name}}. Válido para un solo ingreso, guerdelo muy bien y no lo comparta con nadie. Recuerde presentar este código QR y su carnet con el esquema completo de vacunación el día del evento.</small>
+                            <small class="text-xs"> Este código fue generado única y exclusivamente para el participante {{$plan->user->name}}. Válido para un solo ingreso, guerdelo muy bien y no lo comparta con nadie. Recuerde presentar este código QR en la entrada el día del evento.</small>
                         </footer>
                     @else
                         <div class="mb-4 leading-none">

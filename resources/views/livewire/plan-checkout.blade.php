@@ -122,7 +122,7 @@
                     <h3 class="text-2xl font-bold mb-2 md:mb-8 text-gray-800"> <span class="text-red-700">Paso 3:</span> Pagar</h3>
 
                     @if ($plan->id == 20 || $plan->id == 21 || $plan->id == 22)
-                        <p class="text-sm mb-8 text-justify">* <b class="text-red-700">IMPORTANTE</b> para poder ingresar al evento es obligatorio presentar el carnet con el <b>esquema completo de vacunación</b> contra el <b>COVID-19</b> de lo contrario no será permitido el ingreso por politicas de seguridad y prevención del establecimiento.</p>
+                        <p class="text-sm mb-8 text-justify">* <b class="text-red-700">IMPORTANTE</b> <b>* Para los asistentes internacionales:</b> Las personas no vacunadas podrán entrar a Colombia presentando una <b>prueba PCR</b> no mayor a <b>72 horas</b> o una <b>prueba de antígenos</b> no mayor a <b>48 horas</b></p>
                     @endif
 
 

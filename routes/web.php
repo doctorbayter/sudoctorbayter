@@ -473,6 +473,22 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
+    Price::create([
+        'name' => '27 US$',
+        'value' => 27
+    ]);
+
+    $plan = Plan::find(4);
+    $plan->price_id = 26;
+    $plan->save();
+
+    $plan = Plan::find(11);
+    $plan->price_id = 18;
+    $plan->save();
+
+    $plan = Plan::find(12);
+    $plan->price_id = 20;
+    $plan->save();
 
 });
 

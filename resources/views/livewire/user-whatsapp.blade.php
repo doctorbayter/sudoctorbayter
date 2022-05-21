@@ -11,7 +11,7 @@
 
                             @if ($subscribed_whatsapp !== false)
                                 <header class="bg-gray-50 py-4 px-6 border border-gray-100 rounded-xl">
-                                    <p class="text-2xl" >Adquiere tu mensualidad de chat grupal de seguimiento
+                                    <p class="text-2xl" >Adquiere tu acceso al chat grupal de seguimiento
                                         <span class="font-bold text-green-600 hidden">
                                             @if ($subscribed_whatsapp == 0) Hoy
                                             @elseif ($subscribed_whatsapp == 1) En {{$subscribed_whatsapp}} Día
@@ -26,7 +26,7 @@
                                 <div class=" flex items-center">
                                     <div class="text-gray-50 flex-1 flex flex-col ">
                                         <div class="flex-1 flex flex-col">
-                                            <p class=" mb-1">Adquiere 30 días de acceso al chat grupal</p>
+                                            <p class=" mb-1">Adquiere 21 días de acceso al chat grupal</p>
                                             <h2 class="font-bold text-3xl md:text-5xl text-green-900">{{$planWhatsapp->name}}</h2>
                                             @if ($planWhatsapp->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                                 <div>
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="">
                                             <a href="{{route('payment.checkout', $planWhatsapp)}}" class="block w-full lg:w-72  cursor-pointer mt-6 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
-                                                Adquiere 30 días más de chat
+                                                Adquiere 21 días más de chat
                                             </a>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                                 <div class=" flex items-center">
                                     <div class="text-gray-50 flex-1 flex flex-col ">
                                         <div class="flex-1 flex flex-col">
-                                            <p class=" mb-1">Ahora más. Adquiere 3 meses de acceso al chat grupal a un precio especial</p>
+                                            <p class=" mb-1">Ahora más. Adquiere 70 días de acceso al chat grupal a un precio especial</p>
                                             <h2 class="font-bold text-3xl md:text-5xl text-green-900">{{$planWhatsapp3meses->name}}</h2>
                                             @if ($planWhatsapp3meses->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp3meses->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                                 <div>
@@ -70,7 +70,7 @@
                                         </div>
                                         <div class="">
                                             <a href="{{route('payment.checkout', $planWhatsapp3meses)}}" class="block w-full lg:w-72  cursor-pointer mt-6 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
-                                                Adquiere 3 meses más de chat
+                                                Adquiere 70 días más de chat
                                             </a>
                                         </div>
                                     </div>
@@ -82,7 +82,7 @@
                                 <div class=" flex items-center">
                                     <div class="text-gray-50 flex-1 flex flex-col ">
                                         <div class="flex-1 flex flex-col">
-                                            <p class=" mb-1">Ahora más. Adquiere 6 meses de acceso al chat grupal a un precio especial</p>
+                                            <p class=" mb-1">Ahora más. Adquiere 140 días de acceso al chat grupal a un precio especial</p>
                                             <h2 class="font-bold text-3xl md:text-5xl text-green-900">{{$planWhatsapp6meses->name}}</h2>
                                             @if ($planWhatsapp6meses->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp6meses->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                                 <div>
@@ -97,7 +97,7 @@
                                         </div>
                                         <div class="">
                                             <a href="{{route('payment.checkout', $planWhatsapp6meses)}}" class="block w-full lg:w-72  cursor-pointer mt-6 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
-                                                Adquiere 6 meses más de chat
+                                                Adquiere 140 días más de chat
                                             </a>
                                         </div>
                                     </div>

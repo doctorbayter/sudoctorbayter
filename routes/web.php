@@ -478,16 +478,14 @@ Route::get('x/query', function(){
         'value' => 27
     ]);
 
-    $plan = Plan::find(4);
-    $plan->price_id = 26;
-    $plan->save();
+
 
     $plan = Plan::find(11);
-    $plan->price_id = 18;
+    $plan->name = "Chat Grupal WhatsApp 70 días";
     $plan->save();
 
     $plan = Plan::find(12);
-    $plan->price_id = 20;
+    $plan->name = "Chat Grupal WhatsApp 140 días";
     $plan->save();
 
 });

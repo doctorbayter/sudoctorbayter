@@ -57,16 +57,7 @@
                                         <div class="flex-1 flex flex-col">
                                             <p class=" mb-1">Ahora más. Adquiere 70 días de acceso al chat grupal a un precio especial</p>
                                             <h2 class="font-bold text-3xl md:text-5xl text-green-900">{{$planWhatsapp3meses->name}}</h2>
-                                            @if ($planWhatsapp3meses->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp3meses->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                                <div>
-                                                    <div class="ml-auto lg:flex items-center mt-2 ">
-                                                        <p class=" text-4xl font-bold mr-4 leading-none text-red-500"><span class="line-through">{{$planWhatsapp3meses->price->name}}</span> <small class="block text-lg leading-none normal font-medium">Precio normal</small> </p>
-                                                        <p class="text-6xl md:text-5xl font-bold text-gray-50">{{round($planWhatsapp3meses->finalPrice)}} US$ <br></p>
-                                                    </div>
-                                                </div>
-                                            @else
-                                                <p class="text-4xl md:text-5xl mt-2 font-bold text-gray-50">{{$planWhatsapp3meses->price->name}}</p>
-                                            @endif
+                                            <p class="text-4xl md:text-5xl mt-2 font-bold text-gray-50">{{$planWhatsapp3meses->price->name}}</p>
                                         </div>
                                         <div class="">
                                             <a href="{{route('payment.checkout', $planWhatsapp3meses)}}" class="block w-full lg:w-72  cursor-pointer mt-6 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
@@ -84,16 +75,21 @@
                                         <div class="flex-1 flex flex-col">
                                             <p class=" mb-1">Ahora más. Adquiere 140 días de acceso al chat grupal a un precio especial</p>
                                             <h2 class="font-bold text-3xl md:text-5xl text-green-900">{{$planWhatsapp6meses->name}}</h2>
-                                            @if ($planWhatsapp6meses->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp6meses->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                                <div>
-                                                    <div class="ml-auto lg:flex items-center mt-2 ">
-                                                        <p class=" text-4xl font-bold mr-4 leading-none text-red-500"><span class="line-through">{{$planWhatsapp6meses->price->name}}</span> <small class="block text-lg leading-none normal font-medium">Precio normal</small> </p>
-                                                        <p class="text-6xl md:text-5xl font-bold text-gray-50">{{round($planWhatsapp6meses->finalPrice)}} US$ <br></p>
+                                            <p class="text-4xl md:text-5xl mt-2 font-bold text-gray-50">{{$planWhatsapp6meses->price->name}}</p>
+                                            {{--!!
+
+                                                @if ($planWhatsapp6meses->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp6meses->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                                                    <div>
+                                                        <div class="ml-auto lg:flex items-center mt-2 ">
+                                                            <p class=" text-4xl font-bold mr-4 leading-none text-red-500"><span class="line-through">{{$planWhatsapp6meses->price->name}}</span> <small class="block text-lg leading-none normal font-medium">Precio normal</small> </p>
+                                                            <p class="text-6xl md:text-5xl font-bold text-gray-50">{{round($planWhatsapp6meses->finalPrice)}} US$ <br></p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            @else
-                                                <p class="text-4xl md:text-5xl mt-2 font-bold text-gray-50">{{$planWhatsapp6meses->price->name}}</p>
-                                            @endif
+                                                @else
+                                                    <p class="text-4xl md:text-5xl mt-2 font-bold text-gray-50">{{$planWhatsapp6meses->price->name}}</p>
+                                                @endif
+
+                                                !!--}}
                                         </div>
                                         <div class="">
                                             <a href="{{route('payment.checkout', $planWhatsapp6meses)}}" class="block w-full lg:w-72  cursor-pointer mt-6 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">

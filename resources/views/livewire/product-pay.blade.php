@@ -76,7 +76,7 @@
             <div class="mt-4 md:mt-6">
                 <h3 class="text-2xl font-bold mb-2 md:mb-4 text-gray-800"> <span class="text-red-700">Paso 2:</span> Elige tu medio de pago</h3>
 
-                @if ($plan->id != 5 || $plan->id != 6)
+                 @if ($plan->id != 5)
                     <style>
                         .active-animation {
                             background-image: linear-gradient(90deg, red 50%, transparent 50%), linear-gradient(90deg, red 50%, transparent 50%), linear-gradient(0deg, red 50%, transparent 50%), linear-gradient(0deg, red 50%, transparent 50%);
@@ -93,7 +93,7 @@
                             background-position: left 15px top, right 15px bottom , left bottom 15px , right   top 15px;
                             }
                         }
-                        }
+
                     </style>
                     <div class="px-4 py-4 lg:max-w-5xl mx-auto mb-6  active-animation">
                         <h3 class="font-bold mb-2">Información importante</h3>
@@ -124,7 +124,7 @@
                         </div>
                     </li>
 
-                    @if ($plan->id != 5 || $plan->id != 6)
+                     @if ($plan->id != 5)
                         <li class="max-w-200 lg:mr-4 ">
                             <div
                                 x-on:click="$payMethod = 'payu' ; $dispatch('route-change', { value: '{{route('payment.payu', $plan)}}' }) "
@@ -145,7 +145,7 @@
 
 
                     <div class="flex items-center flex-wrap md:flex-no-wrap py-8 bg-gray-50 pl-4 rounded-xl mt-4">
-                        <h2 class="text-gray-700 text-3xl font-bold w-full md:w-auto">{{$plan->id}} Total a pagar:</h2>
+                        <h2 class="text-gray-700 text-3xl font-bold w-full md:w-auto"> Total a pagar:</h2>
                         <div class="md:ml-4">
                             {{-- @if ($plan->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($plan->discount->expires_at))->gt(\Carbon\Carbon::now()))--}}
                             @if ($flash_sale)

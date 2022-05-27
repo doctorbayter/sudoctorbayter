@@ -63,11 +63,11 @@
 
                     @foreach ($planesWhatsapp as $plan)
                         <div class="flex items-center bg-gray-50 border border-gray-200 shadow-sm px-6 py-4 rounded-xl mb-8">
-                            <div href="{{route('payment.checkout', $plan)}}" class="block">
+                            <div href="{{route('payment.pay', $plan)}}" class="block">
                                 <h3 class="font-bold text-red-700">{{$plan->name}}</h3>
                                 <p class="font-bold text-5xl">{{$plan->price->name}}</p>
-                                <p class="my-2 text-gray-700 text-sm">Consulta vía zoom con su doctor Bayter y ideal para tienes dudas sobre este estilo de vida y definir si eres candidato a la dieta keto.</p>
-                                <a href="{{route('payment.checkout', $plan)}}" class=" inline-block mt-2 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Adquiere tu {{$plan->name}}</a>
+                                <p class="my-2 text-gray-700 text-sm">La consulta vía zoom con tu doctor Bayter es ideal para ti si tienes dudas sobre este estilo de vida y definir si eres candidato a la dieta keto.</p>
+                                <a href="{{route('payment.pay', $plan)}}" class=" inline-block mt-2 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Adquiere tu {{$plan->name}}</a>
                             </div>
                         </div>
                     @endforeach

@@ -341,7 +341,7 @@
         </div>
     </section>
 
-    <section class="bg-gray-100">
+    <section class="bg-gray-100 hidden">
         <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
             <header>
                 <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-4xl max-w-2xl mx-auto">¿Quieres ser el primero en enterarte del lanzamiento del programa?</h2>

@@ -215,7 +215,7 @@ class ProductPay extends Component
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
             $fase = Fase::find(10);
 
-            if($this->plan->id == 25 || $this->plan->id == 15){
+            if($this->plan->id == 25){
                 if($previous_subscribed){
                     $previous_subscribed->delete();
                 }
@@ -262,6 +262,12 @@ class ProductPay extends Component
 
                 //$this->activeCampaign();
 
+                return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
+
+            }else if($this->plan->id == 5 || $this->plan->id == 6){
+                $suscription->save();
+                $mail = new ApprovedPurchase($this->plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
             }
 

@@ -145,7 +145,7 @@
 
 
                     <div class="flex items-center flex-wrap md:flex-no-wrap py-8 bg-gray-50 pl-4 rounded-xl mt-4">
-                        <h2 class="text-gray-700 text-3xl font-bold w-full md:w-auto">Total a pagar:</h2>
+                        <h2 class="text-gray-700 text-3xl font-bold w-full md:w-auto">{{$plan->id}} Total a pagar:</h2>
                         <div class="md:ml-4">
                             {{-- @if ($plan->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($plan->discount->expires_at))->gt(\Carbon\Carbon::now()))--}}
                             @if ($flash_sale)

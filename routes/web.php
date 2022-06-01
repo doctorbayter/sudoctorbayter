@@ -64,6 +64,10 @@ Route::get('/cita', [HomeController::class, 'cita'])->name('cita');
 Route::get('/what', [HomeController::class, 'what'])->name('what');
 Route::get('/recipe/{recipe}', UserRecipe::class)->name('recipe');
 
+Route::get('libro/', function(){
+    return redirect()->away("https://www.amazon.com/-/es/dp/B09V1PD9VC/ref=sr_1_1?crid=2KFPRGHJW9WD&keywords=catastrofes+en+cirugia+plastica&qid=1646685263&s=digital-text&sprefix=%2Cdigital-text%2C161&sr=1-1");
+});
+
 Route::get('/privacidad', function(){
     return view('terms');
 } )->name('privacidad');
@@ -689,6 +693,10 @@ Route::get('x/whatsapp/', function(){
 
     dd($response);
 });
+
+
+
+
 
 // Lideres Acutalizado Enero 2022
 // jackie@adn-empresarial.com

@@ -102,7 +102,6 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video', [Reto::class, 'video'])->name('reto.video');
 
 
-
 Route::get('/regalo', function () {
     return view('no-disponible');
     //$plan = Plan::find(1);
@@ -693,9 +692,6 @@ Route::get('x/whatsapp/', function(){
 
     dd($response);
 });
-
-
-
 
 
 // Lideres Acutalizado Enero 2022

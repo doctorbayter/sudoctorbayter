@@ -35,6 +35,11 @@
                             <img class="mx-auto" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=www.doctorbayter.com/revolucion/qr/{{base64_encode($plan->user->email)}}" alt="" >
                         </div>
 
+                        <div class="text-center font-bold mb-8">
+                            <h3>INVITA</h3>
+                            <img src="{{asset('img/logos/patrocinadores.png')}}" alt="Patrocinadores del evento">
+                        </div>
+
                         <footer class="leading-none opacity-70 italic">
                             <small class="text-xs"> Este código fue generado única y exclusivamente para el participante {{$plan->user->name}}. Válido para un solo ingreso, guerdelo muy bien y no lo comparta con nadie. Recuerde presentar este código QR en la entrada el día del evento.</small>
                         </footer>

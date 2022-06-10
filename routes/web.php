@@ -480,14 +480,10 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-
-    $plan = Plan::find(11);
-    $plan->discount_id = null;
+    $plan = Plan::find(28);
+    $plan->price_id = 3;
     $plan->save();
 
-    $plan = Plan::find(12);
-    $plan->discount_id = null;
-    $plan->save();
 
 });
 

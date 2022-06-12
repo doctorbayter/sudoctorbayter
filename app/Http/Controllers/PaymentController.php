@@ -378,6 +378,9 @@ class PaymentController extends Controller
                         }
                     }
                     break;
+                case 28:
+                    $this->addSuscription($user->id, $plan->id);
+                break;
             }
         }
 
@@ -541,10 +544,14 @@ class PaymentController extends Controller
                 $mail = new ApprovedPurchaseEvent($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
+            case 28:
+                $mail = new ApprovedPurchaseEvent($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            break;
             default:
                 $mail = new ApprovedPurchase($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                break;
+            break;
         }
     }
 }

@@ -140,7 +140,7 @@
                             <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con la fase 1 del Método <span class="text-red-700">DKP</span>?</h3>
                             <ul>
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida a la Fase 1 del Método DKP<b class=" text-sm text-gray-600 block font-medium">(Precio normal 110 US$)</b></p></li>
-                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
+                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 27 US$/mes)</b></p></li>
                                 <li class="hidden"><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg ">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
                             </ul>
                             <a href="{{route('payment.checkout', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
@@ -181,7 +181,7 @@
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el la fase 1 del Método <span class="text-red-700">DKP</span>?</h3>
                                 <ul>
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso inmediato y de por vida a la Fase 1 del Método DKP<b class=" text-sm text-gray-400 block font-medium">(Precio normal 110 US$)</b></p></li>
-                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-400 block font-medium">(Precio normal 37 US$/mes)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-400 block font-medium">(Precio normal 27 US$/mes)</b></p></li>
                                     <li class="hidden"><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-400 block font-medium">(Precio normal 19 US$)</b></p>
                                 </ul>
                                 <a href="{{route('payment.checkout', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>

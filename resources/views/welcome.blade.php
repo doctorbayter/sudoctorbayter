@@ -60,7 +60,7 @@
     </article>
 
     <section class="bg-white">
-        <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 flex relative overflow-hidden py-12 md:py-24">
+        <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 flex relative overflow-hidden py-12 md:py-20">
 
             <div class="flex items-center flex-col-reverse md:flex-row">
             <div class="w-full px-6 md:w-3/6 md:px-0 mt-4 md:mt-0">
@@ -74,6 +74,11 @@
             </div>
         </div>
     </section>
+
+    <article class="text-center mx-auto max-w-5xl px-2 mb-24">
+        <a href="https://forms.gle/8Xpd5fxbkobfRgRZA" target="_blank"><img src="{{asset('img/billboards/lanzamiento_libro.png')}}" alt="" class="w-full mx-auto overflow-hidden "></a>
+    </article>
+
     <section class="bg-white">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex relative overflow-hidden pb-24">
             <div class="grid grid-cols-1 px-6  gap-x-4 gap-y-4 md:px-6 md:grid-cols-3 md:gap-y-0">
@@ -86,14 +91,10 @@
                         <a href="{{route('cita')}}" class=" inline-block mt-4 lg:mt-2 xl:mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Adquíerela<span class="inline-block md:hidden xl:inline-block ml-2">aquí</span></a>
                     </div>
                 </article>
-                <article class=" bg-gray-900 flex items-center rounded-lg shadow-md">
-                    <figure class="pl-4 mr-4 w-5/12 pt-2">
-                        <img src="{{asset('img/photos/doctor_bayter_eventos.png')}}" alt="" class="w-full object-cover">
-                    </figure>
-                    <div class="flex-1 pr-4">
-                        <h2 class=" leading-none font-black text-3xl lg:text-xl xl:text-2xl text-white">Eventos en Vivo</h2>
-                        <a class=" inline-block mt-4 lg:mt-2 xl:mt-4 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Próximamente<span class="inline-block md:hidden xl:inline-block ml-2"></span></a>
-                    </div>
+                <article class=" bg-gray-900 flex items-center rounded-lg shadow-md overflow-hidden">
+                    <a href="{{route('thf')}}">
+                        <img src="{{asset('img/billboards/banner_total_fitness.png')}}" alt="" class="w-full object-cover">
+                    </a>
                 </article>
                 <article class=" bg-gray-900 flex items-center rounded-lg shadow-md ">
                     <figure class="pl-4 mr-4 w-5/12 pt-2">

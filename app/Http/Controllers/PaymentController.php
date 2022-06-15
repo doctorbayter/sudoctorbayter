@@ -381,6 +381,9 @@ class PaymentController extends Controller
                 case 28:
                     $this->addSuscription($user->id, $plan->id);
                 break;
+                case 29:
+                    $this->addSuscription($user->id, $plan->id);
+                break;
             }
         }
 
@@ -545,6 +548,10 @@ class PaymentController extends Controller
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 28:
+                $mail = new ApprovedPurchaseEvent($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            break;
+            case 29:
                 $mail = new ApprovedPurchaseEvent($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;

@@ -50,7 +50,7 @@ class HomeController extends Controller
 
         if($user){
             $plan = Subscription::where('user_id', $user->id)
-            ->whereIn('plan_id', [20, 21, 22, 26, 28])
+            ->whereIn('plan_id', [20, 21, 22, 26, 28, 29])
             ->first();
         }else{
             $plan = [];

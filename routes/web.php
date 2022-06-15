@@ -480,9 +480,16 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-    $plan = Plan::find(28);
-    $plan->price_id = 3;
-    $plan->save();
+    $price = Price::create([
+        'name' => '59 US$',
+        'value' => 59
+    ]);
+
+    $plan = Plan::create([
+        'name' => 'Oferta Evento Revolución 2022 En Pareja',
+        'slug' => 'oferta-revolucion-pareja',
+        'price_id' => $price->id
+    ]);
 
 
 });

@@ -301,7 +301,7 @@ Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){
 
 Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
 
-    $plans = Subscription::whereIn('plan_id', [18, 17])
+    $plans = Subscription::whereIn('plan_id', [18, 17, 19])
                             ->whereNotIn('plan_id', [15,16,2,1,8,9,3])
                             ->skip($skip)->take(250)->get();
 

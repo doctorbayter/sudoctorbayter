@@ -259,6 +259,8 @@
                     </li>
                 </ul>
             </div>
+
+            <a href="{{asset('files/pdf/cronograma_revolucion_2022.pdf')}}" target="_blank" class="max-w-4xl mx-auto mt-8 block text-center font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">Descarga aquí el cronograma del evento</a>
         </div>
     </section>
 
@@ -291,6 +293,19 @@
         </div>
     </section>
 
+    <section class="bg-gray-100">
+        <div class="max-w-5xl mx-auto relative pb-12 px-6 md:px-0">
+            <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">¿Necesitas  <span class="text-red-700">Hospedaje?</span></h2>
+            <article class="md:flex items-center justify-between  rounded-lg my-8 overflow-hidden flex">
+
+                <img src="{{asset('img/billboards/RPS_NH_collection-royal-teleport_040.jpg')}}" alt="">
+                <div class="ml-8">
+                    <p>Reserva tu hospedaje en el hotel NH Collection Bogotá Teleport Royal situado en el Parque Empresarial Teleport a un precio espcial exclusivo para los asistentes al evento.</p>
+                    <a href="https://www.nh-hoteles.es/event/doctor-bayter-sas " target="_blank" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Reserva Ahora!</a>
+                </div>
+            </article>
+        </div>
+    </section>
 
     <section class="bg-white" id="go">
 

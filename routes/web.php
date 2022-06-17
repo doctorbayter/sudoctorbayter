@@ -317,7 +317,6 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
 
     foreach($plans as $plan){
 
-
         $response = Http::withHeaders([
             'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
         ]);
@@ -347,7 +346,6 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
                 ]);
                 $userListsLink = $addUser['contact']['links']['contactLists'];
                 $userId = $addUser['contact']['id'];
-
             }
 
             $getUserLists =  $response->GET($userListsLink);
@@ -389,9 +387,7 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
                     ]
                 ]);
             }
-
     }
-
     return;
 
 });
@@ -413,6 +409,17 @@ Route::get('x/clients/eg/{month}', function ($month) {
             echo "<br/>";
             echo "======</br></br>";
     }
+});
+
+Route::get('x/clients/{plan}', function ($plan) {
+
+    switch ($plan) {
+        case 'premium':
+            $subscriptions = Subscription::whereIn('plan_id', [1, 15, 25])->get();
+            break;
+    }
+
+    echo $subscriptions->count();
 });
 
 Route::get('x/clients', function () {

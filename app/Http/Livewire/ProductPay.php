@@ -86,8 +86,6 @@ class ProductPay extends Component
                 return;
             }
         }
-
-        //$this->activeCampaign();
         $this->can_continued = true;
         $this->data_send = "$this->name~$email~$this->password~0";
 
@@ -169,8 +167,6 @@ class ProductPay extends Component
             return true;
         }
     }
-
-
 
     public function paymentMethodCreate($paymentMethod){
 
@@ -259,8 +255,6 @@ class ProductPay extends Component
                         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     break;
                 }
-
-                //$this->activeCampaign();
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
 

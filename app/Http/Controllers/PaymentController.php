@@ -386,12 +386,6 @@ class PaymentController extends Controller
                 break;
             }
         }
-
-        if($plan->id != 19){
-            $this->activeCampaign($user->email, 18);
-        }else if($plan->id != 3 || $plan->id != 4 || $plan->id != 5 || $plan->id != 6 || $plan->id != 7 || $plan->id != 11 || $plan->id != 12 ){
-            $this->activeCampaign($user->email, 16);
-        }
     }
 
     public function getUserData($user_data){

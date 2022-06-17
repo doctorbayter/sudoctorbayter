@@ -301,11 +301,19 @@ Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){
 
 Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
 
+    /*
+    //Prospectos Retos
     $plans = Subscription::whereIn('plan_id', [18, 17, 19])
                             ->whereNotIn('plan_id', [1,2,3,8,9,10,15,16,25,27])
                             ->skip($skip)->take(250)->get();
+    list_id = 20;
+    */
 
-    $list_id = 20;
+    //Planes Premium
+    $plans = Subscription::whereIn('plan_id', [1, 15, 25])
+                            ->skip($skip)->take(250)->get();
+    $list_id = 22;
+
 
     foreach($plans as $plan){
 

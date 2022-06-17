@@ -334,12 +334,11 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
             }else{
 
                 $name = trim($plan->user->name);
-                $first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );
 
                 $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
                     "contact" => [
                         "email" => $plan->user->email,
-                        "firstName" => $first_name,
+                        "firstName" => $name
                     ]
                 ]);
                 $userListsLink = $addUser['contact']['links']['contactLists'];

@@ -344,7 +344,7 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
                     ]
                 ]);
 
-                if($addUser){
+                if($userListsLink = $addUser['contact']){
                     $userListsLink = $addUser['contact']['links']['contactLists'];
                     $userId = $addUser['contact']['id'];
                 }else{

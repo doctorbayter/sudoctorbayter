@@ -93,7 +93,6 @@ class PaymentController extends Controller
         }
     }
 
-
     public function approvedePayco(Request $request){
 
         $p_cust_id_cliente = config('services.epayco.client_id');
@@ -535,6 +534,10 @@ class PaymentController extends Controller
             break;
             case 22:
                 $mail = new ApprovedPurchaseEvent($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            break;
+            case 23:
+                $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 26:

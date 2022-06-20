@@ -45,7 +45,7 @@
                 </x-jet-button>
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 my-4" href="{{ route('password.request') }}">
-                        Entra aquí si no sirve tu contraseña.
+                        Entra aquí para si no puedes ingresar con tus datos.
                     </a>
                 @endif
             </div>
@@ -58,4 +58,3 @@
 
     </x-jet-authentication-card>
 </x-guest-layout>
- 

@@ -352,9 +352,6 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
                 $getUserLists =  $response->GET($userListsLink);
                 $userLists = $getUserLists['contactLists'];
 
-
-
-
                 if(count($userLists) > 0) {
 
                     foreach($userLists as $userList ) {

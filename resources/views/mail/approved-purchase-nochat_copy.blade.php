@@ -132,7 +132,25 @@
                         </table>
                     </td>
                 </tr>
-
+                <tr>
+                  <td style="padding-top:1rem;">
+                    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+                      <tr>
+                        <td style="width:260px;padding:0;vertical-align:top;color:#153643;">
+                          <p style="margin:0 0 25px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><img src="{{asset('img/mails/mail_tutorial.jpg')}}" alt="" width="260" style="height:auto;display:block;" /></p>
+                          <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Aquí verás la lista de tutoriales para que aprendas todo lo que necesitas saber y no te pierdas ningún detalle.</p>
+                          <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="{{route('plan.tutorial')}}" style="color:#a30000;text-decoration:underline;">Entra aquí al tutorial</a></p>
+                        </td>
+                        <td style="width:20px;padding:0;font-size:0;line-height:0;">&nbsp;</td>
+                        <td style="width:260px;padding:0;vertical-align:top;color:#153643;">
+                          <p style="margin:0 0 25px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><img src="{{asset('img/mails/mail_whatsapp.jpg')}}" alt="" width="260" style="height:auto;display:block;" /></p>
+                          <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Nunca estarás solo con el grupo privado de Facebook atendido por el <b>Equipo del Doctor Bayter</b></p>
+                          <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://www.facebook.com/groups/137085418579986/" style="color:#a30000;text-decoration:underline;">Entra aquí al grupo</a></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
               </table>
             </td>
           </tr>

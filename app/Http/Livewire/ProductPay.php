@@ -174,8 +174,8 @@ class ProductPay extends Component
             $user_exist = User::where('email', $this->email)->first();
 
             if($user_exist){
-                $user_exist->password = bcrypt($this->password);
-                $user_exist->save();
+                //$user_exist->password = bcrypt($this->password);
+                //$user_exist->save();
                 $user = $user_exist;
             }else{
                 $user = User::create([

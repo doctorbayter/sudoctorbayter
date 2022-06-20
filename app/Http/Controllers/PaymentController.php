@@ -398,8 +398,8 @@ class PaymentController extends Controller
         if ($user_auth == 0) {
             $user_exist = User::where('email', $user_email)->first();
             if($user_exist){
-                $user_exist->password = bcrypt($user_password);
-                $user_exist->save();
+                //$user_exist->password = bcrypt($user_password);
+                //$user_exist->save();
                 $user = $user_exist;
             }else{
                 $user = User::create([

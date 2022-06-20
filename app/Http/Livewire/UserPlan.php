@@ -20,13 +20,8 @@ class UserPlan extends Component
         $this->user_adicionales = auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id');
         $this->thf_plan = Plan::find(23);
 
-        $this->is_premium = Subscription::where('user_id', auth()->user()->id)
-                                                ->where('plan_id', 1)
-                                                ->orWhere('plan_id', 9)
-                                                ->orWhere('plan_id', 10)
-                                                ->orWhere('plan_id', 15)
-                                                ->orWhere('plan_id', 25)
-                                                ->first();
+        $this->is_premium = auth()->user()->fases->whereIn('id', [2]);
+
 
     }
 

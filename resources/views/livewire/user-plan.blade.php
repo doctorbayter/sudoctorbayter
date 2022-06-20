@@ -62,12 +62,11 @@
                             <hr class="my-16">
                         @endif
 
-
                         <section class="grid grid-cols-1 xl:grid-cols-2 gap-8 my-8 bg">
 
                             @if ($user_plan != 7 && $user_plan != 17 && $user_plan != 18 && $user_plan != 19)
 
-                                @if (!$is_premium)
+                                @if ($is_premium->count() == 0)
                                     <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg inline-block shadow-sm ">
                                         <div class=" flex items-center">
                                             <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
@@ -77,7 +76,7 @@
                                                 <div class="flex-1 flex flex-col">
                                                     <p class="mb-1">Actualiza tu plan y disfruta de todo el contenido</p>
                                                     <h2 class="text-2xl  text-blue-300 mb-2"><strong>{{$planUpdate->name}}</strong></h2>
-                                                    <small>Pago único de</small>
+                                                    <small>Actualiza tu plan a PREMIUM y adquiere las fases 2 3 y 4 por un pago único de</small>
                                                     @if ($planUpdate->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planUpdate->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                                         <div>
                                                             <div class="ml-auto flex items-center">
@@ -97,36 +96,6 @@
                                     </div>
                                 @endif
 
-                                @if (!$subscribed_fase_week)
-                                    <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg inline-block shadow-sm ">
-                                        <div class=" flex items-center">
-                                            <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
-                                                <img src="{{asset('img/billboards/plan_week.jpg')}}" alt="" class="w-full object-cover">
-                                            </figure>
-                                            <div class="text-gray-50 flex-1 flex flex-col">
-                                                <div class="flex-1 flex flex-col">
-                                                    <p class="mb-1">Disfruta de las nuevas recetas</p>
-                                                    <h2 class="text-2xl  text-blue-300 mb-2"><strong>{{$plan_week->name}}</strong></h2>
-                                                    <small>Pago único de</small>
-                                                    @if ($plan_week->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_week->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                                        <div>
-                                                            <div class="ml-auto flex items-center">
-                                                                <p class="text-4xl md:text-2xl font-bold text-green-400">{{$plan_week->finalPrice}} US$</p>
-                                                                <span class=" text-base font-bold ml-2 line-through text-red-500">{{$plan_week->price->name}}</span>
-                                                            </div>
-                                                            <small class="text-gray-100">{{$plan_week->discount->name}}</small>
-                                                            <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_week->discount->expires_at))->diffForHumans() }}</b>!</p>
-                                                        </div>
-                                                    @else
-                                                        <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$plan_week->price->name}}</p>
-                                                    @endif
-                                                </div>
-                                                <a href="{{route('payment.checkout', $plan_week)}}" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Adquieres ya</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-
                                 <div class=" bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm">
                                     <div class="flex items-center">
                                         <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
@@ -137,7 +106,7 @@
                                                 <p class=" mb-1">¿Ya estás inscrito al <b>Chat</b>?</p>
                                                 <h2 class="font-bold text-2xl text-green-900">{{$planWhatsapp->name}}</h2>
                                                 <h2 class="font-bold text-2xl text-green-900 mb-2"></h2>
-                                                <small>Adquiere el acompañamiento grupal del Dr. Bayter</small>
+                                                <small>Súmale más dias a tu acompañamiento grupal del Dr. Bayter</small>
                                                 @if ($planWhatsapp->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                                     <div>
                                                         <div class="ml-auto flex items-center">
@@ -164,6 +133,36 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                @if (!$subscribed_fase_week)
+                                <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg inline-block shadow-sm ">
+                                    <div class=" flex items-center">
+                                        <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
+                                            <img src="{{asset('img/billboards/plan_week.jpg')}}" alt="" class="w-full object-cover">
+                                        </figure>
+                                        <div class="text-gray-50 flex-1 flex flex-col">
+                                            <div class="flex-1 flex flex-col">
+                                                <p class="mb-1">Disfruta de las nuevas recetas adicionales</p>
+                                                <h2 class="text-2xl  text-blue-300 mb-2"><strong>{{$plan_week->name}}</strong></h2>
+                                                <small>Prueba 21 recetas diferentes por un pago único de</small>
+                                                @if ($plan_week->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_week->discount->expires_at))->gt(\Carbon\Carbon::now()))
+                                                    <div>
+                                                        <div class="ml-auto flex items-center">
+                                                            <p class="text-4xl md:text-2xl font-bold text-green-400">{{$plan_week->finalPrice}} US$</p>
+                                                            <span class=" text-base font-bold ml-2 line-through text-red-500">{{$plan_week->price->name}}</span>
+                                                        </div>
+                                                        <small class="text-gray-100">{{$plan_week->discount->name}}</small>
+                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_week->discount->expires_at))->diffForHumans() }}</b>!</p>
+                                                    </div>
+                                                @else
+                                                    <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$plan_week->price->name}}</p>
+                                                @endif
+                                            </div>
+                                            <a href="{{route('payment.checkout', $plan_week)}}" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Adquieres ya</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                             @endif
 
                             <div class=" bg-gradient-to-r from-gray-800 to-gray-900 border py-12 px-6 rounded-lg inline-block shadow-sm">

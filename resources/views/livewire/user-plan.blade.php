@@ -106,7 +106,7 @@
                                                 <p class=" mb-1">¿Ya estás inscrito al <b>Chat</b>?</p>
                                                 <h2 class="font-bold text-2xl text-green-900">{{$planWhatsapp->name}}</h2>
                                                 <h2 class="font-bold text-2xl text-green-900 mb-2"></h2>
-                                                <small>Súmale más dias a tu acompañamiento grupal del Dr. Bayter</small>
+                                                <small>Súmale más dias a tu acompañamiento grupal del Dr. Bayter.</small>
                                                 @if ($planWhatsapp->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->gt(\Carbon\Carbon::now()))
                                                     <div>
                                                         <div class="ml-auto flex items-center">

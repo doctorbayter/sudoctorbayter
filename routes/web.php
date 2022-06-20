@@ -312,7 +312,7 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
     //Planes Premium
     $plans = Subscription::whereIn('plan_id', [1, 15, 25])
                             ->skip($skip)->take(100)->get();
-    $list_id = 22;
+    $list_id = 33;
 
 
     foreach($plans as $plan){

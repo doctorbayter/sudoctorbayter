@@ -352,6 +352,17 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
             $getUserLists =  $response->GET($userListsLink);
             $userLists = $getUserLists['contactLists'];
 
+            if(count($userLists) == 0){
+                $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                    "contactList" => [
+                        "list" => $list_id,
+                        "contact" => $userId,
+                        "status" => 1
+                    ]
+                ]);
+            }
+
+            /*
             if(count($userLists) > 0) {
 
                 foreach($userLists as $userList ) {
@@ -388,6 +399,7 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
                     ]
                 ]);
             }
+            */
     }
     return;
 

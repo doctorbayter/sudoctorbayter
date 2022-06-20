@@ -317,89 +317,90 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
 
     foreach($plans as $plan){
 
-        echo $plan->user->email. "<br>";
+        if(filter_var($plan->user->email, FILTER_VALIDATE_EMAIL)){
 
-        $response = Http::withHeaders([
-            'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
-        ]);
+            $response = Http::withHeaders([
+                'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
+            ]);
 
-        $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
-            "email" => $plan->user->email,
-            "orders[email]" => "ASC"
-        ]);
+            $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
+                "email" => $plan->user->email,
+                "orders[email]" => "ASC"
+            ]);
 
-        $userData = $getUserByEmail['contacts'];
+            $userData = $getUserByEmail['contacts'];
 
-        if($userData){
-                $userListsLink = $userData[0]['links']['contactLists'];
-                $userId = $userData[0]['id'];
-            }else{
+            if($userData){
+                    $userListsLink = $userData[0]['links']['contactLists'];
+                    $userId = $userData[0]['id'];
+                }else{
 
-                $name = trim($plan->user->name);
+                    $name = trim($plan->user->name);
 
-                $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
-                    "contact" => [
-                        "email" => $plan->user->email,
-                        "firstName" => $name
-                    ]
-                ]);
+                    $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
+                        "contact" => [
+                            "email" => $plan->user->email,
+                            "firstName" => $name
+                        ]
+                    ]);
 
-                $userListsLink = $addUser['contact']['links']['contactLists'];
-                $userId = $addUser['contact']['id'];
+                    $userListsLink = $addUser['contact']['links']['contactLists'];
+                    $userId = $addUser['contact']['id'];
 
-            }
+                }
 
-            $getUserLists =  $response->GET($userListsLink);
-            $userLists = $getUserLists['contactLists'];
+                $getUserLists =  $response->GET($userListsLink);
+                $userLists = $getUserLists['contactLists'];
 
-            if(count($userLists) == 0){
-                $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                    "contactList" => [
-                        "list" => $list_id,
-                        "contact" => $userId,
-                        "status" => 1
-                    ]
-                ]);
-            }
+                if(count($userLists) == 0){
+                    $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                        "contactList" => [
+                            "list" => $list_id,
+                            "contact" => $userId,
+                            "status" => 1
+                        ]
+                    ]);
+                }
 
-            /*
-            if(count($userLists) > 0) {
+                /*
+                if(count($userLists) > 0) {
 
-                foreach($userLists as $userList ) {
-                    if($userList['list'] == $list_id){
+                    foreach($userLists as $userList ) {
+                        if($userList['list'] == $list_id){
 
-                        if($userList['status'] == "2") {
+                            if($userList['status'] == "2") {
+                                $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                                    "contactList" => [
+                                        "list" => $list_id,
+                                        "contact" => $userId,
+                                        "status" => 1,
+                                        "sourceid" => 4
+                                    ]
+                                ]);
+                            }
+                            break;
+                        }else{
                             $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                                 "contactList" => [
                                     "list" => $list_id,
                                     "contact" => $userId,
-                                    "status" => 1,
-                                    "sourceid" => 4
+                                    "status" => 1
                                 ]
                             ]);
                         }
-                        break;
-                    }else{
-                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                            "contactList" => [
-                                "list" => $list_id,
-                                "contact" => $userId,
-                                "status" => 1
-                            ]
-                        ]);
                     }
-                }
 
-            }else{
-                $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                    "contactList" => [
-                        "list" => $list_id,
-                        "contact" => $userId,
-                        "status" => 1
-                    ]
-                ]);
-            }
-            */
+                }else{
+                    $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                        "contactList" => [
+                            "list" => $list_id,
+                            "contact" => $userId,
+                            "status" => 1
+                        ]
+                    ]);
+                }
+                */
+        }
     }
     return;
 

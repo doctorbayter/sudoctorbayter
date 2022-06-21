@@ -328,6 +328,7 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
                 "orders[email]" => "ASC"
             ]);
 
+            echo $plan->user->email;
             $userData = $getUserByEmail['contacts'];
 
             if($userData){

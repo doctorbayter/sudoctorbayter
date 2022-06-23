@@ -356,7 +356,7 @@
                         <div class="my-4">
                             <a href="https://wa.me/573173455477" target="_blank" class=" inline-flex px-6 py-4 rounded-full text-white font-bold bg-green-600 text-3xl lg:text-4xl">
                                 <i class="fab fa-whatsapp mr-4"></i>
-                                <p class="">+57 314 728 1252</p>
+                                <p class="">+57 317 345 5477</p>
                             </a>
                         </div>
                     </div>

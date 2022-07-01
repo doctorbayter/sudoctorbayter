@@ -383,6 +383,9 @@ class PaymentController extends Controller
                 case 29:
                     $this->addSuscription($user->id, $plan->id);
                 break;
+                case 30:
+                    $this->addSuscription($user->id, $plan->id);
+                break;
             }
         }
     }

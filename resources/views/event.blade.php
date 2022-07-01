@@ -54,7 +54,7 @@
                             <h2 class="text-2xl md:text-3xl font-bold mb-2"><span class="text-red-700">Dirigido a</span></h2>
                         </header>
                         <div>
-                            <p class="text-gray-700 text-justify">Profesionales de la salud, nutricionistas, dietistas, deportologos, deportistas, empresas del sector salud, EPSs, IPSs, universidades, y demás personas interesadas en el tema.</p>
+                            <p class="text-gray-700 text-justify"><b>Todas las personas que deseen construir salud</b>. Además, profesionales de la salud, nutricionistas, dietistas, deportologos, deportistas, empresas del sector salud, EPSs, IPSs, universidades, y demás personas interesadas en el tema.</p>
                         </div>
                     </div>
                     <div class="w-full bg-gray-50 py-8 px-12 rounded-xl shadow-lg">

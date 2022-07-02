@@ -134,7 +134,7 @@
                      <hr class="border-blue-400 opacity-25 my-8">
                      <section class="mt-6">
                         <header class="mb-6 text-gray-50">
-                            <h3 class="text-xl font-bold mb-2 ">Ejercicios del día</h3>
+                            <h3 class="text-xl font-bold mb-2 "></h3>
                         </header>
                         <ul class="md:grid grid-cols-3 gap-4 ">
                             @foreach ($trainings as $training)

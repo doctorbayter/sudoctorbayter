@@ -386,6 +386,19 @@ class PaymentController extends Controller
                 case 30:
                     $this->addSuscription($user->id, $plan->id);
                 break;
+                case 31:
+                    if($previous_plan_premium){
+                        $previous_plan_premium->delete();
+                    }
+                    $this->addSuscription($user->id, $plan->id);
+                    $this->addWhatsApp($user->id, 30);
+
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                break;
             }
         }
     }

@@ -499,15 +499,12 @@ Route::get('x/query', function(){
     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-    $price = Price::create([
-        'name' => '$90.000',
-        'value' => 27
-    ]);
+
 
     $plan = Plan::create([
-        'name' => 'Oferta Especial Revolución 2022 Entrada General',
-        'slug' => 'oferta-especial-general',
-        'price_id' => $price->id
+        'name' => 'Plan Premium Oferta',
+        'slug' => 'plan-premium-oferta',
+        'price_id' => 20
     ]);
 
 

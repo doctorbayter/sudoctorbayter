@@ -150,7 +150,7 @@
                                     <p class="text-sm text-gray-800  my-2">Con el Plan Premium del Método DKP obtendrás</p>
                                     <ul class="text-sm">
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso inmediato a las 4 fases</li>
-                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 30 días al chat</li>
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 21 días al chat</li>
                                         <li class="hidden"> <i class="fas fa-check-circle text-red-700 mr-2 "></i>Curso cómo leer las etiquetas</li>
                                     </ul>
 
@@ -209,7 +209,7 @@
                                     <ul class="text-sm">
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso inmediato a la fase 1</li>
                                         <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>21 días de menús y recetas</li>
-                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 30 días al chat</li>
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 21 días al chat</li>
 
                                     </ul>
 

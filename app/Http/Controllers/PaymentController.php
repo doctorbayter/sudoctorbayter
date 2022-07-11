@@ -65,8 +65,8 @@ class PaymentController extends Controller
             $plan = Plan::find($extra2);
 
             $user = $this->getUserData($user_data);
-            $this->setUserData($user, $plan);
             $this->sendMail($user, $plan);
+            $this->setUserData($user, $plan);
         }
     }
 
@@ -185,11 +185,7 @@ class PaymentController extends Controller
         if(!$is_already_subscribed){
             switch ($plan->id) {
                 case 1:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
 
                     foreach($fases_premium as $fase){
                         if(!$fase->clients->contains($user->id)){
@@ -202,7 +198,7 @@ class PaymentController extends Controller
                         $subscribed_plan_7->delete();
                     }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
+
 
                     if(!$fase_one->clients->contains($user->id)){
                         $fase_one->clients()->attach($user->id);
@@ -222,7 +218,7 @@ class PaymentController extends Controller
                     }
                     break;
                 case 4:
-                    $this->addWhatsApp($user->id, 30);
+
                     break;
                 case 7:
                     if(!$previous_plan_week){
@@ -237,7 +233,7 @@ class PaymentController extends Controller
                         $subscribed_plan_7->delete();
                     }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
+
 
                     if(!$fase_one->clients->contains($user->id)){
                         $fase_one->clients()->attach($user->id);
@@ -248,7 +244,7 @@ class PaymentController extends Controller
                         $previous_plan_premium->delete();
                     }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
+
 
                     foreach($fases_premium as $fase){
                         if(!$fase->clients->contains($user->id)){
@@ -307,7 +303,7 @@ class PaymentController extends Controller
                         $subscribed_plan_7->delete();
                     }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
+
 
                     if(!$fase_one->clients->contains($user->id)){
                         $fase_one->clients()->attach($user->id);
@@ -353,7 +349,7 @@ class PaymentController extends Controller
                         $previous_plan_premium->delete();
                     }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
+
 
                     foreach($fases_premium as $fase){
                         if(!$fase->clients->contains($user->id)){
@@ -369,7 +365,7 @@ class PaymentController extends Controller
                         $previous_plan_premium->delete();
                     }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
+
 
                     foreach($fases_premium as $fase){
                         if(!$fase->clients->contains($user->id)){
@@ -391,7 +387,7 @@ class PaymentController extends Controller
                         $previous_plan_premium->delete();
                     }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
+
 
                     foreach($fases_premium as $fase){
                         if(!$fase->clients->contains($user->id)){

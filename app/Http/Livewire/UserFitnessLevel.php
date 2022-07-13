@@ -1493,7 +1493,7 @@ class UserFitnessLevel extends Component
                     $this->difficulty = "Fácil";
                     $this->copy = "La combinación perfecta de ejercición para mejorar tu físico, flexibilidad y fuerza";
                     $this->equipments = array("Manta para ejercicio","Pesas 2 o 5 Kg","Silla pequeña");
-                    $this->video = "679094185?h=facc3c2cf1";
+                    $this->video = "679094402?h=181facb294";
                     $this->trainings =[
                         1 => [
                             "image" => "img/exercises/exercise_01.jpg",
@@ -4631,7 +4631,7 @@ class UserFitnessLevel extends Component
                     $this->difficulty = "Fácil";
                     $this->copy = "La combinación perfecta de ejercición para mejorar tu físico, flexibilidad y fuerza";
                     $this->equipments = array("Manta para ejercicio","Pesas 2 o 5 Kg","Silla pequeña");
-                    $this->video = "6686159465?h=b12946e5bb";
+                    $this->video = "686159465?h=b12946e5bb";
                     $this->trainings =[
                         1 => [
                             "image" => "img/exercises/exercise_01.jpg",

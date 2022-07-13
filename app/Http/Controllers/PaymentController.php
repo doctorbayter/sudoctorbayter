@@ -126,8 +126,9 @@ class PaymentController extends Controller
                 case 1:
                     // "transacción aceptada"
                     $user = $this->getUserData($user_data);
-                    $this->setUserData($user, $plan);
                     $this->sendMail($user, $plan);
+                    $this->setUserData($user, $plan);
+
                 break;
             }
         }
@@ -150,8 +151,9 @@ class PaymentController extends Controller
             $plan = Plan::find($plan_id);
 
             $user = $this->getUserData($user_data);
-            $this->setUserData($user, $plan);
             $this->sendMail($user, $plan);
+            $this->setUserData($user, $plan);
+
 
         }
     }

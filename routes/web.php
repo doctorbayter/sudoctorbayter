@@ -140,13 +140,13 @@ Route::get('/67', function () {
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
-Route::get('/oferta2', function () {
+Route::get('/oferta', function () {
     //return view('no-disponible');
     $plan = Plan::find(26);
     return redirect()->route('payment.checkout', ['plan'=>$plan]);
 })->name('evento.oferta');
 
-Route::get('/oferta', [HomeController::class, 'dkp'])->name('revolucion.oferta');
+Route::get('/oferta2', [HomeController::class, 'dkp'])->name('revolucion.oferta');
 
 Route::get('/bf', function () {
     return view('no-disponible');

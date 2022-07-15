@@ -54,6 +54,10 @@ Route::get('/metodo-dkp/tiktok', [HomeController::class, 'dkpTiktok'])->name('dk
 Route::get('/thf', [HomeController::class, 'thf'])->name('thf');
 Route::get('/revolucion', [HomeController::class, 'event'])->name('event');
 Route::get('/revolucion/qr/{email}', [HomeController::class, 'eventQr'])->name('event.qr');
+Route::get('/revolucion/ticket/qr', [HomeController::class, 'eventTicketQr'])->name('event.ticketQr');
+
+Route::get('/revolucion/ticket', [HomeController::class, 'eventTicket'])->name('event.ticket');
+
 Route::get('/programas', [HomeController::class, 'programas'])->name('programas');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/blog/post/que-comer-y-que-evitar-en-una-dieta-cetogenica', [HomeController::class, 'blog_uno'])->name('blog.uno');

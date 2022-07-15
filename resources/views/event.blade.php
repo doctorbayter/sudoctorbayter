@@ -363,7 +363,7 @@
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al evento en ubicación <span class="text-red-700">VIP</span></p></li>
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Obsequio de recuerdo del evento</p></li>
                                 </ul>
-                                <a href="{{route('payment.checkout', $vip)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela Ahora!</a>
+                                <a class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border cursor-default border-red-700  uppercase transition-colors duration-300 ease-in-out text-lg bg-transparent text-red-700">¡AGOTADO!</a>
                             </div>
                         </div>
                     </article>

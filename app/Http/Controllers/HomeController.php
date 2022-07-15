@@ -46,7 +46,6 @@ class HomeController extends Controller
 
         $id = base64_decode($uid);
         $user = User::where('email', $id)->first();
-        //
 
         if($user){
             $plan = Subscription::where('user_id', $user->id)
@@ -55,10 +54,31 @@ class HomeController extends Controller
         }else{
             $plan = [];
         }
-
-
         return  view('event-qr', compact('plan'));
     }
+
+    public function eventTicketQr(Request $request){
+
+        $id = strtolower($request->input('ticket'));
+
+        $user = User::where('email', trim($id))->first();
+
+        if($user){
+            $plan = Subscription::where('user_id', $user->id)
+            ->whereIn('plan_id', [20, 21, 22, 26, 28, 29, 30])
+            ->first();
+        }else{
+            $plan = [];
+        }
+        return  view('event-qr', compact('plan'));
+    }
+
+
+
+    public function eventTicket(){
+        return  view('event-ticket');
+    }
+
 
     public function dkpOferta(Request $request) {
 

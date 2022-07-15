@@ -311,10 +311,17 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
     list_id = 20;
     */
 
+    /*
     //Planes Premium
     $plans = Subscription::whereIn('plan_id', [1, 15, 25])
                             ->skip($skip)->take(100)->get();
     $list_id = 33;
+    */
+
+    //REVOLUCION VIP PLUS
+    $plans = Subscription::whereIn('plan_id', [22])
+                            ->skip($skip)->take(10)->get();
+    $list_id = 31;
 
 
     foreach($plans as $plan){
@@ -422,6 +429,9 @@ Route::get('x/clients/{plan}', function ($plan) {
     switch ($plan) {
         case 'premium':
             $subscriptions = Subscription::whereIn('plan_id', [1, 15, 25])->get();
+            break;
+        case 'plus':
+            $subscriptions = Subscription::whereIn('plan_id', [22])->get();
             break;
     }
 

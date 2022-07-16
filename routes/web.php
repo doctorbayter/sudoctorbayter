@@ -140,17 +140,18 @@ Route::get('/99', function () {
 
 Route::get('/67', function () {
     return view('no-disponible');
-    $promo_plan = Plan::find(15);
-    $promo_chat21 = Plan::find(15);
-    $promo_chat70 = Plan::find(15);
-    $promo_chat140 = Plan::find(15);
+    $plan = Plan::find(15);
+
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
 Route::get('/oferta', function () {
     //return view('no-disponible');
-    $plan = Plan::find(26);
-    return view('event-offer', ['plan'=>$plan]);
+    $promo_plan = Plan::find(32);
+    $promo_chat21 = Plan::find(33);
+    $promo_chat70 = Plan::find(34);
+    $promo_chat140 = Plan::find(35);
+    return view('event-offer', ['promo_plan'=>$promo_plan, 'promo_chat21'=>$promo_chat21, 'promo_chat70'=>$promo_chat70, 'promo_chat140'=>$promo_chat140]);
 })->name('evento.oferta');
 
 Route::get('/oferta2', [HomeController::class, 'dkp'])->name('revolucion.oferta');
@@ -540,44 +541,18 @@ Route::get('x/query', function(){
 
 
 
-    $plan = Plan::create([
-        'name' => 'Plan + Total Oferta Revolución',
-        'slug' => 'plan-total-oferta-revolucion',
-        'price_id' => 20
-    ]);
+    // $plan = Plan::create([
+    //     'name' => 'Plan + Total Oferta Revolución',
+    //     'slug' => 'plan-total-oferta-revolucion',
+    //     'price_id' => 20
+    // ]);
 
-    $price = Price::create([
-        'name' => '42 US$',
-        'value' => 42
-    ]);
+    // $price = Price::create([
+    //     'name' => '42 US$',
+    //     'value' => 42
+    // ]);
 
-    $plan = Plan::create([
-        'name' => 'Chat 21 + Total Oferta Revolución',
-        'slug' => 'chat-21-total-oferta-revolucion',
-        'price_id' => $price->id
-    ]);
 
-    $price = Price::create([
-        'name' => '82 US$',
-        'value' => 82
-    ]);
-
-    $plan = Plan::create([
-        'name' => 'Chat 70 + Total Oferta Revolución',
-        'slug' => 'chat-70-total-oferta-revolucion',
-        'price_id' => $price->id
-    ]);
-
-    $price = Price::create([
-        'name' => '114 US$',
-        'value' => 114
-    ]);
-
-    $plan = Plan::create([
-        'name' => 'Chat 140 + Total Oferta Revolución',
-        'slug' => 'chat-140-total-oferta-revolucion',
-        'price_id' => $price->id
-    ]);
 
 
 });

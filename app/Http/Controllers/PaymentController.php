@@ -178,22 +178,42 @@ class PaymentController extends Controller
         $subscribed_plan_10         = Subscription::where('user_id', $user->id)->where('plan_id', 10)->first();
         $fases_premium              = Fase::whereIn('id', array(1, 2, 3, 4))->get();
         $fase_one                   = Fase::find(1);
+        $fase_two                   = Fase::find(2);
+        $fase_three                 = Fase::find(3);
+        $fase_four                  = Fase::find(4);
         $fase_week                  = Fase::find(5);
         $five_recipes               = Fase::find(7);
         $keto_navidad               = Fase::find(8);
         $fase_desafio               = Fase::find(9);
         $fase_empareja2             = Fase::find(10);
+        $total                      = Plan::find(23);
 
         if(!$is_already_subscribed){
             switch ($plan->id) {
                 case 1:
                     $this->addSuscription($user->id, $plan->id);
 
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    if(!$fase_two->clients->contains($user->id)){
+                        $fase_two->clients()->attach($user->id);
+                    }
+                    if(!$fase_three->clients->contains($user->id)){
+                        $fase_three->clients()->attach($user->id);
+                    }
+                    if(!$fase_four->clients->contains($user->id)){
+                        $fase_four->clients()->attach($user->id);
+                    }
+
+
+                    /*
                     foreach($fases_premium as $fase){
                         if(!$fase->clients->contains($user->id)){
                             $fase->clients()->attach($user->id);
                         }
-                    }
+                    }*/
+
                     break;
                 case 2:
                     if($subscribed_plan_7){
@@ -261,11 +281,20 @@ class PaymentController extends Controller
                     $this->addSuscription($user->id, $plan->id);
                     $this->addWhatsApp($user->id, 60);
 
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
                     }
+                    if(!$fase_two->clients->contains($user->id)){
+                        $fase_two->clients()->attach($user->id);
+                    }
+                    if(!$fase_three->clients->contains($user->id)){
+                        $fase_three->clients()->attach($user->id);
+                    }
+                    if(!$fase_four->clients->contains($user->id)){
+                        $fase_four->clients()->attach($user->id);
+                    }
+
+
                     break;
                 case 11:
                     $this->addWhatsApp($user->id, 90);
@@ -285,10 +314,17 @@ class PaymentController extends Controller
                     $this->addSuscription($user->id, $plan->id);
                     $this->addWhatsApp($user->id, 45);
 
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    if(!$fase_two->clients->contains($user->id)){
+                        $fase_two->clients()->attach($user->id);
+                    }
+                    if(!$fase_three->clients->contains($user->id)){
+                        $fase_three->clients()->attach($user->id);
+                    }
+                    if(!$fase_four->clients->contains($user->id)){
+                        $fase_four->clients()->attach($user->id);
                     }
 
                     // if(!$five_recipes->clients->contains($user->id)){
@@ -353,10 +389,17 @@ class PaymentController extends Controller
                     $this->addSuscription($user->id, $plan->id);
 
 
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    if(!$fase_two->clients->contains($user->id)){
+                        $fase_two->clients()->attach($user->id);
+                    }
+                    if(!$fase_three->clients->contains($user->id)){
+                        $fase_three->clients()->attach($user->id);
+                    }
+                    if(!$fase_four->clients->contains($user->id)){
+                        $fase_four->clients()->attach($user->id);
                     }
                     break;
                 case 26:
@@ -369,10 +412,17 @@ class PaymentController extends Controller
                     $this->addSuscription($user->id, $plan->id);
 
 
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    if(!$fase_two->clients->contains($user->id)){
+                        $fase_two->clients()->attach($user->id);
+                    }
+                    if(!$fase_three->clients->contains($user->id)){
+                        $fase_three->clients()->attach($user->id);
+                    }
+                    if(!$fase_four->clients->contains($user->id)){
+                        $fase_four->clients()->attach($user->id);
                     }
                     break;
                 case 28:
@@ -391,11 +441,45 @@ class PaymentController extends Controller
                     $this->addSuscription($user->id, $plan->id);
 
 
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
                     }
+                    if(!$fase_two->clients->contains($user->id)){
+                        $fase_two->clients()->attach($user->id);
+                    }
+                    if(!$fase_three->clients->contains($user->id)){
+                        $fase_three->clients()->attach($user->id);
+                    }
+                    if(!$fase_four->clients->contains($user->id)){
+                        $fase_four->clients()->attach($user->id);
+                    }
+                break;
+                case 32:
+
+                    $this->addSuscription($user->id, $total->id);
+                    $this->addSuscription($user->id, $plan->id);
+
+                    if(!$fase_one->clients->contains($user->id)){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                    if(!$fase_two->clients->contains($user->id)){
+                        $fase_two->clients()->attach($user->id);
+                    }
+                    if(!$fase_three->clients->contains($user->id)){
+                        $fase_three->clients()->attach($user->id);
+                    }
+                    if(!$fase_four->clients->contains($user->id)){
+                        $fase_four->clients()->attach($user->id);
+                    }
+                break;
+                case 33:
+                    $this->addSuscription($user->id, $total->id);
+                break;
+                case 34:
+                    $this->addSuscription($user->id, $total->id);
+                break;
+                case 35:
+                    $this->addSuscription($user->id, $total->id);
                 break;
             }
         }

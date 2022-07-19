@@ -553,8 +553,6 @@ Route::get('x/query', function(){
     // ]);
 
 
-
-
 });
 
 Route::get('x/query/reto', function(){
@@ -741,6 +739,24 @@ Route::get('x/whatsapp/', function(){
 
 
 });
+
+
+Route::get('x/clients/fase/4/{skip?}', function($skip = 0){
+
+    $fase_four = Fase::find(4);
+
+    $plans = Subscription::whereIn('plan_id', [1, 15, 25, 32])
+    ->skip($skip)->take(100)->get();
+
+    foreach($plans as $plan){
+
+        if(!$fase_four->clients->contains($plan->user->id)){
+            $fase_four->clients()->attach($plan->user->id);
+            echo "Do it <br/>";
+        }
+    }
+});
+
 
 
 // Lideres Acutalizado Enero 2022

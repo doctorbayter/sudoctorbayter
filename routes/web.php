@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PdfController;
 use App\Http\Livewire\CursoGratis;
 use App\Http\Livewire\Masterclass;
 use App\Http\Livewire\Reto;
@@ -55,8 +56,8 @@ Route::get('/thf', [HomeController::class, 'thf'])->name('thf');
 Route::get('/revolucion', [HomeController::class, 'event'])->name('event');
 Route::get('/revolucion/qr/{email}', [HomeController::class, 'eventQr'])->name('event.qr');
 Route::get('/revolucion/ticket/qr', [HomeController::class, 'eventTicketQr'])->name('event.ticketQr');
-
 Route::get('/revolucion/ticket', [HomeController::class, 'eventTicket'])->name('event.ticket');
+Route::get('/revolucion/certificate', [PdfController::class, 'generatePdf'])->name('event.certificate');
 
 Route::get('/programas', [HomeController::class, 'programas'])->name('programas');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');

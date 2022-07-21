@@ -57,7 +57,8 @@ Route::get('/revolucion', [HomeController::class, 'event'])->name('event');
 Route::get('/revolucion/qr/{email}', [HomeController::class, 'eventQr'])->name('event.qr');
 Route::get('/revolucion/ticket/qr', [HomeController::class, 'eventTicketQr'])->name('event.ticketQr');
 Route::get('/revolucion/ticket', [HomeController::class, 'eventTicket'])->name('event.ticket');
-Route::get('/revolucion/certificate', [PdfController::class, 'generatePdf'])->name('event.certificate');
+Route::get('/revolucion/certificado/', [HomeController::class, 'eventPdf'])->name('event.certificado');
+Route::get('/revolucion/certificado/pdf', [PdfController::class, 'generatePdf'])->name('event.pdf');
 
 Route::get('/programas', [HomeController::class, 'programas'])->name('programas');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');

@@ -73,11 +73,14 @@ class HomeController extends Controller
         return  view('event-qr', compact('plan'));
     }
 
-
-
     public function eventTicket(){
         return  view('event-ticket');
     }
+
+    public function eventPdf(){
+        return  view('event-pdf');
+    }
+
 
 
     public function dkpOferta(Request $request) {

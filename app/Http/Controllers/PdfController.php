@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Subscription;
+use App\Models\User;
 use Illuminate\Http\Request;
 use TCPDF;
 
@@ -9,6 +11,22 @@ class PdfController extends Controller
 {
     public function generatePdf(Request $request)
     {
+        $user = User::where('email', $request->input('email'))->first();
+
+        if($user){
+            $plan = Subscription::where('user_id', $user->id)
+            ->whereIn('plan_id', [20, 21, 22, 26, 28, 29, 30])
+            ->first();
+
+            if(!$plan){
+                return "No hemos podido generar tu certificado";
+            }
+
+        }else{
+            return "El usuario no existe en nuestra base de datos";
+        }
+
+
         $pdf = new TCPDF('L', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
         // set document information
         $pdf->SetCreator('Media Social Academy');
@@ -41,7 +59,7 @@ class PdfController extends Controller
         $pdf->Image($img_file, 0, 0, 295, 210, '', '', '', false, 300, '', false, false, 0);
         // set the starting point for the page content
         $pdf->setPageMark();
-        $user = "Jeff Cote D.";
+
 
         $date = "16 de julio de 2022";
         // Print a text
@@ -81,7 +99,7 @@ class PdfController extends Controller
         <div>
             <h1 class="title"><i>Certificado de Participación</i></h1>
             <p></p>
-            <p class="message">&nbsp;<br/><i>Este documento certifica a <b> $user </b> como participante oficial de evento 'REVOLUCIÓN' tu salud a otro nivel el día $date</i></p>
+            <p class="message">&nbsp;<br/><i>Este documento certifica a <b> $user->name </b> como participante oficial de evento 'REVOLUCIÓN' tu salud a otro nivel el día $date</i></p>
             <p></p><p></p>
             <table class="signatures">
                 <tbody>

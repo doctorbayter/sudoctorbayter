@@ -65,76 +65,16 @@ class PdfController extends Controller
         // Print a text
         $html = <<<EOF
         <style>
-            .title {
-                text-align: center;
-                color: #fff;
-                font-family: times;
-                font-size: 40pt;
-                letter-spacing: 1px;
-            }
             .message {
-                text-align: center;
-                font-size: 22pt;
-                color: #666666;
-            }
-
-            .signature{
-                text-align: center;
-                line-height: 0.4;
-            }
-            .signature_line{
-                color: #666666;
-            }
-            .signature_subline{
-                line-height: 0.75;
-                font-size: 12pt;
-                color:#999999;
-            }
-            .signature_name{
-                color: #666666;
-                font-size: 16pt;
                 font-family: times;
+                text-align: center;
+                color: #fcfcfc;
+                font-size: 46pt;
             }
         </style>
         <div>
-            <h1 class="title"><i>Certificado de Participación</i></h1>
             <p></p>
-            <p class="message">&nbsp;<br/><i>Este documento certifica a <b> $user->name </b> como participante oficial de evento 'REVOLUCIÓN' tu salud a otro nivel el día $date</i></p>
-            <p></p><p></p>
-            <table class="signatures">
-                <tbody>
-                    <tr>
-                    <td>
-                        <div class="signature">
-                        <h2 class="signature_name"><i>Alejandro Perez</i></h2>
-                        <p class="signature_line">______________</p>
-                        <p class="signature_subline" >Conferencista</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="signature">
-                        <h2 class="signature_name"><i>Jorge E. Bayter</i></h2>
-                        <p class="signature_line">______________</p>
-                        <p class="signature_subline" >Conferencista</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="signature">
-                        <h2 class="signature_name"><i>Daniela Ospina</i></h2>
-                        <p class="signature_line">______________</p>
-                        <p class="signature_subline" >Conferencista</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="signature">
-                        <h2 class="signature_name"><i>Endika Montiel</i></h2>
-                        <p class="signature_line">______________</p>
-                        <p class="signature_subline" >Conferencista</p>
-                        </div>
-                    </td>
-                    </tr>
-                </tbody>
-            </table>
+            <p class="message">&nbsp;<br/><b><i>$user->name</i></b></p>
         </div>
         EOF;
         $pdf->writeHTML($html, true, false, true, false, '');

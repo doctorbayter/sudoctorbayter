@@ -55,7 +55,7 @@
         }
 }
     </style>
-    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2">
+    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 hidden">
         <a href="{{route('event')}}"><img src="{{asset('img/billboards/revolucion_banner.jpg')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 

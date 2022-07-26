@@ -562,18 +562,18 @@ Route::get('x/query/reto', function(){
 
     // Plan y Fase del reto
 
-    $plan = Plan::create([
-        'name' => '5Mer el reto del ayuno',
-        'slug' => '5mer',
-        'price_id' => 14
-    ]);
+    // $plan = Plan::create([
+    //     'name' => '5Mer el reto del ayuno',
+    //     'slug' => '5mer',
+    //     'price_id' => 14
+    // ]);
 
-    $fase = Fase::create([
-        'name' => '5Mer',
-        'sub_name' => 'El reto del <span class="text-red-700">Ayuno</span>',
-        'descripcion' => '',
-        'slug' => '5Mer',
-    ]);
+    // $fase = Fase::create([
+    //     'name' => '5Mer',
+    //     'sub_name' => 'El reto del <span class="text-red-700">Ayuno</span>',
+    //     'descripcion' => '',
+    //     'slug' => '5Mer',
+    // ]);
 
 
     // Días Reto

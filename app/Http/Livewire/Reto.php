@@ -36,8 +36,8 @@ class Reto extends Component
                 $this->list_id = 18;
                 break;
             case '5mer':
-                $this->plan = Plan::find(19);
-                $this->list_id = 18;
+                $this->plan = Plan::find(36);
+                $this->list_id = 34;
                 break;
             default:
                 $this->list_id = null;
@@ -89,8 +89,8 @@ class Reto extends Component
             break;
             case '5mer':
                 return $this->data = [
-                    'title' => 'Empareja2',
-                    'subtitle'=> 'Justos es más fácil',
+                    'title' => '5MER',
+                    'subtitle'=> 'El reto del ayuno',
                     'type' => 'Reto Online',
                     'online' => true,
                     'billdoard' => null,

@@ -176,6 +176,7 @@ class PaymentController extends Controller
         $subscribed_plan_8          = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
         $subscribed_plan_9          = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
         $subscribed_plan_10         = Subscription::where('user_id', $user->id)->where('plan_id', 10)->first();
+        $subscribed_5mer            = Subscription::where('user_id', $user->id)->where('plan_id', 36)->first();
         $fases_premium              = Fase::whereIn('id', array(1, 2, 3, 4))->get();
         $fase_one                   = Fase::find(1);
         $fase_two                   = Fase::find(2);
@@ -187,6 +188,7 @@ class PaymentController extends Controller
         $fase_desafio               = Fase::find(9);
         $fase_empareja2             = Fase::find(10);
         $total                      = Plan::find(23);
+        $fase_5mer                  = Fase::find(10);
 
         if(!$is_already_subscribed){
             switch ($plan->id) {
@@ -481,6 +483,13 @@ class PaymentController extends Controller
                 case 35:
                     $this->addSuscription($user->id, $total->id);
                 break;
+                case 36:
+                    $this->addSuscription($user->id, $plan->id);
+
+                    if(!$fase_5mer->clients->contains($user->id)){
+                        $fase_5mer->clients()->attach($user->id);
+                    }
+                break;
             }
         }
     }
@@ -652,6 +661,10 @@ class PaymentController extends Controller
             break;
             case 30:
                 $mail = new ApprovedPurchaseEvent($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            break;
+            case 36:
+                $mail = new ApprovedPurchaseReto($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             default:

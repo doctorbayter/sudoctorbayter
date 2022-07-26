@@ -119,9 +119,9 @@ Route::get('/regalo', function () {
 
 })->name('regalo.navidad');
 
-Route::get('/reto', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'empareja2']);
+Route::get('/reto5', function () {
+    //return view('no-disponible');
+    return redirect()->route('reto.register', ['reto'=>'5mer']);
 })->name('reto.2022');
 
 Route::get('/selecto', function () {
@@ -562,18 +562,18 @@ Route::get('x/query/reto', function(){
 
     // Plan y Fase del reto
 
-    // $plan = Plan::create([
-    //     'name' => 'Reto Empareja2',
-    //     'slug' => 'empareja2',
-    //     'price_id' => 14
-    // ]);
+    $plan = Plan::create([
+        'name' => '5Mer el reto del ayuno',
+        'slug' => '5mer',
+        'price_id' => 14
+    ]);
 
-    // $fase = Fase::create([
-    //     'name' => 'Empareja2',
-    //     'sub_name' => 'Justos es<span class="text-red-700">más</span> fácil',
-    //     'descripcion' => '',
-    //     'slug' => 'empareja2',
-    // ]);
+    $fase = Fase::create([
+        'name' => '5Mer',
+        'sub_name' => 'El reto del <span class="text-red-700">Ayuno</span>',
+        'descripcion' => '',
+        'slug' => '5Mer',
+    ]);
 
 
     // Días Reto

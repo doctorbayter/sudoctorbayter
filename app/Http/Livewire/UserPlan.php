@@ -16,12 +16,11 @@ class UserPlan extends Component
 
     public function mount(){
         $this->user_fases = auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id');
-        $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 9, 11])->sortBy('id');
+        $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 9, 10, 11])->sortBy('id');
         $this->user_adicionales = auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id');
         $this->thf_plan = Plan::find(23);
 
         $this->is_premium = auth()->user()->fases->whereIn('id', [2]);
-
 
     }
 
@@ -41,8 +40,6 @@ class UserPlan extends Component
             $this->user_plan = null;
         }
 
-
-
         if($whatsapp){
             if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp->expires_at))->gt(\Carbon\Carbon::now())){
                 $this->subscribed_whatsapp = true;
@@ -61,7 +58,7 @@ class UserPlan extends Component
         }
 
 
-        $reto_actual = Fase::find(10);
+        $reto_actual = Fase::find(13);
         $this->subscribed_reto_actual = $reto_actual->clients->contains(auth()->user()->id);
 
         $planUpdate = Plan::find(3);
@@ -73,9 +70,6 @@ class UserPlan extends Component
 
         }
 
-
-
     }
-
 
 }

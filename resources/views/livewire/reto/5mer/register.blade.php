@@ -36,7 +36,7 @@
                 <ul class="text-sm md:text-base">
                     <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
-                        <span class="">Todas las recetas: desayuno, almuerzo, cena de tu día a día, opciones de snacks, bebidas y salsitas; lista de alimentos y los mejores secretos para hacer un KETO AYUNO PERFECTO.</span>
+                        <span class="">Todas las recetas: desayuno, almuerzo, cena de tu día a día; lista de alimentos y los mejores secretos para hacer un KETO AYUNO PERFECTO.</span>
                     </li>
                      <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>

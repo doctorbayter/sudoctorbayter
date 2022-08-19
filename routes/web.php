@@ -640,61 +640,61 @@ Route::get('x/query/reto', function(){
     // Recetas
 
     $recipe = Recipe::create([
-        'name' => '1 huevo grande cocido',
-        'slug' => '1-huevo-grande-cocido',
+        'name' => '2 huevos cocidos',
+        'slug' => '2-huevos-cocidos',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 10,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/5mer-dia-2-receta-1.jpg',
+        'url' => 'recipes/5mer-dia-3-receta-1.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (332, 140, $recipe->id, '4', CURRENT_TIMESTAMP, NULL)");
+    (335, 141, $recipe->id, '4', CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'Pezsecillo',
-        'slug' => 'pezsecillo',
+        'name' => 'Costillon',
+        'slug' => 'costillon',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 30,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/5mer-dia-2-receta-2.jpg',
+        'url' => 'recipes/5mer-dia-3-receta-2.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
         $video = Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/741002295?h=f8dcea6464" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'iframe' => '<iframe src="https://player.vimeo.com/video/741008546?h=5ec2289487" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => $recipe->id,
         'videoable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (333, 140, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (336, 141, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
     $recipe = Recipe::create([
-        'name' => 'Huevo caldoso',
-        'slug' => 'huevito-caldoso',
+        'name' => 'Toston de espinaca',
+        'slug' => 'toston-de-espinaca',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 20,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/5mer-dia-2-receta-3.jpg',
+        'url' => 'recipes/5mer-dia-3-receta-3.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (334, 140, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    (337, 141, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

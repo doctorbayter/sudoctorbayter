@@ -776,6 +776,23 @@ Route::get('x/clients/fase/4/{skip?}', function($skip = 0){
     }
 });
 
+Route::get('x/clients/fase/5mer/{skip?}', function($skip = 0){
+
+    $fase = Fase::find(13);
+
+    $plans = Subscription::whereIn('plan_id', [36])
+    ->skip($skip)->take(100)->get();
+
+    foreach($plans as $plan){
+
+        if(!$fase->clients->contains($plan->user->id)){
+            $fase->clients()->attach($plan->user->id);
+            echo "Do it <br/>";
+        }
+    }
+});
+
+
 
 
 // Lideres Acutalizado Enero 2022

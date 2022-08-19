@@ -640,61 +640,61 @@ Route::get('x/query/reto', function(){
     // Recetas
 
     $recipe = Recipe::create([
-        'name' => 'Sencillamente tradicional',
-        'slug' => 'sencillamente-tradicional',
+        'name' => '1 huevo grande cocido',
+        'slug' => '1-huevo-grande-cocido',
         'indice'=> 1,
         'carbs' => 0,
-        'time' => 15,
+        'time' => 10,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/5mer-dia-1-receta-1.jpg',
+        'url' => 'recipes/5mer-dia-2-receta-1.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (329, 139, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+    (332, 140, $recipe->id, '4', CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'Chimichurrasco',
-        'slug' => 'chimichurrasco',
+        'name' => 'Pezsecillo',
+        'slug' => 'pezsecillo',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 30,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/5mer-dia-1-receta-2.jpg',
+        'url' => 'recipes/5mer-dia-2-receta-2.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
         $video = Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/740999941?h=48bc4ff11c" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'iframe' => '<iframe src="https://player.vimeo.com/video/741002295?h=f8dcea6464" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => $recipe->id,
         'videoable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (330, 139, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (333, 140, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
     $recipe = Recipe::create([
-        'name' => 'Empana rellenita',
-        'slug' => 'empana-rellenita',
+        'name' => 'Huevo caldoso',
+        'slug' => 'huevito-caldoso',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 20,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/5mer-dia-1-receta-3.jpg',
+        'url' => 'recipes/5mer-dia-2-receta-3.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (331, 139, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    (334, 140, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

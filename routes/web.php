@@ -74,6 +74,10 @@ Route::get('libro/', function(){
     return redirect()->away("https://www.amazon.com/-/es/dp/B09V1PD9VC/ref=sr_1_1?crid=2KFPRGHJW9WD&keywords=catastrofes+en+cirugia+plastica&qid=1646685263&s=digital-text&sprefix=%2Cdigital-text%2C161&sr=1-1");
 });
 
+Route::get('miami/', function(){
+    return redirect()->away("https://www.eventbrite.com/e/mas-alla-de-la-victoria-con-doctor-bayter-junto-drpedrito-tickets-378889818647");
+});
+
 Route::get('pareja/', function(){
     return redirect()->away("https://biz.payulatam.com/L0bdc050469E638");
 });

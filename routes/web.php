@@ -352,7 +352,7 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
 
     //REVOLUCION GENERAL
     $plans = Subscription::whereIn('plan_id', [36])
-                            ->skip($skip)->take(25)->get();
+                            ->skip($skip)->take(100)->get();
     $list_id = 34;
 
 

@@ -342,10 +342,19 @@ Route::get('x/clients/leads/retos/{skip?}', function($skip = 0){
     $list_id = 30;
     */
 
+    /*
     //REVOLUCION GENERAL
     $plans = Subscription::whereIn('plan_id', [20,26,28,30])
                             ->skip($skip)->take(25)->get();
     $list_id = 29;
+    */
+
+
+    //REVOLUCION GENERAL
+    $plans = Subscription::whereIn('plan_id', [36])
+                            ->skip($skip)->take(25)->get();
+    $list_id = 34;
+
 
     foreach($plans as $plan){
 
@@ -461,6 +470,9 @@ Route::get('x/clients/{plan}', function ($plan) {
             break;
         case 'general':
             $subscriptions = Subscription::whereIn('plan_id', [20,26,28,30])->get();
+            break;
+        case '5mer':
+            $subscriptions = Subscription::whereIn('plan_id', [36])->get();
             break;
 
     }
@@ -639,62 +651,62 @@ Route::get('x/query/reto', function(){
 
     // Recetas
 
-    $recipe = Recipe::create([
-        'name' => 'Rehuevo caldoso',
-        'slug' => 'rehuevo-caldoso',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 10,
-        'type' => 1,
-        ]);
-        $image = Image::create([
-        'url' => 'recipes/5mer-dia-5-receta-1.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'Rehuevo caldoso',
+    //     'slug' => 'rehuevo-caldoso',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 10,
+    //     'type' => 1,
+    //     ]);
+    //     $image = Image::create([
+    //     'url' => 'recipes/5mer-dia-5-receta-1.jpg',
+    //     'imageable_id' => $recipe->id,
+    //     'imageable_type' => 'App\Models\Recipe',
+    //     ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (341, 143, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (341, 143, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    $recipe = Recipe::create([
-        'name' => 'Tazón especial',
-        'slug' => 'tazon-especial',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 30,
-        'type' => 1,
-        ]);
-        $image = Image::create([
-        'url' => 'recipes/5mer-dia-5-receta-2.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
-        $video = Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/741115851?h=9834d371c7" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-        'videoable_id' => $recipe->id,
-        'videoable_type' => 'App\Models\Recipe',
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'Tazón especial',
+    //     'slug' => 'tazon-especial',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 30,
+    //     'type' => 1,
+    //     ]);
+    //     $image = Image::create([
+    //     'url' => 'recipes/5mer-dia-5-receta-2.jpg',
+    //     'imageable_id' => $recipe->id,
+    //     'imageable_type' => 'App\Models\Recipe',
+    //     ]);
+    //     $video = Video::create([
+    //     'iframe' => '<iframe src="https://player.vimeo.com/video/741115851?h=9834d371c7" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+    //     'videoable_id' => $recipe->id,
+    //     'videoable_type' => 'App\Models\Recipe',
+    //     ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (342, 143, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (342, 143, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
-    $recipe = Recipe::create([
-        'name' => 'Toston espinacapollo',
-        'slug' => 'toston-espinacapollo',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 20,
-        'type' => 1,
-        ]);
-        $image = Image::create([
-        'url' => 'recipes/5mer-dia-5-receta-3.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'Toston espinacapollo',
+    //     'slug' => 'toston-espinacapollo',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 20,
+    //     'type' => 1,
+    //     ]);
+    //     $image = Image::create([
+    //     'url' => 'recipes/5mer-dia-5-receta-3.jpg',
+    //     'imageable_id' => $recipe->id,
+    //     'imageable_type' => 'App\Models\Recipe',
+    //     ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (343, 143, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (343, 143, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

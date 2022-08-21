@@ -135,7 +135,7 @@
                                 </div>
 
                                 @if (!$subscribed_fase_week)
-                                <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg inline-block shadow-sm ">
+                                <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg __inline-block shadow-sm hidden">
                                     <div class=" flex items-center">
                                         <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
                                             <img src="{{asset('img/billboards/plan_week.jpg')}}" alt="" class="w-full object-cover">

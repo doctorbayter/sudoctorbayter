@@ -85,13 +85,13 @@
                                                 </b> A continuación encontrarás los datos de acceso a las reuniones grupales privadas de Zoom con tu doctor Bayter.</p>
                                                 <div class="flex-col md:flex-row justify-around my-8">
                                                     <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
-                                                        <div class="hidden">
+                                                        <div class="">
                                                             <h2>Repetición Primera Reunión <b>Reto 5Mer</b></h2>
                                                             <hr class="my-2 border-gray-700">
                                                             <p><b>La repetición estará disponible por tiempo limitado</b></p>
                                                             <a href="{{route('reto.replay', ['5mer', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
                                                         </div>
-                                                        <div class="">
+                                                        <div class="hidden">
                                                             <h2>Primera Reunión <b>Reto 5Mer</b></h2>
                                                             <hr class="my-2 border-gray-700">
                                                             <p><b>Fecha:</b> Lunes 22 ago 2022 1:00 p.m. Hora Colombia</p>

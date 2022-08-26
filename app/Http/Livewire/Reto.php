@@ -170,7 +170,7 @@ class Reto extends Component
                     'type' => 'video',
                     'online' => true,
                     'video-1' => '742122050?h=1db77369c6',
-                    'video-2' => '',
+                    'video-2' => '743582485?h=f12a6f8d00',
                     'video-title' => 'Video Intro del Reto',
                     'video-base' => '741120862?h=7eb0af9670',
                 ];

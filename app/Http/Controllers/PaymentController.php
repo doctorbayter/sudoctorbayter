@@ -314,7 +314,7 @@ class PaymentController extends Controller
                         $previous_plan_premium->delete();
                     }
                     $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 45);
+                    //$this->addWhatsApp($user->id, 45);
 
                     if(!$fase_one->clients->contains($user->id)){
                         $fase_one->clients()->attach($user->id);

@@ -54,7 +54,7 @@ class ProductPay extends Component
 
     public function render() {
 
-        if( $this->plan->id == 15 || $this->plan->id == 18 || $this->plan->id == 19 || $this->plan->id == 25 || $this->plan->id == 36){
+        if(  $this->plan->id == 18 || $this->plan->id == 19 || $this->plan->id == 25 || $this->plan->id == 36){
             return view('no-disponible-lw');
         }
             return view('livewire.product-pay');
@@ -193,34 +193,25 @@ class ProductPay extends Component
                 $user->charge( $this->plan->finalPrice * 100 , $paymentMethod);
             }
 
-
             $suscription = new Subscription();
             $suscription->user_id = $user->id;
             $suscription->plan_id = $this->plan->id;
 
             $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $this->plan->id)->first();
-            $previous_subscribed = Subscription::where('user_id', $user->id)
-                                                ->where('plan_id', 2)
-                                                ->orWhere('plan_id', 3)
-                                                ->orWhere('plan_id', 7)
-                                                ->orWhere('plan_id', 8)
-                                                ->orWhere('plan_id', 9)
-                                                ->first();
-            $whatsapp_subscribed = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(4, 11, 12))->first();
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
             $fase = Fase::find(13);
 
-            if($this->plan->id == 36){
+            if($this->plan->id == 15){
 
                 if(!$is_subscribed){
                     $suscription->save();
-                    // foreach($fases_premium as $fase){
-                    //     if(!$fase->clients->contains($user->id)){
-                    //         $fase->clients()->attach($user->id);
-                    //     }
-                    // }
-                    $fase->clients()->attach($user->id);
+                    foreach($fases_premium as $fase){
+                        if(!$fase->clients->contains($user->id)){
+                            $fase->clients()->attach($user->id);
+                        }
+                    }
+                    //$fase->clients()->attach($user->id);
                 }
 
                 switch ($this->plan->id) {

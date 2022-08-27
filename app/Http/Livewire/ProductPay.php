@@ -204,6 +204,9 @@ class ProductPay extends Component
 
             if($this->plan->id == 15){
 
+                $mail = new ApprovedPurchase($this->plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+
                 if(!$is_subscribed){
                     $suscription->save();
                     foreach($fases_premium as $fase){
@@ -214,20 +217,20 @@ class ProductPay extends Component
                     //$fase->clients()->attach($user->id);
                 }
 
-                switch ($this->plan->id) {
-                    case 7:
-                        $mail = new ApprovedPurchaseNoChat($this->plan, $user);
-                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                    break;
-                    case 36:
-                        $mail = new ApprovedPurchaseReto($this->plan, $user);
-                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                    break;
-                    default:
-                        $mail = new ApprovedPurchase($this->plan, $user);
-                        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                    break;
-                }
+                // switch ($this->plan->id) {
+                //     case 7:
+                //         $mail = new ApprovedPurchaseNoChat($this->plan, $user);
+                //         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                //     break;
+                //     case 36:
+                //         $mail = new ApprovedPurchaseReto($this->plan, $user);
+                //         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                //     break;
+                //     default:
+                //         $mail = new ApprovedPurchase($this->plan, $user);
+                //         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                //     break;
+                // }
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
 

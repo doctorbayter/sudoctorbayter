@@ -565,10 +565,14 @@ Route::get('x/query', function(){
     //     'price_id' => 20
     // ]);
 
-    // $price = Price::create([
-    //     'name' => '42 US$',
-    //     'value' => 42
-    // ]);
+    $price = Price::create([
+        'name' => '1000 US$',
+        'value' => 1000
+    ]);
+
+    $plan = Plan::find(5);
+    $plan->price_id = $price->id;
+    $plan->save();
 
 
 });

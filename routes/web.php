@@ -213,7 +213,6 @@ Route::get('x/days/', function(){
 Route::get('x/day-recipe/{day}', function($day){
 
     $q = DB::select('SELECT * FROM day_recipe WHERE day_id = '. $day);
-    DB::table('day_recipe')->where('id', 203)->update(['recipe_id' => 1]);
     dd ($q);
 });
 

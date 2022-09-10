@@ -12,7 +12,7 @@ class UserFase extends Component
 {
     use AuthorizesRequests;
 
-    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan;
+    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan, $es_ayuno;
 
     public function mount(Fase $fase){
 
@@ -51,6 +51,11 @@ class UserFase extends Component
             $this->days = 7;
         }
 
+        if($this->fase->id == 3){
+            $this->es_ayuno = $this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal');
+        }else{
+            $this->es_ayuno = $this->day->recipes->where('type', '==', 1);
+        }
 
         $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->sortBy('plan_id')->first();
         $this->user_plan = $planUser->plan->id;

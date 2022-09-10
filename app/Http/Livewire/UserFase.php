@@ -16,6 +16,9 @@ class UserFase extends Component
 
     public function mount(Fase $fase){
 
+
+
+
         $this->fase = $fase;
         if(auth()->user()->subscription){
             $this->user_fases = auth()->user()->fases;

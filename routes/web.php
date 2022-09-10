@@ -209,6 +209,26 @@ Route::get('x/days/', function(){
     print_r($days);
 });
 
+
+Route::get('x/day-recipe/{day}', function($day){
+
+    $q = DB::select('SELECT * FROM day_recipe WHERE day_id = '. $day);
+    DB::table('day_recipe')->where('id', 203)->update(['recipe_id' => 1]);
+    dd ($q);
+});
+
+Route::get('x/day-recipe/change/{id}/{recipe}', function($id , $recipe){
+
+    DB::table('day_recipe')->where('id', $id)->update(['recipe_id' => $recipe]);
+    echo "do it";
+
+});
+
+
+
+
+
+
 Route::get('x/clients/reto', function () {
 
     $i = 1;
@@ -565,15 +585,14 @@ Route::get('x/query', function(){
     //     'price_id' => 20
     // ]);
 
-    $price = Price::create([
-        'name' => '1000 US$',
-        'value' => 1000
-    ]);
+    // $price = Price::create([
+    //     'name' => '1000 US$',
+    //     'value' => 1000
+    // ]);
 
-    $plan = Plan::find(5);
-    $plan->price_id = $price->id;
-    $plan->save();
-
+    // $plan = Plan::find(5);
+    // $plan->price_id = $price->id;
+    // $plan->save();
 
 });
 

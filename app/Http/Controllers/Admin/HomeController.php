@@ -247,167 +247,44 @@ class HomeController extends Controller
         }
     }
 
-    public function addWhatsApp($user_id, $days) {
-
-        $whatsapp_subscribed = Subscription::where('user_id', $user_id)->whereIn('plan_id', array(4, 11, 12))->first();
-
-        if($whatsapp_subscribed){
-            if(\Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->gt(\Carbon\Carbon::now())){
-                $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::createFromTimeStamp(strtotime($whatsapp_subscribed->expires_at))->addDays($days)]);
-            }else{
-                $whatsapp_subscribed->update(['expires_at'=> \Carbon\Carbon::now()->addDays($days)]);
-            }
-            $whatsapp_subscribed->save();
-        }else{
-            $suscription_whatsApp           = new Subscription();
-            $suscription_whatsApp->user_id  = $user_id;
-            $suscription_whatsApp->plan_id  = 4;
-            $suscription_whatsApp->expires_at = \Carbon\Carbon::now()->addDays($days);
-            $suscription_whatsApp->save();
-        }
-
-    }
 
     public function setUserData(User $user, Plan $plan){
 
-        $is_already_subscribed      = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-        $previous_plan_premium      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(2, 7, 8))->first();
-        $previous_plan_selecto      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10))->first();
-        $previous_plan_week         = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10))->first();
-        $subscribed_plan_1          = Subscription::where('user_id', $user->id)->where('plan_id', 1)->first();
-        $subscribed_plan_2          = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
-        $subscribed_plan_7          = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-        $subscribed_plan_8          = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
-        $subscribed_plan_9          = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
-        $subscribed_plan_10         = Subscription::where('user_id', $user->id)->where('plan_id', 10)->first();
-        $fases_premium              = Fase::whereIn('id', array(1, 2, 3, 4))->get();
-        $fase_one                   = Fase::find(1);
-        $fase_week                  = Fase::find(5);
+        $fases_premium  = Fase::whereIn('id', [1, 2, 3, 4])->get();
+        $fase_one       = Fase::where('id', [1])->get();
 
-        if(!$is_already_subscribed){
-            switch ($plan->id) {
-                case 1:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
+        $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
 
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    break;
-                case 2:
-                    if($subscribed_plan_7){
-                        $subscribed_plan_7->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    break;
-                case 3:
-                    if($subscribed_plan_2){
-                        $subscribed_plan_2->delete();
-                    }else if($subscribed_plan_8){
-                        $subscribed_plan_8->delete();
-                    }
-                    $this->addSuscription($user->id, 1);
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    break;
-                case 4:
-                    $this->addWhatsApp($user->id, 30);
-                    break;
-                case 7:
-                    if(!$previous_plan_week){
-                        $this->addSuscription($user->id, $plan->id);
-                    }
-                    if(!$fase_week->clients->contains($user->id)){
-                        $fase_week->clients()->attach($user->id);
-                    }
-                    break;
-                case 8:
-                    if($subscribed_plan_7){
-                        $subscribed_plan_7->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    break;
-                case 9:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
-
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    break;
-                case 10:
-                    if($previous_plan_selecto){
-                        $previous_plan_selecto->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 60);
-
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    break;
-                case 11:
-                    $this->addWhatsApp($user->id, 90);
-                    break;
-                case 12:
-                    $this->addWhatsApp($user->id, 180);
-                    break;
-                case 15:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
-
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    break;
-                case 25:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 30);
-
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    break;
-            }
+        if($already_subscribed){
+            return "El usuario ya está inscrito al plan";
         }
 
-
-
+        switch ($plan->id) {
+            case ('1'):
+                $this->addSuscription($user->id, $plan->id);
+                $this->setFases($user->id, $fases_premium);
+                break;
+            case ('2'):
+                $this->addSuscription($user->id, $plan->id);
+                $this->setFases($user->id, $fase_one);
+                break;
+            case ('3'):
+                $this->addSuscription($user->id, 1);
+                $this->setFases($user->id, $fases_premium);
+                break;
+            case ('8'):
+                $this->addSuscription($user->id, $plan->id);
+                $this->setFases($user->id, $fase_one);
+                break;
+            case ('9'):
+                $this->addSuscription($user->id, $plan->id);
+                $this->setFases($user->id, $fases_premium);
+                break;
+            case('15'):
+                $this->addSuscription($user->id, $plan->id);
+                $this->setFases($user->id, $fases_premium);
+                break;
+        }
     }
 
     public function addSuscription($user_id, $plan_id) {
@@ -415,5 +292,13 @@ class HomeController extends Controller
         $suscription_plan->user_id  = $user_id;
         $suscription_plan->plan_id  = $plan_id;
         $suscription_plan->save();
+    }
+
+    public function setFases($user_id, $fases) {
+        foreach($fases as $fase){
+            if(!$fase->clients->contains($user_id)){
+                $fase->clients()->attach($user_id);
+            }
+        }
     }
 }

@@ -225,7 +225,9 @@ class PaymentController extends Controller
 
     public function setFases($user_id, $fases) {
         foreach($fases as $fase){
-            $fase->clients()->attach($user_id);
+            if($fase->clients()->where('users.id', $user_id)->doesntExist()){
+                $fase->clients()->attach($user_id);
+            }
         }
     }
 

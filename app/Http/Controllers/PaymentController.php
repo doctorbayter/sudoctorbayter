@@ -164,334 +164,30 @@ class PaymentController extends Controller
 
     public function setUserData(User $user, Plan $plan){
 
-        $is_already_subscribed      = Subscription::where('user_id', $user->id)->where('plan_id', $plan->id)->first();
-        $previous_plan_premium      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(2, 7, 8))->first();
-        $previous_plan_selecto      = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16, 17))->first();
-        $previous_plan_week         = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 8, 9, 10, 15, 16))->first();
-        $previous_desafio           = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16, 17))->first();
-        $previous_empareja2         = Subscription::where('user_id', $user->id)->whereIn('plan_id', array(1, 2, 7, 8, 9, 10, 15, 16, 17, 18))->first();
-        $subscribed_plan_1          = Subscription::where('user_id', $user->id)->where('plan_id', 1)->first();
-        $subscribed_plan_2          = Subscription::where('user_id', $user->id)->where('plan_id', 2)->first();
-        $subscribed_plan_7          = Subscription::where('user_id', $user->id)->where('plan_id', 7)->first();
-        $subscribed_plan_8          = Subscription::where('user_id', $user->id)->where('plan_id', 8)->first();
-        $subscribed_plan_9          = Subscription::where('user_id', $user->id)->where('plan_id', 9)->first();
-        $subscribed_plan_10         = Subscription::where('user_id', $user->id)->where('plan_id', 10)->first();
-        $subscribed_5mer            = Subscription::where('user_id', $user->id)->where('plan_id', 36)->first();
-        $fases_premium              = Fase::whereIn('id', array(1, 2, 3, 4))->get();
-        $fase_one                   = Fase::find(1);
-        $fase_two                   = Fase::find(2);
-        $fase_three                 = Fase::find(3);
-        $fase_four                  = Fase::find(4);
-        $fase_week                  = Fase::find(5);
-        $five_recipes               = Fase::find(7);
-        $keto_navidad               = Fase::find(8);
-        $fase_desafio               = Fase::find(9);
-        $fase_empareja2             = Fase::find(10);
-        $total                      = Plan::find(23);
-        $fase_5mer                  = Fase::find(10);
+        $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
+        $fase_one      = Fase::where('id', [1])->get();
+        $week_recipes  = Fase::where('id', [5])->get();
+        $five_recipes  = Fase::find(7);
 
-        if(!$is_already_subscribed){
-            switch ($plan->id) {
-                case 1:
-                    $this->addSuscription($user->id, $plan->id);
+        $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
 
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    if(!$fase_two->clients->contains($user->id)){
-                        $fase_two->clients()->attach($user->id);
-                    }
-                    if(!$fase_three->clients->contains($user->id)){
-                        $fase_three->clients()->attach($user->id);
-                    }
-                    if(!$fase_four->clients->contains($user->id)){
-                        $fase_four->clients()->attach($user->id);
-                    }
-
-
-                    /*
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }*/
-
-                    break;
-                case 2:
-                    if($subscribed_plan_7){
-                        $subscribed_plan_7->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    break;
-                case 3:
-                    if($subscribed_plan_2){
-                        $subscribed_plan_2->delete();
-                    }else if($subscribed_plan_8){
-                        $subscribed_plan_8->delete();
-                    }
-                    $this->addSuscription($user->id, 1);
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    break;
-                case 4:
-
-                    break;
-                case 7:
-                    if(!$previous_plan_week){
-                        $this->addSuscription($user->id, $plan->id);
-                    }
-                    if(!$fase_week->clients->contains($user->id)){
-                        $fase_week->clients()->attach($user->id);
-                    }
-                    break;
-                case 8:
-                    if($subscribed_plan_7){
-                        $subscribed_plan_7->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    break;
-                case 9:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-
-
-                    foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    break;
-                case 10:
-                    if($previous_plan_selecto){
-                        $previous_plan_selecto->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-                    $this->addWhatsApp($user->id, 60);
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    if(!$fase_two->clients->contains($user->id)){
-                        $fase_two->clients()->attach($user->id);
-                    }
-                    if(!$fase_three->clients->contains($user->id)){
-                        $fase_three->clients()->attach($user->id);
-                    }
-                    if(!$fase_four->clients->contains($user->id)){
-                        $fase_four->clients()->attach($user->id);
-                    }
-
-
-                    break;
-                case 11:
-                    $this->addWhatsApp($user->id, 90);
-                    break;
-                case 12:
-                    $this->addWhatsApp($user->id, 180);
-                    break;
-                case 13:
-                    if(!$five_recipes->clients->contains($user->id)){
-                        $five_recipes->clients()->attach($user->id);
-                    }
-                    break;
-                case 15:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-                    //$this->addWhatsApp($user->id, 45);
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    if(!$fase_two->clients->contains($user->id)){
-                        $fase_two->clients()->attach($user->id);
-                    }
-                    if(!$fase_three->clients->contains($user->id)){
-                        $fase_three->clients()->attach($user->id);
-                    }
-                    if(!$fase_four->clients->contains($user->id)){
-                        $fase_four->clients()->attach($user->id);
-                    }
-
-                    // if(!$five_recipes->clients->contains($user->id)){
-                    //     $five_recipes->clients()->attach($user->id);
-                    // }
-
-                    // if(!$fase_week->clients->contains($user->id)){
-                    //     $fase_week->clients()->attach($user->id);
-                    // }
-
-                    break;
-                case 16:
-                    if($subscribed_plan_7){
-                        $subscribed_plan_7->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    if(!$five_recipes->clients->contains($user->id)){
-                        $five_recipes->clients()->attach($user->id);
-                    }
-
-                    if(!$fase_week->clients->contains($user->id)){
-                        $fase_week->clients()->attach($user->id);
-                    }
-                    break;
-                case 18:
-                    if(!$previous_desafio){
-                        $this->addSuscription($user->id, $plan->id);
-                    }
-                    if(!$fase_desafio->clients->contains($user->id)){
-                        $fase_desafio->clients()->attach($user->id);
-                    }
-                    break;
-                case 19:
-                    if(!$previous_empareja2){
-                        $this->addSuscription($user->id, $plan->id);
-                    }
-                    if(!$fase_empareja2->clients->contains($user->id)){
-                        $fase_empareja2->clients()->attach($user->id);
-                    }
-                    break;
-                case 20:
-                        $this->addSuscription($user->id, $plan->id);
-                    break;
-                case 21:
-                        $this->addSuscription($user->id, $plan->id);
-                    break;
-                case 22:
-                        $this->addSuscription($user->id, $plan->id);
-                    break;
-                case 23:
-                        $this->addSuscription($user->id, $plan->id);
-                    break;
-                case 25:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    if(!$fase_two->clients->contains($user->id)){
-                        $fase_two->clients()->attach($user->id);
-                    }
-                    if(!$fase_three->clients->contains($user->id)){
-                        $fase_three->clients()->attach($user->id);
-                    }
-                    if(!$fase_four->clients->contains($user->id)){
-                        $fase_four->clients()->attach($user->id);
-                    }
-                    break;
-                case 26:
-                        $this->addSuscription($user->id, $plan->id);
-                    break;
-                case 27:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    if(!$fase_two->clients->contains($user->id)){
-                        $fase_two->clients()->attach($user->id);
-                    }
-                    if(!$fase_three->clients->contains($user->id)){
-                        $fase_three->clients()->attach($user->id);
-                    }
-                    if(!$fase_four->clients->contains($user->id)){
-                        $fase_four->clients()->attach($user->id);
-                    }
-                    break;
-                case 28:
-                    $this->addSuscription($user->id, $plan->id);
-                break;
-                case 29:
-                    $this->addSuscription($user->id, $plan->id);
-                break;
-                case 30:
-                    $this->addSuscription($user->id, $plan->id);
-                break;
-                case 31:
-                    if($previous_plan_premium){
-                        $previous_plan_premium->delete();
-                    }
-                    $this->addSuscription($user->id, $plan->id);
-
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    if(!$fase_two->clients->contains($user->id)){
-                        $fase_two->clients()->attach($user->id);
-                    }
-                    if(!$fase_three->clients->contains($user->id)){
-                        $fase_three->clients()->attach($user->id);
-                    }
-                    if(!$fase_four->clients->contains($user->id)){
-                        $fase_four->clients()->attach($user->id);
-                    }
-                break;
-                case 32:
-
-                    $this->addSuscription($user->id, $total->id);
-                    $this->addSuscription($user->id, $plan->id);
-
-                    if(!$fase_one->clients->contains($user->id)){
-                        $fase_one->clients()->attach($user->id);
-                    }
-                    if(!$fase_two->clients->contains($user->id)){
-                        $fase_two->clients()->attach($user->id);
-                    }
-                    if(!$fase_three->clients->contains($user->id)){
-                        $fase_three->clients()->attach($user->id);
-                    }
-                    if(!$fase_four->clients->contains($user->id)){
-                        $fase_four->clients()->attach($user->id);
-                    }
-                break;
-                case 33:
-                    $this->addSuscription($user->id, $total->id);
-                break;
-                case 34:
-                    $this->addSuscription($user->id, $total->id);
-                break;
-                case 35:
-                    $this->addSuscription($user->id, $total->id);
-                break;
-                case 36:
-                    $this->addSuscription($user->id, $plan->id);
-
-                    if(!$fase_5mer->clients->contains($user->id)){
-                        $fase_5mer->clients()->attach($user->id);
-                    }
-                break;
-            }
+        if($already_subscribed){
+            return;
         }
+
+        $this->addSuscription($user->id, $plan->id);
+
+        if($plan->id = 1 || $plan->id = 3 || $plan->id = 9 || $plan->id = 10 || $plan->id = 15 || $plan->id = 16 || $plan->id = 25 || $plan->id = 27 || $plan->id = 31 ) {
+            $this->setFases($user->id, $fases_premium);
+        }elseif($plan->id = 2 || $plan->id = 8) {
+            $this->setFases($user->id, $fase_one);
+        }elseif ($plan->id = 7) {
+            $this->setFases($user->id, $week_recipes);
+        }elseif ($plan->id = 13) {
+            $this->setFases($user->id, $five_recipes);
+        }
+
+        return true;
     }
 
     public function getUserData($user_data){
@@ -525,6 +221,14 @@ class PaymentController extends Controller
         $suscription_plan->user_id  = $user_id;
         $suscription_plan->plan_id  = $plan_id;
         $suscription_plan->save();
+    }
+
+    public function setFases($user_id, $fases) {
+        foreach($fases as $fase){
+            if(!$fase->clients->contains($user_id)){
+                $fase->clients()->attach($user_id);
+            }
+        }
     }
 
     public function addWhatsApp($user_id, $days) {
@@ -627,40 +331,12 @@ class PaymentController extends Controller
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
-            case 19:
-                $mail = new ApprovedPurchaseReto($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            break;
             case 20:
-                $mail = new ApprovedPurchaseEvent($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            break;
-            case 21:
-                $mail = new ApprovedPurchaseEvent($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            break;
-            case 22:
                 $mail = new ApprovedPurchaseEvent($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 23:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            break;
-            case 26:
-                $mail = new ApprovedPurchaseEvent($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            break;
-            case 28:
-                $mail = new ApprovedPurchaseEvent($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            break;
-            case 29:
-                $mail = new ApprovedPurchaseEvent($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-            break;
-            case 30:
-                $mail = new ApprovedPurchaseEvent($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 36:

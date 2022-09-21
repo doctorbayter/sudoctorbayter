@@ -250,8 +250,8 @@ class HomeController extends Controller
 
     public function setUserData(User $user, Plan $plan){
 
-        $fases_premium  = Fase::whereIn('id', [1, 2, 3, 4])->get();
-        $fase_one       = Fase::where('id', [1])->get();
+        $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
+        $fase_one      = Fase::where('id', [1])->get();
 
         $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
 
@@ -259,32 +259,15 @@ class HomeController extends Controller
             return "El usuario ya está inscrito al plan";
         }
 
-        switch ($plan->id) {
-            case ('1'):
-                $this->addSuscription($user->id, $plan->id);
-                $this->setFases($user->id, $fases_premium);
-                break;
-            case ('2'):
-                $this->addSuscription($user->id, $plan->id);
-                $this->setFases($user->id, $fase_one);
-                break;
-            case ('3'):
-                $this->addSuscription($user->id, 1);
-                $this->setFases($user->id, $fases_premium);
-                break;
-            case ('8'):
-                $this->addSuscription($user->id, $plan->id);
-                $this->setFases($user->id, $fase_one);
-                break;
-            case ('9'):
-                $this->addSuscription($user->id, $plan->id);
-                $this->setFases($user->id, $fases_premium);
-                break;
-            case('15'):
-                $this->addSuscription($user->id, $plan->id);
-                $this->setFases($user->id, $fases_premium);
-                break;
+        $this->addSuscription($user->id, $plan->id);
+
+        if($plan->id = 1 || $plan->id = 3 || $plan->id = 9 || $plan->id = 15 ) {
+            $this->setFases($user->id, $fases_premium);
+        }elseif($plan->id = 2 || $plan->id = 8) {
+            $this->setFases($user->id, $fase_one);
         }
+
+        return true;
     }
 
     public function addSuscription($user_id, $plan_id) {

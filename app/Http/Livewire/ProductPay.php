@@ -210,7 +210,7 @@ class ProductPay extends Component
                 if(!$is_subscribed){
                     $suscription->save();
                     foreach($fases_premium as $fase){
-                        if(!$fase->clients->contains($user->id)){
+                        if($fase->clients()->where('users.id', $user->id)->doesntExist()){
                             $fase->clients()->attach($user->id);
                         }
                     }

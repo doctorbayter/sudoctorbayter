@@ -275,7 +275,7 @@
                         <img src="{{asset('img/resources/metodo_dkp_ue66x.jpg')}}" alt="" class="w-full object-cover">
                     </figure>
                     <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
-                        <p class="text-gray-900 text-justify">Y lo mejor de todo un chat por 21 días donde encontrarás personas que tienen situaciones similares, los mismos problemas, temores y miedos. Pero también tiene tus mismos objetivos que no es mas que dejar la adicción al azúcar. En contratas personas que como tu y como yo algún día decidieron cambiar sus vidas y hoy somos grandes sobrevivientes y junto a mi liderando el chat resolveremos todas tus dudas de alimentación para que no cometas ni un error.</p>
+                        <p class="text-gray-900 text-justify">Y lo mejor de todo un chat grupal de seguimiento por 21 días donde encontrarás personas que tienen situaciones similares, los mismos problemas, temores y miedos. Pero también tiene tus mismos objetivos que no es mas que dejar la adicción al azúcar. En contratas personas que como tu y como yo algún día decidieron cambiar sus vidas y hoy somos grandes sobrevivientes administrado por mi equipo de alimentación y liderando por tu doctor Bayter. donde resolveran todas tus dudas de alimentación para que no cometas ni un error.</p>
                     </div>
                 </div>
             </div>

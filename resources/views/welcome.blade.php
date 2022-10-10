@@ -75,8 +75,8 @@
         </div>
     </section>
 
-    <article class="text-center mx-auto max-w-5xl px-2 mb-24 hidden">
-        <a href="https://forms.gle/8Xpd5fxbkobfRgRZA" target="_blank"><img src="{{asset('img/billboards/lanzamiento_libro.png')}}" alt="" class="w-full mx-auto overflow-hidden "></a>
+    <article class="text-center mx-auto max-w-5xl px-2 mb-24">
+        <a href="https://www.amazon.com/gp/product/B0BHBZNMGP/ref=as_li_tl?ie=UTF8&creativeASIN=B0BHBZNMGP&linkCode=as2" target="_blank"><img src="{{asset('img/billboards/libro_digital.png')}}" alt="" class="w-full mx-auto overflow-hidden"></a>
     </article>
 
     <section class="bg-white">

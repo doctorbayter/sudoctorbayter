@@ -230,10 +230,6 @@ Route::get('x/day-recipe/meal/{id}/{meal}', function($id , $meal){
 });
 
 
-
-
-
-
 Route::get('x/clients/reto', function () {
 
     $i = 1;
@@ -583,21 +579,66 @@ Route::get('x/query', function(){
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
 
-
     // $plan = Plan::create([
     //     'name' => 'Plan + Total Oferta Revolución',
     //     'slug' => 'plan-total-oferta-revolucion',
     //     'price_id' => 20
     // ]);
 
-    // $price = Price::create([
-    //     'name' => '1000 US$',
-    //     'value' => 1000
-    // ]);
+    $price = Price::create([
+        'name' => '97 US$',
+        'value' => 97
+    ]);
 
-    // $plan = Plan::find(5);
-    // $plan->price_id = $price->id;
-    // $plan->save();
+    $plan = Plan::find(31);
+    $plan->price_id = $price->id;
+    $plan->save();
+
+
+    $price = Price::create([
+        'name' => '167 US$',
+        'value' => 167
+    ]);
+
+    $plan = Plan::create([
+        'name' => 'Método DKP + Curso Keto Deportistas',
+        'slug' => 'plan-deportista-oferta',
+        'price_id' => $price->id
+    ]);
+
+    $price = Price::create([
+        'name' => '197 US$',
+        'value' => 197
+    ]);
+
+    $plan = Plan::create([
+        'name' => 'Método DKP + Cursos Keto',
+        'slug' => 'plan-cursos-oferta',
+        'price_id' => $price->id
+    ]);
+
+    $plan = Plan::create([
+        'name' => 'Método DKP + Chat 140 + Bono',
+        'slug' => 'plan-chat-140-oferta',
+        'price_id' => $price->id
+    ]);
+
+    $price = Price::create([
+        'name' => '127 US$',
+        'value' => 127
+    ]);
+
+    $plan = Plan::create([
+        'name' => 'Método DKP + Total Healht',
+        'slug' => 'plan-total-oferta',
+        'price_id' => $price->id
+    ]);
+
+    $plan = Plan::create([
+        'name' => 'Paquete Cursos Keto',
+        'slug' => 'paquete-cursos-oferta',
+        'price_id' => 4
+    ]);
 
 });
 

@@ -595,32 +595,10 @@ Route::get('x/query', function(){
     // $plan->save();
 
 
-    $plan = Plan::find(42);
-    $plan->delete();
+    $plan = Plan::find(31);
+    $plan->price_id = 34;
+    $plan->save();
 
-    $plan = Plan::find(43);
-    $plan->delete();
-
-    $plan = Plan::find(44);
-    $plan->delete();
-
-    $plan = Plan::find(45);
-    $plan->delete();
-
-    $plan = Plan::find(46);
-    $plan->delete();
-
-    $price = Price::find(38);
-    $price->delete();
-
-    $price = Price::find(39);
-    $price->delete();
-
-    $price = Price::find(40);
-    $price->delete();
-
-    $price = Price::find(41);
-    $price->delete();
 
 });
 

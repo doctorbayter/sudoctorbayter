@@ -594,12 +594,6 @@ Route::get('x/query', function(){
     // $plan->price_id = $price->id;
     // $plan->save();
 
-
-    $plan = Plan::find(31);
-    $plan->price_id = 34;
-    $plan->save();
-
-
 });
 
 Route::get('x/query/reto', function(){

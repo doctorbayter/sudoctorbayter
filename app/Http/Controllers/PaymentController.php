@@ -177,7 +177,7 @@ class PaymentController extends Controller
 
         $this->addSuscription($user->id, $plan->id);
 
-        if($plan->id = 1 || $plan->id = 3 || $plan->id = 9 || $plan->id = 10 || $plan->id = 15 || $plan->id = 16 || $plan->id = 25 || $plan->id = 27 || $plan->id = 31 ) {
+        if($plan->id = 1 || $plan->id = 3 || $plan->id = 9 || $plan->id = 10 || $plan->id = 15 || $plan->id = 16 || $plan->id = 25 || $plan->id = 27 || $plan->id = 31 || $plan->id = 37 || $plan->id = 38 || $plan->id = 39 || $plan->id = 40 ) {
             $this->setFases($user->id, $fases_premium);
         }elseif($plan->id = 2 || $plan->id = 8) {
             $this->setFases($user->id, $fase_one);
@@ -341,6 +341,10 @@ class PaymentController extends Controller
             break;
             case 36:
                 $mail = new ApprovedPurchaseReto($plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            break;
+            case 41:
+                $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             default:

@@ -164,6 +164,8 @@ class PaymentController extends Controller
 
     public function setUserData(User $user, Plan $plan){
 
+
+        $plan_total    = Plan::find(23);
         $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
         $fase_one      = Fase::where('id', [1])->get();
         $week_recipes  = Fase::where('id', [5])->get();
@@ -177,8 +179,11 @@ class PaymentController extends Controller
 
         $this->addSuscription($user->id, $plan->id);
 
-        if($plan->id = 1 || $plan->id = 3 || $plan->id = 9 || $plan->id = 10 || $plan->id = 15 || $plan->id = 16 || $plan->id = 25 || $plan->id = 27 || $plan->id = 31 || $plan->id = 37 || $plan->id = 38 || $plan->id = 39 || $plan->id = 40 ) {
+        if($plan->id = 1 || $plan->id = 3 || $plan->id = 9 || $plan->id = 10 || $plan->id = 15 || $plan->id = 16 || $plan->id = 25 || $plan->id = 27 || $plan->id = 31 || $plan->id = 37 || $plan->id = 38 || $plan->id = 40 ) {
             $this->setFases($user->id, $fases_premium);
+        }elseif($plan->id = 39) {
+            $this->setFases($user->id, $fases_premium);
+            $this->addSuscription($user->id, $plan_total->id);
         }elseif($plan->id = 2 || $plan->id = 8) {
             $this->setFases($user->id, $fase_one);
         }elseif ($plan->id = 7) {

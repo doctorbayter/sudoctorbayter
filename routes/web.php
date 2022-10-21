@@ -575,7 +575,7 @@ Route::get('x/discounts/', function(){
 
 Route::get('x/query', function(){
 
-    //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
+     //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
 
@@ -585,60 +585,42 @@ Route::get('x/query', function(){
     //     'price_id' => 20
     // ]);
 
-    $price = Price::create([
-        'name' => '97 US$',
-        'value' => 97
-    ]);
+    // $price = Price::create([
+    //     'name' => '97 US$',
+    //     'value' => 97
+    // ]);
 
-    $plan = Plan::find(31);
-    $plan->price_id = $price->id;
-    $plan->save();
+    // $plan = Plan::find(31);
+    // $plan->price_id = $price->id;
+    // $plan->save();
 
 
-    $price = Price::create([
-        'name' => '167 US$',
-        'value' => 167
-    ]);
+    $plan = Plan::find(42);
+    $plan->delete();
 
-    $plan = Plan::create([
-        'name' => 'Método DKP + Curso Keto Deportistas',
-        'slug' => 'plan-deportista-oferta',
-        'price_id' => $price->id
-    ]);
+    $plan = Plan::find(43);
+    $plan->delete();
 
-    $price = Price::create([
-        'name' => '197 US$',
-        'value' => 197
-    ]);
+    $plan = Plan::find(44);
+    $plan->delete();
 
-    $plan = Plan::create([
-        'name' => 'Método DKP + Cursos Keto',
-        'slug' => 'plan-cursos-oferta',
-        'price_id' => $price->id
-    ]);
+    $plan = Plan::find(45);
+    $plan->delete();
 
-    $plan = Plan::create([
-        'name' => 'Método DKP + Chat 140 + Bono',
-        'slug' => 'plan-chat-140-oferta',
-        'price_id' => $price->id
-    ]);
+    $plan = Plan::find(46);
+    $plan->delete();
 
-    $price = Price::create([
-        'name' => '127 US$',
-        'value' => 127
-    ]);
+    $price = Price::find(38);
+    $price->delete();
 
-    $plan = Plan::create([
-        'name' => 'Método DKP + Total Healht',
-        'slug' => 'plan-total-oferta',
-        'price_id' => $price->id
-    ]);
+    $price = Price::find(39);
+    $price->delete();
 
-    $plan = Plan::create([
-        'name' => 'Paquete Cursos Keto',
-        'slug' => 'paquete-cursos-oferta',
-        'price_id' => 4
-    ]);
+    $price = Price::find(40);
+    $price->delete();
+
+    $price = Price::find(41);
+    $price->delete();
 
 });
 

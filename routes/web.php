@@ -575,6 +575,20 @@ Route::get('x/discounts/', function(){
 
 Route::get('x/query', function(){
 
+    $recipe = Recipe::create([
+        'name' => 'Mantequillosqui acostillado',
+        'slug' => 'mantequillosqui-acostillado',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 15,
+        'type' => 1,
+        ]);
+        $image = Image::create([
+        'url' => 'recipes/fase4-dia-3-almuerzo.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+        ]);
+
      //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 

@@ -498,16 +498,16 @@ Route::get('x/clients/{plan}/email', function ($plan) {
     echo "<p>". $subscriptions->count() ." clientes inscritos en el plan ". $plan ."</p>";
     echo "</br>";
     echo "<table>";
-    echo "<tr>";
     foreach ($subscriptions as $subscription) {
+        echo "<tr>";
         echo "<td>";
         echo $subscription->user->name;
         echo "</td>";
         echo "<td>";
         echo $subscription->user->email;
         echo "</td>";
+        echo "</tr>";
     }
-    echo "</tr>";
     echo "</table>";
 });
 

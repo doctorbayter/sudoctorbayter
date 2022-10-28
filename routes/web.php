@@ -485,32 +485,64 @@ Route::get('x/clients/{plan}', function ($plan) {
 
     switch ($plan) {
         case 'premium':
-            $subscriptions = Subscription::whereIn('plan_id', [1, 15, 25])->get();
+            $subscriptions = Subscription::whereIn('plan_id', [1, 9, 10, 15, 25, 27, 31, 32, 37, 38, 39, 40])->get();
             break;
-        case 'plus':
-            $subscriptions = Subscription::whereIn('plan_id', [22])->get();
-            break;
-        case 'vip':
-            $subscriptions = Subscription::whereIn('plan_id', [21])->get();
-            break;
-        case 'general':
-            $subscriptions = Subscription::whereIn('plan_id', [20,26,28,30])->get();
+        case 'fase-uno':
+            $subscriptions = Subscription::whereIn('plan_id', [2, 8, 16])->get();
             break;
         case '5mer':
             $subscriptions = Subscription::whereIn('plan_id', [36])->get();
             break;
-
     }
 
     echo $subscriptions->count();
 });
 
+Route::get('x/clients/{plan}/email', function ($plan) {
+
+    switch ($plan) {
+        case 'premium':
+            $subscriptions = Subscription::whereIn('plan_id', [1, 9, 10, 15, 25, 27, 31, 32, 37, 38, 39, 40])->get();
+            break;
+        case 'fase-uno':
+            $subscriptions = Subscription::whereIn('plan_id', [2, 8, 16])->get();
+            break;
+        case '5mer':
+            $subscriptions = Subscription::whereIn('plan_id', [36])->get();
+            break;
+    }
+
+    echo "<p>". $subscriptions->count() ." clientes inscritos en el plan ". $plan ."</p>";
+    echo "</br>";
+    echo "<table>";
+    echo "<tr>";
+    foreach ($subscriptions as $client) {
+        echo "<td>";
+        echo $client->name;
+        echo "</td>";
+        echo "<td>";
+        echo $client->email;
+        echo "</td>";
+    }
+    echo "</tr>";
+    echo "</table>";
+});
+
 Route::get('x/clients', function () {
     $users = User::all();
-    foreach($users as $user){
+    echo "<table>";
+    echo "<tr>";
+    foreach ($users as $user) {
+        echo "<td>";
+        echo $user->name;
+        echo "</td>";
+        echo "<td>";
         echo $user->email;
-        echo"<br/>";
+        echo "</td>";
+
     }
+    echo "</tr>";
+    echo "</table>";
 });
 
 Route::get('x/plans/', function(){

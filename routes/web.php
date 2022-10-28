@@ -481,23 +481,6 @@ Route::get('x/clients/eg/{month}', function ($month) {
     }
 });
 
-Route::get('x/clients/{plan}', function ($plan) {
-
-    switch ($plan) {
-        case 'premium':
-            $subscriptions = Subscription::whereIn('plan_id', [1, 9, 10, 15, 25, 27, 31, 32, 37, 38, 39, 40])->get();
-            break;
-        case 'fase-uno':
-            $subscriptions = Subscription::whereIn('plan_id', [2, 8, 16])->get();
-            break;
-        case '5mer':
-            $subscriptions = Subscription::whereIn('plan_id', [36])->get();
-            break;
-    }
-
-    echo $subscriptions->count();
-});
-
 Route::get('x/clients/{plan}/email', function ($plan) {
 
     switch ($plan) {
@@ -516,12 +499,12 @@ Route::get('x/clients/{plan}/email', function ($plan) {
     echo "</br>";
     echo "<table>";
     echo "<tr>";
-    foreach ($subscriptions as $client) {
+    foreach ($subscriptions as $subscription) {
         echo "<td>";
-        echo $client->name;
+        echo $subscription->user->name;
         echo "</td>";
         echo "<td>";
-        echo $client->email;
+        echo $subscription->user->email;
         echo "</td>";
     }
     echo "</tr>";

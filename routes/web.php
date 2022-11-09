@@ -598,7 +598,7 @@ Route::get('x/query', function(){
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/fase4-dia-3-almuerzo.jpg',
+        'url' => 'recipes/fase4-dia-4-almuerzo.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
@@ -715,53 +715,53 @@ Route::get('x/query/reto', function(){
     //     'type' => 1,
     //     ]);
     //     $image = Image::create([
-    //     'url' => 'recipes/quedese-keto-dia-3-receta-1.jpg',
+    //     'url' => 'recipes/quedese-keto-dia-4-receta-1.jpg',
     //     'imageable_id' => $recipe->id,
     //     'imageable_type' => 'App\Models\Recipe',
     //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (350, 146, 330, '1', CURRENT_TIMESTAMP, NULL)");
+    (353, 147, 333, '1', CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'Milanesa Prenavideña',
-        'slug' => 'milanesa-prenavidena',
+        'name' => 'berenjena Prenavideña',
+        'slug' => 'berenjena-prenavidena',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 30,
         'type' => 1,
         ]);
         $image = Image::create([
-        'url' => 'recipes/quedese-keto-dia-3-receta-2.jpg',
+        'url' => 'recipes/quedese-keto-dia-4-receta-2.jpg',
         'imageable_id' => $recipe->id,
         'imageable_type' => 'App\Models\Recipe',
         ]);
         $video = Video::create([
-        'iframe' => '<iframe src="https://player.vimeo.com/video/769180690?h=d7504e5cdb" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'iframe' => '<iframe src="https://player.vimeo.com/video/769183832?h=bbe03c6715" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
         'videoable_id' => $recipe->id,
         'videoable_type' => 'App\Models\Recipe',
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (351, 146, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    (354, 147, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
-    $recipe = Recipe::create([
-        'name' => 'Omelet Con Queso',
-        'slug' => 'omelet-con-queso',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 20,
-        'type' => 1,
-        ]);
-        $image = Image::create([
-        'url' => 'recipes/quedese-keto-dia-3-receta-3.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'Omelet Con Queso',
+    //     'slug' => 'omelet-con-queso',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 20,
+    //     'type' => 1,
+    //     ]);
+    //     $image = Image::create([
+    //     'url' => 'recipes/quedese-keto-dia-4-receta-3.jpg',
+    //     'imageable_id' => $recipe->id,
+    //     'imageable_type' => 'App\Models\Recipe',
+    //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (352, 146, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    (355, 147, 330, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

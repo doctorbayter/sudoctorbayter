@@ -693,75 +693,75 @@ Route::get('x/query/reto', function(){
 
     // Secretos y lista de alimentos
 
-    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (19, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-reto-quedese-keto.pdf', 14, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    // (19, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-reto-quedese-keto.pdf', 14, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
     // (20, 'Secretos', 'files/pdf/secretos-quedese-keto.pdf', 14, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
-    DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    (20, 14, '1', 'files/pdf/lista-de-alimentos-quedese-keto.pdf', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
+    // (20, 14, '1', 'files/pdf/lista-de-alimentos-quedese-keto.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
 
     // Recetas
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Rehuevo caldoso',
-    //     'slug' => 'rehuevo-caldoso',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 10,
-    //     'type' => 1,
-    //     ]);
-    //     $image = Image::create([
-    //     'url' => 'recipes/5mer-dia-5-receta-1.jpg',
-    //     'imageable_id' => $recipe->id,
-    //     'imageable_type' => 'App\Models\Recipe',
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Canastilla Prenavideña',
+        'slug' => 'canastilla-prenavidena',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 10,
+        'type' => 1,
+        ]);
+        $image = Image::create([
+        'url' => 'recipes/quedese-keto-dia-1-receta-1.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+        ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (341, 143, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (344, 144, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Tazón especial',
-    //     'slug' => 'tazon-especial',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 30,
-    //     'type' => 1,
-    //     ]);
-    //     $image = Image::create([
-    //     'url' => 'recipes/5mer-dia-5-receta-2.jpg',
-    //     'imageable_id' => $recipe->id,
-    //     'imageable_type' => 'App\Models\Recipe',
-    //     ]);
-    //     $video = Video::create([
-    //     'iframe' => '<iframe src="https://player.vimeo.com/video/741115851?h=9834d371c7" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-    //     'videoable_id' => $recipe->id,
-    //     'videoable_type' => 'App\Models\Recipe',
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Vegetales Prenavideños',
+        'slug' => 'vegetales-prenavidenos',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 30,
+        'type' => 1,
+        ]);
+        $image = Image::create([
+        'url' => 'recipes/quedese-keto-dia-1-receta-2.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+        ]);
+        $video = Video::create([
+        'iframe' => '<iframe src="https://player.vimeo.com/video/769169839?h=c7a0127f9c" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        'videoable_id' => $recipe->id,
+        'videoable_type' => 'App\Models\Recipe',
+        ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (342, 143, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (345, 144, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Toston espinacapollo',
-    //     'slug' => 'toston-espinacapollo',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 20,
-    //     'type' => 1,
-    //     ]);
-    //     $image = Image::create([
-    //     'url' => 'recipes/5mer-dia-5-receta-3.jpg',
-    //     'imageable_id' => $recipe->id,
-    //     'imageable_type' => 'App\Models\Recipe',
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Un Delicioso Dip Prenavideño',
+        'slug' => 'un-delicioso-dip-prenavideño',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 20,
+        'type' => 1,
+        ]);
+        $image = Image::create([
+        'url' => 'recipes/quedese-keto-dia-1-receta-3.jpg',
+        'imageable_id' => $recipe->id,
+        'imageable_type' => 'App\Models\Recipe',
+        ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (343, 143, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (346, 144, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

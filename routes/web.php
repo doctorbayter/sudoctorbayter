@@ -627,80 +627,80 @@ Route::get('x/query', function(){
 Route::get('x/query/reto', function(){
 
 
-    // Plan y Fase del reto
+    //Plan y Fase del reto
 
-    // $plan = Plan::create([
-    //     'name' => 'Reto Quedese Keto',
-    //     'slug' => 'quedese-keto',
-    //     'price_id' => 14
-    // ]);
+    $plan = Plan::create([
+        'name' => 'Reto Quedese Keto',
+        'slug' => 'quedese-keto',
+        'price_id' => 14
+    ]);
 
-    // $fase = Fase::create([
-    //     'name' => 'Quedese Keto',
-    //     'sub_name' => 'El reto de <span class="text-red-700">Navidad</span>',
-    //     'descripcion' => '',
-    //     'slug' => 'quedese-keto',
-    // ]);
-
-
-    // Días Reto
-
-    // $day = Day::create([
-    //     'day' => 1,
-    //     'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (101, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (101, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //     'day' => 2,
-    //     'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (102, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (102, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //     'day' => 3,
-    //     'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (103, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (103, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //     'day' => 4,
-    //     'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (104, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (104, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //     'day' => 5,
-    //     'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (105, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (105, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    $fase = Fase::create([
+        'name' => 'Quedese Keto',
+        'sub_name' => 'El reto de <span class="text-red-700">Navidad</span>',
+        'descripcion' => '',
+        'slug' => 'quedese-keto',
+    ]);
 
 
-    // // Secretos y lista de alimentos
+    //Días Reto
 
-    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    // (17, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-reto-quedese-keto.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+        'day' => 1,
+        'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (101, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (101, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    // (18, 'Secretos + Receta Forma de Marinar', 'files/pdf/secretos-quedese-keto.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+        'day' => 2,
+        'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (102, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (102, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    // DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    // (16, $fase->id, '1', 'files/pdf/lista-de-alimentos-quedese-keto.pdf', CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+        'day' => 3,
+        'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (103, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (103, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $day = Day::create([
+        'day' => 4,
+        'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (104, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (104, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $day = Day::create([
+        'day' => 5,
+        'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (105, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (105, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+
+    // Secretos y lista de alimentos
+
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (17, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-reto-quedese-keto.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (18, 'Secretos + Receta Forma de Marinar', 'files/pdf/secretos-quedese-keto.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+
+    DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
+    (16, $fase->id, '1', 'files/pdf/lista-de-alimentos-quedese-keto.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
 

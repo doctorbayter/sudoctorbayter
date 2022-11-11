@@ -507,10 +507,10 @@ Route::get('x/clients/{plan}/email', function ($plan) {
     foreach ($subscriptions as $subscription) {
         echo "<tr>";
         echo "<td>";
-        echo "\" $subscription->user->name \", ";
+        echo '"'. $subscription->user->name .'" , ';
         echo "</td>";
         echo "<td>";
-        echo "\" $subscription->user->email \"";
+        echo '"'. $subscription->user->email .'"';
         echo "</td>";
         echo "</tr>";
     }

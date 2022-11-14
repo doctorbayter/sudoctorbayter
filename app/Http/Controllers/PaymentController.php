@@ -170,7 +170,7 @@ class PaymentController extends Controller
         $fase_one      = Fase::where('id', [1])->get();
         $week_recipes  = Fase::where('id', [5])->get();
         $five_recipes  = Fase::find(7);
-        $fase_reto  = Fase::find(14);
+        $fase_reto     = Fase::find(14);
 
         $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
 
@@ -186,13 +186,13 @@ class PaymentController extends Controller
             $this->setFases($user->id, $fases_premium);
             $this->addSuscription($user->id, $plan_total->id);
         }elseif($plan->id = 2 || $plan->id = 8) {
-            $this->setFases($user->id, $fase_one);
+            $fase_one->clients()->attach($user->id);
         }elseif ($plan->id = 7) {
             $this->setFases($user->id, $week_recipes);
         }elseif ($plan->id = 13) {
             $this->setFases($user->id, $five_recipes);
         }elseif ($plan->id = 47) {
-            $this->setFases($user->id, $fase_reto);
+            $fase_reto->clients()->attach($user->id);
         }
 
         return true;

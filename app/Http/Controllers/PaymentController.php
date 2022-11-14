@@ -186,13 +186,17 @@ class PaymentController extends Controller
             $this->setFases($user->id, $fases_premium);
             $this->addSuscription($user->id, $plan_total->id);
         }elseif($plan->id == 2 || $plan->id == 8) {
-            $fase_one->clients()->attach($user->id);
+            if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
+                $fase_one->clients()->attach($user->id);
+            }
         }elseif ($plan->id == 7) {
             $this->setFases($user->id, $week_recipes);
         }elseif ($plan->id == 13) {
             $this->setFases($user->id, $five_recipes);
         }elseif ($plan->id == 47) {
-            $fase_reto->clients()->attach($user->id);
+            if($fase_reto->clients()->where('users.id', $user->id)->doesntExist()){
+                $fase_reto->clients()->attach($user->id);
+            }
         }
 
         return true;

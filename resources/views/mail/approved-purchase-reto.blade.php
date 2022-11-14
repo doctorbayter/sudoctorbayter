@@ -138,7 +138,7 @@
                         <td style="text-align:center;width:260px;padding:0;vertical-align:top;color:#153643;">
                           <p style="text-align:center;width:100%;margin:0 0 25px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><img src="{{asset('img/mails/mail_whatsapp.jpg')}}" alt="" width="100%" style="height:auto;display:block;" /></p>
                           <p style="margin:0 0 12px 0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;">Accede al grupo del Reto con el <b>Equipo del Doctor Bayter</b></p>
-                          <p style="margin:0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://chat.whatsapp.com/EHl1KlvaqUj5sLKtlwzP2j" style="color:#a30000;text-decoration:underline;">Entra aquí al grupo de WhatsApp</a></p>
+                          <p style="margin:0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://chat.whatsapp.com/KJyfbDcCUw79AboKNQMyIp" style="color:#a30000;text-decoration:underline;">Entra aquí al grupo de WhatsApp</a></p>
                         </td>
                       </tr>
                     </table>
@@ -153,7 +153,7 @@
                 <tr>
                   <td style="padding:0;width:50%;" align="left">
                     <p style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
-                      &reg; <b>Doctor Bayter</b> 2021<br/>
+                      &reg; <b>Doctor Bayter</b> 2022<br/>
                     </p>
                   </td>
                   <td style="padding:0;width:50%;" align="right">

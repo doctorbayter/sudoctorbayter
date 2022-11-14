@@ -77,10 +77,10 @@
                                     </div>
 
                                     @if ($subscribed_reto_actual)
-                                        <aside class="mt-8">
+                                        <aside class="mt-8 hidden">
                                             <div class="py-8 px-8 rounded-2xl  border-dashed border-red-700 border-4 bg-gray-200">
 
-                                                <h2 class="text-2xl md:text-4xl font-bold text-red-700">Próximas reuniones de Zoom</h2>
+                                                <h2 class="text-2xl md:text-4xl font-bold text-red-700">Reuniones de Zoom Anteriores</h2>
                                                 <p class="mt-4">No te pierdas las reuniones de Zoom del Reto 5Mer <b>El Reto del Ayuno
                                                 </b> A continuación encontrarás los datos de acceso a las reuniones grupales privadas de Zoom con tu doctor Bayter.</p>
                                                 <div class="flex-col md:flex-row justify-around my-8">

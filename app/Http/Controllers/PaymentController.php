@@ -170,6 +170,7 @@ class PaymentController extends Controller
         $fase_one      = Fase::where('id', [1])->get();
         $week_recipes  = Fase::where('id', [5])->get();
         $five_recipes  = Fase::find(7);
+        $fase_reto  = Fase::find(14);
 
         $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
 
@@ -190,6 +191,8 @@ class PaymentController extends Controller
             $this->setFases($user->id, $week_recipes);
         }elseif ($plan->id = 13) {
             $this->setFases($user->id, $five_recipes);
+        }elseif ($plan->id = 47) {
+            $this->setFases($user->id, $fase_reto);
         }
 
         return true;
@@ -264,37 +267,50 @@ class PaymentController extends Controller
         return array($first_name, $last_name);
     }
 
-    public function activeCampaign($email, $list_id) {
+    public function activeCampaign($name, $email, $list_id) {
 
         $response = Http::withHeaders([
             'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
         ]);
+
         $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
             "email" => $email,
             "orders[email]" => "ASC"
         ]);
-        $userData = $getUserByEmail['contacts'];
 
-        if(!$userData){
-            return ;
+        if($getUserByEmail){
+            $userData = $getUserByEmail['contacts'];
+        }else{
+            $userData = null;
         }
 
-        $userListsLink = $userData[0]['links']['contactLists'];
-        $userId = $userData[0]['id'];
+        if($userData){
+            $userListsLink = $userData[0]['links']['contactLists'];
+            $userId = $userData[0]['id'];
+        }else{
 
-        $getUserLists = $response->GET($userListsLink);
+            //$last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+            //$first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );
 
+            $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
+                "contact" => [
+                    "email" => $email,
+                    "fullName" => trim($name),
+                ]
+            ]);
+            $userListsLink = $addUser['contact']['links']['contactLists'];
+            $userId = $addUser['contact']['id'];
+        }
+
+        $getUserLists =  $response->GET($userListsLink);
         $userLists = $getUserLists['contactLists'];
 
         if(count($userLists) > 0) {
 
             foreach($userLists as $userList ) {
-
                 if($userList['list'] == $list_id){
 
-                    if($userList['status'] == 1){
-                       return false;
-                    }else if($userList['status'] == "2") {
+                    if($userList['status'] == "2") {
                         $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                             "contactList" => [
                                 "list" => $list_id,
@@ -304,7 +320,6 @@ class PaymentController extends Controller
                             ]
                         ]);
                     }
-                    return true;
                     break;
                 }else{
                     $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
@@ -316,7 +331,6 @@ class PaymentController extends Controller
                     ]);
                 }
             }
-            return true;
 
         }else{
             $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
@@ -326,8 +340,9 @@ class PaymentController extends Controller
                     "status" => 1
                 ]
             ]);
-            return true;
         }
+
+        return;
     }
 
     public function sendMail(User $user, Plan $plan){
@@ -344,7 +359,7 @@ class PaymentController extends Controller
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
-            case 36:
+            case 47:
                 $mail = new ApprovedPurchaseReto($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;

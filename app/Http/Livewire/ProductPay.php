@@ -200,11 +200,11 @@ class ProductPay extends Component
             $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $this->plan->id)->first();
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
-            $fase = Fase::find(13);
+            $fase = Fase::find(14);
 
-            if($this->plan->id == 15){
+            if($this->plan->id == 47){ //if($this->plan->id == 15   ){
 
-                $mail = new ApprovedPurchase($this->plan, $user);
+                $mail = new ApprovedPurchaseReto($this->plan, $user); //$mail = new ApprovedPurchase($this->plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
 
                 if(!$is_subscribed){

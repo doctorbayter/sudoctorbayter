@@ -180,18 +180,18 @@ class PaymentController extends Controller
 
         $this->addSuscription($user->id, $plan->id);
 
-        if($plan->id = 1 || $plan->id = 3 || $plan->id = 9 || $plan->id = 10 || $plan->id = 15 || $plan->id = 16 || $plan->id = 25 || $plan->id = 27 || $plan->id = 31 || $plan->id = 37 || $plan->id = 38 || $plan->id = 40 ) {
+        if($plan->id == 1 || $plan->id == 3 || $plan->id == 9 || $plan->id == 10 || $plan->id == 15 || $plan->id == 16 || $plan->id == 25 || $plan->id == 27 || $plan->id == 31 || $plan->id == 37 || $plan->id == 38 || $plan->id == 40 ) {
             $this->setFases($user->id, $fases_premium);
-        }elseif($plan->id = 39) {
+        }elseif($plan->id == 39) {
             $this->setFases($user->id, $fases_premium);
             $this->addSuscription($user->id, $plan_total->id);
-        }elseif($plan->id = 2 || $plan->id = 8) {
+        }elseif($plan->id == 2 || $plan->id == 8) {
             $fase_one->clients()->attach($user->id);
-        }elseif ($plan->id = 7) {
+        }elseif ($plan->id == 7) {
             $this->setFases($user->id, $week_recipes);
-        }elseif ($plan->id = 13) {
+        }elseif ($plan->id == 13) {
             $this->setFases($user->id, $five_recipes);
-        }elseif ($plan->id = 47) {
+        }elseif ($plan->id == 47) {
             $fase_reto->clients()->attach($user->id);
         }
 

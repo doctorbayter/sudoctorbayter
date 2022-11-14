@@ -160,7 +160,7 @@
 
 
             @if (!$subscribed_fase_week)
-                <section class="pb-4 fixed bottom-0 mr-4 right-0  z-50 transition duration-500 delay-3000 ease-in-out opacity-0"
+                <section class="pb-4 fixed bottom-0 mr-4 right-0  z-50 transition duration-500 delay-3000 ease-in-out opacity-0 hidden"
                     id="classAd"
                     x-data="{$open : true}"
                     x-show="$open"

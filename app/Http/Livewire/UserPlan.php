@@ -16,7 +16,7 @@ class UserPlan extends Component
 
     public function mount(){
         $this->user_fases = auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id');
-        $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 9, 10, 11, 13, 14])->sortBy('id');
+        $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 9, 10, 11, 13])->sortBy('id');
         $this->user_adicionales = auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id');
         $this->thf_plan = Plan::find(23);
 
@@ -27,7 +27,7 @@ class UserPlan extends Component
     public function render(){
 
 
-        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->sortBy('plan_id')->first();
+        $planUser = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13])->sortBy('plan_id')->first();
         $planPremium = Plan::find(1);
         $planWhatsapp = Plan::find(4);
         $whatsapp = auth()->user()->subscriptions->where('plan_id', 4)->first();

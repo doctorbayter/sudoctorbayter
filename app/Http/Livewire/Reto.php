@@ -192,6 +192,18 @@ class Reto extends Component
                     'video-base' => '741120862?h=7eb0af9670',
                 ];
                 break;
+            case 'quedese-keto':
+                return $this->data = [
+                    'title' => 'Reto 5Mer',
+                    'subtitle'=> 'El Reto del Ayuno',
+                    'type' => 'video',
+                    'online' => true,
+                    'video-1' => '',
+                    'video-2' => '',
+                    'video-title' => 'Video Intro del Reto',
+                    'video-base' => '',
+                ];
+                break;
             default:
                 return null;
                 break;

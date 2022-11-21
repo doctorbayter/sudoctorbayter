@@ -123,9 +123,9 @@ Route::get('/regalo', function () {
 
 })->name('regalo.navidad');
 
-Route::get('/reto5', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'5mer']);
+Route::get('/reto', function () {
+    //return view('no-disponible');
+    return redirect()->route('reto.register', ['reto'=>'5mer']);
 })->name('reto.2022');
 
 Route::get('/selecto', function () {

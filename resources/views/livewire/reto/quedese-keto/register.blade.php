@@ -15,7 +15,7 @@
                 <p class="my-4 text-sm md:text-base text-justify">cambiar tus hábitos alimenticios, que dejes de satanizar las grasas,  logres  disminuir  los carbohidratos a su mínima expresión, dejes  la adicción al azúcar y lo mejor, llegues a estas fiestas más KETO que NUNCA, </p>
                 <p class="my-4 text-sm md:text-base text-justify">aprovechando todos los beneficios en salud que este estilo de vida trae. Te voy a demostrar que tan solo en 5 días se desinflamará tu cuerpo, mejorarás tu digestión, mejorarás tu energía y lo más increíble: <b>BAJARÁS DE PESO.</b></p>
                 <div class="relative">
-                    <a
+                    <a href="https://pay.hotmart.com/G76640864O"
                     wire:loading.attr="disabled"
                     class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-sm lg:text-lg w-full">Sí! Quiero registrarme al reto</a>
                 </div>
@@ -131,7 +131,7 @@
                 </div>
             </div>
             <div class="my-8">
-                <a
+                <a href="https://pay.hotmart.com/G76640864O"
                 wire:loading.attr="disabled"
                 class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-lg w-full">Sí! Quiero registrarme al reto</a>
             </div>

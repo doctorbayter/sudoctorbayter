@@ -383,7 +383,8 @@ class PaymentController extends Controller
         $user = User::find(3523);
         $fase = Fase::find(14);
         $fase->clients()->attach($user->id);
-        //$data = response()->json($request->all());
+        $data = json_decode($request);
+        //$data = $json->json()->all();
         //$id = $data['data']['product']['id'];
         //$email = $data['data']['buyer']['email'];
         //$status = $data['status'];
@@ -391,6 +392,6 @@ class PaymentController extends Controller
         //$phone = $data['phone_checkout_local_code'];
         //$buyer = $data['name'];
 
-        return json_decode($request->getContent(), true);
+        return json_decode($request->input(), true);;
     }
 }

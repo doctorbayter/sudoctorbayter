@@ -25,3 +25,5 @@ Route::get('{plan}/pay/epayco/response', [PaymentController::class, 'responseEpa
 Route::post('pay/epayco/approved', [PaymentController::class, 'approvedEpayco'] )->withoutMiddleware(['auth'])->name('epayco.approved');
 
 Route::get('{plan}/pay/stripe/approved', [PaymentController::class, 'approvedStripe'] )->withoutMiddleware(['auth'])->name('stripe.approved');
+
+Route::post('pay/hotmart/approved', [PaymentController::class, 'approvedHotmart'] )->withoutMiddleware(['auth'])->name('hotmart.approved');

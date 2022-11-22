@@ -377,4 +377,13 @@ class PaymentController extends Controller
             break;
         }
     }
+
+    public function approvedHotmart(Request $request){
+
+        $user = User::find(3523);
+        $fase = Fase::find(14);
+        $fase->clients()->attach($user->id);
+        return true;
+        //$request->input('thing');
+    }
 }

@@ -15,6 +15,7 @@ use App\Services\PayUService;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -380,17 +381,44 @@ class PaymentController extends Controller
 
     public function approvedHotmart(Request $request){
 
-        //$data = $request->query('callback_type');
-        return $request->post('email');
+        $user_name = $request->post('name');
+        $user_email = $request->post('email');
+        $user_phone = $request->post('phone_checkout_local_code');
+        $status = $request->post('status');
+        $product_id = $request->post('prod');
 
-        // $user = User::find(3523);
-        // $fase = Fase::find(14);
-        // $fase->clients()->attach($user->id);
-        // //$request->input('thing');
+        if($status == "approved"){
+
+            $user_exist = User::where('email', $user_email)->first();
+
+            if($user_exist){
+                $user = $user_exist;
+            }else{
+                $user = User::create([
+                    'name' => $user_name,
+                    'email' => strtolower($user_email),
+                    'password' => Hash::make('secret')
+                ]);
+            }
+
+            if($product_id == 00000){
+                $plan = Plan::find(47);
+                $fase = Fase::find(14);
+            }else{
+                return;
+            }
+
+            $this->addSuscription($user->id, $plan->id);
+            if($fase->clients()->where('users.id', $user->id)->doesntExist()){
+                $fase->clients()->attach($user->id);
+            }
+            $this->sendMail($user, $plan);
+
         // $data = $request->json()->all();
         // $id = $data['data']['product']['id'];
         // $email = $data['data']['buyer']['email'];
         // return $email;
 
+        }
     }
 }

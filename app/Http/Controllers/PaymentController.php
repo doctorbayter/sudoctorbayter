@@ -387,7 +387,7 @@ class PaymentController extends Controller
         $data = $request->json()->all();
         //$id = $data['data']['product']['id'];
         //$email = $data['data']['buyer']['email'];
-        $email = $data['email'];
-        return $email;
+        $emails = $data['email'];
+        return $emails;
     }
 }

@@ -380,7 +380,7 @@ class PaymentController extends Controller
 
     public function approvedHotmart(Request $request){
 
-        $data = $request->query('email');
+        $data = $request->query('callback_type');
         return $data;
 
         // $user = User::find(3523);

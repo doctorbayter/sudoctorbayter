@@ -401,7 +401,7 @@ class PaymentController extends Controller
                 ]);
             }
 
-            if($product_id == 2453587){
+            if($product_id == 00000){
                 $plan = Plan::find(47); //Reto #QuedeseKeto 2022
                 $fase = Fase::find(14);
             }else{

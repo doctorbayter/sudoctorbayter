@@ -383,11 +383,9 @@ class PaymentController extends Controller
         $user = User::find(3523);
         $fase = Fase::find(14);
         $fase->clients()->attach($user->id);
-        //$request->input('thing');
         $data = $request->json()->all();
-        //$id = $data['data']['product']['id'];
-        //$email = $data['data']['buyer']['email'];
-        $emails = $data['email'];
-        return $emails;
+        $id = $data['data']['product']['id'];
+        $email = $data['email'];
+        return $email;
     }
 }

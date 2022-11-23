@@ -381,8 +381,7 @@ class PaymentController extends Controller
     public function approvedHotmart(Request $request){
 
         $data = json_encode($request->query(), JSON_FORCE_OBJECT);
-        $email = $data['email'];
-        return $email;
+        return $data;
 
         // $user = User::find(3523);
         // $fase = Fase::find(14);

@@ -128,6 +128,10 @@ Route::get('/reto', function () {
     return redirect()->route('reto.register', ['reto'=>'quedese-keto']);
 })->name('reto.2022');
 
+Route::get('/reto/whatsapp', function () {
+    return redirect('https://chat.whatsapp.com/KJyfbDcCUw79AboKNQMyIp');
+})->name('reto.whatsapp');
+
 Route::get('/selecto', function () {
     $plan = Plan::find(10);
     //return redirect()->route('payment.pay', ['plan'=>$plan]);

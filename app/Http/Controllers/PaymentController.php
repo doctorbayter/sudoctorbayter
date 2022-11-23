@@ -412,7 +412,7 @@ class PaymentController extends Controller
             if($fase->clients()->where('users.id', $user->id)->doesntExist()){
                 $fase->clients()->attach($user->id);
             }
-            $this->sendMail($user, $plan);
+            //$this->sendMail($user, $plan);
 
         // $data = $request->json()->all();
         // $id = $data['data']['product']['id'];

@@ -3,7 +3,7 @@
 
         <div class="py-12 flex flex-col-reverse md:flex-row max-w-5xl mx-auto">
             <div class=" w-full md:w-6/12">
-                <img src="{{asset('img/billboards/que_comer.jpg')}}" alt="" class="w-full my-4 md:my-0"/>
+                <img src="{{asset('img/billboards/doctor_bayter_navidad_banner.jpg')}}" alt="" class="w-full my-4 md:my-0"/>
             </div>
             <div class="pl-2 w-full md:w-6/12 pr-2 mb-8 md:pl-12 md:pr-0 md:mb-0 ">
                 <header class="leading-tight">

@@ -391,7 +391,6 @@ class PaymentController extends Controller
         //$email = $data['email'];
         //$phone = $data['phone_checkout_local_code'];
         //$buyer = $data['name'];
-
-        return json_decode($request->input(), true);;
+        return $request;
     }
 }

@@ -1,4 +1,4 @@
-<x-app-layout :plan="$plan">
+<x-nopixel-layout :plan="$plan">
   <div class="max-w-7xl mx-auto px-8 relative" style="height : calc(100vh - 4.1rem);">
     @switch($pay_data['transactionState'])
       @case(4)
@@ -273,4 +273,4 @@
     @endswitch
   </div>
 <x-slot name="js"></x-slot>
-</x-app-layout>
+</x-nopixel-layout>

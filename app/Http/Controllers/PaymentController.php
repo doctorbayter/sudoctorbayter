@@ -168,8 +168,8 @@ class PaymentController extends Controller
 
         $plan_total    = Plan::find(23);
         $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
-        $fase_one      = Fase::where('id', [1])->get();
-        $week_recipes  = Fase::where('id', [5])->get();
+        $fase_one      = Fase::find(1);
+        $week_recipes  = Fase::find(5);
         $five_recipes  = Fase::find(7);
         $fase_reto     = Fase::find(14);
 

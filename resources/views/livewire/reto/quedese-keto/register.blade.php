@@ -17,7 +17,7 @@
                 <div class="relative">
                     <a href="https://pay.hotmart.com/G76640864O"
                     wire:loading.attr="disabled"
-                    class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-sm lg:text-lg w-full">Sí! Quiero registrarme al reto</a>
+                    class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-sm lg:text-lg w-full">Sí! Quiero registrarme al reto $10 USD</a>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                 <img src="{{asset('img/billboards/banner_facts.png')}}" alt="" class="mx-auto w-full">
             </div>
             <div class="text-gray-50  w-full lg:w-8/12  px-4 md:mr-0 md:ml-10">
-                <h2 class="font-bold mb-4 text-2xl leading-none">¿Qué incluye este Reto?</h2>
+                <h2 class="font-bold mb-4 text-2xl leading-none">Por solo $10 dólares tendrás acceso a:</h2>
                 <ul class="text-sm md:text-base">
                     <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
@@ -44,7 +44,7 @@
                     </li>
                      <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
-                        <span>Dos reuniones por Zoom con tu Doctor Bayter donde aprenderás todos los beneficios de comer grasas para sanar, te compartirá también, los errores más comunes al mantener un estilo de vida como este y todos los secretos para aprovechar al máximo este reto. </span>
+                        <span>¡Lo más importante! 2 reuniones por Zoom con tu Doctor Bayter y los demás miembros del reto donde aprenderás todos los beneficios de comer grasas para sanar, te compartirá también, los errores más comunes al mantener un estilo de vida como este y todos los secretos para aprovechar al máximo este reto. </span>
                     </li>
 
                 </ul>
@@ -133,7 +133,7 @@
             <div class="my-8">
                 <a href="https://pay.hotmart.com/G76640864O"
                 wire:loading.attr="disabled"
-                class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-lg w-full">Sí! Quiero registrarme al reto</a>
+                class=" bg-red-700 rounded-lg font-bold text-white text-center inline-block px-8 py-4 transition duration-300 ease-in-out hover:bg-red-500  text-lg w-full">Sí! Quiero registrarme al reto $10 USD</a>
             </div>
         </div>
     </section>

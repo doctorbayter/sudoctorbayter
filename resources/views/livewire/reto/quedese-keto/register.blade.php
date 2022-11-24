@@ -145,7 +145,7 @@
             <ul>
                 <li class="mb-3 flex ">
                     <p class=""><b class="mr-4 text-yellow-400">1:</b></p>
-                    <p class=" flex-1 text-justify"><b> ¿Qué me llega al pagar? <br></b> Al momento del pago, les llegará un correo de confirmación (al correo registrado al momento del pago) para ingresar al grupo de WhatsApp. La información del reto la tendrás disponible el día viernes 19 de agosto en la cuenta registrada. Para acceder a esta, debes iniciar sesión en doctorbayter.com con el correo y contraseña que registraste al momento de realizar el pago. </p>
+                    <p class=" flex-1 text-justify"><b> ¿Qué me llega al pagar? <br></b> Al momento del pago, les llegará un correo de confirmación (al correo registrado al momento del pago) para ingresar al grupo de WhatsApp. La información del reto la tendrás disponible el día viernes 9 de diciembre en la cuenta registrada. Para acceder a esta, debes iniciar sesión en doctorbayter.com con el correo y contraseña que registraste al momento de realizar el pago. </p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">2:</b></p>

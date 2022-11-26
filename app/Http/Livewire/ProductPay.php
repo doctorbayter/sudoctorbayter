@@ -54,10 +54,6 @@ class ProductPay extends Component
 
     public function render() {
 
-        if($this->plan->id == 47){
-            return redirect()->route('reto.register', ['reto'=>'quedese-keto']);
-        }
-
         if( $this->plan->id == 15 || $this->plan->id == 18 || $this->plan->id == 19 || $this->plan->id == 25 || $this->plan->id == 36){
             return view('no-disponible-lw');
         }

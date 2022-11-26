@@ -1,6 +1,10 @@
 <div>
     <section class="" style="">
 
+        <aside class="text-center bg-red-800 py-4">
+            <h4 class="text-white"><b>IMPORTANTE</b>: Si estás intentando realizar la compra de tu reto desde <span class="text-yellow-500 font-bold">Venezuela, Cuba o Nicaragua</span> por favor contactanos para darte un link de pago directo</h4>
+           <a href="https://wa.me/573147281252" target="_blank" class="text-lg mb-2 md:text-2xl font-bold block leading-none  transition duration-300 ease select-none hover:text-gray-100 hover:underline "><p class="uppercase text-yellow-500 mr-2 ">Escribe aquí para obtener tu link de pago</p> </a>
+        </aside>
         <div class="py-12 flex flex-col-reverse md:flex-row max-w-5xl mx-auto">
             <div class=" w-full md:w-6/12">
                 <img src="{{asset('img/billboards/doctor_bayter_navidad_banner.jpg')}}" alt="" class="w-full my-4 md:my-0"/>

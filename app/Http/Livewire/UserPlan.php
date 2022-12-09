@@ -16,7 +16,7 @@ class UserPlan extends Component
 
     public function mount(){
         $this->user_fases = auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id');
-        $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 9, 10, 11, 13, 14])->sortBy('id');
+        $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 9, 10, 11, 13])->sortBy('id');
         $this->user_adicionales = auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id');
         $this->thf_plan = Plan::find(23);
 

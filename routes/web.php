@@ -516,6 +516,7 @@ Route::get('x/clients/{plan}/email', function ($plan) {
         case 'arreglo':
             $subscriptions = Subscription::whereIn('plan_id', [47])->get();
             break;
+
     }
 
     $faseuno = Fase::find(1);

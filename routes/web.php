@@ -514,7 +514,7 @@ Route::get('x/clients/{plan}/email', function ($plan) {
             $subscriptions = Subscription::whereIn('plan_id', [47])->get();
             break;
         case 'arreglo':
-            $subscriptions = Subscription::whereIn('plan_id', [47])->get();
+            $subscriptions = Subscription::whereIn('plan_id', [23])->get();
             break;
 
     }
@@ -530,20 +530,22 @@ Route::get('x/clients/{plan}/email', function ($plan) {
     echo "</br>";
     echo "<table>";
     foreach ($subscriptions as $subscription) {
-       if($subscription->user->subscriptions->count() == 1){
-            $faseuno->clients()->detach($subscription->user->id);
-            $fasedos->clients()->detach($subscription->user->id);
-            $fasetres->clients()->detach($subscription->user->id);
-            $fasecuatro->clients()->detach($subscription->user->id);
 
-            $is_subscribed = $fasereto->clients->contains($subscription->user->id);
-            if($is_subscribed){
-                return;
-            }else {
-                $fasereto->clients()->attach($subscription->user->id);
-                return;
-            }
-       }
+        echo count($subscription->user->subscriptions)."<br><br>";
+    //    if($subscription->user->subscriptions->count() == 1){
+    //         $faseuno->clients()->detach($subscription->user->id);
+    //         $fasedos->clients()->detach($subscription->user->id);
+    //         $fasetres->clients()->detach($subscription->user->id);
+    //         $fasecuatro->clients()->detach($subscription->user->id);
+
+    //         $is_subscribed = $fasereto->clients->contains($subscription->user->id);
+    //         if($is_subscribed){
+    //             return;
+    //         }else {
+    //             $fasereto->clients()->attach($subscription->user->id);
+    //             return;
+    //         }
+    //    }
     }
     echo "</table>";
 });

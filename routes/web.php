@@ -535,18 +535,26 @@ Route::get('x/clients/{plan}/email', function ($plan) {
        if(count($subscription->user->subscriptions) == 1){
 
         echo $subscription->user->email."<br><br>";
-            // $faseuno->clients()->detach($subscription->user->id);
-            // $fasedos->clients()->detach($subscription->user->id);
-            // $fasetres->clients()->detach($subscription->user->id);
-            // $fasecuatro->clients()->detach($subscription->user->id);
 
-            // $is_subscribed = $fasereto->clients->contains($subscription->user->id);
-            // if($is_subscribed){
-            //     return;
-            // }else {
-            //     $fasereto->clients()->attach($subscription->user->id);
-            //     return;
-            // }
+        if($faseuno->clients->contains($subscription->user->id)){
+            $faseuno->clients()->detach($subscription->user->id);
+        }
+        if($fasedos->clients->contains($subscription->user->id)){
+            $fasedos->clients()->detach($subscription->user->id);
+        }
+        if($fasetres->clients->contains($subscription->user->id)){
+            $fasetres->clients()->detach($subscription->user->id);
+        }
+        if($fasecuatro->clients->contains($subscription->user->id)){
+            $fasecuatro->clients()->detach($subscription->user->id);
+        }
+
+            if($fasereto->clients->contains($subscription->user->id)){
+                return;
+            }else {
+                $fasereto->clients()->attach($subscription->user->id);
+                return;
+            }
        }
     }
     echo "</table>";

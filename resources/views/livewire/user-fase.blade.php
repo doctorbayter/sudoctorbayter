@@ -115,7 +115,6 @@
                                         @foreach ($this->day->recipes->where('type', '==', 1) as $key => $recipe)
                                     --}}
 
-                                    {{$this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal')}}
 
                                     @foreach ($this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal') as $key => $recipe)
 

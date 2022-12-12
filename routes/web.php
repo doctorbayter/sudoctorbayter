@@ -514,7 +514,7 @@ Route::get('x/clients/{plan}/email', function ($plan) {
             $subscriptions = Subscription::whereIn('plan_id', [47])->get();
             break;
         case 'arreglo':
-            $subscriptions = Subscription::whereIn('plan_id', [23])->get();
+            $subscriptions = Subscription::whereIn('plan_id', [47])->get();
             break;
 
     }

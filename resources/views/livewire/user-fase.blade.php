@@ -70,10 +70,19 @@
 
                                             @if ($week->pivot->resource)
                                                 <div>
-                                                    <a href="{{asset($week->pivot->resource)}}" target="_blank" class=" font-semibold md:font-bold md:text-sm text-xs py-2 w-full block text-white" x-bind:class="{ 'bg-gray-900 ': selected == {{$key}}, 'bg-gray-200 ': selected !== {{$key}} }">
+                                                    {{--
+                                                        <a href="{{asset($week->pivot->resource)}}" target="_blank" class=" font-semibold md:font-bold md:text-sm text-xs py-2 w-full block text-white" x-bind:class="{ 'bg-gray-900 ': selected == {{$key}}, 'bg-gray-200 ': selected !== {{$key}} }">
                                                         <span class="hidden md:inline">Descargar lista de alimentos</span>
                                                         <span class="md:hidden">Lista alimentos</span>
                                                     </a>
+                                                    --}}
+
+                                                    <a href="https://doctorbayter.com/files/pdf/lista-de-alimentos-reto-quedese-keto.pdf" target="_blank" class=" font-semibold md:font-bold md:text-sm text-xs py-2 w-full block text-white" x-bind:class="{ 'bg-gray-900 ': selected == {{$key}}, 'bg-gray-200 ': selected !== {{$key}} }">
+                                                        <span class="hidden md:inline">Descargar lista de alimentos</span>
+                                                        <span class="md:hidden">Lista alimentos</span>
+                                                    </a>
+
+
                                                 </div>
                                             @endif
 

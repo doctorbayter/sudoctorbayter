@@ -513,6 +513,9 @@ Route::get('x/clients/{plan}/email', function ($plan) {
         case 'quedese-keto':
             $subscriptions = Subscription::whereIn('plan_id', [47])->get();
             break;
+        case 'arreglo':
+            $subscriptions = Subscription::whereNotIn('plan_id', [1, 10, 15, 25, 27, 31, 32, 37, 38, 39, 40, 9, 8, 2, 16, 8])->whereIn('plan_id', [47])->get();
+            break;
     }
 
     echo "<p>". $subscriptions->count() ." clientes inscritos en el plan ". $plan .".</p>";

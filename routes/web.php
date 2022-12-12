@@ -124,8 +124,8 @@ Route::get('/regalo', function () {
 })->name('regalo.navidad');
 
 Route::get('/reto', function () {
-    //return view('no-disponible');
-    return redirect()->route('reto.register', ['reto'=>'quedese-keto']);
+    return view('no-disponible');
+    //return redirect()->route('reto.register', ['reto'=>'quedese-keto']);
 })->name('reto.2022');
 
 Route::get('/reto/whatsapp', function () {
@@ -502,6 +502,9 @@ Route::get('x/clients/{plan}/email', function ($plan) {
             break;
         case 'fase-uno-eg':
             $subscriptions = Subscription::whereIn('plan_id', [8])->get();
+            break;
+        case 'quedese-keto':
+            $subscriptions = Subscription::whereIn('plan_id', [47])->get();
             break;
     }
 

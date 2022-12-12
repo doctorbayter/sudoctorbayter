@@ -55,6 +55,15 @@
             </div>
         </form>
 
+        <script>
+            $("#email").on('keydown', function(evt) {
+            $(this).val(function (_, val) {
+                return val + String.fromCharCode(evt.which).toLowerCase();
+            });
+
+            return false;
+            });​
+        </script>
 
     </x-jet-authentication-card>
 </x-guest-layout>

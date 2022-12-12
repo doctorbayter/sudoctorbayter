@@ -118,6 +118,7 @@
 
                                     @foreach ($this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal') as $key => $recipe)
 
+                                    {{$recipe->pivot->meal}}
 
                                         <div class="pt-12 md:pt-0">
                                             <a href="{{route('plan.recipe', $recipe)}}">

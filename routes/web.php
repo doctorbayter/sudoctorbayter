@@ -492,7 +492,7 @@ Route::get('x/clients/eg/{month}', function ($month) {
     }
 });
 
-Route::get('x/clients/{plan}/email', function ($plan) {
+Route::get('x/clients/{plan}/email/{skip?}', function ($plan, $skip = 0) {
 
     switch ($plan) {
         case 'premium':
@@ -514,8 +514,9 @@ Route::get('x/clients/{plan}/email', function ($plan) {
             $subscriptions = Subscription::whereIn('plan_id', [47])->get();
             break;
         case 'arreglo':
-            $subscriptions = Subscription::whereIn('plan_id', [47])->get();
+            $subscriptions = Subscription::whereIn('plan_id', [47])->skip($skip)->take(500)->get();
             break;
+
 
     }
 
@@ -528,7 +529,7 @@ Route::get('x/clients/{plan}/email', function ($plan) {
 
     echo "<p>". $subscriptions->count() ." clientes inscritos en el plan ". $plan .".</p>";
     echo "</br>";
-    echo "<table>";
+
     foreach ($subscriptions as $subscription) {
 
 
@@ -550,7 +551,7 @@ Route::get('x/clients/{plan}/email', function ($plan) {
         }
        }
     }
-    echo "</table>";
+
 });
 
 Route::get('x/clients', function () {

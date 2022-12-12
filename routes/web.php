@@ -549,12 +549,12 @@ Route::get('x/clients/{plan}/email', function ($plan) {
             $fasecuatro->clients()->detach($subscription->user->id);
         }
 
-            if($fasereto->clients->contains($subscription->user->id)){
-                return;
-            }else {
-                $fasereto->clients()->attach($subscription->user->id);
-                return;
-            }
+        if($fasereto->clients->contains($subscription->user->id)){
+
+        }else {
+            $fasereto->clients()->attach($subscription->user->id);
+
+        }
        }
     }
     echo "</table>";

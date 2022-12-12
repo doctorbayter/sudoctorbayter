@@ -195,7 +195,7 @@ class Reto extends Component
             case 'quedeseketo':
                 return $this->data = [
                     'title' => 'Reto #QuedeseKeto',
-                    'subtitle'=> 'El Reto de NAvidad',
+                    'subtitle'=> 'El Reto de Navidad',
                     'type' => 'video',
                     'online' => true,
                     'video-1' => '780536061?h=989bb4de5c',

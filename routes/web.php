@@ -533,22 +533,22 @@ Route::get('x/clients/{plan}/email/{skip?}', function ($plan, $skip = 0) {
     foreach ($subscriptions as $subscription) {
 
 
-       if(count($subscription->user->subscriptions) == 1){
+       if(count($subscription->user->subscriptions) == 2){
 
         echo $subscription->user->email."<br><br>";
 
-        $faseuno->clients()->detach($subscription->user->id);
-        $fasedos->clients()->detach($subscription->user->id);
-        $fasetres->clients()->detach($subscription->user->id);
-        $fasecuatro->clients()->detach($subscription->user->id);
+        // $faseuno->clients()->detach($subscription->user->id);
+        // $fasedos->clients()->detach($subscription->user->id);
+        // $fasetres->clients()->detach($subscription->user->id);
+        // $fasecuatro->clients()->detach($subscription->user->id);
 
 
-        if($fasereto->clients->contains($subscription->user->id)){
+        // if($fasereto->clients->contains($subscription->user->id)){
 
-        }else {
-            $fasereto->clients()->attach($subscription->user->id);
+        // }else {
+        //     $fasereto->clients()->attach($subscription->user->id);
 
-        }
+        // }
        }
     }
 

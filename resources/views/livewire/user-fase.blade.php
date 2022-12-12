@@ -123,7 +123,7 @@
 
                                                     <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 ">
 
-                                                        {{$recipe->days[0]->pivot}}
+
 
                                                         @switch($recipe->days[0]->pivot->meal)
                                                             @case(1)

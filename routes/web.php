@@ -233,6 +233,13 @@ Route::get('x/day-recipe/meal/{id}/{meal}', function($id , $meal){
 
 });
 
+Route::get('x/day-recipe/day/{id}/{day}', function($id , $day){
+
+    DB::table('day_recipe')->where('id', $id)->update(['day_id' => $day]);
+    echo "do it";
+
+});
+
 
 Route::get('x/clients/reto', function () {
 

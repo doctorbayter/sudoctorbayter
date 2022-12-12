@@ -118,7 +118,7 @@
 
                                     @foreach ($this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal') as $key => $recipe)
 
-                                    {{$recipe->pivot->meal}}
+
 
                                         <div class="pt-12 md:pt-0">
                                             <a href="{{route('plan.recipe', $recipe)}}">
@@ -128,7 +128,7 @@
 
 
 
-                                                        @switch($recipe->days[0]->pivot->meal)
+                                                        @switch($recipe->pivot->meal)
                                                             @case(1)
                                                                     @if ($fase->id == 3  )
                                                                         @if ( ($this->day->day % 2) != 0 )

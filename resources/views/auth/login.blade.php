@@ -56,15 +56,7 @@
         </form>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>
-            $("#email").on('keydown', function(evt) {
-                $(this).val(function (_, val) {
-                    return val + String.fromCharCode(evt.which).toLowerCase();
-                });
 
-                return false;
-            })
-        </script>
 
     </x-jet-authentication-card>
 </x-guest-layout>

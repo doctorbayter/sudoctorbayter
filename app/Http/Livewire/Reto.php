@@ -192,15 +192,15 @@ class Reto extends Component
                     'video-base' => '741120862?h=7eb0af9670',
                 ];
                 break;
-            case 'quedese-keto':
+            case 'quedeseketo':
                 return $this->data = [
-                    'title' => 'Reto 5Mer',
-                    'subtitle'=> 'El Reto del Ayuno',
+                    'title' => 'Reto #QuedeseKeto',
+                    'subtitle'=> 'El Reto de NAvidad',
                     'type' => 'video',
                     'online' => true,
-                    'video-1' => '',
+                    'video-1' => '780536061?h=989bb4de5c',
                     'video-2' => '',
-                    'video-title' => 'Video Intro del Reto',
+                    'video-title' => '',
                     'video-base' => '',
                 ];
                 break;

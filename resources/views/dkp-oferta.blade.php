@@ -1,7 +1,7 @@
 <x-app-layout>
 
     @if (\Carbon\Carbon::createFromTimeStamp(strtotime($promo_time['date']))->gt(\Carbon\Carbon::now()))
-    <section class="py-16">
+    <section class="py-16 hidden">
         <header class="text-center">
             <h2 class="text-red-700 text-2xl lg:text-4xl  font-bold">¡Felicidades! eres parte del 10% ¿Quieres saber que significa?</h2>
             <p class="text-xl lg:text-4xl  my-4 font-semibold">Mira el siguiente video</p>
@@ -18,7 +18,7 @@
             <h3 class="text-2xl lg:text-4xl text-center font-bold uppercase">🎁 Adquiere esta oferta exclusita</h3>
             <p class="text-base  text-gray-400 uppercase my-2">La oferta termina en:</p>
             <div data-countdown="" id="countdown" class="font-bold text-4xl grid grid-cols-4 gap-x-4 h-16 mb-6"></div>
-            <a href="{{route('payment.pay', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu plan fase 1 ahora</a>
+            <a href="{{route('payment.checkout', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu plan fase 1 ahora</a>
         </div>
 
     </div>
@@ -57,7 +57,7 @@
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
                                 @endif
                             </div>
-                            <a href="{{route('payment.pay', $plan_oferta)}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
+                            <a href="{{route('payment.checkout', $plan_oferta)}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
                         @endcan
                     @else
                         <div class="text-white text-left py-2">
@@ -84,7 +84,7 @@
                             @endif
                         </div>
 
-                        <a href="{{route('payment.pay', $plan_oferta)}}" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
+                        <a href="{{route('payment.checkout', $plan_oferta)}}" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
                     @endauth
 
                 </header>
@@ -143,7 +143,7 @@
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 27 US$/mes)</b></p></li>
                                 <li class="hidden"><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg ">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
                             </ul>
-                            <a href="{{route('payment.pay', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                            <a href="{{route('payment.checkout', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                         </div>
                     </div>
                 </div>
@@ -184,7 +184,7 @@
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-400 block font-medium">(Precio normal 27 US$/mes)</b></p></li>
                                     <li class="hidden"><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-400 block font-medium">(Precio normal 19 US$)</b></p>
                                 </ul>
-                                <a href="{{route('payment.pay', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                                <a href="{{route('payment.checkout', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                             </div>
                         </div>
                     </article>
@@ -424,7 +424,7 @@
     <section class="py-8 md:py-16 bg-gray-900 bg-opacity-95 px-6 md:px-0">
         <div class="max-w-5xl mx-auto text-gray-50">
             <p class="uppercase text-gray-200 font-medium text-sm md:text-lg">¿Estas listo para iniciar?</p>
-            <a href="{{route('payment.pay', $plan_oferta)}}" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline ">
+            <a href="{{route('payment.checkout', $plan_oferta)}}" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline ">
                 <span class="text-yellow-500" >¡Adquiere tu Fase 1 ahora!</span>
             </a>
         </div>

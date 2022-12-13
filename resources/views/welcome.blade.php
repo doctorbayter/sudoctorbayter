@@ -59,7 +59,7 @@
         <a href="{{route('event')}}"><img src="{{asset('img/billboards/revolucion_banner.jpg')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 
-    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 hidden">
+    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 hidden ">
         <a href="https://pay.hotmart.com/G76640864O" target="_blank"><img src="{{asset('img/billboards/reto_quedate_keto_banner.png')}}" alt="" class="w-full mx-auto overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 

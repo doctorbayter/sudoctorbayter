@@ -7,7 +7,7 @@
             @else
             <section class="mt-4">
 
-                <header class=" mb-2 md:mb-4 ">
+                <header class=" mb-2 md:mb-4 " id="formulario">
                     <h3 class="text-2xl font-bold text-gray-800 mb-1"><span class="text-red-700">Paso 1:</span> Crea tus datos de acceso a la página</h3>
                     <p class="text-gray-600 font-medium lowercase text-xs italic">Los datos que escribas aquí serán los que vas a usar para ingresar a la página una vez realices la compra</p>
                 </header>
@@ -138,6 +138,75 @@
 
                 </ul>
 
+                @if ($plan->id == 8 || $plan->id == 9)
+
+                        <section class="mt-12">
+
+                                <article class=" flex items-center">
+                                    <div class="text-red-700  font-bold text-sx lg:text-xl leading-tight pr-6">
+                                        <h3 class="text-4xl lg:text-5xl font-extrabold uppercase">¡Ahorra más!</h3>
+                                        <p class="">Aprovecha esta oportunidad y</p>
+                                        <p>adquiere el Método DKP completo a un precio único.</p>
+                                    </div>
+                                    <div class="w-36">
+                                        <img src="{{asset('/img/gfx/arrow_down.png')}}" alt="" class="w-full">
+                                    </div>
+                                </article>
+
+                            <div  class="flex flex-col lg:flex-row justify-center px-4 py-8 my-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
+                                <figure class=" hidden lg:block mr-4 w-auto flex-1">
+                                    <img src="{{asset('/img/billboards/banner_dkp.jpg')}}" alt="Método DKP">
+                                </figure>
+                                <div class="w-full lg:w-7/12">
+                                    <h3 class="text-xl font-bold">Aprovecha hoy por solo <span class="text-red-700">$52USD</span> más puedes adquirir todo <b class="text-red-700">Método DKP</b> 4 fases. <br> <span class=" text-sm text-gray-400 line-through"> Precio normal ($147USD)</span> </h3>
+                                    <p class="text-sm text-gray-800  my-2">Con el Plan Premium del Método DKP obtendrás</p>
+                                    <ul class="text-sm">
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso inmediato a las 4 fases</li>
+                                        <li> <i class="fas fa-check-circle text-red-700 mr-2"></i>Acceso 21 días al chat</li>
+                                        <li class="hidden"> <i class="fas fa-check-circle text-red-700 mr-2 "></i>Curso cómo leer las etiquetas</li>
+                                    </ul>
+
+                                    <p class="mt-1 text-base font-semibold">Precio normal <span class=" line-through">299 US$</span></p>
+
+                                    <div class="flex w-full mt-4">
+
+                                        <style>
+                                            /* Toggle  */
+                                            input:checked ~ .dot {
+                                            transform: translateX(100%);
+                                            background-color: #48bb78;
+                                            }
+
+
+                                        </style>
+
+                                        <label
+                                        for="tooglePromo"
+                                        class="flex items-center cursor-pointer"
+                                        >
+                                        <!-- toggle -->
+                                        <div class="relative">
+                                            <!-- input -->
+                                            <input id="tooglePromo" wire:model="toogle_promo" wire:click="tooglePromo" type="checkbox" class="sr-only" />
+                                            <!-- line -->
+                                            <div class="w-10 h-4 bg-gray-400 rounded-full shadow-inner"></div>
+                                            <!-- dot -->
+                                            <div class="dot absolute w-6 h-6 bg-red-700 rounded-full shadow -left-1 -top-1 transition"></div>
+                                        </div>
+                                        <!-- label -->
+                                        <div class="ml-3 text-gray-700 font-semibold">
+                                            Hoy solo pagas 99 US$
+                                        </div>
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    @endif
 
                 <div class=" mt-6 md:mt-8">
 
@@ -239,7 +308,7 @@
                                 wire:click="confirmData"
                                 class=" bg-red-500 rounded-lg font-bold text-white cursor-pointer text-center inline-block px-8 py-4 text-base lg:text-lg w-full">{{$error_button}}</button>
                                 @if($errors->all())
-                                    <span class="text-red-500 text-sm mt-2 inline-block font-semibold ">{{$error_message}}</span>
+                                    <span class="text-red-500 text-sm mt-2 inline-block font-semibold ">{!!$error_message!!}</span>
                                 @endif
                             @endif
                         @endcan

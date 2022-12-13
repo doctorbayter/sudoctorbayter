@@ -20,8 +20,9 @@ class ProductPay extends Component
     public $plan, $suscription, $flash_sale;
     public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send, $list_id;
     public $can_continued = false;
-    public $error_message = "* Tenemos un error, revisa la información suminitrada anteriormente";
+    public $error_message = "<a href='#formulario'>* Tenemos un error, revisa la información que escribiste arriba</a>";
     public $error_button = "Toca aquí para confirmar la información";
+    public $toogle_promo = null;
 
     protected $listeners = ['paymentMethodCreate'];
 
@@ -42,10 +43,12 @@ class ProductPay extends Component
 
     public function mount(Plan $plan, $sale = null){
 
-        if($plan->id == 1 && $sale == "xxxregaloxxx"){
-            $this->flash_sale = 77;
-        }else{
-            $this->flash_sale = false;
+        if ($this->plan->id == 9) {
+            $this->toogle_promo = 1;
+        }
+
+        if ($this->plan->id == 7) {
+            $this->is_week = true;
         }
 
         $this->list_id = 34;
@@ -209,12 +212,12 @@ class ProductPay extends Component
 
                 if(!$is_subscribed){
                     $suscription->save();
-                    foreach($fases_premium as $fase){
-                        if($fase->clients()->where('users.id', $user->id)->doesntExist()){
-                            $fase->clients()->attach($user->id);
-                        }
-                    }
-                    //$fase->clients()->attach($user->id);
+                    // foreach($fases_premium as $fase){
+                    //     if($fase->clients()->where('users.id', $user->id)->doesntExist()){
+                    //         $fase->clients()->attach($user->id);
+                    //     }
+                    // }
+                    $fase->clients()->attach($user->id);
                 }
 
                 // switch ($this->plan->id) {
@@ -246,4 +249,17 @@ class ProductPay extends Component
             $this->emit('errorStripePayment');
         }
     }
+
+    public function tooglePromo()
+    {
+        if ($this->plan->id == 8 || $this->plan->id == 9) {
+            if ($this->toogle_promo) {
+                $this->plan = Plan::find(9);
+            }else{
+                $this->plan = Plan::find(8);
+            }
+
+        }
+    }
+
 }

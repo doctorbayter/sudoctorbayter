@@ -52,7 +52,7 @@ class ProductPay extends Component
         }
 
         $this->list_id = 34;
-        $this->plan = $plan;
+        $this->plan = $this->plan;
     }
 
     public function render() {
@@ -177,8 +177,6 @@ class ProductPay extends Component
             $user_exist = User::where('email', $this->email)->first();
 
             if($user_exist){
-                //$user_exist->password = bcrypt($this->password);
-                //$user_exist->save();
                 $user = $user_exist;
             }else{
                 $user = User::create([
@@ -190,11 +188,7 @@ class ProductPay extends Component
 
             $user->createOrGetStripeCustomer();
 
-            if($this->flash_sale != false){
-                $user->charge( $this->flash_sale * 100 , $paymentMethod);
-            }else{
-                $user->charge( $this->plan->finalPrice * 100 , $paymentMethod);
-            }
+            $user->charge( $this->plan->finalPrice * 100 , $paymentMethod);
 
             $suscription = new Subscription();
             $suscription->user_id = $user->id;
@@ -203,41 +197,31 @@ class ProductPay extends Component
             $is_subscribed = Subscription::where('user_id', $user->id)->where('plan_id', $this->plan->id)->first();
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
-            $fase = Fase::find(14);
+            $fase_one = Fase::find(1);
 
-            if($this->plan->id == 47){ //if($this->plan->id == 15   ){
-
-                $mail = new ApprovedPurchaseReto($this->plan, $user); //$mail = new ApprovedPurchase($this->plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            if($this->plan->id != 5 || $this->plan->id != 6){
 
                 if(!$is_subscribed){
                     $suscription->save();
-                    // foreach($fases_premium as $fase){
-                    //     if($fase->clients()->where('users.id', $user->id)->doesntExist()){
-                    //         $fase->clients()->attach($user->id);
-                    //     }
-                    // }
-                    $fase->clients()->attach($user->id);
                 }
 
-                // switch ($this->plan->id) {
-                //     case 7:
-                //         $mail = new ApprovedPurchaseNoChat($this->plan, $user);
-                //         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                //     break;
-                //     case 36:
-                //         $mail = new ApprovedPurchaseReto($this->plan, $user);
-                //         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                //     break;
-                //     default:
-                //         $mail = new ApprovedPurchase($this->plan, $user);
-                //         Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                //     break;
-                // }
+                if($this->plan->id == 1 || $this->plan->id == 3 || $this->plan->id == 9 || $this->plan->id == 10 || $this->plan->id == 15 || $this->plan->id == 16 || $this->plan->id == 25 || $this->plan->id == 27 || $this->plan->id == 31 || $this->plan->id == 37 || $this->plan->id == 38 || $this->plan->id == 40 ) {
+                    $this->setFases($user->id, $fases_premium);
+                }elseif($this->plan->id == 39) {
+                    $this->setFases($user->id, $fases_premium);
+                    $this->addSuscription($user->id, $this->plan_total->id);
+                }elseif($this->plan->id == 2 || $this->plan->id == 8) {
+                    if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
+                        $fase_one->clients()->attach($user->id);
+                    }
+                }
+
+                $mail = new ApprovedPurchase($this->plan, $user);
+                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
 
-            }else if($this->plan->id == 5 || $this->plan->id == 6){
+            }else {
                 $suscription->save();
                 $mail = new ApprovedPurchase($this->plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
@@ -259,6 +243,14 @@ class ProductPay extends Component
                 $this->plan = Plan::find(8);
             }
 
+        }
+    }
+
+    public function setFases($user_id, $fases) {
+        foreach($fases as $fase){
+            if($fase->clients()->where('users.id', $user_id)->doesntExist()){
+                $fase->clients()->attach($user_id);
+            }
         }
     }
 

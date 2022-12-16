@@ -181,7 +181,7 @@ class PaymentController extends Controller
 
         $this->addSuscription($user->id, $plan->id);
 
-        if($plan->id == 1 || $plan->id == 3 || $plan->id == 9 || $plan->id == 10 || $plan->id == 15 || $plan->id == 16 || $plan->id == 25 || $plan->id == 27 || $plan->id == 31 || $plan->id == 37 || $plan->id == 38 || $plan->id == 40 ) {
+        if($plan->id == 1 || $plan->id == 3 || $plan->id == 9 || $plan->id == 10 || $plan->id == 15 || $plan->id == 16 || $plan->id == 25 || $plan->id == 27 || $plan->id == 31 || $plan->id == 37 || $plan->id == 38 || $plan->id == 40 || $plan->id == 48) {
             $this->setFases($user->id, $fases_premium);
         }elseif($plan->id == 39) {
             $this->setFases($user->id, $fases_premium);

@@ -205,7 +205,7 @@ class ProductPay extends Component
                     $suscription->save();
                 }
 
-                if($this->plan->id == 1 || $this->plan->id == 3 || $this->plan->id == 9 || $this->plan->id == 10 || $this->plan->id == 15 || $this->plan->id == 16 || $this->plan->id == 25 || $this->plan->id == 27 || $this->plan->id == 31 || $this->plan->id == 37 || $this->plan->id == 38 || $this->plan->id == 40 ) {
+                if($this->plan->id == 1 || $this->plan->id == 3 || $this->plan->id == 9 || $this->plan->id == 10 || $this->plan->id == 15 || $this->plan->id == 16 || $this->plan->id == 25 || $this->plan->id == 27 || $this->plan->id == 31 || $this->plan->id == 37 || $this->plan->id == 38 || $this->plan->id == 40 || $this->plan->id == 48) {
                     $this->setFases($user->id, $fases_premium);
                 }elseif($this->plan->id == 39) {
                     $this->setFases($user->id, $fases_premium);

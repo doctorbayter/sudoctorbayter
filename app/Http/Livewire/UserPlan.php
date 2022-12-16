@@ -16,7 +16,13 @@ class UserPlan extends Component
 
     public function mount(){
         $this->user_fases = auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id');
-        $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 9, 10, 11, 13])->sortBy('id');
+
+        if (auth()->user()->id == 3420 || auth()->user()->id == 1) {
+            $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 11])->sortBy('id');
+        } else {
+            $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 9, 10, 11, 13])->sortBy('id');
+        }
+        
         $this->user_adicionales = auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id');
         $this->thf_plan = Plan::find(23);
 
@@ -49,13 +55,6 @@ class UserPlan extends Component
         $this->plan_week = Plan::find(7);
         $fase_week = Fase::find(5);
         $this->subscribed_fase_week = $fase_week->clients->contains(auth()->user()->id);
-
-        $re_desafio = Fase::find(11);
-        $is_in_re_desafio = $re_desafio->clients->contains(auth()->user()->id);
-
-        if($is_in_re_desafio){
-            $this->re_desafio = Fase::find(9);
-        }
 
 
         $reto_actual = Fase::find(14);

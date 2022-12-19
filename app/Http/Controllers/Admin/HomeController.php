@@ -33,7 +33,7 @@ class HomeController extends Controller
         $plan = Plan::find($plan_id);
         if($user){
             $this->setUserData($user, $plan);
-            $this->send($user->email, $plan->id);
+            $this->send($email, $plan_id);
         }else{
             return 'Usuario no encontrado';
         }
@@ -153,7 +153,7 @@ class HomeController extends Controller
         $user = User::where('email', $email)->first();
 
         if($user){
-            switch ($plan->id) {
+            switch ($plan_id) {
                 case 7:
                     $mail = new ApprovedPurchaseNoChat($plan, $user);
                     Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
@@ -252,6 +252,9 @@ class HomeController extends Controller
 
         $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
         $fase_one      = Fase::where('id', [1])->get();
+        $plan_total    = Plan::find(23);
+        $week_recipes  = Fase::find(5);
+        $five_recipes  = Fase::find(7);
 
         $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
 
@@ -261,10 +264,19 @@ class HomeController extends Controller
 
         $this->addSuscription($user->id, $plan->id);
 
-        if($plan->id = 1 || $plan->id = 3 || $plan->id = 9 || $plan->id = 15 ) {
+        if($plan->id == 1 || $plan->id == 3 || $plan->id == 9 || $plan->id == 10 || $plan->id == 15 || $plan->id == 16 || $plan->id == 25 || $plan->id == 27 || $plan->id == 31 || $plan->id == 37 || $plan->id == 38 || $plan->id == 40 || $plan->id == 48) {
             $this->setFases($user->id, $fases_premium);
-        }elseif($plan->id = 2 || $plan->id = 8) {
-            $this->setFases($user->id, $fase_one);
+        }elseif($plan->id == 39) {
+            $this->setFases($user->id, $fases_premium);
+            $this->addSuscription($user->id, $plan_total->id);
+        }elseif($plan->id == 2 || $plan->id == 8) {
+            if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
+                $fase_one->clients()->attach($user->id);
+            }
+        }elseif ($plan->id == 7) {
+            $this->setFases($user->id, $week_recipes);
+        }elseif ($plan->id == 13) {
+            $this->setFases($user->id, $five_recipes);
         }
 
         return true;

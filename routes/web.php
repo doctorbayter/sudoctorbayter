@@ -492,6 +492,26 @@ Route::get('x/clients/eg/{month}', function ($month) {
     }
 });
 
+Route::get('x/clients/reto/{month}', function ($month) {
+
+    $plans = Subscription::whereIn('plan_id', [15])
+    ->whereMonth('created_at', $month)
+    ->get();
+    echo "<table>";
+    foreach ($plans as $plan) {
+        echo "<tr>";
+        echo "<td>' ";
+        echo $plan->user->name;
+        echo "' ,</td>";
+        echo "'<td>";
+        echo $plan->user->email;
+        echo "'</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+});
+
+
 Route::get('x/clients/{plan}/email/{skip?}', function ($plan, $skip = 0) {
 
     switch ($plan) {
@@ -516,8 +536,6 @@ Route::get('x/clients/{plan}/email/{skip?}', function ($plan, $skip = 0) {
         case 'arreglo':
             $subscriptions = Subscription::whereIn('plan_id', [47])->skip($skip)->take(500)->get();
             break;
-
-
     }
 
     $faseuno = Fase::find(1);

@@ -404,6 +404,9 @@ class PaymentController extends Controller
             if($product_id == 2453587){
                 $plan = Plan::find(47); //Reto #QuedeseKeto 2022
                 $fase = Fase::find(14);
+            }else if($product_id == 2535587){
+                $plan = Plan::find(49); //Desafio 2023
+                $fase = Fase::find(15);
             }else{
                 return;
             }

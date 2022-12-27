@@ -771,7 +771,7 @@ Route::get('x/query/reto', function(){
         'slug' => 'sushi-huevo',
         'indice'=> 1,
         'carbs' => 0,
-        'time' => 12,
+        'time' => 15,
         'type' => 1,
         ]);
 

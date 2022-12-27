@@ -766,17 +766,17 @@ Route::get('x/query/reto', function(){
 
     // Recetas
 
-    $recipe = Recipe::create([
-        'name' => 'Un huevo Cocido',
-        'slug' => 'un-huevo-cocido',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 10,
-        'type' => 1,
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'Un huevo Cocido',
+    //     'slug' => 'un-huevo-cocido',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 10,
+    //     'type' => 1,
+    //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (362, 150, $recipe->id, '5', CURRENT_TIMESTAMP, NULL)");
+    (362, 150, 342 '0', CURRENT_TIMESTAMP, NULL)");
 
     // $recipe = Recipe::create([
     //     'name' => 'Ajipollin',

@@ -85,35 +85,35 @@
                                                 </b> A continuación encontrarás los datos de acceso a las reuniones grupales privadas de Zoom con tu doctor Bayter.</p>
                                                 <div class="flex-col md:flex-row justify-around my-8">
                                                     <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
-                                                        <div class="">
+                                                        <div class="hidden">
                                                             <h2>Primera Reunión <b>Reto #QuedeseKeto</b></h2>
                                                             <hr class="my-2 border-gray-700">
                                                             <p><b>La repetición estará disponible por tiempo limitado</b></p>
                                                             <a href="{{route('reto.replay', ['quedeseketo', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
                                                         </div>
-                                                        <div class="hidden">
+                                                        <div class="">
                                                             <h2>Primera Reunión <b>Reto #QuedeseKeto</b></h2>
                                                             <hr class="my-2 border-gray-700">
-                                                            <p><b>Fecha:</b> Lunes 12 dic 2022 1:00 p.m. Hora Colombia</p>
-                                                            <p><b>ID de reunión:</b> 885 2575 7156</p>
-                                                            <p><b>Código de acceso:</b> 567570</p>
-                                                            <a href="https://us02web.zoom.us/j/88525757156?pwd=aGQ5R0JZOVkzbUh2bEwxdG9jaEp6dz09" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
+                                                            <p><b>Fecha:</b> 10 de enero 2023 1:00 p.m. Hora Colombia</p>
+                                                            <p><b>ID de reunión:</b> 886 5044 3170</p>
+                                                            <p><b>Código de acceso:</b> 316913</p>
+                                                            <a href="https://us02web.zoom.us/j/88650443170?pwd=Z3NSb2RjMXdndW45YnF4NlQ4SU56UT09" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
                                                         </div>
                                                     </div>
                                                     <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8 ">
-                                                        <div class="">
+                                                        <div class="hidden">
                                                             <h2>Repetición Segunda Reunión <b>Reto 5Mer</b></h2>
                                                             <hr class="my-2 border-gray-700">
                                                             <p><b>La repetición estará disponible por tiempo limitado</b></p>
                                                             <a href="{{route('reto.replay', ['quedeseketo', 2])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
                                                         </div>
-                                                        <div class="hidden">
+                                                        <div class="">
                                                             <h2>Segunda Reunión <b>Reto #QuedeseKeto</b></h2>
                                                             <hr class="my-2 border-gray-700">
-                                                            <p><b>Fecha:</b> Viernes 16 dic 2022 1:00 p.m. Hora Colombia</p>
-                                                            <p><b>ID de reunión:</b> 831 6894 5100</p>
-                                                            <p><b>Código de acceso:</b> 586730</p>
-                                                            <a href="https://us02web.zoom.us/j/83168945100?pwd=WkxId29BUjd3K2VBQUV2Z2dKNWZaZz09" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
+                                                            <p><b>Fecha:</b> 13 de enero 2023 1:00 p.m. Hora Colombia</p>
+                                                            <p><b>ID de reunión:</b> 885 7157 4057</p>
+                                                            <p><b>Código de acceso:</b> 073801</p>
+                                                            <a href="https://us02web.zoom.us/j/88571574057?pwd=cEhlL3IvN0htZ092RDhZdWRsV3Brdz09" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
                                                         </div>
                                                     </div>
                                                 </div>

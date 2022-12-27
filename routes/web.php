@@ -776,42 +776,42 @@ Route::get('x/query/reto', function(){
     //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (362, 150, 342 1, CURRENT_TIMESTAMP, NULL)");
+    (362, 150, 342, 4, CURRENT_TIMESTAMP, NULL)");
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Ajipollin',
-    //     'slug' => 'ajipollin',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 30,
-    //     'type' => 1,
-    //     ]);
-    //     // $image = Image::create([
-    //     // 'url' => 'recipes/desafio-2023-dia-1-receta-2.jpg',
-    //     // 'imageable_id' => $recipe->id,
-    //     // 'imageable_type' => 'App\Models\Recipe',
-    //     // ]);
-    //     // $video = Video::create([
-    //     // 'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-    //     // 'videoable_id' => $recipe->id,
-    //     // 'videoable_type' => 'App\Models\Recipe',
-    //     // ]);
+    $recipe = Recipe::create([
+        'name' => 'Cherry salmon',
+        'slug' => 'cherry-salmon',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 35,
+        'type' => 1,
+        ]);
+        // $image = Image::create([
+        // 'url' => 'recipes/desafio-2023-dia-1-receta-2.jpg',
+        // 'imageable_id' => $recipe->id,
+        // 'imageable_type' => 'App\Models\Recipe',
+        // ]);
+        // $video = Video::create([
+        // 'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        // 'videoable_id' => $recipe->id,
+        // 'videoable_type' => 'App\Models\Recipe',
+        // ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (360, 149, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (363, 150, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Caldoso',
-    //     'slug' => 'caldoso',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 20,
-    //     'type' => 1,
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Egg cake',
+        'slug' => 'egg-cake',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 20,
+        'type' => 1,
+        ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (361, 149, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (364, 150, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

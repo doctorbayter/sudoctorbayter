@@ -43,6 +43,10 @@ class Reto extends Component
                 $this->plan = Plan::find(47);
                 $this->list_id = 34;
                 break;
+            case 'desafio-2023':
+                $this->plan = Plan::find(49);
+                $this->list_id = 34;
+                break;
             default:
                 $this->list_id = null;
                 break;
@@ -101,10 +105,20 @@ class Reto extends Component
                     'video' => null,
                 ];
             break;
-            case '5mer':
+            case 'quedese-keto':
                 return $this->data = [
                     'title' => '#QuedeseKeto',
                     'subtitle'=> 'El reto en Navidad',
+                    'type' => 'Reto Online',
+                    'online' => true,
+                    'billdoard' => null,
+                    'video' => null,
+                ];
+            break;
+            case 'desafio-2023':
+                return $this->data = [
+                    'title' => 'Desafio 2023',
+                    'subtitle'=> 'Liberate de la mierda de 2022',
                     'type' => 'Reto Online',
                     'online' => true,
                     'billdoard' => null,
@@ -140,6 +154,9 @@ class Reto extends Component
             break;
             case 'quedese-keto':
                 return view('livewire.reto.quedese-keto.register');
+            break;
+            case 'desafio-2023':
+                return view('livewire.reto.desafio-2023.register');
             break;
             default:
                 return view('livewire.masterclass.no-disponible');
@@ -201,6 +218,18 @@ class Reto extends Component
                     'video-1' => '780536061?h=989bb4de5c',
                     'video-2' => '781982023?h=0c5827a293',
                     'video-title' => '',
+                    'video-base' => '',
+                ];
+                break;
+            case 'desafio-2023':
+                return $this->data = [
+                    'title' => 'Desafio 2023',
+                    'subtitle'=> 'Liberate de la mierda de 2022',
+                    'type' => 'video',
+                    'online' => true,
+                    'video-1' => '780536061?h=989bb4de5c',
+                    'video-2' => '781982023?h=0c5827a293',
+                    'video-title' => 'Receta Base',
                     'video-base' => '',
                 ];
                 break;

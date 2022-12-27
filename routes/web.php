@@ -689,139 +689,129 @@ Route::get('x/query/reto', function(){
 
     //Plan y Fase del reto
 
-    $plan = Plan::create([
-        'name' => 'Desafio 2023',
-        'slug' => 'desafio-2023',
-        'price_id' => 14
-    ]);
+    //$plan = Plan::create([
+    //    'name' => 'Desafio 2023',
+    //    'slug' => 'desafio-2023',
+    //    'price_id' => 14
+    //]);
 
-    $fase = Fase::create([
-        'name' => 'Desafio 2023',
-        'sub_name' => 'Liberate de la mierda del <span class="text-red-700">2022</span>',
-        'descripcion' => '',
-        'slug' => 'desafio-2023',
-    ]);
+    //$fase = Fase::create([
+    //    'name' => 'Desafio 2023',
+    //    'sub_name' => 'Liberate de la mierda del <span class="text-red-700">2022</span>',
+    //    'descripcion' => '',
+    //    'slug' => 'desafio-2023',
+    //]);
 
 
     //Días Reto
 
-    $day = Day::create([
-        'day' => 1,
-        'fase_id' => $fase->id,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (106, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (106, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    //$day = Day::create([
+    //    'day' => 1,
+    //    'fase_id' => $fase->id,
+    //]);
+    //DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    //(106, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    //(106, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    $day = Day::create([
-        'day' => 2,
-        'fase_id' => $fase->id,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (107, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (107, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    //$day = Day::create([
+    //    'day' => 2,
+    //    'fase_id' => $fase->id,
+    //]);
+    //DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    //(107, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    //(107, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    $day = Day::create([
-        'day' => 3,
-        'fase_id' => $fase->id,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (108, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (108, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    //$day = Day::create([
+    //    'day' => 3,
+    //    'fase_id' => $fase->id,
+    //]);
+    //DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    //(108, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    //(108, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    $day = Day::create([
-        'day' => 4,
-        'fase_id' => $fase->id,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (109, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (109, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    //$day = Day::create([
+    //    'day' => 4,
+    //    'fase_id' => $fase->id,
+    //]);
+    //DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    //(109, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    //(109, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    $day = Day::create([
-        'day' => 5,
-        'fase_id' => $fase->id,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (110, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (110, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    //$day = Day::create([
+    //    'day' => 5,
+    //    'fase_id' => $fase->id,
+    //]);
+    //DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    //(110, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    //(110, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
     //Secretos y lista de alimentos
 
-    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (22, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-desafio-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    //(22, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-desafio-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
-    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (23, 'Secretos', 'files/pdf/secretos-desafio-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    //(23, 'Secretos', 'files/pdf/secretos-desafio-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
-    DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    (24, $fase->id, '1', 'files/pdf/lista-de-alimentos-desafio-2023.pdf', CURRENT_TIMESTAMP, NULL)");
+    //DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
+    //(24, $fase->id, '1', 'files/pdf/lista-de-alimentos-desafio-2023.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
 
     // Recetas
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Tradicional Prenavideño',
-    //     'slug' => 'tradicional-prenavideno',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 10,
-    //     'type' => 1,
-    //     ]);
-    //     $image = Image::create([
-    //     'url' => 'recipes/quedese-keto-dia-5-receta-1.jpg',
-    //     'imageable_id' => $recipe->id,
-    //     'imageable_type' => 'App\Models\Recipe',
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Sushi huevo',
+        'slug' => 'sushi-huevo',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 10,
+        'type' => 1,
+        ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (356, 148, 331, '1', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (359, 149, $recipe->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Carnuditas Prenavideñas',
-    //     'slug' => 'carnuditas-prenavidenas',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 30,
-    //     'type' => 1,
-    //     ]);
-    //     $image = Image::create([
-    //     'url' => 'recipes/quedese-keto-dia-5-receta-2.jpg',
-    //     'imageable_id' => $recipe->id,
-    //     'imageable_type' => 'App\Models\Recipe',
-    //     ]);
-    //     $video = Video::create([
-    //     'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-    //     'videoable_id' => $recipe->id,
-    //     'videoable_type' => 'App\Models\Recipe',
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Ajipollin',
+        'slug' => 'ajipollin',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 30,
+        'type' => 1,
+        ]);
+        // $image = Image::create([
+        // 'url' => 'recipes/desafio-2023-dia-1-receta-2.jpg',
+        // 'imageable_id' => $recipe->id,
+        // 'imageable_type' => 'App\Models\Recipe',
+        // ]);
+        // $video = Video::create([
+        // 'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        // 'videoable_id' => $recipe->id,
+        // 'videoable_type' => 'App\Models\Recipe',
+        // ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (357, 148, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (360, 149, $recipe->id, '2', CURRENT_TIMESTAMP, NULL)");
 
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Huevos Prenavideños',
-    //     'slug' => 'huevos-prenavidenos',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 20,
-    //     'type' => 1,
-    //     ]);
-    //     $image = Image::create([
-    //     'url' => 'recipes/quedese-keto-dia-5-receta-3.jpg',
-    //     'imageable_id' => $recipe->id,
-    //     'imageable_type' => 'App\Models\Recipe',
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Caldoso',
+        'slug' => 'caldoso',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 20,
+        'type' => 1,
+        ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (358, 148, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (361, 149, $recipe->id, '3', CURRENT_TIMESTAMP, NULL)");
 
 });
 

@@ -17,7 +17,7 @@
                 </header>
                 <p class="my-4 text-sm md:text-base text-justify">Porque este es tu año. Esta es tu oportunidad. Este 2023 vas a dejar de decir "el lunes comienzo la dieta" para decir "INICIO HOY". Y qué mejor que con un espectacular reto de 5 días en el que vas a eliminar toda la mierda que comiste en el 2022.</p>
                 <p class="my-4 text-sm md:text-base text-justify">Vas a desintoxicar tu cuerpo, a romper tus adicciones por los carbohidratos y el azúcar, y lo mejor de todo, en tan solo 5 días: ¡VAS A BAJAR DE PESO!</p>
-                <p class="my-4 text-sm md:text-base text-justify">Prepárate porque durante 5 días te voy a llevar de la mano en un camino maravilloso en el que, con ingredientes económicos y deliciosos, probarás recetas increíbles que te desinflamarán, y sin aguantar hambre, <p>BAJARÁS DE PESO </b></p>
+                <p class="my-4 text-sm md:text-base text-justify">Prepárate porque durante 5 días te voy a llevar de la mano en un camino maravilloso en el que, con ingredientes económicos y deliciosos, probarás recetas increíbles que te desinflamarán, y sin aguantar hambre, <b>BAJARÁS DE PESO </b></p>
                 <div class="relative">
                     <a href="https://pay.hotmart.com/N77793722X"
                     wire:loading.attr="disabled"

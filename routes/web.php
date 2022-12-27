@@ -772,7 +772,7 @@ Route::get('x/query/reto', function(){
         'indice'=> 1,
         'carbs' => 0,
         'time' => 10,
-        'type' => 1,
+        'type' => 1, 
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES

@@ -24,8 +24,6 @@ class UpdateMealToDayRecipeTable extends Migration
      */
     public function down()
     {
-        Schema::table('day_recipe', function (Blueprint $table) {
-            //
-        });
+        
     }
 }

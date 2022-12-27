@@ -776,7 +776,7 @@ Route::get('x/query/reto', function(){
     //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (362, 150, 342 null, CURRENT_TIMESTAMP, NULL)");
+    (362, 150, 342 NULL, CURRENT_TIMESTAMP, NULL)");
 
     // $recipe = Recipe::create([
     //     'name' => 'Ajipollin',

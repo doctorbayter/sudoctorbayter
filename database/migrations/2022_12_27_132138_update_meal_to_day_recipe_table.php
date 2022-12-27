@@ -14,7 +14,7 @@ class UpdateMealToDayRecipeTable extends Migration
      */
     public function up()
     {
-        DB::statement("ALTER TABLE `day_recipe` CHANGE `meal` `meal` ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL;");
+        DB::statement("ALTER TABLE 'day_recipe' CHANGE 'meal' 'meal' ENUM('1','2','3','4','5') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL;");
     }
 
     /**

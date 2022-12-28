@@ -109,13 +109,6 @@ Route::get('/dieta', function () {
     return redirect()->route('plan.index');
 })->name('redirect.dieta');
 
-Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
-
-Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->name('reto.replay');
-
-Route::get('reto/{reto}/video', [Reto::class, 'video'])->name('reto.video');
-
-
 Route::get('/regalo', function () {
     return view('no-disponible');
     //$plan = Plan::find(1);
@@ -123,14 +116,26 @@ Route::get('/regalo', function () {
 
 })->name('regalo.navidad');
 
+Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
+
+Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->name('reto.replay');
+
+Route::get('reto/{reto}/video', [Reto::class, 'video'])->name('reto.video');
+
 Route::get('/reto', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'quedese-keto']);
+    //return view('no-disponible');
+    return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
 })->name('reto.2022');
 
 Route::get('/reto/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/GliC6WZEW0CL04boWOrLBJ');
+    return redirect('https://chat.whatsapp.com/IUfHfS9mv3R3YEXoWrvZoA');
 })->name('reto.whatsapp');
+
+Route::get('/desafio', function () {
+    //return view('no-disponible');
+    return redirect('https://pay.hotmart.com/N77793722X?checkoutMode=10');
+})->name('desafio.2023');
+
 
 Route::get('/selecto', function () {
     $plan = Plan::find(10);

@@ -397,7 +397,7 @@ class PaymentController extends Controller
                 $user = User::create([
                     'name' => $user_name,
                     'email' => strtolower($user_email),
-                    'password' => Hash::make('secret')
+                    'password' => Hash::make('123456')
                 ]);
             }
 

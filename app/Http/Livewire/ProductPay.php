@@ -198,6 +198,7 @@ class ProductPay extends Component
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
             $fase_one = Fase::find(1);
+            $desafio_2023 = Fase::find(15);
 
             if($this->plan->id != 5 || $this->plan->id != 6){
 
@@ -207,17 +208,29 @@ class ProductPay extends Component
 
                 if($this->plan->id == 1 || $this->plan->id == 3 || $this->plan->id == 9 || $this->plan->id == 10 || $this->plan->id == 15 || $this->plan->id == 16 || $this->plan->id == 25 || $this->plan->id == 27 || $this->plan->id == 31 || $this->plan->id == 37 || $this->plan->id == 38 || $this->plan->id == 40 || $this->plan->id == 48) {
                     $this->setFases($user->id, $fases_premium);
-                }elseif($this->plan->id == 39) {
+                }else if($this->plan->id == 39) {
                     $this->setFases($user->id, $fases_premium);
                     $this->addSuscription($user->id, $this->plan_total->id);
-                }elseif($this->plan->id == 2 || $this->plan->id == 8) {
+                }else if($this->plan->id == 2 || $this->plan->id == 8) {
                     if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
                         $fase_one->clients()->attach($user->id);
                     }
+                }else if($this->plan->id == 49) {
+
+                    if($desafio_2023->clients()->where('users.id', $user->id)->doesntExist()){
+                        $desafio_2023->clients()->attach($user->id);
+                    }
+                    
                 }
 
-                $mail = new ApprovedPurchase($this->plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                if($this->plan->id == 49){
+                    $mail = new ApprovedPurchaseReto($this->plan, $user);
+                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                }else{
+                    $mail = new ApprovedPurchase($this->plan, $user);
+                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                }
+                
 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
 

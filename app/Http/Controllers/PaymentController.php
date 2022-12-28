@@ -172,6 +172,7 @@ class PaymentController extends Controller
         $week_recipes  = Fase::find(5);
         $five_recipes  = Fase::find(7);
         $fase_reto     = Fase::find(14);
+        $desafio_2023  = Fase::find(15);
 
         $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
 
@@ -197,6 +198,10 @@ class PaymentController extends Controller
         }elseif ($plan->id == 47) {
             if($fase_reto->clients()->where('users.id', $user->id)->doesntExist()){
                 $fase_reto->clients()->attach($user->id);
+            }
+        }elseif ($plan->id == 49) {
+            if($desafio_2023->clients()->where('users.id', $user->id)->doesntExist()){
+                $desafio_2023->clients()->attach($user->id);
             }
         }
 
@@ -364,7 +369,7 @@ class PaymentController extends Controller
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
-            case 47:
+            case 49:
                 $mail = new ApprovedPurchaseReto($plan, $user);
                 Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;

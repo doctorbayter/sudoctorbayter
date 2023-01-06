@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 class ProductPay extends Component
 {
     public $plan, $suscription, $flash_sale;
-    public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send, $list_id;
+    public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send, $list_id, $is_week;
     public $can_continued = false;
     public $error_message = "<a href='#formulario'>* Tenemos un error, revisa la información que escribiste arriba</a>";
     public $error_button = "Toca aquí para confirmar la información";

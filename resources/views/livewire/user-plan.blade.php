@@ -64,7 +64,7 @@
 
                         <section class="grid grid-cols-1 xl:grid-cols-2 gap-8 my-8 bg">
 
-                            @if ($user_plan != 7 && $user_plan != 17 && $user_plan != 18  && $user_plan != 19  && $user_plan != 36  && $user_plan != 47)
+                            @if ($user_plan != 7 && $user_plan != 17 && $user_plan != 18  && $user_plan != 19  && $user_plan != 36  && $user_plan != 47 && $user_plan != 49)
 
                                 @if ($is_premium->count() == 0)
                                     <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg inline-block shadow-sm ">

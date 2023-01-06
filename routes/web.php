@@ -906,79 +906,12 @@ Route::get('x/clients/fase/5mer/{skip?}', function($skip = 0){
 Route::get('x/clients/verify/', function($skip = 0){
 
     $clientes_hotmart = [
-        ["Milagros","Milagrosvallesmires@gmail.com"], 
-        ["Isabel Córdoba Rivas","Formacionconpasion@gmail.com"], 
-        ["Victor Bedoya","Victorbedoya@tecnovalvulas.net"], 
-        ["Jutze Garcia","Jutzegm@gmail.com"], 
-        ["Jose Buelvas","Jrbuelvas0522@gmail.com"], 
-        ["Jonathan","Jonathan.stev.diaz@gmail.com"], 
-        ["Helen Bello","Bello15@hotmail.com"], 
-        ["Ana Patricia Peguero Ogando","Dra.panestesia@gmail.com"], 
-        ["Patricia Martinez","princess-mtz77@Outlook.com"], 
-        ["Raimelys","Raimelys.d26@gmail.com"], 
-        ["Diana Maria Garcia Garces","Garciagdianam@gmail.com"], 
-        ["Yessica tatiana lopera velandia","Yecalopera870@hotmail.com"], 
-        ["Maria","Marianacelestekert@gmail.com"], 
-        ["Edwin","Edwinalvear@yahoo.com.mx"], 
-        ["Niraidet","Niraidet2016@gmail.com"], 
-        ["Brenda Lopez","Shelsmy33@yahoo.com"], 
-        ["Venus","Venusdelvalle@gmail.com"], 
-        ["Vivían Vanesa","Vivajasval1983@hotmail.com"], 
-        ["Grarimar Ortiz","Grarimar@gmail.com"], 
-        ["Lorena Bermúdez","Destroyer05@hotmail.com"], 
-        ["Joham","Johamtt@hotmail.com"], 
-        ["Erika","Erikaalexa2491@icloud.com"], 
-        ["Zoraida Balza","Zoraidabalza0131@gmail.com"], 
-        ["Olga","Olga_colmenares@hotmail.com"], 
-        ["Janeth Sánchez Sánchez","Jasasa2602@hotmail.com"], 
-        ["Jennifer","JENNIFERVPULIDO@GMAIL.COM"], 
-        ["Alejandra Uribe Duque","Codelecml0903@hotmail.com"], 
-        ["Maiten rosales","Maitenrosales@gmail.com"], 
-        ["Fabrinho","Fabrinho_do@hotmail.com"], 
-        ["Jorge","Jorgemarquezm33@gmail.com"], 
-        ["Kerry","KELLY_GUTIERREZDELA@YAHOO.COM"], 
-        ["Isidel figuera","Isidelfiguera@hotmail.com"], 
-        ["Luz","Luzrosalbaflorez07@gmail.com"], 
-        ["Josue","Josueolmos11@gmail.com"], 
-        ["Madelin","Madelinreynoso@gmail.com"], 
-        ["Yesenia","Yeseniamcordero@hotmail.com"], 
-        ["0lga I Marrero Nieves","O.marrero27@gmail.com"], 
-        ["Diego Fernando Rojas Herrera","Diferoherr@gmail.com"], 
         ["Yuly Rodríguez","yuliza04@hotmail.com"], 
-        ["Juan Carlos Fonseca Duarte","Jcfonck18@gmail.com"], 
-        ["Yajaira Pena","Yajairarpg@hotmail.com"], 
-        ["Camilo","Camilomeneses3@gmail.com"], 
-        ["Isabel Peña","Isapego02@outlook.com"], 
-        ["Francia","Franciainesperezzapata@gmail.com"], 
-        ["Olga","Olgapelaez54@hotmail.com"], 
-        ["Mary","MARYGONZALEZGANTES@GMAIL.COM"], 
-        ["Clarivel Cabello","Ccabello3008@gmail.com"], 
-        ["Kathi","Lopezkathi441@gmail.com"], 
-        ["MARTA CECILIA VALENCIA","ENERGYBODYFITNESSGYM@GMAIL.COM"], 
-        ["AMANDA URIBE","ADUP1512@GMAIL.COM"], 
-        ["Raquel","Raquelitaquintero56@gmail.com"], 
-        ["Thabata maranillos","Thahect@gmail.com"], 
-        ["Ana Ramirez","Bema26@hotmail.com"], 
-        ["Suyen Santo Diaz","Suyen.santo@yahoo.com"], 
-        ["Amalfis narvaez moreno","AmalfisNarvaez1305@gmail.com"], 
-        ["Isabel Requena","Isarequena14@gmail.com"], 
-        ["Gregoria","Gregoriacarrera@me.com"], 
-        ["Angel","Angelatobonvasquez@gmail.com"], 
-        ["Frey Perdomo","Demiper7@gmail.com"], 
         ["Angela","angela.teixeira01@gmail.com"], 
-        ["Sussy","Sussygirl21@gmail.com"], 
-        ["Ketty Dettorre","Kdettorre@gmx.net"], 
-        ["Karina","Karinadetrak@gmail.com"], 
-        ["William Alonso Florido","Wflorido@verizon.net"], 
-        ["Luis Alejandro Díaz Romero","lualdiro2303@gmail.com"], 
-        ["Wilson javier palacios beltran","Scpalacios02@gmail.com"], 
-        ["Inmaculada Salguero","Isalg775@gmail.com"], 
-        ["ELIZABETH SOLIS","LIZSOLIS.1@HOTMAIL.COM"], 
-        ["Fabyoso","Fabyoso6919@gmail.com"], 
-        ["Laura","Lauryn1978@gmail.com"], 
+        ["Luis Alejandro Díaz","lualdiro2303@gmail.com"], 
         ["Maria Velandia","mfvelandiag@hotmail.com"], 
-        ["Claudia patricia blandon ramirez","luedja18@hotmail.com"], 
-        ["Felipe Alejandro Beckmann Diaz","beckmann.fel@gmail.com"], 
+        ["Claudia patricia blandon","luedja18@hotmail.com"], 
+        ["Felipe Alejandro Beckmann","beckmann.fel@gmail.com"], 
         ["Alfred","alfredluisfeliz@hotmail.com"], 
         ["Diego","diego.molinam@hotmail.com"], 
         ["Angie","angieriverapr75@yahoo.com"], 
@@ -991,29 +924,29 @@ Route::get('x/clients/verify/', function($skip = 0){
 
     foreach ($clientes_hotmart as $cliente_hotmart) {
        
-        $cliente = User::where('email',strtolower($cliente_hotmart[1]))->first(); 
+        // $cliente = User::where('email',strtolower($cliente_hotmart[1]))->first(); 
 
-        if(!$cliente){
-            echo $cliente_hotmart[0]. "<br>";
-        }
-
-        // $plan = Plan::find(49); //Desafio 2023
-        // $fase = Fase::find(15);
-
-        // $user = User::create([
-        //     'name' => $cliente_hotmart[0],
-        //     'email' => strtolower($cliente_hotmart[1]),
-        //     'password' => Hash::make('123456')
-        // ]);
-
-        // $suscription_plan           = new Subscription();
-        // $suscription_plan->user_id  = $user->id;
-        // $suscription_plan->plan_id  = 49;
-        // $suscription_plan->save();
-
-        // if($fase->clients()->where('users.id', $user->id)->doesntExist()){
-        //     $fase->clients()->attach($user->id);
+        // if(!$cliente){
+        //     echo $cliente_hotmart[0]. "<br>";
         // }
+
+        $plan = Plan::find(49); //Desafio 2023
+        $fase = Fase::find(15);
+
+        $user = User::create([
+            'name' => $cliente_hotmart[0],
+            'email' => strtolower($cliente_hotmart[1]),
+            'password' => Hash::make('123456')
+        ]);
+
+        $suscription_plan           = new Subscription();
+        $suscription_plan->user_id  = $user->id;
+        $suscription_plan->plan_id  = 49;
+        $suscription_plan->save();
+
+        if($fase->clients()->where('users.id', $user->id)->doesntExist()){
+            $fase->clients()->attach($user->id);
+        }
 
     }
 

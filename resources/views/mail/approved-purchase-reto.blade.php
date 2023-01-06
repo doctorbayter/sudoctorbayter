@@ -19,168 +19,147 @@
   </style>
 </head>
 <body style="margin:0;padding:0;">
-  <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
-    <tr>
-      <td align="center" style="padding:0;">
-        <table role="presentation" style="width:500px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
-          <tr>
-            <td align="center" style="padding:0;background:#101010;">
-              <img src="{{asset('img/mails/mail_dr_01.jpg')}}" alt="Bienvenido"  style="height:auto;display:block;" />
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:36px 30px 42px 30px;">
-              <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
-                <tr>
-                  <td style="padding:0 0 36px 0;color:#153643;">
-                    <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif; ">Hola! {{$user->name}} Tu pago ha sido confirmado</h1>
-                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Quiero darte la bienvenida al <b>Desafio 2023</b> tu compra ha sido aprobada con éxito y ahora tendrás acceso a toda la información que este reto.</p>
-                  </td>
-                </tr>
-                <tr>
-                    <td class="esd-structure" align="left">
-                        <table width="100%" cellspacing="0" cellpadding="0">
-                            <tbody>
-                                <tr>
-                                    <td class="esd-container-frame" width="530" valign="top" align="center">
-                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="esd-block-text " bgcolor="#eeeeee" align="left">
-                                                        <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td width="80%">
-                                                                        <h4 style="padding-left: 1rem">Confirmación de tu compra</h4>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="esd-structure  " align="left">
-                        <table width="100%" cellspacing="0" cellpadding="0">
-                            <tbody>
-                                <tr>
-                                    <td class="esd-container-frame" width="530" valign="top" align="center">
-                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="esd-block-text " align="left">
-                                                        <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="padding: 5px 10px 5px 0" width="80%" align="left">
-                                                                        <p>{{$plan->name}}</p>
-                                                                    </td>
-                                                                    <td style="padding: 5px 0" width="20%" align="left">
-                                                                        <p>{{$plan->finalPrice}} US$</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="esd-structure" align="left">
-                        <table width="100%" cellspacing="0" cellpadding="0">
-                            <tbody>
-                                <tr>
-                                    <td class="esd-container-frame" width="530" valign="top" align="center">
-                                        <table style="border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;" width="100%" cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="esd-block-text " align="left">
-                                                        <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td width="80%">
-                                                                        <h4>TOTAL</h4>
-                                                                    </td>
-                                                                    <td width="20%">
-                                                                        <h4>{{$plan->finalPrice}} US$</h4>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                  <td style="padding-top:1rem;">
-                    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
-                      <tr>
-                        <td style="text-align:center;width:260px;padding:0;vertical-align:top;color:#153643;">
-                          <p style="text-align:center;width:100%;margin:0 0 25px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><img src="{{asset('img/mails/mail_whatsapp.jpg')}}" alt="" width="100%" style="height:auto;display:block;" /></p>
-                          <p style="margin:0 0 12px 0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;">Accede al grupo del Desafio 2023 con el <b>Equipo del Doctor Bayter</b></p>
-                          <p style="margin:0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://doctorbayter.com/reto/desafio/whatsapp" style="color:#a30000;text-decoration:underline;">Entra aquí al grupo de WhatsApp</a></p>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:30px;background:#a30000;">
-              <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">
-                <tr>
-                  <td style="padding:0;width:50%;" align="left">
-                    <p style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
-                      &reg; <b>Doctor Bayter</b> 2022<br/>
-                    </p>
-                  </td>
-                  <td style="padding:0;width:50%;" align="right">
-                    <table role="presentation" style="border-collapse:collapse;border:0;border-spacing:0;">
-                      <tr>
-                        <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="https://www.facebook.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/facebook.svg')}}" alt="Facebook" width="38" style="height:auto;display:block;border:0;" /></a>
-                        </td>
-                        <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="https://www.instagram.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/instagram.svg')}}" alt="Instagram" width="38" style="height:auto;display:block;border:0;" /></a>
-                        </td>
-                        <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="https://www.youtube.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/youtube.svg')}}" alt="Youtube" width="38" style="height:auto;display:block;border:0;" /></a>
-                        </td>
-                        <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="https://www.tiktok.com/@doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/tiktok.svg')}}" alt="TikTok" width="38" style="height:auto;display:block;border:0;" /></a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+  <tbody><tr><td id="m_2709320044371808437layout_table_3ad7f3f138b6a2f382340a272001e44dec222aaf" valign="top" align="center" width="650" style="background-color:#ffffff"><table cellpadding="0" cellspacing="0" border="0" width="650" style="border-collapse:collapse;font-size:14px;min-width:100%;background-color:#ffffff"><tbody><tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5558" valign="top" style="padding:0 0px 0 0px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5558"><td id="m_2709320044371808437layout-row-padding5558" valign="top" style="padding:0px"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="12"><div style="margin:0;outline:none;padding:0;height:12px"><table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="12" width="650" style="background-color:#a30000">&nbsp;</td>
+  </tr>
+  </tbody></table>
+  </div>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  <tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5557" valign="top" style="padding:0 0px 0 0px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5557"><td id="m_2709320044371808437layout-row-padding5557" valign="top" style="padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="28"><div style="margin:0;outline:none;padding:0;height:28px"><table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="28" width="650" style="background-color:#ffffff">&nbsp;</td>
+  </tr>
+  </tbody></table>
+  </div>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  <tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5560" valign="top" style="padding:0 0px 0 0px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5560"><td id="m_2709320044371808437layout-row-padding5560" valign="top" style="padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="25"><div style="margin:0;outline:none;padding:0;height:25px"><table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="25" width="650" style="background-color:#ffffff">&nbsp;</td>
+  </tr>
+  </tbody></table>
+  </div>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  <tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5561" valign="top" style="padding:0px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5561" style="margin:0;padding:0;background-color:#ffffff"><td id="m_2709320044371808437layout-row-padding5561" valign="top" style="background-color:#ffffff;padding:0px 20px 0px 20px"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td id="m_2709320044371808437text_div4968" valign="top" align="left" width="610" style="line-height:150%;margin:0;outline:none;padding:0;color:inherit;font-size:12px;font-weight:inherit;line-height:1.5;text-decoration:inherit;font-family:arial"> <div style="line-height:150%;margin:0;outline:none;padding:0;color:inherit;font-size:14px;font-weight:inherit;line-height:1.5;text-decoration:inherit"> <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"> <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit;text-align:left"><span style="color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif"><span style="color:inherit;font-size:inherit;font-weight:bold;line-height:inherit;text-decoration:inherit"></span>, <span style="color:#000000;font-size:14px;font-weight:400;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;font-style:normal"> <span style="color:#000000;font-size:14px;font-weight:400;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;font-style:normal">Ya está disponible toda la información del<span style="color:inherit;font-size:inherit;font-weight:bold;line-height:inherit;text-decoration:inherit"> Desafio 2023</span></span><span style="color:#000000;font-size:14px;font-weight:400;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;font-style:normal"> si aún no estás dentro del grupo de seguimiento con en equipo de tu Doctor Bayter ingresa al siguiente botón.</span></span><br><br></span></div>
+   </div>
+   </div>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  <tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5574" valign="top" style="padding:0px 0px 0px 15px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5574" style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-padding5574" valign="top" style="background-color:#ffffff;padding:0px"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" align="left" width="635"> <div style="margin:0;outline:none;padding:0;text-align:center">
+   <a href="https://doctorbayter.com/reto/desafio/whatsapp" style="margin:0;outline:none;padding:15px;color:#ffffff;background:#a30000;background-color:#a30000;border:1px solid #b5b5b5;border-radius:5px;font-family:Roboto,San Francisco,Helvetica,Arial,sans-serif;font-size:14px;display:inline-block;line-height:1.1;text-align:center;text-decoration:none" target="_blank"> <span style="color:#ffffff;font-family:Roboto,San Francisco,Helvetica,Arial,sans-serif;font-size:14px;font-weight:bold"> ENTRA AQUÍ AL GRUPO DE WHATSAPP DEL RETO </span> </a> </div>
+  
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  <tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5572" valign="top" style="padding:0 0px 0 0px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5572"><td id="m_2709320044371808437layout-row-padding5572" valign="top" style="padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="24"><div style="margin:0;outline:none;padding:0;height:24px"><table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="24" width="650" style="background-color:#ffffff">&nbsp;</td>
+  </tr>
+  </tbody></table>
+  </div>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  <tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5573" valign="top" style="padding:0px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5573" style="margin:0;padding:0;background-color:#ffffff"><td id="m_2709320044371808437layout-row-padding5573" valign="top" style="background-color:#ffffff;padding:0px 20px 0px 20px"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td id="m_2709320044371808437text_div4978" valign="top" align="left" width="610" style="line-height:150%;margin:0;outline:none;padding:0;color:inherit;font-size:12px;font-weight:inherit;line-height:1.5;text-decoration:inherit;font-family:arial"> <div style="line-height:150%;margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:1.5;text-decoration:inherit"> <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"> <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"> <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"> <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit;text-align:justify"><span style="color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif"><br><span style="color:inherit;font-size:16px;font-weight:700;line-height:inherit;text-decoration:inherit">¿Ahora qué debes hacer?</span></span></div>
+  </div>
+  </div>
+  </div>
+  <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"><div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"><div style="margin:0;outline:none;padding:0;color:inherit;font-size:14px;font-weight:inherit;line-height:inherit;text-decoration:inherit"><div style="margin:0;outline:none;padding:0;color:inherit;font-size:14px;font-weight:inherit;line-height:inherit;text-decoration:inherit;text-align:justify"><span style="color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif"><br><ul style="margin:0 0 0 40px;padding:0"><li style="display:list-item;line-height:inherit;list-style-type:disc;margin:0 0 0 3px">Ingresa a tu página del reto y revisa la <a href="https://doctorbayter.com/files/pdf/lista-de-alimentos-desafio-2023.pdf" style="margin:0;outline:none;padding:0;color:#045fb4;text-decoration:underline;font-weight:bold" target="_blank"><span>lista de alimentos</span></a> y el <a href="https://doctorbayter.com/files/pdf/secretos-desafio-2023.pdf" style="margin:0;outline:none;padding:0;color:#045fb4;text-decoration:underline;font-weight:bold" target="_blank"><span>PDF con los secretos</span></a> para que hagas este reto perfecto.</li></ul><div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"><br></div>
+  <ul style="margin:0 0 0 40px;padding:0"><li style="display:list-item;line-height:inherit;list-style-type:disc;margin:0 0 0 3px">El reto dará inicio el <span style="color:inherit;font-size:inherit;font-weight:bold;line-height:inherit;text-decoration:inherit">día lunes 10 de diciembre </span>con una charla en zoom en vivo que dará inicio a la <span style="color:inherit;font-size:inherit;font-weight:bold;line-height:inherit;text-decoration:inherit">1:00 p.m. Hora Colombia</span> y será exclusiva para los miembros del reto. Esta reunión es muy importante puesto que el Doctor Bayter te explicará la dinámica del reto y como vamos a comer durante los próximos 5 días. </li></ul><div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"><br></div>
+  <ul style="margin:0 0 0 40px;padding:0"><li style="display:list-item;line-height:inherit;list-style-type:disc;margin:0 0 0 3px">Los links de acceso a la reunión vía zoom los puedes ver en el link <span style="color:#000000;font-size:14px;font-weight:700;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;font-style:normal"><a href="https://doctorbayter.com/plan" style="margin:0;outline:none;padding:0;color:#045fb4;text-decoration:underline" target="_blank"><span>
+  https://doctorbayter.com/plan</span></a></span></li></ul><div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"><br></div>
+  <ul style="margin:0 0 0 40px;padding:0"><li style="display:list-item;line-height:inherit;list-style-type:disc;margin:0 0 0 3px">Si no puedes asistir a la charla en vivo no te preocupes, pues esta quedará disponible en repetición por los próximos días.</li></ul><div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"><br></div>
+  <ul style="margin:0 0 0 40px;padding:0"><li style="display:list-item;line-height:inherit;list-style-type:disc;margin:0 0 0 3px">Es importante que tengas en cuenta que el acceso a este reto lo tendrás por 3 meses a partir del momento que finalice el reto el <span style="color:inherit;font-size:inherit;font-weight:bold;line-height:inherit;text-decoration:inherit">día sábado 14 de enero de 2023</span></li></ul><div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"><br style="font-weight:700"></div>
+  <ul style="margin:0 0 0 40px;padding:0"><li style="display:list-item;line-height:inherit;list-style-type:disc;margin:0 0 0 3px">Accede aquí <span style="color:#000000;font-size:14px;font-weight:700;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;font-style:normal"> <a href="https://doctorbayter.com/reto/desafio/whatsapp" style="margin:0;outline:none;padding:0;color:#045fb4;text-decoration:underline" target="_blank" ><span>https://doctorbayter.com/reto/<wbr>desafio/whatsapp</span></a> </span><span style="color:#000000;font-size:14px;font-weight:inherit;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;font-style:normal">al grupo de seguimiento del reto <span style="color:inherit;font-size:inherit;font-weight:bold;line-height:inherit;text-decoration:inherit">dirigido por el equipo de tu Doctor Bayter</span></span></li></ul></span></div>
+  <div style="margin:0;outline:none;padding:0;color:inherit;font-size:14px;font-weight:inherit;line-height:inherit;text-decoration:inherit;text-align:justify"><br style="font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif"></div>
+  </div>
+  <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"><div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit;text-align:justify"><div style="margin:0;outline:none;padding:0;color:#353a4a;font-size:20px;font-weight:inherit;line-height:inherit;text-decoration:inherit;font-family:Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;text-align:left"></div>
+  </div>
+   </div>
+   </div>
+   </div>
+   </div>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  <tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5570" valign="top" style="padding:0 0px 0 0px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5570"><td id="m_2709320044371808437layout-row-padding5570" valign="top" style="padding:0"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="24"><div style="margin:0;outline:none;padding:0;height:24px"><table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td valign="top" height="24" width="650" style="background-color:#ffffff">&nbsp;</td>
+  </tr>
+  </tbody></table>
+  </div>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  <tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5571" valign="top" style="padding:0px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5571" style="margin:0;padding:0;background-color:#ffffff"><td id="m_2709320044371808437layout-row-padding5571" valign="top" style="background-color:#ffffff;padding:0px 20px 0px 20px"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%"><tbody><tr><td id="m_2709320044371808437text_div4976" valign="top" align="left" width="610" style="line-height:150%;margin:0;outline:none;padding:0;color:inherit;font-size:12px;font-weight:inherit;line-height:1.5;text-decoration:inherit;font-family:arial"> <div style="line-height:150%;margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:1.5;text-decoration:inherit"> <div style="margin:0;outline:none;padding:0;color:inherit;font-size:14px;font-weight:inherit;line-height:inherit;text-decoration:inherit"> <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit;text-align:justify"><span style="color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif"><span style="color:#000000;font-size:14px;font-weight:400;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;font-style:normal"><span style="color:#000000;font-size:14px;font-weight:400;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;font-style:normal">Un </span><span style="color:#000000;font-size:14px;font-weight:400;line-height:inherit;text-decoration:inherit;font-family:&quot;Open Sans&quot;,Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;font-style:normal">fuerte</span><span> abrazo,</span> <br><br></span><span style="color:inherit;font-size:inherit;font-weight:bold;line-height:inherit;text-decoration:inherit">Tu Doctor Bayter.</span></span></div>
+  </div>
+  <div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit"><div style="margin:0;outline:none;padding:0;color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;text-decoration:inherit;text-align:justify"><div style="margin:0;outline:none;padding:0;color:#353a4a;font-size:20px;font-weight:inherit;line-height:inherit;text-decoration:inherit;font-family:Roboto,&quot;San Francisco&quot;,Helvetica,Arial,sans-serif;text-align:left"></div>
+  </div>
+   </div>
+   </div>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  <tr style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-margin5564" valign="top" style="padding:0 0px 0 0px;background-color:#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:initial!important;font-size:14px;min-width:100%"><tbody><tr id="m_2709320044371808437layout-row5564" style="background-color:#ffffff"><td id="m_2709320044371808437layout-row-padding5564" valign="top" style="line-height:0;background-color:#ffffff;padding:20px 0 20px 0"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;min-width:100%;line-height:0"><tbody><tr><td height="5" style="line-height:0"></td>
+  </tr>
+  <tr><td align="center" height="1" width="650" style="line-height:0"> <table align="center" border="0" cellpadding="0" cellspacing="0" height="1" width="585" style="border-collapse:collapse;font-size:14px;min-width:auto!important;line-height:0;width:90%;max-width:90%"><tbody><tr><td class="m_2709320044371808437break-line" bgcolor="#ced3e0" height="1" width="585" style="line-height:1px;height:1px;width:585px;background-color:#ced3e0"> </td>
+   </tr>
+  </tbody></table>
+  </td>
+   </tr>
+  <tr><td height="5" style="line-height:0"></td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody></table>
+  </td>
+  </tr>
+  </tbody>
 </body>
 </html>

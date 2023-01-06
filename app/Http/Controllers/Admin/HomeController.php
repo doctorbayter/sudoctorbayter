@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mail\ApprovedPurchase;
 use App\Mail\ApprovedPurchaseNoChat;
+use App\Mail\ApprovedPurchaseReto;
 use App\Models\Discount;
 use App\Models\Fase;
 use App\Models\Plan;
@@ -158,6 +159,10 @@ class HomeController extends Controller
                     $mail = new ApprovedPurchaseNoChat($plan, $user);
                     Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     break;
+                case 49:
+                    $mail = new ApprovedPurchaseReto($plan, $user);
+                    Mail::to($user->email)->send($mail);
+                    break;
                 default:
                     $mail = new ApprovedPurchase($plan, $user);
                     Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
@@ -171,14 +176,18 @@ class HomeController extends Controller
 
     public function sendMail($plan_id, $skip = 0){
 
+        $plan = Plan::find($plan_id);
         $subscriptions = Subscription::whereIn('plan_id', [$plan_id])->skip($skip)->take(250)->get();
-        $i = 0;
+        $i = 1;
         foreach ($subscriptions as $subscription) {
+
+            $mail = new ApprovedPurchaseReto($plan, $subscription->user);
+            Mail::to($subscription->user->email)->send($mail);
+
             echo $i++ ." ". $subscription->user->email . "<br>";
         }
 
-        // $mail = new ApprovedPurchase($plan, $user);
-        // Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+        
     }
 
     public function pass($email, $pass){

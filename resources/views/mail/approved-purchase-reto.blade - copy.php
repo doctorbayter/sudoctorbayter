@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <title></title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    table, td, div, h1, p {font-family: Arial, sans-serif;}
+  </style>
+</head>
+<body style="margin:0;padding:0;">
+  <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
+    <tr>
+      <td align="center" style="padding:0;">
+        <table role="presentation" style="width:500px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
+          <tr>
+            <td align="center" style="padding:0;background:#101010;">
+              <img src="{{asset('img/mails/mail_dr_01.jpg')}}" alt="Bienvenido"  style="height:auto;display:block;" />
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:36px 30px 42px 30px;">
+              <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+                <tr>
+                  <td style="padding:0 0 36px 0;color:#153643;">
+                    <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif; ">Hola! {{$user->name}} Tu pago ha sido confirmado</h1>
+                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Quiero darte la bienvenida al <b>Desafio 2023</b> tu compra ha sido aprobada con éxito y ahora tendrás acceso a toda la información que este reto.</p>
+                  </td>
+                </tr>
+                <tr>
+                    <td class="esd-structure" align="left">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td class="esd-container-frame" width="530" valign="top" align="center">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="esd-block-text " bgcolor="#eeeeee" align="left">
+                                                        <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="80%">
+                                                                        <h4 style="padding-left: 1rem">Confirmación de tu compra</h4>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="esd-structure  " align="left">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td class="esd-container-frame" width="530" valign="top" align="center">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="esd-block-text " align="left">
+                                                        <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding: 5px 10px 5px 0" width="80%" align="left">
+                                                                        <p>{{$plan->name}}</p>
+                                                                    </td>
+                                                                    <td style="padding: 5px 0" width="20%" align="left">
+                                                                        <p>{{$plan->finalPrice}} US$</p>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="esd-structure" align="left">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td class="esd-container-frame" width="530" valign="top" align="center">
+                                        <table style="border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;" width="100%" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="esd-block-text " align="left">
+                                                        <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="80%">
+                                                                        <h4>TOTAL</h4>
+                                                                    </td>
+                                                                    <td width="20%">
+                                                                        <h4>{{$plan->finalPrice}} US$</h4>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:1rem;">
+                    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+                      <tr>
+                        <td style="text-align:center;width:260px;padding:0;vertical-align:top;color:#153643;">
+                          <p style="text-align:center;width:100%;margin:0 0 25px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><img src="{{asset('img/mails/mail_whatsapp.jpg')}}" alt="" width="100%" style="height:auto;display:block;" /></p>
+                          <p style="margin:0 0 12px 0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;">Accede al grupo del Desafio 2023 con el <b>Equipo del Doctor Bayter</b></p>
+                          <p style="margin:0;font-size:24px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://doctorbayter.com/reto/desafio/whatsapp" style="color:#a30000;text-decoration:underline;">Entra aquí al grupo de WhatsApp</a></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:30px;background:#a30000;">
+              <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">
+                <tr>
+                  <td style="padding:0;width:50%;" align="left">
+                    <p style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
+                      &reg; <b>Doctor Bayter</b> 2022<br/>
+                    </p>
+                  </td>
+                  <td style="padding:0;width:50%;" align="right">
+                    <table role="presentation" style="border-collapse:collapse;border:0;border-spacing:0;">
+                      <tr>
+                        <td style="padding:0 0 0 10px;width:38px;">
+                            <a href="https://www.facebook.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/facebook.svg')}}" alt="Facebook" width="38" style="height:auto;display:block;border:0;" /></a>
+                        </td>
+                        <td style="padding:0 0 0 10px;width:38px;">
+                            <a href="https://www.instagram.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/instagram.svg')}}" alt="Instagram" width="38" style="height:auto;display:block;border:0;" /></a>
+                        </td>
+                        <td style="padding:0 0 0 10px;width:38px;">
+                            <a href="https://www.youtube.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/youtube.svg')}}" alt="Youtube" width="38" style="height:auto;display:block;border:0;" /></a>
+                        </td>
+                        <td style="padding:0 0 0 10px;width:38px;">
+                            <a href="https://www.tiktok.com/@doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/tiktok.svg')}}" alt="TikTok" width="38" style="height:auto;display:block;border:0;" /></a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -35,8 +35,9 @@ Route::get('x/user/{email}/', [HomeController::class, 'user'] )->withoutMiddlewa
 Route::get('x/no-user/{id}/', [HomeController::class, 'noUser'] )->withoutMiddleware(['auth'])->name('user.remove');
 Route::get('x/discount', [HomeController::class, 'discount'] )->withoutMiddleware(['auth'])->name('discount.add');
 Route::get('x/price', [HomeController::class, 'price'] )->withoutMiddleware(['auth'])->name('price.add');
-Route::get('x/send/{email}/{plan}/', [HomeController::class, 'send'] )->withoutMiddleware(['auth'])->name('send.add');
+Route::get('x/send/{email}/{plan}/', [HomeController::class, 'sendMail'] )->withoutMiddleware(['auth'])->name('send.add');
 Route::get('x/pass/{email}/{pass}/', [HomeController::class, 'pass'] )->withoutMiddleware(['auth'])->name('pass.add');
+
 Route::get('x/query', function(){
     //DB::insert("UPDATE resources SET name = 'Alimentos Permitidos Fase 1' WHERE resources.id = 1");
     //php artisan cache:forget spatie.permission.cache

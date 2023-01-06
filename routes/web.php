@@ -906,19 +906,6 @@ Route::get('x/clients/fase/5mer/{skip?}', function($skip = 0){
 Route::get('x/clients/verify/', function($skip = 0){
 
     $clientes_hotmart = [
-        ["Yuly Rodríguez","yuliza04@hotmail.com"], 
-        ["Angela","angela.teixeira01@gmail.com"], 
-        ["Luis Alejandro Díaz","lualdiro2303@gmail.com"], 
-        ["Maria Velandia","mfvelandiag@hotmail.com"], 
-        ["Claudia patricia blandon","luedja18@hotmail.com"], 
-        ["Felipe Alejandro Beckmann","beckmann.fel@gmail.com"], 
-        ["Alfred","alfredluisfeliz@hotmail.com"], 
-        ["Diego","diego.molinam@hotmail.com"], 
-        ["Angie","angieriverapr75@yahoo.com"], 
-        ["Fabián Achury Laguilavo","fa.40@hotmail.com"], 
-        ["Maria","mariannadb37@gmail.com"], 
-        ["Yurley","yurleyvivianabautista@gmail.com"], 
-        ["David","davidfernandoga@gmail.com"], 
         ["Diego","diegomezrey@gmail.com"], 
     ];
 

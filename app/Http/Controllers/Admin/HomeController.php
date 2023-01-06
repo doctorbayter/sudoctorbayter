@@ -169,7 +169,7 @@ class HomeController extends Controller
         }
     }
 
-    public function sendMail($plan_id, $skip){
+    public function sendMail($plan_id, $skip = 0){
 
         $subscriptions = Subscription::whereIn('plan_id', [$plan_id])->skip($skip)->take(250)->get();
         $i = 0;

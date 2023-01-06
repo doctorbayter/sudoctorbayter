@@ -169,10 +169,8 @@ class HomeController extends Controller
         }
     }
 
-    public function sendMail($email, $plan_id, $skip){
+    public function sendMail($plan_id, $skip){
 
-        $plan = Plan::find($plan_id);
-        $user = User::where('email', $email)->first();
         $subscriptions = Subscription::whereIn('plan_id', [$plan_id])->skip($skip)->take(250)->get();
         $i = 0;
         foreach ($subscriptions as $subscription) {

@@ -129,7 +129,7 @@ Route::get('/reto', function () {
 })->name('reto.2022');
 
 Route::get('/reto/desafio/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/FLZY4t05zlrEEDnr0lEn17');
+    return redirect('https://chat.whatsapp.com/DvACblWUwVAI2AUKKlJLVL');
 })->name('reto.whatsapp');
 
 Route::get('/desafio', function () {

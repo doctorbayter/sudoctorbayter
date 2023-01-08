@@ -81,7 +81,6 @@ class UserFase extends Component
     public function dayRecipes(Day $day){
         $day_recipes = $day->recipes->where('type', '==', 1)->sortBy('pivot.meal');
         
-
         foreach ($day_recipes as $recipe) {
             switch ($recipe->pivot->meal) {
                 case 1:
@@ -115,6 +114,7 @@ class UserFase extends Component
 
         $this->reset('carbs');
         $this->setCarbs($day);
+        $this->reset('day_recipes');
         $this->dayRecipes($day);
     }
 

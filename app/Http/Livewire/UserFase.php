@@ -61,8 +61,25 @@ class UserFase extends Component
 
 
         $this->setCarbs($this->day);
+        $this->dayRecipes($this->day);
 
-        $day_recipes = $this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal');
+
+    }
+
+    public function render(){
+        return view('livewire.user-fase');
+    }
+
+    public function setCarbs(Day $day)
+    {
+        foreach($day->recipes as $recipe){
+            $this->carbs = $this->carbs + $recipe->carbs;
+        }
+    }
+
+
+    public function dayRecipes(Day $day){
+        $day_recipes = $day->recipes->where('type', '==', 1)->sortBy('pivot.meal');
         
 
         foreach ($day_recipes as $recipe) {
@@ -81,20 +98,8 @@ class UserFase extends Component
                     break;
             }
         }
-
-
     }
 
-    public function render(){
-        return view('livewire.user-fase');
-    }
-
-    public function setCarbs(Day $day)
-    {
-        foreach($day->recipes as $recipe){
-            $this->carbs = $this->carbs + $recipe->carbs;
-        }
-    }
 
     public function toogleSnack($snackId)
     {
@@ -110,6 +115,7 @@ class UserFase extends Component
 
         $this->reset('carbs');
         $this->setCarbs($day);
+        $this->dayRecipes($day);
     }
 
 

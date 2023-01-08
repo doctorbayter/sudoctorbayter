@@ -125,11 +125,10 @@
 
                                     {{--
                                         @foreach ($this->day->recipes->where('type', '==', 1) as $key => $recipe)
+                                        @foreach ($this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal') as $key => $recipe)
                                     --}}
 
-
-                                    @foreach ($this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal') as $key => $recipe)
-
+                                    @foreach ($this->day_recipes as $key => $recipe)
 
 
                                         <div class="pt-12 md:pt-0">
@@ -137,8 +136,6 @@
                                                 <div class="relative h-62">
 
                                                     <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 ">
-
-
 
                                                         @switch($recipe->pivot->meal)
                                                             @case(1)

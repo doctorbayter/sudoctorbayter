@@ -12,13 +12,12 @@ class UserFase extends Component
 {
     use AuthorizesRequests;
 
-    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan, $es_ayuno;
+    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan, $es_ayuno, $day_recipes = [];
 
     public function mount(Fase $fase){
 
-
-
-
+        
+    
         $this->fase = $fase;
         if(auth()->user()->subscription){
             $this->user_fases = auth()->user()->fases;
@@ -62,6 +61,28 @@ class UserFase extends Component
 
 
         $this->setCarbs($this->day);
+
+        $day_recipes = $this->day->recipes->where('type', '==', 1)->sortBy('pivot.meal');
+        
+
+        foreach ($day_recipes as $recipe) {
+            switch ($recipe->pivot->meal) {
+                case 1:
+                    array_push($this->day_recipes, $recipe);
+                    break;
+                case 2:
+                    array_push($this->day_recipes, $recipe);
+                    break;
+                case 3:
+                    array_push($this->day_recipes, $recipe);
+                    break;
+                case 4:
+                    array_unshift($this->day_recipes, $recipe);
+                    break;
+            }
+        }
+
+
     }
 
     public function render(){

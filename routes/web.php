@@ -121,7 +121,7 @@ Route::get('reto/{reto}/register', Reto::class)->name('reto.register');
 
 Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->name('reto.replay');
 
-Route::get('reto/{reto}/video', [Reto::class, 'video'])->name('reto.video');
+Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
     //return view('no-disponible');

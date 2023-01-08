@@ -225,12 +225,14 @@ class Reto extends Component
                 return $this->data = [
                     'title' => 'Desafio 2023',
                     'subtitle'=> 'Liberate de la mierda de 2022',
-                    'type' => 'video',
+                    'type' => 'Video Base del Desafio',
                     'online' => true,
                     'video-1' => '780536061?h=989bb4de5c',
                     'video-2' => '781982023?h=0c5827a293',
-                    'video-title' => 'Receta Base',
-                    'video-base' => '',
+                    'video-consome-title' => 'Consomé',
+                    'video-consome' => '787251863?h=a00d345c0c',
+                    'video-salsa-title' => 'Salsa Cremosa',
+                    'video-salsa' => '787252511?h=71fab4406b',
                 ];
                 break;
             default:
@@ -246,11 +248,11 @@ class Reto extends Component
         return view('livewire.reto.replay', ['reto'=>$this->reto,  'day'=>$day, 'data'=>$data]);
     }
 
-    public function video($reto) {
+    public function video($reto, $video) {
         $this->reto = $reto;
         $data = $this->retoData($reto);
 
-        return view('livewire.reto.video', ['reto'=>$this->reto, 'data'=>$data]);
+        return view('livewire.reto.video', ['reto'=>$this->reto, 'data'=>$data, 'video'=>$video]);
     }
 
     public function thanks($reto) {

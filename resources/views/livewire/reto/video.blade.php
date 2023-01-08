@@ -4,7 +4,7 @@
         <div class="w-full md:w-3/4 lg:w-3/4 text-center mx-auto py-12 ">
             <div class="w-full md:w-3/4 lg:w-3/4 text-center mx-auto">
                 <p class="text-red-700 text-sm md:text-xl">{{$data['type']}}</p>
-                <h1 class="text-gray-900 leading-none font-black text-2xl md:text-5xl">{{$data['video-title']}}</h1>
+                <h1 class="text-gray-900 leading-none font-black text-2xl md:text-5xl">{{$data['video-'.$video.'-title']}}</h1>
                 <p class="text-gray-900 my-2 md:text-xl">
                     {{$data['title']}} {{$data['subtitle']}}
                 </p>
@@ -13,7 +13,7 @@
                     <i class="fas fa-arrow-alt-circle-down"></i> Para comenzar haz click en el botón del video.
                 </p>
                 <div class="my-8 mx-auto">
-                    <iframe src="https://player.vimeo.com/video/{{$data['video-base']}}?autoplay=1&loop=0&autopause=1" class=" w-full h-52 md:h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/{{$data['video-'.$video]}}?autoplay=1&loop=0&autopause=1" class=" w-full h-52 md:h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

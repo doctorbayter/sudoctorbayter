@@ -44,7 +44,7 @@ class ProductPay extends Component
     public function mount(Plan $plan, $sale = null){
 
         if ($this->plan->id == 9) {
-            $this->toogle_promo = 1;
+            $this->toogle_promo = 1; 
         }
 
         if ($this->plan->id == 7) {
@@ -57,7 +57,7 @@ class ProductPay extends Component
 
     public function render() {
 
-        if($this->plan->id == 15 || $this->plan->id == 18 || $this->plan->id == 19 || $this->plan->id == 25 || $this->plan->id == 36 || $this->plan->id == 47){
+        if($this->plan->id == 15 || $this->plan->id == 18 || $this->plan->id == 19 || $this->plan->id == 25 || $this->plan->id == 36 || $this->plan->id == 47 || $this->plan->id == 49) {
             return view('no-disponible-lw');
         }
             return view('livewire.product-pay');

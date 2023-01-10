@@ -124,7 +124,7 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
-    //return view('no-disponible');
+    return view('no-disponible');
     return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
 })->name('reto.2022');
 
@@ -133,7 +133,7 @@ Route::get('/reto/desafio/whatsapp', function () {
 })->name('reto.whatsapp');
 
 Route::get('/desafio', function () {
-    //return view('no-disponible');
+    return view('no-disponible'); 
     return redirect('https://pay.hotmart.com/N77793722X?checkoutMode=10');
 })->name('desafio.2023');
 

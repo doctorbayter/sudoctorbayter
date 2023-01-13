@@ -155,12 +155,18 @@ Route::get('/99', function () {
 })->name('reto.oferta');
 
 Route::get('/67', function () {
-    return view('no-disponible');
+    //return view('no-disponible');
     $plan = Plan::find(15);
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
 
 Route::get('/oferta', function () {
+    //return view('no-disponible'); 
+    return redirect('https://pay.hotmart.com/F78337495Q?off=7eyky1c2&checkoutMode=10');
+})->name('desafio.2023');
+
+
+Route::get('/revolucion/oferta', function () {
     //return view('no-disponible');
     $promo_plan = Plan::find(32);
     $promo_chat21 = Plan::find(33);

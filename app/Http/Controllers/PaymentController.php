@@ -421,7 +421,7 @@ class PaymentController extends Controller
 
             }else if($product_id == 2535587){ //Desafio 2023
                 $plan = Plan::find(49); 
-                $fases = Fase::whereIn('id', [15])->get(); 
+                $fases = Fase::whereIn('id', [15])->get();
 
             }else{
                 return;

@@ -157,18 +157,16 @@ class HomeController extends Controller
             switch ($plan_id) {
                 case 7:
                     $mail = new ApprovedPurchaseNoChat($plan, $user);
-                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     break;
                 case 49:
                     $mail = new ApprovedPurchaseReto($plan, $user);
-                    Mail::to($user->email)->send($mail);
                     break;
                 default:
                     $mail = new ApprovedPurchase($plan, $user);
-                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                     break;
             }
-            return 'Mensaje enviado';
+            Mail::to($user->email)->send($mail);
+            return 'Mensaje enviado'; 
         }else{
             return 'Usuario no encontrado';
         }
@@ -186,8 +184,6 @@ class HomeController extends Controller
 
             echo $i++ ." ". $subscription->user->email . "<br>";
         }
-
-        
     }
 
     public function pass($email, $pass){

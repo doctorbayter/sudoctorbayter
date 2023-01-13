@@ -359,29 +359,25 @@ class PaymentController extends Controller
         switch ($plan->id) {
             case 7:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                //Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 20:
                 $mail = new ApprovedPurchaseEvent($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 23:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 49:
                 $mail = new ApprovedPurchaseReto($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             case 41:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
             default:
                 $mail = new ApprovedPurchase($plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             break;
         }
+        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
     }
 
     public function approvedHotmart(Request $request){
@@ -391,6 +387,7 @@ class PaymentController extends Controller
         $user_phone = $request->post('phone_checkout_local_code');
         $status = $request->post('status');
         $product_id = $request->post('prod');
+        $product_offert = $request->post('off');
 
         if($status == "approved"){
 
@@ -406,21 +403,37 @@ class PaymentController extends Controller
                 ]);
             }
 
-            if($product_id == 2453587){
-                $plan = Plan::find(47); //Reto #QuedeseKeto 2022
-                $fase = Fase::find(14);
-            }else if($product_id == 2535587){
-                $plan = Plan::find(49); //Desafio 2023
-                $fase = Fase::find(15);
+            if($product_id == 2572759){ // Metodo DKP Premium
+                  
+                switch ($product_offert) {
+                    case 'ugs80t2l':
+                        $plan = Plan::find(1); // Plan Premium $110
+                        break;
+                    case '7eyky1c2':
+                        $plan = Plan::find(15); // Plan Premium $67
+                        break;
+                }
+                $fases = Fase::whereIn('id', [1, 2, 3, 4])->get();
+
+            }else if($product_id == 2453587){ //Reto #QuedeseKeto 2022
+                $plan = Plan::find(47); 
+                $fases = Fase::whereIn('id', [14])->get();
+
+            }else if($product_id == 2535587){ //Desafio 2023
+                $plan = Plan::find(49); 
+                $fases = Fase::whereIn('id', [15])->get(); 
+
             }else{
                 return;
             }
-
+            
             $this->addSuscription($user->id, $plan->id);
-            if($fase->clients()->where('users.id', $user->id)->doesntExist()){
-                $fase->clients()->attach($user->id);
-            }
-            //$this->sendMail($user, $plan);
+            $this->setFases($user->id, $fases);
+            $this->sendMail($user, $plan);
+
+            // if($fase->clients()->where('users.id', $user->id)->doesntExist()){
+            //     $fase->clients()->attach($user->id);
+            // }
 
         // $data = $request->json()->all();
         // $id = $data['data']['product']['id'];

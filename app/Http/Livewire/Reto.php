@@ -228,7 +228,7 @@ class Reto extends Component
                     'type' => 'Video Base del Desafio',
                     'online' => true,
                     'video-1' => '788054919?h=af162e0938',
-                    'video-2' => '',
+                    'video-2' => '789144068?h=1a835fc0e1',
                     'video-consome-title' => 'Consomé',
                     'video-consome' => '787251863?h=a00d345c0c',
                     'video-salsa-title' => 'Salsa Cremosa',

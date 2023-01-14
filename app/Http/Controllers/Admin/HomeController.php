@@ -175,12 +175,12 @@ class HomeController extends Controller
     public function sendMail($plan_id, $skip = 0){
 
         $plan = Plan::find($plan_id);
-        $subscriptions = Subscription::whereIn('plan_id', [$plan_id])->skip($skip)->take(100)->get();
+        $subscriptions = Subscription::whereIn('plan_id', [$plan_id])->whereMonth('created_at', 01)->skip($skip)->take(20)->get();
         $i = 1;
         foreach ($subscriptions as $subscription) {
 
-            $mail = new ApprovedPurchaseReto($plan, $subscription->user);
-            Mail::to($subscription->user->email)->send($mail);
+            //$mail = new ApprovedPurchase($plan, $subscription->user);
+            //Mail::to($subscription->user->email)->send($mail);
 
             echo $i++ ." ". $subscription->user->email . "<br>";
         }

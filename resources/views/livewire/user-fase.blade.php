@@ -186,7 +186,7 @@
                                     @if ($this->day->recipes->where('type', '==', 2)->count() > 0 )
                                         <div class="w-full xl:w-5/12 xl:mr-16">
                                             <h2 class="text-4xl text-gray-900 font-bold">
-                                                <span class="text-red-700">Snacks</span> Día {{$this->day->day}} <span class="text-base text-gray-600 font-medium">(opcional)</span>
+                                                <span class="text-red-700">Snacks de </span> Día {{$this->day->day}} <span class="text-base text-gray-600 font-medium">(opcional)</span>
                                             </h2>
                                             <section class="my-4" >
                                                 @foreach ($this->day->recipes->where('type', '==', 2) as $snack)

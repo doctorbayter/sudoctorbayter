@@ -199,7 +199,7 @@
                                                                 <div class="ml-6 relative w-full flex-1">
                                                                     <h2 class="font-bold text-lg text-gray-900">{{$snack->name}}</h2>
                                                                     <div class="text-gray-400 text-sm pr-4 mb-2 hidden md:block">{!!Str::limit($snack->descripcion, '90', '...')!!} </div>
-                                                                    <div class="text-gray-400 text-sm pr-4 mb-2 md:hidden">{!!Str::limit($snack->descripcion, '50', '...')!!} </div>
+                                                                    <div class="text-gray-400 text-sm pr-4 mb-2 md:hidden">{!!Str::limit($snack->descripcion, '500', '...')!!} </div>
                                                                     <p class="bg-green-500 mt-1 px-2 py-1 text-xs rounded-lg inline-block text-white">{{$snack->carbs}}g Carbs.</p>
                                                                 </div>
                                                             </div>

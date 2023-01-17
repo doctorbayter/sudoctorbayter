@@ -102,6 +102,7 @@ class UserFase extends Component
 
     public function toogleSnack($snackId)
     {
+        $this->reset('snack');
         $this->snack = Recipe::find($snackId);
 
     }

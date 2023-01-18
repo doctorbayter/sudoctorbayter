@@ -52,7 +52,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/doctor-bayter', [HomeController::class, 'doctor'])->name('doctor');
 Route::get('/metodo-dkp', [HomeController::class, 'dkp'])->name('dkp');
 Route::get('/metodo-dkp/47', [HomeController::class, 'dkpOferta'])->name('dkp.oferta');
-Route::get('/metodo-dkp/tiktok', [HomeController::class, 'dkpTiktok'])->name('dkp.dkpTiktok');
+//Route::get('/metodo-dkp/tiktok', [HomeController::class, 'dkpTiktok'])->name('dkp.dkpTiktok');
 Route::get('/thf', [HomeController::class, 'thf'])->name('thf');
 Route::get('/revolucion', [HomeController::class, 'event'])->name('event');
 Route::get('/revolucion/qr/{email}', [HomeController::class, 'eventQr'])->name('event.qr');
@@ -153,6 +153,11 @@ Route::get('/99', function () {
     $plan = Plan::find(25);
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
+
+Route::get('/97', function () {
+    //return view('no-disponible'); 
+    return redirect('https://pay.hotmart.com/F78337495Q?off=0sphkasm&checkoutMode=10');
+})->name('oferta.llamadas');
 
 Route::get('/67', function () {
     return view('no-disponible');

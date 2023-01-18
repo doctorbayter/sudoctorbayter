@@ -18,7 +18,10 @@
             <h3 class="text-2xl lg:text-4xl text-center font-bold uppercase">🎁 Adquiere esta oferta exclusita</h3>
             <p class="text-base  text-gray-400 uppercase my-2">La oferta termina en:</p>
             <div data-countdown="" id="countdown" class="font-bold text-4xl grid grid-cols-4 gap-x-4 h-16 mb-6"></div>
-            <a href="{{route('payment.pay', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu plan fase 1 ahora</a>
+            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu Método DKP en Oferta</a>
+            {{--<a href="{{route('payment.pay', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu plan fase 1 ahora</a>
+            --}}
+            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo ya</a>
         </div>
 
     </div>
@@ -27,8 +30,8 @@
         <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row relative overflow-hidden">
             <div class="max-w-lg mt-20 mb-4 lg:my-24">
                 <header class="">
-                    <h1 class="text-gray-50 leading-none font-black text-2xl md:text-5xl">Método DKP - <span class="text-red-700">Fase</span> 1</h1>
-                    <p class="text-gray-50 mt-6 mb-4 md:text-xl">Descubre la primera fase del método de la Dieta Keto Perfecta que te convertira en una verdadera máquina quema grasa.</p>
+                    <h1 class="text-gray-50 leading-none font-black text-2xl md:text-5xl">Método DKP - <span class="text-red-700">Completo</span></h1>
+                    <p class="text-gray-50 mt-6 mb-4 md:text-xl">Descubre las 4 fases del método de la Dieta Keto Perfecta que te convertira en una verdadera máquina quema grasa.</p>
 
                     @auth
                         @can('enrolled', auth()->user()->subscription)
@@ -57,7 +60,7 @@
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
                                 @endif
                             </div>
-                            <a href="{{route('payment.pay', $plan_oferta)}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
+                            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya!</a>
                         @endcan
                     @else
                         <div class="text-white text-left py-2">
@@ -73,7 +76,7 @@
                                 </div>
 
                                     <div class="">
-                                        <p class="text-base text-gray-300 mb-2 ">Acceso de por vida Fase 1 Método DKP</p>
+                                        <p class="text-base text-gray-300 mb-2 ">Acceso de por vida al Método DKP</p>
                                         <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>
                                     </div>
                                     @else
@@ -84,7 +87,7 @@
                             @endif
                         </div>
 
-                        <a href="{{route('payment.pay', $plan_oferta)}}" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierela ya la Fase 1!</a>
+                        <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere el Método Ya!</a>
                     @endauth
 
                 </header>
@@ -137,13 +140,13 @@
                         @endif
 
                         <div class="mt-4">
-                            <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con la fase 1 del Método <span class="text-red-700">DKP</span>?</h3>
+                            <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                             <ul>
-                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida a la Fase 1 del Método DKP<b class=" text-sm text-gray-600 block font-medium">(Precio normal 110 US$)</b></p></li>
+                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida a las 4 Fases del Método DKP<b class=" text-sm text-gray-600 block font-medium">(Precio normal 110 US$)</b></p></li>
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 27 US$/mes)</b></p></li>
                                 <li class="hidden"><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg ">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
                             </ul>
-                            <a href="{{route('payment.pay', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                         </div>
                     </div>
                 </div>
@@ -157,7 +160,7 @@
                 <section class="flex flex-col-reverse lg:flex-row items-center justify-center">
                     <article>
                         <div class="mt-12 border-black border-8 max-w-md mx-auto px-8 py-6 rounded-2xl bg-gray-900 text-white ">
-                            <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> Fase 1</h2>
+                            <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> 4 Fases</h2>
                             <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
 
                             @if ($plan_oferta->discount)
@@ -178,13 +181,13 @@
                             @endif
 
                             <div class="mt-4">
-                                <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el la fase 1 del Método <span class="text-red-700">DKP</span>?</h3>
+                                <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                                 <ul>
-                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso inmediato y de por vida a la Fase 1 del Método DKP<b class=" text-sm text-gray-400 block font-medium">(Precio normal 110 US$)</b></p></li>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso inmediato y de por vida a las 4 Fases del Método DKP<b class=" text-sm text-gray-400 block font-medium">(Precio normal 110 US$)</b></p></li>
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-400 block font-medium">(Precio normal 27 US$/mes)</b></p></li>
                                     <li class="hidden"><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-400 block font-medium">(Precio normal 19 US$)</b></p>
                                 </ul>
-                                <a href="{{route('payment.pay', $plan_oferta)}}" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                                <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                             </div>
                         </div>
                     </article>
@@ -265,7 +268,7 @@
             <div class="mt-16 md:mt-8">
                 <div class=" flex items-center flex-col-reverse md:flex-row ">
                     <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
-                        <p class="text-gray-900 text-justify">Te guiaremos y acompañaremos con la <b>Fase 1</b> encontrarás las mejores recetas de desayunos, snacks, almuerzos y cenas con los gramos exactos de grasas, proteinas y carbohidratos que necesitas en tu día a día con más de 70 deliciosas opciones diferentes y faciles de preparar.</p>
+                        <p class="text-gray-900 text-justify">Te guiaremos y acompañaremos con las <b>4 Fases</b> encontrarás las mejores recetas de desayunos, snacks, almuerzos y cenas con los gramos exactos de grasas, proteinas y carbohidratos que necesitas en tu día a día con más de 70 deliciosas opciones diferentes y faciles de preparar.</p>
                     </div>
                     <figure class="mb-4 md:mb-0 flex-1 md:ml-12 overflow-hidden rounded-lg shadow-lg">
                         <img src="{{asset('img/resources/metodo_dkp_37sx.jpg')}}" alt="" class="w-full object-cover">
@@ -424,8 +427,8 @@
     <section class="py-8 md:py-16 bg-gray-900 bg-opacity-95 px-6 md:px-0">
         <div class="max-w-5xl mx-auto text-gray-50">
             <p class="uppercase text-gray-200 font-medium text-sm md:text-lg">¿Estas listo para iniciar?</p>
-            <a href="{{route('payment.pay', $plan_oferta)}}" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline ">
-                <span class="text-yellow-500" >¡Adquiere tu Fase 1 ahora!</span>
+            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline ">
+                <span class="text-yellow-500" >¡Adquiere tu Método DKP ahora!</span>
             </a>
         </div>
     </section>

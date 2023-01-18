@@ -86,7 +86,7 @@ class HomeController extends Controller
     public function dkpOferta(Request $request) {
 
         $time = Carbon::now()->addDays(5)->format('Y/m/d H:i:s');
-        $plan_oferta = Plan::find(8);
+        $plan_oferta = Plan::find(9);
         $cookie = Cookie::get('promoAdReto4');
 
         if ($cookie != null) {

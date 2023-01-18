@@ -377,7 +377,8 @@ class PaymentController extends Controller
                 $mail = new ApprovedPurchase($plan, $user);
             break;
         }
-        Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+        Mail::to($user->email)->send($mail);
+        //Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
     }
 
     public function approvedHotmart(Request $request){
@@ -411,6 +412,12 @@ class PaymentController extends Controller
                         break;
                     case '7eyky1c2':
                         $plan = Plan::find(15); // Plan Premium $67
+                        break;
+                    case 'u8j3n8x5':
+                        $plan = Plan::find(9); // Plan Premium $99
+                        break;
+                    case '0sphkasm':
+                        $plan = Plan::find(31); // Plan Premium $97
                         break;
                 }
                 $fases = Fase::whereIn('id', [1, 2, 3, 4])->get();

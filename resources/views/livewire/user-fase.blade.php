@@ -190,7 +190,7 @@
                                             </h2>
                                             <section class="my-4" >
                                                 @foreach ($this->day->recipes->where('type', '==', 2) as $snack)
-                                                    <div wire:click="toogleSnack('{{$snack->id}}')" wire:key="{{ $loop->index }}"   x-on:click="modalIsShowing = true" id="snack{{$snack->id}}" class="border border-gray-100 shadow-md rounded-xl overflow-hidden w-full mb-6 cursor-pointer" title="click para ver más">
+                                                    <div _wire:click="toogleSnack('{{$snack->id}}')" wire:key="{{ $loop->index }}"   _x-on:click="modalIsShowing = true" id="snack{{$snack->id}}" class="border border-gray-100 shadow-md rounded-xl overflow-hidden w-full mb-6 cursor-pointer" title="click para ver más">
                                                         <div class="w-full block">
                                                             <div class="flex items-center">
                                                                 <figure class="w-20 md:w-48 h-28 overflow-hidden bg-gray-100 ">
@@ -198,7 +198,7 @@
                                                                 </figure>
                                                                 <div class="ml-6 relative w-full flex-1">
                                                                     <h2 class="font-bold text-lg text-gray-900">{{$snack->name}}</h2>
-                                                                    <div class="text-gray-400 text-sm pr-4 mb-2 hidden md:block">{!!Str::limit($snack->descripcion, '90', '...')!!} </div>
+                                                                    <div class="text-gray-400 text-sm pr-4 mb-2 hidden md:block">{!!Str::limit($snack->descripcion, '500', '...')!!} </div>
                                                                     <div class="text-gray-400 text-sm pr-4 mb-2 md:hidden">{!!Str::limit($snack->descripcion, '500', '...')!!} </div>
                                                                     <p class="bg-green-500 mt-1 px-2 py-1 text-xs rounded-lg inline-block text-white">{{$snack->carbs}}g Carbs.</p>
                                                                 </div>

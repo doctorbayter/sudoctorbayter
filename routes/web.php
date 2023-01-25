@@ -509,6 +509,57 @@ Route::get('x/clients/eg/{month}', function ($month) {
     }
 });
 
+
+Route::get('x/ventas/{plan}/{month}/{day}', function ($plan, $month, $day) {
+
+    $plans = Subscription::where('plan_id', $plan)
+    ->whereMonth('created_at', $month)
+    ->whereDay('created_at', $day)
+    ->get();
+    echo "<h1>Ventas del Plan ". $plan->name. "</h1><br/>";
+    echo "<table>";
+    foreach ($plans as $plan) {
+        
+        
+        echo "<tr>";
+        echo "<td>' ";
+        echo $plan->user->name;
+        echo "' ,</td>";
+        echo "'<td>";
+        echo $plan->user->email;
+        echo "'</td>";
+        
+        
+        echo "</tr>";
+    }
+    echo "</table>";
+});
+
+Route::get('x/ventas/total/{month}/{day}', function ($plan, $month, $day) {
+
+    $plans = Subscription::whereMonth('created_at', $month)
+    ->whereDay('created_at', $day)
+    ->get();
+    echo "<table>";
+    foreach ($plans as $plan) {
+        
+        echo "<tr>";
+        echo "<td>' ";
+        echo $plan->user->name;
+        echo "' ,</td>";
+        echo "'<td>";
+        echo $plan->user->email;
+        echo "'</td>";
+        echo "'<td>";
+        echo "Compra ". $plan->name;
+        echo "'</td>";
+        
+        echo "</tr>";
+    }
+    echo "</table>";
+});
+
+
 Route::get('x/clients/reto/{month}', function ($month) {
 
     $plans = Subscription::whereIn('plan_id', [15])

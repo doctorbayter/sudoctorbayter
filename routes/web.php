@@ -518,12 +518,12 @@ Route::get('x/ventas/planes/{plan}/{month}/{day}', function ($plan, $month, $day
     ->whereMonth('created_at', $month)
     ->whereDay('created_at', $day)
     ->get();
-    echo "<h1> Ventas Plan ". $p->name . "</h1><br>";
+    echo "<h1> Ventas Plan ". $p->name . " - ". $p->price->name ."</h1><br>";
     echo "<table>";
     foreach ($plans as $plan) {
         echo "<tr>";
         echo "<td>";
-        echo $plan->user->name;
+        echo strtolower($plan->user->name);
         echo "</td>";
         echo "<td>";
         echo $plan->user->email;
@@ -551,6 +551,9 @@ Route::get('x/ventas/total/{month}/{day}', function ($month, $day) {
         echo "</td>";
         echo "<td>";
         echo $plan->plan->name; 
+        echo "</td>";  
+        echo "<td>";
+        echo $$plan->plan->price->name; 
         echo "</td>";  
         
         echo "</tr>";

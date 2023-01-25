@@ -513,6 +513,7 @@ Route::get('x/clients/eg/{month}', function ($month) {
 Route::get('x/ventas/{plan}/{month}/{day}', function ($plan, $month, $day) {
 
     $plans = Subscription::where('plan_id', $plan)
+    ->whereYear('created_at', '=', '2023')
     ->whereMonth('created_at', $month)
     ->whereDay('created_at', $day)
     ->get();
@@ -534,6 +535,7 @@ Route::get('x/ventas/{plan}/{month}/{day}', function ($plan, $month, $day) {
 Route::get('x/ventas/total/{month}/{day}', function ($plan, $month, $day) {
 
     $plans = Subscription::whereMonth('created_at', $month)
+    ->whereYear('created_at', '=', '2023')
     ->whereDay('created_at', $day)
     ->get();
     echo "<table>";

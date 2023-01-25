@@ -550,8 +550,8 @@ Route::get('x/ventas/total/{month}/{day}', function ($month, $day) {
         echo $plan->user->email;
         echo "</td>";
         echo "<td>";
-        echo $plan->name;
-        echo "</td>";
+        echo $plan->plan->name; 
+        echo "</td>";  
         
         echo "</tr>";
     }

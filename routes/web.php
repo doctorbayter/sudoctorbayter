@@ -519,8 +519,6 @@ Route::get('x/ventas/{plan}/{month}/{day}', function ($plan, $month, $day) {
     echo "<h1>Ventas del Plan ". $plan->name. "</h1><br/>";
     echo "<table>";
     foreach ($plans as $plan) {
-        
-        
         echo "<tr>";
         echo "<td>' ";
         echo $plan->user->name;
@@ -528,8 +526,6 @@ Route::get('x/ventas/{plan}/{month}/{day}', function ($plan, $month, $day) {
         echo "'<td>";
         echo $plan->user->email;
         echo "'</td>";
-        
-        
         echo "</tr>";
     }
     echo "</table>";

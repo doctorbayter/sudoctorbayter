@@ -512,7 +512,7 @@ Route::get('x/clients/eg/{month}', function ($month) {
 
 Route::get('x/ventas/planes/{plan}/{month}/{day}', function ($plan, $month, $day) {
 
-    $p = $plan = Plan::find($plan);
+    $p = Plan::find($plan);
     $plans = Subscription::whereIn('plan_id', [$plan])
     ->whereYear('created_at', '=', '2023')
     ->whereMonth('created_at', $month)
@@ -522,12 +522,12 @@ Route::get('x/ventas/planes/{plan}/{month}/{day}', function ($plan, $month, $day
     echo "<table>";
     foreach ($plans as $plan) {
         echo "<tr>";
-        echo "<td>' ";
+        echo "<td>";
         echo $plan->user->name;
-        echo "' ,</td>";
-        echo "'<td>";
+        echo "</td>";
+        echo "<td>";
         echo $plan->user->email;
-        echo "'</td>";
+        echo "</td>";
         echo "</tr>";
     }
     echo "</table>";
@@ -543,15 +543,15 @@ Route::get('x/ventas/total/{month}/{day}', function ($month, $day) {
     foreach ($plans as $plan) {
         
         echo "<tr>";
-        echo "<td>' ";
+        echo "<td>";
         echo $plan->user->name;
-        echo "' ,</td>";
-        echo "'<td>";
+        echo "</td>";
+        echo "<td>";
         echo $plan->user->email;
-        echo "'</td>";
-        echo "'<td>";
-        echo "Compra ". $plan->name;
-        echo "'</td>";
+        echo "</td>";
+        echo "<td>";
+        echo $plan->name;
+        echo "</td>";
         
         echo "</tr>";
     }

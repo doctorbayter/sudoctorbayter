@@ -580,7 +580,7 @@ Route::get('x/ventas/mes/{month}/', function ($month) {
         echo $plan->plan->name; 
         echo "</td>";  
         echo "<td>";
-        echo $$plan->plan->price->name; 
+        echo $plan->plan->finalPrice. " US$";
         echo "</td>";  
         
         echo "</tr>";

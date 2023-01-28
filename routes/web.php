@@ -79,6 +79,10 @@ Route::get('miami/', function(){
     return redirect()->away("https://www.eventbrite.com/e/mas-alla-de-la-victoria-con-doctor-bayter-junto-drpedrito-tickets-378889818647");
 });
 
+Route::get('certificacion/', function(){
+    return redirect()->away("https://portal.nutriacademy.com/a/2147527260/qFsGFAd4");
+});
+
 Route::get('pareja/', function(){
     return redirect()->away("https://biz.payulatam.com/L0bdc050469E638");
 });

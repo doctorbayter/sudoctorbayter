@@ -83,6 +83,14 @@ Route::get('certificacion/', function(){
     return redirect()->away("https://portal.nutriacademy.com/a/2147527260/qFsGFAd4");
 });
 
+Route::get('super/', function(){
+    return redirect()->away("https://www.taquillalive.com/book-performance/?artist=supersanar&event=TCL.EVN161.PRF2");
+});
+
+Route::get('supersanar/', function(){
+    return redirect()->away("https://www.taquillalive.com/book-performance/?artist=supersanar&event=TCL.EVN161.PRF2");
+});
+
 Route::get('pareja/', function(){
     return redirect()->away("https://biz.payulatam.com/L0bdc050469E638");
 });

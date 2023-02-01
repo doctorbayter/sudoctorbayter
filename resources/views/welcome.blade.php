@@ -60,7 +60,7 @@
     </article>
 
     <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 ">
-        <a href="https://pay.hotmart.com/N77793722X?checkoutMode=10" target="_blank"><img src="{{asset('img/billboards/desafio_2023_banner.png')}}" alt="" class="w-full mx-auto overflow-hidden rounded-xl animate-wiggle"></a>
+        <a href="https://www.taquillalive.com/book-performance/?artist=supersanar&event=TCL.EVN161.PRF2" target="_blank"><img src="{{asset('img/billboards/supersanar_banner.png')}}" alt="" class="w-full mx-auto overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 
     <section class="bg-white">

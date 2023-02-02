@@ -139,7 +139,7 @@
                 </a>
 
             @if ($userPlan != 7 && $userPlan != 13 && $userPlan != 18 && $userPlan != 19 && $userPlan != 36 && $userPlan != 47 && $userPlan != 49)
-                <a href="https://wa.me/573160441114" target="_blank" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+                <a href="https://wa.me/573012579627" target="_blank" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fas fa-question-circle mr-2"></i>
                     <span>Soporte</span>
                 </a>

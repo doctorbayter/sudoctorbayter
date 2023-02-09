@@ -270,10 +270,10 @@ Route::get('x/day-recipe/day/{id}/{day}', function($id , $day){
 });
 
 
-Route::get('x/clients/reto', function () {
+Route::get('x/clients/reto/{reto}', function ($reto) {
 
     $i = 1;
-    $subscriptions = Subscription::whereIn('plan_id', [19])->get();
+    $subscriptions = Subscription::whereIn('plan_id', [$reto])->get();
     foreach($subscriptions as $subscription){
         echo $i." - ". $subscription->user->email;
         echo"<br/>";

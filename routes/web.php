@@ -270,7 +270,7 @@ Route::get('x/day-recipe/day/{id}/{day}', function($id , $day){
 });
 
 
-Route::get('x/clients/reto/{reto}', function ($reto) {
+Route::get('x/clients/retos/{reto}', function ($reto) {
 
     $i = 1;
     $subscriptions = Subscription::whereIn('plan_id', [$reto])->get();

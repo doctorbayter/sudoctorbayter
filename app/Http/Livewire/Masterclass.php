@@ -51,7 +51,7 @@ class Masterclass extends Component
                     'title' => 'Desinflama tu cuerpo',
                     'subtitle'=> 'en solo 4 días',
                     'online' => false,
-                    'type' => 'Masterclass',
+                    'type' => 'Reto Online',
                     'billdoard' => null,
                     'video' => '596134885?h=c36783dde8'
                 ];

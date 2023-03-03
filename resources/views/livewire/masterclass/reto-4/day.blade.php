@@ -17,7 +17,7 @@
                 <div class="flex flex-col md:flex-row justify-around my-8 px-6 py-8 border border-gray-300 rounded-2xl bg-gray-100">
                     @if ($day == 1)
                         <div>
-                            <a href="https://doctorbayter.co/files/masterclass/reto-4/pdf/lista-de-alimentos-reto-4-doctor-bayter.pdf" target="_blank" class="inline-block mt-2 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Descarla aquí la lista de alimentos del Reto</a>
+                            <a href="https://doctorbayter.co/files/masterclass/reto-4/pdf/lista-de-alimentos-reto-4-doctor-bayter.pdf" target="_blank" class="inline-block mt-2 text-sm font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">Descarga aquí la lista de alimentos del Reto</a>
                         </div>
                     @endif
                     <div>

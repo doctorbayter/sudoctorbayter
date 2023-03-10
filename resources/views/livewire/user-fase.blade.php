@@ -133,16 +133,16 @@
                                         <div class="pt-12 md:pt-0">
                                             <a href="{{route('plan.recipe', $recipe)}}">
                                                 <div class="relative h-62">
-                                                    {{$this->day->id}}--
+                                                    
                                                     <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 ">
 
                                                         @switch($recipe->pivot->meal)
                                                             @case(1)
                                                                     @if ($fase->id == 3  )
-                                                                        @if ( ($this->day->day % 2) != 0 )
-                                                                            <p>Desayuno</p>
+                                                                        @if ( $this->day->id == 43 || $this->day->id == 45 || $this->day->id == 47 || $this->day->id == 49 || $this->day->id == 50 || $this->day->id ==52 || $this->day->id == 54 || $this->day->id ==56 || $this->day->id == 57 || $this->day->id == 59 || $this->day->id ==61 || $this->day->id == 63 )
+                                                                            <p>Romper Ayuno</p>
                                                                             @else
-                                                                            <p>Romper ayuno</p>
+                                                                            <p>Desayuno</p>
                                                                         @endif
                                                                     @else
                                                                         <p>Desayuno</p>

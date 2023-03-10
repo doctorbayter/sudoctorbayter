@@ -133,7 +133,7 @@
                                         <div class="pt-12 md:pt-0">
                                             <a href="{{route('plan.recipe', $recipe)}}">
                                                 <div class="relative h-62">
-
+                                                    {{$this->day->id}}--
                                                     <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 ">
 
                                                         @switch($recipe->pivot->meal)

@@ -15,13 +15,12 @@
         <div  class="flex items-center justify-center flex-col px-4 py-8 lg:max-w-5xl mx-auto mb-12 border-yellow-400 border-dashed border-2 relative">
             <!-- <i  x-on:click="$open = !$open; localStorage.setItem('promoAd', false)" class="fas fa-times absolute right-0 top-0 mr-2 mt-2 cursor-pointer" title="Cerrar"></i>  -->
 
-            <h3 class="text-2xl lg:text-4xl text-center font-bold uppercase">🎁 Adquiere esta oferta exclusita</h3>
+            <h3 class="text-2xl lg:text-4xl text-center font-bold uppercase">🎁 Adquiere esta oferta exclusiva</h3>
             <p class="text-base  text-gray-400 uppercase my-2">La oferta termina en:</p>
             <div data-countdown="" id="countdown" class="font-bold text-4xl grid grid-cols-4 gap-x-4 h-16 mb-6"></div>
             <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu Método DKP en Oferta</a>
             {{--<a href="{{route('payment.pay', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu plan fase 1 ahora</a>
             --}}
-            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo ya</a>
         </div>
 
     </div>
@@ -414,11 +413,8 @@
             </header>
 
             <div class="mt-8">
-{{--
+
 <div data-tf-widget="v900gdXI" data-tf-iframe-props="title=Reunión Equipo Doctor Bayter" style="width:100%;height:600px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
---}}
-
-
 
             </div>
         </div>

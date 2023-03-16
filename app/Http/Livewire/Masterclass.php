@@ -244,7 +244,19 @@ class Masterclass extends Component
                 if($userList['list'] == $this->list_id){
 
                     if($userList['status'] == 1){
-                       return false;
+                       //return false;
+                       
+                       $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
+                            "contactList" => [
+                                "list" => $this->list_id,
+                                "contact" => $userId,
+                                "status" => 1,
+                                "sourceid" => 4
+                            ]
+                        ]);
+                        return true;
+                        break;
+
                     }else if($userList['status'] == "2") {
                         $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                             "contactList" => [

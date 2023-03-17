@@ -40,4 +40,7 @@
             <small class="italic text-gray-100 font-thin text-xs" >This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</small>
         </div>
     @endpush
+    <script>
+        fbq('track', 'Lead');
+   </script>
 </x-app-layout>

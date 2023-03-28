@@ -84,11 +84,11 @@ Route::get('certificacion/', function(){
 });
 
 Route::get('super/', function(){
-    return redirect()->away("https://www.taquillalive.com/performance-details/?artist=supersanar&event=TCL.EVN161.PRF2");
+    return redirect()->away("https://www.taquillalive.com/performance-details/?artist=supersanar&event=TCL.EVN161.PRF2&utm_source=web-bayter&utm_medium=banner&utm_campaign=trafico-venta-tickets");
 });
 
 Route::get('supersanar/', function(){
-    return redirect()->away("https://www.taquillalive.com/performance-details/?artist=supersanar&event=TCL.EVN161.PRF2");
+    return redirect()->away("https://www.taquillalive.com/performance-details/?artist=supersanar&event=TCL.EVN161.PRF2&utm_source=web-bayter&utm_medium=banner&utm_campaign=trafico-venta-tickets");
 });
 
 Route::get('pareja/', function(){

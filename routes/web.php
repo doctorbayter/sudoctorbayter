@@ -91,6 +91,10 @@ Route::get('supersanar/', function(){
     return redirect()->away("https://www.taquillalive.com/performance-details/?artist=supersanar&event=TCL.EVN161.PRF2&utm_source=web-bayter&utm_medium=banner&utm_campaign=trafico-venta-tickets");
 });
 
+Route::get('propuesta/', function(){
+    return redirect()->away("https://doctorbayter.com/files/pdf/propuesta_super_sanar.pdf");
+});
+
 Route::get('pareja/', function(){
     return redirect()->away("https://biz.payulatam.com/L0bdc050469E638");
 });

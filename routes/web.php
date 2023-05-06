@@ -175,11 +175,28 @@ Route::get('/97', function () {
     return redirect('https://pay.hotmart.com/F78337495Q?off=0sphkasm&checkoutMode=10');
 })->name('oferta.llamadas');
 
-Route::get('/67', function () {
-    return view('no-disponible');
+Route::get('/6700', function () {
+    //return view('no-disponible');
     $plan = Plan::find(15);
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('reto.oferta');
+
+
+Route::get('/67', function () {
+    //return view('no-disponible'); 
+    return redirect('https://pay.hotmart.com/F78337495Q?off=udv6659x&checkoutMode=10');
+})->name('oferta.superplan');
+
+Route::get('/60', function () {
+    //return view('no-disponible'); 
+    return redirect('https://biz.payulatam.com/L0bdc05588FED4D');
+})->name('oferta.superlibro');
+
+Route::get('/20', function () {
+    //return view('no-disponible'); 
+    return redirect('https://biz.payulatam.com/L0bdc05FBFC6FA1');
+})->name('oferta.supercursos');
+
 
 Route::get('/oferta', function () {
     return view('no-disponible'); 

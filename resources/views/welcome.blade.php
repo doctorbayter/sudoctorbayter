@@ -59,7 +59,7 @@
         <a href="{{route('event')}}"><img src="{{asset('img/billboards/revolucion_banner.jpg')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 
-    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 ">
+    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 hidden">
         <a href="https://www.taquillalive.com/performance-details/?artist=supersanar&event=TCL.EVN161.PRF2" target="_blank"><img src="{{asset('img/billboards/supersanar_banner.png')}}" alt="" class="w-full mx-auto overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 

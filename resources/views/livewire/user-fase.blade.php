@@ -259,7 +259,7 @@
                                     @endif
 
                                     @if ($this->day->note != "<p></p>")
-                                        <div class=" flex-1 ">
+                                        <div class=" flex-1 hidden">
                                             <h2 class="text-4xl font-bold mb-4 text-red-700">¡Notas!</h2>
                                             <div class="text-gray-600">
                                                 {!!$this->day->note!!}

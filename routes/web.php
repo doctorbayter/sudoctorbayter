@@ -143,6 +143,12 @@ Route::get('/reto', function () {
     return redirect('https://pay.hotmart.com/S83188903T?checkoutMode=10');
     //return view('no-disponible');
     //return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
+})->name('reto.nuevo');
+
+Route::get('/pareja', function () {
+    return redirect('https://pay.hotmart.com/S83188903T?checkoutMode=10');
+    //return view('no-disponible');
+    //return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
 })->name('reto.empareja2');
 
 Route::get('/venezuela', function () {

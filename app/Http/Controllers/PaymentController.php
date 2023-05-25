@@ -367,11 +367,11 @@ class PaymentController extends Controller
             case 23:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
             break;
-            case 49:
-                $mail = new ApprovedPurchaseReto($plan, $user);
-            break;
             case 41:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
+            break;
+            case 50:
+                $mail = new ApprovedPurchaseReto($plan, $user);
             break;
             default:
                 $mail = new ApprovedPurchase($plan, $user);
@@ -430,7 +430,11 @@ class PaymentController extends Controller
                 $plan = Plan::find(49); 
                 $fases = Fase::whereIn('id', [15])->get();
 
-            }else{
+            }else if($product_id == 2964941){ //Empareja2 2023
+                $plan = Plan::find(50); 
+                $fases = Fase::whereIn('id', [16])->get();
+            }
+            else{
                 return;
             }
             

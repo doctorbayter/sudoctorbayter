@@ -140,12 +140,17 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
-    return view('no-disponible');
-    return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
+    return redirect('https://pay.hotmart.com/S83188903T?checkoutMode=10');
+    //return view('no-disponible');
+    //return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
 })->name('reto.2022');
 
-Route::get('/reto/desafio/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/DvACblWUwVAI2AUKKlJLVL');
+Route::get('/reto/empareja2/whatsapp', function () {
+    return redirect('https://chat.whatsapp.com/Jjwx9ptLbCVDrQjxrRLaqs');
+})->name('reto.whatsapp');
+
+Route::get('/reto/empareja2/whatsapp/grupo-1', function () {
+    return redirect('https://chat.whatsapp.com/Jjwx9ptLbCVDrQjxrRLaqs');
 })->name('reto.whatsapp');
 
 Route::get('/desafio', function () {

@@ -143,7 +143,13 @@ Route::get('/reto', function () {
     return redirect('https://pay.hotmart.com/S83188903T?checkoutMode=10');
     //return view('no-disponible');
     //return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
-})->name('reto.2022');
+})->name('reto.empareja2');
+
+Route::get('/venezuela', function () {
+    //return view('no-disponible');
+    return redirect()->route('reto.register', ['reto'=>'empareja2-2023']);
+})->name('reto.venezuela');
+
 
 Route::get('/reto/empareja2/whatsapp', function () {
     return redirect('https://chat.whatsapp.com/Jjwx9ptLbCVDrQjxrRLaqs');

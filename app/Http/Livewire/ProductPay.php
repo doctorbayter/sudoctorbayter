@@ -198,7 +198,7 @@ class ProductPay extends Component
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
             $fase_one = Fase::find(1);
-            $desafio_2023 = Fase::find(15);
+            $reto = Fase::find(16);
 
             if($this->plan->id != 5 || $this->plan->id != 6){
 
@@ -215,15 +215,15 @@ class ProductPay extends Component
                     if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
                         $fase_one->clients()->attach($user->id);
                     }
-                }else if($this->plan->id == 49) {
+                }else if($this->plan->id == 50) {
 
-                    if($desafio_2023->clients()->where('users.id', $user->id)->doesntExist()){
-                        $desafio_2023->clients()->attach($user->id);
+                    if($reto->clients()->where('users.id', $user->id)->doesntExist()){
+                        $reto->clients()->attach($user->id);
                     }
                     
                 }
 
-                if($this->plan->id == 49){
+                if($this->plan->id == 50){
                     $mail = new ApprovedPurchaseReto($this->plan, $user);
                     Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 }else{

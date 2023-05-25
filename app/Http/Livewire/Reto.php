@@ -47,6 +47,11 @@ class Reto extends Component
                 $this->plan = Plan::find(49);
                 $this->list_id = 34;
                 break;
+            case 'empareja2-2023':
+                $this->plan = Plan::find(50);
+                $this->list_id = 34;
+                break;
+                
             default:
                 $this->list_id = null;
                 break;
@@ -125,6 +130,16 @@ class Reto extends Component
                     'video' => null,
                 ];
             break;
+            case 'empareja2-2023':
+                return $this->data = [
+                    'title' => 'Empareja2 2023',
+                    'subtitle'=> 'Porque juntos es más fácil',
+                    'type' => 'Reto Online',
+                    'online' => true,
+                    'billdoard' => null,
+                    'video' => null,
+                ];
+            break;
             default:
                 return null;
                 break;
@@ -157,6 +172,9 @@ class Reto extends Component
             break;
             case 'desafio-2023':
                 return view('livewire.reto.desafio-2023.register');
+            break;
+            case 'empareja2-2023':
+                return view('livewire.reto.empareja2-2023.register');
             break;
             default:
                 return view('livewire.masterclass.no-disponible');

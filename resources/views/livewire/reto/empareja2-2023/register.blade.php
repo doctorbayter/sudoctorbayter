@@ -84,7 +84,7 @@
         <article class="max-w-3xl mx-auto text-gray-50 px-6 ">
             <div class="mb-8 ">
                 <h2 class="font-semibold text-3xl mb-4 leading-none">¿Cómo serán estos 5 días?</h2>
-                <h3 class="text-lg text-gray-200 leading-none"><b class="text-yellow-400">Fecha de inicio:</b> Lunes 4 de abril 2022</h3>
+                <h3 class="text-lg text-gray-200 leading-none"><b class="text-yellow-400">Fecha de inicio:</b> 13 de junio 2022</h3>
             </div>
             <p class="text-xl font-light mb-8">Esto es lo que verás en cada uno de los días del Reto:</p>
             <ul>
@@ -102,11 +102,11 @@
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 4:</b></p>
-                    <p class=" flex-1">día 4: Plan de alimentación + video receta </p>
+                    <p class=" flex-1">día 4:  Reunión privada de zoom con tu Doctor Bayter + Plan de alimentación + video receta </p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 5:</b></p>
-                    <p class=" flex-1">día 5: Reunión privada de zoom con tu Doctor Bayter + Plan de alimentación + video receta </p>
+                    <p class=" flex-1">día 5: Plan de alimentación + video receta </p>
                 </li>
             </ul>
         </article>

@@ -29,7 +29,7 @@
                                             <img src="{{asset('img/billboards/total_fitness_lg.jpg')}}" alt="">
                                         </a>
 
-                                    @elseif (auth()->user()->fases->whereNotIn('id', [8, 9, 10, 11, 12, 13, 14, 15])->first())
+                                    @elseif (auth()->user()->fases->whereNotIn('id', [8, 9, 10, 11, 12, 13, 14, 15, 16])->first())
                                     <a href="{{route('payment.checkout', $thf_plan)}}" target="_blank">
                                         <img src="{{asset('img/billboards/no_total_fitness_lg.jpg')}}" alt="">
                                     </a>

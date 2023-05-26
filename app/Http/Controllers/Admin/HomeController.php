@@ -188,7 +188,7 @@ class HomeController extends Controller
             ]);
         }
 
-        $mail = new ApprovedPurchaseReto($plan, $user);
+        
 
         $suscription_plan           = new Subscription();
         $suscription_plan->user_id  = $user->id;
@@ -198,7 +198,7 @@ class HomeController extends Controller
         if($fase->clients()->where('users.id', $user->id)->doesntExist()){
             $fase->clients()->attach($user->id);
         }
-
+        $mail = new ApprovedPurchaseReto($plan, $user);
         Mail::to($user->email)->send($mail);
         return 'Reto activo correctamente.'; 
 

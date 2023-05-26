@@ -21,7 +21,7 @@
                     </header>
 
                     @if ($fase->id == 16)
-                        <div class="flex flex-col space-y-4 min-w-screen py-8 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
+                        <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
                             <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">

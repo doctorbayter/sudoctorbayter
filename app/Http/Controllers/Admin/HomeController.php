@@ -14,6 +14,7 @@ use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Http;
 
@@ -171,6 +172,38 @@ class HomeController extends Controller
             return 'Usuario no encontrado';
         }
     }
+
+
+    public function sendReto($user_name, $email, $plan_id, $fase_id){
+
+        $user = User::where('email', $email)->first();
+        $plan = Plan::find($plan_id);
+        $fase = Fase::find($fase_id);
+        
+        if(!$user){
+            $user = User::create([
+                'name' => $user_name,
+                'email' => strtolower($email),
+                'password' => Hash::make('123456')
+            ]);
+        }
+
+        $mail = new ApprovedPurchaseReto($plan, $user);
+
+        $suscription_plan           = new Subscription();
+        $suscription_plan->user_id  = $user->id;
+        $suscription_plan->plan_id  = $plan_id;
+        $suscription_plan->save();
+
+        if($fase->clients()->where('users.id', $user->id)->doesntExist()){
+            $fase->clients()->attach($user->id);
+        }
+
+        Mail::to($user->email)->send($mail);
+        return 'Reto activo correctamente.'; 
+
+    }
+
 
     public function sendMail($plan_id, $skip = 0){
 

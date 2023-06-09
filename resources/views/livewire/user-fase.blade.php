@@ -10,7 +10,7 @@
                             <h3 class="font-bold text-white text-lg md:text-xl px-2 inline-block bg-red-700"> {{$fase->name}}</h3>
                             <h2 class=" font-bold text-3xl md:text-6xl"> {!!$fase->sub_name!!}</h2>
                             <p class="text-base text-gray-600 mt-2">{{$fase->descripcion}}</p>
-                            @if ($fase->id != 16)
+                            @if ($fase->id != 16 || $user->id == 13706)
                                 <section class=" flex items-center flex-col md:flex-row mt-4 ">
                                     @foreach ($fase->resources->sortBy('created_at') as $resource)
                                             <a  href="{{asset($resource->url)}}" target="_blank" class="text-white text-xs mt-4 md:mt-0 md:text-sm xl:text-base border @if ($loop->first) md:mr-3 @endif cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-6 py-2 rounded-full">Descargar {{$resource->name}}</a>
@@ -20,7 +20,7 @@
                         </div>
                     </header>
 
-                    @if ($fase->id == 16)
+                    @if ($fase->id == 16 || $user->id != 13706)
                         <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
                             <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
                                 <div class="flex items-center justify-between">

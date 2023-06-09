@@ -905,8 +905,8 @@ Route::get('x/query/reto', function(){
     // // Recetas
 
     $recipe = Recipe::create([
-        'name' => 'emparejadosreceta7',
-        'slug' => 'emparejadosreceta7',
+        'name' => 'emparejadosreceta10',
+        'slug' => 'emparejadosreceta10',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 10,
@@ -914,11 +914,11 @@ Route::get('x/query/reto', function(){
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (380, 156, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
+    (383, 157, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'emparejadosreceta8',
-        'slug' => 'emparejadosreceta8',
+        'name' => 'emparejadosreceta11',
+        'slug' => 'emparejadosreceta11',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 35,
@@ -936,12 +936,12 @@ Route::get('x/query/reto', function(){
         // ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (381, 156, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
+    (384, 157, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
 
 
     $recipe = Recipe::create([
-        'name' => 'emparejadosreceta9',
-        'slug' => 'emparejadosreceta9',
+        'name' => 'emparejadosreceta12',
+        'slug' => 'emparejadosreceta12',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 20,
@@ -949,7 +949,7 @@ Route::get('x/query/reto', function(){
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (382, 156, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
+    (385, 157, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

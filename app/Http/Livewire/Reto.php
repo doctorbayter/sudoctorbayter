@@ -253,6 +253,22 @@ class Reto extends Component
                     'video-salsa' => '787252511?h=71fab4406b',
                 ];
                 break;
+            case 'empareja2-2023':
+                return $this->data = [
+                    'title' => 'Empareja2 2023',
+                    'subtitle'=> 'Juntos es más fácil',
+                    'type' => 'Video Marinado de Proteinas',
+                    'online' => true,
+                    'video-1' => '788054919?h=af162e0938',
+                    'video-2' => '789144068?h=1a835fc0e1',
+                    'video-marinado-title' => 'Marinado',
+                    'video-marinado' => '834819582?h=fe6d71b049',
+                    'video-consome-title' => 'Consomé',
+                    'video-consome' => '787251863?h=a00d345c0c',
+                    'video-salsa-title' => 'Salsa Cremosa',
+                    'video-salsa' => '787252511?h=71fab4406b',
+                ];
+                break;
             default:
                 return null;
                 break;

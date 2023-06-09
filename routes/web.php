@@ -158,7 +158,7 @@ Route::get('/venezuela', function () {
 
 
 Route::get('/reto/empareja2/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/G78tFrBoYRoHOhrhPj9CuL');
+    return redirect('https://chat.whatsapp.com/Ca9M61M5OKkFMRBJKSqV8z');
 })->name('reto.whatsapp');
 
 Route::get('/reto/empareja2/whatsapp/grupo-1', function () {
@@ -168,6 +168,10 @@ Route::get('/reto/empareja2/whatsapp/grupo-1', function () {
 Route::get('/reto/empareja2/whatsapp/grupo-2', function () {
     return redirect('https://chat.whatsapp.com/G78tFrBoYRoHOhrhPj9CuL');
 })->name('reto.whatsapp2');
+
+Route::get('/reto/empareja2/whatsapp/grupo-3', function () {
+    return redirect('https://chat.whatsapp.com/Ca9M61M5OKkFMRBJKSqV8z');
+})->name('reto.whatsapp3');
 
 Route::get('/desafio', function () {
     return view('no-disponible'); 

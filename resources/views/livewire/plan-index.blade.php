@@ -122,7 +122,7 @@
                         @endif
 
                         @if ($user_adicionales->count() > 0)
-                            <div>
+                            <div class="hidden">
                                 <header>
                                     <h2 class="text-4xl font-bold text-gray-900">Adicionales</h2>
                                 </header>

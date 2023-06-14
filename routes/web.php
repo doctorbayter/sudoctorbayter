@@ -1033,9 +1033,10 @@ Route::get('x/clients/fase/{plan}/{fase}/{skip?}', function($plan, $fase, $skip 
     foreach($plans as $plan){
 
         if(!$fase->clients->contains($plan->user->id)){
-            $fase->clients()->attach($plan->user->id);
+            //$fase->clients()->attach($plan->user->id);
             echo "Do it <br/>";
         }else{
+            $fase->clients()->detach($plan->user->id);
             echo "Registro activo previamente <br/>";
 
         }

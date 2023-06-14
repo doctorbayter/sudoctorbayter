@@ -170,7 +170,12 @@
                                                         <p class="bg-green-500 px-2 py-1 rounded-lg inline-block text-white">{{$recipe->carbs}} Carbs.</p>
                                                         <p class="text-gray-400 ml-2 md:ml-0 md:my-1 xl:my-0 xl:ml-2 flex items-center">
                                                             <img src="{{asset('img/icons/gfx/user.svg')}}" alt="" class="w-4 mr-1 opacity-40">
-                                                            <span>1 persona</span>
+                                                            @if ($fase->id == 16 )
+                                                                <span>2 personas</span>
+                                                            @else
+                                                                <span>1 persona</span>
+                                                            @endif
+                                                            
                                                         </p>
                                                         <p class="text-gray-400 md:ml-0 md:my-1 xl:my-0 xl:ml-2 flex items-center">
                                                             <img src="{{asset('img/icons/gfx/clock.svg')}}" alt="" class="w-4 mr-1 opacity-40">

@@ -1027,18 +1027,14 @@ Route::get('x/clients/fase/{plan}/{fase}/{skip?}', function($plan, $fase, $skip 
 
     $fase = Fase::find($fase);
 
-    $plans = Subscription::whereIn('plan_id', [36])
+    $plans = Subscription::whereIn('plan_id', [$plan])
     ->skip($skip)->take(100)->get();
 
     foreach($plans as $plan){
 
         if(!$fase->clients->contains($plan->user->id)){
-            //$fase->clients()->attach($plan->user->id);
+            $fase->clients()->attach($plan->user->id);
             echo "Do it <br/>";
-        }else{
-            $fase->clients()->detach($plan->user->id);
-            echo "Registro activo previamente <br/>";
-
         }
     }
 });

@@ -1023,9 +1023,9 @@ Route::get('x/clients/fase/4/{skip?}', function($skip = 0){
     }
 });
 
-Route::get('x/clients/fase/5mer/{skip?}', function($skip = 0){
+Route::get('x/clients/fase/{plan}/{fase}/{skip?}', function($plan, $fase, $skip = 0){
 
-    $fase = Fase::find(13);
+    $fase = Fase::find($fase);
 
     $plans = Subscription::whereIn('plan_id', [36])
     ->skip($skip)->take(100)->get();
@@ -1035,6 +1035,9 @@ Route::get('x/clients/fase/5mer/{skip?}', function($skip = 0){
         if(!$fase->clients->contains($plan->user->id)){
             $fase->clients()->attach($plan->user->id);
             echo "Do it <br/>";
+        }else{
+            echo "Registro activo previamente <br/>";
+
         }
     }
 });

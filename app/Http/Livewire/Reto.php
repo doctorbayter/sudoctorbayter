@@ -260,7 +260,7 @@ class Reto extends Component
                     'type' => 'Video Marinado de Proteinas',
                     'online' => true,
                     'video-1' => '836031302?h=818a0b4c9c',
-                    'video-2' => '',
+                    'video-2' => '837062193?h=580d2642aa',
                     'video-marinado-title' => 'Marinado',
                     'video-marinado' => '834819582?h=fe6d71b049',
                     'video-consome-title' => 'Consomé',

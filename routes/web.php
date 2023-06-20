@@ -259,6 +259,11 @@ Route::get('/reto4', function () {
     //return view('no-disponible');
 })->name('reto4');
 
+Route::get('/reto-4/dia/1', function () {
+    return view('livewire.reto.evergreen.4-dias.dia.1');
+})->name('reto4.dia1');
+
+
 Route::get('/camus', function () {
     //return redirect()->route('masterclass.register', ['masterclass'=>'camus']);
     return view('no-disponible');

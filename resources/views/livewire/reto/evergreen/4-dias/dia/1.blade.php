@@ -36,19 +36,19 @@
                     <section class="mt-8 mb-20">
                         <div class="grid grid-cols-1 text-center">
                             <div class="border border-gray-100 font-bold cursor-pointer bg-gray-50 rounded-tl-md relative">
-                                <div class="text-red-700 border-b-4 text-xs md:text-base py-3 md:py-4  hover:text-red-700" @click="selected = {{$key}}" x-bind:class="{ 'bg-red-800 border-gray-700   ': selected == {{$key}}, 'border-gray-300 ': selected !== {{$key}} }">
+                                <div class="text-red-700 border-b-4 text-xs md:text-base py-3 md:py-4  hover:text-red-700" @click="selected = 0" x-bind:class="{ 'bg-red-800 border-gray-700   ': selected == 0, 'border-gray-300 ': selected !== 0 }">
                                     <img src="{{asset('img/icons/gfx/calendar_color.svg')}}" alt="" class="w-3 md:w-5 mr-2 inline">
-                                    <span x-bind:class="{ ' text-gray-50  ': selected == {{$key}}, 'text-red-700': selected !== {{$key}} }">
+                                    <span x-bind:class="{ ' text-gray-50  ': selected == 0, 'text-red-700': selected !== 0 }">
                                         Semana Uno
                                     </span>
                                 </div>
                                     <div>
-                                        <a href="/" target="_blank" class=" font-semibold md:font-bold md:text-sm text-xs py-2 w-full block text-white" x-bind:class="{ 'bg-gray-900 ': selected == {{$key}}, 'bg-gray-200 ': selected !== {{$key}} }">
+                                        <a href="/" target="_blank" class=" font-semibold md:font-bold md:text-sm text-xs py-2 w-full block text-white bg-gray-900" >
                                             <span class="hidden md:inline">Descargar lista de alimentos</span>
                                             <span class="md:hidden">Lista alimentos</span>
                                         </a>
                                     </div>
-                                <div class="grid overflow-hidden h-0 md:h-auto grid-cols-4 text-center shadow-md  absolute w-full " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
+                                <div class="grid overflow-hidden h-0 md:h-auto grid-cols-4 text-center shadow-md  absolute w-full " >
                                     <div class="font-semibold text-xs bg-red-700 text-red-100 cursor-default  py-2"><span class="hidden md:block xl:inline">Día 1</div>
                                     <div class="font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer  py-2"><span class="hidden md:block xl:inline"><a href="">Día 2</a></div>
                                     <div class="font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer  py-2"><span class="hidden md:block xl:inline"><a href="">Día 3</a></div>
@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="w-10/12 grid md:hidden overflow-hidden grid-cols-{{$this->days}} text-center shadow-md absolute " x-bind:class="{ 'grid': selected == {{$key}} , 'hidden': selected !== {{$key}} }">
+                        <div class="w-10/12 grid md:hidden overflow-hidden grid-cols-4 text-center shadow-md absolute " >
                             <div class="font-semibold text-xs  bg-red-700 text-red-100 cursor-default py-2 "><span class="hidden md:inline">Día</span> 1</div>
                             <div class="font-semibold text-xs  bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2 "><a href=""><span class="hidden md:inline">Día</span> 2</a></div>
                             <div class="font-semibold text-xs  bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2 "><a href=""><span class="hidden md:inline">Día</span> 3</a></div>

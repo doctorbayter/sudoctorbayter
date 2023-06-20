@@ -1,4 +1,4 @@
-<div>
+<x-app-layout>
     <div class="flex">
     <div class="bg-white  ml-auto w-11/12">
         <header class="bg-fixed bg-cover shadow-lg" style="background-image: url({{asset('img/backgrounds/meal_plan_top_banner_2-1-1.jpg')}})">
@@ -176,4 +176,4 @@
     @push('scripts')
         <script src="https://player.vimeo.com/api/player.js"></script>
     @endpush
-</div>
+</x-app-layout>

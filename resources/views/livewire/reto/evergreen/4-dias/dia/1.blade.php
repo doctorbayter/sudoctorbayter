@@ -1,8 +1,8 @@
 <x-app-layout>
     <div class="flex">
-    <div class="bg-white  ml-auto w-11/12">
+    <div class="bg-white  ml-auto w-full">
         <header class="bg-fixed bg-cover shadow-lg" style="background-image: url({{asset('img/backgrounds/meal_plan_top_banner_2-1-1.jpg')}})">
-            <div class="w-11/12 mx-auto py-10">
+            <div class="w-7/12 mx-auto py-10">
                 <h3 class="font-bold text-white text-lg md:text-xl px-2 inline-block bg-red-700"> Reto 4 días</h3>
                 <h2 class=" font-bold text-3xl md:text-6xl">Reto 4 </h2>
                 <p class="text-base text-gray-600 mt-2">Desinflama tu cuerpo en 4 días</p>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <section class="bg-gradient-to-t from-gray-100 pb-8 md:pb-14 ">
-            <div class="w-11/12 mx-auto my-10" x-data="{selected:0}">
+            <div class="w-7/12 mx-auto my-10" x-data="{selected:0}">
                 <section class="mt-8 mb-20">
                     <div class="grid grid-cols-1 text-center">
                         <div class="border border-gray-100 font-bold cursor-pointer bg-gray-50 rounded-tl-md relative">
@@ -49,10 +49,10 @@
                                     </a>
                                 </div>
                             <div class="grid overflow-hidden h-0 md:h-auto grid-cols-4 text-center shadow-md  absolute w-full " >
-                                <div class="font-semibold text-xs bg-red-700 text-red-100 cursor-default  py-2"><span class="hidden md:block xl:inline">Día 1</div>
-                                <div class="font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer  py-2"><span class="hidden md:block xl:inline"><a href="">Día 2</a></div>
-                                <div class="font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer  py-2"><span class="hidden md:block xl:inline"><a href="">Día 3</a></div>
-                                <div class="font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer  py-2"><span class="hidden md:block xl:inline"><a href="">Día 4</a></div>
+                                <div class="font-semibold text-xs bg-red-700 text-red-100 cursor-default py-2"><span class="hidden md:block xl:inline">Día 1</div>
+                                <div class="font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2"><span class="hidden md:block xl:inline"><a href="">Día 2</a></div>
+                                <div class="border-l border-gray-400 font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2"><span class="hidden md:block xl:inline"><a href="">Día 3</a></div>
+                                <div class="border-l border-gray-400 font-semibold text-xs bg-gray-50  hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2"><span class="hidden md:block xl:inline"><a href="">Día 4</a></div>
                             </div>
                         </div>
                     </div>

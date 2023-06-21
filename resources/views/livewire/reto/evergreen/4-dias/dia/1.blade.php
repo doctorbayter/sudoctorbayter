@@ -7,11 +7,11 @@
                 <h2 class=" font-bold text-3xl md:text-6xl">Reto 4 </h2>
                 <p class="text-base text-gray-600 mt-2">Desinflama tu cuerpo en 4 días</p>
                 <section class=" flex items-center flex-col md:flex-row mt-4 ">
-                    <a  href="/" target="_blank" class="text-white text-xs mt-4 md:mt-0 md:text-sm xl:text-base border cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-6 py-2 rounded-full">Descargar lista de alimentos del reto</a>
+                    <a  href="https://doctorbayter.co/files/masterclass/reto-4/pdf/lista-de-alimentos-reto-4-doctor-bayter.pdf" target="_blank" class="text-white text-xs mt-4 md:mt-0 md:text-sm xl:text-base border cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-6 py-2 rounded-full">Descargar lista de alimentos del reto</a>
                 </section>
             </div>
         </header>
-        <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
+        <div class="flex flex-col space-y-4 min-w-screen py-6 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
             <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center">
@@ -23,9 +23,8 @@
                         </svg>
                         <div class="flex flex-col ml-3">
                             <div class=" leading-none font-bold text-red-700">¡Aviso Importante!</div>
-                            <p class="text-sm text-gray-600 leading-none mt-1">El reto <b>EMPAREJA2 2023</b> Dará inicio el <b>13 de Junio de 2023</b></p>
-                            <p class="text-sm text-gray-600 leading-none mt-1">por ahora puedes ingresar a <a class="text-white text-sm border cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-4 py-2 rounded-full" href="https://doctorbayter.com/reto/empareja2/whatsapp" target="_blank" rel="noopener noreferrer"><b>El grupo de Whatsapp</b></a> Dirigido por <b>El Equipo de Tu Doctor Bayter</b></p>
-                            <p class="text-sm text-gray-600 leading-none mt-1">Recurda que: <b>Toda la información del reto quedará activa el día viernes 9 de junio 2023 (Recetas, Lista de alimentos y Secretos)</b></p>
+                            <p class="text-sm text-gray-600 leading-none mt-1">Estás en el reto gratuito <b>DESINFLAMA TU CUERPO EN 4 DÍAS</b> 
+                            <b>este reto es 100% online y gratuito</b></p>
                         </div>
                     </div>
                 </div>
@@ -43,7 +42,7 @@
                                 </span>
                             </div>
                                 <div>
-                                    <a href="/" target="_blank" class=" font-semibold md:font-bold md:text-sm text-xs py-2 w-full block text-white bg-gray-900" >
+                                    <a href="https://doctorbayter.co/files/masterclass/reto-4/pdf/lista-de-alimentos-reto-4-doctor-bayter.pdf" target="_blank" class=" font-semibold md:font-bold md:text-sm text-xs py-2 w-full block text-white bg-gray-900" >
                                         <span class="hidden md:inline">Descargar lista de alimentos</span>
                                         <span class="md:hidden">Lista alimentos</span>
                                     </a>

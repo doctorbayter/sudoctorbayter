@@ -48,36 +48,37 @@
                                     </a>
                                 </div>
                             <div class="grid overflow-hidden h-0 md:h-auto grid-cols-4 text-center shadow-md  absolute w-full " >
-                                <div class="font-semibold text-xs bg-red-700 text-red-100 cursor-default py-2"><span class="hidden md:block xl:inline">Día 1</div>
-                                <a href="{{route('reto4.dia2')}}"><div class="font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2"><span class="hidden md:block xl:inline">Día 2</span></div></a>
+                                
+                                <a href="{{route('reto4.dia1')}}"><div class="font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2"><span class="hidden md:block xl:inline">Día 1</span></div></a>
+                                <div class="font-semibold text-xs bg-red-700 text-red-100 cursor-default py-2"><span class="hidden md:block xl:inline">Día 2</div>
                                 <a href="{{route('reto4.dia3')}}"><div class="border-l border-gray-400 font-semibold text-xs bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2"><span class="hidden md:block xl:inline">Día 3</span></div></a>
                                 <a href="{{route('reto4.dia4')}}"><div class="border-l border-gray-400 font-semibold text-xs bg-gray-50  hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2"><span class="hidden md:block xl:inline">Día 4</span></div></a>
                             </div>
                         </div>
                     </div>
                     <div class="w-10/12 grid md:hidden overflow-hidden grid-cols-4 text-center shadow-md absolute " >
-                        <div class="font-semibold text-xs  bg-red-700 text-red-100 cursor-default py-2 "><span class="hidden md:inline">Día</span> 1</div>
-                        <a href="{{route('reto4.dia2')}}"><div class="font-semibold text-xs  bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2 "><span class="hidden md:inline">Día</span> 2</div></a>
+                        <a href="{{route('reto4.dia1')}}"><div class="font-semibold text-xs  bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2 "><span class="hidden md:inline">Día</span> 1</div></a>
+                        <div class="font-semibold text-xs  bg-red-700 text-red-100 cursor-default py-2 "><span class="hidden md:inline">Día</span> 2</div>
                         <a href="{{route('reto4.dia3')}}"><div class="font-semibold text-xs  bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2 "><span class="hidden md:inline">Día</span> 3</div></a>
                         <a href="{{route('reto4.dia4')}}"><div class="font-semibold text-xs  bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer py-2 "><span class="hidden md:inline">Día</span> 4</div></a>
                     </div>     
                 </section>
                 <section class="mt-16 w-full">
                     <header class="md:mb-12">
-                        <h2 class="text-3xl md:text-5xl font-bold">Menú <span class="text-red-700">Día 1</span></h2>
-                        <p class="mb-4 text-gray-500"><img src="{{asset('img/icons/gfx/pie-chart.svg')}}" alt="" class="w-4 mr-1 inline opacity-40">Gramos de carbohidratos día <b>24,42</b></p>
+                        <h2 class="text-3xl md:text-5xl font-bold">Menú <span class="text-red-700">Día 2</span></h2>
+                        <p class="mb-4 text-gray-500"><img src="{{asset('img/icons/gfx/pie-chart.svg')}}" alt="" class="w-4 mr-1 inline opacity-40">Gramos de carbohidratos día <b>14,42</b></p>
                     </header>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-10 divide-y-2 md:divide-y-0 ">
                         <div class="pt-12 md:pt-0">
-                            <a href="{{route('reto4.dia1.desayuno')}}">
+                            <a href="{{route('reto4.dia2.desayuno')}}">
                                 <div class="relative h-62">
                                     <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 "><p>Desayuno</p></div>
-                                    <img src="{{asset('img/recipes/reto4-menu-dia-1-1.jpg')}}" alt="" class="rounded-2xl object-cover">
+                                    <img src="{{asset('img/recipes/reto4-menu-dia-2-1.jpg')}}" alt="" class="rounded-2xl object-cover">
                                 </div>
                                 <div class="mt-2 ml-4">
-                                    <p class="text-2xl mb-2 font-bold text-gray-900">Tradicional</p>
+                                    <p class="text-2xl mb-2 font-bold text-gray-900">Espinacas con huevos</p>
                                     <div class="flex md:flex-col xl:flex-row md:items-start  text-xs items-center xl:items-center">
-                                    <p class="bg-green-500 px-2 py-1 rounded-lg inline-block text-white">0 Carbs.</p>
+                                    <p class="bg-green-500 px-2 py-1 rounded-lg inline-block text-white">1,08 Carbs.</p>
                                     <p class="text-gray-400 ml-2 md:ml-0 md:my-1 xl:my-0 xl:ml-2 flex items-center">
                                         <img src="{{asset('img/icons/gfx/user.svg')}}" alt="" class="w-4 mr-1 opacity-40">
                                         <span>1 persona</span>                                                
@@ -91,15 +92,15 @@
                             </a>
                         </div>
                         <div class="pt-12 md:pt-0">
-                            <a href="{{route('reto4.dia1.almuerzo')}}">
+                            <a href="{{route('reto4.dia2.almuerzo')}}">
                                 <div class="relative h-62">
                                     <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 "><p>Almuerzo</p></div>
-                                    <img src="{{asset('img/recipes/reto4-menu-dia-1-2.jpg')}}" alt="" class="rounded-2xl object-cover">
+                                    <img src="{{asset('img/recipes/reto4-menu-dia-2-2.jpg')}}" alt="" class="rounded-2xl object-cover">
                                 </div>
                                 <div class="mt-2 ml-4">
-                                    <p class="text-2xl mb-2 font-bold text-gray-900">Sobregrille</p>
+                                    <p class="text-2xl mb-2 font-bold text-gray-900">Alitas verdosas</p>
                                     <div class="flex md:flex-col xl:flex-row md:items-start  text-xs items-center xl:items-center">
-                                    <p class="bg-green-500 px-2 py-1 rounded-lg inline-block text-white">18,84 Carbs.</p>
+                                    <p class="bg-green-500 px-2 py-1 rounded-lg inline-block text-white">13,34 Carbs.</p>
                                     <p class="text-gray-400 ml-2 md:ml-0 md:my-1 xl:my-0 xl:ml-2 flex items-center">
                                         <img src="{{asset('img/icons/gfx/user.svg')}}" alt="" class="w-4 mr-1 opacity-40">
                                         <span>1 persona</span>                                                
@@ -113,15 +114,15 @@
                             </a>
                         </div>
                         <div class="pt-12 md:pt-0">
-                            <a href="{{route('reto4.dia1.cena')}}">
+                            <a href="{{route('reto4.dia2.cena')}}">
                                 <div class="relative h-62">
                                     <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 "><p>Cena</p></div>
-                                    <img src="{{asset('img/recipes/reto4-menu-dia-1-3.jpg')}}" alt="" class="rounded-2xl object-cover">
+                                    <img src="{{asset('img/recipes/reto4-menu-dia-2-3.jpg')}}" alt="" class="rounded-2xl object-cover">
                                 </div>
                                 <div class="mt-2 ml-4">
-                                    <p class="text-2xl mb-2 font-bold text-gray-900">Champi albahaca</p>
+                                    <p class="text-2xl mb-2 font-bold text-gray-900">Taco de huevo</p>
                                     <div class="flex md:flex-col xl:flex-row md:items-start  text-xs items-center xl:items-center">
-                                    <p class="bg-green-500 px-2 py-1 rounded-lg inline-block text-white">5,58 Carbs.</p>
+                                    <p class="bg-green-500 px-2 py-1 rounded-lg inline-block text-white">0 Carbs.</p>
                                     <p class="text-gray-400 ml-2 md:ml-0 md:my-1 xl:my-0 xl:ml-2 flex items-center">
                                         <img src="{{asset('img/icons/gfx/user.svg')}}" alt="" class="w-4 mr-1 opacity-40">
                                         <span>1 persona</span>                                                

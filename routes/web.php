@@ -263,6 +263,66 @@ Route::get('/reto-4/dia/1', function () {
     return view('livewire.reto.evergreen.4-dias.dia.1');
 })->name('reto4.dia1');
 
+Route::get('/reto-4/dia/1/desayuno', function () {
+    return view('livewire.reto.evergreen.4-dias.receta.dia-1.desayuno');
+})->name('reto4.dia1.desayuno');
+
+Route::get('/reto-4/dia/1/almuerzo', function () {
+    return view('livewire.reto.evergreen.4-dias.receta.dia-1.almuerzo');
+})->name('reto4.dia1.almuerzo');
+
+Route::get('/reto-4/dia/1/cena', function () {
+    return view('livewire.reto.evergreen.4-dias.receta.dia-1.cena');
+})->name('reto4.dia1.cena');
+
+Route::get('/reto-4/dia/2', function () {
+    return view('livewire.reto.evergreen.4-dias.dia.2');
+})->name('reto4.dia2');
+
+Route::get('/reto-4/dia/2/desayuno', function () {
+    return view('livewire.reto.evergreen.4-dias.receta.dia-2.desayuno');
+})->name('reto4.dia2.desayuno');
+
+Route::get('/reto-4/dia/2/almuerzo', function () {
+    return view('livewire.reto.evergreen.4-dias.receta.dia-2.almuerzo');
+})->name('reto4.dia2.almuerzo');
+
+Route::get('/reto-4/dia/2/cena', function () {
+    return view('livewire.reto.evergreen.4-dias.receta.dia-2.cena');
+})->name('reto4.dia2.cena');
+
+Route::get('/reto-4/dia/3', function () {
+    return view('livewire.reto.evergreen.4-dias.dia.3');
+})->name('reto4.dia3');
+
+Route::get('/reto-4/dia/3/desayuno', function () {
+    return view('livewire.reto.evergreen.4-dias..receta.dia-3.desayuno');
+})->name('reto4.dia3.desayuno');
+
+Route::get('/reto-4/dia/3/almuerzo', function () {
+    return view('livewire.reto.evergreen.4-dias..receta.dia-3.almuerzo');
+})->name('reto4.dia3.almuerzo');
+
+Route::get('/reto-4/dia/3/cena', function () {
+    return view('livewire.reto.evergreen.4-dias..receta.dia-3.cena');
+})->name('reto4.dia3.cena');
+
+Route::get('/reto-4/dia/4', function () {
+    return view('livewire.reto.evergreen.4-dias.dia.4');
+})->name('reto4.dia4');
+
+Route::get('/reto-4/dia/4/desayuno', function () {
+    return view('livewire.reto.evergreen.4-dias..receta.dia-4.desayuno');
+})->name('reto4.dia4.desayuno');
+
+Route::get('/reto-4/dia/4/almuerzo', function () {
+    return view('livewire.reto.evergreen.4-dias..receta.dia-4.almuerzo');
+})->name('reto4.dia4.almuerzo');
+
+Route::get('/reto-4/dia/4/cena', function () {
+    return view('livewire.reto.evergreen.4-dias..receta.dia-4.cena');
+})->name('reto4.dia4.cena');
+
 
 Route::get('/camus', function () {
     //return redirect()->route('masterclass.register', ['masterclass'=>'camus']);

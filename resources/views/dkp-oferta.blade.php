@@ -168,7 +168,8 @@
 
                                 @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
 
-                                        <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p>
+                                        {{-- <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p> --}}
+                                        <p class="text-center font-extrabold text-6xl">110 US$</p>
                                         <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
                                     <div class="text-center">
                                         <p class="text-base text-gray-400 mb-2">Oferta {{$plan_oferta->discount->name}}</p>

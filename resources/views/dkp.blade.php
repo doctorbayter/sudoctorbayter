@@ -495,7 +495,7 @@
                                 @if ($plan_fase_uno->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_fase_uno->discount->expires_at))->gt(\Carbon\Carbon::now()))
 
                                         <p class="text-center font-extrabold text-6xl">{{round($plan_fase_uno->finalPrice)}} US$</p>
-                                        <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_fase_uno->price->name}}</small>
+                                        {{-- <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_fase_uno->price->name}}</small> --}}
                                     <div class="text-center">
                                         <p class="text-base text-gray-700 mb-2">Oferta {{$plan_fase_uno->discount->name}}</p>
                                         <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_fase_uno->discount->expires_at))->diffForHumans() }}</b>! </p>

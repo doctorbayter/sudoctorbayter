@@ -200,6 +200,11 @@ Route::get('/97', function () {
     return redirect('https://pay.hotmart.com/F78337495Q?off=0sphkasm&checkoutMode=10');
 })->name('oferta.llamadas');
 
+Route::get('/117', function () {
+    //return view('no-disponible'); 
+    return redirect('https://pay.hotmart.com/F78337495Q?off=0sphkasm&checkoutMode=10');
+})->name('oferta.llamadas2023');
+
 Route::get('/especial', function () {
     //return view('no-disponible');
     $plan = Plan::find(15);

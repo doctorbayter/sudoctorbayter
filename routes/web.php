@@ -879,20 +879,34 @@ Route::get('x/query', function(){
      //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-    $plan = Plan::create([
-        'name' => 'DKP + Chat 70',
-        'slug' => 'plan-chat-70-oferta',
-        'price_id' => 37
-    ]);
-
-    // $price = Price::create([
-    //     'name' => '97 US$',
-    //     'value' => 97
+    // $plan = Plan::create([
+    //     'name' => 'DKP + Chat 70',
+    //     'slug' => 'plan-chat-70-oferta',
+    //     'price_id' => 37
     // ]);
 
-    // $plan = Plan::find(31);
-    // $plan->price_id = $price->id;
-    // $plan->save();
+    $price = Price::create([
+        'name' => '137 US$',
+        'value' => 137
+    ]);
+
+    $plan = Plan::find(1);
+    $plan->price_id = $price->id;
+    $plan->save();
+
+    $price = Price::create([
+        'name' => '117 US$',
+        'value' => 117
+    ]);
+
+    $plan = Plan::find(31);
+    $plan->price_id = $price->id;
+    $plan->save();
+
+
+    $plan = Plan::find(25);
+    $plan->price_id = 4;
+    $plan->save();
 
 });
 

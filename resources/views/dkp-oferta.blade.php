@@ -71,7 +71,8 @@
                                         <span>{{round($plan_oferta->price->value)}}<small class="text-3xl">US$</small> </span>
                                         <span class="w-full h-1 block absolute left-0 top-2/4 transform -rotate-6 border-b-4 border-red-700"></span>
                                     </p>
-                                    <p class="">{{round($plan_oferta->finalPrice)}}<small class="text-3xl">US$</small></p>
+                                    {{-- <p class="">{{round($plan_oferta->finalPrice)}}<small class="text-3xl">US$</small></p> --}}
+                                    <p class="">110<small class="text-3xl">US$</small></p>
                                 </div>
 
                                     <div class="">
@@ -125,7 +126,8 @@
 
                             @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
 
-                                    <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p>
+                                    {{-- <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p> --}}
+                                    <p class="text-center font-extrabold text-6xl">110 US$</p>
                                     <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
                                 <div class="text-center">
                                     <p class="text-base text-gray-700 mb-2">Oferta {{$plan_oferta->discount->name}}</p>

@@ -528,7 +528,7 @@
 
                                         {{-- <p class="text-center font-extrabold text-6xl">{{round($plan_premium->finalPrice)}} US$</p> --}}
                                         <p class="text-center font-extrabold text-6xl">137 US$</p>
-                                        <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small>
+                                        {{-- <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_premium->price->name}}</small> --}}
                                     <div class="text-center">
                                         <p class="text-base text-gray-400 mb-2">Oferta {{$plan_premium->discount->name}}</p>
                                         <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_premium->discount->expires_at))->diffForHumans() }}</b>! </p>

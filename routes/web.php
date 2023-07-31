@@ -885,28 +885,32 @@ Route::get('x/query', function(){
     //     'price_id' => 37
     // ]);
 
-    $price = Price::create([
-        'name' => '137 US$',
-        'value' => 137
-    ]);
+    // $price = Price::create([
+    //     'name' => '137 US$',
+    //     'value' => 137
+    // ]);
 
-    $plan = Plan::find(1);
-    $plan->price_id = $price->id;
-    $plan->save();
+    // $plan = Plan::find(1);
+    // $plan->price_id = $price->id;
+    // $plan->save();
 
-    $price = Price::create([
-        'name' => '117 US$',
-        'value' => 117
-    ]);
+    // $price = Price::create([
+    //     'name' => '117 US$',
+    //     'value' => 117
+    // ]);
 
-    $plan = Plan::find(31);
-    $plan->price_id = $price->id;
-    $plan->save();
+    // $plan = Plan::find(31);
+    // $plan->price_id = $price->id;
+    // $plan->save();
 
 
-    $plan = Plan::find(25);
-    $plan->price_id = 4;
-    $plan->save();
+    // $plan = Plan::find(25);
+    // $plan->price_id = 4;
+    // $plan->save();
+
+    $discount = Discount::find(2);
+    $discount->value = 137;
+    $discount->save();
 
 });
 

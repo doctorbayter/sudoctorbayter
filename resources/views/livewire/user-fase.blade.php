@@ -42,6 +42,28 @@
                             </div>
                         </div>
                     @else
+
+                    <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
+                        <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="hidden md:block w-16 h-16 rounded-2xl p-3 border border-yellow-100 text-yellow-400 bg-yellow-50" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="flex flex-col ml-3">
+                                        <div class=" leading-none font-bold text-red-700">¡Aviso Importante!</div>
+                                        <p class="text-sm text-gray-600 leading-none mt-1">Actualmente estamos actualizando todas las  recetas de las 4 fases del <b>Metodo DKP.</b></p>
+                                        <p class="text-sm text-gray-600 leading-none mt-1">Es posible que las fotografías de algunas recetas no coincidan con la descripción de los ingredientes y/o preparación.</p>
+                                        <p class="text-sm text-gray-600 leading-none mt-1">En cuanto las recetas esten actualizadas en su totalidad les daremos aviso. Por lo pronto <b>debemos guiarnos exclusivamente por la lista de ingredientes y preparación de cada receta y no por la foto.</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                         <section class="bg-gradient-to-t from-gray-100 pb-8 md:pb-14 ">
                             @php
                                 if (($this->day->day / 7) <=1) {

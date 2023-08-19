@@ -126,6 +126,11 @@ Route::get('/dieta', function () {
     return redirect()->route('plan.index');
 })->name('redirect.dieta');
 
+Route::get('/up', function () {
+    //return view('no-disponible');
+    return view('oferta-eventos');
+})->name('selecto');
+
 Route::get('/regalo', function () {
     return view('no-disponible');
     //$plan = Plan::find(1);

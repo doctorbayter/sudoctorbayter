@@ -180,7 +180,7 @@
     </section>
     <section class="bg-gray-900">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 py-12 md:py-20  flex flex-col">
-            <h2 class="text-xl md:text-3xl font-bold text-gray-50 text-center">SE NECESITAN <span class="text-red-700">5 DÍAS</span> PARA HACER UN RETO, <span class="text-red-700">21 DÍAS</span> PARA DESARROLLAR UN HÁBITO, <span class="text-red-700">70 DÍAS</span> PARA LOGRAR UN ESTILO DE VIDA KETOBAYTER Y <span class="text-red-700">210 DÍAS </span>PARA INICIAR A SANAR TU CUERPO.</h2>
+            <h2 class="text-xl md:text-3xl font-bold text-gray-50 text-center">SE NECESITAN <span class="text-red-700">5 DÍAS</span> PARA HACER UN RETO, <span class="text-red-700">21 DÍAS</span> PARA DESARROLLAR UN HÁBITO, <span class="text-red-700">70 DÍAS</span> PARA LOGRAR UN ESTILO DE VIDA KETOBAYTER Y <span class="text-red-700">210 DÍAS </span>PARA INICIAR A SANAR TU CUERPO</h2>
         </div>
     </section>
     <section class="bg-white">

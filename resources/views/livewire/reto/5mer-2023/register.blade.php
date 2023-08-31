@@ -12,7 +12,7 @@
                     <h2 class="text-base md:text-2xl">El Reto del Ayuno</h2>
                 </header>
                 <p class="my-4 text-sm md:text-base text-justify">Durante 5 días te voy a llevar de la mano, donde juntos vamos a conseguir lo que por separado no has logrado: </p>
-                <p class="my-4 text-sm md:text-base text-justify">cambiar tus hábitos alimenticios, que dejes de satanizar las grasas,  logres  disminuir  los carbohidratos a su mínima expresión, dejes  la adicción al azúcar y hagas un ayuno PERFECTO </p>
+                <p class="my-4 text-sm md:text-base text-justify">cambiar tus hábitos alimenticios, que dejes de satanizar las grasas,  logres  disminuir  los carbohidratos a su mínima expresión, dejes  la adicción al azúcar y hagas un ayuno PERFECTO</p>
                 <p class="my-4 text-sm md:text-base text-justify">aprovechando todos los beneficios en salud que este trae. Te voy a demostrar que tan solo en 5 días se desinflamará tu cuerpo, mejorarás tu digestión, mejorarás tu energía y lo más increíble: <b>BAJARÁS DE PESO.</b></p>
                 <div class="relative">
                     <a href="{{ route('payment.pay', $plan) }}"
@@ -36,15 +36,15 @@
                 <ul class="text-sm md:text-base">
                     <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
-                        <span class="">Todas las recetas: desayuno, almuerzo, cena de tu día a día; lista de alimentos y los mejores secretos para hacer un KETO AYUNO PERFECTO.</span>
+                        <span class="">Todas las recetas: desayuno, almuerzo, cena de tu día a día, junto a lista de alimentos y los mejores secretos para hacer un KETO AYUNO PERFECTO</span>
                     </li>
                      <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
-                        <span>Acceso a un grupo de Whatsapp dirigido por el EQUIPO DE NUTRICIÓN de tu Doctor Bayter para resolver todas tus dudas y acompañarte durante estos 5 días.</span>
+                        <span>Acceso a un grupo CERRADO de Whatsapp (unidireccional, solo envío de información) dirigido por el EQUIPO de tu Doctor Bayter para acompañarte durante estos 5 días.</span>
                     </li>
                      <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
-                        <span>Dos reuniones por Zoom con tu Doctor Bayter donde aprenderás todos los beneficios de hacer un ayuno perfecto, te compartirá también, los errores más comunes al hacer esta práctica y todos los secretos para aprovechar al máximo este reto. </span>
+                        <span>1 reunión por Zoom con tu Doctor Bayter donde aprenderás todos los beneficios de hacer un ayuno perfecto, te compartirá también, los errores más comunes al hacer esta práctica y todos los secretos para aprovechar al máximo este reto </span>
                     </li>
 
                 </ul>
@@ -58,55 +58,56 @@
     </section>
 
     <section class="max-w-3xl py-24 mx-auto ">
-            <div class="flex flex-col-reverse lg:flex-row items-center justify-between mb-16">
-                <div class="lg:mr-10 px-4 lg:px-4">
-                    <h2 class="font-semibold text-2xl lg:text-3xl mb-4 text-red-700">Videos prácticos</h2>
-                    <p class="text-justify ">Contarás con videos paso a paso para que disfrutes preparando tus almuerzos, de forma práctica y sencilla</p>
-                </div>
-                <i class="fab fa-youtube text-9xl text-gray-300"></i>
-            </div>
+            
             <div class="flex flex-col lg:flex-row items-center justify-between mb-16">
                 <i class="fas fa-trophy text-9xl text-gray-300"></i>
                 <div class="lg:ml-10 px-4 lg:px-4">
                     <h2 class="font-semibold text-2xl lg:text-3xl mb-4 text-red-700">Conoce y domina lo que es hacer un KETO AYUNO PERFECTO</h2>
-                    <p class="text-justify ">No solo serán 5 días de recetas, serán 5 días de un acompañamiento exclusivo con el Equipo de Nutrición Keto Bayter, además de las reuniones privadas por zoom en compañía del que más sabe de keto, Tu Doctor Bayter. </p>
+                    <p class="text-justify ">No solo serán 5 días de recetas, serán 5 días de un acompañamiento exclusivo con el Equipo Keto Bayter, además de todo el material para hacerlo perfecto.</p>
                 </div>
             </div>
             <div class="flex flex-col-reverse lg:flex-row items-center justify-between mb-16">
                 <div class="lg:mr-10 px-4 lg:px-4">
                     <h2 class="font-semibold text-2xl lg:text-3xl mb-4 text-red-700">Secretos y lista de alimentos</h2>
-                    <p class="text-justify ">¿Te surgen dudas? ¿No sabes qué alimentos comprar? ¡No te preocupes! Contarás con una lista de alimentos para estos 5 días, para que ir al mercado sea mucho más sencillo. Además, contarás con un texto completo de los mejores secretos de tu Doctor Bayter, para usarlo como referencia y consultarlo cuando quieras</p>
+                    <p class="text-justify ">¿Te surgen dudas? ¿No sabes qué alimentos comprar? ¡No te preocupes! Contarás con una lista de alimentos para estos 5 días, para que ir al mercado sea mucho más sencillo. Además, contarás con un texto completo de los mejores secretos de tu Doctor Bayter, para usarlo como referencia y consultarlo cuando quieras.</p>
                 </div>
                 <i class="fas fa-unlock text-9xl text-gray-300"></i>
+            </div>
+            <div class="flex flex-col-reverse lg:flex-row items-center justify-between mb-16 ">
+                <div class="lg:mr-10 px-4 lg:px-4">
+                    <h2 class="font-semibold text-2xl lg:text-3xl mb-4 text-red-700">Reunión privada</h2>
+                    <p class="text-justify ">Podrás finalizar el reto con una reunión privada junto al Doctor Bayter y tus compañeros de reto para compartir experiencias y seguir construyendo salud. </p>
+                </div>
+                <i class="fab fa-youtube text-9xl text-gray-300"></i>
             </div>
     </section>
     <section class="bg-gray-900 py-12  ">
         <article class="max-w-3xl mx-auto text-gray-50 px-6 ">
             <div class="mb-8 ">
                 <h2 class="font-semibold text-3xl mb-4 leading-none">¿Cómo serán estos 5 días?</h2>
-                <h3 class="text-lg text-gray-200 leading-none"><b class="text-yellow-400">Fecha de inicio:</b> Lunes 22 de agosto 2022</h3>
+                <h3 class="text-lg text-gray-200 leading-none"><b class="text-yellow-400">Fecha de inicio:</b> LUNES 18 DE SEPTIEMBRE</h3>
             </div>
             <p class="text-xl font-light mb-8">Esto es lo que verás en cada uno de los días del Reto:</p>
             <ul>
                 <li class="mb-3 flex ">
                     <p class=""><b class="mr-4 text-yellow-400">Día 1:</b></p>
-                    <p class=" flex-1">Lunes 22 de agosto, día 1: Reunión privada de zoom con tu Doctor Bayter + plan de alimentación + video receta </p>
+                    <p class=" flex-1">LUNES 18 DE SEPT: Plan de alimentación + envío de información a través del grupo privado</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 2:</b></p>
-                    <p class=" flex-1">Martes 23 de agosto, día 2: Plan de alimentación + video receta </p>
+                    <p class=" flex-1">MARTES 19 DE SEPT: Plan de alimentación + envío de información a través del grupo privado</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 3:</b></p>
-                    <p class=" flex-1">Miércoles 24 de agosto, día 3: Plan de alimentación + video receta </p>
+                    <p class=" flex-1">MIÉRCOLES 20 DE SEPT: Plan de alimentación + envío de información a través del grupo privado</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 4:</b></p>
-                    <p class=" flex-1">Jueves 25 de agosto, día 4: Plan de alimentación + video receta </p>
+                    <p class=" flex-1">JUEVES 21 DE SEPT: Plan de alimentación + envío de información a través del grupo privado + Reunión privada vía zoom y youtube</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 5:</b></p>
-                    <p class=" flex-1">Viernes 26 de agosto, día 5: Reunión privada de zoom con tu Doctor Bayter + plan de alimentación + video receta </p>
+                    <p class=" flex-1">VIERNES 22 DE SEPT:  Plan de alimentación + envío de información a través del grupo privad</p>
                 </li>
             </ul>
         </article>
@@ -149,7 +150,7 @@
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">2:</b></p>
-                    <p class=" flex-1 text-justify"><b>¿A qué hora serán las reuniones de zoom? <br></b>Las reuniones de zoom serán a la 1:00 p.m. hora Colombia. Has lo posible por conectarte y verlas en vivo, en caso de no poder asistir, serán grabadas y enviadas a través de un link tanto por el grupo de WhatsApp como por el correo electrónico que registraron.</p>
+                    <p class=" flex-1 text-justify"><b>¿A qué hora será la reunión de zoom? <br></b>La reunión de zoom será a la 1:00 p.m. hora Colombia. Has lo posible por conectarte y verlas en vivo, en caso de no poder asistir, serán grabadas y enviadas a través de un link tanto por el grupo de WhatsApp como por el correo electrónico que registraron.</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">3:</b></p>
@@ -163,7 +164,7 @@
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">5:</b></p>
-                    <p class=" flex-1 text-justify"><b>¿Hasta cuando tendré acceso al material del reto?<br></b> Finalizado el reto, la información seguirá estando disponible por 60 días más dentro de la cuenta registrada en doctorbayter.com</p>
+                    <p class=" flex-1 text-justify"><b>¿Hasta cuando tendré acceso al material del reto?<br></b> Finalizado el reto, la información seguirá estando disponible por 90 días más dentro de la cuenta registrada en doctorbayter.com</p>
                 </li>
 
             </ul>
@@ -172,7 +173,7 @@
     <section class="py-8 md:py-16 bg-gray-900 px-6 md:px-0">
         <div class="max-w-5xl mx-auto text-gray-50">
             <p class="uppercase text-yellow-500 font-medium text-sm md:text-lg">¿Tienes dudas adicionales?</p>
-            <a href="https://wa.me/573147281252" target="_blank" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline " title="Escríbemele a mi equipo">
+            <a href="https://wa.me/573173455477" target="_blank" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline " title="Escríbemele a mi equipo">
                 <span  class="">Escríbenos vía WhatsApp</span>
             </a>
         </div>

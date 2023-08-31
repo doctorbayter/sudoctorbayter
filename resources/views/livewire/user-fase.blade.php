@@ -10,7 +10,7 @@
                             <h3 class="font-bold text-white text-lg md:text-xl px-2 inline-block bg-red-700"> {{$fase->name}}</h3>
                             <h2 class=" font-bold text-3xl md:text-6xl"> {!!$fase->sub_name!!}</h2>
                             <p class="text-base text-gray-600 mt-2">{{$fase->descripcion}}</p>
-                            @if ($fase->id != 1600 || auth()->user()->id == 13706)
+                            @if ($fase->id != 17 || auth()->user()->id == 13706)
                                 <section class=" flex items-center flex-col md:flex-row mt-4 ">
                                     @foreach ($fase->resources->sortBy('created_at') as $resource)
                                             <a  href="{{asset($resource->url)}}" target="_blank" class="text-white text-xs mt-4 md:mt-0 md:text-sm xl:text-base border @if ($loop->first) md:mr-3 @endif cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-6 py-2 rounded-full">Descargar {{$resource->name}}</a>
@@ -20,7 +20,7 @@
                         </div>
                     </header>
 
-                    @if ($fase->id == 1600 && auth()->user()->id != 13706 )
+                    @if ($fase->id == 17 && auth()->user()->id != 13706 )
                         <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
                             <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
                                 <div class="flex items-center justify-between">
@@ -33,9 +33,9 @@
                                         </svg>
                                         <div class="flex flex-col ml-3">
                                             <div class=" leading-none font-bold text-red-700">¡Aviso Importante!</div>
-                                            <p class="text-sm text-gray-600 leading-none mt-1">El reto <b>EMPAREJA2 2023</b> Dará inicio el <b>13 de Junio de 2023</b></p>
-                                            <p class="text-sm text-gray-600 leading-none mt-1">por ahora puedes ingresar a <a class="text-white text-sm border cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-4 py-2 rounded-full" href="https://doctorbayter.com/reto/empareja2/whatsapp" target="_blank" rel="noopener noreferrer"><b>El grupo de Whatsapp</b></a> Dirigido por <b>El Equipo de Tu Doctor Bayter</b></p>
-                                            <p class="text-sm text-gray-600 leading-none mt-1">Recurda que: <b>Toda la información del reto quedará activa el día viernes 9 de junio 2023 (Recetas, Lista de alimentos y Secretos)</b></p>
+                                            <p class="text-sm text-gray-600 leading-none mt-1">El reto <b>5MER 2023</b> Dará inicio el <b>18 de Septiembre de 2023</b></p>
+                                            <p class="text-sm text-gray-600 leading-none mt-1">por ahora puedes ingresar a <a class="text-white text-sm border cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-4 py-2 rounded-full" href="https://doctorbayter.com/reto/5mer/whatsapp" target="_blank" rel="noopener noreferrer"><b>El grupo de Whatsapp</b></a> Dirigido por <b>El Equipo de Tu Doctor Bayter</b></p>
+                                            <p class="text-sm text-gray-600 leading-none mt-1">Recurda que: <b>Toda la información del reto quedará activa el día viernes 15 de septiembre 2023 (Recetas, Lista de alimentos y Secretos)</b></p>
                                         </div>
                                     </div>
                                 </div>

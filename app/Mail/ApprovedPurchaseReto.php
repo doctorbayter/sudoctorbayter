@@ -33,6 +33,6 @@ class ApprovedPurchaseReto extends Mailable
     public function build()
     {
         return $this->view('mail.approved-purchase-reto')
-        ->subject('Bienvenido, al Reto Emparejados 2023');
+        ->subject('Bienvenido, al Reto 5MER 2023');
     }
 }

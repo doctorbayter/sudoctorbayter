@@ -39,6 +39,47 @@
                             </section>
                         </section>
 
+                        @if ($subscribed_reto_actual)
+                                        <aside class="mt-8">
+                                            <div class="py-8 px-8 rounded-2xl  border-dashed border-red-700 border-4 bg-gray-200">
+
+                                                <h2 class="text-2xl md:text-4xl font-bold text-red-700">Próximas reuniones de Zoom</h2>
+                                                <p class="mt-4">No te pierdas las reuniones de Zoom del Reto 5Mer 2023<b> El reto del ayuno 
+                                                </b> A continuación encontrarás los datos de acceso a la reunioón grupal de Zoom con tu doctor Bayter.</p>
+                                                <div class="flex-col md:flex-row justify-around my-8">
+                                                    <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
+                                                        <div class="hidden">
+                                                            <h2>Primera Reunión <b>5Mer 2023</b></h2>
+                                                            <hr class="my-2 border-gray-700">
+                                                            <p><b>La repetición estará disponible por tiempo limitado</b></p>
+                                                            <a href="{{route('reto.replay', ['empareja2-2023', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
+                                                        </div>
+                                                        <div class="">
+                                                            <h2>Primera Reunión <b>5Mer 2023</b></h2>
+                                                            <hr class="my-2 border-gray-700">
+                                                            <p><b>Fecha:</b>Jueves 21 de septiembre 2023 1:00 p.m. Hora Colombia</p>
+                                                            <a href="https://us02web.zoom.us/" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8 hidden">
+                                                        <div class="hidden">
+                                                            <h2>Repetición Segunda Reunión <b>5Mer 2023</b></h2>
+                                                            <hr class="my-2 border-gray-700">
+                                                            <p><b>La repetición estará disponible por tiempo limitado</b></p>
+                                                            <a href="{{route('reto.replay', ['empareja2-2023', 2])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
+                                                        </div>
+                                                        <div class="hidden">
+                                                            <h2>Segunda Reunión <b>5Mer 2023</b></h2>
+                                                            <hr class="my-2 border-gray-700">
+                                                            <p><b>Fecha:</b>Viernes 16 de junio 2023 1:00 p.m. Hora Colombia</p>
+                                                            <a href="https://us02web.zoom.us/j/85182593847?pwd=RUpHZmh4Q20yV01uelJHRjBBMDAvQT09" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                    @endif
+
                         @if ($user_retos->count() > 0)
                             <div>
                                 <header>
@@ -76,46 +117,7 @@
 
                                     </div>
 
-                                    @if ($subscribed_reto_actual)
-                                        <aside class="mt-8">
-                                            <div class="py-8 px-8 rounded-2xl  border-dashed border-red-700 border-4 bg-gray-200">
-
-                                                <h2 class="text-2xl md:text-4xl font-bold text-red-700">Próximas reuniones de Zoom</h2>
-                                                <p class="mt-4">No te pierdas las reuniones de Zoom del Reto Empareja2 2023<b> Juntos es más faácil 
-                                                </b> A continuación encontrarás los datos de acceso a las reuniones grupales privadas de Zoom con tu doctor Bayter.</p>
-                                                <div class="flex-col md:flex-row justify-around my-8">
-                                                    <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
-                                                        <div class="">
-                                                            <h2>Primera Reunión <b>Empareja2 2023</b></h2>
-                                                            <hr class="my-2 border-gray-700">
-                                                            <p><b>La repetición estará disponible por tiempo limitado</b></p>
-                                                            <a href="{{route('reto.replay', ['empareja2-2023', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
-                                                        </div>
-                                                        <div class="hidden">
-                                                            <h2>Primera Reunión <b>Empareja2 2023</b></h2>
-                                                            <hr class="my-2 border-gray-700">
-                                                            <p><b>Fecha:</b>Martes 13 de junio 2023 1:00 p.m. Hora Colombia</p>
-                                                            <a href="https://us02web.zoom.us/j/85958006653?pwd=aDg5TTljN3RHNU9YRm1tZG03ekFHZz09" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8 ">
-                                                        <div class="">
-                                                            <h2>Repetición Segunda Reunión <b>Empareja2 2023</b></h2>
-                                                            <hr class="my-2 border-gray-700">
-                                                            <p><b>La repetición estará disponible por tiempo limitado</b></p>
-                                                            <a href="{{route('reto.replay', ['empareja2-2023', 2])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
-                                                        </div>
-                                                        <div class="hidden">
-                                                            <h2>Segunda Reunión <b>Empareja2 2023</b></h2>
-                                                            <hr class="my-2 border-gray-700">
-                                                            <p><b>Fecha:</b>Viernes 16 de junio 2023 1:00 p.m. Hora Colombia</p>
-                                                            <a href="https://us02web.zoom.us/j/85182593847?pwd=RUpHZmh4Q20yV01uelJHRjBBMDAvQT09" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </aside>
-                                    @endif
+                                    
                                 </section>
                             </div>
                             <hr class="my-16">

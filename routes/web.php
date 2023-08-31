@@ -161,19 +161,19 @@ Route::get('/venezuela', function () {
 
 
 Route::get('/reto/5mer/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/Ca9M61M5OKkFMRBJKSqV8z');
+    return redirect('https://chat.whatsapp.com/');
 })->name('reto.whatsapp');
 
 Route::get('/reto/5mer/whatsapp/grupo-1', function () {
-    return redirect('https://chat.whatsapp.com/Jjwx9ptLbCVDrQjxrRLaqs');
+    return redirect('https://chat.whatsapp.com/');
 })->name('reto.whatsapp1');
 
 Route::get('/reto/5mer/whatsapp/grupo-2', function () {
-    return redirect('https://chat.whatsapp.com/G78tFrBoYRoHOhrhPj9CuL');
+    return redirect('https://chat.whatsapp.com/');
 })->name('reto.whatsapp2');
 
 Route::get('/reto/5mer/whatsapp/grupo-3', function () {
-    return redirect('https://chat.whatsapp.com/Ca9M61M5OKkFMRBJKSqV8z');
+    return redirect('https://chat.whatsapp.com/');
 })->name('reto.whatsapp3');
 
 Route::get('/desafio', function () {

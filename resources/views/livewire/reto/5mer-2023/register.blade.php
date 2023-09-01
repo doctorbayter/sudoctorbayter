@@ -39,8 +39,8 @@
                         <span class="">Todas las recetas: desayuno, almuerzo, cena de tu día a día, junto a lista de alimentos y los mejores secretos para hacer un KETO AYUNO PERFECTO</span>
                     </li>
                      <li class="mb-4 relative pl-6 text-justify">
-                        <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
                         <span>Acceso a un grupo CERRADO de Whatsapp (unidireccional, solo envío de información) dirigido por el EQUIPO de tu Doctor Bayter para acompañarte durante estos 5 días.</span>
+                        <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
                     </li>
                      <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>

@@ -149,7 +149,7 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
-    return redirect('https://pay.hotmart.com/S83188903T?checkoutMode=10');
+    return redirect('https://pay.hotmart.com/B86320853L');
     //return view('no-disponible');
     //return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
 })->name('reto.nuevo');
@@ -161,19 +161,19 @@ Route::get('/venezuela', function () {
 
 
 Route::get('/reto/5mer/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/');
+    return redirect('https://chat.whatsapp.com/KV7TWMORg3XHIegM6v2CoK');
 })->name('reto.whatsapp');
 
 Route::get('/reto/5mer/whatsapp/grupo-1', function () {
-    return redirect('https://chat.whatsapp.com/');
+    return redirect('https://chat.whatsapp.com/KV7TWMORg3XHIegM6v2CoK');
 })->name('reto.whatsapp1');
 
 Route::get('/reto/5mer/whatsapp/grupo-2', function () {
-    return redirect('https://chat.whatsapp.com/');
+    return redirect('https://chat.whatsapp.com/KV7TWMORg3XHIegM6v2CoK');
 })->name('reto.whatsapp2');
 
 Route::get('/reto/5mer/whatsapp/grupo-3', function () {
-    return redirect('https://chat.whatsapp.com/');
+    return redirect('https://chat.whatsapp.com/KV7TWMORg3XHIegM6v2CoK');
 })->name('reto.whatsapp3');
 
 Route::get('/desafio', function () {

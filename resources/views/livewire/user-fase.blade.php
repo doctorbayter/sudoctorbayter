@@ -33,9 +33,9 @@
                                         </svg>
                                         <div class="flex flex-col ml-3">
                                             <div class=" leading-none font-bold text-red-700">¡Aviso Importante!</div>
-                                            <p class="text-sm text-gray-600 leading-none mt-1">El reto <b>5MER 2023</b> Dará inicio el <b>18 de Septiembre de 2023</b></p>
+                                            <p class="text-sm text-gray-600 leading-none mt-1">El reto <b>5MER 2023</b> Dará inicio el <b>11 de Septiembre de 2023</b></p>
                                             <p class="text-sm text-gray-600 leading-none mt-1">por ahora puedes ingresar a <a class="text-white text-sm border cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-4 py-2 rounded-full" href="https://doctorbayter.com/reto/5mer/whatsapp" target="_blank" rel="noopener noreferrer"><b>El grupo de Whatsapp</b></a> Dirigido por <b>El Equipo de Tu Doctor Bayter</b></p>
-                                            <p class="text-sm text-gray-600 leading-none mt-1">Recurda que: <b>Toda la información del reto quedará activa el día viernes 15 de septiembre 2023 (Recetas, Lista de alimentos y Secretos)</b></p>
+                                            <p class="text-sm text-gray-600 leading-none mt-1">Recurda que: <b>Toda la información del reto quedará activa el día viernes 8 de septiembre 2023 (Recetas, Lista de alimentos y Secretos)</b></p>
                                         </div>
                                     </div>
                                 </div>

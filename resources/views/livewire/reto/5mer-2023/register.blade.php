@@ -44,7 +44,7 @@
                     </li>
                      <li class="mb-4 relative pl-6 text-justify">
                         <i class="far fa-check-square text-yellow-400 mr-2 absolute top-1 left-0"></i>
-                        <span>1 reunión por Zoom con tu Doctor Bayter donde aprenderás todos los beneficios de hacer un ayuno perfecto, te compartirá también, los errores más comunes al hacer esta práctica y todos los secretos para aprovechar al máximo este reto </span>
+                        <span>1 reunión grupal a través de link privado para evaluar el progreso de los participantes en el reto, compartir experiencias, resolver algunas dudas y continuar por este camino de construir salud.</span>
                     </li>
 
                 </ul>
@@ -91,23 +91,23 @@
             <ul>
                 <li class="mb-3 flex ">
                     <p class=""><b class="mr-4 text-yellow-400">Día 1:</b></p>
-                    <p class=" flex-1">LUNES 18 DE SEPT: Plan de alimentación + envío de información a través del grupo privado</p>
+                    <p class=" flex-1">LUNES 11 DE SEPT: Plan de alimentación + envío de información a través del grupo privado</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 2:</b></p>
-                    <p class=" flex-1">MARTES 19 DE SEPT: Plan de alimentación + envío de información a través del grupo privado</p>
+                    <p class=" flex-1">MARTES 12 DE SEPT: Plan de alimentación + envío de información a través del grupo privado</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 3:</b></p>
-                    <p class=" flex-1">MIÉRCOLES 20 DE SEPT: Plan de alimentación + envío de información a través del grupo privado</p>
+                    <p class=" flex-1">MIÉRCOLES 13 DE SEPT: Plan de alimentación + envío de información a través del grupo privado</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 4:</b></p>
-                    <p class=" flex-1">JUEVES 21 DE SEPT: Plan de alimentación + envío de información a través del grupo privado + Reunión privada vía zoom y youtube</p>
+                    <p class=" flex-1">JUEVES 14 DE SEPT: Plan de alimentación + envío de información a través del grupo privado + Reunión privada vía zoom y youtube</p>
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 5:</b></p>
-                    <p class=" flex-1">VIERNES 22 DE SEPT:  Plan de alimentación + envío de información a través del grupo privad</p>
+                    <p class=" flex-1">VIERNES 15 DE SEPT:  Plan de alimentación + envío de información a través del grupo privad</p>
                 </li>
             </ul>
         </article>

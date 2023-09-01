@@ -42,7 +42,6 @@
                         @if ($subscribed_reto_actual)
                                         <aside class="my-8">
                                             <div class="py-8 px-8 rounded-2xl  border-dashed border-red-700 border-4 bg-gray-200">
-
                                                 <h2 class="text-2xl md:text-4xl font-bold text-red-700">Próximas reuniones de Zoom</h2>
                                                 <p class="mt-4">No te pierdas las reuniones de Zoom del Reto 5Mer 2023<b> El reto del ayuno 
                                                 </b> A continuación encontrarás los datos de acceso a la reunioón grupal de Zoom con tu doctor Bayter.</p>
@@ -57,7 +56,7 @@
                                                         <div class="">
                                                             <h2>Primera Reunión <b>5Mer 2023</b></h2>
                                                             <hr class="my-2 border-gray-700">
-                                                            <p><b>Fecha:</b>Jueves 21 de septiembre 2023 1:00 p.m. Hora Colombia</p>
+                                                            <p><b>Fecha:</b>Jueves 14 de septiembre 2023 1:00 p.m. Hora Colombia</p>
                                                             <a href="https://us02web.zoom.us/j/87623760630?pwd=VGw4UGRkdmplZ3hPMWtWdDRGYnV2Zz09" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
                                                         </div>
                                                     </div>

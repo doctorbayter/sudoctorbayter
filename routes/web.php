@@ -149,7 +149,7 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
-    return redirect('https://pay.hotmart.com/B86320853L');
+    return redirect('https://pay.hotmart.com/B86320853L?checkoutMode=10');
     //return view('no-disponible');
     //return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
 })->name('reto.nuevo');

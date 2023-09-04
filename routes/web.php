@@ -161,7 +161,7 @@ Route::get('/venezuela', function () {
 
 
 Route::get('/reto/5mer/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/KV7TWMORg3XHIegM6v2CoK');
+    return redirect('https://chat.whatsapp.com/EQjEuGdezJeKSiRlBY8fPx');
 })->name('reto.whatsapp');
 
 Route::get('/reto/5mer/whatsapp/grupo-1', function () {
@@ -169,7 +169,7 @@ Route::get('/reto/5mer/whatsapp/grupo-1', function () {
 })->name('reto.whatsapp1');
 
 Route::get('/reto/5mer/whatsapp/grupo-2', function () {
-    return redirect('https://chat.whatsapp.com/KV7TWMORg3XHIegM6v2CoK');
+    return redirect('https://chat.whatsapp.com/EQjEuGdezJeKSiRlBY8fPx');
 })->name('reto.whatsapp2');
 
 Route::get('/reto/5mer/whatsapp/grupo-3', function () {

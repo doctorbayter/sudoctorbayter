@@ -85,7 +85,7 @@
         <article class="max-w-3xl mx-auto text-gray-50 px-6 ">
             <div class="mb-8 ">
                 <h2 class="font-semibold text-3xl mb-4 leading-none">¿Cómo serán estos 5 días?</h2>
-                <h3 class="text-lg text-gray-200 leading-none"><b class="text-yellow-400">Fecha de inicio:</b> LUNES 18 DE SEPTIEMBRE</h3>
+                <h3 class="text-lg text-gray-200 leading-none"><b class="text-yellow-400">Fecha de inicio:</b> LUNES 11 DE SEPTIEMBRE</h3>
             </div>
             <p class="text-xl font-light mb-8">Esto es lo que verás en cada uno de los días del Reto:</p>
             <ul>

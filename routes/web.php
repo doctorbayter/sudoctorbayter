@@ -997,54 +997,54 @@ Route::get('x/query/reto', function(){
 
 
 
-    // // Recetas
+    // Recetas
 
-    // $recipe = Recipe::create([
-    //     'name' => '5mer1',
-    //     'slug' => '5mer1',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 10,
-    //     'type' => 1,
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Tortilla semiesponjosa',
+        'slug' => 'tortilla-semiesponjosa',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 10,
+        'type' => 1,
+        ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (386, 158, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (389, 159, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
 
-    // $recipe = Recipe::create([
-    //     'name' => '5mer2',
-    //     'slug' => '5mer2',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 35,
-    //     'type' => 1,
-    //     ]);
-    //     // $image = Image::create([
-    //     // 'url' => 'recipes/desafio-2023-dia-1-receta-2.jpg',
-    //     // 'imageable_id' => $recipe->id,
-    //     // 'imageable_type' => 'App\Models\Recipe',
-    //     // ]);
-    //     // $video = Video::create([
-    //     // 'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-    //     // 'videoable_id' => $recipe->id,
-    //     // 'videoable_type' => 'App\Models\Recipe',
-    //     // ]);
+    $recipe = Recipe::create([
+        'name' => 'Salmon al horno',
+        'slug' => 'salmon-al-horno',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 35,
+        'type' => 1,
+        ]);
+        // $image = Image::create([
+        // 'url' => 'recipes/desafio-2023-dia-1-receta-2.jpg',
+        // 'imageable_id' => $recipe->id,
+        // 'imageable_type' => 'App\Models\Recipe',
+        // ]);
+        // $video = Video::create([
+        // 'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        // 'videoable_id' => $recipe->id,
+        // 'videoable_type' => 'App\Models\Recipe',
+        // ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (387, 158, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (390, 159, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
 
 
-    // $recipe = Recipe::create([
-    //     'name' => '5mer3',
-    //     'slug' => '5mer3',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 20,
-    //     'type' => 1,
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Huevos espolvoreados',
+        'slug' => 'huevos-espolvoreados-17-1-3',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 20,
+        'type' => 1,
+        ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (388, 158, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (391, 159, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

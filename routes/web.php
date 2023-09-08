@@ -1036,7 +1036,7 @@ Route::get('x/query/reto', function(){
 
     $recipe = Recipe::create([
         'name' => 'Huevos espolvoreados',
-        'slug' => 'huevos-espolvoreados-17-1-3',
+        'slug' => 'huevos-espolvoreados-17-1-',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 20,

@@ -999,21 +999,21 @@ Route::get('x/query/reto', function(){
 
     // Recetas
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Tortilla semiesponjosa',
-    //     'slug' => 'tortilla-semiesponjosa',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 10,
-    //     'type' => 1,
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Consomé con costilla de res',
+        'slug' => 'consome-con-costilla-de-res',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 10,
+        'type' => 1,
+        ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (392, 160, 345, 1, CURRENT_TIMESTAMP, NULL)");
+    (395, 161, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'La ancha',
-        'slug' => 'la-ancha',
+        'name' => 'Pollo tu eliges (pierna o pernil)',
+        'slug' => 'pollo-tu-eliges',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 35,
@@ -1031,20 +1031,20 @@ Route::get('x/query/reto', function(){
         // ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (393, 160, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
+    (396, 161, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
 
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Huevos espolvoreados',
-    //     'slug' => 'huevos-espolvoreados-17-1-8',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 20,
-    //     'type' => 1,
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Empanada de huevo',
+        'slug' => 'empanada-de-huevo-17-3-3',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 20,
+        'type' => 1,
+        ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (394, 160, 347, 3, CURRENT_TIMESTAMP, NULL)");
+    (397, 161, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

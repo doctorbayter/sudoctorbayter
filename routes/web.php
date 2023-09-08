@@ -173,7 +173,7 @@ Route::get('/reto/5mer/whatsapp/grupo-2', function () {
 })->name('reto.whatsapp2');
 
 Route::get('/reto/5mer/whatsapp/grupo-3', function () {
-    return redirect('https://chat.whatsapp.com/KV7TWMORg3XHIegM6v2CoK');
+    return redirect('https://chat.whatsapp.com/IhTc1c0lSiI1HIyDkcf50Q');
 })->name('reto.whatsapp3');
 
 Route::get('/desafio', function () {

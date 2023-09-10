@@ -1108,7 +1108,7 @@ Route::get('x/clients/fase/4/{skip?}', function($skip = 0){
     $fase_four = Fase::find(4);
 
     $plans = Subscription::whereIn('plan_id', [1, 15, 25, 32])
-    ->skip($skip)->take(100)->get();
+    ->skip($skip)->take(200)->get();
 
     foreach($plans as $plan){
 
@@ -1118,6 +1118,23 @@ Route::get('x/clients/fase/4/{skip?}', function($skip = 0){
         }
     }
 });
+
+
+Route::get('x/verify-reto/{plan}/{fase?}/{skip?}', function($planid, $faseid, $skip = 0){
+
+    $reto = Fase::find($faseid);
+    $plans = Subscription::whereIn('plan_id', [$planid])
+    ->skip($skip)->take(200)->get();
+
+    foreach($plans as $plan){
+
+        if(!$reto->clients->contains($plan->user->id)){
+            $reto->clients()->attach($plan->user->id);
+            echo "Do it <br/>";
+        }
+    }
+});
+
 
 Route::get('x/clients/fase/{plan}/{fase}/{skip?}', function($plan, $fase, $skip = 0){
 

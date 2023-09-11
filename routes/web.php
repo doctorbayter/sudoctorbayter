@@ -176,6 +176,12 @@ Route::get('/reto/5mer/whatsapp/grupo-3', function () {
     return redirect('https://chat.whatsapp.com/IhTc1c0lSiI1HIyDkcf50Q');
 })->name('reto.whatsapp3');
 
+Route::get('/reto/5mer/whatsapp/grupo-4', function () {
+    return redirect('https://chat.whatsapp.com/KqYGvoD7wn39nYZzIZylyd');
+})->name('reto.whatsapp4');
+
+
+
 Route::get('/desafio', function () {
     return view('no-disponible'); 
     return redirect('https://pay.hotmart.com/N77793722X?checkoutMode=10');

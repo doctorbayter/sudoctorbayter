@@ -149,14 +149,14 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
-    return redirect('https://pay.hotmart.com/B86320853L?checkoutMode=10');
-    //return view('no-disponible');
+    //return redirect('https://pay.hotmart.com/B86320853L?checkoutMode=10');
+    return view('no-disponible');
     //return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
 })->name('reto.nuevo');
 
 Route::get('/venezuela', function () {
-    //return view('no-disponible');
-    return redirect()->route('reto.register', ['reto'=>'5mer-2023']);
+    return view('no-disponible');
+    //return redirect()->route('reto.register', ['reto'=>'5mer-2023']);
 })->name('reto.venezuela');
 
 
@@ -189,14 +189,14 @@ Route::get('/desafio', function () {
 
 
 Route::get('/selecto', function () {
-    $plan = Plan::find(10);
+    //$plan = Plan::find(10);
     //return redirect()->route('payment.pay', ['plan'=>$plan]);
     return view('no-disponible');
 })->name('selecto');
 
 Route::get('/evento', function () {
-    return redirect('https://pay.hotmart.com/B86320853L?checkoutMode=10');
-    //return view('no-disponible');
+    //return redirect('https://pay.hotmart.com/B86320853L?checkoutMode=10');
+    return view('no-disponible');
 })->name('selecto');
 
 Route::get('/10', function () {

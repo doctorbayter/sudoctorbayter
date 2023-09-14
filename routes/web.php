@@ -221,8 +221,9 @@ Route::get('/oferta', function () {
 })->name('oferta.reto');
 
 Route::get('/97', function () {
+    return redirect('https://pay.hotmart.com/F78337495Q?off=0sphkasm&checkoutMode=10');
     //return view('no-disponible'); 
-    return redirect('https://pay.hotmart.com/F78337495Q?off=5t947apw&checkoutMode=10');
+    //return redirect('https://pay.hotmart.com/F78337495Q?off=5t947apw&checkoutMode=10');
 })->name('oferta.reto97');
 
 Route::get('/especial', function () {

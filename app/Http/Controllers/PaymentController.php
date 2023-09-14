@@ -412,6 +412,7 @@ class PaymentController extends Controller
                         break;
                     case '5t947apw':
                         $plan = Plan::find(15); // Plan Premium $67 ahora 97,00 US$
+                        $this->addSuscription($user->id, 23);
                         break;
                     case 'u8j3n8x5':
                         $plan = Plan::find(9); // Plan Premium $99 ahora 110,00 US$

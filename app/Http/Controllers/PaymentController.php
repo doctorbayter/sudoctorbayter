@@ -408,16 +408,16 @@ class PaymentController extends Controller
                   
                 switch ($product_offert) {
                     case 'ugs80t2l':
-                        $plan = Plan::find(1); // Plan Premium $110
+                        $plan = Plan::find(1); // Plan Premium $110 ahora 137,00 US$
                         break;
-                    case '7eyky1c2':
-                        $plan = Plan::find(15); // Plan Premium $67
+                    case '5t947apw':
+                        $plan = Plan::find(15); // Plan Premium $67 ahora 97,00 US$
                         break;
                     case 'u8j3n8x5':
-                        $plan = Plan::find(9); // Plan Premium $99
+                        $plan = Plan::find(9); // Plan Premium $99 ahora 110,00 US$
                         break;
                     case '0sphkasm':
-                        $plan = Plan::find(31); // Plan Premium $97
+                        $plan = Plan::find(31); // Plan Premium $97 ahora 117,00 US$
                         break;
                 }
                 $fases = Fase::whereIn('id', [1, 2, 3, 4])->get();

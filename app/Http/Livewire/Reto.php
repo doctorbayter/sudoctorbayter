@@ -286,14 +286,13 @@ class Reto extends Component
                     'video-salsa' => '787252511?h=71fab4406b',
                 ];
                 break;
-                case '5mer':
+                case '5mer-2023':
                     return $this->data = [
                         'title' => 'Reto 5Mer',
                         'subtitle'=> 'El Reto del Ayuno',
                         'type' => 'video',
                         'online' => true,
-                        'video-1' => '',
-                        'video-2' => '',
+                        'video-1' => '864621422?h=6f85271a89',
                     ];
                     break;
             default:

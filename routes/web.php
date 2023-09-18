@@ -216,7 +216,7 @@ Route::get('/117', function () {
 
 
 Route::get('/oferta', function () {
-    //return view('no-disponible'); 
+    return view('no-disponible'); 
     return redirect('https://pay.hotmart.com/F78337495Q?off=5t947apw&checkoutMode=10');
 })->name('oferta.reto');
 
@@ -227,7 +227,7 @@ Route::get('/97', function () {
 })->name('oferta.reto97');
 
 Route::get('/especial', function () {
-    //return view('no-disponible');
+    return view('no-disponible');
     $plan = Plan::find(15);
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('oferta.retovenezuela');

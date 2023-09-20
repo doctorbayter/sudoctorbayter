@@ -78,6 +78,12 @@ Route::get('libro/', function(){
 Route::get('librodkp/', function(){
     return redirect()->away("https://www.amazon.com/-/es/Jorge-Enrique-Bayter-Marín-ebook/dp/B0BHBZNMGP");
 });
+ 
+Route::get('librocomerparasanar/', function(){
+    return redirect()->away("https://www.buscalibre.com.co/libro-comer-para-sanar-doctor-bayter-editorial-planeta/9786287665101/p/55573793");
+});
+
+
 
 Route::get('miami/', function(){
     return redirect()->away("https://www.eventbrite.com/e/mas-alla-de-la-victoria-con-doctor-bayter-junto-drpedrito-tickets-378889818647");

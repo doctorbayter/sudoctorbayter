@@ -1192,8 +1192,6 @@ Route::get('x/clients/verify/', function($skip = 0){
 
 });
 
-
-
 // Lideres Acutalizado Enero 2022
 // jackie@adn-empresarial.com
 // aberruncio@gmail.com

@@ -40,7 +40,7 @@
                         </section>
 
                         @if ($subscribed_reto_actual)
-                                        <aside class="my-8">
+                                        <aside class="my-8 hidden">
                                             <div class="py-8 px-8 rounded-2xl  border-dashed border-red-700 border-4 bg-gray-200">
                                                 <h2 class="text-2xl md:text-4xl font-bold text-red-700">Próximas reuniones de Zoom</h2>
                                                 <p class="mt-4">No te pierdas las reuniones de Zoom del Reto 5Mer 2023<b> El reto del ayuno 

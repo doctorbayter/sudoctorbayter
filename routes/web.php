@@ -920,9 +920,12 @@ Route::get('x/query', function(){
     // $plan->price_id = 4;
     // $plan->save();
 
-    $discount = Discount::find(10);
-    $discount->value = 97;
-    $discount->save();
+    // $discount = Discount::find(10);
+    // $discount->value = 97;
+    // $discount->save();
+
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (31, 'Secretos', 'files/pdf/secretos-fase-4-dkp.pdf', 4, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
 });
 
@@ -996,13 +999,13 @@ Route::get('x/query/reto', function(){
     // //Secretos y lista de alimentos
 
     // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    // (28, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-5mer-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    // (32, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-5mer-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    // (29, 'Secretos', 'files/pdf/secretos-5mer-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    // (33, 'Secretos', 'files/pdf/secretos-5mer-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     // DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    // (30, $fase->id, '1', 'files/pdf/lista-de-alimentos-5mer-2023.pdf', CURRENT_TIMESTAMP, NULL)");
+    // (34, $fase->id, '1', 'files/pdf/lista-de-alimentos-5mer-2023.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
 

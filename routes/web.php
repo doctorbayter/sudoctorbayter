@@ -924,8 +924,6 @@ Route::get('x/query', function(){
     // $discount->value = 97;
     // $discount->save();
 
-    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (31, 'Secretos', 'files/pdf/secretos-fase-4-dkp.pdf', 4, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
 });
 

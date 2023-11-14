@@ -85,8 +85,8 @@
 
     <section class="bg-white">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex relative overflow-hidden pb-24">
-            <div class="grid grid-cols-1 px-6  gap-x-4 gap-y-4 md:px-6 md:grid-cols-3 md:gap-y-0">
-                <article class=" bg-gray-900 flex items-center rounded-lg shadow-md">
+            <div class="grid grid-cols-1 px-6  gap-x-4 gap-y-4 md:px-6 md:grid-cols-2 md:gap-y-0">
+                <article class=" bg-gray-900 flex items-center rounded-lg shadow-md hidden">
                     <figure class="pl-4 mr-4 w-5/12 pt-2">
                         <img src="{{asset('img/photos/doctor_bayter_medico.png')}}" alt="" class="w-full object-cover">
                     </figure>

@@ -40,7 +40,7 @@
                     </div>
                 </a>
 
-                <a href="{{route('cita')}}" class="block mb-6 p-4 rounded-lg shadow-xs bg-gray-900">
+                <a href="{{route('cita')}}" class="block mb-6 p-4 rounded-lg shadow-xs bg-gray-900 hidden">
                     <div class="flex flex-col md:flex-row items-center h-full">
                         <figure class=" h-56 w-full md:w-40 md:h-40 object-cover  overflow-hidden rounded-xl">
                             <img src="{{asset('img/resources/covers/recurso_02.jpg')}}" alt="">

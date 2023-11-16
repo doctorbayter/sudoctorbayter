@@ -5,7 +5,7 @@
     <h2>Ingredientes de <b>{{$recipe->name}}</b></h2>
     <hr>
     <div>
-        @foreach ($recipe->ingredients as $ingredient_item)
+        @foreach ($recipe->ingredients->sortByDesc('created_at') as $ingredient_item)
             <article class="card shadow-sm  bg-light rounded">
                 <div class="card-body py-3 border rounded px-6 d-flex justify-content-between align-items-center">
                     @if ($ingredient->id == $ingredient_item->id)

@@ -146,7 +146,7 @@
                         </div>
                     </div>
                     <div class="relative w-full mt-8 h-52 md:h-96 xl:min-h-video video-iframe">
-                        Video
+                        <iframe src="https://player.vimeo.com/video/885004154?h=c971580e94" style="width:  100%; height: 500px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                     </div>
                 </section>
             </div>

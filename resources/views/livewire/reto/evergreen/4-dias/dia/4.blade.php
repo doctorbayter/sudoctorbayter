@@ -146,7 +146,7 @@
                         </div>
                     </div>
                     <div class="relative w-full mt-8 h-52 md:h-96 xl:min-h-video video-iframe">
-                        Video
+                        
                     </div>
                 </section>
             </div>

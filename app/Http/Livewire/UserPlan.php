@@ -18,9 +18,9 @@ class UserPlan extends Component
         $this->user_fases = auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id');
 
         if (auth()->user()->id == 3420 || auth()->user()->id == 1) {
-            $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16])->sortBy('id');
+            $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17])->sortBy('id');
         } else {
-            $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16])->sortBy('id');
+            $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17])->sortBy('id');
         }
         
         $this->user_adicionales = auth()->user()->fases->whereIn('id', [5, 7])->sortBy('id');
@@ -57,7 +57,7 @@ class UserPlan extends Component
         $this->subscribed_fase_week = $fase_week->clients->contains(auth()->user()->id);
 
 
-        $reto_actual = Fase::find(17);
+        $reto_actual = Fase::find(18);
         $this->subscribed_reto_actual = $reto_actual->clients->contains(auth()->user()->id);
 
         $planUpdate = Plan::find(3);

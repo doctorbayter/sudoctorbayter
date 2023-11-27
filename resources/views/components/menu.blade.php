@@ -73,7 +73,7 @@
                     </button>
                 </div>
                 <div>
-                    @foreach (auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16])->sortBy('id') as $reto)
+                    @foreach (auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17])->sortBy('id') as $reto)
 
                         <a href="{{route('plan.fase', $reto)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$reto->name}} " >
                             <i class=" text-lg fas fa-bullseye mr-2"></i>
@@ -84,7 +84,7 @@
             </div>
         @endif
 
-        @if ($userPlan != 7 && $userPlan != 13 && $userPlan != 18 && $userPlan != 19 && $userPlan != 36 && $userPlan != 47 && $userPlan != 49 && $userPlan != 50 && $userPlan != 51)
+        @if ($userPlan != 7 && $userPlan != 13 && $userPlan != 18 && $userPlan != 19 && $userPlan != 36 && $userPlan != 47 && $userPlan != 49 && $userPlan != 50 && $userPlan != 51 && $userPlan != 52)
             <div class="md:mt-12">
                 <div :class="{'block': openMenu, 'hidden': !openMenu}" class="md:block">
                     <button class="flex flex-row items-center w-full px-2 md:px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-700 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline bg-gray-200">

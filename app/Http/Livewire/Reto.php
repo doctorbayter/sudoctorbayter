@@ -55,6 +55,10 @@ class Reto extends Component
                 $this->plan = Plan::find(51);
                 $this->list_id = 34;
                 break;
+            case 'navidad-2023':
+                $this->plan = Plan::find(52);
+                $this->list_id = 34;
+                break;
                 
             default:
                 $this->list_id = null;
@@ -154,6 +158,16 @@ class Reto extends Component
                     'video' => null,
                 ];
             break;
+            case 'navidad-2023':
+                return $this->data = [
+                    'title' => 'Reto Navidad 2023',
+                    'subtitle'=> 'El reto en navidad',
+                    'type' => 'Reto Online',
+                    'online' => true,
+                    'billdoard' => null,
+                    'video' => null,
+                ];
+            break;
             default:
                 return null;
                 break;
@@ -192,6 +206,9 @@ class Reto extends Component
             break;
             case '5mer-2023':
                 return view('livewire.reto.5mer-2023.register');
+            break;
+            case 'navidad-2023':
+                return view('livewire.reto.navidad-2023.register');
             break;
             default:
                 return view('livewire.masterclass.no-disponible');
@@ -290,6 +307,15 @@ class Reto extends Component
                     return $this->data = [
                         'title' => 'Reto 5Mer',
                         'subtitle'=> 'El Reto del Ayuno',
+                        'type' => 'video',
+                        'online' => true,
+                        'video-1' => '864621422?h=6f85271a89',
+                    ];
+                    break;
+                case 'navidad-2023':
+                    return $this->data = [
+                        'title' => 'Reto Navidad 2023',
+                        'subtitle'=> 'El Reto en Navidad',
                         'type' => 'video',
                         'online' => true,
                         'video-1' => '864621422?h=6f85271a89',

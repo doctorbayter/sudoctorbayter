@@ -153,43 +153,35 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
-    //return redirect('https://pay.hotmart.com/B86320853L?checkoutMode=10');
     return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'desafio-2023']);
+    //return redirect('https://pay.hotmart.com/B86320853L?checkoutMode=10');
 })->name('reto.nuevo');
 
 Route::get('/venezuela', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'5mer-2023']);
+    //return view('no-disponible');
+    return redirect()->route('reto.register', ['reto'=>'navidad-2023']);
 })->name('reto.venezuela');
 
 
-Route::get('/reto/5mer/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/IhTc1c0lSiI1HIyDkcf50Q');
+Route::get('/reto/navidad/whatsapp', function () {
+    return redirect('');
 })->name('reto.whatsapp');
 
-Route::get('/reto/5mer/whatsapp/grupo-1', function () {
-    return redirect('https://chat.whatsapp.com/KV7TWMORg3XHIegM6v2CoK');
+Route::get('/reto/navidad/whatsapp/grupo-1', function () {
+    return redirect('');
 })->name('reto.whatsapp1');
 
-Route::get('/reto/5mer/whatsapp/grupo-2', function () {
-    return redirect('https://chat.whatsapp.com/EQjEuGdezJeKSiRlBY8fPx');
+Route::get('/reto/navidad/whatsapp/grupo-2', function () {
+    return redirect('');
 })->name('reto.whatsapp2');
 
-Route::get('/reto/5mer/whatsapp/grupo-3', function () {
-    return redirect('https://chat.whatsapp.com/IhTc1c0lSiI1HIyDkcf50Q');
+Route::get('/reto/navidad/whatsapp/grupo-3', function () {
+    return redirect('');
 })->name('reto.whatsapp3');
 
-Route::get('/reto/5mer/whatsapp/grupo-4', function () {
-    return redirect('https://chat.whatsapp.com/KqYGvoD7wn39nYZzIZylyd');
+Route::get('/reto/navidad/whatsapp/grupo-4', function () {
+    return redirect('');
 })->name('reto.whatsapp4');
-
-
-
-Route::get('/desafio', function () {
-    return view('no-disponible'); 
-    return redirect('https://pay.hotmart.com/N77793722X?checkoutMode=10');
-})->name('desafio.2023');
 
 
 Route::get('/selecto', function () {

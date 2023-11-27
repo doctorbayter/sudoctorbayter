@@ -85,7 +85,7 @@ class ProductPay extends Component
 
             if ($suscription) {
                 $this->can_continued = false;
-                $this->error_button = "No puedes continuar con la compra, el usuario $email ya está registrado a este plan";
+                $this->error_button = "El usuario con el correo $email ya está registrado a este producto";
                 return;
             }
         }
@@ -198,7 +198,7 @@ class ProductPay extends Component
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
             $fase_one = Fase::find(1);
-            $reto = Fase::find(17);
+            $reto = Fase::find(18);
 
             if($this->plan->id != 5 || $this->plan->id != 6){
 
@@ -215,15 +215,14 @@ class ProductPay extends Component
                     if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
                         $fase_one->clients()->attach($user->id);
                     }
-                }else if($this->plan->id == 51) {
-
+                }else if($this->plan->id == 52) {
                     if($reto->clients()->where('users.id', $user->id)->doesntExist()){
                         $reto->clients()->attach($user->id);
                     }
                     
                 }
 
-                if($this->plan->id == 51){
+                if($this->plan->id == 52){
                     $mail = new ApprovedPurchaseReto($this->plan, $user);
                     Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 }else{
@@ -231,7 +230,6 @@ class ProductPay extends Component
                     Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 }
                 
-
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
 
             }else {

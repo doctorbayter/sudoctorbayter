@@ -155,7 +155,6 @@ class PaymentController extends Controller
             $this->sendMail($user, $plan);
             $this->setUserData($user, $plan);
 
-
         }
     }
 
@@ -171,8 +170,7 @@ class PaymentController extends Controller
         $fase_one      = Fase::find(1);
         $week_recipes  = Fase::find(5);
         $five_recipes  = Fase::find(7);
-        $fase_reto     = Fase::find(14);
-        $desafio_2023  = Fase::find(15);
+        $fase_reto     = Fase::find(18);
 
         $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
 
@@ -195,13 +193,9 @@ class PaymentController extends Controller
             $this->setFases($user->id, $week_recipes);
         }elseif ($plan->id == 13) {
             $this->setFases($user->id, $five_recipes);
-        }elseif ($plan->id == 47) {
+        }elseif ($plan->id == 52) {
             if($fase_reto->clients()->where('users.id', $user->id)->doesntExist()){
                 $fase_reto->clients()->attach($user->id);
-            }
-        }elseif ($plan->id == 49) {
-            if($desafio_2023->clients()->where('users.id', $user->id)->doesntExist()){
-                $desafio_2023->clients()->attach($user->id);
             }
         }
 
@@ -370,7 +364,7 @@ class PaymentController extends Controller
             case 41:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
             break;
-            case 51:
+            case 52:
                 $mail = new ApprovedPurchaseReto($plan, $user);
             break;
             default:

@@ -930,80 +930,80 @@ Route::get('x/query', function(){
 Route::get('x/query/reto', function(){
 
 
-    // //Plan y Fase del reto
+    //Plan y Fase del reto
 
-    // $plan = Plan::create([
-    //    'name' => '5Mer 2023',
-    //    'slug' => '5mer-2023',
-    //    'price_id' => 14
-    // ]);
+    $plan = Plan::create([
+       'name' => 'Reto en Navidad 2023',
+       'slug' => 'navidad-2023',
+       'price_id' => 14
+    ]);
 
-    // $fase = Fase::create([
-    //    'name' => '5Mer 2023',
-    //    'sub_name' => 'El reto del <span class="text-red-700">Ayuno</span>',
-    //    'descripcion' => '',
-    //    'slug' => '5mer-2023',
-    // ]);
-
-
-    // //Días Reto
-
-    // $day = Day::create([
-    //    'day' => 1,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (116, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (116, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //    'day' => 2,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (117, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (117, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //    'day' => 3,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (118, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (118, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //    'day' => 4,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (119, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (119, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //    'day' => 5,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (120, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (120, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    $fase = Fase::create([
+       'name' => 'Navidad 2023',
+       'sub_name' => 'El reto en <span class="text-red-700">Navidad</span> 2023',
+       'descripcion' => '',
+       'slug' => 'navidad-2023',
+    ]);
 
 
-    // //Secretos y lista de alimentos
+    //Días Reto
 
-    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    // (32, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-5mer-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+       'day' => 1,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (121, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (121, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $day = Day::create([
+       'day' => 2,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (122, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (122, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $day = Day::create([
+       'day' => 3,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (123, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (123, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $day = Day::create([
+       'day' => 4,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (124, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (124, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    $day = Day::create([
+       'day' => 5,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (125, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (125, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+
+    //Secretos y lista de alimentos
 
     // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    // (33, 'Secretos', 'files/pdf/secretos-5mer-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    // (35, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-5mer-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+
+    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    // (36, 'Secretos', 'files/pdf/secretos-5mer-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
     // DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    // (34, $fase->id, '1', 'files/pdf/lista-de-alimentos-5mer-2023.pdf', CURRENT_TIMESTAMP, NULL)");
+    // (37, $fase->id, '1', 'files/pdf/lista-de-alimentos-5mer-2023.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
 

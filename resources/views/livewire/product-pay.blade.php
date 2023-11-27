@@ -97,8 +97,8 @@
                     </style>
                     <div class="px-4 py-4 lg:max-w-5xl mx-auto mb-6  active-animation">
                         <h3 class="font-bold mb-2">Información importante</h3>
-                        <p class="text-sm mb-2"><i class="fas fa-info-circle mr-1 text-red-700"></i> Si deseas pagar con <b>tarjeta de crédito o débito</b> selecciona el método de pago <b class=" text-purple-600">Stripe</b> o <b class=" text-green-500">PayU</b></p>
-                        <p class="text-sm mb-2"><i class="fas fa-info-circle mr-1 text-red-700"></i> Si deseas pagar con <b>PSE</b> y <b>otros métodos de pago</b> selecciona el método de pago <b class=" text-green-500">PayU</b></p>
+                        <p class="text-sm mb-2"><i class="fas fa-info-circle mr-1 text-red-700"></i> Si deseas pagar con <b>tarjeta de crédito o débito</b> selecciona el método de pago <b class=" text-purple-600">Stripe</b> <span class="hidden">o <b class=" text-green-500">PayU</b></span></p>
+                        <p class="text-sm mb-2 hidden"><i class="fas fa-info-circle mr-1 text-red-700"></i> Si deseas pagar con <b>PSE</b> y <b>otros métodos de pago</b> selecciona el método de pago <b class=" text-green-500">PayU</b></p>
                     </div>
                 @endif
 
@@ -125,7 +125,7 @@
                     </li>
 
                      @if ($plan->id != 5)
-                        <li class="max-w-200 lg:mr-4 ">
+                        <li class="max-w-200 lg:mr-4 hidden">
                             <div
                                 x-on:click="$payMethod = 'payu' ; $dispatch('route-change', { value: '{{route('payment.payu', $plan)}}' }) "
                                 :class="{ 'border-blue-200 bg-blue-100': $payMethod === 'payu' }"

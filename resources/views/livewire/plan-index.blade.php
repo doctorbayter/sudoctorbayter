@@ -29,7 +29,7 @@
                                             <img src="{{asset('img/billboards/total_fitness_lg.jpg')}}" alt="">
                                         </a>
 
-                                    @elseif (auth()->user()->fases->whereNotIn('id', [8, 9, 10, 11, 12, 13, 14, 15, 16, 17])->first())
+                                    @elseif (auth()->user()->fases->whereNotIn('id', [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18])->first())
                                     <a href="{{route('payment.checkout', $thf_plan)}}" target="_blank">
                                         <img src="{{asset('img/billboards/no_total_fitness_lg.jpg')}}" alt="">
                                     </a>
@@ -54,9 +54,9 @@
                                                             <a href="{{route('reto.replay', ['5mer-2023', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
                                                         </div>
                                                         <div class="">
-                                                            <h2>Reunión en Vivo<b>Navidad 2023</b></h2>
+                                                            <h2>Reunión en Vivo <b>Navidad 2023</b></h2>
                                                             <hr class="my-2 border-gray-700">
-                                                            <p><b>Fecha:</b>14 de diciembre 2023 1:00 p.m. Hora Colombia</p>
+                                                            <p><b>Fecha: </b>14 de diciembre 2023 1:00 p.m. Hora Colombia</p>
                                                             <a href="https://us02web.zoom.us/j/81519228883?pwd=WkloWWQzOHBIQWpPRmlWSkF6UkVrUT09" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
                                                         </div>
                                                     </div>

@@ -157,6 +157,12 @@ Route::get('/reto', function () {
     return redirect('https://go.hotmart.com/L88783179C');
 })->name('reto.nuevo');
 
+Route::get('/comprar', function () {
+    //return view('no-disponible');
+    return redirect('https://pay.hotmart.com/L88783179C?checkoutMode=10');
+})->name('reto.comprar');
+
+
 Route::get('/venezuela', function () {
     //return view('no-disponible');
     return redirect()->route('reto.register', ['reto'=>'navidad-2023']);

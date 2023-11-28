@@ -433,6 +433,10 @@ class PaymentController extends Controller
                 $plan = Plan::find(51); 
                 $fases = Fase::whereIn('id', [17])->get();
             }
+            else if($product_id == 3573409){ //Navidad 2023
+                $plan = Plan::find(52); 
+                $fases = Fase::whereIn('id', [18])->get();
+            }
             else{
                 return;
             }

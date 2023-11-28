@@ -108,7 +108,7 @@
                 </li>
                 <li class="mb-3 flex">
                     <p class=""><b class="mr-4 text-yellow-400">Día 5:</b></p>
-                    <p class=" flex-1">VIERNES 15 DE DIC:  Plan de alimentación + envío de información a través del grupo privad</p>
+                    <p class=" flex-1">VIERNES 15 DE DIC:  Plan de alimentación + envío de información a través del grupo privado</p>
                 </li>
             </ul>
         </article>

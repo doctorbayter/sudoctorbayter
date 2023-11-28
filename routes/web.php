@@ -153,15 +153,14 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
-    return view('no-disponible');
-    //return redirect('https://pay.hotmart.com/B86320853L?checkoutMode=10');
+    //return view('no-disponible');
+    return redirect('https://go.hotmart.com/L88783179C');
 })->name('reto.nuevo');
 
 Route::get('/venezuela', function () {
     //return view('no-disponible');
     return redirect()->route('reto.register', ['reto'=>'navidad-2023']);
 })->name('reto.venezuela');
-
 
 Route::get('/reto/navidad/whatsapp', function () {
     return redirect('');

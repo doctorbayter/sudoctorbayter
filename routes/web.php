@@ -188,7 +188,6 @@ Route::get('/reto/navidad/whatsapp/grupo-4', function () {
     return redirect('');
 })->name('reto.whatsapp4');
 
-
 Route::get('/selecto', function () {
     //$plan = Plan::find(10);
     //return redirect()->route('payment.pay', ['plan'=>$plan]);

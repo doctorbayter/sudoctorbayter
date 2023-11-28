@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
+                    @else
 
                     @if ($fase->id == 3 || $fase->id == 4)
                         <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">

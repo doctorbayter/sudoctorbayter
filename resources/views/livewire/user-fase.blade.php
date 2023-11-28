@@ -20,7 +20,7 @@
                         </div>
                     </header>
 
-                    @if ($fase->id == 18 && auth()->user()->id != 13706 )
+                    @if ($fase->id == 18 && auth()->user()->id != 13706_ )
                         <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
                             <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
                                 <div class="flex items-center justify-between">
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                    @else
+                    @endif
 
                     @if ($fase->id == 3 || $fase->id == 4)
                         <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">

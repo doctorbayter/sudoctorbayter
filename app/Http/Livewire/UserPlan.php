@@ -17,8 +17,8 @@ class UserPlan extends Component
     public function mount(){
         $this->user_fases = auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id');
 
-        if (auth()->user()->id == 3420 || auth()->user()->id == 1) {
-            $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17])->sortBy('id');
+        if (auth()->user()->id == 3420 || auth()->user()->id == 13706) {
+            $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 8, 10, 11])->sortBy('id');
         } else {
             $this->user_retos = auth()->user()->fases->whereNotIn('id', [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17])->sortBy('id');
         }

@@ -195,8 +195,8 @@ Route::get('/selecto', function () {
 })->name('selecto');
 
 Route::get('/evento', function () {
-    //return redirect('https://pay.hotmart.com/B86320853L?checkoutMode=10');
-    return view('no-disponible');
+    return redirect('https://go.hotmart.com/L88783179C');
+    //return view('no-disponible');
 })->name('selecto');
 
 Route::get('/10', function () {

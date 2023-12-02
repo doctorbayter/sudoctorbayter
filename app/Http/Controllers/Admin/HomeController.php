@@ -159,7 +159,7 @@ class HomeController extends Controller
                 case 7:
                     $mail = new ApprovedPurchaseNoChat($plan, $user);
                     break;
-                case 51:
+                case 52:
                     $mail = new ApprovedPurchaseReto($plan, $user);
                     break;
                 default:

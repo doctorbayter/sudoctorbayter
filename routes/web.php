@@ -169,7 +169,7 @@ Route::get('/venezuela', function () {
 })->name('reto.venezuela');
 
 Route::get('/reto/navidad/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/DDPkoZsiJ16Eun9PPy07b9');
+    return redirect('https://chat.whatsapp.com/KMgg8uVGYZv6xS8wFy8jfq');
 })->name('reto.whatsapp');
 
 Route::get('/reto/navidad/whatsapp/grupo-1', function () {

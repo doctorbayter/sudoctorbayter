@@ -25,7 +25,7 @@
                 <a href="{{ url()->previous() }}" class="text-red-700 font-bold text-lg px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg"> <i class="fas fa-chevron-left mr-2"></i> Volver al menú</a>
             </aside>
               <div class="w-10/12 mx-auto my-10">
-                <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
+                <div class="flex__ flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900 hidden">
                     <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">

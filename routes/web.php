@@ -1015,16 +1015,16 @@ Route::get('x/query/reto', function(){
     //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (416, 138, 331, 1, CURRENT_TIMESTAMP, NULL)");
+    (416, 168, 331, 1, CURRENT_TIMESTAMP, NULL)");
 
-    $recipe = Recipe::create([
-        'name' => 'navidad-2023-5-2',
-        'slug' => 'navidad-2023-5-2',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 35,
-        'type' => 1,
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'navidad-2023-5-2',
+    //     'slug' => 'navidad-2023-5-2',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 35,
+    //     'type' => 1,
+    //     ]);
         // $image = Image::create([
         // 'url' => 'recipes/desafio-2023-dia-1-receta-2.jpg',
         // 'imageable_id' => $recipe->id,
@@ -1037,20 +1037,20 @@ Route::get('x/query/reto', function(){
         // ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (417, 138, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
+    (417, 168, 426, 2, CURRENT_TIMESTAMP, NULL)");
 
 
-    $recipe = Recipe::create([
-        'name' => 'navidad-2023-5-3',
-        'slug' => 'navidad-2023-5-3',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 20,
-        'type' => 1,
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'navidad-2023-5-3',
+    //     'slug' => 'navidad-2023-5-3',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 20,
+    //     'type' => 1,
+    //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (418, 138, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
+    (418, 168, 427, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

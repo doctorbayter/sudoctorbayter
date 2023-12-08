@@ -1015,7 +1015,7 @@ Route::get('x/query/reto', function(){
     //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (416, 168, 331, 1, CURRENT_TIMESTAMP, NULL)");
+    (419, 168, 331, 1, CURRENT_TIMESTAMP, NULL)");
 
     // $recipe = Recipe::create([
     //     'name' => 'navidad-2023-5-2',
@@ -1037,7 +1037,7 @@ Route::get('x/query/reto', function(){
         // ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (417, 168, 426, 2, CURRENT_TIMESTAMP, NULL)");
+    (420, 168, 426, 2, CURRENT_TIMESTAMP, NULL)");
 
 
     // $recipe = Recipe::create([
@@ -1050,7 +1050,7 @@ Route::get('x/query/reto', function(){
     //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (418, 168, 427, 3, CURRENT_TIMESTAMP, NULL)");
+    (421, 168, 427, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

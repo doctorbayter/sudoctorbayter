@@ -1006,8 +1006,8 @@ Route::get('x/query/reto', function(){
     // Recetas
 
     $recipe = Recipe::create([
-        'name' => 'navidad-2023-2-1',
-        'slug' => 'navidad-2023-2-1',
+        'name' => 'navidad-2023-3-1',
+        'slug' => 'navidad-2023-3-1',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 10,
@@ -1018,8 +1018,8 @@ Route::get('x/query/reto', function(){
     (407, 165, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'navidad-2023-2-2',
-        'slug' => 'navidad-2023-2-2',
+        'name' => 'navidad-2023-3-2',
+        'slug' => 'navidad-2023-3-2',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 35,
@@ -1041,8 +1041,8 @@ Route::get('x/query/reto', function(){
 
 
     $recipe = Recipe::create([
-        'name' => 'navidad-2023-2-3',
-        'slug' => 'navidad-2023-2-3',
+        'name' => 'navidad-2023-3-3',
+        'slug' => 'navidad-2023-3-3',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 20,

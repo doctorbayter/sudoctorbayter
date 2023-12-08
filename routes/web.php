@@ -1005,21 +1005,21 @@ Route::get('x/query/reto', function(){
 
     // Recetas
 
-    $recipe = Recipe::create([
-        'name' => 'navidad-2023-4-1',
-        'slug' => 'navidad-2023-4-1',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 10,
-        'type' => 1,
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'navidad-2023-4-1',
+    //     'slug' => 'navidad-2023-4-1',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 10,
+    //     'type' => 1,
+    //     ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (413, 167, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
+    (416, 138, 331, 1, CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'navidad-2023-4-2',
-        'slug' => 'navidad-2023-4-2',
+        'name' => 'navidad-2023-5-2',
+        'slug' => 'navidad-2023-5-2',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 35,
@@ -1037,20 +1037,20 @@ Route::get('x/query/reto', function(){
         // ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (414, 167, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
+    (417, 138, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
 
 
-    // $recipe = Recipe::create([
-    //     'name' => 'navidad-2023-4-3',
-    //     'slug' => 'navidad-2023-4-3',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 20,
-    //     'type' => 1,
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'navidad-2023-5-3',
+        'slug' => 'navidad-2023-5-3',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 20,
+        'type' => 1,
+        ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (415, 167, 318, 3, CURRENT_TIMESTAMP, NULL)");
+    (418, 138, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

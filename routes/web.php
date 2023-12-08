@@ -992,18 +992,18 @@ Route::get('x/query/reto', function(){
 
     //Secretos y lista de alimentos
 
-    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (38, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-navidad-2023.pdf', 18, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    // (38, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-navidad-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
-    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    (39, 'Secretos', 'files/pdf/secretos-navidad-2023.pdf', 18, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    // (39, 'Secretos', 'files/pdf/secretos-navidad-2023.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
-    DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    (40, 18, '1', 'files/pdf/lista-de-alimentos-navidad-2023.pdf', CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
+    // (40, $fase->id, '1', 'files/pdf/lista-de-alimentos-navidad-2023.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
 
-    // // Recetas
+    // Recetas
 
     // $recipe = Recipe::create([
     //     'name' => 'Canastilla de coodoniz',
@@ -1014,43 +1014,43 @@ Route::get('x/query/reto', function(){
     //     'type' => 1,
     //     ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (401, 163, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (404, 164, 331, 1, CURRENT_TIMESTAMP, NULL)");
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Elige alitas',
-    //     'slug' => 'elige-alitas',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 35,
-    //     'type' => 1,
-    //     ]);
-    //     // $image = Image::create([
-    //     // 'url' => 'recipes/desafio-2023-dia-1-receta-2.jpg',
-    //     // 'imageable_id' => $recipe->id,
-    //     // 'imageable_type' => 'App\Models\Recipe',
-    //     // ]);
-    //     // $video = Video::create([
-    //     // 'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-    //     // 'videoable_id' => $recipe->id,
-    //     // 'videoable_type' => 'App\Models\Recipe',
-    //     // ]);
+    $recipe = Recipe::create([
+        'name' => 'Callos Prenavideños',
+        'slug' => 'callos-prenavidenos',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 35,
+        'type' => 1,
+        ]);
+        // $image = Image::create([
+        // 'url' => 'recipes/desafio-2023-dia-1-receta-2.jpg',
+        // 'imageable_id' => $recipe->id,
+        // 'imageable_type' => 'App\Models\Recipe',
+        // ]);
+        // $video = Video::create([
+        // 'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+        // 'videoable_id' => $recipe->id,
+        // 'videoable_type' => 'App\Models\Recipe',
+        // ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (402, 163, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (405, 164, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
 
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Tu eliges consome',
-    //     'slug' => 'tu-eliges-consome',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 20,
-    //     'type' => 1,
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'Champiñones Prenavideños',
+        'slug' => 'chanpinones-prenavidenos',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 20,
+        'type' => 1,
+        ]);
 
-    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    // (403, 163, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    (406, 164, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

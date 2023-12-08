@@ -1005,21 +1005,21 @@ Route::get('x/query/reto', function(){
 
     // Recetas
 
-    // $recipe = Recipe::create([
-    //     'name' => 'Canastilla de coodoniz',
-    //     'slug' => 'canastilla-de-coodoniz',
-    //     'indice'=> 1,
-    //     'carbs' => 0,
-    //     'time' => 10,
-    //     'type' => 1,
-    //     ]);
+    $recipe = Recipe::create([
+        'name' => 'navidad-2023-2-1',
+        'slug' => 'navidad-2023-2-1',
+        'indice'=> 1,
+        'carbs' => 0,
+        'time' => 10,
+        'type' => 1,
+        ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (404, 164, 331, 1, CURRENT_TIMESTAMP, NULL)");
+    (407, 165, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
 
     $recipe = Recipe::create([
-        'name' => 'Callos Prenavideños',
-        'slug' => 'callos-prenavidenos',
+        'name' => 'navidad-2023-2-2',
+        'slug' => 'navidad-2023-2-2',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 35,
@@ -1037,12 +1037,12 @@ Route::get('x/query/reto', function(){
         // ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (405, 164, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
+    (408, 165, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
 
 
     $recipe = Recipe::create([
-        'name' => 'Champiñones Prenavideños',
-        'slug' => 'chanpinones-prenavidenos',
+        'name' => 'navidad-2023-2-3',
+        'slug' => 'navidad-2023-2-3',
         'indice'=> 1,
         'carbs' => 0,
         'time' => 20,
@@ -1050,7 +1050,7 @@ Route::get('x/query/reto', function(){
         ]);
 
     DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (406, 164, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
+    (409, 165, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

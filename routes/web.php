@@ -772,14 +772,10 @@ Route::get('x/clients/{plan}/email/{skip?}', function ($plan, $skip = 0) {
         case 'desafio-2023':
             $subscriptions = Subscription::whereIn('plan_id', [49])->get();
             break;
+        case 'navidad-2023':
+            $subscriptions = Subscription::whereIn('plan_id', [52])->get();
+            break;
     }
-
-    $faseuno = Fase::find(1);
-    $fasedos = Fase::find(2);
-    $fasetres = Fase::find(3);
-    $fasecuatro = Fase::find(4);
-    $fasereto = Fase::find(14);
-
 
     echo "<p>". $subscriptions->count() ." clientes inscritos en el plan ". $plan .".</p>";
     echo "</br>";

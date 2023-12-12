@@ -284,7 +284,7 @@
 
                 </div>
             </div>
-            <div class="mt-16 md:mt-8">
+            <div class="mt-16 md:mt-8 hidden">
                 <div class=" flex items-center flex-col-reverse md:flex-row ">
                     <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
                         <p class="text-gray-900 text-justify">21 videos exclusivos en la Fase 1 donde te diré cada día, lo que tu cuerpo y mente estarán experimentando y como lo podrás combatir y lograr que estos 21 días sean mucho más fáciles para ti.</p>
@@ -296,12 +296,12 @@
             </div>
             <div class="mt-16 md:mt-8">
                 <div class=" flex items-center flex-col md:flex-row ">
-                    <figure class="mb-4 md:mb-0 flex-1 md:mr-12 overflow-hidden rounded-lg shadow-lg">
-                        <img src="{{asset('img/resources/metodo_dkp_ue66x.jpg')}}" alt="" class="w-full object-cover">
-                    </figure>
                     <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
                         <p class="text-gray-900 text-justify">Y lo mejor de todo un chat grupal de seguimiento por 21 días donde encontrarás personas que tienen situaciones similares, los mismos problemas, temores y miedos. Pero también tiene tus mismos objetivos que no es mas que dejar la adicción al azúcar. En contratas personas que como tu y como yo algún día decidieron cambiar sus vidas y hoy somos grandes sobrevivientes administrado por mi equipo de alimentación y liderando por tu doctor Bayter. donde resolveran todas tus dudas de alimentación para que no cometas ni un error.</p>
                     </div>
+                    <figure class="mb-4 md:mb-0 flex-1 md:mr-12 overflow-hidden rounded-lg shadow-lg">
+                        <img src="{{asset('img/resources/metodo_dkp_ue66x.jpg')}}" alt="" class="w-full object-cover">
+                    </figure>
                 </div>
             </div>
         </div>

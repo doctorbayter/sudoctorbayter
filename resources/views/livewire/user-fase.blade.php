@@ -300,11 +300,13 @@
 
 
                                     </div>
-                                    @if ($this->day->video)
-                                        <div class="relative w-full mt-8 h-52 md:h-96 xl:min-h-video video-iframe">
-                                            {!! $this->day->video->iframe !!}
-                                        </div>
-                                    @endif
+                                    <div class="hidden">
+                                        @if ($this->day->video && true == false)
+                                            <div class="relative w-full mt-8 h-52 md:h-96 xl:min-h-video video-iframe">
+                                                {!! $this->day->video->iframe !!}
+                                            </div>
+                                        @endif
+                                    </div>
                                 </section>
                             </div>
                         </section>

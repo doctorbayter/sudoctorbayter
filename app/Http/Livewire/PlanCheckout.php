@@ -38,6 +38,14 @@ class PlanCheckout extends Component
 
     public function mount(Plan $plan){
 
+
+
+        if($this->plan->id == 4 || $this->plan->id == 11 || $this->plan->id == 12) { //WHATSAPP
+            return view('no-disponible-lw');
+        }
+
+
+
         if ($this->plan->id == 9) {
             $this->toogle_promo = 1;
         }
@@ -46,13 +54,13 @@ class PlanCheckout extends Component
             $this->is_week = true;
         }
 
-        if ($this->plan->id == 4 ) { // Whatsapp
-            if (!auth()->user()) {
+        // if ($this->plan->id == 4 ) { // Whatsapp
+        //     if (!auth()->user()) {
 
-                session()->flash('status', 'Para realizar la compra de '.$this->plan->name .' es necesario que inicies sesión');
-                return redirect()->route('login');
-            }
-        }
+        //         session()->flash('status', 'Para realizar la compra de '.$this->plan->name .' es necesario que inicies sesión');
+        //         return redirect()->route('login');
+        //     }
+        // }
 
         if ($this->plan->id == 20 || $this->plan->id == 21 || $this->plan->id == 22){
             $this->password = "01020304";
@@ -60,14 +68,14 @@ class PlanCheckout extends Component
         }
 
 
-        if (auth()->user()) {
-            $user = User::find(auth()->user()->id);
-            $this->data_send =  "$user->name~$user->email~NotChange~1";
+        // if (auth()->user()) {
+        //     $user = User::find(auth()->user()->id);
+        //     $this->data_send =  "$user->name~$user->email~NotChange~1";
 
-            if ($this->plan->id == 4 || $this->plan->id == 5 || $this->plan->id == 6) { // Whatsapp ~ Cita 40 mins ~ Cita 60 mins
-                $this->can_continued = true;
-            }
-        }
+        //     if ($this->plan->id == 4 || $this->plan->id == 5 || $this->plan->id == 6) { // Whatsapp ~ Cita 40 mins ~ Cita 60 mins
+        //         $this->can_continued = true;
+        //     }
+        // }
         $this->plan = $plan;
         return view('livewire.plan-checkout');
     }

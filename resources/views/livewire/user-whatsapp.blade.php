@@ -4,7 +4,7 @@
             <x-menu  :userPlan="$user_plan" />
             <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="w-11/12 bg-white">
 
-                <section class="bg-gradient-to-t from-gray-100 " style="height: 100%">
+                <section class="bg-gradient-to-t from-gray-100 hidden" style="height: 100%">
                     <div class="w-10/12 mx-auto py-10">
 
                         <section class="grid grid-cols-1 gap-8 my-8 bg max-w-5xl mx-auto">

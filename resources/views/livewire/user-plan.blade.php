@@ -96,7 +96,7 @@
                                     </div>
                                 @endif
 
-                                <div class=" bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block shadow-sm">
+                                <div class=" bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block__ shadow-sm hidden">
                                     <div class="flex items-center">
                                         <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
                                             <img src="{{asset('img/billboards/whatsapp.jpg')}}" alt="" class="w-full object-cover">

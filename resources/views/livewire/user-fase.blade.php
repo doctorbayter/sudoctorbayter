@@ -304,7 +304,7 @@
                                     @if ($this->day->video && auth()->user()->created_at->lt('2023-12-13')) 
                                         <div class="relative w-full mt-8 h-52 md:h-96 xl:min-h-video video-iframe">
                                             {!! $this->day->video->iframe !!}
-                                        </div>
+                                        </div> 
                                     @endif
                                     
                                 </section>

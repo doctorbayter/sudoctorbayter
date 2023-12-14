@@ -206,11 +206,14 @@ class ProductPay extends Component
                     $suscription->save();
                 }
 
-                if($this->plan->id == 1 || $this->plan->id == 3 || $this->plan->id == 9 || $this->plan->id == 10 || $this->plan->id == 15 || $this->plan->id == 16 || $this->plan->id == 25 || $this->plan->id == 27 || $this->plan->id == 31 || $this->plan->id == 37 || $this->plan->id == 38 || $this->plan->id == 40 || $this->plan->id == 48) {
+                if($this->plan->id == 1 || $this->plan->id == 3 || $this->plan->id == 9 || $this->plan->id == 10 || $this->plan->id == 16 || $this->plan->id == 25 || $this->plan->id == 27 || $this->plan->id == 31 || $this->plan->id == 37 || $this->plan->id == 38 || $this->plan->id == 40 || $this->plan->id == 48) {
                     $this->setFases($user->id, $fases_premium);
+                }else if($this->plan->id == 15) { // Oferta Retos
+                    $this->setFases($user->id, $fases_premium);
+                    $this->addSuscription($user->id, 23); // TF 24 horas
                 }else if($this->plan->id == 39) {
                     $this->setFases($user->id, $fases_premium);
-                    $this->addSuscription($user->id, $this->plan_total->id);
+                    $this->addSuscription($user->id, 23);
                 }else if($this->plan->id == 2 || $this->plan->id == 8) {
                     if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
                         $fase_one->clients()->attach($user->id);

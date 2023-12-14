@@ -318,7 +318,7 @@
                                         @if (auth()->user()->created_at->format('Y-m-d') > '2023-12-13' )
                                         <small>mayor</small> 
                                         @endif
-                                    @endif
+                                    
                                     </small>
                                 </section>
                             </div>

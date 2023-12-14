@@ -309,13 +309,13 @@
                                     <small>
                                         {{auth()->user()->created_at->format('Y-m-d')}}
 
-                                        @if (auth()->user()->created_at->format('Y-m-d') < date('2023-12-13') )
+                                        @if (date(auth()->user()->created_at->format('Y-m-d')) < date('2023-12-13') )
                                             <small>menor</small>
                                         @endif
-                                        @if (auth()->user()->created_at->format('Y-m-d') == date('2023-12-14') )
+                                        @if (date(auth()->user()->created_at->format('Y-m-d')) == date('2023-12-14') )
                                         <small>hoy</small>
                                         @endif
-                                        @if (auth()->user()->created_at->format('Y-m-d') > date('2023-12-13') )
+                                        @if (date(auth()->user()->created_at->format('Y-m-d')) > date('2023-12-13') )
                                         <small>mayor</small> 
                                         @endif
                                     

@@ -301,12 +301,23 @@
 
                                     </div>
                                     
-                                    @if ($this->day->video && true == true)
+                                    @if ($this->day->video && true == true) 
                                         <div class="relative w-full mt-8 h-52 md:h-96 xl:min-h-video video-iframe">
                                             {!! $this->day->video->iframe !!}
                                         </div>
                                     @endif
-                                    
+                                    <small>
+                                        {{auth()->user()->created_at->format('Y-m-d')}}
+
+                                        @if (auth()->user()->created_at->format('Y-m-d') < '2023-12-13' )
+                                            <small>menor</small>
+                                        @endif
+                                        @if (auth()->user()->created_at->format('Y-m-d') == '2023-12-14' )
+                                        <small>hoy</small>
+                                        @if (auth()->user()->created_at->format('Y-m-d') > '2023-12-13' )
+                                        <small>mayor</small>
+                                    @endif
+                                    </small>
                                 </section>
                             </div>
                         </section>

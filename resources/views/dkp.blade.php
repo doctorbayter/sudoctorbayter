@@ -466,7 +466,7 @@
                             <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                             <ul>
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida al método DKP (4 Fases)<b class=" text-sm text-gray-600 block font-medium">(Precio normal 262 US$)</b></p></li>
-                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-600 block font-medium">(Precio normal 27 US$/mes)</b></p></li>
+                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 21 días</p></li>
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg hidden">1 Sesión grupal vía Zoom <b class=" text-sm text-gray-600 block font-medium">(Precio normal 200 US$)</b></p></li>
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg hidden">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
                             </ul>

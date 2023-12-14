@@ -314,8 +314,10 @@
                                         @endif
                                         @if (auth()->user()->created_at->format('Y-m-d') == '2023-12-14' )
                                         <small>hoy</small>
+                                        @endif
                                         @if (auth()->user()->created_at->format('Y-m-d') > '2023-12-13' )
                                         <small>mayor</small> 
+                                        @endif
                                     @endif
                                     </small>
                                 </section>

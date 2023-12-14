@@ -318,7 +318,7 @@ class Reto extends Component
                         'subtitle'=> 'El Reto en Navidad',
                         'type' => 'video',
                         'online' => true,
-                        'video-1' => '864621422?h=6f85271a89',
+                        'video-1' => '894681842?h=5b197eff34', 
                     ];
                     break;
             default:

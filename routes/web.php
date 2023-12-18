@@ -237,7 +237,7 @@ Route::get('/60', function () {
 
 Route::get('/20', function () {
     //return view('no-disponible'); 
-    return redirect('https://biz.payulatam.com/L0bdc05FBFC6FA1');
+    return redirect('https://biz.payulatam.com/L0bdc05FBFC6FA1'); 
 })->name('oferta.supercursos');
 
 Route::get('/revolucion/oferta', function () {

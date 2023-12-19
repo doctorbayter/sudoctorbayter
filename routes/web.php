@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
-
+use ManyChat\ManyChat;
 
 
 
@@ -1091,11 +1091,6 @@ Route::get('x/users/{skip?}', function($skip = 0){
 
 });
 
-Route::get('x/whatsapp/', function(){
-
-
-
-});
 
 
 Route::get('x/clients/fase/4/{skip?}', function($skip = 0){
@@ -1182,6 +1177,17 @@ Route::get('x/clients/verify/', function($skip = 0){
     }
 
 });
+
+
+Route::get('x/whatsapp/', function(){
+    $manyChat = new ManyChat('896948:010caed85d9bd80b307cba8c20cea5c1');
+    $findByName = $manyChat->fb->subscriber->findByName("Jeff");
+
+    return $findByName;
+    
+});
+
+
 
 // Lideres Acutalizado Enero 2022
 // jackie@adn-empresarial.com

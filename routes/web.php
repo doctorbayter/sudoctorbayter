@@ -1193,16 +1193,7 @@ Route::get('x/whatsapp/', function(){
     $last_name = "Centeno"; 
     $gender = null;
 
-    $createSubscriber = $manyChat->fb->subscriber->createSubscriber(
-        $has_opt_in_sms,
-        $has_opt_in_email,
-        $consent_phrase, 
-        $phone, 
-        $email ,
-        $first_name,
-        $last_name, 
-        $gender
-    );
+    $createSubscriber = $manyChat->fb->subscriber->createSubscriber(true,true,"Yes","573183596771","paola_cen044@hotmail.com","Paola","Centeno",null);
     return $createSubscriber;
     
 

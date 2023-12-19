@@ -68,7 +68,7 @@
                                                                         <p class="text-red-700 text-xl mb-2"><b>Actualización de tu plan</b></p>
                                                                         <p>Si deseas actualizar tu plan y compras las demás fases puedes hacerlo desde este banner. Esto solo aplica para quienes no tienen el <b>Plan Premium 4 Fases</b>.</p>
                                                                     </li>
-                                                                    <li class="text-base py-6">
+                                                                    <li class="text-base py-6 hidden">
                                                                         <p class="text-red-700 text-xl mb-2"><b>Chat grupal Whatsapp</b></p>
                                                                         <p>Aquí podrás comprar la anualidad de tu acceso al <b>Chat Grupal Whatsapp</b> con el Dr. Bayter. Ahora puedes adquirir más tiempo por anticipado. es decir que si deseas pagar la mensualidad del chat puedes hacerlo y el tiempo se te acumulará.</p>
                                                                     </li>
@@ -123,7 +123,7 @@
                                                                     </li>
                                                                     <li class="text-base py-6">
                                                                         <p class="text-red-700 text-xl mb-2"><b>Notas</b></p>
-                                                                        <p>Encontrarás las notas o recomendaciones para cada día.</p>
+                                                                        <p>En algunos días encontrarás las notas o recomendaciones de ser necesarias.</p>
                                                                     </li>
                                                                     <li class="text-base py-6 hidden">
                                                                         <p class="text-red-700 text-xl mb-2"><b>Video motivacional</b></p>

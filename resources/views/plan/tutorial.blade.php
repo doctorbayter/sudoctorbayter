@@ -125,7 +125,7 @@
                                                                         <p class="text-red-700 text-xl mb-2"><b>Notas</b></p>
                                                                         <p>Encontrarás las notas o recomendaciones para cada día.</p>
                                                                     </li>
-                                                                    <li class="text-base py-6">
+                                                                    <li class="text-base py-6 hidden">
                                                                         <p class="text-red-700 text-xl mb-2"><b>Video motivacional</b></p>
                                                                         <p>La <b>Fase 1</b> sin lugar a duda es la más dificil y donde necesitamos más motivación para lograr ese objetivo que tanto deseamos. por eso encontrarás un video moticavional en cada uno de los 21 días de la fase 1 donde el Dr. Bayter te dirá que vas a sentir ese día, cuales prodrían ser esos efectos secundarios y como puedes mitigarlos.</p>
                                                                     </li>

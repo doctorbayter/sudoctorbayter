@@ -23,13 +23,8 @@ class ManyChatController extends Controller
             return response()->json(['message' => 'Nombre es requerido'], 400);
         }
 
-        $subscribers = $this->manyChatService->getSubscriberByName($name);
+        $subscriber = $this->manyChatService->getSubscriberByName($name);
 
-        $filteredSubscribers = array_filter($subscribers, function ($subscriber) use ($name) {
-            // Ajusta esta lógica de acuerdo a la estructura de tus datos
-            return stripos($subscriber['name'], $name) !== false;
-        });
-
-        return response()->json(['subscribers' => $filteredSubscribers]);
+        return response()->json(['subscribers' => $subscriber]);
     }
 }

@@ -32,4 +32,18 @@ class ManyChatService implements ManyChatServiceInterface
 
         return $response->json();
     }
+    
+    public function getAllSubscribers(): array
+    {
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $this->token,
+            'Content-Type' => 'application/json'
+        ])->get("{$this->baseUrl}/subscriber/getAll");
+
+        if (!$response->successful()) {
+            throw new \Exception("Error al obtener los suscriptores de ManyChat");
+        }
+
+        return $response->json();
+    }
 }

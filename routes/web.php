@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use App\Contracts\ManyChatServiceInterface;
-
+use App\Http\Controllers\ManyChatController;
 
 
 /*
@@ -1179,9 +1179,7 @@ Route::get('x/clients/verify/', function($skip = 0){
 });
 
 
-Route::get('x/whatsapp/', function(){
-    
-});
+Route::get('/x/whatsapp', [ManyChatController::class, 'handleRequest']);
 
 
 

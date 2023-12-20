@@ -1184,19 +1184,18 @@ Route::get('x/whatsapp/', function(){
     //$findByName = $manyChat->fb->subscriber->findByName("Jeff");
     //return $findByName;
 
-    $has_opt_in_sms = true;
-    $has_opt_in_email = true;
-    $consent_phrase = "Yes"; 
-    $phone = "573183596771"; 
-    $email = "paola_cen044@hotmail.com";
-    $first_name = "Paola";
-    $last_name = "Centeno"; 
-    $gender = null;
+    $hasOptInSms = true; // El usuario ha dado su consentimiento para recibir SMS
+    $hasOptInEmail = true; // El usuario no ha dado su consentimiento para recibir emails
+    $consentPhrase = "Yes"; // Frase de consentimiento
+    $phone = "573164460480"; // Número de teléfono del usuario
+    $email = "paocen044@gmail.com"; // Email del usuario
+    $firstName = "Paola"; // Primer nombre del usuario
+    $lastName = "Centeno"; // Apellido del usuario
+    $gender = "F"; // Género del usuario
 
-    $createSubscriber = $manyChat->fb->subscriber->createSubscriber(true,true,"Yes","573183596771","paola_cen044@hotmail.com","Paola","Centeno",null);
+    $createSubscriber = $manyChat->fb->subscriber->createSubscriber($hasOptInSms, $hasOptInEmail, $consentPhrase, $phone, $email, $firstName, $lastName, $gender);
+
     return $createSubscriber;
-    
-
 });
 
 

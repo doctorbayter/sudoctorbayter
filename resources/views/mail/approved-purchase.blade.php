@@ -52,7 +52,7 @@
   </div>
    </div>
    </div>
-  </td>
+  </td> 
   </tr>
   </tbody></table>
   </td>

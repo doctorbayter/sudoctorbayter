@@ -51,9 +51,9 @@
                                 <figure class="rounded-t-xl overflow-hidden">
 
                                     @if (Storage::exists($recipe->image->url))
-                                        <img src="{{Storage::url($recipe->image->url)}}" alt="" class=" w-full object-cover">
+                                        <img src="{{Storage::url($recipe->image->url)}}?v={{ time() }}" alt="" class=" w-full object-cover">
                                     @else
-                                        <img src="{{asset('img/'.$recipe->image->url)}}" alt="" class=" w-full object-cover">
+                                        <img src="{{asset('img/'.$recipe->image->url)}}?v={{ time() }}" alt="" class=" w-full object-cover">
                                     @endif
 
                                 </figure>

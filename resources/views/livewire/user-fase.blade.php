@@ -5,7 +5,7 @@
                 <x-menu :userPlan="$user_plan" />
                 <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="bg-white  ml-auto">
 
-                    <header class="bg-fixed bg-cover shadow-lg" style="background-image: url({{asset('img/backgrounds/meal_plan_top_banner_2-1-1.jpg')}})">
+                    <header class="bg-fixed bg-cover shadow-lg" style="background-image: url({{asset('img/backgrounds/meal_plan_top_banner_2-1-1.jpg')}}?v={{ time() }})">
                         <div class="w-11/12 mx-auto py-10">
                             <h3 class="font-bold text-white text-lg md:text-xl px-2 inline-block bg-red-700"> {{$fase->name}}</h3>
                             <h2 class=" font-bold text-3xl md:text-6xl"> {!!$fase->sub_name!!}</h2>
@@ -186,7 +186,8 @@
                                                             @endswitch
 
                                                         </div>
-                                                        <img src="@if (Storage::exists($recipe->image->url)) {{Storage::url($recipe->image->url)}} @else {{asset('img/'.$recipe->image->url)}} @endif" alt="" class="rounded-2xl object-cover">
+                                                        {{-- <img src="@if (Storage::exists($recipe->image->url)) {{Storage::url($recipe->image->url)}} @else {{asset('img/'.$recipe->image->url)}} @endif" alt="" class="rounded-2xl object-cover"> --}}
+                                                        <img src="{{asset('img/'.$recipe->image->url)}}?v={{ time() }}" alt="" class="rounded-2xl object-cover">
                                                     </div>
                                                     <div class="mt-2 ml-4">
                                                         <p class="text-2xl mb-2 font-bold text-gray-900">{{$recipe->name}}</p>
@@ -225,7 +226,7 @@
                                                             <div class="w-full block">
                                                                 <div class="flex items-center">
                                                                     <figure class="w-20 md:w-48 h-28 overflow-hidden bg-gray-100 ">
-                                                                        <img src="{{asset('img/'.$snack->image->url)}}" alt="" class=" h-full object-cover">
+                                                                        <img src="{{asset('img/'.$snack->image->url)}}?v={{ time() }}" alt="" class=" h-full object-cover">
                                                                     </figure>
                                                                     <div class="ml-6 relative w-full flex-1">
                                                                         <h2 class="font-bold text-lg text-gray-900">{{$snack->name}}</h2>
@@ -273,7 +274,7 @@
                                                                     <div class="text-gray-400 text-sm" >
                                                                         <div>
                                                                             <figure class="w-full h-36 overflow-hidden bg-gray-100 ">
-                                                                                <img src="{{asset('img/'.$this->snack->image->url)}}" alt="" class=" w-full object-cover">
+                                                                                <img src="{{asset('img/'.$this->snack->image->url)}}?v={{ time() }}" alt="" class=" w-full object-cover">
                                                                             </figure>
                                                                         </div>
                                                                         <div class="py-4">

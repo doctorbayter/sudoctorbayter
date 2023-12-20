@@ -5,5 +5,5 @@ namespace App\Contracts;
 
 interface ManyChatServiceInterface
 {
-    public function getSubscriberInfo(string $subscriberId): array;
+    public function makeApiRequest(string $method, string $endpoint, array $parameters): array;
 }

@@ -1179,7 +1179,7 @@ Route::get('x/clients/verify/', function($skip = 0){
 });
 
 
-Route::get('/x/whatsapp', [ManyChatController::class, 'handleRequest']);
+Route::get('/x/whatsapp', [ManyChatController::class, 'handleRequest'])->name('manychat.handleRequest');
 
 
 

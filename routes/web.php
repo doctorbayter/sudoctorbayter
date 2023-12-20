@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
-use ManyChat\ManyChat;
+use App\Contracts\ManyChatServiceInterface;
 
 
 
@@ -1180,22 +1180,7 @@ Route::get('x/clients/verify/', function($skip = 0){
 
 
 Route::get('x/whatsapp/', function(){
-    $manyChat = new ManyChat('896948:010caed85d9bd80b307cba8c20cea5c1');
-    //$findByName = $manyChat->fb->subscriber->findByName("Jeff");
-    //return $findByName;
-
-    $hasOptInSms = true; // El usuario ha dado su consentimiento para recibir SMS
-    $hasOptInEmail = true; // El usuario no ha dado su consentimiento para recibir emails
-    $consentPhrase = "Yes"; // Frase de consentimiento
-    $phone = "573164460480"; // Número de teléfono del usuario
-    $email = "paocen044@gmail.com"; // Email del usuario
-    $firstName = "Paola"; // Primer nombre del usuario
-    $lastName = "Centeno"; // Apellido del usuario
-    $gender = "F"; // Género del usuario
-
-    $createSubscriber = $manyChat->fb->subscriber->createSubscriber($hasOptInSms, $hasOptInEmail, $consentPhrase, $phone, $email, $firstName, $lastName, $gender);
-
-    return $createSubscriber;
+    
 });
 
 

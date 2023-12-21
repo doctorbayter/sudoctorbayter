@@ -16,29 +16,17 @@ class ManyChatController extends Controller
 
     public function handleRequest(Request $request)
     {
-        // Suponiendo que recibes el nombre a través de una consulta GET o parámetro de solicitud
-        $email = $request->query('email');
-
-        if (!$email) {
-            return response()->json(['message' => 'Parametro (email) es requerido'], 400);
-        }
-
-        try {
-            $subscriber = $this->manyChatService->findBySystemField($email);
-
-            if (empty($subscriber) || empty($subscriber['data'])) {
-                // Manejo cuando el usuario no se encuentra
-                return [
-                    'error' => true,
-                    'message' => 'Usuario no encontrado'
-                ];
-            }
-
-            return response()->json(['subscriber' => $subscriber]);
-
-        } catch (\Exception $e) {
-            // Manejo de otros errores
-            return response()->json(['error' => true, 'message' => $e->getMessage()], 500);
-        }
+        $subscriberData = [
+            "first_name" => "Jeff",
+            "last_name" => "Cote",
+            "phone" => "573155217037",
+            "whatsapp_phone" => "573155217037",
+            "email" => "yefer.cote@hotmail.com",
+            "has_opt_in_email" => true,
+            "has_opt_in_sms" => true,
+            "consent_phrase" => "Yes"
+        ];   
+        $tagName = "Test";
+        $result = $this->manyChatService->processSubscriberByEmail($subscriberData, $tagName);
     }
 }

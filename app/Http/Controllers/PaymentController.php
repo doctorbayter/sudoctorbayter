@@ -413,6 +413,7 @@ class PaymentController extends Controller
                         break;
                     case '0sphkasm':
                         $plan = Plan::find(31); // Plan Premium $97 ahora 117,00 US$
+                        $this->addSuscription($user->id, 23); // Total Fitness
                         break;
                 }
                 $fases = Fase::whereIn('id', [1, 2, 3, 4])->get();

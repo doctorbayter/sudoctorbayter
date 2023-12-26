@@ -153,8 +153,8 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
-    return view('no-disponible');
-    //return redirect('https://go.hotmart.com/L88783179C');
+    //return view('no-disponible');
+    return redirect('https://go.hotmart.com/L88783179C');
 })->name('reto.nuevo');
 
 Route::get('/comprar', function () {
@@ -162,29 +162,28 @@ Route::get('/comprar', function () {
     return redirect('https://pay.hotmart.com/L88783179C?checkoutMode=10');
 })->name('reto.comprar');
 
-
 Route::get('/venezuela', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'navidad-2023']);
+    //return view('no-disponible');
+    return redirect()->route('reto.register', ['reto'=>'desafio-2024']);
 })->name('reto.venezuela');
 
-Route::get('/reto/navidad/whatsapp', function () {
+Route::get('/reto/desafio/whatsapp', function () {
     return redirect('https://chat.whatsapp.com/FI3jfbwQk9D411BUjz46c7');
 })->name('reto.whatsapp');
 
-Route::get('/reto/navidad/whatsapp/grupo-1', function () {
+Route::get('/reto/desafio/whatsapp/grupo-1', function () {
     return redirect('https://chat.whatsapp.com/DDPkoZsiJ16Eun9PPy07b9');
 })->name('reto.whatsapp1');
 
-Route::get('/reto/navidad/whatsapp/grupo-2', function () {
+Route::get('/reto/desafio/whatsapp/grupo-2', function () {
     return redirect('https://chat.whatsapp.com/KMgg8uVGYZv6xS8wFy8jfq');
 })->name('reto.whatsapp2');
 
-Route::get('/reto/navidad/whatsapp/grupo-3', function () {
+Route::get('/reto/desafio/whatsapp/grupo-3', function () {
     return redirect('https://chat.whatsapp.com/FI3jfbwQk9D411BUjz46c7');
 })->name('reto.whatsapp3');
 
-Route::get('/reto/navidad/whatsapp/grupo-4', function () {
+Route::get('/reto/desafio/whatsapp/grupo-4', function () {
     return redirect('');
 })->name('reto.whatsapp4');
 

@@ -418,23 +418,7 @@ class PaymentController extends Controller
                 }
                 $fases = Fase::whereIn('id', [1, 2, 3, 4])->get();
 
-            }else if($product_id == 2453587){ //Reto #QuedeseKeto 2022
-                $plan = Plan::find(47); 
-                $fases = Fase::whereIn('id', [14])->get();
-
-            }else if($product_id == 2535587){ //Desafio 2023
-                $plan = Plan::find(49); 
-                $fases = Fase::whereIn('id', [15])->get();
-
-            }else if($product_id == 2964941){ //Empareja2 2023
-                $plan = Plan::find(50); 
-                $fases = Fase::whereIn('id', [16])->get();
-
-            }else if($product_id == 3293304){ //5Mer 2023
-                $plan = Plan::find(51); 
-                $fases = Fase::whereIn('id', [17])->get();
-            }
-            else if($product_id == 3573409){ //Navidad 2023
+            }else if($product_id == 3647377){ // Desafio 2024
                 $plan = Plan::find(52); 
                 $fases = Fase::whereIn('id', [18])->get();
             }

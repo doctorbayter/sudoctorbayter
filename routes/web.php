@@ -920,23 +920,24 @@ Route::get('x/query', function(){
 Route::get('x/query/reto', function(){
 
 
-    // //Plan y Fase del reto
+    //Plan y Fase del reto
 
-    // $plan = Plan::create([
-    //    'name' => 'Reto en Navidad 2023',
-    //    'slug' => 'navidad-2023',
-    //    'price_id' => 14
-    // ]);
+    $plan = Plan::create([
+       'name' => 'Desafío 2024',
+       'slug' => 'desafio-2024',
+       'price_id' => 14
+    ]);
 
-    // $fase = Fase::create([
-    //    'name' => 'Navidad 2023',
-    //    'sub_name' => 'El reto en <span class="text-red-700">Navidad</span> 2023',
-    //    'descripcion' => '',
-    //    'slug' => 'navidad-2023',
-    // ]);
-
+    $fase = Fase::create([
+       'name' => 'Desafío 2024',
+       'sub_name' => 'Liberate de la <span class="text-red-700">mierda</span> del 2023',
+       'descripcion' => '',
+       'slug' => 'desafio-2024',
+    ]);
 
     // //Días Reto
+
+    //$fase = Fase::find(18); //reto navidad
 
     // $day = Day::create([
     //    'day' => 1,
@@ -1008,8 +1009,8 @@ Route::get('x/query/reto', function(){
     //     'type' => 1,
     //     ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (419, 168, 331, 1, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (419, 168, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
 
     // $recipe = Recipe::create([
     //     'name' => 'navidad-2023-5-2',
@@ -1030,8 +1031,8 @@ Route::get('x/query/reto', function(){
         // 'videoable_type' => 'App\Models\Recipe',
         // ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (420, 168, 426, 2, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (420, 168, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
 
 
     // $recipe = Recipe::create([
@@ -1043,8 +1044,8 @@ Route::get('x/query/reto', function(){
     //     'type' => 1,
     //     ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (421, 168, 427, 3, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (421, 168, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

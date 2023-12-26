@@ -164,7 +164,7 @@
 
                                                             @switch($recipe->pivot->meal)
                                                                 @case(1)
-                                                                        @if ($fase->id == 3  )
+                                                                        @if ($fase->id == 3000  )
                                                                             @if ( $this->day->id == 43 || $this->day->id == 45 || $this->day->id == 47 || $this->day->id == 49 || $this->day->id == 50 || $this->day->id ==52 || $this->day->id == 54 || $this->day->id ==56 || $this->day->id == 57 || $this->day->id == 59 || $this->day->id ==61 || $this->day->id == 63 )
                                                                                 <p>Romper Ayuno</p>
                                                                                 @else

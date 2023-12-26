@@ -920,20 +920,20 @@ Route::get('x/query', function(){
 Route::get('x/query/reto', function(){
 
 
-    //Plan y Fase del reto
+    // // Plan y Fase del reto
 
-    $plan = Plan::create([
-       'name' => 'Desafío 2024',
-       'slug' => 'desafio-2024',
-       'price_id' => 14
-    ]);
+    // $plan = Plan::create([
+    //    'name' => 'Desafío 2024',
+    //    'slug' => 'desafio-2024',
+    //    'price_id' => 14
+    // ]);
 
-    $fase = Fase::create([
-       'name' => 'Desafío 2024',
-       'sub_name' => 'Liberate de la <span class="text-red-700">mierda</span> del 2023',
-       'descripcion' => '',
-       'slug' => 'desafio-2024',
-    ]);
+    // $fase = Fase::create([
+    //    'name' => 'Desafío 2024',
+    //    'sub_name' => 'Liberate de la <span class="text-red-700">mierda</span> del 2023',
+    //    'descripcion' => '',
+    //    'slug' => 'desafio-2024',
+    // ]);
 
     // //Días Reto
 

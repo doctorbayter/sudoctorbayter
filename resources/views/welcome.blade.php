@@ -56,7 +56,7 @@
 }
     </style>
     <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 hidden ">
-        <a href="https://go.hotmart.com/L88783179C" target="_blank"><img src="{{asset('img/billboards/reto_navidad_banner.png')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
+        <a href="https://equipodoctorbayter.kpages.online/desafio" target="_blank"><img src="{{asset('img/billboards/desafio_2024_banner.png')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 
     <section class="bg-white">

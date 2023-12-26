@@ -154,12 +154,12 @@ Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.vide
 
 Route::get('/reto', function () {
     //return view('no-disponible');
-    return redirect('https://go.hotmart.com/L88783179C');
+    return redirect('https://pay.hotmart.com/R89419188I?checkoutMode=10');
 })->name('reto.nuevo');
 
 Route::get('/comprar', function () {
     //return view('no-disponible');
-    return redirect('https://pay.hotmart.com/L88783179C?checkoutMode=10');
+    return redirect('https://pay.hotmart.com/R89419188I?checkoutMode=10');
 })->name('reto.comprar');
 
 Route::get('/venezuela', function () {

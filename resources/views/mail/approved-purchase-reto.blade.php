@@ -9,7 +9,6 @@
         body { font-family: Arial, sans-serif; background-color: #ffffff; color: #333333; }
         .container { width: 100%; max-width: 650px; margin: auto; padding: 20px; }
         .header { background-color: #a30000; height: 12px; }
-        .footer { background-color: #ffffff; height: 24px; }
         .content { text-align: left; font-size: 14px; line-height: 1.5; }
         .button { background-color: #a30000; color: #ffffff; padding: 15px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; text-align: center; }
         .button:hover { background-color: #900; }

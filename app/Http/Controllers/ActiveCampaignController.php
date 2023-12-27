@@ -22,10 +22,11 @@ class ActiveCampaignController extends Controller
         $fullName = "Jeff Cote";
         $email = "yefer.cote@hotmail.com";
 
-        return $contact = $this->activeCampaignService->verifyOrCreateContact($fullName, $email);
+        $contact = $this->activeCampaignService->verifyOrCreateContact($fullName, $email);
 
         if ($contact) {
             $result = $this->activeCampaignService->addContactToList($contact['id'], 64);
+            $result = $this->activeCampaignService->assignTagToContact($contact['id'], 44);
             return response()->json($result);
         }
 

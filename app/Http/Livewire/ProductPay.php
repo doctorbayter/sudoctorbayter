@@ -10,6 +10,7 @@ use App\Models\Plan;
 use App\Models\User;
 use Livewire\Component;
 use App\Models\Subscription;
+use App\Services\ActiveCampaignService;
 use Illuminate\Support\Facades\Mail;
 use Exception;
 use Illuminate\Support\Facades\Http;
@@ -185,6 +186,16 @@ class ProductPay extends Component
                 ]);
             }
 
+
+            // Verificar si el usuario ya está suscrito al plan
+            $alreadySubscribed = $user->subscriptions()
+            ->where("plan_id", $this->plan->id)
+            ->exists();
+
+            if ($alreadySubscribed) {
+                return response()->json(['message' => 'Usuario ya suscrito a este plan, revisa tu correo electrónico incluso en la bandeja de no deseado o Spam'], 409); // Código de estado 409 Conflict
+            }
+
             $user->createOrGetStripeCustomer();
 
             $user->charge( $this->plan->finalPrice * 100 , $paymentMethod);
@@ -223,6 +234,12 @@ class ProductPay extends Component
                 }else if($this->plan->id == 53) {
                     if($reto->clients()->where('users.id', $user->id)->doesntExist()){
                         $reto->clients()->attach($user->id);
+                    }
+                    $activeCampaignService = new ActiveCampaignService();
+                    $contact = $activeCampaignService->verifyOrCreateContact($user->name, $user->email);
+                    if ($contact) {
+                        $activeCampaignService->addContactToList($contact['id'], 64);
+                        $activeCampaignService->assignTagToContact($contact['id'], 44);
                     }
                 }
 

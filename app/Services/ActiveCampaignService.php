@@ -17,6 +17,7 @@ class ActiveCampaignService
 
     public function verifyOrCreateContact($fullName, $email)
     {
+    
         try {
             $response = Http::withHeaders([
                 'Api-Token' => $this->apiKey,
@@ -26,7 +27,7 @@ class ActiveCampaignService
             ]);
     
             $body = $response->json();
-    
+
             if (empty($body['contacts'])) {
                 [$firstName, $lastName] = $this->splitName($fullName);
     
@@ -41,10 +42,12 @@ class ActiveCampaignService
                     ]
                 ]);
     
-                $body = $response->json();
+               $body = $response->json();
+
+               return $body['contact'];
             }
     
-            return $body['contact'] ?? null;
+            return $body['contacts'][0];
         } catch (\Exception $e) {
             //\Log::error('Error en ActiveCampaignService: ' . $e->getMessage());
             return null;
@@ -63,24 +66,66 @@ class ActiveCampaignService
     }
 
     public function addContactToList($contactId, $listId)
-{
-    try {
-        $response = Http::withHeaders([
-            'Api-Token' => $this->apiKey,
-            'Content-Type' => 'application/json'
-        ])->post("{$this->baseUrl}/api/3/contactLists", [
-            'contactList' => [
-                'list' => $listId,
-                'contact' => $contactId,
-                'status' => 1
-            ]
-        ]);
+    {
+        try {
+            $response = Http::withHeaders([
+                'Api-Token' => $this->apiKey,
+                'Content-Type' => 'application/json'
+            ])->post("{$this->baseUrl}/api/3/contactLists", [
+                'contactList' => [
+                    'list' => $listId,
+                    'contact' => $contactId,
+                    'status' => 1
+                ]
+            ]);
 
-        return $response->json();
-    } catch (\Exception $e) {
-        //\Log::error('Error al agregar contacto a la lista: ' . $e->getMessage());
-        return null;
+            return true;
+        } catch (\Exception $e) {
+            //\Log::error('Error al agregar contacto a la lista: ' . $e->getMessage());
+            return null;
+        }
     }
-}
+
+    public function assignTagToContact($contactId, $tagId)
+    {
+        try {
+            $response = Http::withHeaders([
+                'Api-Token' => $this->apiKey
+            ])->post("{$this->baseUrl}/api/3/contactTags", [
+                'contactTag' => [
+                    'contact' => $contactId,
+                    'tag' => $tagId
+                ]
+            ]);
+
+            return true;
+        } catch (\Exception $e) {
+            //\Log::error('Error al asignar etiqueta al contacto: ' . $e->getMessage());
+            return null;
+        }
+    }
+
+    public function isContactInList($contactId, $listId)
+    {
+        try {
+            $response = Http::withHeaders([
+                'Api-Token' => $this->apiKey
+            ])->get("{$this->baseUrl}/api/3/contacts/{$contactId}/contactLists");
+
+            $contactLists = $response->json()['contactLists'] ?? [];
+
+            foreach ($contactLists as $contactList) {
+                if ($contactList['list'] == $listId && $contactList['status'] == 1) {
+                    return true;
+                }
+            }
+
+            return false;
+        } catch (\Exception $e) {
+            //\Log::error('Error al verificar la membresía en la lista: ' . $e->getMessage());
+            return false;
+        }
+    }
+
 
 }

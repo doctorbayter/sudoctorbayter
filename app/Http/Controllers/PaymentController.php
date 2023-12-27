@@ -11,6 +11,7 @@ use App\Models\Plan;
 use App\Models\Subscription;
 use App\Models\Discount;
 use App\Models\User;
+use App\Services\ActiveCampaignService;
 use App\Services\PayUService;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -173,10 +174,13 @@ class PaymentController extends Controller
         $five_recipes  = Fase::find(7);
         $fase_reto     = Fase::find(19);
 
-        $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
+        // Verificar si el usuario ya está suscrito al plan
+        $alreadySubscribed = $user->subscriptions()
+        ->where("plan_id", $plan->id)
+        ->exists();
 
-        if($already_subscribed){
-            return;
+        if ($alreadySubscribed) {
+            return response()->json(['message' => 'Usuario ya suscrito a este plan, revisa tu correo electrónico incluso en la bandeja de no deseado o Spam'], 409); // Código de estado 409 Conflict
         }
 
         $this->addSuscription($user->id, $plan->id);
@@ -198,8 +202,13 @@ class PaymentController extends Controller
             if($fase_reto->clients()->where('users.id', $user->id)->doesntExist()){
                 $fase_reto->clients()->attach($user->id);
             }
+            $activeCampaignService = new ActiveCampaignService();
+            $contact = $activeCampaignService->verifyOrCreateContact($user->name, $user->email);
+            if ($contact) {
+                $activeCampaignService->addContactToList($contact['id'], 64);
+                $activeCampaignService->assignTagToContact($contact['id'], 44);
+            }
         }
-
         return true;
     }
 

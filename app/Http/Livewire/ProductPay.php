@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 class ProductPay extends Component
 {
     public $plan, $suscription, $flash_sale;
-    public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send, $list_id, $is_week;
+    public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send, $is_week;
     public $can_continued = false;
     public $error_message = "<a href='#formulario'>* Tenemos un error, revisa la información que escribiste arriba</a>";
     public $error_button = "Toca aquí para confirmar la información";
@@ -51,7 +51,6 @@ class ProductPay extends Component
             $this->is_week = true;
         }
 
-        $this->list_id = 34;
         $this->plan = $this->plan;
     }
 
@@ -95,7 +94,7 @@ class ProductPay extends Component
     }
 
 
-    public function activeCampaign() {
+    public function activeCampaign($list_id) {
 
         $response = Http::withHeaders([
             'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
@@ -111,14 +110,14 @@ class ProductPay extends Component
             $userId = $userData[0]['id'];
 
         }else{
-            $user_name = $this->splitName($this->name);
             $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
                 "contact" => [
                     "email" => $this->email,
-                    "firstName" => $user_name[0],
-                    "lastName" => $user_name[1],
+                    "fullName" => trim($this->name),
                 ]
             ]);
+
+
             $userListsLink = $addUser['contact']['links']['contactLists'];
             $userId = $addUser['contact']['id'];
         }
@@ -131,14 +130,14 @@ class ProductPay extends Component
 
             foreach($userLists as $userList ) {
 
-                if($userList['list'] == $this->list_id){
+                if($userList['list'] == $list_id){
 
                     if($userList['status'] == 1){
                        return false;
                     }else if($userList['status'] == "2") {
                         $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                             "contactList" => [
-                                "list" => $this->list_id,
+                                "list" => $list_id,
                                 "contact" => $userId,
                                 "status" => 1,
                                 "sourceid" => 4
@@ -150,7 +149,7 @@ class ProductPay extends Component
                 }else{
                     $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                         "contactList" => [
-                            "list" => $this->list_id,
+                            "list" => $list_id,
                             "contact" => $userId,
                             "status" => 1
                         ]
@@ -162,7 +161,7 @@ class ProductPay extends Component
         }else{
             $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
                 "contactList" => [
-                    "list" => $this->list_id,
+                    "list" => $list_id,
                     "contact" => $userId,
                     "status" => 1
                 ]
@@ -225,7 +224,6 @@ class ProductPay extends Component
                     if($reto->clients()->where('users.id', $user->id)->doesntExist()){
                         $reto->clients()->attach($user->id);
                     }
-                    
                 }
 
                 if($this->plan->id == 53){

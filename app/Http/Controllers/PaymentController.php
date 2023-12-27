@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use App\Services\ManyChatService;
 
 class PaymentController extends Controller
 {
@@ -170,7 +171,7 @@ class PaymentController extends Controller
         $fase_one      = Fase::find(1);
         $week_recipes  = Fase::find(5);
         $five_recipes  = Fase::find(7);
-        $fase_reto     = Fase::find(18);
+        $fase_reto     = Fase::find(19);
 
         $already_subscribed  = $user->subscriptions()->where(["plan_id" => $plan->id])->first();
 
@@ -193,7 +194,7 @@ class PaymentController extends Controller
             $this->setFases($user->id, $week_recipes);
         }elseif ($plan->id == 13) {
             $this->setFases($user->id, $five_recipes);
-        }elseif ($plan->id == 52) {
+        }elseif ($plan->id == 53) {
             if($fase_reto->clients()->where('users.id', $user->id)->doesntExist()){
                 $fase_reto->clients()->attach($user->id);
             }
@@ -364,7 +365,7 @@ class PaymentController extends Controller
             case 41:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
             break;
-            case 52:
+            case 53:
                 $mail = new ApprovedPurchaseReto($plan, $user);
             break;
             default:
@@ -378,8 +379,10 @@ class PaymentController extends Controller
     public function approvedHotmart(Request $request){
 
         $user_name = $request->post('name');
+        $user_first_name = $request->post('first_name');
+        $user_last_name = $request->post('last_name');
         $user_email = $request->post('email');
-        $user_phone = $request->post('phone_checkout_local_code');
+        $user_phone_number = $request->post('phone_number');
         $status = $request->post('status');
         $product_id = $request->post('prod');
         $product_offert = $request->post('off');
@@ -421,6 +424,20 @@ class PaymentController extends Controller
             }else if($product_id == 3647377){ // Desafio 2024
                 $plan = Plan::find(53); 
                 $fases = Fase::whereIn('id', [19])->get();
+
+                $manyChatService = new ManyChatService();
+                $subscriberData = [
+                    "first_name" => $user_first_name,
+                    "last_name" => $user_last_name,
+                    "phone" => $user_phone_number,
+                    "whatsapp_phone" => $user_phone_number,
+                    "email" => $user_email,
+                    "has_opt_in_email" => true,
+                    "has_opt_in_sms" => true,
+                    "consent_phrase" => "Yes"
+                ];   
+                $tagName = "Desafio-2024";
+                $manyChatService->processSubscriberByEmail($subscriberData, $tagName);
             }
             else{
                 return;

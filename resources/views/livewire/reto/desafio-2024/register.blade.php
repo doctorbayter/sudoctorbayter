@@ -25,7 +25,6 @@
         <div class="bg-gray-50 py-8">
             <p class="my-4 text-md mb-8 md:text-3xl max-w-5xl mx-auto text-center">Te voy a demostrar que tan solo en 5 días tu cuerpo estará listo para comer delicioso Y BAJAR ESA MIERDA QUE ACUMULASTE EN EL 2023.</p>
         </div>
-
     </section>
     <section class="bg-gray-900 py-12">
         <div class="max-w-4xl mx-auto flex w-full flex-col-reverse md:flex-row">

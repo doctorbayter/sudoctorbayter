@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use App\Contracts\ManyChatServiceInterface;
+use App\Http\Controllers\ActiveCampaignController;
 use App\Http\Controllers\ManyChatController;
 
 
@@ -1181,6 +1182,7 @@ Route::get('x/clients/verify/', function($skip = 0){
 
 Route::get('/x/whatsapp', [ManyChatController::class, 'handleRequest'])->name('manychat.handleRequest');
 
+Route::get('/x/active', [ActiveCampaignController::class, 'addContact'])->name('active.addContact');
 
 
 // Lideres Acutalizado Enero 2022

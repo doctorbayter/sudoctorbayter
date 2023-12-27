@@ -438,6 +438,7 @@ class PaymentController extends Controller
                 ];   
                 $tagName = "Desafio-2024";
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagName);
+
             }
             else{
                 return;

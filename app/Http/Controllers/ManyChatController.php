@@ -28,5 +28,6 @@ class ManyChatController extends Controller
         ];   
         $tagName = "Desafio-2024";
         $result = $this->manyChatService->processSubscriberByEmail($subscriberData, $tagName);
+
     }
 }

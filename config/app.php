@@ -181,6 +181,8 @@ return [
         \Spatie\Backup\BackupServiceProvider::class,
         App\Providers\LaravelBackupPanelServiceProvider::class,
 
+        App\Providers\ActiveCampaignServiceProvider::class,
+
     ],
 
     /*

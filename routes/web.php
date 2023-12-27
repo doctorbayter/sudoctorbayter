@@ -208,7 +208,12 @@ Route::get('/99', function () {
 Route::get('/117', function () {
     //return view('no-disponible'); 
     return redirect('https://pay.hotmart.com/F78337495Q?off=0sphkasm&checkoutMode=10');
-})->name('oferta.llamadas2023');
+})->name('oferta.llamadasErika');
+
+Route::get('/dm', function () {
+    //return view('no-disponible'); 
+    return redirect('https://pay.hotmart.com/F78337495Q?off=6hbgake3&checkoutMode=10');
+})->name('oferta.llamadasYoanita');
 
 Route::get('/oferta', function () {
     return view('no-disponible'); 

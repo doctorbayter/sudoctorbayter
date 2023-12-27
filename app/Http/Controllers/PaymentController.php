@@ -185,11 +185,14 @@ class PaymentController extends Controller
 
         $this->addSuscription($user->id, $plan->id);
 
-        if($plan->id == 1 || $plan->id == 3 || $plan->id == 9 || $plan->id == 10 || $plan->id == 15 || $plan->id == 16 || $plan->id == 25 || $plan->id == 27 || $plan->id == 31 || $plan->id == 37 || $plan->id == 38 || $plan->id == 40 || $plan->id == 48) {
+        if($plan->id == 1 || $plan->id == 3 || $plan->id == 9 || $plan->id == 10 || $plan->id == 15 || $plan->id == 16 || $plan->id == 25 || $plan->id == 27 || $plan->id == 37 || $plan->id == 38 || $plan->id == 40 || $plan->id == 48) {
             $this->setFases($user->id, $fases_premium);
         }elseif($plan->id == 39) {
             $this->setFases($user->id, $fases_premium);
             $this->addSuscription($user->id, $plan_total->id);
+        }elseif($plan->id == 31 || $plan->id == 54 ) { // Oferta Llamadas
+            $this->setFases($user->id, $fases_premium);
+            $this->addSuscription($user->id, 23); // TF 24 horas
         }elseif($plan->id == 2 || $plan->id == 8) {
             if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
                 $fase_one->clients()->attach($user->id);
@@ -425,6 +428,10 @@ class PaymentController extends Controller
                         break;
                     case '0sphkasm':
                         $plan = Plan::find(31); // Plan Premium $97 ahora 117,00 US$
+                        $this->addSuscription($user->id, 23); // Total Fitness
+                        break;
+                    case '6hbgake3':
+                        $plan = Plan::find(54); // Plan Premium $97 ahora 117,00 US$
                         $this->addSuscription($user->id, 23); // Total Fitness
                         break;
                 }

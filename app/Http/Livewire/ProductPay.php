@@ -221,7 +221,7 @@ class ProductPay extends Component
                 }else if($this->plan->id == 15) { // Oferta Retos
                     $this->setFases($user->id, $fases_premium);
                     $this->addSuscription($user->id, 23); // TF 24 horas
-                }else if($this->plan->id == 31) { // Oferta Llamadas
+                }else if($this->plan->id == 31 || $this->plan->id == 54 ) { // Oferta Llamadas
                     $this->setFases($user->id, $fases_premium);
                     $this->addSuscription($user->id, 23); // TF 24 horas
                 }else if($this->plan->id == 39) {

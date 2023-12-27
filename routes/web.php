@@ -169,24 +169,20 @@ Route::get('/venezuela', function () {
 })->name('reto.venezuela');
 
 Route::get('/reto/desafio/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/FI3jfbwQk9D411BUjz46c7');
+    return redirect('https://chat.whatsapp.com/JRw9aIvGsKB0KpPev9bHGF');
 })->name('reto.whatsapp');
 
 Route::get('/reto/desafio/whatsapp/grupo-1', function () {
-    return redirect('https://chat.whatsapp.com/DDPkoZsiJ16Eun9PPy07b9');
+    return redirect('https://chat.whatsapp.com/JRw9aIvGsKB0KpPev9bHGF');
 })->name('reto.whatsapp1');
 
 Route::get('/reto/desafio/whatsapp/grupo-2', function () {
-    return redirect('https://chat.whatsapp.com/KMgg8uVGYZv6xS8wFy8jfq');
+    return redirect('https://chat.whatsapp.com/LZdcMxn2iYbAvWKkW9zxko');
 })->name('reto.whatsapp2');
 
 Route::get('/reto/desafio/whatsapp/grupo-3', function () {
-    return redirect('https://chat.whatsapp.com/FI3jfbwQk9D411BUjz46c7');
+    return redirect('https://chat.whatsapp.com/Lu9PNCqw2Wj5oh7DHdP9G2');
 })->name('reto.whatsapp3');
-
-Route::get('/reto/desafio/whatsapp/grupo-4', function () {
-    return redirect('');
-})->name('reto.whatsapp4');
 
 Route::get('/selecto', function () {
     //$plan = Plan::find(10);
@@ -881,11 +877,11 @@ Route::get('x/query', function(){
      //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-    // $plan = Plan::create([
-    //     'name' => 'DKP + Chat 70',
-    //     'slug' => 'plan-chat-70-oferta',
-    //     'price_id' => 37
-    // ]);
+    $plan = Plan::create([
+        'name' => 'Oferta Método DKP',
+        'slug' => 'oferta-metodo-dkp-dm',
+        'price_id' => 43
+    ]);
 
     // $price = Price::create([
     //     'name' => '137 US$',

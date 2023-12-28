@@ -55,7 +55,7 @@
         }
 }
     </style>
-    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 hidden ">
+    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 ">
         <a href="https://equipodoctorbayter.kpages.online/desafio" target="_blank"><img src="{{asset('img/billboards/desafio_2024_banner.png')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 

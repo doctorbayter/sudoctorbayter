@@ -11,25 +11,6 @@
                 </section>
             </div>
         </header>
-        <div class="flex flex-col space-y-4 min-w-screen py-6 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
-            <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            class="hidden md:block w-16 h-16 rounded-2xl p-3 border border-yellow-100 text-yellow-400 bg-yellow-50" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <div class="flex flex-col ml-3">
-                            <div class=" leading-none font-bold text-red-700">¡Aviso Importante!</div>
-                            <p class="text-sm text-gray-600 leading-none mt-1">Estás en el reto gratuito <b>DESINFLAMA TU CUERPO EN 4 DÍAS</b> 
-                            <b>este reto es 100% online y gratuito</b></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <section class="bg-gradient-to-t from-gray-100 pb-8 md:pb-14 ">
             <div class="w-10/12 md:w-7/12 mx-auto my-10" x-data="{selected:0}">
                 <section class="mt-8 mb-20">
@@ -38,7 +19,7 @@
                             <div class="text-red-700 border-b-4 text-xs md:text-base py-3 md:py-4  hover:text-red-700" @click="selected = 0" x-bind:class="{ 'bg-red-800 border-gray-700   ': selected == 0, 'border-gray-300 ': selected !== 0 }">
                                 <img src="{{asset('img/icons/gfx/calendar_color.svg')}}" alt="" class="w-3 md:w-5 mr-2 inline">
                                 <span x-bind:class="{ ' text-gray-50  ': selected == 0, 'text-red-700': selected !== 0 }">
-                                    Semana Uno
+                                    Recetas día a día del Reto
                                 </span>
                             </div>
                                 <div>

@@ -12,6 +12,8 @@ use App\Models\Plan;
 use App\Models\Price;
 use App\Models\Subscription;
 use App\Models\User;
+use App\Services\ActiveCampaignService;
+use App\Services\ManyChatService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -173,31 +175,59 @@ class HomeController extends Controller
         }
     }
 
+    public function sendReto(Request $request)
+    {
 
-    public function sendReto($user_name, $email, $plan_id, $fase_id){
+        $plan_id = $request->query('plan');
+        $fase_id = $request->query('fase');
+        $user_first_name = $request->query('first_name');
+        $user_email = $request->query('email');
+        $user_last_name = $request->query('last_name', null); // Opcional
+        $user_phone = $request->query('phone', null); // Opcional
 
-        $user = User::where('email', $email)->first();
+        if (!empty($user_last_name)) {
+            $user_name = $user_first_name . ' ' . $user_last_name;
+        } else {
+            $user_name = $user_first_name;
+        }
+
+        $user = User::firstOrCreate(
+            ['email' => $user_email],
+            ['name' => $user_name, 'password' => Hash::make('123456')]
+        );
+
         $plan = Plan::find($plan_id);
         $fase = Fase::find($fase_id);
-        
-        if(!$user){
-            $user = User::create([
-                'name' => $user_name,
-                'email' => strtolower($email),
-                'password' => Hash::make('123456')
-            ]);
-        }
+        Subscription::create(['user_id' => $user->id, 'plan_id' => $plan_id]);
 
-        
-
-        $suscription_plan           = new Subscription();
-        $suscription_plan->user_id  = $user->id;
-        $suscription_plan->plan_id  = $plan_id;
-        $suscription_plan->save();
-
-        if($fase->clients()->where('users.id', $user->id)->doesntExist()){
+        if ($fase && $fase->clients()->where('users.id', $user->id)->doesntExist()) {
             $fase->clients()->attach($user->id);
         }
+
+        $activeCampaignService = new ActiveCampaignService();
+            $contact = $activeCampaignService->verifyOrCreateContact($user->name, $user->email);
+        
+            if ($contact) {
+                $activeCampaignService->addContactToList($contact['id'], 64);
+                $activeCampaignService->assignTagToContact($contact['id'], 44);
+            }
+
+        if (!empty($user_phone)) {
+            $manyChatService = new ManyChatService();
+            $subscriberData = [
+                "first_name" => $user_first_name,
+                "last_name" => $user_last_name,
+                "phone" => $user_phone,
+                "whatsapp_phone" => $user_phone,
+                "email" => $user_email,
+                "has_opt_in_email" => true,
+                "has_opt_in_sms" => true,
+                "consent_phrase" => "Yes"
+            ];   
+            $tagName = "Desafio-2024";
+            $manyChatService->processSubscriberByEmail($subscriberData, $tagName);
+        }
+
         $mail = new ApprovedPurchaseReto($plan, $user);
         Mail::to($user->email)->send($mail);
         return 'Reto activo correctamente.'; 

@@ -36,7 +36,7 @@ Route::get('x/no-user/{id}/', [HomeController::class, 'noUser'] )->withoutMiddle
 Route::get('x/discount', [HomeController::class, 'discount'] )->withoutMiddleware(['auth'])->name('discount.add');
 Route::get('x/price', [HomeController::class, 'price'] )->withoutMiddleware(['auth'])->name('price.add');
 Route::get('x/send/{email}/{plan}/', [HomeController::class, 'send'] )->withoutMiddleware(['auth'])->name('send.add');
-Route::get('x/reto/{name}/{email}/{plan}/{fase}/', [HomeController::class, 'sendReto'] )->withoutMiddleware(['auth'])->name('send.reto');
+Route::get('x/reto/', [HomeController::class, 'sendReto'] )->withoutMiddleware(['auth'])->name('send.reto');
 Route::get('x/send/reto/{plan}/{skip}/', [HomeController::class, 'sendMail'] )->withoutMiddleware(['auth'])->name('send.add');
 Route::get('x/pass/{email}/{pass}/', [HomeController::class, 'pass'] )->withoutMiddleware(['auth'])->name('pass.add');
 

@@ -169,7 +169,7 @@ Route::get('/venezuela', function () {
 })->name('reto.venezuela');
 
 Route::get('/reto/desafio/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/LZdcMxn2iYbAvWKkW9zxko');
+    return redirect('https://chat.whatsapp.com/Lu9PNCqw2Wj5oh7DHdP9G2');
 })->name('reto.whatsapp');
 
 Route::get('/reto/desafio/whatsapp/grupo-1', function () {
@@ -393,16 +393,32 @@ Route::get('x/day-recipe/day/{id}/{day}', function($id , $day){
 });
 
 
-Route::get('x/clients/retos/{reto}', function ($reto) {
+Route::get('x/clients/reto/{reto}', function ($reto)
+{
+    // Carga anticipada de la relación 'user' para evitar múltiples consultas
+    $subscriptions = Subscription::with('user')
+    ->whereIn('plan_id', [$reto])
+    ->get();
 
-    $i = 1;
-    $subscriptions = Subscription::whereIn('plan_id', [$reto])->get();
-    foreach($subscriptions as $subscription){
-        echo $i." - ". $subscription->user->email;
-        echo"<br/>";
-        $i += 1;
+    // Iterar sobre las suscripciones y mostrar los detalles
+    $subscriptions->each(function ($subscription, $index) {
+    echo ($index + 1) . " - " . $subscription->user->email . "<br/>";
+    });
+});
+
+Route::get('x/no-clients/reto/{reto}', function ($reto)
+{
+    // Fecha de referencia
+    $fechaReferencia = '2023-12-14';
+    // Obtener usuarios que no tienen ninguna suscripción y se registraron después de la fecha de referencia
+    $usersWithoutSubscription = User::doesntHave('subscriptions')
+                                    ->where('created_at', '>', $fechaReferencia)
+                                    ->get();
+
+    // Iterar sobre estos usuarios para mostrarlos o procesarlos
+    foreach ($usersWithoutSubscription as $user) {
+        echo $user->name . " - " . $user->email . "<br/>";
     }
-
 });
 
 Route::get('x/clients/reto/ac/{skip?}', function($skip = 0){

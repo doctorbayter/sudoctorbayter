@@ -178,6 +178,7 @@ class HomeController extends Controller
     public function sendReto(Request $request)
     {
 
+        
         $plan_id = $request->query('plan');
         $fase_id = $request->query('fase');
         $user_first_name = $request->query('first_name');
@@ -198,7 +199,7 @@ class HomeController extends Controller
 
         $plan = Plan::find($plan_id);
         $fase = Fase::find($fase_id);
-        Subscription::create(['user_id' => $user->id, 'plan_id' => $plan_id]);
+        Subscription::create(['user_id' => $user->id, 'plan_id' => $plan->id]);
 
         if ($fase && $fase->clients()->where('users.id', $user->id)->doesntExist()) {
             $fase->clients()->attach($user->id);

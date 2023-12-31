@@ -125,9 +125,131 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative w-full mt-8 h-52 md:h-96 xl:min-h-video video-iframe hidden">
-                        <iframe src="https://player.vimeo.com/video/885003532?h=800132f627" style="width:  100%; height: 500px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    </div>
+                  
+                    <section>
+                        <article class="text-center mt-8 md:mt-12 mx-auto max-w-5xl px-2 ">
+                            <a href="https://pay.hotmart.com/R89419188I?off=u0oztc1t&checkoutMode=10" target="_blank"><img src="{{asset('img/billboards/desafio_2024_banner.png')}}" alt="" class="w-full mx-auto overflow-hidden  "></a>
+                        </article>
+    
+                        <div class="max-w-5xl mx-auto grid  bg-zinc-100 bg-white py-8">
+    
+                            <div class="text-center mb-4">
+                                <h2 class="text-3xl md:text-5xl font-bold">Inscríbete al Reto <span class="text-red-700">En Vivo</span></h2>
+                                <p class="text-base text-gray-600 mt-2">Inicia 2024 liberandote de la mierda de 2023 con nuestro Desafío 2024 que inicia este próximo 9 de enero de 2024</p>
+                            </div>
+    
+                            <!-- Pricing table -->
+                            <div class="pricing-table grid w-full grid-cols-1 rounded-md  p-8 xs:grid-cols-1 xs:gap-4 xs:px-10 lg:grid-cols-2 sm:gap-y-4 sm:gap-x-8 sm:px-8">          
+                              <!-- Pricing column 2 -->
+                              <div class="pricing-column pricing-column-2 flex flex-col gap-y-5 p-6 border rounded-lg bg-gray-50 mb-6 lg:mb-0">
+                                <div class="upper-part flex flex-col gap-y-4">
+                                 
+                                  
+                                  <div class="account-and-description">
+                                    <h3 class="font-semibold text-2xl">Reto 4 Gratuito</h3>
+                                    <p class="text-sm text-gray-500">Este es el reto que estás haciendo actualmente</p>
+                                  </div>
+                                  <div class="tier-and-description">
+                                    <h2 class="text-4xl font-extrabold">$0</h2>
+                                  </div>
+                                </div>            
+                                <!-- Account features -->
+                                <div class="account-features flex flex-col gap-y-1">
+                                  <div class="feature flex items-center gap-x-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-4 w-4 text-green-600">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="text-sm text-gray-800">Recetas desayuno, almuerzo y cena por 4 días</p>
+                                  </div>
+                                  <div class="feature flex items-center gap-x-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-4 w-4 text-green-600">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="text-sm text-gray-800">Lista de alimentos</p>
+                                  </div>
+                                  <div class="feature flex items-center gap-x-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-4 w-4 text-green-600">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="text-sm text-gray-800">Seguimiento por correo</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <style>
+                                .active-animation {
+                                    background-image: linear-gradient(90deg, red 50%, transparent 50%), linear-gradient(90deg, red 50%, transparent 50%), linear-gradient(0deg, red 50%, transparent 50%), linear-gradient(0deg, red 50%, transparent 50%);
+                                    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+                                    background-size: 15px 2px, 15px 2px, 2px 15px, 2px 15px;
+                                    background-position: left top, right bottom, left bottom, right   top;
+                                    animation: border-dance 1s infinite linear;
+                                }
+                                @keyframes border-dance {
+                                    0% {
+                                    background-position: left top, right bottom, left bottom, right   top;
+                                    }
+                                    100% {
+                                    background-position: left 15px top, right 15px bottom , left bottom 15px , right   top 15px;
+                                    }
+                                }
+        
+                            </style>
+                              <!-- Pricing column 3 -->
+                              <div class="pricing-column pricing-column-3 flex flex-col gap-y-5 rounded-lg bg-red-800 p-6 text-white active-animation">
+                                <div class="upper-part flex flex-col gap-y-4">
+                                  <div class="flex items-center justify-between">
+                                    <div class="account-and-description">
+                                        <h3 class="font-semibold text-2xl">Desafío 2024</h3>
+                                        <p class="text-sm">Libérate de la mierda de 2023</p>
+                                      </div>
+                                    <p class="rounded-md bg-red-600 px-2 py-1 text-xs font-bold">Recomendado</p>
+                                  </div>
+                                  
+                                  <div class="tier-and-description">
+                                    <h2 class="text-4xl font-extrabold">$10 USD</h2>
+                                   
+                                  </div>
+                                </div>
+                                <!-- call to action button -->
+                                <a href="https://pay.hotmart.com/R89419188I?off=u0oztc1t&checkoutMode=10" target="_blank" class="cta-button w-full rounded-lg px-6 py-1 bg-white font-semibold text-black cursor-pointer block">Registrate aquí por $10 dólares</a>
+                                <!-- Account features -->
+                                <div class="account-features flex flex-col gap-y-1">
+                                  <div class="feature flex items-center gap-x-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke="currentColor" class="h-4 w-4 text-green-600">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="text-sm">Recetas desayuno, almuerzo y cena por 5 días</p>
+                                  </div>
+                                  <div class="feature flex items-center gap-x-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke="currentColor" class="h-4 w-4 text-green-600">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="text-sm">Lista de alimentos</p>
+                                  </div>
+                                  <div class="feature flex items-center gap-x-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke="currentColor" class="h-4 w-4 text-green-600">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="text-sm">Secretos para hacerlo perfecto</p>
+                                  </div>
+                                  <div class="feature flex items-center gap-x-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke="currentColor" class="h-4 w-4 text-green-600">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="text-sm">Seguimiento por grupo de WhatsApp</p>
+                                  </div>
+                                  <div class="feature flex items-center gap-x-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke="currentColor" class="h-4 w-4 text-green-600">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="text-sm">1 Reunión Zoom privada grupal con tu Doctor Bayter </p>
+                                  </div>
+                                </div>
+                              </div>
+                             
+                            </div>
+                        </div>
+                    </section>
+                      
                 </section>
             </div>
         </section>

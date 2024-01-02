@@ -669,7 +669,7 @@ Route::get('x/ventas/planes/{plan}/{month}/{day}', function ($plan, $month, $day
 
     $p = Plan::find($plan);
     $plans = Subscription::whereIn('plan_id', [$plan])
-    ->whereYear('created_at', '=', '2023')
+    ->whereYear('created_at', '=', '2024')
     ->whereMonth('created_at', $month)
     ->whereDay('created_at', $day)
     ->get();
@@ -691,7 +691,7 @@ Route::get('x/ventas/planes/{plan}/{month}/{day}', function ($plan, $month, $day
 Route::get('x/ventas/total/{month}/{day}', function ($month, $day) {
 
     $plans = Subscription::whereMonth('created_at', $month)
-    ->whereYear('created_at', '=', '2023')
+    ->whereYear('created_at', '=', '2024')
     ->whereDay('created_at', $day)
     ->get();
     echo "<table>";
@@ -719,7 +719,7 @@ Route::get('x/ventas/total/{month}/{day}', function ($month, $day) {
 Route::get('x/ventas/mes/{month}/', function ($month) {
 
     $plans = Subscription::whereMonth('created_at', $month)
-    ->whereYear('created_at', '=', '2023')
+    ->whereYear('created_at', '=', '2024')
     ->get();
     echo "<table>";
     foreach ($plans as $plan) {

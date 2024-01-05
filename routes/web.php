@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use App\Contracts\ManyChatServiceInterface;
 use App\Http\Controllers\ActiveCampaignController;
+use App\Http\Controllers\HotmartController;
 use App\Http\Controllers\ManyChatController;
 
 
@@ -169,7 +170,7 @@ Route::get('/venezuela', function () {
 })->name('reto.venezuela');
 
 Route::get('/reto/desafio/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/Ggg7qSWMj8I7QMpEddluBv');
+    return redirect('https://chat.whatsapp.com/JgTZZKe3cRR6B3Pn4Aoaor');
 })->name('reto.whatsapp');
 
 Route::get('/reto/desafio/whatsapp/grupo-1', function () {
@@ -191,6 +192,12 @@ Route::get('/reto/desafio/whatsapp/grupo-4', function () {
 Route::get('/reto/desafio/whatsapp/grupo-5', function () {
     return redirect('https://chat.whatsapp.com/Ggg7qSWMj8I7QMpEddluBv');
 })->name('reto.whatsapp5');
+
+Route::get('/reto/desafio/whatsapp/grupo-6', function () {
+    return redirect('https://chat.whatsapp.com/JgTZZKe3cRR6B3Pn4Aoaor');
+})->name('reto.whatsapp6');
+
+
 
 
 
@@ -1223,6 +1230,8 @@ Route::get('x/clients/verify/', function($skip = 0){
 Route::get('/x/whatsapp', [ManyChatController::class, 'handleRequest'])->name('manychat.handleRequest');
 
 Route::get('/x/active', [ActiveCampaignController::class, 'addContact'])->name('active.addContact');
+
+Route::get('/x/hotmart/{productId}', [HotmartController::class, 'usersWithoutSubscription']);
 
 
 // Lideres Acutalizado Enero 2022

@@ -57,7 +57,7 @@ class UserPlan extends Component
         $this->subscribed_fase_week = $fase_week->clients->contains(auth()->user()->id);
 
 
-        $reto_actual = Fase::find(18);
+        $reto_actual = Fase::find(19);
         $this->subscribed_reto_actual = $reto_actual->clients->contains(auth()->user()->id);
 
         $planUpdate = Plan::find(3);

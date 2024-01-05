@@ -1027,65 +1027,65 @@ Route::get('x/query/reto', function(){
 
     // Recetas
 
-    $recipe = Recipe::create([
-        'name' => 'desafio-2024-5-1',
-        'slug' => 'desafio-2024-5-1',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 10,
-        'type' => 1,
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'desafio-2024-5-1',
+    //     'slug' => 'desafio-2024-5-1',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 10,
+    //     'type' => 1,
+    //     ]);
 
-        $image = Image::create([
-        'url' => 'recipes/foto-receta.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
+    //     $image = Image::create([
+    //     'url' => 'recipes/foto-receta.jpg',
+    //     'imageable_id' => $recipe->id,
+    //     'imageable_type' => 'App\Models\Recipe',
+    //     ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (434, 173, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (434, 173, $recipe->id, 1, CURRENT_TIMESTAMP, NULL)");
 
-    $recipe = Recipe::create([
-        'name' => 'desafio-2024-5-2',
-        'slug' => 'desafio-2024-5-2',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 35,
-        'type' => 1,
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'desafio-2024-5-2',
+    //     'slug' => 'desafio-2024-5-2',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 35,
+    //     'type' => 1,
+    //     ]);
 
-        $image = Image::create([
-        'url' => 'recipes/foto-receta.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
-        // $video = Video::create([
-        // 'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
-        // 'videoable_id' => $recipe->id,
-        // 'videoable_type' => 'App\Models\Recipe',
-        // ]);
+    //     $image = Image::create([
+    //     'url' => 'recipes/foto-receta.jpg',
+    //     'imageable_id' => $recipe->id,
+    //     'imageable_type' => 'App\Models\Recipe',
+    //     ]);
+    //     // $video = Video::create([
+    //     // 'iframe' => '<iframe src="https://player.vimeo.com/video/769187288?h=789a26548d" class="w-full h-96" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>',
+    //     // 'videoable_id' => $recipe->id,
+    //     // 'videoable_type' => 'App\Models\Recipe',
+    //     // ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (435, 173, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (435, 173, $recipe->id, 2, CURRENT_TIMESTAMP, NULL)");
 
 
-    $recipe = Recipe::create([
-        'name' => 'desafio-2024-5-3',
-        'slug' => 'desafio-2024-5-3',
-        'indice'=> 1,
-        'carbs' => 0,
-        'time' => 20,
-        'type' => 1,
-        ]);
+    // $recipe = Recipe::create([
+    //     'name' => 'desafio-2024-5-3',
+    //     'slug' => 'desafio-2024-5-3',
+    //     'indice'=> 1,
+    //     'carbs' => 0,
+    //     'time' => 20,
+    //     'type' => 1,
+    //     ]);
 
-        $image = Image::create([
-        'url' => 'recipes/foto-receta.jpg',
-        'imageable_id' => $recipe->id,
-        'imageable_type' => 'App\Models\Recipe',
-        ]);
+    //     $image = Image::create([
+    //     'url' => 'recipes/foto-receta.jpg',
+    //     'imageable_id' => $recipe->id,
+    //     'imageable_type' => 'App\Models\Recipe',
+    //     ]);
 
-    DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
-    (436, 173, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_recipe (id, day_id, recipe_id, meal, created_at, updated_at) VALUES
+    // (436, 173, $recipe->id, 3, CURRENT_TIMESTAMP, NULL)");
 
 });
 

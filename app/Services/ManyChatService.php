@@ -40,10 +40,32 @@ class ManyChatService implements ManyChatServiceInterface
 
         // Manejo de errores
         if (!$response->successful()) {
-            throw new \App\Exceptions\ManyChatApiException(
-                "Error al comunicarse con ManyChat: " . $response->body(),
-                $response->status()
-            );
+            $responseBody = json_decode($response->body(), true);
+        
+            // Verifica si la respuesta tiene un mensaje de error específico
+            if (isset($responseBody['status']) && $responseBody['status'] === 'error') {
+                if (isset($responseBody['details']['messages']['whatsapp_phone']['message'][0]) && 
+                    $responseBody['details']['messages']['whatsapp_phone']['message'][0] === 'WhatsApp subscriber with this phone number already exists') {
+                    // Manejar el caso específico de un suscriptor de WhatsApp existente
+                    throw new \App\Exceptions\ManyChatApiException(
+                        "Un suscriptor de WhatsApp con este número de teléfono ya existe.",
+                        $response->status()
+                    );
+                    
+                } else {
+                    // Manejar otros errores
+                    throw new \App\Exceptions\ManyChatApiException(
+                        "Error al comunicarse con ManyChat: " . $response->body(),
+                        $response->status()
+                    );
+                }
+            } else {
+                // Manejar otros errores
+                throw new \App\Exceptions\ManyChatApiException(
+                    "Error al comunicarse con ManyChat: " . $response->body(),
+                    $response->status()
+                );
+            }
         }
         return $response->json();
 

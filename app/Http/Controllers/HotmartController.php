@@ -36,7 +36,7 @@ class HotmartController extends Controller
             
             foreach ($users as $user) {
                 // Lógica para verificar con la API de Hotmart y activar el usuario
-                $response = $this->hotmartService->getCustomerProduct($productId , $user->email);
+                return $response = $this->hotmartService->getCustomerProduct($productId , $user->email);
                 
                 if (!empty($response) && isset($response['items']) && $response['items'] > 0) {
                     $buyerInfo = $this->buyerInfo($response);

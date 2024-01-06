@@ -1231,7 +1231,7 @@ Route::get('/x/whatsapp', [ManyChatController::class, 'handleRequest'])->name('m
 
 Route::get('/x/active', [ActiveCampaignController::class, 'addContact'])->name('active.addContact');
 
-Route::get('/x/hotmart/{productId}', [HotmartController::class, 'usersWithoutSubscription']);
+Route::get('/x/hotmart/{productId}',[HotmartController::class, 'usersWithoutSubscription']);
 
 
 // Lideres Acutalizado Enero 2022

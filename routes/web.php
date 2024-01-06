@@ -170,7 +170,7 @@ Route::get('/venezuela', function () {
 })->name('reto.venezuela');
 
 Route::get('/reto/desafio/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/JgTZZKe3cRR6B3Pn4Aoaor');
+    return redirect('https://chat.whatsapp.com/KUOSyvwXVJfCH6l9LSbTxj');
 })->name('reto.whatsapp');
 
 Route::get('/reto/desafio/whatsapp/grupo-1', function () {
@@ -195,6 +195,10 @@ Route::get('/reto/desafio/whatsapp/grupo-5', function () {
 
 Route::get('/reto/desafio/whatsapp/grupo-6', function () {
     return redirect('https://chat.whatsapp.com/JgTZZKe3cRR6B3Pn4Aoaor');
+})->name('reto.whatsapp6');
+
+Route::get('/reto/desafio/whatsapp/grupo-7', function () {
+    return redirect('https://chat.whatsapp.com/KUOSyvwXVJfCH6l9LSbTxj');
 })->name('reto.whatsapp6');
 
 

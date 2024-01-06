@@ -38,7 +38,7 @@ class HotmartController extends Controller
                 // Lógica para verificar con la API de Hotmart y activar el usuario
                 $response = $this->hotmartService->getCustomerProduct($productId , $user->email);
                 
-                if (!empty($response) && isset($response['items']) && $response['items'] > 0) {
+                if (!empty($response) && !empty($response['items'])) {
                     $buyerInfo = $this->buyerInfo($response);
                     $this->sendReto($buyerInfo);
                     echo $buyerInfo['email'] . " (Activado) </br>";

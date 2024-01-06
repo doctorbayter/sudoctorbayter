@@ -29,35 +29,22 @@ class HotmartController extends Controller
         $fechaReferencia = '2023-12-14';
         $batchSize = 100; // Número de usuarios a procesar en cada lote
 
-        // $usersWithoutSubscription = User::doesntHave('subscriptions')
-        //                                 ->where('created_at', '>', $fechaReferencia);
+        $usersWithoutSubscription = User::doesntHave('subscriptions')
+                                        ->where('created_at', '>', $fechaReferencia);
 
-        // $usersWithoutSubscription->chunkById($batchSize, function ($users) use ($productId) {
+        $usersWithoutSubscription->chunkById($batchSize, function ($users) use ($productId) {
             
-        // foreach ($users as $user) {
-        //     // Lógica para verificar con la API de Hotmart y activar el usuario
-            
-        //     $response = $this->hotmartService->getCustomerProduct($productId , $user->email);
-            
-        //     if (!empty($response) && isset($response['items']) && $response['items'] > 0) {
-        //         echo $user->name . " (Activado) - " . $user->email . "<br/>";
-        //     } else {
-        //         echo $user->name . " (No activado) - " . $user->email . "<br/>";
-        //     }                
-        // }
-        // });
-
-        $response = $this->hotmartService->getCustomerProduct($productId , 'natalia.arizahernandez@gmail.com');
-            
-            if (!empty($response) && isset($response['items']) && $response['items'] > 0) {
-
-             return $this->buyerInfo($response);
-
-                echo 'Jeff Cote' . " (Activado) - " . 'natalia.arizahernandez@gmail.com' . "<br/>";
-            } else {
-                echo 'Jeff Cote' . " (No activado) - " . 'natalia.arizahernandez@gmail.com' . "<br/>";
-            }                
-
+            foreach ($users as $user) {
+                // Lógica para verificar con la API de Hotmart y activar el usuario
+                $response = $this->hotmartService->getCustomerProduct($productId , $user->email);
+                
+                if (!empty($response) && isset($response['items']) && $response['items'] > 0) {
+                    $buyerInfo = $this->buyerInfo($response);
+                    $this->sendReto($buyerInfo);
+                    echo $buyerInfo['email'] . " (Activado) </br>";
+                }                
+            }
+        });
     }
 
     private function buyerInfo($buyerData)
@@ -79,27 +66,25 @@ class HotmartController extends Controller
                 "first_name" => $this->getFirstName($buyer['name']),
                 "last_name" => null,
                 "phone" => $buyer['phone'],
-                "whatsapp_phone" => $buyer['phone'],
                 "email" => $buyer['email'],
-                "has_opt_in_email" => true,
-                "has_opt_in_sms" => true,
-                "consent_phrase" => "Yes"
+                "plan" => 53,
+                "fase" => 19,
+
             ];   
             return $buyerInfo;
         }
-
         return null;
     }
 
 
-    private function sendReto(Request $request)
+    private function sendReto($request)
     {        
-        $plan_id = $request->query('plan');
-        $fase_id = $request->query('fase');
-        $user_first_name = $request->query('first_name');
-        $user_email = $request->query('email');
-        $user_last_name = $request->query('last_name', null); // Opcional
-        $user_phone = $request->query('phone', null); // Opcional
+        $plan_id = $request['plan'];
+        $fase_id = $request['fase'];
+        $user_first_name = $request['first_name'];
+        $user_email = $request['email'];
+        $user_last_name = $request['last_name']; // Opcional
+        $user_phone = $request['phone']; // Opcional
 
         if (!empty($user_last_name)) {
             $user_name = $user_first_name . ' ' . $user_last_name;
@@ -146,7 +131,8 @@ class HotmartController extends Controller
 
         $mail = new ApprovedPurchaseReto($plan, $user);
         Mail::to($user->email)->send($mail);
-        return 'Reto activo correctamente.'; 
+        
+        return true; 
 
     }
 

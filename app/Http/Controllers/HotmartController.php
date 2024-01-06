@@ -27,25 +27,24 @@ class HotmartController extends Controller
     {
         $productId; //'3647377'
         $fechaReferencia = '2023-12-14';
-        $batchSize = 100; // Número de usuarios a procesar en cada lote
+        $limit = 100; // Número de usuarios a procesar en cada lote
 
         $usersWithoutSubscription = User::doesntHave('subscriptions')
                                     ->where('created_at', '>', $fechaReferencia)
+                                    ->limit($limit)
                                     ->get();
-
-        $usersWithoutSubscription->chunkById($batchSize, function ($users) use ($productId) {
             
-            foreach ($users as $user) {
-                // Lógica para verificar con la API de Hotmart y activar el usuario
-                $response = $this->hotmartService->getCustomerProduct($productId , $user->email);
-                
-                if (!empty($response) && isset($response['items']) && $response['items'] > 0) {
-                    $buyerInfo = $this->buyerInfo($response);
-                    $this->sendReto($buyerInfo);
-                    echo $buyerInfo['email'] . " (Activado) </br>";
-                }                
-            }
-        });
+        foreach ($usersWithoutSubscription as $user) {
+            // Lógica para verificar con la API de Hotmart y activar el usuario
+            $response = $this->hotmartService->getCustomerProduct($productId , $user->email);
+            
+            if (!empty($response) && isset($response['items']) && $response['items'] > 0) {
+                $buyerInfo = $this->buyerInfo($response);
+                $this->sendReto($buyerInfo);
+                echo $buyerInfo['email'] . " (Activado) </br>";
+            }                
+        }
+        
     }
 
     private function buyerInfo($buyerData)

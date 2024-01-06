@@ -30,13 +30,14 @@ class HotmartController extends Controller
         $batchSize = 100; // Número de usuarios a procesar en cada lote
 
         $usersWithoutSubscription = User::doesntHave('subscriptions')
-                                        ->where('created_at', '>', $fechaReferencia);
+                                    ->where('created_at', '>', $fechaReferencia)
+                                    ->get();
 
         $usersWithoutSubscription->chunkById($batchSize, function ($users) use ($productId) {
             
             foreach ($users as $user) {
                 // Lógica para verificar con la API de Hotmart y activar el usuario
-                return $response = $this->hotmartService->getCustomerProduct($productId , $user->email);
+                $response = $this->hotmartService->getCustomerProduct($productId , $user->email);
                 
                 if (!empty($response) && isset($response['items']) && $response['items'] > 0) {
                     $buyerInfo = $this->buyerInfo($response);

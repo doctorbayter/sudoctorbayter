@@ -41,7 +41,7 @@ class HotmartController extends Controller
                 if (!empty($response) && !empty($response['items'])){
                     $buyerInfo = $this->buyerInfo($response);
                     $this->sendReto($buyerInfo);
-                    echo $buyerInfo['email'] . " (Activado) </br>"; 
+                    echo $buyerInfo['email'] . " (Activado)</br>"; 
                 }                
             }
         });

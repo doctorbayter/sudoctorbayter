@@ -394,7 +394,7 @@ class PaymentController extends Controller
         $user_first_name = $request->post('first_name');
         $user_last_name = $request->post('last_name');
         $user_email = $request->post('email');
-        $user_phone_number = $request->post('phone_number');
+        $user_phone_number = $request->post('phone_checkout_number');
         $status = $request->post('status');
         $product_id = $request->post('prod');
         $product_offert = $request->post('off');

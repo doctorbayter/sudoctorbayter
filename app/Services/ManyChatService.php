@@ -82,21 +82,22 @@ class ManyChatService implements ManyChatServiceInterface
         return $this->makeApiRequest('get', 'findByName', ['name' => $subscriberName]);
     }
 
-    public function findBySystemField(string $subscriberPhone): array
+    public function findBySystemField(string $subscriberEmail): array
     {
-        return $this->makeApiRequest('get','findBySystemField', ['phone' => $subscriberPhone]);
+        return $this->makeApiRequest('get','findBySystemField', ['email' => $subscriberEmail]);
     }
 
     public function processSubscriberByEmail(array $subscriberData, string $tagName): array
     {
+        
         // Extraer el correo electrónico del array de datos del suscriptor
-        $phone = $subscriberData['phone'] ?? null;
-        if (!$phone) {
-            throw new \InvalidArgumentException("El número telefónico es necesario para procesar el suscriptor");
-        }
+        $email = $subscriberData['email'] ?? null;
+        // if (!$phone) {
+        //     throw new \InvalidArgumentException("El número telefónico es necesario para procesar el suscriptor");
+        // }
 
         // Buscar el suscriptor por correo electrónico
-        $subscriber = $this->findBySystemField($phone);
+        $subscriber = $this->findBySystemField($email);
 
         if (isset($subscriber['data']) && empty($subscriber['data'])) {
             // Si el suscriptor no existe, crearlo y luego agregar la etiqueta

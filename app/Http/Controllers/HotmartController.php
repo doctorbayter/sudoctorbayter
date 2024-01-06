@@ -27,7 +27,7 @@ class HotmartController extends Controller
     {
         $productId; //'3647377'
         $fechaReferencia = '2023-12-14';
-        $batchSize = 50; // Número de usuarios a procesar en cada lote
+        $batchSize = 25; // Número de usuarios a procesar en cada lote
 
         $usersWithoutSubscription = User::doesntHave('subscriptions')
                                         ->where('created_at', '>', $fechaReferencia);

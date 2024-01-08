@@ -17,16 +17,16 @@ class ManyChatController extends Controller
     public function handleRequest(Request $request)
     {
         $subscriberData = [
-            "first_name" => "Carmen",
-            "last_name" => "Sánchez",
-            "phone" => "573105181175",
-            "whatsapp_phone" => "573105181175",
-            "email" => "casara489@hotmail.com",
+            "first_name" => "Jeff",
+            "last_name" => "Cote",
+            "phone" => "3155217037",
+            "whatsapp_phone" => "3155217037",
+            "email" => "yefer.cote@hotmail.com",
             "has_opt_in_email" => true,
             "has_opt_in_sms" => true,
             "consent_phrase" => "Yes"
         ];   
-        $tagName = "Desafio-2024";
+        $tagName = "Test";
         $result = $this->manyChatService->processSubscriberByEmail($subscriberData, $tagName);
 
     }

@@ -1231,7 +1231,7 @@ Route::get('x/clients/verify/', function($skip = 0){
 });
 
 
-Route::get('/x/whatsapp', [ManyChatController::class, 'handleRequest'])->name('manychat.handleRequest');
+Route::get('/x/manychat', [ManyChatController::class, 'handleRequest'])->name('manychat.handleRequest');
 
 Route::get('/x/active', [ActiveCampaignController::class, 'addContact'])->name('active.addContact');
 

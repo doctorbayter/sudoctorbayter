@@ -158,7 +158,7 @@ class ManyChatService implements ManyChatServiceInterface
                     }else{
                         $newSubscriberId = $newSubscriber['subscriber']['subscriber_id']; // Asegúrate de usar el campo correcto para el ID
                     }                    
-            }else if(isset($newSubscriber['data']) && empty($newSubscriber['data'])){
+            }else if(isset($newSubscriber['data']) && !empty($newSubscriber['data'])){
                
                 $newSubscriberId = $newSubscriber['data']['id']; // Asegúrate de usar el campo correcto para el ID
                 $data = array_merge(['subscriber_id' => $newSubscriberId], $subscriberData);

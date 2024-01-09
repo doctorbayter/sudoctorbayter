@@ -155,18 +155,18 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
 Route::get('/reto', function () {
-    //return view('no-disponible');
-    return redirect('https://pay.hotmart.com/R89419188I?checkoutMode=10');
+    return view('no-disponible');
+    //return redirect('https://pay.hotmart.com/R89419188I?checkoutMode=10');
 })->name('reto.nuevo');
 
 Route::get('/comprar', function () {
-    //return view('no-disponible');
-    return redirect('https://pay.hotmart.com/R89419188I?checkoutMode=10');
+    return view('no-disponible');
+    //return redirect('https://pay.hotmart.com/R89419188I?checkoutMode=10');
 })->name('reto.comprar');
 
 Route::get('/venezuela', function () {
-    //return view('no-disponible');
-    return redirect()->route('reto.register', ['reto'=>'desafio-2024']);
+    return view('no-disponible');
+    //return redirect()->route('reto.register', ['reto'=>'desafio-2024']);
 })->name('reto.venezuela');
 
 Route::get('/reto/desafio/whatsapp', function () {
@@ -212,8 +212,6 @@ Route::get('/reto/desafio/whatsapp/grupo-9', function () {
 Route::get('/reto/desafio/whatsapp/grupo-10', function () {
     return redirect('https://chat.whatsapp.com/FPS0H06HeNk3kkyRw1OezS');
 })->name('reto.whatsapp10');
-
-
 
 
 Route::get('/selecto', function () {

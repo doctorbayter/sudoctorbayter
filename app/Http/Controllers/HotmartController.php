@@ -26,7 +26,7 @@ class HotmartController extends Controller
     public function usersWithoutSubscription($productId)
     {
         $productId; //'3647377'
-        $fechaReferencia = '2023-12-14';
+        $fechaReferencia = '2023-12-13';
         $batchSize = 10; // Número de usuarios a procesar en cada lote
 
         $usersWithoutSubscription = User::doesntHave('subscriptions')

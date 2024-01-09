@@ -454,7 +454,7 @@ Route::get('x/clients/reto/{plan}/{year}', function ($plan, $year)
     });
 });
 
-Route::get('x/clients/reto/{plan}/{$inicio}/{$fin}', function ($plan, $inicio, $fin)
+Route::get('x/clients/reto/{plan}/{inicio}/{fin}', function ($plan, $inicio, $fin)
 {
     // Carga anticipada de la relación 'user' para evitar múltiples consultas
     $subscriptions = Subscription::with('user')

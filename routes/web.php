@@ -201,7 +201,7 @@ Route::get('/reto/desafio/whatsapp/grupo-7', function () {
     return redirect('https://chat.whatsapp.com/KUOSyvwXVJfCH6l9LSbTxj');
 })->name('reto.whatsapp7');
 
-Route::get('/reto/desafio/whatsapp/grupo-8', function () {
+Route::get('/reto/desafio/whatsapp/grupo-8', function () {  
     return redirect('https://chat.whatsapp.com/IsAS6z1wOaoHHIimHdTsHh');
 })->name('reto.whatsapp8');
 

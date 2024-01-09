@@ -423,12 +423,39 @@ Route::get('x/day-recipe/day/{id}/{day}', function($id , $day){
 });
 
 
-Route::get('x/clients/reto/{reto}/{year}', function ($reto, $year)
+Route::get('x/clients/reto/{reto}', function ($reto,)
 {
     // Carga anticipada de la relación 'user' para evitar múltiples consultas
     $subscriptions = Subscription::with('user')
     ->where('plan_id', $reto)
+    ->get();
+
+    // Iterar sobre las suscripciones y mostrar los detalles
+    $subscriptions->each(function ($subscription, $index) {
+    echo ($index + 1) . " - " . $subscription->user->email . "<br/>";
+    });
+});
+
+Route::get('x/clients/{plan}/{year}', function ($plan, $year)
+{
+    // Carga anticipada de la relación 'user' para evitar múltiples consultas
+    $subscriptions = Subscription::with('user')
+    ->where('plan_id', $plan)
     ->whereYear('created_at', $year)
+    ->get();
+
+    // Iterar sobre las suscripciones y mostrar los detalles
+    $subscriptions->each(function ($subscription, $index) {
+    echo ($index + 1) . " - " . $subscription->user->email . "<br/>";
+    });
+});
+
+Route::get('x/clients/{plan}/{$inicio}/{$fin}', function ($plan, $inicio, $fin)
+{
+    // Carga anticipada de la relación 'user' para evitar múltiples consultas
+    $subscriptions = Subscription::with('user')
+    ->where('plan_id', $plan)
+    ->whereBetween('created_at', [$inicio, $fin])
     ->get();
 
     // Iterar sobre las suscripciones y mostrar los detalles

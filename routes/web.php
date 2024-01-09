@@ -113,6 +113,10 @@ Route::get('/privacidad', function(){
     return view('terms');
 } )->name('privacidad');
 
+Route::get('/terminos', function(){
+    return view('terms');
+} )->name('terminos');
+
 Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('masterclass.register');
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');

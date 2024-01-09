@@ -112,11 +112,11 @@
                         <li>
                             <p><b>8.3.	Recomendaciones para los Clientes al momento de realizar el Método DKP</b></p>
                             <ul class="list-none">
-                                <li>●	Los Clintes deben tener en cuenta y reconocer si son alérgicos a algún tipo de alimento que se utilice en el Método para no consumirlos y realizar el respectivo cambio de ese alimento por otro que se encuentre en la lista de alimentos disponible en la Página Web.</li>
-                                <li>●	El Método está compuesto por unas fases que los Clientes deben seguir al pie de la letra. Los Clientes no pueden quedarse en una fase por más tiempo del estipulado, ni tampoco salirse del plan. Es recomendado realizar mínimo tres (3) vueltas a todas las fases, es decir, realizar el método por siete (7) meses para lograr los objetivos. </li>
-                                <li>●	Este Método no es únicamente para bajar de peso. Fue diseñado con el objetivo de mejorar la salud de los Clientes, obtener más energía y utilizar la grasa como energía.</li>
-                                <li>●	El Método DKP no reemplaza, bajo ninguna circunstancia, a un médico. En caso de iniciar a realizar el Método, como involucrará un cambio de alimentación, es altamente recomendado que los Clientes hagan un seguimiento constante con su médico de cabecera.</li>
-                                <li>●	Los Usuarios no deben suspender el uso de ningún medicamento, salvo previa autorización expresa del médico tratante.</li>
+                                <li>Los Clintes deben tener en cuenta y reconocer si son alérgicos a algún tipo de alimento que se utilice en el Método para no consumirlos y realizar el respectivo cambio de ese alimento por otro que se encuentre en la lista de alimentos disponible en la Página Web.</li>
+                                <li>El Método está compuesto por unas fases que los Clientes deben seguir al pie de la letra. Los Clientes no pueden quedarse en una fase por más tiempo del estipulado, ni tampoco salirse del plan. Es recomendado realizar mínimo tres (3) vueltas a todas las fases, es decir, realizar el método por siete (7) meses para lograr los objetivos. </li>
+                                <li>Este Método no es únicamente para bajar de peso. Fue diseñado con el objetivo de mejorar la salud de los Clientes, obtener más energía y utilizar la grasa como energía.</li>
+                                <li>El Método DKP no reemplaza, bajo ninguna circunstancia, a un médico. En caso de iniciar a realizar el Método, como involucrará un cambio de alimentación, es altamente recomendado que los Clientes hagan un seguimiento constante con su médico de cabecera.</li>
+                                <li>Los Usuarios no deben suspender el uso de ningún medicamento, salvo previa autorización expresa del médico tratante.</li>
                             </ul>
                         </li>
                     </ul>

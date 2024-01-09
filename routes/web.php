@@ -423,11 +423,12 @@ Route::get('x/day-recipe/day/{id}/{day}', function($id , $day){
 });
 
 
-Route::get('x/clients/reto/{reto}', function ($reto)
+Route::get('x/clients/reto/{reto}/{year}', function ($reto, $year)
 {
     // Carga anticipada de la relación 'user' para evitar múltiples consultas
     $subscriptions = Subscription::with('user')
-    ->whereIn('plan_id', [$reto])
+    ->where('plan_id', $reto)
+    ->whereYear('created_at', $year)
     ->get();
 
     // Iterar sobre las suscripciones y mostrar los detalles

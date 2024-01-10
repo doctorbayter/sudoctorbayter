@@ -19,7 +19,7 @@
                             @endif
                         </div>
                     </header>
-
+                    <div class="hidden">{{$this->day->id}}</div>
                     @if ($fase->id == 19000 && auth()->user()->id != 13706 )
                         <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
                             <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">

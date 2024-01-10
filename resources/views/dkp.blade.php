@@ -422,9 +422,17 @@
 
                     <div class="mt-12 border-red-700 border-8 max-w-md mx-auto px-8 py-6 rounded-2xl ">
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span></h2>
-                        <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
+                        <div class="font-medium text-3xl flex items-center text-center mx-auto">
+                            <p class="blocktext-gray-100 relative text-center mx-auto">
+                                <span>267<small class="text-3xl">US$</small> </span>
+                                <span class="w-full h-1 block absolute left-0 top-2/4 transform -rotate-6 border-b-4 border-red-700"></span>
+                            </p>
+                            
+                        </div>
+                        <p class="text-center mt-2 font-bold text-3xl text-yellow-500">OFERTA ESPECIAL</p>
 
-                        <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
+                        <p class="text-6xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
+                        
 
                         <div class="mt-4">
                             <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
@@ -448,10 +456,16 @@
                     <article>
                         <div class="mt-12 border-black border-8 max-w-md mx-auto px-8 py-6 rounded-2xl bg-gray-900 text-white ">
                             <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> 4 Fases</h2>
-                            <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
+                            <div class="font-medium text-3xl flex items-center text-center mx-auto">
+                                <p class="blocktext-gray-100 relative text-center mx-auto">
+                                    <span>267<small class="text-3xl">US$</small> </span>
+                                    <span class="w-full h-1 block absolute left-0 top-2/4 transform -rotate-6 border-b-4 border-red-700"></span>
+                                </p>
+                                
+                            </div>
+                            <p class="text-center mt-2 font-bold text-3xl text-yellow-500">OFERTA ESPECIAL</p>
 
-                            <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
-
+                            <p class="text-6xl text-accent-400 font-bold text-center">{{$plan_premium->price->name}}</p>
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                                 <ul>

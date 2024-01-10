@@ -63,28 +63,7 @@
                         @endcan
                     @else
                         <div class="text-white text-left py-2">
-                            @if ($plan_oferta->discount)
-                                @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
-
-                                <div class="font-medium text-6xl flex items-center">
-                                    <p class="mr-4 blocktext-gray-100 relative">
-                                        <span>{{round($plan_oferta->price->value)}}<small class="text-3xl">US$</small> </span>
-                                        <span class="w-full h-1 block absolute left-0 top-2/4 transform -rotate-6 border-b-4 border-red-700"></span>
-                                    </p>
-                                    {{-- <p class="">{{round($plan_oferta->finalPrice)}}<small class="text-3xl">US$</small></p> --}}
-                                    <p class="">110<small class="text-3xl">US$</small></p>
-                                </div>
-
-                                    <div class="">
-                                        <p class="text-base text-gray-300 mb-2 ">Acceso de por vida al Método DKP</p>
-                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>
-                                    </div>
-                                    @else
-                                    <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
-                                @endif
-                            @else
-                                <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
-                            @endif
+                            <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
                         </div>
 
                         <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere el Método Ya!</a>
@@ -122,30 +101,12 @@
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span></h2>
                         <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
 
-                        @if ($plan_oferta->discount)
-
-                            @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
-
-                                    {{-- <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p> --}}
-                                    <p class="text-center font-extrabold text-6xl">110 US$</p>
-                                    <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
-                                <div class="text-center">
-                                    <p class="text-base text-gray-700 mb-2">Oferta {{$plan_oferta->discount->name}}</p>
-                                    <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>
-                                </div>
-                                @else
-                                <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
-                            @endif
-                        @else
-                            <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
-                        @endif
+                        <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
 
                         <div class="mt-4">
                             <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                             <ul>
-                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato y de por vida a las 4 Fases del Método DKP<b class=" text-sm text-gray-600 block font-medium">(Precio normal 110 US$)</b></p></li>
-                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso al chat WhatsApp por 21 días</p></li>
-                                <li class="hidden"><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg ">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-600 block font-medium">(Precio normal 19 US$)</b></p>
+                                <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato por 12 meses a las 4 Fases del Método DKP<b class=" text-sm text-gray-600 block font-medium">(Precio normal 267 US$)</b></p></li>
                             </ul>
                             <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                         </div>
@@ -164,30 +125,12 @@
                             <h2 class="text-gray-50 text-center leading-none font-black text-2xl md:text-3xl">Método <span class="text-red-700">DKP</span> 4 Fases</h2>
                             <p class="text-center mt-4 font-bold text-3xl text-yellow-500">OFERTA PAGO ÚNICO</p>
 
-                            @if ($plan_oferta->discount)
-
-                                @if ($plan_oferta->discount->value != 0 && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->gt(\Carbon\Carbon::now()))
-
-                                        {{-- <p class="text-center font-extrabold text-6xl">{{round($plan_oferta->finalPrice)}} US$</p> --}}
-                                        <p class="text-center font-extrabold text-6xl">110 US$</p>
-                                        <small class="text-center block font-semibold line-through text-red-700 text-xl">Precio Real {{$plan_oferta->price->name}}</small>
-                                    <div class="text-center">
-                                        <p class="text-base text-gray-400 mb-2">Oferta {{$plan_oferta->discount->name}}</p>
-                                        <p class="text-sm text-accent-400 hidden"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_oferta->discount->expires_at))->diffForHumans() }}</b>! </p>
-                                    </div>
-                                    @else
-                                    <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
-                                @endif
-                            @else
-                                <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
-                            @endif
+                            <p class="text-4xl text-accent-400 font-bold text-center">{{$plan_oferta->price->name}}</p>
 
                             <div class="mt-4">
                                 <h3 class="font-bold text-xl mb-4 text-center">¿Que recibes con el Método <span class="text-red-700">DKP</span>?</h3>
                                 <ul>
-                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso inmediato y de por vida a las 4 Fases del Método DKP<b class=" text-sm text-gray-400 block font-medium">(Precio normal 110 US$)</b></p></li>
-                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg hidden">Acceso al chat WhatsApp por 21 días <b class=" text-sm text-gray-400 block font-medium">(Precio normal 27 US$/mes)</b></p></li>
-                                    <li class="hidden"><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg hidden">Curso ¿Cómo leer las etiquetas de los alimentos? <b class=" text-sm text-gray-400 block font-medium">(Precio normal 19 US$)</b></p>
+                                    <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso inmediato por 12 meses a las 4 Fases del Método DKP<b class=" text-sm text-gray-400 block font-medium">(Precio normal 267 US$)</b></p></li>
                                 </ul>
                                 <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                             </div>
@@ -284,32 +227,11 @@
                     </figure>
                     <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
                         <p class="text-gray-900 text-justify">Encontrarás recursos, herramientas y los secretos mejor guardados de tu <b>Doctor Bayter</b> para mejorar y alcanzar tus objetivos de peso y salud. También encontrarás  consejos y recomendaciones para que mantengas los resultados en el tiempo.</p>
-                        <p class="mt-2 text-gray-900 font-bold">Tendrás acceso ilimitado a la pagina, y siempre que existan modificaciones, cambios, tu podrás contar con ellos.</p>
                     </div>
 
                 </div>
             </div>
-            <div class="mt-16 md:mt-8 hidden">
-                <div class=" flex items-center flex-col-reverse md:flex-row ">
-                    <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
-                        <p class="text-gray-900 text-justify">21 videos exclusivos en la Fase 1 donde te diré cada día, lo que tu cuerpo y mente estarán experimentando y como lo podrás combatir y lograr que estos 21 días sean mucho más fáciles para ti.</p>
-                    </div>
-                    <figure class="mb-4 md:mb-0 flex-1 md:ml-12 overflow-hidden rounded-lg shadow-lg">
-                        <img src="{{asset('img/resources/metodo_dkp_63x.jpg')}}" alt="" class="w-full object-cover">
-                    </figure>
-                </div>
-            </div>
-            <div class="mt-16 md:mt-8">
-                <div class=" flex items-center flex-col md:flex-row ">
-                    
-                    <div class="w-full md:w-7/12 bg-gray-50 py-8 px-12 rounded-xl shadow-lg">
-                        <p class="text-gray-900 text-justify">Y lo mejor de todo un chat grupal de seguimiento por 21 días donde encontrarás personas que tienen situaciones similares, los mismos problemas, temores y miedos. Pero también tiene tus mismos objetivos que no es mas que dejar la adicción al azúcar. En contratas personas que como tu y como yo algún día decidieron cambiar sus vidas y hoy somos grandes sobrevivientes administrado por mi equipo de alimentación y liderando por tu doctor Bayter. donde resolveran todas tus dudas de alimentación para que no cometas ni un error.</p>
-                    </div>
-                    <figure class="mb-4 md:mb-0 flex-1 md:mr-12 overflow-hidden rounded-lg shadow-lg">
-                        <img src="{{asset('img/resources/metodo_dkp_ue66x.jpg')}}" alt="" class="w-full object-cover">
-                    </figure>
-                </div>
-            </div>
+            
         </div>
     </section>
     <section class="bg-gray-900">

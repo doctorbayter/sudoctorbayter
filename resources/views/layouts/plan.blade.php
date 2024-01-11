@@ -51,13 +51,13 @@
                         </div>
                         <ul class="text-right">
                             <li class="">
-                                <a href="#" class="text-red-700 text-sm">Política de Privacidad</a>
+                                <a href="{{route('plan.tutorial')}}" class="text-red-700 text-sm">Política de Privacidad</a>
                             </li>
-                            <li class="">
+                            <li class="hidden">
                                 <a href="#" class="text-red-700 text-sm">Política de Cookies</a>
                             </li>
                             <li class="">
-                                <a href="#" class="text-red-700 text-sm">Terminos y Condiciones</a>
+                                <a href="{{route('plan.tutorial')}}" class="text-red-700 text-sm">Terminos y Condiciones</a>
                             </li>
                         </ul>
                     </div>

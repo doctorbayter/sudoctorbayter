@@ -88,13 +88,13 @@ success(countryCode);
                         </div>
                         <ul class="text-center md:text-right leading-none mt-4 md:mt-0 flex md:block items-center md:flex-col">
                             <li class="">
-                                <a href="#" class="text-red-700 text-xs md:text-sm">Política de Privacidad</a>
+                                <a href="{{route('plan.tutorial')}}" class="text-red-700 text-sm">Política de Privacidad</a>
+                            </li>
+                            <li class="hidden">
+                                <a href="#" class="text-red-700 text-sm">Política de Cookies</a>
                             </li>
                             <li class="">
-                                <a href="#" class="text-red-700 text-xs md:text-sm">Política de Cookies</a>
-                            </li>
-                            <li class="">
-                                <a href="#" class="text-red-700 text-xs md:text-sm">Terminos y Condiciones</a>
+                                <a href="{{route('plan.tutorial')}}" class="text-red-700 text-sm">Terminos y Condiciones</a>
                             </li>
                         </ul>
                     </div>

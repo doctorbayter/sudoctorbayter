@@ -236,8 +236,12 @@
                             class="disabled w-full mt-2 cursor-default bg-gray-300 rounded-lg font-bold text-white text-center inline-block px-8 py-4 text-lg ">No puedes comprar este plan</a>
                         @else
                             <div class="my-6">
-                                <label class="inline-flex items-center text-sm">
-                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-secundary-400 " checked disabled><span class="ml-2 text-gray-700">Al completar la compra, aceptas estos <a href="{{route('privacidad')}}" class="text-secundary-400 font-bold underline"> Términos y condiciones</a></span>
+                                
+                                <label class="text-sm">
+                                    <div class="inline-flex items-center ">
+                                        <input wire:model="terms" type="checkbox" class="form-checkbox h-5 w-5 text-secundary-400 " @error('terms') autofocus="autofocus" @enderror  ><span class="ml-2 text-gray-700">Al completar la compra, aceptas estos <a href="{{route('privacidad')}}" class="text-secundary-400 font-bold underline"> Términos y condiciones</a></span>
+                                    </div>
+                                    <div>@error('terms')<p class="text-red-500 text-xs italic">👆 Para continuar con tu compre debes aceptar los terminos y condiciones, has click o toca cuadrito de terminos y condiciones</p>@enderror</div>
                                 </label>
                             </div>
 

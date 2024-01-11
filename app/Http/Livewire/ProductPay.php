@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 class ProductPay extends Component
 {
     public $plan, $suscription, $flash_sale;
-    public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send, $is_week;
+    public $name, $email, $email_confirmation,  $password, $password_confirmation, $data_send, $is_week, $terms;
     public $can_continued = false;
     public $error_message = "<a href='#formulario'>* Tenemos un error, revisa la información que escribiste arriba</a>";
     public $error_button = "Toca aquí para confirmar la información";
@@ -32,7 +32,8 @@ class ProductPay extends Component
         'email' => 'required|email',
         'email_confirmation' => 'email|min:6|required_with:email|same:email',
         'password' => 'required|min:8',
-        'password_confirmation' => 'min:8|required_with:password|same:password'
+        'password_confirmation' => 'min:8|required_with:password|same:password',
+        'terms' => 'required|min:1',
     ];
 
     public function updated($propertyName)

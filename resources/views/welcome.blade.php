@@ -351,7 +351,7 @@
                     <iframe class="latestVideoEmbed w-full h-48 md:h-60" vnum='2' cid="UCHDctAK-3r_Rjg7j8ABuYeg" width="600" height="340" frameborder="0" allowfullscreen></iframe>
                 </div>
 
-            </div>
+            </div> 
         </div>
     </section>
 

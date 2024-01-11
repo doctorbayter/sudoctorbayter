@@ -410,7 +410,7 @@
                         <h2 class="text-gray-900 text-center leading-none font-black text-2xl md:text-5xl">Ya estás dentro</h2>
                         <p class="text-center text-lg font-semibold">tu plan actual es {{auth()->user()->subscription->plan->name}}</p>
                     </header>
-                    <a href="{{route('plan.index')}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">Entra aquí a tu plan</a>
+                    <a href="{{route('plan.index')}}" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">Entra aquí a tu plan</a> 
                 </div>
             @else
                 <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">

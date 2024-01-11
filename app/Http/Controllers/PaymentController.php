@@ -411,7 +411,7 @@ class PaymentController extends Controller
                     'email' => strtolower($user_email),
                     'password' => Hash::make('123456')
                 ]);
-            }
+            }  
 
             if($product_id == 2572759){ // Metodo DKP Premium
                   

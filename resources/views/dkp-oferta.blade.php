@@ -338,7 +338,7 @@
                 <p class="text-center max-w-lg mx-auto mt-4 text-lg font-semibold">Agenda una llamada gratuita con nuestro equipo y obtén respuestas a tus preguntas</p>
             </header>
 
-            <div class="mt-8">
+            <div class="mt-8"> 
 
 <div data-tf-widget="v900gdXI" data-tf-iframe-props="title=Reunión Equipo Doctor Bayter" style="width:100%;height:600px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
 

@@ -34,7 +34,7 @@ class ProductPay extends Component
         'password' => 'required|min:8',
         'password_confirmation' => 'min:8|required_with:password|same:password',
         'terms' => 'required|min:1',
-    ];
+    ]; 
 
     public function updated($propertyName)
     {

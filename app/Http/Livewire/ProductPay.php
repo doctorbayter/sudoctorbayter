@@ -69,11 +69,11 @@ class ProductPay extends Component
         if (auth()->user()) {
             $user_exist = auth()->user();
             $email = $user_exist->email;
+            $this->validate();
         }else{
 
             $this->email = trim($this->email);
             $this->email_confirmation = trim($this->email_confirmation);
-
             $this->validate();
             $email = strtolower($this->email);
             $user_exist = User::where('email', $email)->first();

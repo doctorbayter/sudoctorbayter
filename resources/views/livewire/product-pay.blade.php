@@ -226,7 +226,7 @@
                                 <p class="text-4xl md:text-2xl font-bold text-accent-400">{{$plan->finalPrice}} US$</p>
                             @endif
                         </div>
-                    </div> 
+                    </div>
 
                         @can('enrolled', $suscription)
                             <div class="flex flex-col justify-start w-full mt-2">

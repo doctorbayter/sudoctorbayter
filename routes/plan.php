@@ -28,6 +28,10 @@ Route::get('/tutorial', function(){
     return view('plan.tutorial');
 } )->name('tutorial');
 
+Route::get('/biblioteca', function(){
+    return view('plan.biblioteca');
+} )->name('biblioteca');
+
 Route::get('/total', UserFitness::class )->name('fitness');
 Route::get('/total/nivel-{level}', UserFitnessLevel::class )->name('fitness.level');
 Route::get('/total/definer/', UserFitnessReseller::class )->name('fitness.reseller');

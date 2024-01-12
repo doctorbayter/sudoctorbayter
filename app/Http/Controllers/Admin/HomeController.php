@@ -225,8 +225,8 @@ class HomeController extends Controller
                 "has_opt_in_sms" => true,
                 "consent_phrase" => "Yes"
             ];   
-            $tagName = "Desafio-2024";
-            $manyChatService->processSubscriberByEmail($subscriberData, $tagName);
+            $tagID = "40709740";
+            $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
         }
 
         $mail = new ApprovedPurchaseReto($plan, $user);

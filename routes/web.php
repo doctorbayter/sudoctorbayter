@@ -966,34 +966,34 @@ Route::get('x/query', function(){
     //     'value' => 137
     // ]);
 
-    $plan = Plan::find(1);
+    // $plan = Plan::find(1);
+    // $plan->price_id = 36;
+    // $plan->save();
+
+    // $plan = Plan::find(31);
+    // $plan->price_id = 35;
+    // $plan->save();
+
+    // $plan = Plan::find(54);
+    // $plan->price_id = 35;
+    // $plan->save();
+
+    // $plan = Plan::find(15);
+    // $plan->price_id = 42;
+    // $plan->save();
+
+    // $price = Price::create([
+    //     'name' => '177 US$',
+    //     'value' => 177
+    // ]);
+
+    $plan = Plan::find(15);
     $plan->price_id = 36;
     $plan->save();
 
-    $plan = Plan::find(31);
-    $plan->price_id = 35;
-    $plan->save();
-
-    $plan = Plan::find(54);
-    $plan->price_id = 35;
-    $plan->save();
-
-    $plan = Plan::find(15);
-    $plan->price_id = 42;
-    $plan->save();
-
-    $price = Price::create([
-        'name' => '177 US$',
-        'value' => 177
-    ]);
-
-    $plan = Plan::find(9);
-    $plan->price_id = $price->id;
-    $plan->save();
-
-    // $discount = Discount::find(10);
-    // $discount->value = 97;
-    // $discount->save();
+    $discount = Discount::find(10);
+    $discount->value = 137;
+    $discount->save();
 
 
 });

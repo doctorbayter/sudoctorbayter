@@ -413,6 +413,18 @@ class PaymentController extends Controller
                 ]);
             }  
 
+            $manyChatService = new ManyChatService();
+            $subscriberData = [
+                "first_name" => $user_first_name,
+                "last_name" => $user_last_name,
+                "phone" => $user_phone_number,
+                "whatsapp_phone" => $user_phone_number,
+                "email" => $user_email,
+                "has_opt_in_email" => true,
+                "has_opt_in_sms" => true,
+                "consent_phrase" => "Yes"
+            ];  
+
             if($product_id == 2572759){ // Metodo DKP Premium
                   
                 switch ($product_offert) {
@@ -421,7 +433,9 @@ class PaymentController extends Controller
                         break;
                     case 'd6q16dhu':
                         $plan = Plan::find(15); // Plan Premium $67 ahora 97,00 US$
-                        //$this->addSuscription($user->id, 23); // Total Fitness 24 Horas
+                        $this->addSuscription($user->id, 23); // Total Fitness 24 Horas
+                        $tagID = "41113727"; //Metodo DKP Off Desafio-2024
+                        $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
                         break;
                     case 'u8j3n8x5':
                         $plan = Plan::find(9); // Plan Premium $99 ahora 110,00 US$
@@ -440,21 +454,8 @@ class PaymentController extends Controller
             }else if($product_id == 3647377){ // Desafio 2024
                 $plan = Plan::find(53); 
                 $fases = Fase::whereIn('id', [19])->get();
-
-                $manyChatService = new ManyChatService();
-                $subscriberData = [
-                    "first_name" => $user_first_name,
-                    "last_name" => $user_last_name,
-                    "phone" => $user_phone_number,
-                    "whatsapp_phone" => $user_phone_number,
-                    "email" => $user_email,
-                    "has_opt_in_email" => true,
-                    "has_opt_in_sms" => true,
-                    "consent_phrase" => "Yes"
-                ];   
-                $tagName = "Desafio-2024";
-                $manyChatService->processSubscriberByEmail($subscriberData, $tagName);
-
+                $tagID = "40709740"; //Desafio-2024
+                $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
             }
             else{
                 return;

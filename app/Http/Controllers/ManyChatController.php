@@ -26,8 +26,8 @@ class ManyChatController extends Controller
             "has_opt_in_sms" => true,
             "consent_phrase" => "Yes"
         ];   
-        $tagName = "Test";
-        $result = $this->manyChatService->processSubscriberByEmail($subscriberData, $tagName);
+        $tagID = "41113727";
+        $result = $this->manyChatService->processSubscriberByEmail($subscriberData, $tagID);
 
     }
 }

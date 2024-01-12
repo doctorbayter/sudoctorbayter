@@ -99,9 +99,9 @@ class ManyChatService implements ManyChatServiceInterface
         }
     }
 
-    public function addTagToSubscriber($subscriberId, $tagName): array
+    public function addTagToSubscriber($subscriberId, $tagID): array
     {
-        return $this->makeApiRequest('post', 'addTagByName', ['subscriber_id' => $subscriberId,'tag_name' => $tagName]); 
+        return $this->makeApiRequest('post', 'addTag', ['subscriber_id' => $subscriberId,'tag_id' => $tagID]); 
     }
 
     public function setCustomField($subscriberId, $subscriberField): array
@@ -134,7 +134,7 @@ class ManyChatService implements ManyChatServiceInterface
 
     }
 
-    public function processSubscriberByEmail(array $subscriberData, string $tagName): array
+    public function processSubscriberByEmail(array $subscriberData, string $tagID): array
     {
         
         // Extraer el correo electrónico del array de datos del suscriptor
@@ -172,12 +172,12 @@ class ManyChatService implements ManyChatServiceInterface
                 return ['status' => 'error', 'subscriber' => $newSubscriber];
             }
             
-            $this->addTagToSubscriber($newSubscriberId, $tagName);
+            $this->addTagToSubscriber($newSubscriberId, $tagID);
             return ['status' => 'subscriber_created_and_tag_added', 'subscriber' => $newSubscriber];
         } else {
             // Si el suscriptor existe, agregar la etiqueta
             $subscriberId = $subscriber['data']['id']; // Asegúrate de usar el campo correcto para el ID
-            $this->addTagToSubscriber($subscriberId, $tagName);
+            $this->addTagToSubscriber($subscriberId, $tagID);
 
             return ['status' => 'tag_added', 'subscriber' => $subscriber];
         }

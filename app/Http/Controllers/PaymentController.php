@@ -166,7 +166,6 @@ class PaymentController extends Controller
 
     public function setUserData(User $user, Plan $plan){
 
-
         $plan_total    = Plan::find(23);
         $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
         $fase_one      = Fase::find(1);
@@ -185,8 +184,18 @@ class PaymentController extends Controller
 
         $this->addSuscription($user->id, $plan->id);
 
-        if($plan->id == 1 || $plan->id == 3 || $plan->id == 9 || $plan->id == 10 || $plan->id == 15 || $plan->id == 16 || $plan->id == 25 || $plan->id == 27 || $plan->id == 37 || $plan->id == 38 || $plan->id == 40 || $plan->id == 48) {
+        if($plan->id == 1 || $plan->id == 3 || $plan->id == 9 || $plan->id == 10 || $plan->id == 16 || $plan->id == 25 || $plan->id == 27 || $plan->id == 37 || $plan->id == 38 || $plan->id == 40 || $plan->id == 48) {
             $this->setFases($user->id, $fases_premium);
+        }else if($plan->id == 15) { // Oferta Retos
+            $this->setFases($user->id, $fases_premium);
+            $this->addSuscription($user->id, 23); // TF 24 horas
+            $activeCampaignService = new ActiveCampaignService();
+            $contact = $activeCampaignService->verifyOrCreateContact($user->name, $user->email);
+            if ($contact) {
+                $activeCampaignService->addContactToList($contact['id'], 49);
+                $activeCampaignService->addContactToList($contact['id'], 66);
+                $activeCampaignService->assignTagToContact($contact['id'], 44);
+            }
         }elseif($plan->id == 39) {
             $this->setFases($user->id, $fases_premium);
             $this->addSuscription($user->id, $plan_total->id);
@@ -284,104 +293,19 @@ class PaymentController extends Controller
         return array($first_name, $last_name);
     }
 
-    public function activeCampaign($name, $email, $list_id) {
-
-        $response = Http::withHeaders([
-            'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
-        ]);
-
-        $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
-            "email" => $email,
-            "orders[email]" => "ASC"
-        ]);
-
-        if($getUserByEmail){
-            $userData = $getUserByEmail['contacts'];
-        }else{
-            $userData = null;
-        }
-
-        if($userData){
-            $userListsLink = $userData[0]['links']['contactLists'];
-            $userId = $userData[0]['id'];
-        }else{
-
-            //$last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            //$first_name = trim( preg_replace('#'.preg_quote($last_name,'#').'#', '', $name ) );
-
-            $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
-                "contact" => [
-                    "email" => $email,
-                    "fullName" => trim($name),
-                ]
-            ]);
-            $userListsLink = $addUser['contact']['links']['contactLists'];
-            $userId = $addUser['contact']['id'];
-        }
-
-        $getUserLists =  $response->GET($userListsLink);
-        $userLists = $getUserLists['contactLists'];
-
-        if(count($userLists) > 0) {
-
-            foreach($userLists as $userList ) {
-                if($userList['list'] == $list_id){
-
-                    if($userList['status'] == "2") {
-                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                            "contactList" => [
-                                "list" => $list_id,
-                                "contact" => $userId,
-                                "status" => 1,
-                                "sourceid" => 4
-                            ]
-                        ]);
-                    }
-                    break;
-                }else{
-                    $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                        "contactList" => [
-                            "list" => $list_id,
-                            "contact" => $userId,
-                            "status" => 1
-                        ]
-                    ]);
-                }
-            }
-
-        }else{
-            $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                "contactList" => [
-                    "list" => $list_id,
-                    "contact" => $userId,
-                    "status" => 1
-                ]
-            ]);
-        }
-
-        return;
-    }
-
     public function sendMail(User $user, Plan $plan){
         switch ($plan->id) {
-            case 7:
-                $mail = new ApprovedPurchaseNoChat($plan, $user);
-                //Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+            case 15:
+                $mail = new ApprovedPurchase($plan, $user);
             break;
             case 20:
                 $mail = new ApprovedPurchaseEvent($plan, $user);
-            break;
-            case 23:
-                $mail = new ApprovedPurchaseNoChat($plan, $user);
-            break;
-            case 41:
-                $mail = new ApprovedPurchaseNoChat($plan, $user);
             break;
             case 53:
                 $mail = new ApprovedPurchaseReto($plan, $user);
             break;
             default:
-                $mail = new ApprovedPurchase($plan, $user);
+                $mail = new ApprovedPurchaseNoChat($plan, $user);
             break;
         }
         Mail::to($user->email)->send($mail);
@@ -402,7 +326,6 @@ class PaymentController extends Controller
         if($status == "approved"){
 
             $user_exist = User::where('email', $user_email)->first();
-
             if($user_exist){
                 $user = $user_exist;
             }else{
@@ -412,7 +335,6 @@ class PaymentController extends Controller
                     'password' => Hash::make('123456')
                 ]);
             }  
-
             $manyChatService = new ManyChatService();
             $subscriberData = [
                 "first_name" => $user_first_name,
@@ -424,28 +346,26 @@ class PaymentController extends Controller
                 "has_opt_in_sms" => true,
                 "consent_phrase" => "Yes"
             ];  
-
             if($product_id == 2572759){ // Metodo DKP Premium
-                  
                 switch ($product_offert) {
                     case 'ugs80t2l':
-                        $plan = Plan::find(1); // Plan Premium $110 ahora 137,00 US$
+                        $plan = Plan::find(1); // Plan Premium $137 ahora 197,00 US$
                         break;
-                    case 'd6q16dhu':
-                        $plan = Plan::find(15); // Plan Premium $67 ahora 97,00 US$
+                    case '9oai28hf':
+                        $plan = Plan::find(15); // Plan Premium $97 ahora 147,00 US$
                         $this->addSuscription($user->id, 23); // Total Fitness 24 Horas
                         $tagID = "41113727"; //Metodo DKP Off Desafio-2024
                         $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
                         break;
                     case 'u8j3n8x5':
-                        $plan = Plan::find(9); // Plan Premium $99 ahora 110,00 US$
+                        $plan = Plan::find(9); // Plan Premium $110 ahora 177,00 US$
                         break;
                     case '0sphkasm':
-                        $plan = Plan::find(31); // Plan Premium $97 ahora 117,00 US$
+                        $plan = Plan::find(31); // Plan Premium $117 ahora 167,00 US$
                         $this->addSuscription($user->id, 23); // Total Fitness
                         break;
                     case '6hbgake3':
-                        $plan = Plan::find(54); // Plan Premium $97 ahora 117,00 US$
+                        $plan = Plan::find(54); // Plan Premium $117 ahora 167,00 US$
                         $this->addSuscription($user->id, 23); // Total Fitness
                         break;
                 }
@@ -464,16 +384,6 @@ class PaymentController extends Controller
             $this->addSuscription($user->id, $plan->id);
             $this->setFases($user->id, $fases);
             $this->sendMail($user, $plan);
-
-            // if($fase->clients()->where('users.id', $user->id)->doesntExist()){
-            //     $fase->clients()->attach($user->id);
-            // }
-
-        // $data = $request->json()->all();
-        // $id = $data['data']['product']['id'];
-        // $email = $data['data']['buyer']['email'];
-        // return $email;
-
         }
     }
 }

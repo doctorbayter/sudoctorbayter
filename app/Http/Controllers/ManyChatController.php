@@ -19,8 +19,8 @@ class ManyChatController extends Controller
         $subscriberData = [
             "first_name" => "Jeff",
             "last_name" => "Cote",
-            "phone" => "3155217037",
-            "whatsapp_phone" => "3155217037",
+            "phone" => "573155217037",
+            "whatsapp_phone" => "573155217037",
             "email" => "yefer.cote@hotmail.com",
             "has_opt_in_email" => true,
             "has_opt_in_sms" => true,

@@ -139,15 +139,14 @@ class ManyChatService implements ManyChatServiceInterface
         
         // Extraer el correo electrónico del array de datos del suscriptor
         $email = $subscriberData['email'] ?? null;
-
         // Buscar el suscriptor por correo electrónico
         $subscriber = $this->findBySystemField($email);
-
+          
         if (isset($subscriber['data']) && empty($subscriber['data'])) {
 
             // Si el suscriptor no existe, crearlo y luego agregar la etiqueta
             $newSubscriber = $this->createSubscriber($subscriberData);
-
+            
             if (isset($newSubscriber['messages']['whatsapp_phone']['message'][0]) && $newSubscriber['messages']['whatsapp_phone']['message'][0] === 'WhatsApp subscriber with this phone number already exists') {
 
                     $newSubscriber = $this->updateSubscriber($subscriberData);

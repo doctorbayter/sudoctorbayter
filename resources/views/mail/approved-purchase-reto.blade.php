@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="x-apple-disable-message-reformatting">
-    <title>Email Template</title>
+    <title>Correo de Bienvenida Doctor Bayter</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #ffffff; color: #333333; }
         .container { width: 100%; max-width: 650px; margin: auto; padding: 20px; }
-        .header { background-color: #a30000; height: 12px; }
         .content { text-align: left; font-size: 14px; line-height: 1.5; }
         .button { background-color: #a30000; color: #ffffff; padding: 15px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; text-align: center; }
         .button:hover { background-color: #900; }
@@ -18,8 +17,6 @@
 </head>
 <body>
     <div class="container">
-        <div class="header"></div>
-
         <div class="content">
             <p>Hola,</p>
             <p>Pronto estará disponible toda la información del <strong>Desafío 2024 - Liberate de la mierda del 2024</strong>. Por ahora, si aún no estás dentro del grupo de seguimiento con en equipo de tu Doctor Bayter ingresa al siguiente botón.</p>

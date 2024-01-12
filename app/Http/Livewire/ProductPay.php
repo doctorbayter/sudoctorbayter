@@ -58,7 +58,7 @@ class ProductPay extends Component
 
     public function render() {
 
-        if($this->plan->id == 15 || $this->plan->id == 4 || $this->plan->id == 11 || $this->plan->id == 12 || $this->plan->id == 18 || $this->plan->id == 19 || $this->plan->id == 25 || $this->plan->id == 36 || $this->plan->id == 47 || $this->plan->id == 49 || $this->plan->id == 50 || $this->plan->id == 51 || $this->plan->id == 52 || $this->plan->id == 53) {
+        if( $this->plan->id == 4 || $this->plan->id == 11 || $this->plan->id == 12 || $this->plan->id == 18 || $this->plan->id == 19 || $this->plan->id == 25 || $this->plan->id == 36 || $this->plan->id == 47 || $this->plan->id == 49 || $this->plan->id == 50 || $this->plan->id == 51 || $this->plan->id == 52 || $this->plan->id == 53) {
             return view('no-disponible-lw');
         }
             return view('livewire.product-pay');
@@ -96,82 +96,6 @@ class ProductPay extends Component
     }
 
 
-    public function activeCampaign($list_id) {
-
-        $response = Http::withHeaders([
-            'Api-Token' => 'c1d483a96b0fd0f622ed137c5679b1d97ebd130b09501ab4e1d384e1a4a64ef6c34ff576'
-        ]);
-        $getUserByEmail = $response->GET('https://doctorbayter.api-us1.com/api/3/contacts/',[
-            "email" => $this->email,
-            "orders[email]" => "ASC"
-        ]);
-        $userData = $getUserByEmail['contacts'];
-
-        if($userData){
-            $userListsLink = $userData[0]['links']['contactLists'];
-            $userId = $userData[0]['id'];
-
-        }else{
-            $addUser = $response->POST('https://doctorbayter.api-us1.com/api/3/contacts',[
-                "contact" => [
-                    "email" => $this->email,
-                    "fullName" => trim($this->name),
-                ]
-            ]);
-
-
-            $userListsLink = $addUser['contact']['links']['contactLists'];
-            $userId = $addUser['contact']['id'];
-        }
-
-        $getUserLists =  $response->GET($userListsLink);
-
-        $userLists = $getUserLists['contactLists'];
-
-        if(count($userLists) > 0) {
-
-            foreach($userLists as $userList ) {
-
-                if($userList['list'] == $list_id){
-
-                    if($userList['status'] == 1){
-                       return false;
-                    }else if($userList['status'] == "2") {
-                        $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                            "contactList" => [
-                                "list" => $list_id,
-                                "contact" => $userId,
-                                "status" => 1,
-                                "sourceid" => 4
-                            ]
-                        ]);
-                    }
-                    return true;
-                    break;
-                }else{
-                    $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                        "contactList" => [
-                            "list" => $list_id,
-                            "contact" => $userId,
-                            "status" => 1
-                        ]
-                    ]);
-                }
-            }
-            return true;
-
-        }else{
-            $addUserToList = $response->POST('https://doctorbayter.api-us1.com/api/3/contactLists',[
-                "contactList" => [
-                    "list" => $list_id,
-                    "contact" => $userId,
-                    "status" => 1
-                ]
-            ]);
-            return true;
-        }
-    }
-
     public function paymentMethodCreate($paymentMethod){
 
         try {
@@ -186,7 +110,6 @@ class ProductPay extends Component
                     'password' => bcrypt($this->password)
                 ]);
             }
-
 
             // Verificar si el usuario ya está suscrito al plan
             $alreadySubscribed = $user->subscriptions()
@@ -222,6 +145,13 @@ class ProductPay extends Component
                 }else if($this->plan->id == 15) { // Oferta Retos
                     $this->setFases($user->id, $fases_premium);
                     $this->addSuscription($user->id, 23); // TF 24 horas
+                    $activeCampaignService = new ActiveCampaignService();
+                    $contact = $activeCampaignService->verifyOrCreateContact($user->name, $user->email);
+                    if ($contact) {
+                        $activeCampaignService->addContactToList($contact['id'], 49);
+                        $activeCampaignService->addContactToList($contact['id'], 66);
+                        $activeCampaignService->assignTagToContact($contact['id'], 44);
+                    }
                 }else if($this->plan->id == 31 || $this->plan->id == 54 ) { // Oferta Llamadas
                     $this->setFases($user->id, $fases_premium);
                     $this->addSuscription($user->id, 23); // TF 24 horas

@@ -126,7 +126,7 @@
                         </div>
                     </div>
                   
-                    <section>
+                    <section class="hidden">
                         <article class="text-center mt-8 md:mt-12 mx-auto max-w-5xl px-2 ">
                             <a href="https://pay.hotmart.com/R89419188I?off=u0oztc1t&checkoutMode=10" target="_blank"><img src="{{asset('img/billboards/desafio_2024_banner.png')}}" alt="" class="w-full mx-auto overflow-hidden  "></a>
                         </article>

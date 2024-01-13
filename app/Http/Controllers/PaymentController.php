@@ -188,7 +188,7 @@ class PaymentController extends Controller
             $this->setFases($user->id, $fases_premium);
         }else if($plan->id == 15) { // Oferta Retos
             $this->setFases($user->id, $fases_premium);
-            $this->addSuscription($user->id, 23); // TF 24 horas
+            //$this->addSuscription($user->id, 23); // TF 24 horas
             $activeCampaignService = new ActiveCampaignService();
             $contact = $activeCampaignService->verifyOrCreateContact($user->name, $user->email);
             if ($contact) {
@@ -353,7 +353,7 @@ class PaymentController extends Controller
                         break;
                     case '9oai28hf':
                         $plan = Plan::find(15); // Plan Premium $97 ahora 147,00 US$
-                        $this->addSuscription($user->id, 23); // Total Fitness 24 Horas
+                        //$this->addSuscription($user->id, 23); // Total Fitness 24 Horas
                         $tagID = "41113727"; //Metodo DKP Off Desafio-2024
                         $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
                         break;

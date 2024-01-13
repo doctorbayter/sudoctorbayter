@@ -144,7 +144,7 @@ class ProductPay extends Component
                     $this->setFases($user->id, $fases_premium);
                 }else if($this->plan->id == 15) { // Oferta Retos
                     $this->setFases($user->id, $fases_premium);
-                    $this->addSuscription($user->id, 23); // TF 24 horas
+                    //$this->addSuscription($user->id, 23); // TF 24 horas
                     $activeCampaignService = new ActiveCampaignService();
                     $contact = $activeCampaignService->verifyOrCreateContact($user->name, $user->email);
                     if ($contact) {

@@ -158,14 +158,14 @@ class HomeController extends Controller
 
         if($user){
             switch ($plan_id) {
-                case 7:
-                    $mail = new ApprovedPurchaseNoChat($plan, $user);
+                case 15:
+                    $mail = new  ApprovedPurchase($plan, $user);
                     break;
                 case 53:
                     $mail = new ApprovedPurchaseReto($plan, $user);
                     break;
                 default:
-                    $mail = new ApprovedPurchase($plan, $user);
+                    $mail = new ApprovedPurchaseNoChat($plan, $user);
                     break;
             }
             Mail::to($user->email)->send($mail);

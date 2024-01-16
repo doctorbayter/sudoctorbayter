@@ -251,12 +251,12 @@ Route::get('/dm', function () {
 })->name('oferta.llamadasYoanita');
 
 Route::get('/oferta', function () {
-    //return view('no-disponible'); 
+    return view('no-disponible'); 
     return redirect('https://pay.hotmart.com/F78337495Q?off=9oai28hf&checkoutMode=10');
 })->name('oferta.reto');
 
 Route::get('/especial', function () {
-    //return view('no-disponible');
+    return view('no-disponible');
     $plan = Plan::find(15);
     return redirect()->route('payment.pay', ['plan'=>$plan]);
 })->name('oferta.retovenezuela');

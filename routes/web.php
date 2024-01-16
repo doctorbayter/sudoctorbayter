@@ -800,6 +800,7 @@ Route::get('x/ventas/mes/{month}/', function ($month) {
 Route::get('x/clients/reto/{month}', function ($month) {
 
     $plans = Subscription::whereIn('plan_id', [15])
+    ->whereYear('created_at', '=', '2024')
     ->whereMonth('created_at', $month)
     ->get();
     echo "<table>";

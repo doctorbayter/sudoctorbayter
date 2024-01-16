@@ -351,7 +351,7 @@ class PaymentController extends Controller
                     case 'ugs80t2l':
                         $plan = Plan::find(1); // Plan Premium $137 ahora 197,00 US$
                         break;
-                    case '9oai28hf':
+                    case '31tvzaxf':
                         $plan = Plan::find(15); // Plan Premium $97 ahora 147,00 US$
                         //$this->addSuscription($user->id, 23); // Total Fitness 24 Horas
                         $tagID = "41113727"; //Metodo DKP Off Desafio-2024

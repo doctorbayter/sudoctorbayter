@@ -718,11 +718,11 @@ Route::get('x/clients/eg/{month}', function ($month) {
 });
 
 
-Route::get('x/ventas/planes/{plan}/{month}/{day}', function ($plan, $month, $day) {
+Route::get('x/ventas/planes/{plan}/{year}/{month}/{day}', function ($plan, $year, $month, $day) {
 
     $p = Plan::find($plan);
     $plans = Subscription::whereIn('plan_id', [$plan])
-    ->whereYear('created_at', '=', '2024')
+    ->whereYear('created_at', '=', $year)
     ->whereMonth('created_at', $month)
     ->whereDay('created_at', $day)
     ->get();

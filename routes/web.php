@@ -741,6 +741,35 @@ Route::get('x/ventas/planes/{plan}/{year}/{month}/{day}', function ($plan, $year
     echo "</table>";
 });
 
+Route::get('x/ventas/plan/{plan}/{year}/{month}/', function ($plan, $year, $month) {
+
+    $p = Plan::find($plan);
+    $plans = Subscription::whereIn('plan_id', [$plan])
+    ->whereYear('created_at', '=', $year)
+    ->whereMonth('created_at', $month)
+    ->get();
+    echo "<h1> Ventas Plan ". $p->name . " - ". $p->finalPrice. " US$ MES ". \Carbon\Carbon::createFromFormat('m', $month)->format('F')."</h1><br>";
+    echo "<table>";
+    foreach ($plans as $plan) {
+        echo "<tr>";
+        echo "<td>";
+        echo $plan->created_at->format('d');
+        echo "</td>";
+        echo "<td>";
+        echo ucwords(strtolower($plan->user->name));
+        echo "</td>";
+        echo "<td>";
+        echo $plan->user->email;
+        echo "</td>";
+        echo "<td>";
+        echo $plan->name;
+        echo "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+});
+
+
 Route::get('x/ventas/total/{month}/{day}', function ($month, $day) {
 
     $plans = Subscription::whereMonth('created_at', $month)

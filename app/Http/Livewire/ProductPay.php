@@ -177,8 +177,11 @@ class ProductPay extends Component
                 if($this->plan->id == 53){
                     $mail = new ApprovedPurchaseReto($this->plan, $user);
                     Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
-                }else{
+                }else if($this->plan->id == 15){
                     $mail = new ApprovedPurchase($this->plan, $user);
+                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                }else{
+                    $mail = new ApprovedPurchaseNoChat($this->plan, $user);
                     Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 }
                 

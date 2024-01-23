@@ -14,7 +14,15 @@
                     <section class="mt-16">
                         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
 
-                            @foreach ($salsitas as $salsita)
+                            @php
+                                if($user_fases->count() == 1){
+                                    $take = 4;
+                                }else{
+                                    $take = $salsitas->count();
+                                }
+                            @endphp
+
+                            @foreach ($salsitas->take($take) as $salsita)
                             <div>
                                 <a href="{{route('plan.recipe', $salsita)}}">
                                     <div class="relative h-62">

@@ -62,127 +62,27 @@
                             <hr class="my-16">
                         @endif
 
-                        <section class="grid grid-cols-1 xl:grid-cols-2 gap-8 my-8 bg">
+                        <section class="grid grid-cols-1 gap-8 my-8 bg">
 
-                            @if ($user_plan != 7 && $user_plan != 17 && $user_plan != 18  && $user_plan != 19  && $user_plan != 36  && $user_plan != 47 && $user_plan != 49 && $user_plan != 50 && $user_plan != 51 && $user_plan != 52 && $user_plan != 53)
-
-                                @if ($is_premium->count() == 0)
-                                    <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg inline-block shadow-sm ">
-                                        <div class=" flex items-center">
-                                            <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
-                                                <img src="{{asset('img/billboards/premium.jpg')}}" alt="" class="w-full object-cover">
-                                            </figure>
-                                            <div class="text-gray-50 flex-1 flex flex-col">
-                                                <div class="flex-1 flex flex-col">
-                                                    <p class="mb-1">Actualiza tu plan y disfruta de todo el contenido</p>
-                                                    <h2 class="text-2xl  text-blue-300 mb-2"><strong>{{$planUpdate->name}}</strong></h2>
-                                                    <small>Actualiza tu plan a PREMIUM y adquiere las fases 2 3 y 4 por un pago único de</small>
-                                                    @if ($planUpdate->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planUpdate->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                                        <div>
-                                                            <div class="ml-auto flex items-center">
-                                                                <p class="text-4xl md:text-2xl font-bold text-green-400">{{$planUpdate->finalPrice}} US$</p>
-                                                                <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planUpdate->price->name}}</span>
-                                                            </div>
-                                                            <small class="text-gray-100">{{$planUpdate->discount->name}}</small>
-                                                            <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planUpdate->discount->expires_at))->diffForHumans() }}</b>!</p>
-                                                        </div>
-                                                    @else
-                                                        <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$planUpdate->price->name}}</p>
-                                                    @endif
-                                                </div>
-                                                <a href="{{route('payment.checkout', $planUpdate)}}" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Actualiza tu plan</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-
-                                <div class=" bg-gradient-to-r from-green-400 to-green-700 border py-12 px-6 rounded-lg inline-block__ shadow-sm hidden">
-                                    <div class="flex items-center">
-                                        <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
-                                            <img src="{{asset('img/billboards/whatsapp.jpg')}}" alt="" class="w-full object-cover">
-                                        </figure>
-                                        <div class="text-gray-50 flex-1 flex flex-col ">
-                                            <div class="flex-1 flex flex-col">
-                                                <p class=" mb-1">¿Ya estás inscrito al <b>Chat</b>?</p>
-                                                <h2 class="font-bold text-2xl text-green-900">{{$planWhatsapp->name}}</h2>
-                                                <h2 class="font-bold text-2xl text-green-900 mb-2"></h2>
-                                                <small>Súmale más dias a tu acompañamiento grupal del Dr. Bayter.</small>
-                                                @if ($planWhatsapp->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                                    <div>
-                                                        <div class="ml-auto flex items-center">
-                                                            <p class="text-4xl md:text-2xl font-bold text-green-900">{{$planWhatsapp->finalPrice}} US$</p>
-                                                            <span class=" text-base font-bold ml-2 line-through text-red-500">{{$planWhatsapp->price->name}}</span>
-                                                        </div>
-                                                        <small class="text-gray-100">{{$planWhatsapp->discount->name}}</small>
-                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($planWhatsapp->discount->expires_at))->diffForHumans() }}</b>!</p>
-                                                    </div>
-                                                @else
-                                                    <p class="text-4xl md:text-2xl  text-gray-50">Desde <b>{{$planWhatsapp->price->name}}</b> al mes</p>
-                                                @endif
-                                            </div>
-                                            <div class="">
-                                                <a href="{{route('plan.whatsapp')}}" class=" block cursor-pointer mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-green-300 border-green-900 text-green-900 uppercase transition-colors duration-300 ease-in-out  hover:bg-green-900 hover:text-gray-50">
-                                                    @if ($subscribed_whatsapp)
-                                                        Agrega más días a tu chat
-                                                    @else
-                                                        Adquiere tu mensualidad
-                                                    @endif
-
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                @if (!$subscribed_fase_week)
-                                <div class="bg-gradient-to-r from-gray-900 to-blue-900 border py-12 px-6 rounded-lg __inline-block shadow-sm hidden">
-                                    <div class=" flex items-center">
-                                        <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
-                                            <img src="{{asset('img/billboards/plan_week.jpg')}}" alt="" class="w-full object-cover">
-                                        </figure>
-                                        <div class="text-gray-50 flex-1 flex flex-col">
-                                            <div class="flex-1 flex flex-col">
-                                                <p class="mb-1">Disfruta de las nuevas recetas adicionales</p>
-                                                <h2 class="text-2xl  text-blue-300 mb-2"><strong>{{$plan_week->name}}</strong></h2>
-                                                <small>Prueba 21 recetas diferentes por un pago único de</small>
-                                                @if ($plan_week->discount && \Carbon\Carbon::createFromTimeStamp(strtotime($plan_week->discount->expires_at))->gt(\Carbon\Carbon::now()))
-                                                    <div>
-                                                        <div class="ml-auto flex items-center">
-                                                            <p class="text-4xl md:text-2xl font-bold text-green-400">{{$plan_week->finalPrice}} US$</p>
-                                                            <span class=" text-base font-bold ml-2 line-through text-red-500">{{$plan_week->price->name}}</span>
-                                                        </div>
-                                                        <small class="text-gray-100">{{$plan_week->discount->name}}</small>
-                                                        <p class="text-sm text-accent-400"> <i class="far fa-clock"></i> ¡Esta oferta termina en <b>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($plan_week->discount->expires_at))->diffForHumans() }}</b>!</p>
-                                                    </div>
-                                                @else
-                                                    <p class="text-4xl md:text-3xl font-bold text-gray-50">{{$plan_week->price->name}}</p>
-                                                @endif
-                                            </div>
-                                            <a href="{{route('payment.checkout', $plan_week)}}" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Adquieres ya</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                            @endif
-
-                            <div class=" bg-gradient-to-r from-gray-800 to-gray-900 border py-12 px-6 rounded-lg inline-block shadow-sm">
+                            <div class=" bg-gradient-to-b from-gray-700 to-gray-900 border py-12 px-6 rounded-lg inline-block shadow-sm">
                                 <div class=" flex items-center">
-                                    <figure class="hidden lg:block w-56 mr-6 overflow-hidden rounded-lg">
-                                        <img src="{{asset('img/billboards/tutorial.jpg')}}" alt="" class="w-full object-cover">
-                                    </figure>
-                                    <div class="text-gray-50 flex-1 flex flex-col ">
+                                   
+                                    <div class="text-gray-50 flex-1 flex flex-col pl-8 ">
                                         <div class="flex-1 flex flex-col">
-                                            <p class=" mb-1">¿Estás perdido o no sabes donde empezar?</p>
-                                            <h2 class="font-bold text-2xl text-red-700">Mira los tutoriales aquí</h2>
+                                            <p class=" mb-1">¿Estás iniciando el Método DKP y tienes dudas?</p>
+                                            <h2 class="font-bold text-4xl text-red-700">Mira la Biblioteca de contenido aquí</h2>
                                             <h2 class="font-bold text-2xl text-red-700 mb-2"></h2>
-                                            <p class="text-base  text-gray-50">Aquí encontrarás la guía básica de uso de nuestra página para que no te pierdas ningún detalle.</p>
+                                            <p class="text-base  text-gray-50">Aquí encontrarás la biblioteca de contenido exclusiva de tu doctor Bayter para los miembros del Método DKP. Si estás iniciando en el Método DKP te recomendamos dar una leida a todo el contenido de esta biblioteca para despejar tus dudas. </p>
                                         </div>
                                         <div class="">
-                                            <a href="{{route('plan.tutorial')}}" class=" block cursor-pointer mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out  hover:bg-red-500 hover:text-gray-50">
+                                            <a href="{{route('plan.biblioteca')}}" class=" max-w-xs block cursor-pointer mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out  hover:bg-red-500 hover:text-gray-50">
                                                 Entra aquí para aprender
                                             </a>
                                         </div>
                                     </div>
+                                    <figure class="hidden lg:block  w-80 mr-6 overflow-hidden rounded-lg">
+                                        <img src="{{asset('img/billboards/tutorial.jpg')}}" alt="" class="w-full object-cover">
+                                    </figure>
                                 </div>
                             </div>
 
@@ -194,39 +94,7 @@
             </div>
 
 
-            @if (!$subscribed_fase_week)
-                <section class="pb-4 fixed bottom-0 mr-4 right-0  z-50 transition duration-500 delay-3000 ease-in-out opacity-0"
-                    id="classAd"
-                    x-data="{$open : true}"
-                    x-show="$open"
-                    x-cloak>
-                    <div class=" w-11/12 md:w-full max-w-2xl mx-auto py-8 px-6 md:px-12  bg-yellow-400 rounded-2xl md:flex shadow-2xl bg-hero-pattern bg-cover bg-center">
-                        <div class="md:mr-8 flex-1">
-                            <h3 class="text-yellow-100 bg-red-700 uppercase font-bold inline-block text-base px-4 py-1 rounded-xl mb-4">¿Ya probaste las nuevas recetas?</h3>
-                            <h2 class=" hidden text-accent-400 text-3xl mb-4 md:my-2 md:text-6xl font-extrabold leading-none">
-                                LA <span class="text-red-700">MEJOR</span> DIETA
-                            </h2>
-                            <p class="text-gray-900 text-sm md:text-base mb-4">Hemos creado una deliciosa lista de recetas para <b>desayuno, almuerzo y cena </b> nuevas para toda una semana por solo <b>{{$plan_week->finalPrice}} US$</b></p>
-                            <div class=" text-center md:flex items-center">
-                                <a href="{{ route('payment.checkout', $plan_week )}}" target="_blank" class="inline-block font-bold px-8 py-2 text-lg border border-red-700  bg-red-700 bg-accent-400 text-yellow-400 rounded-xl hover:bg-transparent hover:text-red-700" >Aquierelas aquí</a>
-                                <button x-on:click="$open = !$open; localStorage.setItem('classAd', false)" class=" mt-4 md:ml-3 md:mt-0 inline-block font-bold text-lg text-red-700 hover:underline outline-none" >No me interesa</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <script>
-                    const CLASS_AD = localStorage.getItem('classAd');
-                    let classAdDiv = document.getElementById("classAd");
-
-                    if(CLASS_AD == "false"){
-                        classAdDiv.remove();
-                    } else{
-                        classAdDiv.classList.add('opacity-100')
-                    }
-                </script>
-            @endif
+          
 
 
         @else

@@ -351,7 +351,7 @@ class PaymentController extends Controller
                     case 'ugs80t2l':
                         $plan = Plan::find(1); // Plan Premium $137 ahora 197,00 US$
                         break;
-                    case '31tvzaxf':
+                    case '45ud7mhc':
                         $plan = Plan::find(15); // Plan Premium $97 ahora 147,00 US$
                         //$this->addSuscription($user->id, 23); // Total Fitness 24 Horas
                         $tagID = "41113727"; //Metodo DKP Off Desafio-2024
@@ -370,6 +370,12 @@ class PaymentController extends Controller
                         break;
                 }
                 $fases = Fase::whereIn('id', [1, 2, 3, 4])->get();
+
+            }else if($product_id == 3742410){ // Reto 21 Método DKP
+                $plan = Plan::find(2); 
+                $fases = Fase::whereIn('id', [1])->get();
+                $tagID = "41442684"; //Método DKP - Fase Uno
+                $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
 
             }else if($product_id == 3647377){ // Desafio 2024
                 $plan = Plan::find(53); 

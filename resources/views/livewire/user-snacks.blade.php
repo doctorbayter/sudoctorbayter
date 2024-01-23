@@ -14,15 +14,22 @@
                     <section class="mt-16">
                         <div class="grid grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-12">
 
-                            @foreach ($snacks as $snack)
+                            @php
+                                if($user_fases->count() == 1){
+                                    $take = 4;
+                                }else{
+                                    $take = $snacks->count();
+                                }
+                            @endphp
+
+                            @foreach ($snacks->take($take) as $snack)
                                 <div class="border border-gray-100 shadow-md rounded-xl overflow-hidden w-full">
                                     <div class="w-full block">
-                                        <div class="flex items-center">
-                                            <figure class=" w-60 h-full overflow-hidden bg-gray-100 ">
-
+                                        <div class="xl:flex items-center">
+                                            <figure class=" lx:w-60 h-full overflow-hidden bg-gray-100 ">
                                                 <img src="{{asset('img/'.$snack->image->url)}}" alt="" class=" h-full object-cover">
                                             </figure>
-                                            <div class="ml-6 relative w-full flex-1">
+                                            <div class="ml-6 relative w-full flex-1 py-4">
                                                 <h2 class="font-bold text-lg text-gray-900">{{$snack->name}}</h2>
                                                 <div class="text-gray-400 text-sm pr-4 my-4">
                                                     {!!Str::limit($snack->descripcion, '300', '...')!!}
@@ -33,9 +40,6 @@
                                     </div>
                                 </div>
                             @endforeach
-
-
-
 
                         </div>
                     </section>

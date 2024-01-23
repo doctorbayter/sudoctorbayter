@@ -5,7 +5,10 @@
             if(auth()->user()->subscription){
                 $user_plan = auth()->user()->subscriptions->whereNotIn('plan_id', [3, 4, 5, 6, 11, 12, 13, 14])->sortBy('plan_id')->first();
             }
+            $user_fases = auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id');          
         @endphp
+
+        
     
         <div class="flex">
             <x-menu :userPlan="$user_plan->plan_id" />
@@ -24,92 +27,95 @@
                     <div class="w-10/12 mx-auto my-10" x-data="{selected:1}">
                         <section class="mt-0">
                             <div class="">
-                                <div class="mt-8 mb-4">
-                                    <h2 class=" font-bold text-6xl">Contenido en <span class="text-red-700">Video</span></h2>
-                                    <p class="mt-2 text-justify mb-6">En está página encontrarás algunos videos que te ayudarán en tu proceso para que hagas el Método DKP Perfecto. Información en video donde el Doctor Bayter te explica los aspectos más importantes que debes tener en cuenta asi como los principales efectos sendarios que podrias llegar a sentir.</p>
-                                    
-                                    <div class="py-4">
-                                      <style>
-                                        .video-responsive {
-                                            position: relative;
-                                            overflow: hidden;
-                                            padding-top: 56.25%; /* Relación de aspecto 16:9 */
-                                        }
+                                @if ($user_fases->count() > 1)
+                                    <div class="mt-8 mb-4">
+                                        <h2 class=" font-bold text-6xl">Contenido en <span class="text-red-700">Video</span></h2>
+                                        <p class="mt-2 text-justify mb-6">En está página encontrarás algunos videos que te ayudarán en tu proceso para que hagas el Método DKP Perfecto. Información en video donde el Doctor Bayter te explica los aspectos más importantes que debes tener en cuenta asi como los principales efectos sendarios que podrias llegar a sentir.</p>
+                                        
+                                        <div class="py-4">
+                                        <style>
+                                            .video-responsive {
+                                                position: relative;
+                                                overflow: hidden;
+                                                padding-top: 56.25%; /* Relación de aspecto 16:9 */
+                                            }
 
-                                        .video-responsive iframe {
-                                            position: absolute;
-                                            top: 0;
-                                            left: 0;
-                                            width: 100%;
-                                            height: 100%;
-                                        }
-                                        /* Estilos para el icono giratorio */
-                                        .loader {
-                                        border: 4px solid #f3f3f3;
-                                        border-top: 4px solid #3498db;
-                                        border-radius: 50%;
-                                        width: 20px;
-                                        height: 20px;
-                                        animation: spin 2s linear infinite;
-                                        }
+                                            .video-responsive iframe {
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                width: 100%;
+                                                height: 100%;
+                                            }
+                                            /* Estilos para el icono giratorio */
+                                            .loader {
+                                            border: 4px solid #f3f3f3;
+                                            border-top: 4px solid #3498db;
+                                            border-radius: 50%;
+                                            width: 20px;
+                                            height: 20px;
+                                            animation: spin 2s linear infinite;
+                                            }
 
-                                        @keyframes spin {
-                                        0% { transform: rotate(0deg); }
-                                        100% { transform: rotate(360deg); }
-                                        }
-                                      </style>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                          <!-- Video Item -->
-                                          <div class="video-item" data-video-id="901984363?h=94038ce63f">
-                                            <img class="w-full h-auto rounded-xl" src="{{asset('img/thumbnails/bc_hidratacion_11012024.jpg')}}" alt="Biblioteca de Contenido DKP - Hidratacion">
-                                            <div class="p-2">
-                                              <h3 class="font-bold">Hidratación</h3>
-                                              <p class="text-sm text-gray-600">Como debo hidratarme correctamente, cuantos litros de agua debo tomar, cuanta sal por cada litro, todas estas dudas las resultave tu Doctor Bayter en este video sobre la hidratación en el Método DKP.</p>
+                                            @keyframes spin {
+                                            0% { transform: rotate(0deg); }
+                                            100% { transform: rotate(360deg); }
+                                            }
+                                        </style>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                            <!-- Video Item -->
+                                            <div class="video-item" data-video-id="901984363?h=94038ce63f">
+                                                <img class="w-full h-auto rounded-xl" src="{{asset('img/thumbnails/bc_hidratacion_11012024.jpg')}}" alt="Biblioteca de Contenido DKP - Hidratacion">
+                                                <div class="p-2">
+                                                <h3 class="font-bold">Hidratación</h3>
+                                                <p class="text-sm text-gray-600">Como debo hidratarme correctamente, cuantos litros de agua debo tomar, cuanta sal por cada litro, todas estas dudas las resultave tu Doctor Bayter en este video sobre la hidratación en el Método DKP.</p>
+                                                </div>
                                             </div>
-                                          </div>
-                                          <!-- Video Item -->
-                                          <div class="video-item" data-video-id="901989104?h=f9e52ecb83">
-                                            <img class="w-full h-auto rounded-xl" src="{{asset('img/thumbnails/bc_diarrea_11012024.jpg')}}" alt="Biblioteca de Contenido DKP - Diarrea y Estreñimiento">
-                                            <div class="p-2">
-                                              <h3 class="font-bold">Diarrea y Estreñimiento</h3>
-                                              <p class="text-sm text-gray-600">De cada 10 personas que inician el Método DKP  9 van a sufir de Estreñimiento y 1 de Diarrea, aprende a como manejarlo y mitigar estos efectos.</p>
+                                            <!-- Video Item -->
+                                            <div class="video-item" data-video-id="901989104?h=f9e52ecb83">
+                                                <img class="w-full h-auto rounded-xl" src="{{asset('img/thumbnails/bc_diarrea_11012024.jpg')}}" alt="Biblioteca de Contenido DKP - Diarrea y Estreñimiento">
+                                                <div class="p-2">
+                                                <h3 class="font-bold">Diarrea y Estreñimiento</h3>
+                                                <p class="text-sm text-gray-600">De cada 10 personas que inician el Método DKP  9 van a sufir de Estreñimiento y 1 de Diarrea, aprende a como manejarlo y mitigar estos efectos.</p>
+                                                </div>
                                             </div>
-                                          </div>
-                                          <!-- Video Item -->
-                                          <div class="video-item" data-video-id="902004296?h=123a203496">
-                                            <img class="w-full h-auto rounded-xl" src="{{asset('img/thumbnails/bc_suplementos_11012024.jpg')}}" alt="Biblioteca de Contenido DKP - Suplementos">
-                                            <div class="p-2">
-                                              <h3 class="font-bold">Suplementos</h3>
-                                              <p class="text-sm text-gray-600">Los suplementos que toma tu Doctor Bayter, y te invitamos a usarlos en tu día a día, el doctor Bayter te explica cuando usarlos y cuando no.</p>
+                                            <!-- Video Item -->
+                                            <div class="video-item" data-video-id="902004296?h=123a203496">
+                                                <img class="w-full h-auto rounded-xl" src="{{asset('img/thumbnails/bc_suplementos_11012024.jpg')}}" alt="Biblioteca de Contenido DKP - Suplementos">
+                                                <div class="p-2">
+                                                <h3 class="font-bold">Suplementos</h3>
+                                                <p class="text-sm text-gray-600">Los suplementos que toma tu Doctor Bayter, y te invitamos a usarlos en tu día a día, el doctor Bayter te explica cuando usarlos y cuando no.</p>
+                                                </div>
                                             </div>
-                                          </div>
-                                           <!-- Video Item -->
-                                           <div class="video-item" data-video-id="902011748?h=b6f26b8964">
-                                            <img class="w-full h-auto rounded-xl" src="{{asset('img/thumbnails/bc_calambres_11012024.jpg')}}" alt="Biblioteca de Contenido DKP - Calambres">
-                                            <div class="p-2">
-                                              <h3 class="font-bold">Calambres</h3>
-                                              <p class="text-sm text-gray-600">Es muy común que a las personas que están haciendo el Método DKP les de calambres, esto se debe principalmente por deficit de un electrolito, en este video tu Doctor Bayter te explica por qué dan calambres y como puedes evitarlos.</p>
+                                            <!-- Video Item -->
+                                            <div class="video-item" data-video-id="902011748?h=b6f26b8964">
+                                                <img class="w-full h-auto rounded-xl" src="{{asset('img/thumbnails/bc_calambres_11012024.jpg')}}" alt="Biblioteca de Contenido DKP - Calambres">
+                                                <div class="p-2">
+                                                <h3 class="font-bold">Calambres</h3>
+                                                <p class="text-sm text-gray-600">Es muy común que a las personas que están haciendo el Método DKP les de calambres, esto se debe principalmente por deficit de un electrolito, en este video tu Doctor Bayter te explica por qué dan calambres y como puedes evitarlos.</p>
+                                                </div>
                                             </div>
-                                          </div>
-                                          
+                                            
+                                            </div>
                                         </div>
-                                      </div>
-                                      
-                                      <!-- Pop-up para el reproductor de video -->
-                                      <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-50 overflow-y-auto h-full w-full z-50">
-                                        <div class="relative top-20 mx-auto p-5 border w-11/12 lg:w-6/12 shadow-lg rounded-md bg-white">
-                                          <!-- Contenedor para el mensaje de carga -->
-                                          <div id="loadingContainer" class="flex justify-center items-center pt-8 pb-4">
-                                            <div class="loader"></div>
-                                            <p class="ml-2">Espera un momento mientras carga el video...</p>
-                                          </div>
-                                          <div id="videoContainer" class="hidden video-responsive"></div>
-                                          <button class="closeModal text-right"></button>
+                                        
+                                        <!-- Pop-up para el reproductor de video -->
+                                        <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-50 overflow-y-auto h-full w-full z-50">
+                                            <div class="relative top-20 mx-auto p-5 border w-11/12 lg:w-6/12 shadow-lg rounded-md bg-white">
+                                            <!-- Contenedor para el mensaje de carga -->
+                                            <div id="loadingContainer" class="flex justify-center items-center pt-8 pb-4">
+                                                <div class="loader"></div>
+                                                <p class="ml-2">Espera un momento mientras carga el video...</p>
+                                            </div>
+                                            <div id="videoContainer" class="hidden video-responsive"></div>
+                                            <button class="closeModal text-right"></button>
+                                            </div>
                                         </div>
-                                      </div>
 
-                                    
-                                </div>
+                                        
+                                    </div>  
+                                @endif
+                                
                                 <section class="">
                                     <div class=" mx-auto py-6 md:py-12">
                                         <h2 class=" font-bold text-6xl mb-6">Listado de <span class="text-red-700">Preguntas</span></h2>

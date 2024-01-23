@@ -73,6 +73,7 @@ Route::get('/cita', [HomeController::class, 'cita'])->name('cita');
 Route::get('/what', [HomeController::class, 'what'])->name('what');
 Route::get('/recipe/{recipe}', UserRecipe::class)->name('recipe');
 
+
 Route::get('libro/', function(){
     return redirect()->away("https://www.amazon.com/-/es/dp/B09V1PD9VC/ref=sr_1_1?crid=2KFPRGHJW9WD&keywords=catastrofes+en+cirugia+plastica&qid=1646685263&s=digital-text&sprefix=%2Cdigital-text%2C161&sr=1-1");
 });
@@ -85,28 +86,17 @@ Route::get('librocomerparasanar/', function(){
     return redirect()->away("https://www.buscalibre.com.co/libro-comer-para-sanar-doctor-bayter-editorial-planeta/9786287665101/p/55573793");
 });
 
-Route::get('miami/', function(){
-    return redirect()->away("https://www.eventbrite.com/e/mas-alla-de-la-victoria-con-doctor-bayter-junto-drpedrito-tickets-378889818647");
-});
 
 Route::get('certificacion/', function(){
     return redirect()->away("https://portal.nutriacademy.com/a/2147527260/qFsGFAd4");
-});
-
-Route::get('super/', function(){
-    return redirect()->away("https://www.taquillalive.com/performance-details/?artist=supersanar&event=TCL.EVN161.PRF2&utm_source=web-bayter&utm_medium=banner&utm_campaign=trafico-venta-tickets");
-});
-
-Route::get('supersanar/', function(){
-    return redirect()->away("https://www.taquillalive.com/performance-details/?artist=supersanar&event=TCL.EVN161.PRF2&utm_source=web-bayter&utm_medium=banner&utm_campaign=trafico-venta-tickets");
 });
 
 Route::get('propuesta/', function(){
     return redirect()->away("https://doctorbayter.com/files/pdf/propuesta_super_sanar.pdf");
 });
 
-Route::get('pareja/', function(){
-    return redirect()->away("https://biz.payulatam.com/L0bdc050469E638");
+Route::get('fase-uno/', function(){
+    return redirect("https://pay.hotmart.com/F90185342J?off=98di49kv&checkoutMode=10");
 });
 
 Route::get('/privacidad', function(){

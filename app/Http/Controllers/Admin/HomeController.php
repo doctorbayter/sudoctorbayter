@@ -332,7 +332,7 @@ class HomeController extends Controller
     public function setUserData(User $user, Plan $plan){
 
         $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
-        $fase_one      = Fase::where('id', [1])->get();
+        $fase_one      = Fase::whereIn('id', [1])->get();
         $plan_total    = Plan::find(23);
         $week_recipes  = Fase::find(5);
         $five_recipes  = Fase::find(7);

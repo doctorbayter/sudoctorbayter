@@ -351,7 +351,7 @@ class HomeController extends Controller
             $this->setFases($user->id, $fases_premium);
             $this->addSuscription($user->id, $plan_total->id);
         }elseif($plan->id == 2 || $plan->id == 8) {
-            if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
+            if($fase_one->clients->contains($user->id)){
                 $fase_one->clients()->attach($user->id);
             }
         }elseif ($plan->id == 7) {

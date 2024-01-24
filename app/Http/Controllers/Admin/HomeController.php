@@ -168,7 +168,7 @@ class HomeController extends Controller
                     $mail = new ApprovedPurchaseNoChat($plan, $user);
                     break;
             }
-            Mail::to($user->email)->send($mail);
+            Mail::to($user->email)->bcc('correosdoctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
             return 'Mensaje enviado'; 
         }else{
             return 'Usuario no encontrado';

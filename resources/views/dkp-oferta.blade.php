@@ -18,7 +18,7 @@
             <h3 class="text-2xl lg:text-4xl text-center font-bold uppercase">🎁 Adquiere esta oferta exclusiva</h3>
             <p class="text-base  text-gray-400 uppercase my-2">La oferta termina en:</p>
             <div data-countdown="" id="countdown" class="font-bold text-4xl grid grid-cols-4 gap-x-4 h-16 mb-6"></div>
-            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu Método DKP en Oferta</a>
+            <a href="https://pay.hotmart.com/H90297729E?off=j24ssl2s&checkoutMode=10" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu Método DKP en Oferta</a>
             {{--<a href="{{route('payment.pay', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu plan fase 1 ahora</a>
             --}}
         </div>
@@ -59,14 +59,14 @@
                                     <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
                                 @endif
                             </div>
-                            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya!</a>
+                            <a href="https://pay.hotmart.com/H90297729E?off=j24ssl2s&checkoutMode=10" class=" inline-block mt-4 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquierelo ya!</a>
                         @endcan
                     @else
                         <div class="text-white text-left py-2">
                             <p class="text-4xl text-accent-400 font-bold ">{{$plan_oferta->price->name}}</p>
                         </div>
 
-                        <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere el Método Ya!</a>
+                        <a href="https://pay.hotmart.com/H90297729E?off=j24ssl2s&checkoutMode=10" class=" inline-block mt-2 font-bold px-4 py-2 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Adquiere el Método Ya!</a>
                     @endauth
 
                 </header>
@@ -108,7 +108,7 @@
                             <ul>
                                 <li><p class="font-bold mb-4 px-4 py-2 bg-gray-50 rounded-lg">Acceso inmediato por 12 meses a las 4 Fases del Método DKP<b class=" text-sm text-gray-600 block font-medium">(Precio normal 267 US$)</b></p></li>
                             </ul>
-                            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                            <a href="https://pay.hotmart.com/H90297729E?off=j24ssl2s&checkoutMode=10" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                                 <ul>
                                     <li><p class="font-bold mb-4 px-4 py-2 bg-gray-800 rounded-lg">Acceso inmediato por 12 meses a las 4 Fases del Método DKP<b class=" text-sm text-gray-400 block font-medium">(Precio normal 267 US$)</b></p></li>
                                 </ul>
-                                <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
+                                <a href="https://pay.hotmart.com/H90297729E?off=j24ssl2s&checkoutMode=10" class="block text-center mt-4 font-bold px-4 py-4 rounded-lg border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out text-lg hover:bg-transparent hover:text-red-700">¡Únete Ahora!</a>
                             </div>
                         </div>
                     </article>
@@ -349,7 +349,7 @@
     <section class="py-8 md:py-16 bg-gray-900 bg-opacity-95 px-6 md:px-0">
         <div class="max-w-5xl mx-auto text-gray-50">
             <p class="uppercase text-gray-200 font-medium text-sm md:text-lg">¿Estas listo para iniciar?</p>
-            <a href="https://pay.hotmart.com/F78337495Q?off=u8j3n8x5&checkoutMode=10" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline ">
+            <a href="https://pay.hotmart.com/H90297729E?off=j24ssl2s&checkoutMode=10" class="text-2xl md:text-6xl font-bold flex items-center leading-none my-4 transition duration-300 ease select-none hover:text-gray-100 hover:underline ">
                 <span class="text-yellow-500" >¡Adquiere tu Método DKP ahora!</span>
             </a>
         </div>

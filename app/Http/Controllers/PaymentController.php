@@ -350,26 +350,36 @@ class PaymentController extends Controller
                 switch ($product_offert) {
                     case 'ugs80t2l':
                         $plan = Plan::find(1); // Plan Premium $137 ahora 197,00 US$
+                        $tagID = "41293479"; //Método DKP - Premium
                         break;
                     case '45ud7mhc':
                         $plan = Plan::find(15); // Plan Premium $97 ahora 147,00 US$
                         //$this->addSuscription($user->id, 23); // Total Fitness 24 Horas
-                        $tagID = "41113727"; //Metodo DKP Off Desafio-2024
-                        $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
+                        $tagID = "41293513"; //Metodo DKP - Oferta Reto
                         break;
                     case 'u8j3n8x5':
                         $plan = Plan::find(9); // Plan Premium $110 ahora 177,00 US$
+                        $tagID = "41293492"; //Método DKP - Oferta EverGreen
                         break;
                     case '0sphkasm':
                         $plan = Plan::find(31); // Plan Premium $117 ahora 167,00 US$
                         $this->addSuscription($user->id, 23); // Total Fitness
+                        $tagID = "41293487"; //Método DKP - Oferta Llamadas
                         break;
                     case '6hbgake3':
                         $plan = Plan::find(54); // Plan Premium $117 ahora 167,00 US$
                         $this->addSuscription($user->id, 23); // Total Fitness
+                        $tagID = "41293532"; //Método DKP - Oferta DM
                         break;
                 }
                 $fases = Fase::whereIn('id', [1, 2, 3, 4])->get();
+                $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
+
+            }else if($product_id == 3755875){ // Método DKP EverGreen Hans
+                $plan = Plan::find(9); // Plan Premium $110 ahora 177,00 US$
+                $fases = Fase::whereIn('id', [1, 2, 3, 4])->get();
+                $tagID = "41293492"; //Método DKP - EverGreen
+                $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
 
             }else if($product_id == 3742410){ // Reto 21 Método DKP
                 $plan = Plan::find(2); 

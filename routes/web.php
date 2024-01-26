@@ -99,6 +99,14 @@ Route::get('fase-uno/', function(){
     return redirect("https://pay.hotmart.com/F90185342J?off=98di49kv&checkoutMode=10");
 });
 
+Route::get('fase-uno/dm', function(){
+    return redirect("https://pay.hotmart.com/F90185342J?off=wh2s6hsj&checkoutMode=10");
+});
+
+Route::get('fase-uno/ll', function(){
+    return redirect("https://pay.hotmart.com/F90185342J?off=5vad5imy&checkoutMode=10");
+});
+
 Route::get('/privacidad', function(){
     return view('terms');
 } )->name('privacidad');

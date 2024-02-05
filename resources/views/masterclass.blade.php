@@ -43,7 +43,7 @@
                                 <span class="text-base text-gray-500">Precio Normal <span class="line-through">$15.00 USD</span></span>
                             </div>
                           </div>
-                          <a href="https://pay.hotmart.com/N90636215D?checkoutMode=1" class="hotmart-fb ">
+                          <a href="https://pay.hotmart.com/N90636215D?checkoutMode=1" target="_blank" class="hotmart-fb ">
                             <span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ASEGURA TU LUGAR AQUÍ</span>
                         </a> 
                      </div>
@@ -115,7 +115,7 @@
                 </li>
             </ul>
             <h3 class="font-bold text-lg text-center">¿Estás listo para tomar el control de tu salud, comprender el funcionamiento de tu cuerpo, esquivar enfermedades y emprender acciones decisivas hacia una vida más sana, energética y feliz?</h3>
-            <a href="https://pay.hotmart.com/N90636215D?checkoutMode=1" class="hotmart-fb">
+            <a href="https://pay.hotmart.com/N90636215D?checkoutMode=1" target="_blank" class="hotmart-fb">
                 <span class="w-full my-8 text-center rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">¡SI ESTOY LISTO PARA PREDECIR MI ENFERMEDAD!</span>
             </a> 
         </div>
@@ -163,7 +163,7 @@
                         <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$15.00 USD</span></span>
                     </div>
                   </div>
-                  <a href="https://pay.hotmart.com/N90636215D?checkoutMode=1" class="hotmart-fb ">
+                  <a href="https://pay.hotmart.com/N90636215D?checkoutMode=1" target="_blank" class="hotmart-fb ">
                     <span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ASEGURA TU LUGAR AQUÍ</span>
                 </a> 
              </div>

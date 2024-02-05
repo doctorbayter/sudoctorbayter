@@ -116,6 +116,11 @@ Route::get('/terminos', function(){
 } )->name('terminos');
 
 
+Route::get('/masterclass', function () {
+    return view('masterclass');
+})->name('masterclass.29feb2024');
+
+
 Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('masterclass.register');
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');

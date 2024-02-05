@@ -23,7 +23,7 @@
             <h2>¿Ahora qué debes hacer?</h2>
             <ul>
                 <li>Ingresa a la página <a href="https://doctorbayter.com/plan" target="_blank">www.doctorbayter.com/plan</a> con TU CORREO y la CONTRASEÑA</li>
-                <li>Al ingresar a la página te recomendamos ir a la <a href="https://doctorbayter.com/plan/biblioteca" target="_blank">Biblioteca de contenido</a> para que veas toda la información exclusiva a la que ahora tienes acceso por ser parte del Método DKP</li></li>
+                <li>Al ingresar a la página te recomendamos ir a la <a href="https://doctorbayter.com/plan/biblioteca" target="_blank">Biblioteca de contenido</a> para que veas toda la información exclusiva a la que ahora tienes acceso por ser parte del Método DKP</li>
                 <li>Es importante que tengas en cuenta que el acceso al Método DKP lo tendrás por 12 meses a partir de esta compra.</li>
             </ul>
             <p>Un fuerte abrazo,</p>

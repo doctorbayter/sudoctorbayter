@@ -298,18 +298,18 @@ class PaymentController extends Controller
             case 15:
                 $mail = new ApprovedPurchase($plan, $user);
             break;
-            case 20:
-                $mail = new ApprovedPurchaseEvent($plan, $user);
-            break;
             case 53:
                 $mail = new ApprovedPurchaseReto($plan, $user);
+            break;
+            case 55:
+                $mail = new ApprovedPurchaseEvent($plan, $user);
             break;
             default:
                 $mail = new ApprovedPurchaseNoChat($plan, $user);
             break;
         }
-        Mail::to($user->email)->send($mail);
-        //Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+        //Mail::to($user->email)->send($mail);
+        Mail::to($user->email)->bcc('correosdoctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
     }
 
     public function approvedHotmart(Request $request){
@@ -404,8 +404,8 @@ class PaymentController extends Controller
             if($product_id != 3795223){
                 $this->addSuscription($user->id, $plan->id);
                 $this->setFases($user->id, $fases);
-                $this->sendMail($user, $plan);
-            }            
+            }   
+            $this->sendMail($user, $plan);         
         }
     }
 }

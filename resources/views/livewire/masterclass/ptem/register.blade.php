@@ -1,5 +1,4 @@
-<x-app-layout>
-    <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>
+<div>
     <script>
         window.addEventListener('scroll', () => {
           const div = document.getElementById('background');
@@ -33,18 +32,7 @@
                     <p class="mt-3 text-base text-justify">Esta MasterClass es <strong>ideal para cualquier persona que desee tomar un rol activo en su cuidado de salud</strong>, ofreciendo las herramientas necesarias para predecir y prevenir problemas de salud mediante la educación y comprensión de sus propios datos de salud.</p>
                     <p class="mt-3 text-base text-justify">Prepárate para empoderarte, tomar decisiones informadas sobre tu salud y vivir <strong>una vida más sana, energética y feliz</strong></p>
                     
-                    <script type="text/javascript">
-                        function importHotmart(){ 
-                             var imported = document.createElement('script'); 
-                             imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
-                             document.head.appendChild(imported); 
-                            var link = document.createElement('link'); 
-                            link.rel = 'stylesheet'; 
-                            link.type = 'text/css'; 
-                            link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css'; 
-                            document.head.appendChild(link);	} 
-                         importHotmart(); 
-                     </script> 
+                    
                      <div class="w-full mt-8 mx-auto text-center">
                         <div class="mt-4 text-left">
                            
@@ -56,7 +44,7 @@
                                 <span class="text-base text-gray-500">Precio Normal <span class="line-through">$15.00 USD</span></span>
                             </div>
                           </div>
-                          <a onclick="return false;" href="https://pay.hotmart.com/N90636215D?checkoutMode=2" class="hotmart-fb ">
+                          <a href="https://doctorbayter.com/payment/masterclass-predice-tu-enfermedad-metabolica/pay" class="hotmart-fb ">
                             <span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ASEGURA TU LUGAR AQUÍ</span>
                         </a> 
                      </div>
@@ -128,7 +116,7 @@
                 </li>
             </ul>
             <h3 class="font-bold text-lg text-center">¿Estás listo para tomar el control de tu salud, comprender el funcionamiento de tu cuerpo, esquivar enfermedades y emprender acciones decisivas hacia una vida más sana, energética y feliz?</h3>
-            <a onclick="return false;" href="https://pay.hotmart.com/N90636215D?checkoutMode=2" class="hotmart-fb">
+            <a href="https://doctorbayter.com/payment/masterclass-predice-tu-enfermedad-metabolica/pay" class="hotmart-fb">
                 <span class="w-full my-8 text-center rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">¡SI ESTOY LISTO PARA PREDECIR MI ENFERMEDAD!</span>
             </a> 
         </div>
@@ -176,7 +164,7 @@
                         <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$15.00 USD</span></span>
                     </div>
                   </div>
-                  <a onclick="return false;" href="https://pay.hotmart.com/N90636215D?checkoutMode=2" class="hotmart-fb ">
+                  <a href="https://doctorbayter.com/payment/masterclass-predice-tu-enfermedad-metabolica/pay" class="hotmart-fb ">
                     <span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ASEGURA TU LUGAR AQUÍ</span>
                 </a> 
              </div>
@@ -184,4 +172,4 @@
         </div>
     </section>
     <small class="italic text-gray-100 font-thin text-xs" >This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</small>
-</x-app-layout>
+</div>

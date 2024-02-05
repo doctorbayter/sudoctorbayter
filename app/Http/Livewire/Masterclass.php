@@ -66,6 +66,16 @@ class Masterclass extends Component
                     'video' => '596134885?h=c36783dde8'
                 ];
                 break;
+            case 'ptem':
+                return $this->data = [
+                    'title' => 'Predice tu Enfermedad Metabólica',
+                    'subtitle'=> 'Una mirada a tus exámenes más allá de los números',
+                    'online' => false,
+                    'type' => 'Masterclass',
+                    'billdoard' => null,
+                    'video' => ''
+                ];
+                break;
             default:
                 return null;
                 break;
@@ -86,6 +96,9 @@ class Masterclass extends Component
                 break;
             case 'camus':
                 return view('livewire.masterclass.reto-4.register');
+                break;
+            case 'ptem':
+                return view('livewire.masterclass.ptem.register');
                 break;
             default:
                 return view('livewire.masterclass.no-disponible');

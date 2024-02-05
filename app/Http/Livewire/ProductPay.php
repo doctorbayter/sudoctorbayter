@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Mail\ApprovedPurchase;
+use App\Mail\ApprovedPurchaseEvent;
 use App\Mail\ApprovedPurchaseNoChat;
 use App\Mail\ApprovedPurchaseReto;
 use App\Models\Fase;
@@ -172,17 +173,27 @@ class ProductPay extends Component
                         $activeCampaignService->addContactToList($contact['id'], 64);
                         $activeCampaignService->assignTagToContact($contact['id'], 44);
                     }
+                }else if($this->plan->id == 55) {
+                    $activeCampaignService = new ActiveCampaignService();
+                    $contact = $activeCampaignService->verifyOrCreateContact($user->name, $user->email);
+                    if ($contact) {
+                        $activeCampaignService->addContactToList($contact['id'], 71);
+                        $activeCampaignService->assignTagToContact($contact['id'], 44);
+                    }
                 }
 
                 if($this->plan->id == 53){
                     $mail = new ApprovedPurchaseReto($this->plan, $user);
-                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                    Mail::to($user->email)->bcc('correosdoctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                }else if($this->plan->id == 55){
+                    $mail = new ApprovedPurchaseEvent($this->plan, $user);
+                    Mail::to($user->email)->bcc('correosdoctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 }else if($this->plan->id == 15){
                     $mail = new ApprovedPurchase($this->plan, $user);
-                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                    Mail::to($user->email)->bcc('correosdoctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 }else{
                     $mail = new ApprovedPurchaseNoChat($this->plan, $user);
-                    Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                    Mail::to($user->email)->bcc('correosdoctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 }
                 
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
@@ -190,7 +201,7 @@ class ProductPay extends Component
             }else {
                 $suscription->save();
                 $mail = new ApprovedPurchase($this->plan, $user);
-                Mail::to($user->email)->bcc('doctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
+                Mail::to($user->email)->bcc('correosdoctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 return redirect()->route('payment.stripe.approved', ['plan'=>$this->plan, 'name'=>$this->name, 'email'=>$this->email]);
             }
 

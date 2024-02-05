@@ -1,174 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="x-apple-disable-message-reformatting">
-  <title></title>
-  <!--[if mso]>
-  <noscript>
-    <xml>
-      <o:OfficeDocumentSettings>
-        <o:PixelsPerInch>96</o:PixelsPerInch>
-      </o:OfficeDocumentSettings>
-    </xml>
-  </noscript>
-  <![endif]-->
-  <style>
-    table, td, div, h1, p {font-family: Arial, sans-serif;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Correo de Bienvenida Doctor Bayter</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #ffffff; color: #333333; }
+        .container { width: 100%; max-width: 650px; margin: auto; padding: 20px; }
+        .content { text-align: left; font-size: 14px; line-height: 1.5; }
+        .button { background-color: #a30000; color: #ffffff; padding: 15px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; text-align: center; }
+        .button:hover { background-color: #900; }
+        ul { list-style-type: disc; margin-left: 40px; }
+        li { margin-bottom: 10px; }
+    </style>
 </head>
-<body style="margin:0;padding:0;">
-  <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
-    <tr>
-      <td align="center" style="padding:0;">
-        <table role="presentation" style="width:500px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
-          <tr>
-            <td align="center" style="padding:0;background:#101010;">
-              <img src="{{asset('img/mails/mail_dr_02.jpg')}}" alt="Bienvenido"  style="height:auto;display:block;" />
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:36px 30px 42px 30px;">
-              <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
-                <tr>
-                  <td style="padding:0 0 36px 0;color:#153643;">
-                    <h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif; ">Hola! {{$user->name}} Tu pago ha sido confirmado</h1>
-                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Quiero darte la bienvenida al evento <b>REVOLUCIÓN</b> tu compra ha sido aprobada con éxito.</p>
-                    <p style="margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;"><a href="https://doctorbayter.com/revolucion/qr/{{base64_encode($user->email)}}" style="color:#a30000;text-decoration:underline;"><b>Entra aquí para ver tu ticket único de entrada</b></a></p>
-                  </td>
-                </tr>
-                <tr>
-                    <td class="esd-structure" align="left">
-                        <table width="100%" cellspacing="0" cellpadding="0">
-                            <tbody>
-                                <tr>
-                                    <td class="esd-container-frame" width="530" valign="top" align="center">
-                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="esd-block-text " bgcolor="#eeeeee" align="left">
-                                                        <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td width="80%">
-                                                                        <h4 style="padding-left: 1rem">Confirmación de tu compra</h4>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="esd-structure  " align="left">
-                        <table width="100%" cellspacing="0" cellpadding="0">
-                            <tbody>
-                                <tr>
-                                    <td class="esd-container-frame" width="530" valign="top" align="center">
-                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="esd-block-text " align="left">
-                                                        <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="padding: 5px 10px 5px 0" width="80%" align="left">
-                                                                        <p>{{$plan->name}}</p>
-                                                                    </td>
-                                                                    <td style="padding: 5px 0" width="20%" align="left">
-                                                                        <p>{{$plan->finalPrice}} US$</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="esd-structure" align="left">
-                        <table width="100%" cellspacing="0" cellpadding="0">
-                            <tbody>
-                                <tr>
-                                    <td class="esd-container-frame" width="530" valign="top" align="center">
-                                        <table style="border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;" width="100%" cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="esd-block-text " align="left">
-                                                        <table style="width: 500px;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td width="80%">
-                                                                        <h4>TOTAL</h4>
-                                                                    </td>
-                                                                    <td width="20%">
-                                                                        <h4>{{$plan->finalPrice}} US$</h4>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:30px;background:#a30000;">
-              <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">
-                <tr>
-                  <td style="padding:0;width:50%;" align="left">
-                    <p style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
-                      &reg; <b>Doctor Bayter</b> 2021<br/>
-                    </p>
-                  </td>
-                  <td style="padding:0;width:50%;" align="right">
-                    <table role="presentation" style="border-collapse:collapse;border:0;border-spacing:0;">
-                      <tr>
-                        <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="https://www.facebook.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/facebook.svg')}}" alt="Facebook" width="38" style="height:auto;display:block;border:0;" /></a>
-                        </td>
-                        <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="https://www.instagram.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/instagram.svg')}}" alt="Instagram" width="38" style="height:auto;display:block;border:0;" /></a>
-                        </td>
-                        <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="https://www.youtube.com/doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/youtube.svg')}}" alt="Youtube" width="38" style="height:auto;display:block;border:0;" /></a>
-                        </td>
-                        <td style="padding:0 0 0 10px;width:38px;">
-                            <a href="https://www.tiktok.com/@doctorbayter" style="color:#ffffff;"><img src="{{asset('img/icons/rrss/tiktok.svg')}}" alt="TikTok" width="38" style="height:auto;display:block;border:0;" /></a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+<body>
+    <div class="container">
+        <div class="content">
+            <p>Hola,</p>
+            <p>Te doy la bienvenida al <strong>MasterClass</strong> Predice tu Enfermedad Metabólica.</p>
+            <h2>¿Ahora qué debes hacer?</h2>
+            <ul>
+                <li>Recureda que este es un evento Virtual En VIVO</li>
+                <li>La Fecha del MasterClass 29 de Febrero 12:00 pm Hora Colombia</li>
+                <li>Guarda el <a href="https://us02web.zoom.us/j/82503006259?pwd=MzBMWWhyNkEwemFYWGdMQ2R2S1FvQT09" target="_blank">link directo de acceso</a> a la MasterClass</li>
+                <li>Es importante que te unas al <a href="https://chat.whatsapp.com/HTZzPA7kbHj2NdD9SZt0cf">grupo de Whatsapp</a> donde enviaremos información importante del evento.</li>
+            </ul>
+            <p>Un fuerte abrazo,</p>
+            <p><strong>Tu Doctor Bayter.</strong></p>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <x-app-layout>
+    <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>
     <script>
         window.addEventListener('scroll', () => {
           const div = document.getElementById('background');

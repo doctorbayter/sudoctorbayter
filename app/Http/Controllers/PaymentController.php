@@ -392,14 +392,20 @@ class PaymentController extends Controller
                 $fases = Fase::whereIn('id', [19])->get();
                 $tagID = "40709740"; //Desafio-2024
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
+
+            }else if($product_id == 3795223){ // MasterClass Predice Tu Enfermedad Metabólica
+                $tagID = "41891887"; //MasterClass Predice Tu Enfermedad Metabólica
+                $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
             }
             else{
                 return;
             }
             
-            $this->addSuscription($user->id, $plan->id);
-            $this->setFases($user->id, $fases);
-            $this->sendMail($user, $plan);
+            if($product_id != 3795223){
+                $this->addSuscription($user->id, $plan->id);
+                $this->setFases($user->id, $fases);
+                $this->sendMail($user, $plan);
+            }            
         }
     }
 }

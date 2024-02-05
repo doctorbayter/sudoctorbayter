@@ -124,7 +124,7 @@
                 </li>
                 <li class="mb-4">
                     <h3 class="font-bold flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" /></svg> TOMARÁS ACCIÓN</h3>
-                    <p class="text-justify">Examinarás tus propios número y emprenderás un nuevo camino para convertirte en una máquina sana, energética y feliz</p>
+                    <p class="text-justify">Examinarás tus propios números y emprenderás un nuevo camino para convertirte en una máquina sana, energética y feliz</p>
                 </li>
             </ul>
             <h3 class="font-bold text-lg text-center">¿Estás listo para tomar el control de tu salud, comprender el funcionamiento de tu cuerpo, esquivar enfermedades y emprender acciones decisivas hacia una vida más sana, energética y feliz?</h3>
@@ -162,7 +162,7 @@
             <ul class="mt-2">
                 <li class="py-4 px-2"><i class=" text-lg fas fa-check mr-2"></i> Acceso al MasterClass Predice tu enfermedad metabólica</li>
                 <li class="py-4 px-2 bg-gray-300"><i class=" text-lg fas fa-book mr-2"></i> WorkBook PDF para la MasterClass</li>
-                <li class="py-4 px-2"><i class=" text-lg fas fa-comment mr-2"></i> Acceso al Grupo de WhatsApp exvlusivo para miembros</li>
+                <li class="py-4 px-2"><i class=" text-lg fas fa-comment mr-2"></i> Acceso al Grupo de WhatsApp exclusivo para miembros</li>
                 <li class="py-4 px-2 bg-gray-300"><i class=" text-lg fas fa-video mr-2"></i> Acceso por 7 días a la grabación del evento</li>
             </ul>
             <div class="w-full mt-8 mx-auto text-center">
@@ -170,7 +170,7 @@
                    
                     <div class="flex flex-col ">
                         <span class=" text-black font-bold text-4xl">Oferta de <span class="text-red-700">Pre</span>lanzamiento</span>
-                        <span class="text-red-700 font-semibold text-7xl">$11.99 USD</span>
+                        <span class="text-red-700 font-semibold text-6xl">$11.99 USD</span>
                     </div> 
                     <div class="">
                         <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$15.00 USD</span></span>

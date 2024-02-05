@@ -988,16 +988,18 @@ Route::get('x/query', function(){
      //$row = DB::table('day_recipe')->where('id', '=', '36')->update(['meal' => 1]);
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
-    // $plan = Plan::create([
-    //     'name' => 'Oferta Método DKP',
-    //     'slug' => 'oferta-metodo-dkp-dm',
-    //     'price_id' => 43
-    // ]);
+    
+    $price = Price::create([
+        'name' => '11.99 US$',
+        'value' => 12
+    ]);
 
-    // $price = Price::create([
-    //     'name' => '137 US$',
-    //     'value' => 137
-    // ]);
+
+    $plan = Plan::create([
+        'name' => 'MasterClass Precice tu Enfermedad Metabólica',
+        'slug' => 'masterclass-predice-tu-enfermedad-metabolica',
+        'price_id' => $price->id
+    ]);
 
     // $plan = Plan::find(1);
     // $plan->price_id = 36;
@@ -1020,13 +1022,13 @@ Route::get('x/query', function(){
     //     'value' => 177
     // ]);
 
-    $plan = Plan::find(15);
-    $plan->price_id = 36;
-    $plan->save();
+    // $plan = Plan::find(15);
+    // $plan->price_id = 36;
+    // $plan->save();
 
-    $discount = Discount::find(10);
-    $discount->value = 137;
-    $discount->save();
+    // $discount = Discount::find(10);
+    // $discount->value = 137;
+    // $discount->save();
 
 
 });

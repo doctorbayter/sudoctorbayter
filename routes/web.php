@@ -33,6 +33,7 @@ use App\Contracts\ManyChatServiceInterface;
 use App\Http\Controllers\ActiveCampaignController;
 use App\Http\Controllers\HotmartController;
 use App\Http\Controllers\ManyChatController;
+use App\Http\Controllers\WebhookController;
 use Fomo\FomoClient;
 use Fomo\FomoEventBasic;
 
@@ -116,6 +117,7 @@ Route::get('/terminos', function(){
     return view('terms');
 } )->name('terminos');
 
+Route::post('/webhook/zapier', [WebhookController::class, 'handleZapierWebhook']);
 
 Route::get('/masterclass', function () {
     return view('masterclass');

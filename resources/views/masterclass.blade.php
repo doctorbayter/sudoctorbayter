@@ -151,7 +151,7 @@
                 <div class="max-w-xl my-12 md:my-28">
                     <header>
                         <h2 class="text-white uppercase leading-none font-black text-2xl md:text-3xl">Si de verdad anhelas recuperar tu salud y revertir tu enfermedad. <span class="text-red-700">debes estar dispuesto a dejar atrás lo que te enfermó.</span></h2>
-                        <p class="text-white mt-2 mb-4 text-xl">Tu Doctor Bayter</p>
+                        <p class="text-white mt-2 mb-4 text-xl font-bold">-Tu Doctor Bayter</p>
                     </header>
                 </div>
             </div>
@@ -213,7 +213,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                    <li class="relative mb-4 rounded-lg bg-gray-800 ">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 3 ? selected = 3 : selected = null">
                             <div class="flex items-center justify-between">
                                 <span class="text-lg font-bold md:text-xl">¿Cuánto cuesta inscribirse en la masterclass?</span>
@@ -301,6 +301,19 @@
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container9" x-bind:style="selected == 9 ? 'max-height: ' + $refs.container9.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
                                 <p class="text-base md:text-lg">La duración específica puede variar, pero generalmente estas masterclasses están diseñadas para ser completas y profundas, la duración estimada es de 2 horas.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 10 ? selected = 10 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Cómo garantizan mi acceso a la MasterClass sin inconvenientes?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 10 , 'fa-chevron-down': selected !== 10 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container10" x-bind:style="selected == 10 ? 'max-height: ' + $refs.container10.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg">Hemos tomado en cuenta los comentarios de eventos anteriores y nos hemos asegurado de ampliar nuestra capacidad  para que todos los inscritos puedan disfrutar de una experiencia completa y enriquecedora sin la necesidad de recurrir a plataformas alternativas. Estamos comprometidos en ofrecer un acceso fluido y directo a la masterclass para todos los participantes</p>
                             </div>
                         </div>
                     </li>

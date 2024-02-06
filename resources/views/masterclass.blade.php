@@ -170,5 +170,105 @@
            </div>
         </div>
     </section>
+    <section class="bg-gray-900">
+        <div class="max-w-5xl mx-auto py-12 md:py-20">
+            <h2 class="text-center font-extrabold text-3xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
+            <div class=" max-w-4xl mx-auto" x-data="{selected:null}">
+                <ul class="text-gray-50">
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 2 ? selected = 2 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Qué aprenderé en esta masterclass?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 2 , 'fa-chevron-down': selected !== 2 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg">Aprenderás a interpretar tus análisis de laboratorio para detectar señales tempranas de enfermedades metabólicas y cardiovasculares, y cómo prevenir estas condiciones</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 3 ? selected = 3 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Cuánto cuesta inscribirse en la masterclass?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 3 , 'fa-chevron-down': selected !== 3 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg">La inscripción tiene un precio especial de lanzamiento de $11.99 USD disponible por tiempo limitado. El precio normal es de $15 USD</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 4 ? selected = 4 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Es esta masterclass adecuada para mí si no tengo conocimientos de medicina?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 4 , 'fa-chevron-down': selected !== 4 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg">Sí, esta masterclass está diseñada para ser accesible para todo público.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 5 ? selected = 5 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Qué pasa si no puedo asistir en vivo?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 5 , 'fa-chevron-down': selected !== 5 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container5" x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg">Los inscritos tendrán acceso a la grabación de la masterclass por 7 días, por lo que puedes verla en otro momento si no puedes asistir en vivo.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 6 ? selected = 6 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Necesito tener análisis de laboratorio recientes para participar?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 6 , 'fa-chevron-down': selected !== 6 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container6" x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg">No es 100% necesario, pero tenerlos puede enriquecer tu experiencia al permitirte aplicar lo aprendido de manera más directa y personal.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 7 ? selected = 7 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Recibiré material de apoyo o recursos adicionales?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 7 , 'fa-chevron-down': selected !== 7 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container7" x-bind:style="selected == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg">Sí, los participantes recibirán materiales de apoyo (Workbook) que complementarán lo aprendido durante la masterclass.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 8 ? selected = 8 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Puedo interactuar con el Dr. Bayter durante la masterclass?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 8 , 'fa-chevron-down': selected !== 8 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container8" x-bind:style="selected == 8 ? 'max-height: ' + $refs.container8.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg">Durante la masterclass puede incluir sesiones de preguntas y respuestas en vivo, brindando la oportunidad de interactuar con el Dr. Bayter. Sin embargo, debido al gran número de participantes, no podemos garantizar que todas las preguntas serán respondidas directamente por él.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <small class="italic text-gray-100 font-thin text-xs" >This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</small>
 </x-app-layout>

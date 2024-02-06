@@ -78,7 +78,6 @@
         <div class="max-w-5xl mx-auto px-6 lg:px-8 py-12">
             <header class="py-4">
                 <h2 class="text-xl md:text-3xl text-center mb-4 font-bold text-gray-900">¿Qué puedes esperar de esta <span class="text-red-700">MASTERCLASS</span>?</h2>
-                
             </header>
             <div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-9">
@@ -120,6 +119,32 @@
             </a> 
         </div>
     </section>
+
+    <section class="bg-gray-100 pt-12 pb-24">
+        <div class="max-w-7xl mx-auto relative px-6 md:px-0">
+            <header class="">
+                <h2 class="text-xl md:text-3xl text-center mb-12 font-bold text-gray-900">¿PARA QUIEN ES ESTA <span class="text-red-700">MASTERCLASS</span>?</h2>
+            </header>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-9">
+                <div class="px-6 py-4 overflow-hidden rounded-xl transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-50 hover:scale-110">
+                    <i class="text-5xl text-red-700 mb-4 fas fa-heartbeat"></i> 
+                    <p class="text-2xl mb-4"><b>Entusiastas de la Salud Preventiva</b></p>
+                    <p class="text-justify">Para aquellos interesados en tomar medidas proactivas hacia su salud, aprendiendo a interpretar indicadores clave en análisis de laboratorio para prevenir enfermedades antes de que se manifiesten.</p>
+                </div>
+                <div class="px-6 py-4 overflow-hidden rounded-xl transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-50 hover:scale-110">
+                    <i class="text-5xl text-red-700 mb-4 fas fa-user-md"></i> 
+                    <p class="text-2xl mb-4"><b>Profesionales y Estudiantes del Ámbito de la Salud</b></p>
+                    <p class="text-justify">Dirigido a profesionales de la salud y estudiantes que deseen ampliar sus conocimientos sobre salud metabólica y prevención de enfermedades, aplicando estos aprendizajes en su práctica profesional o académica.</p>
+                </div>
+                <div class="px-6 py-4 overflow-hidden rounded-xl transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-50 hover:scale-110">
+                    <i class="text-5xl text-red-700 mb-4 fas fa-chart-line"></i> 
+                    <p class="text-2xl mb-4"><b>Personas con Riesgo de Enfermedades Metabólicas</b></p>
+                    <p class="text-justify">Ideal para personas que, por historial familiar o personales, enfrentan un riesgo elevado de enfermedades metabólicas y buscan entender cómo sus análisis de laboratorio pueden guiarlos hacia un estilo de vida más saludable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-gray-900 ">
         <div class="max-w-7xl mx-auto relative px-6 md:px-0">
             <div class="flex relative">
@@ -266,9 +291,24 @@
                             </div>
                         </div>
                     </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 9 ? selected = 9 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Cuantas horas dura la masterclass?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 9 , 'fa-chevron-down': selected !== 9 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container9" x-bind:style="selected == 9 ? 'max-height: ' + $refs.container9.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-base md:text-lg">La duración específica puede variar, pero generalmente estas masterclasses están diseñadas para ser completas y profundas, la duración estimada es de 2 horas.</p>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
-    <small class="italic text-gray-900 text-center font-thin text-xs" >This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</small>
+    <div class="text-center">
+        <small class="italic text-gray-900 w-full text-center font-thin text-xs" >This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</small>
+    </div>
 </x-app-layout>

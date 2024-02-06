@@ -33,7 +33,8 @@ use App\Contracts\ManyChatServiceInterface;
 use App\Http\Controllers\ActiveCampaignController;
 use App\Http\Controllers\HotmartController;
 use App\Http\Controllers\ManyChatController;
-
+use Fomo\FomoClient;
+use Fomo\FomoEventBasic;
 
 /*
 |--------------------------------------------------------------------------
@@ -1308,13 +1309,25 @@ Route::get('x/clients/verify/', function($skip = 0){
 
 });
 
+Route::get('x/fomo/{name}', function($name){ 
+    $apiKey = config('services.fomo.api_key');
+    $client = new FomoClient($apiKey); // auth token
+
+    $event = new FomoEventBasic();
+    $event->event_type_id = "198607"; // Event type ID is found on Fomo dashboard (Templates -> Template ID)
+    $event->title = "Predice tu Enfermedad Metabólica";
+    $event->first_name = $name;
+    $event->url = "https://www.doctorbayter.com/masterclass";
+
+    $fomoEvent = $client->createEvent($event);
+
+});
 
 Route::get('/x/manychat', [ManyChatController::class, 'handleRequest'])->name('manychat.handleRequest');
 
 Route::get('/x/active', [ActiveCampaignController::class, 'addContact'])->name('active.addContact');
 
 Route::get('/x/hotmart/{productId}',[HotmartController::class, 'usersWithoutSubscription']);
-
 
 // Lideres Acutalizado Enero 2022
 // jackie@adn-empresarial.com

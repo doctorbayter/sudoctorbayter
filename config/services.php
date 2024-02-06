@@ -54,4 +54,7 @@ return [
         'currency' => env('EPAYCO_CURRENCY')
     ],
 
+    'fomo' => [
+        'api_key' => env('FOMO_API_KEY'),
+    ],    
 ];

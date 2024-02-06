@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23d686bb52deeae8828f35fec885d8a1",
+    "content-hash": "a0cc9ce7b35545f0980180475c9116da",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -6944,6 +6944,59 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.4"
             },
             "time": "2021-12-08T09:12:39+00:00"
+        },
+        {
+            "name": "usefomo/fomo-php-sdk",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/usefomo/fomo-php-sdk.git",
+                "reference": "5f961961f97a9ec01adf11e15630d3de95790c25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/usefomo/fomo-php-sdk/zipball/5f961961f97a9ec01adf11e15630d3de95790c25",
+                "reference": "5f961961f97a9ec01adf11e15630d3de95790c25",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fomo\\": "src/Fomo"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "fomo",
+                    "email": "hello@fomo.com",
+                    "homepage": "https://fomo.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Fomo PHP SDK is the official SDK wrapper for the Fomo API service",
+            "homepage": "https://fomo.com",
+            "keywords": [
+                "api",
+                "fomo",
+                "notifications",
+                "social proof",
+                "wrapper"
+            ],
+            "support": {
+                "docs": "https://github.com/usefomo/fomo-php-sdk/blob/master/README.md",
+                "email": "hello@fomo.com",
+                "issues": "https://github.com/usefomo/fomo-php-sdk/issues",
+                "source": "https://github.com/usefomo/fomo-php-sdk"
+            },
+            "time": "2019-02-08T23:58:28+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

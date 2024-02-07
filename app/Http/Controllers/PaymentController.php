@@ -398,21 +398,23 @@ class PaymentController extends Controller
             }else if($product_id == 3795223){ // MasterClass Predice Tu Enfermedad Metabólica
                 $tagID = "41891887"; //MasterClass Predice Tu Enfermedad Metabólica
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
+
+                $apiKey = config('services.fomo.api_key');
+                $client = new FomoClient($apiKey); // auth token
+
+                $event = new FomoEventBasic();
+                $event->event_type_id = "198607"; // Template ID
+                $event->title = "Predice tu Enfermedad Metabólica";
+                $event->first_name = $user_first_name;
+                $event->url = "https://www.doctorbayter.com/masterclass";
+
+                $fomoEvent = $client->createEvent($event);
+
             }
             else{
                 return;
             }
 
-            $apiKey = config('services.fomo.api_key');
-            $client = new FomoClient($apiKey); // auth token
-
-            $event = new FomoEventBasic();
-            $event->event_type_id = "198607"; // Template ID
-            $event->title = "Predice tu Enfermedad Metabólica";
-            $event->first_name = $user_first_name;
-            $event->url = "https://www.doctorbayter.com/masterclass";
-
-            $fomoEvent = $client->createEvent($event);
 
             if($product_id != 3795223){
                 $this->addSuscription($user->id, $plan->id);

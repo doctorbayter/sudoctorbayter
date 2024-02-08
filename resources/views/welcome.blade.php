@@ -56,7 +56,7 @@
 }
     </style>
     <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 ">
-        <a href="https://www.doctorbayter.com/masterclass" target="_blank"><img src="{{asset('img/billboards/banner_ptsm.png.png')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
+        <a href="https://www.doctorbayter.com/masterclass" target="_blank"><img src="{{asset('img/billboards/banner_ptsm.png')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 
     <section class="bg-white">

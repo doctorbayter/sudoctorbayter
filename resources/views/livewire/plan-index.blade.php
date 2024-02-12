@@ -28,12 +28,10 @@
                                         <a href="{{route('plan.fitness')}}">
                                             <img src="{{asset('img/billboards/total_fitness_lg.jpg')}}" alt="">
                                         </a>
-
-                                    @elseif (auth()->user()->fases->whereNotIn('id', [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])->first())
+                                    @elseif (auth()->user()->subscriptions->whereIn('plan_id', [1,2,3,8,9,10,15,16,25,27,31,32,37,38,39,40,48,54])->sortBy('plan_id')->first()) 
                                     <a href="{{route('payment.checkout', $thf_plan)}}" target="_blank">
                                         <img src="{{asset('img/billboards/no_total_fitness_lg.jpg')}}" alt="">
                                     </a>
-
                                     @endif
                                 </article>
                             </section>
@@ -65,7 +63,6 @@
                                             </div>
                                         </aside>
                                     @endif
-
                         @if ($user_retos->count() > 0)
                             <div>
                                 <header>

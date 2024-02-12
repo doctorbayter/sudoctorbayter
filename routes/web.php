@@ -992,17 +992,17 @@ Route::get('x/query', function(){
     //DB::insert("INSERT INTO fase_plan (id, fase_id, plan_id, created_at, updated_at) VALUES (4, '3', '1', CURRENT_TIMESTAMP, NULL)");
 
     
-    $price = Price::create([
-        'name' => '11.99 US$',
-        'value' => 12
-    ]);
+    // $price = Price::create([
+    //     'name' => '11.99 US$',
+    //     'value' => 12
+    // ]);
 
 
-    $plan = Plan::create([
-        'name' => 'MasterClass Precice tu Enfermedad Metabólica',
-        'slug' => 'masterclass-predice-tu-enfermedad-metabolica',
-        'price_id' => $price->id
-    ]);
+    // $plan = Plan::create([
+    //     'name' => 'MasterClass Precice tu Enfermedad Metabólica',
+    //     'slug' => 'masterclass-predice-tu-enfermedad-metabolica',
+    //     'price_id' => $price->id
+    // ]);
 
     // $plan = Plan::find(1);
     // $plan->price_id = 36;
@@ -1033,6 +1033,19 @@ Route::get('x/query', function(){
     // $discount->value = 137;
     // $discount->save();
 
+    $fase = Fase::find(5);
+    $fase->name = 'Recetas Adicionales';
+    $fase->sub_name = '7 Días Keto';
+    $fase->descripcion = 'Tus primeros 7 días Keto Perfectos';
+    $fase->slug = '7-dias-keto';
+    $fase->save();
+
+    $fase = Fase::find(7);
+    $fase->name = 'Recetas Adicionales';
+    $fase->sub_name = '5 Desayunos sin huevo';
+    $fase->descripcion = '5 opciones diferentes de desayunos sin huevo';
+    $fase->slug = '5-desayunos-sin-huevo';
+    $fase->save();
 
 });
 

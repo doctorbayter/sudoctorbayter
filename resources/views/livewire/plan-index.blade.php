@@ -38,31 +38,31 @@
                         </section>
 
                         @if ($subscribed_reto_actual)
-                                        <aside class="my-8 ">
-                                            <div class="py-8 px-8 rounded-2xl  border-dashed border-red-700 border-4 bg-gray-200">
-                                                <h2 class="text-2xl md:text-4xl font-bold text-red-700">Próximas reuniones de Zoom</h2>
-                                                <p class="mt-4">No te pierdas las reuniones de Zoom de Desafío 2024<b> 
-                                                </b> A continuación encontrarás los datos de acceso a la reunión grupal de Zoom con tu doctor Bayter.</p>
-                                                <div class="flex-col md:flex-row justify-around my-8">
-                                                    <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
-                                                        <div class="">
-                                                            <h2>Repetición Reunión <b>Desafío 2024</b></h2>
-                                                            <hr class="my-2 border-gray-700">
-                                                            <p><b>La repetición estará disponible por tiempo limitado</b></p>
-                                                            <a href="{{route('reto.replay', ['desafio-2024', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
-                                                        </div>
-                                                        <div class="hidden">
-                                                            <h2>Reunión en Vivo <b>Desafío 2024</b></h2>
-                                                            <hr class="my-2 border-gray-700">
-                                                            <p><b>Fecha: </b>12 de Enero 2024 1:00 p.m. Hora Colombia</p>
-                                                            <a href="https://us02web.zoom.us/j/83573692015?pwd=S1dxNk5Da3kzczB5RFM5QjFwbFgwdz09" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </div>
+                            <aside class="my-8 ">
+                                <div class="py-8 px-8 rounded-2xl  border-dashed border-red-700 border-4 bg-gray-200">
+                                    <h2 class="text-2xl md:text-4xl font-bold text-red-700">Próximas reuniones de Zoom</h2>
+                                    <p class="mt-4">No te pierdas las reuniones de Zoom de Desafío 2024<b> 
+                                    </b> A continuación encontrarás los datos de acceso a la reunión grupal de Zoom con tu doctor Bayter.</p>
+                                    <div class="flex-col md:flex-row justify-around my-8">
+                                        <div class="bg-gray-300 p-8 rounded-xl border border-gray-700 mb-8">
+                                            <div class="">
+                                                <h2>Repetición Reunión <b>Desafío 2024</b></h2>
+                                                <hr class="my-2 border-gray-700">
+                                                <p><b>La repetición estará disponible por tiempo limitado</b></p>
+                                                <a href="{{route('reto.replay', ['desafio-2024', 1])}}" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Mira aquí la repetición</a>
                                             </div>
-                                        </aside>
-                                    @endif
+                                            <div class="hidden">
+                                                <h2>Reunión en Vivo <b>Desafío 2024</b></h2>
+                                                <hr class="my-2 border-gray-700">
+                                                <p><b>Fecha: </b>12 de Enero 2024 1:00 p.m. Hora Colombia</p>
+                                                <a href="https://us02web.zoom.us/j/83573692015?pwd=S1dxNk5Da3kzczB5RFM5QjFwbFgwdz09" target="_blank" class="cursor-pointer inline-block mt-4 text-center text-sm font-bold px-4 py-2 rounded-full border bg-red-700 border-red-700 text-gray-50 uppercase transition-colors duration-300 ease-in-out hover:bg-transparent  hover:text-red-700">Link de acceso a la reunión</a>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </aside>
+                        @endif
                         @if ($user_retos->count() > 0)
                             <div>
                                 <header>
@@ -107,7 +107,7 @@
                         @endif
 
                         @if ($user_adicionales->count() > 0)
-                            <div class="hidden">
+                            <div class="">
                                 <header>
                                     <h2 class="text-4xl font-bold text-gray-900">Adicionales</h2>
                                 </header>

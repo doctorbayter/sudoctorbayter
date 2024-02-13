@@ -62,11 +62,11 @@ class UserPlan extends Component
 
         $planUpdate = Plan::find(3);
 
+
         if (Request::route()->getName() == "plan.dkp") {
             return view('livewire.user-plan', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
-        } else {
+        } else{
             return view('livewire.plan-index', compact('planPremium', 'planWhatsapp', 'planUpdate', 'whatsapp', 'dkp'));
-
         }
 
     }

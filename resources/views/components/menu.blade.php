@@ -3,7 +3,7 @@
 
         <div class="md:hidden text-left flex"  x-on:click="openMenu = !openMenu" >
             <i :class="{'fa-arrow-alt-circle-left': openMenu, 'fa-arrow-alt-circle-right': !openMenu}" class="px-2 fas  text-xl text-red-700 mb-4" title="Abrir menú"></i>
-            <span class="text-gray-900 font-bold whitespace-nowrap text-sm">Cerrar Menú</span>
+            <span :class="{ 'hidden': !openMenu}" class="text-gray-900 font-bold whitespace-nowrap text-sm">Cerrar Menú</span>
         </div>
 
         <nav  class="flex-grow md:block md:px-4 pb-4 md:pb-0 md:overflow-y-auto">
@@ -18,8 +18,8 @@
                 @foreach (auth()->user()->fases->whereIn('id', [1, 2, 3, 4])->sortBy('id') as $fase)
 
                     <a href="{{route('plan.fase', $fase)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$fase->name}} " >
-                        <i class=" text-lg fas fa-layer-group mr-2"></i>
-                        <div class="flex-1 whitespace-nowrap"> <b >{!!$fase->sub_name!!}</b></div>
+                        <i class=" text-lg fas fa-layer-group mr-2 "></i>
+                        <div :class="{ 'hidden': !openMenu}" class="flex-1 whitespace-nowrap md:block"> <b >{!!$fase->sub_name!!}</b></div>
                     </a>
 
                 @endforeach
@@ -37,7 +37,7 @@
             <div>
                 <a href="{{route('plan.fitness')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a Total Fitness " >
                     <i class=" text-lg fas fa-dumbbell mr-2"></i>
-                    <div class="flex-1 whitespace-nowrap"> <b >Total Fitness</b></div>
+                    <div :class="{ 'hidden': !openMenu}" class="flex-1 whitespace-nowrap md:block"> <b >Total Fitness</b></div>
                 </a>
 
             </div>
@@ -56,7 +56,7 @@
 
                     <a href="{{route('plan.fase', $adicional)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$adicional->name}} " >
                         <i class=" text-lg fas fa-bullseye mr-2"></i>
-                        <div class="flex-1 whitespace-nowrap"> <b >{!!$adicional->sub_name!!}</b></div>
+                        <div :class="{ 'hidden': !openMenu}" class="flex-1 whitespace-nowrap md:block"> <b >{!!$adicional->sub_name!!}</b></div>
                     </a>
                 @endforeach
             </div>
@@ -77,7 +77,7 @@
 
                         <a href="{{route('plan.fase', $reto)}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm  text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline uppercase font-medium" title="Entra a {{$reto->name}} " >
                             <i class=" text-lg fas fa-bullseye mr-2"></i>
-                            <div class="flex-1 whitespace-nowrap"> <b >{!!$reto->sub_name!!}</b></div>
+                            <div :class="{ 'hidden': !openMenu}" class="flex-1 whitespace-nowrap md:block"> <b >{!!$reto->sub_name!!}</b></div>
                         </a>
                     @endforeach
                 </div>
@@ -94,16 +94,16 @@
 
                 <a href="{{route('plan.bebidas')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-mediu text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fas fa-cocktail mr-2"></i>
-                    <span class="whitespace-nowrap">Bebidas Keto</span>
+                    <span :class="{ 'hidden': !openMenu}" class="whitespace-nowrap md:block">Bebidas Keto</span>
                 </a>
                 <a href="{{route('plan.salsas')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fas fa-coffee mr-2"></i>
-                    <span>Salsitas</span>
+                    <span :class="{ 'hidden': !openMenu}" class="whitespace-nowrap md:block">Salsitas Keto</span>
                 </a>
 
                 <a href="{{route('plan.snacks')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fas fa-cookie-bite mr-2"></i>
-                    <span>Snacks</span>
+                    <span :class="{ 'hidden': !openMenu}" class="whitespace-nowrap md:block">Snacks Keto</span>
                 </a>
             </div>
 
@@ -116,12 +116,12 @@
 
                 <a href="{{route('plan.whatsapp')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fab fa-whatsapp-square mr-2"></i>
-                    <span>Whatsapp</span>
+                    <span :class="{ 'hidden': !openMenu}" class="whitespace-nowrap md:block">WhatsApp</span>
                 </a>
 
                 <a href="{{route('cita')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-mediu text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fas fa-calendar-alt mr-2"></i>
-                    <span class="whitespace-nowrap">Cita Virtual</span>
+                    <span :class="{ 'hidden': !openMenu}" class="whitespace-nowrap md:block">Cita Virtual</span>
                 </a>
             </div>
         @endif
@@ -135,18 +135,18 @@
 
                 <a href="{{route('plan.tutorial')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fas fa-exclamation-circle mr-2"></i>
-                    <span>Tutoriales</span>
+                    <span :class="{ 'hidden': !openMenu}" class="whitespace-nowrap md:block">Tutoriales </span>
                 </a>
 
             @if (auth()->user()->subscriptions->whereIn('plan_id', [1,2,3,8,9,10,15,16,25,27,31,32,37,38,39,40,48,54])->sortBy('plan_id')->first())
                 <a href="{{route('plan.biblioteca')}}" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fas fa-book-open mr-2"></i>
-                    <span>Biblioteca</span>
+                    <span :class="{ 'hidden': !openMenu}" class="whitespace-nowrap md:block">Biblioteca</span>
                 </a>    
                 
                 <a href="https://wa.me/573012579627" target="_blank" class="flex px-2 md:px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
                     <i class=" text-lg fas fa-question-circle mr-2"></i>
-                    <span>Soporte</span>
+                    <span :class="{ 'hidden': !openMenu}" class="whitespace-nowrap md:block">Soporte </span>
                 </a>
             @endif
 

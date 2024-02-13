@@ -5,12 +5,12 @@
             <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="w-11/12 bg-white">
 
                 <section class="bg-gradient-to-t from-gray-100 " style="height: 100%">
-                    <div class="w-10/12 mx-auto py-10">
+                    <div class="w-11/12 mx-auto py-10">
 
-                        <section class="mb-24">
-                            <header class="mb-12">
-                                <p>Bievenido {{auth()->user()->name}}</p>
-                                <h2 class="text-4xl font-bold text-gray-900">Ingresa a tu contenido</h2>
+                        <section class="mb-4">
+                            <header class="">
+                                <p class="mb-8">¡Hola <b>{{auth()->user()->name}}</b>! Te damos la bienvenida</p>
+                               
                             </header>
 
                             <section class="grid md:grid-cols-2 gap-12  max-w-screen-md">

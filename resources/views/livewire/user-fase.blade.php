@@ -17,7 +17,7 @@
 
                                 <section class=" bg-gradient-to-t from-black to-gray-700 px-8 py-12 text-gray-100">
                                     <div>
-                                        <h2 class=" font-bold text-3xl">{{auth()->user()->name}}, te damos la bienvenida a tus primeros 7 días <span class="text-red-700">Keto</span> Perfectos.</h2>
+                                        <h2 class=" font-bold text-xl sm:text-3xl">{{auth()->user()->name}}, te damos la bienvenida a tus primeros 7 días <span class="text-red-700">Keto</span> Perfectos.</h2>
                                         <p class="mt-4 text-justify">Aquí puedes ver todo el contenido exlusivo para los miembros de nuestra comunidad KetoBayter, esta es la puerta de entrada y tendrás todo lo que necesitas para no vencer esos primeros 7 días.</p>
                                     </div>
                                     <div>

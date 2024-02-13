@@ -1,4 +1,4 @@
-<div x-cloak class=" sticky inset-x-0 top-0 left-0 flex h-screen overflow-hidden md:overflow-visible md:w-auto" :class="{'w-5/12': openMenu, 'w-1/12': !openMenu}" style="height: calc(100vh - 65px) z-10" x-on:click.away="openMenu = false">
+<div x-cloak class="sticky inset-x-0 top-0  left-0 flex h-screen overflow-hidden md:overflow-visible md:w-auto" :class="{'w-5/12': openMenu, 'w-1/12': !openMenu}" style="height: calc(100vh - 65px) z-10" x-on:click.away="openMenu = false">
     <div  class="flex flex-col w-full pt-8 md:w-72 text-gray-700 bg-gray-100 dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" >
 
         <div class="md:hidden text-left flex"  x-on:click="openMenu = !openMenu" >

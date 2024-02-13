@@ -972,6 +972,17 @@ Route::get('x/discounts/', function(){
     }
 });
 
+Route::get('x/videos/', function(){
+    $videos = Video::all();
+    foreach ($videos as $video) {
+        echo "======</br>";
+        echo "VIDEO ID: ". $video->id ."</br>";
+        echo "DIA ID: ".$video->videoable_id ."</br>";
+        echo $video->iframe."</br>";
+        echo "======</br></br>";
+    }
+});
+
 Route::get('x/query', function(){
 
     // $recipe = Recipe::create([
@@ -1035,14 +1046,14 @@ Route::get('x/query', function(){
 
     $fase = Fase::find(5);
     $fase->name = 'Recetas Adicionales';
-    $fase->sub_name = '7 Días Keto';
+    $fase->sub_name = '7 Días <span class="text-red-700">Keto</span>';
     $fase->descripcion = 'Tus primeros 7 días Keto Perfectos';
     $fase->slug = '7-dias-keto';
     $fase->save();
 
     $fase = Fase::find(7);
     $fase->name = 'Recetas Adicionales';
-    $fase->sub_name = '5 Desayunos sin huevo';
+    $fase->sub_name = '5 Desayunos <span class="text-red-700">sin huevo</span>';
     $fase->descripcion = '5 opciones diferentes de desayunos sin huevo';
     $fase->slug = '5-desayunos-sin-huevo';
     $fase->save();
@@ -1194,6 +1205,37 @@ Route::get('x/query/reto', function(){
 
 });
 
+
+Route::get('x/query/video', function(){
+    $video = Video::find(29);
+    $video->iframe = '<audio controls class="w-full" wire:key="vid_day_1"><source src="/files/audio/7dk_dia_01.mp3" type="audio/mpeg"> <source src="/files/audio/7dk_dia_01.ogg" type="audio/ogg"></audio>';
+    $video->save();
+
+    $video = Video::find(30);
+    $video->iframe = '<audio controls class="w-full" wire:key="vid_day_2"><source src="/files/audio/7dk_dia_02.mp3" type="audio/mpeg"> <source src="/files/audio/7dk_dia_02.ogg" type="audio/ogg"></audio>';
+    $video->save();
+
+    $video = Video::find(31);
+    $video->iframe = '<audio controls class="w-full" wire:key="vid_day_3"><source src="/files/audio/7dk_dia_03.mp3" type="audio/mpeg"> <source src="/files/audio/7dk_dia_03.ogg" type="audio/ogg"></audio>';
+    $video->save();
+
+    $video = Video::find(32);
+    $video->iframe = '<audio controls class="w-full" wire:key="vid_day_4"><source src="/files/audio/7dk_dia_04.mp3" type="audio/mpeg"> <source src="/files/audio/7dk_dia_04.ogg" type="audio/ogg"></audio>';
+    $video->save();
+
+    $video = Video::find(33);
+    $video->iframe = '<audio controls class="w-full" wire:key="vid_day_5"><source src="/files/audio/7dk_dia_04.mp3" type="audio/mpeg"> <source src="/files/audio/7dk_dia_04.ogg" type="audio/ogg"></audio>';
+    $video->save();
+
+    $video = Video::find(34);
+    $video->iframe = '<audio controls class="w-full" wire:key="vid_day_6"><source src="/files/audio/7dk_dia_06.mp3" type="audio/mpeg"> <source src="/files/audio/7dk_dia_06.ogg" type="audio/ogg"></audio>';
+    $video->save();
+
+    $video = Video::find(35);
+    $video->iframe = '<audio controls class="w-full" wire:key="vid_day_7"><source src="/files/audio/7dk_dia_07.mp3" type="audio/mpeg"> <source src="/files/audio/7dk_dia_07.ogg" type="audio/ogg"></audio>';
+    $video->save();
+
+});
 
 Route::get('x/users/{skip?}', function($skip = 0){
 

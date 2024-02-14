@@ -373,6 +373,10 @@ class PaymentController extends Controller
                         $this->addSuscription($user->id, 23); // Total Fitness
                         $tagID = "41293532"; //Método DKP - Oferta DM
                         break;
+                    case 'z3922ohl':
+                        $plan = Plan::find(1); // Actualización Plan Premium $117 US$
+                        $tagID = "42162934"; // Método DKP - Plan Premium Update
+                        break;
                 }
                 $fases = Fase::whereIn('id', [1, 2, 3, 4])->get();
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagID);

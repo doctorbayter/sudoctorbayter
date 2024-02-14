@@ -123,6 +123,10 @@ Route::get('/masterclass', function () {
     return view('masterclass');
 })->name('masterclass.29feb2024');
 
+Route::get('/dkp-7', function () {
+    return view('dkp-7-dias');
+})->name('dkp.7dias');
+
 
 Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('masterclass.register');
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');

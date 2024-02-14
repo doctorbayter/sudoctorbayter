@@ -1,51 +1,36 @@
 <x-app-layout>
-    <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>
-    <script>
-        window.addEventListener('scroll', () => {
-          const div = document.getElementById('background');
-          const scrollPosition = window.scrollY;
-          const blurValue = Math.min(scrollPosition * 0.05, 20); // Máximo de 20px de desenfoque
-          const scaleValue = 1 + scrollPosition * 0.00025; // Ajusta este valor según sea necesario
-      
-          div.style.backdropFilter = `blur(${blurValue}px)`;
-          div.style.backgroundSize = `${scaleValue * 100}%`; // Ajusta el zoom de la imagen de fondo
-        });
-      </script>
-    <section class="bg-fixed bg-cover bg-center" id="background" style="background-image: url({{asset('img/backgrounds/bg_black.jpg')}})">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col relative overflow-hidden min-h-screen  items-center justify-between">
-
-            <img src="{{asset('img/gfx/titles/title_masterclass.png')}}" alt="Imagen" class="object-scale-down w-96 mt-24 md:mt-4">
-            <img src="{{asset('img/billboards/baner_predice_tu_enfermedad.png')}}" alt="Imagen" class="object-scale-down w-full md:w-3/4">
-            <img src="{{asset('img/gfx/titles/title_date_masterclass.png')}}" alt="Imagen" class="object-scale-down w-full mb-16 md:mb-5">
-        </div>
-    </section>
-    <section class="bg-white ">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex relative overflow-hidden py-8 md:py-24">
-            <div class="flex  md:flex-row flex-col-reverse">
+    <section class=" bg-gradient-to-t from-black to-gray-900 pb-16">
+        <header class="max-w-6xl mx-auto">
+            <h2 class="text-white font-bold text-center py-12 text-3xl">Inicia tu camino hacia una vida más sana y energética con el Método DKP: domina los desafíos de los primeros 7 días</h2>
+        </header>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex relative overflow-hidden py-8 items-center bg-gray-100 rounded-xl ">
+            <div class="flex  md:flex-row flex-col-reverse ">
                 <figure class="flex-1 overflow-hidden ">
-                    <img src="{{asset('img/billboards/banner_predice_tu_enfermedad4-5.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm">
+                    <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm">
                 </figure>
-                <div class="w-full md:w-6/12 px-4 md:ml-8 mb-8">
-                    <h2 class="text-gray-900 mb-8 leading-none font-black text-4xl md:text-5xl">EVENTO  <b class="text-red-700">ON</b>LINE</h2>
-                    <p class="mt-3 text-base text-justify">Este próximo <strong>29 de febrero</strong> se realizará por primera vez el MasterClass <strong>Predice tu enfermedad Metabólica</strong>. Una masterclass diseñada para transformar la manera en que percibes tus análisis de laboratorio.</p>
-                    <p class="mt-3 text-base text-justify">En esta <strong>MasterClass</strong>, aprenderás a interpretar los resultados de tus exámenes, identificando señales tempranas de enfermedades y comprendiendo cómo distintos factores pueden influir en tu bienestar.</p>
-                    <p class="mt-3 text-base text-justify">No solo desglosaremos los valores y parámetros típicos de un análisis de laboratorio, sino que también te enseñaremos a leer entre líneas, permitiéndote <strong>anticipar riesgos para tu salud antes de que se manifiesten.</strong></p>
-                    <p class="mt-3 text-base text-justify">Esta MasterClass es <strong>ideal para cualquier persona que desee tomar un rol activo en su cuidado de salud</strong>, ofreciendo las herramientas necesarias para predecir y prevenir problemas de salud mediante la educación y comprensión de sus propios datos de salud.</p>
-                    <p class="mt-3 text-base text-justify">Prepárate para empoderarte, tomar decisiones informadas sobre tu salud y vivir <strong>una vida más sana, energética y feliz</strong></p>
+                <div class="w-full md:w-6/12 px-4 ml-4 ">
+                    <p class="mb-2">DISPONIBLE POR TIEMPO LIMITADO</p>
+                    <h2 class="text-gray-900 mb-6 leading-none font-black text-4xl md:text-6xl">7 DÍAS <b class="text-red-700">KETO </b>PERFECTOS</h2>
+                    <div class="text-justify space-y-2 text-base">
+                        <p>Supera el desafío inicial del Método DKP con nuestro programa exclusivo de 7 días.</p>
+                        <p>Entiende los cambios en tu cuerpo, supera la barrera mental del cuarto día, y empodérate con herramientas, recetas, y motivación directa de tu Doctor Bayter.</p>
+                        <p>Este es el impulso que necesitas para no solo llegar al día 7, sino para transformar tu vida completamente.</p>
+                        <p class=" font-bold">Haz clic y únete ahora: no solo superarás la primera semana, estarás en el camino para ganar salud, ganar energía y convertirte en una verdadera máquina quema de grasa.</p>
+                    </div>
                      <div class="w-full mt-8 mx-auto text-center">
                         <div class="mt-4 text-left">
-                           
                             <div class="flex flex-col ">
-                                <span class=" text-black font-bold text-2xl">Oferta de <span class="text-red-700">Pre</span>lanzamiento</span>
-                                <span class="text-red-700 font-semibold text-6xl">$11.99 USD</span>
+                                <span class=" text-black font-bold text-2xl">Oferta <span class="text-red-700">Exclusiva</span></span>
+                                <span class="text-red-700 font-semibold text-6xl">$10 USD</span>
                             </div> 
                             <div class="flex">
-                                <span class="text-base text-gray-500">Precio Normal <span class="line-through">$15.00 USD</span></span>
+                                <span class="text-base text-gray-500">UTILIZANDO EL CUPÓN DE DESCUENTO <span class="font-bold">DKP7</span></span>
                             </div>
                           </div>
                           <a href="https://pay.hotmart.com/N90636215D?checkoutMode=1" target="_blank" class="hotmart-fb ">
-                            <span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ASEGURA TU LUGAR AQUÍ</span>
+                            <span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ÚNETE AHORA AQUÍ</span>
                         </a> 
+                        <small class="block mt-2"><i class="text-base fas fa-shield-alt"></i>  Compra segura. Ambiente seguro y autenticado</small>
                      </div>
                     
                 </div>

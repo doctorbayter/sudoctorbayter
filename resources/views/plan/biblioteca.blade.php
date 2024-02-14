@@ -488,7 +488,7 @@
                                                                         </li>
                                                                         <li class="text-base py-6">
                                                                             <p class="text-red-700 text-xl mb-2"><b>¿SI SOY ALÉRGICO AL HUEVO QUE DEBO HACER?</b></p>
-                                                                            <p><b class="pr-2">R:</b>Tus alergias  mejoran después de mínimo  6 meses dentro del método perfecto, en este caso lo ideal es que uses otra proteína natural que encuentres en tu país y que sea grasosa.</p>
+                                                                            <p><b class="pr-2">R:</b>Tus alergias mejoran después de mínimo 6 meses dentro del método perfecto, en este caso lo ideal es que uses otra proteína natural que encuentres en tu país y que sea grasosa.</p>
                                                                         </li>
                                                                         <li class="text-base py-6">
                                                                             <p class="text-red-700 text-xl mb-2"><b>¿SI SOY ALÉRGICO ALGÚN ALIMENTO QUE DEBO HACER?</b></p>

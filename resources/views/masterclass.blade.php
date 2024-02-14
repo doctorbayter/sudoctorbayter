@@ -65,7 +65,6 @@
                 <figure class=" max-w-2xl hidden md:block">
                     <img src="{{asset('img/photos/dr_001.png')}}" alt="" class=" object-cover">
                 </figure>
-                <iframe src="https://player.vimeo.com/video/542233951?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-56 md:h-96 rounded-xl flex-1 hidden"></iframe>
             </div>
         </div>
     </section>

@@ -8,7 +8,7 @@
                 <figure class="flex-1 overflow-hidden ">
                     <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm">
                 </figure>
-                <div class="w-full md:w-6/12 px-4 ml-4 ">
+                <div class="w-full md:w-6/12 px-4 sm:ml-4 ">
                     <p class="mb-2">DISPONIBLE POR TIEMPO LIMITADO</p>
                     <h2 class="text-gray-900 mb-6 leading-none font-black text-4xl md:text-6xl">7 DÍAS <b class="text-red-700">KETO </b>PERFECTOS</h2>
                     <div class="text-justify space-y-2 text-base">
@@ -34,7 +34,7 @@
                             </div>
                           </div>
                           <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ÚNETE AHORA AQUÍ</span></a> 
-                        <small class="block mt-2"><i class="text-base fas fa-shield-alt"></i>  Compra segura. Ambiente seguro y autenticado</small>
+                        <small class="block mt-2 mb-4 sm:mb-0"><i class="text-base fas fa-shield-alt"></i>  Compra segura. Ambiente seguro y autenticado</small>
                      </div>
                 </div>
             </div>

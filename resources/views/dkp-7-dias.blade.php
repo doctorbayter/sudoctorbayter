@@ -457,19 +457,21 @@
     </div>
     
     @push('style')
-        .grid-video {
-        display: grid;
-        }
-        .grid-video iframe {
-        width: 100%;
-        grid-area: 1 / 1 / 2 / 2;
-        }
-        .grid-video::before {
-        width: 0;
-        padding-bottom: 56.25%; /* Proporción para 16:9 */
-        grid-area: 1 / 1 / 2 / 2;
-        content: "";
-        }
+        <style>
+            .grid-video {
+            display: grid;
+            }
+            .grid-video iframe {
+            width: 100%;
+            grid-area: 1 / 1 / 2 / 2;
+            }
+            .grid-video::before {
+            width: 0;
+            padding-bottom: 56.25%; /* Proporción para 16:9 */
+            grid-area: 1 / 1 / 2 / 2;
+            content: "";
+            }
+        </style>
     @endpush
     
 </x-app-layout>

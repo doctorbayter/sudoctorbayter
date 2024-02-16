@@ -36,11 +36,11 @@
                         <div class="mt-4 text-left">
                            
                             <div class="flex flex-col ">
-                                <span class=" text-black font-bold text-2xl">Oferta de <span class="text-red-700">Pre</span>lanzamiento</span>
-                                <span class="text-red-700 font-semibold text-6xl">$11.99 USD</span>
+                                <span class=" text-black font-bold text-2xl">Oferta de <span class="text-red-700">lanzamiento</span></span>
+                                <span class="text-red-700 font-semibold text-6xl">$15 USD</span>
                             </div> 
                             <div class="flex">
-                                <span class="text-base text-gray-500">Precio Normal <span class="line-through">$15.00 USD</span></span>
+                                <span class="text-base text-gray-500">Cupos Limitados</span>
                             </div>
                           </div>
                           <a href="https://pay.hotmart.com/N90636215D?checkoutMode=1" target="_blank" class="hotmart-fb ">
@@ -180,11 +180,11 @@
                 <div class="mt-4 text-center">
                    
                     <div class="flex flex-col ">
-                        <span class=" text-black font-bold text-4xl">Oferta de <span class="text-red-700">Pre</span>lanzamiento</span>
-                        <span class="text-red-700 font-semibold text-6xl">$11.99 USD</span>
+                        <span class=" text-black font-bold text-4xl">Oferta de Lanzamiento</span>
+                        <span class="text-red-700 font-semibold text-6xl">$15 USD</span>
                     </div> 
                     <div class="">
-                        <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$15.00 USD</span></span>
+                        <span class="text-xl text-gray-500">Cupos Limitados</span>
                     </div>
                   </div>
                   <a href="https://pay.hotmart.com/N90636215D?checkoutMode=1" target="_blank" class="hotmart-fb ">
@@ -221,7 +221,7 @@
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg">La inscripción tiene un precio especial de lanzamiento de $11.99 USD disponible por tiempo limitado. El precio normal es de $15 USD</p>
+                                <p class="text-base md:text-lg">La inscripción tiene un precio especial de lanzamiento de $15 USD disponible por tiempo limitado.</p>
                             </div>
                         </div>
                     </li>

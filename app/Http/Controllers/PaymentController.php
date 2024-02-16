@@ -413,9 +413,13 @@ class PaymentController extends Controller
                 $event->url = "https://www.doctorbayter.com/masterclass";
 
                 $fomoEvent = $client->createEvent($event);
+            }else if($product_id == 3825094){ // 7 Días DKP
+                $plan = Plan::find(7); 
+                $fases = Fase::whereIn('id', [7])->get();
+                $tagID = "42264306"; //Plan 7 Días
+                $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
 
-            }
-            else{
+            }else{
                 return;
             }
 

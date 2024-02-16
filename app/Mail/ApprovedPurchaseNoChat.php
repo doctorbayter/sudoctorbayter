@@ -13,7 +13,7 @@ class ApprovedPurchaseNoChat extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $plan, $user;
+    public $plan, $user, $time, $library;
     /**
      * Create a new message instance.
      *
@@ -23,6 +23,29 @@ class ApprovedPurchaseNoChat extends Mailable
     {
         $this->plan = $plan;
         $this->user = $user;
+
+        switch ($plan->id) {
+            case 1:
+            case 9:
+            case 15:
+            case 31:
+            case 54:
+                $time = '12 meses';
+                $library = true;
+                break;
+            case 2:
+                $time = '3 meses';
+                $library = true;
+                break;
+            case 7:
+                $time = '45 días';
+                $library = false;
+                break;
+            default:
+                $time = '30 días'; 
+                $library = false;
+                break;
+        }
     }
 
     /**

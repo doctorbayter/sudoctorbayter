@@ -22,15 +22,15 @@
                             <div class="flex flex-col ">
                                 <div>
                                     <small class="text-base">Precio Sin Descuento</small>
-                                    <p class="text-gray-400 line-through font-semibold text-5xl ">$20 USD</p>
+                                    <p class="text-gray-400 line-through font-semibold text-5xl ">$49 USD</p>
                                     <div class="mt-4">
                                         <p class=" text-black font-bold text-2xl">Oferta <span class="text-red-700">Hoy</span></p>
-                                        <p class="text-red-700 font-semibold text-6xl">$10 USD</p>
+                                        <p class="text-red-700 font-semibold text-6xl">$14.7 USD</p>
                                     </div>
                                 </div>
                             </div> 
                             <div class="flex">
-                                <span class="text-base text-gray-500">CUPÓN DEL 50% DE DESCUENTO APLICADO CON EL CÓDIGO <span class="font-bold text-gray-900">DKP7</span></span>
+                                <span class="text-base text-gray-500">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class="font-bold text-gray-900">DKP7</span></span>
                             </div>
                           </div>
                           <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ÚNETE AHORA AQUÍ</span></a> 
@@ -254,10 +254,10 @@
                     <div class="mt-4 text-center">
                         <div class="flex flex-col ">
                             <span class=" text-gray-100 font-bold text-4xl">Oferta Exclusiva <span class="text-red-700">HOY</span></span>
-                            <span class="text-red-700 font-semibold text-6xl">$10 USD</span>
+                            <span class="text-red-700 font-semibold text-6xl">$14.7 USD</span>
                         </div> 
                         <div class="">
-                            <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$20.00 USD</span></span>
+                            <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$49 USD</span></span>
                         </div>
                     </div>
                     <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank" class="hotmart-fb ">

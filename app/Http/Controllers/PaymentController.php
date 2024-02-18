@@ -400,6 +400,7 @@ class PaymentController extends Controller
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
 
             }else if($product_id == 3795223){ // MasterClass Predice Tu Enfermedad Metabólica
+                $plan = Plan::find(4); // Plan Dummy para no generar error en sendMail 
                 $tagID = "41891887"; //MasterClass Predice Tu Enfermedad Metabólica
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
 
@@ -415,7 +416,7 @@ class PaymentController extends Controller
                 $fomoEvent = $client->createEvent($event);
             }else if($product_id == 3825094){ // 7 Días DKP
                 $plan = Plan::find(7); 
-                $fases = Fase::whereIn('id', [7])->get();
+                $fases = Fase::whereIn('id', [5])->get();
                 $tagID = "42264306"; //Plan 7 Días
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
 

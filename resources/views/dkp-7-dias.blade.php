@@ -265,16 +265,39 @@
                 <h2 class="text-xl md:text-3xl text-center mb-4 font-bold text-gray-900">Únete a miles de personas que han alcanzado sus objetivos de pérdida de peso y salud con el Método DKP</h2>
                 <p class="text-center max-w-2xl mx-auto mb-8">Estamos muy orgullosos de los miembros de nuestra familia <b>KetoBayter</b> por haber alcanzado sus objetivos de pérdida de peso y salud. Te queremos compartir las imagenes que nos ha enviado algunos de ellos.</p>
             </header>
-            <div class="carousel-container relative overflow-hidden w-full">
-                <div class="carousel-slide flex" style="transition: transform 0.5s ease-out;">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
                     @for ($i = 1; $i <= 11; $i++)
                         @php
                             $imageNumber = str_pad($i, 3, '0', STR_PAD_LEFT);
                         @endphp
-                        <img src="{{ asset('img/testimonios/testimonio_dkp_' . $imageNumber . '.jpg') }}" class="block mr-4 sm:mr-10 w-1/3 sm:w-1/6 " alt="Imagen {{ $imageNumber }}">
+                        <div class="swiper-slide">
+                            <img src="{{ asset('img/testimonios/testimonio_dkp_' . $imageNumber . '.jpg') }}" alt="Imagen {{ $imageNumber }}">
+                        </div>
                     @endfor
-                </div>
             </div>
+              
+            <script>
+               var swiper = new Swiper('.mySwiper', {
+                    loop: true,
+                    slidesPerView: 3, // Número predeterminado de diapositivas para pantallas más grandes
+                    spaceBetween: 10, // Espacio entre diapositivas
+                    autoplay: {
+                        delay: 1, // Mantiene el carrusel moviéndose continuamente
+                        disableOnInteraction: false,
+                    },
+                    speed: 3000, // Ajusta este valor según necesites para controlar la velocidad del efecto continuoe
+                    
+                    breakpoints: {
+                        // Configuraciones para pantallas menores a 768px (usualmente móviles)
+                        768: {
+                            slidesPerView: 6, // 6 diapositivas visibles en pantallas más pequeñas
+                            spaceBetween: 60 // Puedes ajustar el espacio entre diapositivas en móviles si es necesario
+                        }
+                    }
+                });
+            </script>
                       
         </div>
     </section>
@@ -583,6 +606,9 @@
     </div>
 
     @push('style')   
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
         <style>
             .grid-video {
             display: grid;
@@ -718,65 +744,10 @@
     @push('scriptsHead')
         <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>   
 
-        <script>
-           document.addEventListener('DOMContentLoaded', () => {
-            const slideContainer = document.querySelector('.carousel-slide');
-            let currentPosition = 0;
-            let animationFrameId;
-            let baseSpeed = 2; // Velocidad base
-            let isMobile = window.innerWidth < 768;
-            let imagesToShow = isMobile ? 2 : 6; // 2 en móvil, 6 en escritorio
-
-            // Duplicar las primeras imágenes para el flujo infinito
-            const duplicateImagesForInfiniteLoop = () => {
-                const images = slideContainer.querySelectorAll('img');
-                images.forEach((img, index) => {
-                    if (index < imagesToShow) { // Duplica según las imágenes a mostrar
-                        const clone = img.cloneNode(true);
-                        slideContainer.appendChild(clone);
-                    }
-                });
-            };
-
-            const adjustCarousel = () => {
-                // Cancela la animación previa si estaba corriendo
-                if (animationFrameId) {
-                    cancelAnimationFrame(animationFrameId);
-                }
-
-                // Ajusta configuraciones según el tamaño de pantalla
-                isMobile = window.innerWidth < 768;
-                imagesToShow = isMobile ? 2 : 6;
-                baseSpeed = isMobile ? 1 : 2; // Velocidad más lenta para móviles
-
-                duplicateImagesForInfiniteLoop();
-                moveCarousel();
-            };
-
-            const moveCarousel = () => {
-                currentPosition -= baseSpeed;
-                slideContainer.style.transform = `translateX(${currentPosition}px)`;
-
-                const resetPosition = (slideContainer.scrollWidth / 2) - (slideContainer.offsetWidth / imagesToShow) * imagesToShow;
-                if (Math.abs(currentPosition) >= resetPosition) {
-                    currentPosition = 0; // Reinicia la posición para un flujo continuo
-                    slideContainer.style.transition = 'none';
-                    slideContainer.style.transform = `translateX(${currentPosition}px)`;
-                }
-
-                animationFrameId = requestAnimationFrame(moveCarousel);
-            };
-
-            // Ajusta el carrusel al cambiar el tamaño de la ventana
-            window.addEventListener('resize', () => {
-                // Debounce o throttle aquí sería útil para evitar múltiples llamadas
-                adjustCarousel();
-            });
-
-            adjustCarousel(); // Inicia la animación y ajusta el carrusel
-        });
-
-        </script>
+        
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        
             
         <script>
             function showPopup() {

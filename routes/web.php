@@ -128,6 +128,12 @@ Route::get('/dkp7', function () {
 })->name('dkp.7dias');
 
 
+Route::get('/reviews', function () {
+    return view('reviews');
+})->name('dkp.reviews');
+
+
+
 Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('masterclass.register');
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');
 Route::get('masterclass/{masterclass}/thanks', [Masterclass::class, 'thanks'])->name('masterclass.thanks');
@@ -1375,10 +1381,10 @@ Route::get('x/fomo/{name}', function($name){
     $client = new FomoClient($apiKey); // auth token
 
     $event = new FomoEventBasic();
-    $event->event_type_id = "198607"; // Event type ID is found on Fomo dashboard (Templates -> Template ID)
-    $event->title = "Predice tu Enfermedad Metabólica";
+    $event->event_type_id = "199229"; // Event type ID is found on Fomo dashboard (Templates -> Template ID)
+    $event->title = "7 Días Keto Perfectos";
     $event->first_name = $name;
-    $event->url = "https://www.doctorbayter.com/masterclass";
+    $event->url = "https://www.doctorbayter.com/dkp7";
 
     $fomoEvent = $client->createEvent($event);
 

@@ -412,13 +412,23 @@ class PaymentController extends Controller
                 $event->title = "Predice tu Enfermedad Metabólica";
                 $event->first_name = $user_first_name;
                 $event->url = "https://www.doctorbayter.com/masterclass";
-
                 $fomoEvent = $client->createEvent($event);
+                
             }else if($product_id == 3825094){ // 7 Días DKP
                 $plan = Plan::find(7); 
                 $fases = Fase::whereIn('id', [5])->get();
                 $tagID = "42264306"; //Plan 7 Días
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
+
+                $apiKey = config('services.fomo.api_key');
+                $client = new FomoClient($apiKey); // auth token
+
+                $event = new FomoEventBasic();
+                $event->event_type_id = "199229"; // Template ID
+                $event->title = "7 Días Keto Perfectos";
+                $event->first_name = $user_first_name;
+                $event->url = "https://www.doctorbayter.com/dkp7";
+                $fomoEvent = $client->createEvent($event);
 
             }else{
                 return;

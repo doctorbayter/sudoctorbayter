@@ -9,8 +9,10 @@
                     <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm">
                 </figure>
                 <div class="w-full md:w-6/12 px-4 sm:ml-4 ">
-                    <p class="mb-2">DISPONIBLE POR TIEMPO LIMITADO</p>
-                    <h2 class="text-gray-900 mb-6 leading-none font-black text-4xl md:text-6xl">7 DÍAS <b class="text-red-700">KETO </b>PERFECTOS</h2>
+                    <div class="text-center sm:text-left">
+                        <p class="mb-2">DISPONIBLE POR TIEMPO LIMITADO</p>
+                        <h2 class="text-gray-900 mb-6 leading-none font-black text-4xl md:text-6xl">7 DÍAS <b class="text-red-700">KETO </b>PERFECTOS</h2>
+                    </div>
                     <div class="text-justify space-y-2 text-base">
                         <p>Supera el desafío inicial del Método DKP con nuestro programa exclusivo de 7 días.</p>
                         <p>Entiende los cambios en tu cuerpo, supera la barrera mental del cuarto día, y empodérate con herramientas, recetas, y motivación directa de tu Doctor Bayter.</p>
@@ -20,20 +22,20 @@
                      <div class="w-full mt-4 mx-auto text-center">
                         <div class="mt-4 text-left">
                             <div class="flex flex-col ">
-                                <div>
+                                <div class="text-center sm:text-left">
                                     <small class="text-base">Precio Sin Descuento</small>
                                     <p class="text-gray-400 line-through font-semibold text-5xl ">$49 USD</p>
                                     <div class="mt-4">
-                                        <p class=" text-black font-bold text-2xl">Oferta <span class="text-red-700">Hoy</span></p>
+                                        <p class=" text-black text-center sm:text-left font-bold text-2xl">Oferta <span class="text-red-700">Hoy</span></p>
                                         <p class="text-red-700 font-semibold text-6xl">$14.7 USD</p>
                                     </div>
                                 </div>
                             </div> 
                             <div class="flex">
-                                <span class="text-base text-gray-500">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class="font-bold text-gray-900">DKP7</span></span>
+                                <span class="text-sm sm:text-base text-gray-500">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class="font-bold text-gray-900">DKP7</span></span>
                             </div>
                           </div>
-                          <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ÚNETE AHORA AQUÍ</span></a> 
+                          <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank"><span class="cta-btn relative overflow-hidden w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-4 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ÚNETE AHORA AQUÍ</span></a> 
                         <small class="block mt-2 mb-4 sm:mb-0"><i class="text-base fas fa-shield-alt"></i>  Compra segura. Ambiente seguro y autenticado</small>
                      </div>
                 </div>
@@ -51,11 +53,11 @@
                         <p>Inicia tu transformación con "Tus Primeros 7 Días Keto Perfectos" hoy mismo. Da el primer paso hacia un cambio duradero y saludable en tu vida. ¡Únete ahora y deja que el Doctor Bayter te guíe en cada paso del camino!</p>
                     </div>
                 </div>
-                <div class="flex-1 grid-video">
+                <div class="flex-1 grid-video -my-24 sm:my-0">
                     <iframe src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-96 md:h-96 flex-1"></iframe>
                 </div>
             </div>
-            <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center">Haz clic aquí para comenzar</span></a></div>
+            <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
         </div>
     </section>
     <section class="bg-gray-900">
@@ -72,17 +74,17 @@
                         <header>
                             <h2 class="text-2xl md:text-4xl mb-4 font-bold text-gray-900">¿Qué puedes esperar de estos <span class="text-red-700">7 días</span>?</h2>
                         </header>
-                        <ul class="mt-8">
+                        <ul class="mt-8 space-y-8">
                             <li class="mb-4">                    
-                                <h3 class="font-bold flex uppercase"><i class="text-red-700 fas fa-check inline-block mr-2"></i> Apoyo y Orientación</h3>
+                                <h3 class="font-bold flex uppercase mb-2"><i class="text-red-700 fas fa-check inline-block mr-2"></i> Apoyo y Orientación</h3>
                                 <p class="text-justify">No estarás solo en este viaje. El Doctor Bayter ha creado contenido para orientarte cada día, asegurando que cada paso que das está en la dirección correcta para una adaptación Keto sin errores.</p>
                             </li>
                             <li class="mb-4">                    
-                                <h3 class="font-bold flex uppercase"><i class="text-red-700 fas fa-check inline-block mr-2"></i> Desintoxicación y Reinicio Metabólico</h3>
+                                <h3 class="font-bold flex uppercase mb-2"><i class="text-red-700 fas fa-check inline-block mr-2"></i> Desintoxicación y Reinicio Metabólico</h3>
                                 <p class="text-justify">Estos días cruciales sirven para desintoxicar tu cuerpo de adicciones previas a los carbohidratos y azúcares, reiniciando tu metabolismo para aprovechar eficientemente las grasas como fuente de energía.</p>
                             </li>
                             <li class="mb-4">
-                                <h3 class="font-bold flex uppercase"><i class="text-red-700 fas fa-check inline-block mr-2"></i> Herramientas para el Éxito</h3>
+                                <h3 class="font-bold flex uppercase mb-2"><i class="text-red-700 fas fa-check inline-block mr-2"></i> Herramientas para el Éxito</h3>
                                 <p class="text-justify">Al superar los primeros 7 días, no solo habrás logrado un hito importante, sino que también estarás equipado con las herramientas y conocimientos necesarios para continuar tu viaje de transformación duradera en tu salud y bienestar.</p>
                             </li>
                         </ul>
@@ -101,12 +103,12 @@
     </section>
 
     <section class="bg-gray-100 py-8">
-        <article class=" max-w-5xl mx-auto px-6 lg:px-8">
+        <article class=" max-w-6xl mx-auto px-6 lg:px-8">
             <h2 class="text-xl md:text-4xl font-bold text-gray-900 text-center my-8 uppercase">Da el salto hacia una vida <span class="text-red-700">más saludable</span> inicia tus Primeros 7 Días Keto <span class="text-red-700">Perfectos</span> ahora</h2>
-            <p class="text-center mb-8 text-lg">Al embarcarte en <b>"Tus Primeros 7 Días Keto Perfectos"</b>, te guiarás por la sabiduría del Doctor Bayter, un experto en transformaciones saludables cuya metodología ha ayudado a más de 15.000 personas, marcando la diferencia desde el inicio. Este primer paso no solo es crucial; es transformador, preparándote para seguir adelante con confianza y las herramientas correctas.</p>
-            <h3 class="font-bold text-lg text-center">¿Estás listo para tomar el control de tu salud, comprender el funcionamiento de tu cuerpo, esquivar enfermedades y emprender acciones decisivas hacia una vida más sana, energética y feliz?</h3>
+            <p class="text-justify sm:text-center mb-8 text-base sm:text-lg">Al embarcarte en <b>"Tus Primeros 7 Días Keto Perfectos"</b>, te guiarás por la sabiduría del Doctor Bayter, un experto en transformaciones saludables cuya metodología ha ayudado a más de 15.000 personas, marcando la diferencia desde el inicio. Este primer paso no solo es crucial; es transformador, preparándote para seguir adelante con confianza y las herramientas correctas.</p>
+            <h3 class="font-bold text-base sm:text-lg text-center">¿Estás listo para tomar el control de tu salud, comprender el funcionamiento de tu cuerpo, esquivar enfermedades y emprender acciones decisivas hacia una vida más sana, energética y feliz?</h3>
             <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank" class="hotmart-fb">
-                <span class="w-full my-8 text-center rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 ">¡Sé parte de la revolución Keto Bayter!</span>
+                <span class="w-full my-8 text-center rounded-full inline-block mt-4 text-base sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 ">¡Sé parte de la revolución Keto Bayter!</span>
             </a> 
         </article>
     </section>
@@ -136,54 +138,144 @@
         </div>
     </section>
 
+    <section class="bg-gray-900 py-12 md:py-20 ">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8  flex flex-col text-center text-gray-50 mb-12">
+            <h3 class="text-xs sm:text-sm mb-6"><span class=" inline-block px-6 py-3 border-white border rounded-full">INCLUSO EN UN MUNDO LLENO DE CARBOHIDRATOS, HAY UN CAMINO HACIA UNA VIDA SALUDABLE Y ENERGÉTICA</span></h3>
+            <h2 class=" font-black text-lg sm:text-4xl max-w-4xl  sm:leading-10 mx-auto">Muchas Personas Fracasan con Dietas Pasajeras, Pero Tú Puedes Aprovechar Esta Oportunidad Para Transformar Tu Salud</h2>
+        </div>
+        
+        <div class=" bg-white py-8 px-2 sm:p-8 rounded-xl shadow-xl sm:max-w-5xl mx-2 sm:mx-auto grid grid-cols-6 sm:grid-cols-7 sm:gap-2 items-stretch">
+            <div class="col-span-3">
+                <ul class="h-full justify-between divide-y-2">
+                    <li class="flex items-start align-top justify-start py-3 sm:py-6">
+                        <span class="flex-1 mr-1 sm:mr-2">
+                            <svg class=" transform scale-75" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="10" y1="10" x2="30" y2="30" stroke="#FF5733" stroke-width="5" />
+                            <line x1="30" y1="10" x2="10" y2="30" stroke="#FF5733" stroke-width="5" />
+                            </svg>
+                        </span>
+                        <div class=" h-48 sm:h-32"> 
+                            <h3 class="font-black mb-4 text-sm sm:text-xl">Luchando Con Dietas Estándar</h3>
+                            <p class="text-xs sm:text-base">Rindiéndote antes de empezar por reglas complejas y comidas insatisfactorias</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start align-top justify-start py-3 sm:py-6">
+                        <span class="flex-1 mr-1 sm:mr-2">
+                            <svg class=" transform scale-75" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="10" y1="10" x2="30" y2="30" stroke="#FF5733" stroke-width="5" />
+                            <line x1="30" y1="10" x2="10" y2="30" stroke="#FF5733" stroke-width="5" />
+                            </svg>
+                        </span>
+                        <div class=" h-48 sm:h-32"> 
+                            <h3 class="font-black mb-4 text-sm sm:text-xl">Antojos Constantes</h3>
+                            <p class="text-xs sm:text-base">Lidiando con ataques de hambre y síntomas de abstinencia de azúcar que descarrilan tu progreso</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start align-top justify-start py-3 sm:py-6">
+                        <span class="flex-1 mr-1 sm:mr-2">
+                            <svg class=" transform scale-75" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="10" y1="10" x2="30" y2="30" stroke="#FF5733" stroke-width="5" />
+                            <line x1="30" y1="10" x2="10" y2="30" stroke="#FF5733" stroke-width="5" />
+                            </svg>
+                        </span>
+                        <div class=" h-48 sm:h-32"> 
+                            <h3 class="font-black mb-4 text-sm sm:text-xl">Efectos de Dietas Yoyó</h3>
+                            <p class="text-xs sm:text-base">Experimentando la frustración de resultados temporales y el efecto rebote en el peso</p> 
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-span-1 hidden sm:block">
+                <ul class="h-full w-full flex flex-col justify-between items-baseline ">
+                    <li class="h-full w-full flex flex-1 justify-center items-center">
+                        <svg width="100" height="20" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dashed line -->
+                            <line x1="5" y1="10" x2="85" y2="10" stroke="black" stroke-width="2" stroke-dasharray="5,5" />
+                            <!-- Arrow tip -->
+                            <polygon points="85,5 95,10 85,15" fill="black" />
+                        </svg>
+                    </li>
+                    <li class="h-full w-full flex flex-1 justify-center items-center">
+                        <svg width="100" height="20" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dashed line -->
+                            <line x1="5" y1="10" x2="85" y2="10" stroke="black" stroke-width="2" stroke-dasharray="5,5" />
+                            <!-- Arrow tip -->
+                            <polygon points="85,5 95,10 85,15" fill="black" />
+                        </svg>
+                    </li>
+                    <li class="h-full w-full flex flex-1 justify-center items-center">
+                        <svg width="100" height="20" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dashed line -->
+                            <line x1="5" y1="10" x2="85" y2="10" stroke="black" stroke-width="2" stroke-dasharray="5,5" />
+                            <!-- Arrow tip -->
+                            <polygon points="85,5 95,10 85,15" fill="black" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-span-3">
+                <ul class="h-full justify-between divide-y-2">
+                    <li class="flex items-start align-top justify-start py-3 sm:py-6">
+                        <span class="flex-1 mr-1 sm:mr-2">
+                            <svg class=" transform scale-75" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 20 l10 10 l20 -20" stroke="#7CFC00" stroke-width="5" fill="none" />
+                            </svg>                               
+                        </span>
+                        <div class=" h-48 sm:h-32"> 
+                            <h3 class="font-black mb-4 text-sm sm:text-xl">Plan Keto Perfecto</h3>
+                            <p class="text-xs sm:text-base">Accediendo a un plan meticulosamente elaborado y comprobado</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start align-top justify-start py-3 sm:py-6">
+                        <span class="flex-1 mr-1 sm:mr-2">
+                            <svg class=" transform scale-75" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 20 l10 10 l20 -20" stroke="#7CFC00" stroke-width="5" fill="none" />
+                            </svg>                              
+                        </span>
+                        <div class=" h-48 sm:h-32"> 
+                            <h3 class="font-black mb-4 text-sm sm:text-xl">Toma el Control</h3>
+                            <p class="text-xs sm:text-base">Interpreta las señales de tu cuerpo y transforma los antojos en elecciones conscientes</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start align-top justify-start py-3 sm:py-6">
+                        <span class="flex-1 mr-1 sm:mr-2">
+                            <svg class=" transform scale-75" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 20 l10 10 l20 -20" stroke="#7CFC00" stroke-width="5" fill="none" />
+                            </svg>                              
+                        </span>
+                        <div class=" h-48 sm:h-32">   
+                            <h3 class="font-black mb-4 text-sm sm:text-xl">Transformación Sostenible</h3>
+                            <p class="text-xs sm:text-base">Logrando resultados duraderos con un reinicio metabólico que va más allá del peso</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank" class="hotmart-fb block max-w-3xl mx-auto text-center mt-8">
+            <span class="cta-btn relative overflow-hidden w-full my-8 text-center rounded-full inline-block sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 ">
+                ¡Sí! Quiero en Plan 7 Días Keto Perfectos
+                <small class="block text-xs font-normal">Adquiere la oferta especial con un 70% de descuento con el código <b>DKP7</b></small>
+            </span>
+        </a>
+    </section>
+
     <section class="bg-white">
-        <div class="max-w-5xl mx-auto px-6 lg:px-8 pb-16 sm:pb-24 pt-16">
-            <header class="py-4">
+        <div class=" px-6 lg:px-8 pb-16 sm:pb-24 pt-16">
+            <header class="py-4 max-w-5xl mx-auto">
                 <h2 class="text-xl md:text-3xl text-center mb-4 font-bold text-gray-900">Únete a miles de personas que han alcanzado sus objetivos de pérdida de peso y salud con el Método DKP</h2>
-                <p class="text-center max-w-2xl mx-auto mb-8">Estamos muy orgullosos de los miembros de nuestra familia <b>KetoBayter</b> por haber alcanzado sus objetivos de pérdida de peso y salud. Te queremos compartir algunos de ellos.</p>
+                <p class="text-center max-w-2xl mx-auto mb-8">Estamos muy orgullosos de los miembros de nuestra familia <b>KetoBayter</b> por haber alcanzado sus objetivos de pérdida de peso y salud. Te queremos compartir las imagenes que nos ha enviado algunos de ellos.</p>
             </header>
-            <div class="grid grid-cols-2 gap-4 sm:gap-9">
-                <div> 
-                    <figure>
-                        <img src="{{asset('img/testimonios/testimonio_dkp_01.jpg')}}" alt="" class="w-full object-cover">
-                    </figure>
-                    <div>
-                        <header class="flex my-4 items-end">
-                            <h4 class="font-bold text-xl">Keto Perfecta desde 2020</h4>
-                        </header>
-                    </div>
-                </div>
-                <div>
-                    <figure>
-                        <img src="{{asset('img/testimonios/testimonio_dkp_02.jpg')}}" alt="" class="w-full object-cover">
-                    </figure>
-                    <div>
-                        <header class="flex my-4 items-end">
-                            <h4 class="font-bold text-xl">Keto Perfecto desde 2021</h4>
-                        </header>
-                    </div>
-                </div>
-                <div>
-                    <figure>
-                        <img src="{{asset('img/testimonios/testimonio_dkp_03.jpg')}}" alt="" class="w-full object-cover">
-                    </figure>
-                    <div>
-                        <header class="flex my-4 items-end">
-                            <h4 class="font-bold text-xl">Keto Perfecta desde 2022</h4>
-                        </header>
-                    </div>
-                </div>
-                <div>
-                    <figure>
-                        <img src="{{asset('img/testimonios/testimonio_dkp_04.jpg')}}" alt="" class="w-full object-cover">
-                    </figure>
-                    <div>
-                        <header class="flex my-4 items-end">
-                            <h4 class="font-bold text-xl">Keto Perfecta desde 2021</h4>
-                        </header>
-                    </div>
+            <div class="carousel-container relative overflow-hidden w-full">
+                <div class="carousel-slide flex" style="transition: transform 0.5s ease-out;">
+                    @for ($i = 1; $i <= 11; $i++)
+                        @php
+                            $imageNumber = str_pad($i, 3, '0', STR_PAD_LEFT);
+                        @endphp
+                        <img src="{{ asset('img/testimonios/testimonio_dkp_' . $imageNumber . '.jpg') }}" class="block" alt="Imagen {{ $imageNumber }}">
+                    @endfor
                 </div>
             </div>
+                      
         </div>
     </section>
 
@@ -242,33 +334,34 @@
                 <img src="{{asset('img/billboards/banner_7_dias_horizontal.png')}}" alt="" class="w-full object-cover z-50">
             </figure>
             <div class=" bg-gradient-to-t from-gray-900 to-gray-800 -mt-16 z-0 pt-20 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
-                <ul class="mt-2 text-white text-xl font-bold">
-                    <li class="py-4 px-8"><i class=" text-lg fas fa-check mr-4"></i> Acceso inmediato por 45 días al contenido</li>
-                    <li class="py-4 px-8 bg-gray-700"><i class=" text-lg fas fa-book mr-4"></i>21 recetas y lista de alimentos para los 7 días</li>
-                    <li class="py-4 px-8"><i class=" text-lg fas fa-comment mr-4"></i>Secretos exclusivos del Doctor Bayter</li>
-                    <li class="py-4 px-8 bg-gray-700"><i class=" text-lg fas fa-video mr-4"></i>Contenido multimedia para guíarte durante los 7 días</li>
-                    <li class="py-4 px-8"><i class=" text-lg fas fa-download mr-4"></i>Descargables: Lista de alimentos y Secretos</li>
+                <ul class="mt-2 text-white sm:text-xl font-bold">
+                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-check mr-4"></i> Acceso inmediato por 45 días al contenido</li>
+                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-4"></i>21 recetas y lista de alimentos para los 7 días</li>
+                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-comment mr-4"></i>Secretos exclusivos del Doctor Bayter</li>
+                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-video mr-4"></i>Contenido multimedia para guíarte durante los 7 días</li>
+                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-download mr-4"></i>Descargables: Lista de alimentos y Secretos</li>
     
                 </ul>
                 <div class="w-full my-4 mx-auto text-center px-8">
                     <div class="mt-4 text-center">
                         <div class="flex flex-col ">
-                            <span class=" text-gray-100 font-bold text-4xl">Oferta Exclusiva <span class="text-red-700">HOY</span></span>
-                            <span class="text-red-700 font-semibold text-6xl">$14.7 USD</span>
+                            <span class=" text-gray-100 font-bold text-xl sm:text-4xl">Oferta Exclusiva <span class="text-red-700">HOY</span></span>
+                            <span class="text-red-700 font-semibold text-5xl sm:text-6xl">$14.7 USD</span>
                         </div> 
                         <div class="">
                             <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$49 USD</span></span>
                         </div>
                     </div>
                     <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank" class="hotmart-fb ">
-                        <span class="w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white">Sí, Quiero Mejorar</span>
+                        <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Sí, Quiero Mejorar</span>
                     </a> 
                 </div>
-                <p class="text-md text-center px-4 max-w-4xl mx-auto font-bold mt-4 mb-8 text-gray-100">No dejes para mañana la salud que puedes empezar a transformar hoy.</p>
+                <p class="text-sm sm:text-md text-center px-4 max-w-4xl mx-auto font-bold mt-4 mb-8 text-gray-100">No dejes para mañana la salud que puedes empezar a transformar hoy.</p>
             </div>
            </div>
         </div>
     </section>
+
     <section class="bg-gray-900">
         <div class="max-w-5xl mx-auto py-12 md:py-20">
             <h2 class="text-center font-extrabold text-3xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
@@ -452,11 +545,44 @@
             </div>
         </div>
     </section>
+
     <div class="text-center bg-gray-900 text-gray-200">
         <small class="italic w-full text-center text-xs" >This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</small>
     </div>
-    
-    @push('style')
+
+    <!-- Pop-up de abandono del sitio -->
+    <div id="exitIntentPopup" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex justify-center items-center" style="backdrop-filter: blur(10px);">
+        <div class="opacity-0 scale-95 transform transition-transform duration-300 ease-out max-w-4xl py-12 px-8 mx-4 sm:mx-auto p-6 bg-white rounded-lg shadow-xl relative" id="popupContent">
+            <!-- Botón de cierre -->
+            <button class="absolute top-0 right-0 mt-4 mr-4" onclick="closePopup()">
+                <svg class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <header class="modal__header"> 
+                    <div class="c-progress">
+                        <div class="c-progress__bar loading"></div>
+                    </div>
+                    <h2 class="modal__title uppercase font-black text-2xl sm:text-6xl" id="modal-1-title">¡Espera! Antes Que Te Vayas...</h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close=""></button>
+                </header>
+                <div class="mb-2 text-sm sm:text-xl">
+                    <p >Antes de irte, <b>No dejes pasar esta oportunidad única.</b> Adquiere el 70% de descuento solo por un tiempo limitado, accede a nuestro programa de 7 días que cambiará el resto de tu vida. <b class="text-red-700">¡Inicia tu transformación hoy mismo!</b></p>
+                </div>
+                <figure class="mb-4">
+                    <img src="{{asset('img/billboards/7_dias_keto_sm.png')}}" alt="">
+                </figure>
+                <div class="mb-4 text-sm sm:text-xl">
+                    <p>Esta oferta no durará para siempre, y queremos que seas parte de nuestro éxito</p>
+                </div>
+                <a  href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" class="block w-11/12 mx-auto rounded-xl p bg-red-700 hover:bg-red-900 text-white font-bold px-4 py-4 text-sm sm:text-3xl uppercase relative overflow-hidden cta-btn">¡Quiero Aprovechar la Oferta!</a>
+                <button class=" text-gray-400 pt-2 px-4 my-2" onclick="closePopup()">No, gracias, no quiero</button>
+            </div>
+        </div>
+    </div>
+
+    @push('style')   
         <style>
             .grid-video {
             display: grid;
@@ -471,7 +597,243 @@
             grid-area: 1 / 1 / 2 / 2;
             content: "";
             }
+            .c-progress {
+                position: relative;
+                width: 90%;
+                height: 24px;
+                background: #a09b9b;
+                border-radius: 100px;
+                overflow: hidden;
+                border: 2px solid #a09b9b;
+                margin-left: auto;
+                margin-right: auto;
+                -webkit-box-shadow: 3px 3px 5px hsla(0, 0%, 100%, .1);
+                box-shadow: 3px 3px 5px hsla(0, 0%, 100%, .1);
+                margin-bottom:13px
+            }
+
+            .c-progress__bar {
+                -webkit-transform: skewX(-40deg);
+                transform: skewX(-40deg);
+                -webkit-transform-origin: bottom;
+                transform-origin: bottom;
+                padding-right: 45%;
+                margin-left: -30px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: -webkit-gradient(linear, left top, right top, from(#a30000), color-stop(33%, #e73a04));
+                background-image: linear-gradient(90deg, #a30000, #e73a04 33%);
+                background-clip: content-box;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius:100px
+            }
+
+            .c-progress__bar.loading {
+                -webkit-animation-name: loading;
+                animation-name: loading;
+                -webkit-animation-duration: 15s;
+                animation-duration: 15s;
+                -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+                -webkit-animation-timing-function: linear;
+                animation-timing-function:linear
+            }
+
+            @-webkit-keyframes loading {
+                0% {
+                    padding-right:45%
+                }
+
+                to {
+                    padding-right:5%
+                }
+            }
+
+            @keyframes loading {
+                0% {
+                    padding-right:45%
+                }
+
+                to {
+                    padding-right:5%
+                }
+            }
+            .cta-btn:after{
+                content: " ";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -120px;
+                height: 100%;
+                width: 90px;
+                background: hsla(0,0%,100%,.4);
+                -webkit-transition: all .15s linear;
+                transition: all .15s linear;
+                -webkit-transform: skewX(-20deg) translateX(0);
+                transform: skewX(-20deg) translateX(0);
+                -webkit-animation: buttonShine 4s infinite;
+                animation: buttonShine 4s infinite;
+
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            @-webkit-keyframes buttonShine {
+                0% {
+                    -webkit-transform: skewX(-20deg) translateX(0);
+                    transform:skewX(-20deg) translateX(0)
+                }
+
+                90% {
+                    -webkit-transform: skewX(-20deg) translateX(0);
+                    transform:skewX(-20deg) translateX(0)
+                }
+
+                95% {
+                    -webkit-transform: skewX(-20deg) translateX(900px);
+                    transform:skewX(-20deg) translateX(900px)
+                }
+            }
+
+            @keyframes buttonShine {
+                0% {
+                    -webkit-transform: skewX(-20deg) translateX(0);
+                    transform:skewX(-20deg) translateX(0)
+                }
+
+                90% {
+                    -webkit-transform: skewX(-20deg) translateX(0);
+                    transform:skewX(-20deg) translateX(0)
+                }
+
+                95% {
+                    -webkit-transform: skewX(-20deg) translateX(900px);
+                    transform:skewX(-20deg) translateX(900px)
+                }
+            }
         </style>
+    @endpush
+    @push('scriptsHead')
+
+    <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>   
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slideContainer = document.querySelector('.carousel-slide');
+    let currentPosition = 0;
+    let widthOfClones = 0;
+    const isMobile = window.innerWidth < 768;
+    const baseSpeed = isMobile ? 2 : 4; // Ajusta la velocidad: más lenta en móviles
+    const marginBetweenImages = isMobile ? 20 : 60; // 20px en móvil, 60px en escritorio
+    const numVisibleImages = isMobile ? 3 : 5;
+
+    const prepareCarousel = () => {
+        // Duplicar las primeras imágenes para asegurar un flujo infinito
+        const images = slideContainer.querySelectorAll('img');
+        images.forEach((img, index) => {
+            if (index < numVisibleImages) {
+                const clone = img.cloneNode(true);
+                slideContainer.appendChild(clone);
+                widthOfClones += (clone.offsetWidth - marginBetweenImages);
+            }
+        });
+
+        adjustCarousel();
+    };
+
+    const adjustCarousel = () => {
+        
+        const images = slideContainer.querySelectorAll('img');
+        const containerWidth = slideContainer.offsetWidth;
+        const imageWidth = (containerWidth - marginBetweenImages * (numVisibleImages - 1)) / numVisibleImages;
+
+        images.forEach((img, index) => {
+            img.style.width = `${imageWidth}px`; // Ajusta el ancho de cada imagen
+            img.style.marginRight = `${marginBetweenImages}px`;
+        });
+
+        moveCarousel(baseSpeed);
+    };
+
+    const moveCarousel = (speed) => {
+
+        currentPosition -= speed;
+        slideContainer.style.transform = `translateX(${currentPosition}px)`;
+
+        const resetPosition = slideContainer.scrollWidth - widthOfClones;
+        if (Math.abs(currentPosition) >= resetPosition) {
+            currentPosition = marginBetweenImages * 2; // Reinicia la posición para un flujo continuo
+            slideContainer.style.transition = 'none';
+            slideContainer.style.transform = `translateX(${currentPosition}px)`;
+        }
+
+        requestAnimationFrame(() => moveCarousel(speed));
+    };
+
+    // Ajustar el carrusel y reiniciar la posición al redimensionar la ventana
+    window.addEventListener('resize', adjustCarousel);
+
+    prepareCarousel();
+});
+
+
+    </script>
+        
+
+    <script>
+
+        function showPopup() {
+            const popup = document.getElementById('exitIntentPopup');
+            const popupContent = document.getElementById('popupContent');
+            popup.classList.remove('hidden');
+            // Activar animación
+            popupContent.classList.remove('opacity-0', 'scale-95');
+            popupContent.classList.add('opacity-100', 'scale-100');
+        }
+
+        function closePopup() {
+            const popupContent = document.getElementById('popupContent');
+            // Iniciar animación de cierre
+            popupContent.classList.remove('opacity-100', 'scale-100');
+            popupContent.classList.add('opacity-0', 'scale-95');
+            // Esperar a que termine la animación para ocultar el pop-up completamente
+            setTimeout(() => {
+                document.getElementById('exitIntentPopup').classList.add('hidden');
+            }, 300); // Ajusta este tiempo al de la duración de tu animación
+            sessionStorage.setItem('popupClosed', 'true');
+        }
+
+        function subscribe() {
+            // Aquí puedes agregar la lógica para manejar la suscripción,
+            // como abrir un modal de suscripción o redirigir a una página de registro.
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            sessionStorage.setItem('popupClosed', 'false');
+
+            document.getElementById('exitIntentPopup').addEventListener('click', function(event) {
+                if (event.target === this) {
+                    closePopup();
+                }
+            });
+
+            // Establecer un temporizador para retrasar la activación del detector de intención de salida
+            setTimeout(function() {
+                document.addEventListener('mouseout', function (e) {
+                    if (!e.toElement && !e.relatedTarget) {
+                        // Verificar si el pop-up ya fue cerrado en esta sesión
+                        if (sessionStorage.getItem('popupClosed') !== 'true') {
+                            showPopup()
+                        }
+                    }
+                });
+            }, 3000); // Retraso de 2 segundos
+        });
+    </script>
+        
     @endpush
     
 </x-app-layout>

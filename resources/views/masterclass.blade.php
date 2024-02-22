@@ -1,5 +1,4 @@
 <x-app-layout>
-    <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>
     <script>
         window.addEventListener('scroll', () => {
           const div = document.getElementById('background');
@@ -323,4 +322,7 @@
     <div class="text-center">
         <small class="italic text-gray-900 w-full text-center font-thin text-xs" >This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</small>
     </div>
+    @push('scriptsHead')
+        <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>   
+    @endpush
 </x-app-layout>

@@ -726,7 +726,7 @@
                 const isMobile = window.innerWidth < 768;
                 const baseSpeed = isMobile ? .25 : 3; // Ajusta la velocidad: más lenta en móviles
                 const marginBetweenImages = isMobile ? 20 : 60; // 20px en móvil, 60px en escritorio
-                const numVisibleImages = isMobile ? 3 : 5;
+                const numVisibleImages = isMobile ? 2 : 5;
 
                 const prepareCarousel = () => {
                     // Duplicar las primeras imágenes para asegurar un flujo infinito

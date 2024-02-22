@@ -732,7 +732,6 @@
                             slideContainer.appendChild(clone);
                         }
                     });
-
                     adjustCarousel();
                 };
 

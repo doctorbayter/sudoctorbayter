@@ -720,56 +720,56 @@
 
         <script>
            document.addEventListener('DOMContentLoaded', () => {
-                const slideContainer = document.querySelector('.carousel-slide');
-                let currentPosition = 0;
+            const slideContainer = document.querySelector('.carousel-slide');
+            let currentPosition = 0;
+            let animationFrameId; // Guardar el ID del frame de animación
 
-                const prepareCarousel = () => {
-                    // Duplicar las primeras imágenes para asegurar un flujo infinito
-                    const images = slideContainer.querySelectorAll('img');
-                    images.forEach((img, index) => {
-                        if (index < 5) { // Ajusta según cuántas imágenes desees duplicar
-                            const clone = img.cloneNode(true);
-                            slideContainer.appendChild(clone);
-                        }
-                    });
-                    adjustCarousel();
-                };
-
-                const adjustCarousel = () => {
-                    const isMobile = window.innerWidth < 768;
-                    const baseSpeed = isMobile ? 1 : 2; // Ajusta la velocidad: más lenta en móviles
-                    const marginBetweenImages = isMobile ? 20 : 60; // 20px en móvil, 60px en escritorio
-                    const numVisibleImages = isMobile ? 3 : 5;
-
-                    const images = slideContainer.querySelectorAll('img');
-                    const containerWidth = slideContainer.offsetWidth;
-                    const imageWidth = (containerWidth - marginBetweenImages * (numVisibleImages - 1)) / numVisibleImages;
-
-                    images.forEach((img, index) => {
-                        img.style.width = `${imageWidth}px`; // Ajusta el ancho de cada imagen
-                        img.style.marginRight = `${marginBetweenImages}px`;
-                    });
-
-                    moveCarousel(baseSpeed);
-                };
-
-                const moveCarousel = (speed) => {
-                    currentPosition -= speed;
-                    slideContainer.style.transform = `translateX(${currentPosition}px)`;
-
-                    const resetPosition = slideContainer.scrollWidth / 2;
-                    if (Math.abs(currentPosition) >= resetPosition) {
-                        currentPosition = 0; // Reinicia la posición para un flujo continuo
+            const prepareCarousel = () => {
+                const images = slideContainer.querySelectorAll('img');
+                // Duplicar las primeras imágenes si es necesario para el flujo infinito
+                images.forEach((img, index) => {
+                    if (index < 5) { // Asume que duplicamos las primeras 5 imágenes
+                        const clone = img.cloneNode(true);
+                        slideContainer.appendChild(clone);
                     }
+                });
+            };
 
-                    requestAnimationFrame(() => moveCarousel(speed));
-                };
+            const adjustCarousel = () => {
+                // Cancelar la animación previa si estaba corriendo
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                }
 
-                // Ajustar el carrusel y reiniciar la posición al redimensionar la ventana
-                window.addEventListener('resize', adjustCarousel);
+                const isMobile = window.innerWidth < 768;
+                const baseSpeed = isMobile ? 1 : 2;
+                currentPosition = 0; // Resetea la posición para evitar incrementos de velocidad
 
-                prepareCarousel();
-            });
+                // Restablece la transformación para evitar saltos
+                slideContainer.style.transform = `translateX(0px)`;
+
+                moveCarousel(baseSpeed);
+            };
+
+            const moveCarousel = (speed) => {
+                currentPosition -= speed;
+                slideContainer.style.transform = `translateX(${currentPosition}px)`;
+
+                const resetPosition = slideContainer.scrollWidth / 2;
+                if (Math.abs(currentPosition) >= resetPosition) {
+                    currentPosition = 0; // Reinicia la posición para flujo continuo
+                }
+
+                animationFrameId = requestAnimationFrame(() => moveCarousel(speed));
+            };
+
+            // Ajustar el carrusel y reiniciar la posición al redimensionar la ventana
+            window.addEventListener('resize', adjustCarousel);
+
+            prepareCarousel();
+            adjustCarousel(); // Inicia la animación y ajusta el carrusel
+        });
+
         </script>
             
         <script>

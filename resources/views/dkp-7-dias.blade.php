@@ -725,7 +725,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPosition = 0;
     let widthOfClones = 0;
     const isMobile = window.innerWidth < 768;
-    const baseSpeed = isMobile ? 2 : 4; // Ajusta la velocidad: más lenta en móviles
+    const baseSpeed = isMobile ? .5 : 3; // Ajusta la velocidad: más lenta en móviles
     const marginBetweenImages = isMobile ? 20 : 60; // 20px en móvil, 60px en escritorio
     const numVisibleImages = isMobile ? 3 : 5;
 

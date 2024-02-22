@@ -722,13 +722,16 @@
            document.addEventListener('DOMContentLoaded', () => {
             const slideContainer = document.querySelector('.carousel-slide');
             let currentPosition = 0;
-            let animationFrameId; // Guardar el ID del frame de animación
+            let animationFrameId;
+            let baseSpeed = 2; // Velocidad base
+            let isMobile = window.innerWidth < 768;
+            let imagesToShow = isMobile ? 3 : 5; // 3 en móvil, 5 en escritorio
 
-            const prepareCarousel = () => {
+            // Duplicar las primeras imágenes para el flujo infinito
+            const duplicateImagesForInfiniteLoop = () => {
                 const images = slideContainer.querySelectorAll('img');
-                // Duplicar las primeras imágenes si es necesario para el flujo infinito
                 images.forEach((img, index) => {
-                    if (index < 5) { // Asume que duplicamos las primeras 5 imágenes
+                    if (index < imagesToShow) { // Duplica según las imágenes a mostrar
                         const clone = img.cloneNode(true);
                         slideContainer.appendChild(clone);
                     }
@@ -736,37 +739,40 @@
             };
 
             const adjustCarousel = () => {
-                // Cancelar la animación previa si estaba corriendo
+                // Cancela la animación previa si estaba corriendo
                 if (animationFrameId) {
                     cancelAnimationFrame(animationFrameId);
                 }
 
-                const isMobile = window.innerWidth < 768;
-                const baseSpeed = isMobile ? 1 : 2;
-                currentPosition = 0; // Resetea la posición para evitar incrementos de velocidad
+                // Ajusta configuraciones según el tamaño de pantalla
+                isMobile = window.innerWidth < 768;
+                imagesToShow = isMobile ? 3 : 5;
+                baseSpeed = isMobile ? 1 : 2; // Velocidad más lenta para móviles
 
-                // Restablece la transformación para evitar saltos
-                slideContainer.style.transform = `translateX(0px)`;
-
-                moveCarousel(baseSpeed);
+                duplicateImagesForInfiniteLoop();
+                moveCarousel();
             };
 
-            const moveCarousel = (speed) => {
-                currentPosition -= speed;
+            const moveCarousel = () => {
+                currentPosition -= baseSpeed;
                 slideContainer.style.transform = `translateX(${currentPosition}px)`;
 
-                const resetPosition = slideContainer.scrollWidth / 2;
+                const resetPosition = (slideContainer.scrollWidth / 2) - (slideContainer.offsetWidth / imagesToShow) * imagesToShow;
                 if (Math.abs(currentPosition) >= resetPosition) {
-                    currentPosition = 0; // Reinicia la posición para flujo continuo
+                    currentPosition = 0; // Reinicia la posición para un flujo continuo
+                    slideContainer.style.transition = 'none';
+                    slideContainer.style.transform = `translateX(${currentPosition}px)`;
                 }
 
-                animationFrameId = requestAnimationFrame(() => moveCarousel(speed));
+                animationFrameId = requestAnimationFrame(moveCarousel);
             };
 
-            // Ajustar el carrusel y reiniciar la posición al redimensionar la ventana
-            window.addEventListener('resize', adjustCarousel);
+            // Ajusta el carrusel al cambiar el tamaño de la ventana
+            window.addEventListener('resize', () => {
+                // Debounce o throttle aquí sería útil para evitar múltiples llamadas
+                adjustCarousel();
+            });
 
-            prepareCarousel();
             adjustCarousel(); // Inicia la animación y ajusta el carrusel
         });
 

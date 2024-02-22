@@ -6,7 +6,7 @@
     data-currency="USD"
     data-name="Tus Primeros 7 Días Keto Perfectos"
     data-url="https://doctorbayter.com/dkp7"
-    data-image-url="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}">
+    data-image-url="https://doctorbayter.com/img/billboards/plan_7_dias_dkp.jpg">
     </div>
  
     @push('scriptsHead')

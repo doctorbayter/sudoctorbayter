@@ -716,124 +716,105 @@
         </style>
     @endpush
     @push('scriptsHead')
+        <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>   
 
-    <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>   
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const slideContainer = document.querySelector('.carousel-slide');
+                let currentPosition = 0;
+                let widthOfClones = 0;
+                const isMobile = window.innerWidth < 768;
+                const baseSpeed = isMobile ? .25 : 3; // Ajusta la velocidad: más lenta en móviles
+                const marginBetweenImages = isMobile ? 20 : 60; // 20px en móvil, 60px en escritorio
+                const numVisibleImages = isMobile ? 3 : 5;
 
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const slideContainer = document.querySelector('.carousel-slide');
-    let currentPosition = 0;
-    let widthOfClones = 0;
-    const isMobile = window.innerWidth < 768;
-    const baseSpeed = isMobile ? .5 : 3; // Ajusta la velocidad: más lenta en móviles
-    const marginBetweenImages = isMobile ? 20 : 60; // 20px en móvil, 60px en escritorio
-    const numVisibleImages = isMobile ? 3 : 5;
-
-    const prepareCarousel = () => {
-        // Duplicar las primeras imágenes para asegurar un flujo infinito
-        const images = slideContainer.querySelectorAll('img');
-        images.forEach((img, index) => {
-            if (index < numVisibleImages) {
-                const clone = img.cloneNode(true);
-                slideContainer.appendChild(clone);
-                widthOfClones += (clone.offsetWidth - marginBetweenImages);
-            }
-        });
-
-        adjustCarousel();
-    };
-
-    const adjustCarousel = () => {
-        
-        const images = slideContainer.querySelectorAll('img');
-        const containerWidth = slideContainer.offsetWidth;
-        const imageWidth = (containerWidth - marginBetweenImages * (numVisibleImages - 1)) / numVisibleImages;
-
-        images.forEach((img, index) => {
-            img.style.width = `${imageWidth}px`; // Ajusta el ancho de cada imagen
-            img.style.marginRight = `${marginBetweenImages}px`;
-        });
-
-        moveCarousel(baseSpeed);
-    };
-
-    const moveCarousel = (speed) => {
-
-        currentPosition -= speed;
-        slideContainer.style.transform = `translateX(${currentPosition}px)`;
-
-        const resetPosition = slideContainer.scrollWidth - widthOfClones;
-        if (Math.abs(currentPosition) >= resetPosition) {
-            currentPosition = marginBetweenImages * 2; // Reinicia la posición para un flujo continuo
-            slideContainer.style.transition = 'none';
-            slideContainer.style.transform = `translateX(${currentPosition}px)`;
-        }
-
-        requestAnimationFrame(() => moveCarousel(speed));
-    };
-
-    // Ajustar el carrusel y reiniciar la posición al redimensionar la ventana
-    window.addEventListener('resize', adjustCarousel);
-
-    prepareCarousel();
-});
-
-
-    </script>
-        
-
-    <script>
-
-        function showPopup() {
-            const popup = document.getElementById('exitIntentPopup');
-            const popupContent = document.getElementById('popupContent');
-            popup.classList.remove('hidden');
-            // Activar animación
-            popupContent.classList.remove('opacity-0', 'scale-95');
-            popupContent.classList.add('opacity-100', 'scale-100');
-        }
-
-        function closePopup() {
-            const popupContent = document.getElementById('popupContent');
-            // Iniciar animación de cierre
-            popupContent.classList.remove('opacity-100', 'scale-100');
-            popupContent.classList.add('opacity-0', 'scale-95');
-            // Esperar a que termine la animación para ocultar el pop-up completamente
-            setTimeout(() => {
-                document.getElementById('exitIntentPopup').classList.add('hidden');
-            }, 300); // Ajusta este tiempo al de la duración de tu animación
-            sessionStorage.setItem('popupClosed', 'true');
-        }
-
-        function subscribe() {
-            // Aquí puedes agregar la lógica para manejar la suscripción,
-            // como abrir un modal de suscripción o redirigir a una página de registro.
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            
-            sessionStorage.setItem('popupClosed', 'false');
-
-            document.getElementById('exitIntentPopup').addEventListener('click', function(event) {
-                if (event.target === this) {
-                    closePopup();
-                }
-            });
-
-            // Establecer un temporizador para retrasar la activación del detector de intención de salida
-            setTimeout(function() {
-                document.addEventListener('mouseout', function (e) {
-                    if (!e.toElement && !e.relatedTarget) {
-                        // Verificar si el pop-up ya fue cerrado en esta sesión
-                        if (sessionStorage.getItem('popupClosed') !== 'true') {
-                            showPopup()
+                const prepareCarousel = () => {
+                    // Duplicar las primeras imágenes para asegurar un flujo infinito
+                    const images = slideContainer.querySelectorAll('img');
+                    images.forEach((img, index) => {
+                        if (index < numVisibleImages) {
+                            const clone = img.cloneNode(true);
+                            slideContainer.appendChild(clone);
+                            widthOfClones += (clone.offsetWidth - marginBetweenImages);
                         }
+                    });
+
+                    adjustCarousel();
+                };
+                const adjustCarousel = () => {
+                    const images = slideContainer.querySelectorAll('img');
+                    const containerWidth = slideContainer.offsetWidth;
+                    const imageWidth = (containerWidth - marginBetweenImages * (numVisibleImages - 1)) / numVisibleImages;
+
+                    images.forEach((img, index) => {
+                        img.style.width = `${imageWidth}px`; // Ajusta el ancho de cada imagen
+                        img.style.marginRight = `${marginBetweenImages}px`;
+                    });
+                    moveCarousel(baseSpeed);
+                };
+                const moveCarousel = (speed) => {
+                    currentPosition -= speed;
+                    slideContainer.style.transform = `translateX(${currentPosition}px)`;
+                    const resetPosition = slideContainer.scrollWidth - widthOfClones;
+                    if (Math.abs(currentPosition) >= resetPosition) {
+                        currentPosition = marginBetweenImages * 2; // Reinicia la posición para un flujo continuo
+                        slideContainer.style.transition = 'none';
+                        slideContainer.style.transform = `translateX(${currentPosition}px)`;
+                    }
+                    requestAnimationFrame(() => moveCarousel(speed));
+                };
+                // Ajustar el carrusel y reiniciar la posición al redimensionar la ventana
+                window.addEventListener('resize', adjustCarousel);
+                prepareCarousel();
+            });
+        </script>
+            
+        <script>
+            function showPopup() {
+                const popup = document.getElementById('exitIntentPopup');
+                const popupContent = document.getElementById('popupContent');
+                popup.classList.remove('hidden');
+                // Activar animación
+                popupContent.classList.remove('opacity-0', 'scale-95');
+                popupContent.classList.add('opacity-100', 'scale-100');
+            }
+
+            function closePopup() {
+                const popupContent = document.getElementById('popupContent');
+                // Iniciar animación de cierre
+                popupContent.classList.remove('opacity-100', 'scale-100');
+                popupContent.classList.add('opacity-0', 'scale-95');
+                // Esperar a que termine la animación para ocultar el pop-up completamente
+                setTimeout(() => {
+                    document.getElementById('exitIntentPopup').classList.add('hidden');
+                }, 300); // Ajusta este tiempo al de la duración de tu animación
+                sessionStorage.setItem('popupClosed', 'true');
+            }
+
+            function subscribe() {
+                // Aquí puedes agregar la lógica para manejar la suscripción,
+                // como abrir un modal de suscripción o redirigir a una página de registro.
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                sessionStorage.setItem('popupClosed', 'false');
+                document.getElementById('exitIntentPopup').addEventListener('click', function(event) {
+                    if (event.target === this) {
+                        closePopup();
                     }
                 });
-            }, 3000); // Retraso de 2 segundos
-        });
-    </script>
-        
+                // Establecer un temporizador para retrasar la activación del detector de intención de salida
+                setTimeout(function() {
+                    document.addEventListener('mouseout', function (e) {
+                        if (!e.toElement && !e.relatedTarget) {
+                            // Verificar si el pop-up ya fue cerrado en esta sesión
+                            if (sessionStorage.getItem('popupClosed') !== 'true') {
+                                showPopup()
+                            }
+                        }
+                    });
+                }, 3000); // Retraso de 2 segundos
+            });
+        </script>
     @endpush
-    
 </x-app-layout>

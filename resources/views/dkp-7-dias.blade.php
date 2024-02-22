@@ -725,7 +725,7 @@
             let animationFrameId;
             let baseSpeed = 2; // Velocidad base
             let isMobile = window.innerWidth < 768;
-            let imagesToShow = isMobile ? 3 : 5; // 3 en móvil, 5 en escritorio
+            let imagesToShow = isMobile ? 2 : 6; // 2 en móvil, 6 en escritorio
 
             // Duplicar las primeras imágenes para el flujo infinito
             const duplicateImagesForInfiniteLoop = () => {
@@ -746,7 +746,7 @@
 
                 // Ajusta configuraciones según el tamaño de pantalla
                 isMobile = window.innerWidth < 768;
-                imagesToShow = isMobile ? 3 : 5;
+                imagesToShow = isMobile ? 2 : 6;
                 baseSpeed = isMobile ? 1 : 2; // Velocidad más lenta para móviles
 
                 duplicateImagesForInfiniteLoop();

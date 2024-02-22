@@ -271,7 +271,7 @@
                         @php
                             $imageNumber = str_pad($i, 3, '0', STR_PAD_LEFT);
                         @endphp
-                        <img src="{{ asset('img/testimonios/testimonio_dkp_' . $imageNumber . '.jpg') }}" class="block" alt="Imagen {{ $imageNumber }}">
+                        <img src="{{ asset('img/testimonios/testimonio_dkp_' . $imageNumber . '.jpg') }}" class="block mr-10 w-1/3 sm:w-1/6 " alt="Imagen {{ $imageNumber }}">
                     @endfor
                 </div>
             </div>

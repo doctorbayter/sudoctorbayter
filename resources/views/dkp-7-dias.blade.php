@@ -719,29 +719,29 @@
         <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>   
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
+           document.addEventListener('DOMContentLoaded', () => {
                 const slideContainer = document.querySelector('.carousel-slide');
                 let currentPosition = 0;
-                let widthOfClones = 0;
-                const isMobile = window.innerWidth < 768;
-                const baseSpeed = isMobile ? .25 : 3; // Ajusta la velocidad: más lenta en móviles
-                const marginBetweenImages = isMobile ? 20 : 60; // 20px en móvil, 60px en escritorio
-                const numVisibleImages = isMobile ? 2 : 5;
 
                 const prepareCarousel = () => {
                     // Duplicar las primeras imágenes para asegurar un flujo infinito
                     const images = slideContainer.querySelectorAll('img');
                     images.forEach((img, index) => {
-                        if (index < numVisibleImages) {
+                        if (index < 5) { // Ajusta según cuántas imágenes desees duplicar
                             const clone = img.cloneNode(true);
                             slideContainer.appendChild(clone);
-                            widthOfClones += (clone.offsetWidth - marginBetweenImages);
                         }
                     });
 
                     adjustCarousel();
                 };
+
                 const adjustCarousel = () => {
+                    const isMobile = window.innerWidth < 768;
+                    const baseSpeed = isMobile ? 1 : 2; // Ajusta la velocidad: más lenta en móviles
+                    const marginBetweenImages = isMobile ? 20 : 60; // 20px en móvil, 60px en escritorio
+                    const numVisibleImages = isMobile ? 3 : 5;
+
                     const images = slideContainer.querySelectorAll('img');
                     const containerWidth = slideContainer.offsetWidth;
                     const imageWidth = (containerWidth - marginBetweenImages * (numVisibleImages - 1)) / numVisibleImages;
@@ -750,21 +750,25 @@
                         img.style.width = `${imageWidth}px`; // Ajusta el ancho de cada imagen
                         img.style.marginRight = `${marginBetweenImages}px`;
                     });
+
                     moveCarousel(baseSpeed);
                 };
+
                 const moveCarousel = (speed) => {
                     currentPosition -= speed;
                     slideContainer.style.transform = `translateX(${currentPosition}px)`;
-                    const resetPosition = slideContainer.scrollWidth - widthOfClones;
+
+                    const resetPosition = slideContainer.scrollWidth / 2;
                     if (Math.abs(currentPosition) >= resetPosition) {
-                        currentPosition = marginBetweenImages * 2; // Reinicia la posición para un flujo continuo
-                        slideContainer.style.transition = 'none';
-                        slideContainer.style.transform = `translateX(${currentPosition}px)`;
+                        currentPosition = 0; // Reinicia la posición para un flujo continuo
                     }
+
                     requestAnimationFrame(() => moveCarousel(speed));
                 };
+
                 // Ajustar el carrusel y reiniciar la posición al redimensionar la ventana
                 window.addEventListener('resize', adjustCarousel);
+
                 prepareCarousel();
             });
         </script>

@@ -281,13 +281,13 @@
             <script>
                var swiper = new Swiper('.mySwiper', {
                     loop: true,
-                    slidesPerView: 3, // Número predeterminado de diapositivas para pantallas más grandes
-                    spaceBetween: 10, // Espacio entre diapositivas
+                    slidesPerView: 2, // Número predeterminado de diapositivas para pantallas más grandes
+                    spaceBetween: 20, // Espacio entre diapositivas
                     autoplay: {
                         delay: 1, // Mantiene el carrusel moviéndose continuamente
                         disableOnInteraction: false,
                     },
-                    speed: 3000, // Ajusta este valor según necesites para controlar la velocidad del efecto continuoe
+                    speed: 4000, // Ajusta este valor según necesites para controlar la velocidad del efecto continuoe
                     
                     breakpoints: {
                         // Configuraciones para pantallas menores a 768px (usualmente móviles)

@@ -266,7 +266,7 @@
                 <p class="text-center max-w-2xl mx-auto mb-8">Estamos muy orgullosos de los miembros de nuestra familia <b>KetoBayter</b> por haber alcanzado sus objetivos de pérdida de peso y salud. Te queremos compartir las imagenes que nos ha enviado algunos de ellos.</p>
             </header>
             <!-- Swiper -->
-            <div class="swiper mySwiper">
+            <div class="swiper swiperTestimonials">
                 <div class="swiper-wrapper">
                     @for ($i = 1; $i <= 11; $i++)
                         @php
@@ -279,7 +279,7 @@
             </div>
               
             <script>
-               var swiper = new Swiper('.mySwiper', {
+               var swiper = new Swiper('.swiperTestimonials', {
                     loop: true,
                     slidesPerView: 2, // Número predeterminado de diapositivas para pantallas más grandes
                     spaceBetween: 20, // Espacio entre diapositivas
@@ -290,9 +290,9 @@
                     speed: 4000, // Ajusta este valor según necesites para controlar la velocidad del efecto continuoe
                     
                     breakpoints: {
-                        // Configuraciones para pantallas menores a 768px (usualmente móviles)
+                        // Configuraciones para pantallas mayores a 768px 
                         768: {
-                            slidesPerView: 6, // 6 diapositivas visibles en pantallas más pequeñas
+                            slidesPerView: 6, // 6 diapositivas visibles en pantallas más grandes
                             spaceBetween: 60 // Puedes ajustar el espacio entre diapositivas en móviles si es necesario
                         }
                     }

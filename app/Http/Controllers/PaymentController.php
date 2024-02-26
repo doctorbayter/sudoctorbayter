@@ -303,7 +303,7 @@ class PaymentController extends Controller
             case 53:
                 $mail = new ApprovedPurchaseReto($plan, $user);
             break;
-            case 55:
+            case 4:
                 $mail = new ApprovedPurchaseEvent($plan, $user);
             break;
             default:
@@ -413,7 +413,7 @@ class PaymentController extends Controller
                 $event->first_name = $user_first_name;
                 $event->url = "https://www.doctorbayter.com/masterclass";
                 $fomoEvent = $client->createEvent($event);
-                
+
             }else if($product_id == 3825094){ // 7 Días DKP
                 $plan = Plan::find(7); 
                 $fases = Fase::whereIn('id', [5])->get();

@@ -92,6 +92,8 @@
 
                                 @if ($recipe->video)
                                     <div class="mt-12">
+                                        <h2 class=" font-bold text bg-red-700 text-center text-xl px-8 py-4">En este momento tenemos inconvenientes con la plataforma de videos <br>Estamos trabajando en una pronta solución, agradecemos tu paciencia. Por ahora puedes guitarte de la preparación en texto.</h2>
+                                       
                                         <div style="">
                                             {!! $recipe->video->iframe !!}
                                         </div>

@@ -1384,10 +1384,10 @@ Route::get('x/fomo/{name}', function($name){
     $client = new FomoClient($apiKey); // auth token
 
     $event = new FomoEventBasic();
-    $event->event_type_id = "199229"; // Event type ID is found on Fomo dashboard (Templates -> Template ID)
-    $event->title = "7 Días Keto Perfectos";
+    $event->event_type_id = "199535"; // Event type ID is found on Fomo dashboard (Templates -> Template ID)
+    $event->title = "Entendiendo Mi Colesterol";
     $event->first_name = $name;
-    $event->url = "https://www.doctorbayter.com/dkp7";
+    $event->url = "https://www.doctorbayter.com/colesterol";
 
     $fomoEvent = $client->createEvent($event);
 

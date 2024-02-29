@@ -80,6 +80,67 @@
             </div>
         </div>
     </section>
+
+    <section class="bg-white mb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 pt-16">
+            <h2 class="mb-6 text-xl md:text-4xl font-bold text-gray-900 text-center uppercase">Módulos y Contenido del <span class="text-red-700">Curso</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="mb-8 h-full">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                        <div class="px-6 py-4">
+                            <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 1: Introducción al Colesterol</h3>
+                            <div class="text-gray-400">
+                                <p class="pb-2">Qué es el colesterol, qué son los triglicéridos, qué hace cada uno de ellos en el cuerpo y cómo se acumulan y diferencian. Además de entender el papel del colesterol en la producción de hormonas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8 h-full">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                        <div class="px-6 py-4">
+                            <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 2: Transportadores del Colesterol</h3>
+                            <div class="text-gray-400">
+                                <p class="pb-2">Qué es un transportador, cuál es su función y cómo está constituido. Qué es un kilomicron, las lipoproteinas o transportadores aterogénicos y qué es el transportador HDL.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8 h-full">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                        <div class="px-6 py-4">
+                            <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 3: Ateroesclerosis y Daño Endotelial</h3>
+                            <div class="text-gray-400">
+                                <p class="pb-2">Qué es la ateroesclerosis y por qué el colesterol no es el culpable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8 h-full">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                        <div class="px-6 py-4">
+                            <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 4: Perfil Lipídico</h3>
+                            <div class="text-gray-400">
+                                <p class="pb-2">Cómo interpretar un perfil lípidico, cómo intuir una ateroesclerosis a partir de este y análisis de casos clínicos reales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-8 h-full">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                        <div class="px-6 py-4">
+                            <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 5: Niveles de Colesterol Altos</h3>
+                            <div class="text-gray-400">
+                                <p class="pb-2">Qué son los hiperrespondedores de grasa magra, qué es la hipercolesterolemia familiar, quiénes necesitan estatinas y qué hacer si se me sube el colesterol (protocolo).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section class="bg-gray-900">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 py-12 md:py-20  flex flex-col">
             <h2 class="text-xl md:text-4xl font-bold text-gray-50 text-center uppercase">No dejes que el desconocimiento sobre el <span class="text-red-700">colesterol</span> controle tu vida. <span class="text-red-700">Empodérate</span> con el conocimiento necesario para vivir una vida más <span class="text-red-700">saludable</span> y feliz.<h2>
@@ -297,8 +358,12 @@
             </figure>
             <div class=" bg-gradient-to-t from-gray-900 to-gray-800 -mt-16 z-0 pt-20 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
                 <ul class="mt-2 text-white sm:text-xl font-bold">
+                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-check mr-4"></i>Acceso vitalicio</li>
+                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-4"></i>Ingresa desde cualquier dispositivo en cualquier parte del mundo</li>
                     <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-check mr-4"></i>Acceso inmediato al contenido del curso</li>
-                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-4"></i>Recursos descargables PDF</li>
+                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-4"></i>5 Módulos con 300 minutos de contenido en total</li>
+                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-check mr-4"></i>Recursos descargables PDF</li>
+                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-4"></i>Soporte técnico</li>
                 </ul>
                 <div class="w-full my-4 mx-auto text-center px-8">
                     <div class="mt-4 text-center">

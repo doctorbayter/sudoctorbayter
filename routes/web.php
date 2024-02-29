@@ -133,7 +133,9 @@ Route::get('/reviews', function () {
     return view('reviews');
 })->name('dkp.reviews');
 
-
+Route::get('/colesterol', function () {
+    return view('curso-colesterol');
+})->name('dkp.7dias');
 
 Route::get('masterclass/{masterclass}/register', Masterclass::class)->name('masterclass.register');
 Route::get('masterclass/{masterclass}/replay', [Masterclass::class, 'replay'])->name('masterclass.replay');

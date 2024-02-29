@@ -120,7 +120,8 @@ Route::get('/terminos', function(){
 Route::post('/webhook/zapier', [WebhookController::class, 'handleZapierWebhook']);
 
 Route::get('/masterclass', function () {
-    return view('masterclass');
+    return view('no-disponible');
+    //return view('masterclass');
 })->name('masterclass.29feb2024');
 
 Route::get('/dkp7', function () {

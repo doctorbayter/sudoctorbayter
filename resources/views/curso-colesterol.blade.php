@@ -87,17 +87,18 @@
             
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="mb-8 h-full">
-                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden" style="height: inherit;">
                         <div class="px-6 py-4">
                             <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 1: Introducción al Colesterol</h3>
                             <div class="text-gray-400">
                                 <p class="pb-2">Qué es el colesterol, qué son los triglicéridos, qué hace cada uno de ellos en el cuerpo y cómo se acumulan y diferencian. Además de entender el papel del colesterol en la producción de hormonas.</p>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
                 <div class="mb-8 h-full">
-                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden" style="height: inherit;">
                         <div class="px-6 py-4">
                             <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 2: Transportadores del Colesterol</h3>
                             <div class="text-gray-400">
@@ -107,7 +108,7 @@
                     </div>
                 </div>
                 <div class="mb-8 h-full">
-                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden" style="height: inherit;">
                         <div class="px-6 py-4">
                             <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 3: Ateroesclerosis y Daño Endotelial</h3>
                             <div class="text-gray-400">
@@ -117,7 +118,7 @@
                     </div>
                 </div>
                 <div class="mb-8 h-full">
-                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden" style="height: inherit;">
                         <div class="px-6 py-4">
                             <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 4: Perfil Lipídico</h3>
                             <div class="text-gray-400">
@@ -127,7 +128,7 @@
                     </div>
                 </div>
                 <div class="mb-8 h-full">
-                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden">
+                    <div class="py-2 bg-gradient-to-t from-black to-gray-900 rounded-xl shadow-lg overflow-hidden" style="height: inherit;">
                         <div class="px-6 py-4">
                             <h3 class="border-b border-gray-700 pb-2 text-xl font-bold text-gray-200 mb-3">Módulo 5: Niveles de Colesterol Altos</h3>
                             <div class="text-gray-400">

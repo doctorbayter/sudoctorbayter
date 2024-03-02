@@ -378,4 +378,7 @@
         }
         </script>
 
+    @push('scriptsHead')
+    <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/117000b76d2951c39436901d/script.js"></script> <!-- End cookieyes banner -->
+    @endpush
 </x-app-layout>

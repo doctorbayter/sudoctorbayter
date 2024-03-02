@@ -31,7 +31,7 @@
                         <p>Este es el impulso que necesitas para no solo llegar al día 7, sino para transformar tu vida completamente.</p>
                         <p class=" font-bold">Haz clic y únete ahora: no solo superarás la primera semana, estarás en el camino para ganar salud, ganar energía y convertirte en una verdadera máquina quema de grasa.</p>
                     </div>
-                    <div class="mx-auto mt-8">
+                    <div class="mx-auto mt-6">
                         <div class="flex">
                             <span class="text-sm sm:text-base text-gray-500 font-bold text-center w-full">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class=" text-gray-900">DKP7</span></span>
                         </div>

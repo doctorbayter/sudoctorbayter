@@ -128,11 +128,10 @@ Route::get('/masterclass', function () {
 Route::get('/dkp7', function ( Request $request ) {
 
     //$request->session()->forget('page_variation');
-
-    // Verifica si ya se ha asignado una variación a este usuario
     if (!$request->session()->has('page_variation')) {
-        // Asigna aleatoriamente una de las 5 variaciones
-        $variation = chr(65 + rand(0, 1)); // Genera una letra entre A y B
+        // Asigna aleatoriamente una de las 5 variaciones, asegurando igual probabilidad
+        $variations = ['A', 'B'];
+        $variation = $variations[array_rand($variations)]; // Selecciona una variación al azar
         $request->session()->put('page_variation', $variation);
     } else {
         $variation = $request->session()->get('page_variation');

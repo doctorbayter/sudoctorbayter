@@ -4,10 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
         <title> @yield('title') | {{ config('app.name') }}</title>
         <link rel="icon" href="{{ asset('img/icons/iso-doctorbayter.png') }}" type="image/png">
-
+        <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/117000b76d2951c39436901d/script.js"></script> <!-- End cookieyes banner -->
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap" rel="stylesheet">
         <style>
@@ -16,25 +15,13 @@
             }
         </style>
         @stack('style')
-        @stack('scriptsHead')
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
-
-        @livewireStyles
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
-
         <!-- Google Tag Manager -->
-            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-58QC4WL');</script>
         <!-- End Google Tag Manager -->
-
         <!-- Facebook Pixel Code -->
             <script>
             !function(f,b,e,v,n,t,s)
@@ -52,53 +39,25 @@
             src="https://www.facebook.com/tr?id=1557165744425673&ev=PageView&noscript=1"
             /></noscript>
         <!-- End Facebook Pixel Code -->
+        
 
-{{--
-    intl-tel-input CODE
-<!-- CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
-<!-- JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.min.js"></script>
---}}
+        @stack('scriptsHead')
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+        @livewireStyles
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}" defer></script>
+        
     </head>
     <body class="font-sans antialiased">
-
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58QC4WL"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-{{--
-    intl-tel-input CODE
-<div class="container">
-<div class="col-md-8 mt-4">
-<input type="text" id="phone" />
-</div>
-</div>
-<script>
-var input = document.querySelector("#phone");
-intlTelInput(input, {
-initialCountry: "auto",
-preferredCountries:["us", "es", "mx", "co"],
-geoIpLookup: function (success, failure) {
-$.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
-var countryCode = (resp && resp.country) ? resp.country : "us";
-success(countryCode);
-});
-},
-});
-</script>
---}}
-
-    @stack('TopOfThePage')
+        <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58QC4WL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        @stack('TopOfThePage')
         <x-jet-banner />
-
         <div class="min-h-screen bg-white">
             @livewire('navigation-menu')
-
-
             <!-- Page Content -->
             <main>
                 {{ $slot }}
@@ -125,17 +84,13 @@ success(countryCode);
                 </footer>
             </main>
         </div>
-
         @livewireScripts
-
         @stack('modals')
         @stack('scripts')
-
         <script type="text/javascript">
             (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
             vgo('setAccount', '800184021');
             vgo('setTrackByDefault', true);
-
             vgo('process');
         </script>
     </body>

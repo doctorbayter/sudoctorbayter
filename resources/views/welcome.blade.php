@@ -45,7 +45,7 @@
         }
 
         @keyframes wiggle {
-        0%,
+        0%, 
         100% {
             transform: scale(1) rotate(1deg);
         }
@@ -55,7 +55,7 @@
         }
 }
     </style>
-    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 ">
+    <article class="text-center mt-12 md:mt-24 mx-auto max-w-5xl px-2 hidden ">
         <a href="https://www.doctorbayter.com/masterclass" target="_blank"><img src="{{asset('img/billboards/banner_ptsm.png')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle"></a>
     </article>
 

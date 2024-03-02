@@ -127,17 +127,16 @@ Route::get('/masterclass', function () {
 
 Route::get('/dkp7', function ( Request $request ) {
 
-    return view('dkp-7-dias-a');
+    //$request->session()->forget('page_variation');
 
     // Verifica si ya se ha asignado una variación a este usuario
     if (!$request->session()->has('page_variation')) {
         // Asigna aleatoriamente una de las 5 variaciones
-        $variation = chr(65 + rand(0, 3)); // Genera una letra entre A y C
+        $variation = chr(65 + rand(0, 1)); // Genera una letra entre A y B
         $request->session()->put('page_variation', $variation);
     } else {
         $variation = $request->session()->get('page_variation');
     }
-
     // Devuelve la vista correspondiente a la variación
     return view('dkp-7-dias-' . strtolower($variation));
 

@@ -773,6 +773,7 @@
         </style>
     @endpush
     @push('scriptsHead')
+        <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>  
         <script type="application/ld+json">
             {
                 "@context": "http://schema.org",
@@ -799,8 +800,6 @@
                 }
             }
         </script>
-
-        <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>   
         <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>

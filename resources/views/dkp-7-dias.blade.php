@@ -1,4 +1,15 @@
 <x-app-layout>
+   
+    @section('title', 'Método DKP 7 Días')
+
+    @push('TopOfThePage')
+        <div class="bg-blue-600 text-white py-4">
+            <div class="container mx-auto px-4 text-center font-bold">
+                <p>¡Oferta especial! Método DKP 7 Días con el 70% de descuento termina en <span id="countdown"></span></p>
+            </div>
+        </div>
+    @endpush
+
     <section class=" bg-gradient-to-t from-black to-gray-900 pb-16">
         <header class="max-w-6xl mx-auto">
             <h2 class="text-white font-bold text-center py-12 text-xl sm:text-3xl px-4">Inicia tu camino hacia una vida más sana y energética con el Método DKP: domina los desafíos de los primeros 7 días</h2>
@@ -11,7 +22,7 @@
                 <div class="w-full md:w-6/12 px-4 sm:ml-4 ">
                     <div class="text-center sm:text-left">
                         <p class="mb-2">DISPONIBLE POR TIEMPO LIMITADO</p>
-                        <h2 class="text-gray-900 mb-6 leading-none font-black text-4xl md:text-6xl">7 DÍAS <b class="text-red-700">KETO </b>PERFECTOS</h2>
+                        <h1 class="text-gray-900 mb-6 leading-none font-black text-4xl md:text-6xl">7 DÍAS <b class="text-red-700">KETO </b>PERFECTOS</h1>
                     </div>
                     <div class="text-justify space-y-2 text-base">
                         <p>Supera el desafío inicial del Método DKP con nuestro programa exclusivo de 7 días.</p>
@@ -285,14 +296,14 @@
                     spaceBetween: 20, // Espacio entre diapositivas
                     autoplay: {
                         delay: 1, // Mantiene el carrusel moviéndose continuamente
-                        disableOnInteraction: false,
+                        disableOnInteraction: true,
                     },
                     speed: 4000, // Ajusta este valor según necesites para controlar la velocidad del efecto continuoe
                     
                     breakpoints: {
                         // Configuraciones para pantallas mayores a 768px 
                         768: {
-                            slidesPerView: 6, // 6 diapositivas visibles en pantallas más grandes
+                            slidesPerView: 5, // 6 diapositivas visibles en pantallas más grandes
                             spaceBetween: 60 // Puedes ajustar el espacio entre diapositivas en móviles si es necesario
                         }
                     }
@@ -743,12 +754,8 @@
     @endpush
     @push('scriptsHead')
         <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>   
-
-        
         <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        
-            
         <script>
             function showPopup() {
                 const popup = document.getElementById('exitIntentPopup');
@@ -796,5 +803,46 @@
                 }, 3000); // Retraso de 2 segundos
             });
         </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const targetDuration = 2.75 * 60 * 60 * 1000; // 2 horas y 45 minutos en milisegundos
+
+                function initializeCountdown() {
+                    const now = new Date().getTime();
+                    let endTime = parseInt(localStorage.getItem('countdownEndTime'), 10);
+
+                    if (!endTime || endTime < now) {
+                        // Si no hay un tiempo final guardado o ya ha pasado, establece uno nuevo.
+                        endTime = now + targetDuration;
+                        localStorage.setItem('countdownEndTime', endTime);
+                    }
+
+                    updateCountdown(endTime);
+                }
+
+                function updateCountdown(endTime) {
+                    const countdownInterval = setInterval(function() {
+                        const now = new Date().getTime();
+                        const timeLeft = endTime - now;
+
+                        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                        document.getElementById('countdown').innerText = `${hours}h ${minutes}m ${seconds}s`;
+
+                        if (timeLeft < 0) {
+                            clearInterval(countdownInterval);
+                            localStorage.removeItem('countdownEndTime'); // Limpia el almacenamiento para el próximo ciclo
+                            initializeCountdown(); // Reinicia el temporizador
+                        }
+                    }, 1000);
+                }
+
+                initializeCountdown();
+            });
+        </script>
+
     @endpush
 </x-app-layout>

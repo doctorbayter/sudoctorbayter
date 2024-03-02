@@ -36,6 +36,7 @@ use App\Http\Controllers\ManyChatController;
 use App\Http\Controllers\WebhookController;
 use Fomo\FomoClient;
 use Fomo\FomoEventBasic;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -124,8 +125,20 @@ Route::get('/masterclass', function () {
     //return view('masterclass');
 })->name('masterclass.29feb2024');
 
-Route::get('/dkp7', function () {
-    return view('dkp-7-dias');
+Route::get('/dkp7', function ( Request $request ) {
+
+    // Verifica si ya se ha asignado una variación a este usuario
+    if (!$request->session()->has('page_variation')) {
+        // Asigna aleatoriamente una de las 5 variaciones
+        $variation = chr(65 + rand(0, 3)); // Genera una letra entre A y C
+        $request->session()->put('page_variation', $variation);
+    } else {
+        $variation = $request->session()->get('page_variation');
+    }
+
+    // Devuelve la vista correspondiente a la variación
+    return view('dkp-7-dias-' . strtolower($variation));
+
 })->name('dkp.7dias');
 
 

@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title> @yield('title') {{ config('app.name') }}</title>
         <link rel="icon" href="{{ asset('img/icons/iso-doctorbayter.png') }}" type="image/png">
+        @stack('metaLinks')
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap" rel="stylesheet">
         <style>body {font-family: 'Poppins' !important;}</style>

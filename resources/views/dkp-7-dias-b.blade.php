@@ -33,7 +33,7 @@
                     </div>
                     <div class="mx-auto mt-6">
                         <div class="flex">
-                            <span class="text-sm sm:text-base text-gray-500 font-bold text-center w-full">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class=" text-gray-900">DKP7</span></span>
+                            <span class="text-sm sm:text-base text-gray-500 font-bold text-center w-full">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class=" text-gray-900">7DKP</span></span>
                         </div>
                         <div class="mt-4 bg-gradient-to-t from-gray-900 to-gray-800 z-0 pt-2 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
                             <ul class="mt-2 text-white sm:text-xl font-bold">
@@ -53,7 +53,7 @@
                                         <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$49 USD</span></span>
                                     </div>
                                 </div>
-                                <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb ">
+                                <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=ucf5h58x&offDiscount=7DKP" target="_blank" class="hotmart-fb ">
                                     <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Adquierelo aquí ya!</span>
                                 </a> 
                             </div>
@@ -79,7 +79,7 @@
                     <iframe src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-96 md:h-96 flex-1"></iframe>
                 </div>
             </div>
-            <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
+            <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=ucf5h58x&offDiscount=7DKP" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
         </div>
     </section>
     <section class="bg-gray-900">
@@ -129,7 +129,7 @@
             <h2 class="text-xl md:text-4xl font-bold text-gray-900 text-center my-8 uppercase">Da el salto hacia una vida <span class="text-red-700">más saludable</span> inicia tus Primeros 7 Días Keto <span class="text-red-700">Perfectos</span> ahora</h2>
             <p class="text-justify sm:text-center mb-8 text-base sm:text-lg">Al embarcarte en <b>"Tus Primeros 7 Días Keto Perfectos"</b>, te guiarás por la sabiduría del Doctor Bayter, un experto en transformaciones saludables cuya metodología ha ayudado a más de 15.000 personas, marcando la diferencia desde el inicio. Este primer paso no solo es crucial; es transformador, preparándote para seguir adelante con confianza y las herramientas correctas.</p>
             <h3 class="font-bold text-base sm:text-lg text-center">¿Estás listo para tomar el control de tu salud, comprender el funcionamiento de tu cuerpo, esquivar enfermedades y emprender acciones decisivas hacia una vida más sana, energética y feliz?</h3>
-            <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb">
+            <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=ucf5h58x&offDiscount=7DKP" target="_blank" class="hotmart-fb">
                 <span class="w-full my-8 text-center rounded-full inline-block mt-4 text-base sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 ">¡Sé parte de la revolución Keto Bayter!</span>
             </a> 
         </article>
@@ -273,10 +273,10 @@
                 </ul>
             </div>
         </div>
-        <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb block max-w-3xl mx-auto text-center mt-8">
+        <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=ucf5h58x&offDiscount=7DKP" target="_blank" class="hotmart-fb block max-w-3xl mx-auto text-center mt-8">
             <span class="cta-btn relative overflow-hidden w-full my-8 text-center rounded-full inline-block sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 ">
                 ¡Sí! Quiero en Plan 7 Días Keto Perfectos
-                <small class="block text-xs font-normal">Adquiere la oferta especial con un 70% de descuento con el código <b>DKP7</b></small>
+                <small class="block text-xs font-normal">Adquiere la oferta especial con un 70% de descuento con el código <b>7DKP</b></small>
             </span>
         </a>
     </section>
@@ -397,7 +397,7 @@
                             <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$49 USD</span></span>
                         </div>
                     </div>
-                    <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb ">
+                    <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=ucf5h58x&offDiscount=7DKP" target="_blank" class="hotmart-fb ">
                         <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Sí, Quiero Mejorar</span>
                     </a> 
                 </div>
@@ -621,7 +621,7 @@
                 <div class="mb-4 text-sm sm:text-xl">
                     <p>Esta oferta no durará para siempre, y queremos que seas parte de nuestro éxito</p>
                 </div>
-                <a  href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" class="block w-11/12 mx-auto rounded-xl p bg-red-700 hover:bg-red-900 text-white font-bold px-4 py-4 text-sm sm:text-3xl uppercase relative overflow-hidden cta-btn">¡Quiero Aprovechar la Oferta!</a>
+                <a  href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=ucf5h58x&offDiscount=7DKP" class="block w-11/12 mx-auto rounded-xl p bg-red-700 hover:bg-red-900 text-white font-bold px-4 py-4 text-sm sm:text-3xl uppercase relative overflow-hidden cta-btn">¡Quiero Aprovechar la Oferta!</a>
                 <button class=" text-gray-400 pt-2 px-4 my-2" onclick="closePopup()">No, gracias, no quiero</button>
             </div>
         </div>
@@ -787,7 +787,7 @@
                 },
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "https://www.doctorbayter.com/dkp7"
+                    "@id": "https://www.doctorbayter.com/7DKP"
                 }
             }
         </script>
@@ -843,7 +843,8 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const targetDuration = 2.75 * 60 * 60 * 1000; // 2 horas y 45 minutos en milisegundos
+                
+                const targetDuration = 1.75 * 60 * 60 * 1000; // 1 hora y 45 minutos en milisegundos
 
                 function initializeCountdown() {
                     const now = new Date().getTime();
@@ -854,7 +855,6 @@
                         endTime = now + targetDuration;
                         localStorage.setItem('countdownEndTime', endTime);
                     }
-
                     updateCountdown(endTime);
                 }
 

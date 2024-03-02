@@ -4,17 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title> @yield('title') | {{ config('app.name') }}</title>
+        <title> @yield('title') {{ config('app.name') }}</title>
         <link rel="icon" href="{{ asset('img/icons/iso-doctorbayter.png') }}" type="image/png">
         <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/117000b76d2951c39436901d/script.js"></script> <!-- End cookieyes banner -->
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-        <style>
-        body {
-            font-family: 'Poppins' !important;
-            }
-        </style>
-        @stack('style')
+        <style>body {font-family: 'Poppins' !important;}</style>
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -39,26 +34,21 @@
             src="https://www.facebook.com/tr?id=1557165744425673&ev=PageView&noscript=1"
             /></noscript>
         <!-- End Facebook Pixel Code -->
-        
-
-        @stack('scriptsHead')
         <!-- Styles -->
+        @stack('style')
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
         @livewireStyles
         <!-- Scripts -->
+        @stack('scriptsHead')
         <script src="{{ mix('js/app.js') }}" defer></script>
-        
     </head>
     <body class="font-sans antialiased">
-        <!-- Google Tag Manager (noscript) -->
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58QC4WL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
+        <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58QC4WL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
         @stack('TopOfThePage')
         <x-jet-banner />
         <div class="min-h-screen bg-white">
             @livewire('navigation-menu')
-            <!-- Page Content -->
             <main>
                 {{ $slot }}
                 <footer class=" bg-gray-50 border-t-4 border-red-700">
@@ -74,7 +64,7 @@
                                 <a href="{{route('terminos')}}" class="text-red-700 text-sm">Política de Privacidad</a>
                             </li>
                             <li class="hidden">
-                                <a href="#" class="text-red-700 text-sm">Política de Cookies</a>
+                                <a href="{{route('terminos')}}" class="text-red-700 text-sm">Política de Cookies</a>
                             </li>
                             <li class="">
                                 <a href="{{route('terminos')}}" class="text-red-700 text-sm">Terminos y Condiciones</a>

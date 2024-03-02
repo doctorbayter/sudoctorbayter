@@ -1,27 +1,26 @@
 <x-app-layout>
-   
-    @section('title', 'Método DKP 7 Días')
+    @section('title', 'Método DKP 7 Días |')
     @push('TopOfThePage')
         <div class="bg-blue-600 text-white py-4">
             <div class="container mx-auto px-4 text-center font-bold">
-                <p>¡Oferta especial! Método DKP 7 Días con el 70% de descuento termina en <span id="countdown"></span></p>
+                <p>¡Oferta especial! Primeros 7 Días del Método DKP con el 70% de descuento termina en <span id="countdown"></span></p>
             </div>
         </div>
     @endpush
-
     <section class=" bg-gradient-to-t from-black to-gray-900 pb-16">
         <header class="max-w-6xl mx-auto">
             <h2 class="text-white font-bold text-center py-12 text-xl sm:text-3xl px-4">Inicia tu camino hacia una vida más sana y energética con el Método DKP: domina los desafíos de los primeros 7 días</h2>
         </header>
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex relative overflow-hidden py-8 items-center bg-gray-100 rounded-xl ">
-            <div class="flex  md:flex-row flex-col-reverse ">
-                <figure class="flex-1 overflow-hidden ">
-                    <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm">
-                </figure>
-                <div class="w-full md:w-6/12 px-4 sm:ml-4 ">
+            <div class="flex  md:flex-row flex-col ">
+                <div class="flex-1 mb-8 sm:mb-0">
+                    <figure class="flex-1 overflow-hidden ">
+                        <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm">
+                    </figure>
+                    
                     <div class="text-center sm:text-left">
-                        <p class="mb-2">DISPONIBLE POR TIEMPO LIMITADO</p>
-                        <h1 class="text-gray-900 mb-6 leading-none font-black text-4xl md:text-6xl">7 DÍAS <b class="text-red-700">KETO </b>PERFECTOS</h1>
+                        <p class="mb-2 hidden">DISPONIBLE POR TIEMPO LIMITADO</p>
+                        <h1 class="text-gray-900 mt-4 mb-6 leading-none font-black text-4xl md:text-6xl">7 DÍAS <b class="text-red-700">KETO </b>PERFECTOS</h1>
                     </div>
                     <div class="text-justify space-y-2 text-base">
                         <p>Supera el desafío inicial del Método DKP con nuestro programa exclusivo de 7 días.</p>
@@ -33,21 +32,43 @@
                         <div class="mt-4 text-left">
                             <div class="flex flex-col ">
                                 <div class="text-center sm:text-left">
-                                    <small class="text-base">Precio Sin Descuento</small>
-                                    <p class="text-gray-400 line-through font-semibold text-5xl ">$49 USD</p>
+                                    <div class="hidden">
+                                        <small class="text-base">Precio Sin Descuento</small>
+                                        <p class="text-gray-400 line-through font-semibold text-5xl ">$49 USD</p>
+                                    </div>
                                     <div class="mt-4">
-                                        <p class=" text-black text-center sm:text-left font-bold text-2xl">Oferta <span class="text-red-700">Hoy</span></p>
-                                        <p class="text-red-700 font-semibold text-6xl">$14.7 USD</p>
+                                        <p class=" text-black text-center sm:text-left font-bold text-2xl sm:text-4xl">Oferta <span class="text-red-700">Hoy</span></p>
+                                        <p class="text-red-700 font-semibold text-5xl sm:text-7xl">$14.7 USD</p>
                                     </div>
                                 </div>
                             </div> 
                             <div class="flex">
-                                <span class="text-sm sm:text-base text-gray-500">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class="font-bold text-gray-900">DKP7</span></span>
+                                <span class="text-sm sm:text-base text-gray-500  text-center  sm:text-left w-full">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class="font-bold text-gray-900">DKP7</span></span>
                             </div>
                           </div>
-                          <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank"><span class="cta-btn relative overflow-hidden w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-4 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ÚNETE AHORA AQUÍ</span></a> 
-                        <small class="block mt-2 mb-4 sm:mb-0"><i class="text-base fas fa-shield-alt"></i>  Compra segura. Ambiente seguro y autenticado</small>
+                          <div class="hidden">
+                            <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP7" target="_blank"><span class="cta-btn relative overflow-hidden w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-4 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ÚNETE AHORA AQUÍ</span></a> 
+                            <small class="block mt-2 mb-4 sm:mb-0"><i class="text-base fas fa-shield-alt"></i>  Compra segura. Ambiente seguro y autenticado</small>
+                          </div>
                      </div>
+                </div>
+                
+                <div class="w-full md:w-6/12 px-4 sm:ml-4 ">
+
+                    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+
+                    <!--- The div that the checkout should be loaded --->
+                    <div id="inline_checkout" class=" overflow-hidden sm:-mb-64"></div>
+
+                    <!--- Configuration --->
+                    <script>
+                    const elements = checkoutElements.init('inlineCheckout', {
+                        offer: '4dc10xp0&offDiscount=DKP7',
+                    })
+                    elements.mount('#inline_checkout')
+                    </script>
+
+                    
                 </div>
             </div>
         </div>

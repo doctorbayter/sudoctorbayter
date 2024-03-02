@@ -1,7 +1,6 @@
 <x-app-layout>
    
     @section('title', 'Método DKP 7 Días')
-
     @push('TopOfThePage')
         <div class="bg-blue-600 text-white py-4">
             <div class="container mx-auto px-4 text-center font-bold">
@@ -397,7 +396,7 @@
     </section>
 
     <section class="bg-gray-900">
-        <div class="max-w-5xl mx-auto py-12 md:py-20">
+        <div class="max-w-5xl mx-auto py-12 md:py-20 faqs-section" id="faqs">
             <h2 class="text-center font-extrabold text-3xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
             <div class=" max-w-4xl mx-auto" x-data="{selected:null}">
                 <ul class="text-gray-50">
@@ -753,6 +752,33 @@
         </style>
     @endpush
     @push('scriptsHead')
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Article",
+                "name": "Programa de Dieta Keto de 7 Días",
+                "author": {
+                    "@type": "Person",
+                    "name": "Doctor Bayter"
+                },
+                "datePublished": "2024-02-28",
+                "description": "Un programa completo de 7 días para iniciar en la dieta keto, incluyendo guías, recetas y consejos para superar los retos iniciales y mejorar la salud y energía a largo plazo.",
+                "image": "https://doctorbayter.com/img/billboards/banner_7_dias_horizontal.png",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Doctor Bayter",
+                    "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://doctorbayter.com/img/logos/svg/logo-doctorbayter.png"
+                    }
+                },
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://www.doctorbayter.com/dkp7"
+                }
+            }
+        </script>
+
         <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>   
         <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

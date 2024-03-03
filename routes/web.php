@@ -126,16 +126,23 @@ Route::get('/masterclass', function () {
 })->name('masterclass.29feb2024');
 
 Route::get('/dkp7', function ( Request $request ) {
-
     //$request->session()->forget('page_variation');
-    if (!$request->session()->has('page_variation')) {
+
+    $linkVersion = $request->input('version');
+
+    if ($linkVersion == 'c') {
+        $variation = 'C'; // Variación Opmtimizada para Tráfico Frio
+
+    }else if (!$request->session()->has('page_variation')) {
         // Asigna aleatoriamente una de las 5 variaciones, asegurando igual probabilidad
         $variations = ['A', 'B'];
         $variation = $variations[array_rand($variations)]; // Selecciona una variación al azar
         $request->session()->put('page_variation', $variation);
+
     } else {
         $variation = $request->session()->get('page_variation');
     }
+    
     // Devuelve la vista correspondiente a la variación
     return view('dkp-7-dias-' . strtolower($variation));
 

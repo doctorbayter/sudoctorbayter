@@ -1,15 +1,5 @@
 <x-app-layout>
-    @section('title', 'Método DKP 7 Días |')
-    @push('metaLinks')
-        <meta name="robots" content="noindex" />
-    @endpush
-    @push('TopOfThePage')
-        <div class="bg-green-600 text-white py-4">
-            <div class="container mx-auto px-4 text-center font-bold text-xl">
-                <p>¡Oferta especial! Primeros 7 Días del Método DKP con el 70% de descuento termina en <span id="countdown"></span></p>
-            </div>
-        </div>
-    @endpush
+   
     <section class=" bg-gradient-to-t from-black to-gray-900 pb-16">
         <header class="max-w-6xl mx-auto">
             <h2 class="text-white font-bold text-center py-12 text-xl sm:text-3xl px-4">Inicia tu camino hacia una vida más sana y energética con el Método DKP: domina los desafíos de los primeros 7 días</h2>
@@ -75,8 +65,9 @@
                         <p>Inicia tu transformación con "Tus Primeros 7 Días Keto Perfectos" hoy mismo. Da el primer paso hacia un cambio duradero y saludable en tu vida. ¡Únete ahora y deja que el Doctor Bayter te guíe en cada paso del camino!</p>
                     </div>
                 </div>
-                <div class="flex-1 grid-video -my-24 sm:my-0">
-                    <iframe src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-96 md:h-96 flex-1"></iframe>
+                <div class="flex-1 grid-video -my-24 sm:my-0 relative">
+                    <iframe id="videoReto7" src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" data-hj-allow-iframe="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Plan DKP 7 Días" class="w-full h-96 md:h-96 flex-1"></iframe>
+                    <button id="playButton" class="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; padding: 10px 20px; cursor: pointer;">Play</button>
                 </div>
             </div>
             <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
@@ -627,6 +618,18 @@
         </div>
     </div>
 
+
+    @section('title', 'Método DKP 7 Días |')
+    @push('metaLinks')
+        <meta name="robots" content="noindex" />
+    @endpush
+    @push('TopOfThePage')
+        <div class="bg-red-600 text-white py-4">
+            <div class="container mx-auto px-4 text-center font-bold text-xl">
+                <p>¡Oferta especial! Primeros 7 Días del Método DKP con el 70% de descuento termina en <span id="countdown"></span></p>
+            </div>
+        </div>
+    @endpush
     @push('style')   
         <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -764,6 +767,7 @@
         </style>
     @endpush
     @push('scriptsHead')
+        <script src="https://player.vimeo.com/api/player.js"></script>
         <script type="text/javascript" src="https://load.fomo.com/api/v1/wUgUwvPxkTL3-hhjVamDfw/load.js" async></script>  
         <script type="application/ld+json">
             {
@@ -881,5 +885,31 @@
             });
         </script>
 
+    @endpush
+    @push('scripts')
+        <script>
+            var iframe = document.querySelector('#videoReto7');
+            var player = new Vimeo.Player(iframe);
+            var playButton = document.getElementById('playButton');
+
+            playButton.addEventListener('click', function() {
+                playButton.style.display = 'none';
+                player.play();
+            });
+
+            player.getDuration().then(function(duration) {
+            var halfDuration = duration / 2;
+            player.on('timeupdate', function(data) {
+                if (data.seconds >= halfDuration) {
+                // Asegúrate de que este evento solo se envíe una vez
+                player.off('timeupdate');
+                
+                // Envía el evento al Pixel de Meta
+                alert('50%')
+                //fbq('trackCustom', 'HalfVideoWatched', {video_id: 'TU_VIDEO_ID'});
+                }
+            });
+            });
+        </script>
     @endpush
 </x-app-layout>

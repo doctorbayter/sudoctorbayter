@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="flex-1 grid-video -my-24 sm:my-0">
-                    <iframe src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" data-hj-allow-iframe="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-96 md:h-96 flex-1"></iframe>
+                    <iframe src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-96 md:h-96 flex-1"></iframe>
                 </div>
             </div>
             <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=ucf5h58x&offDiscount=7DKP" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>

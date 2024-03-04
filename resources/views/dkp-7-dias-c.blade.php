@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="flex-1 grid-video -my-24 sm:my-0 relative">
-                    <iframe id="videoReto7" src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" data-hj-allow-iframe="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Plan DKP 7 Días" class="w-full h-96 md:h-96 flex-1"></iframe>
+                    <iframe id="videoReto7" src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Plan DKP 7 Días" class="w-full h-96 md:h-96 flex-1"></iframe>
                     <button id="playButton" class="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; padding: 10px 20px; cursor: pointer;">Play</button>
                 </div>
             </div>

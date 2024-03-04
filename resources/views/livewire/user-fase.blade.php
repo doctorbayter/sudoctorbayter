@@ -25,13 +25,13 @@
                                         <div>
                                             <p class="text-justify">Es importante que antes de iniciar con tus recetas veas detalladamente los <b>Secretos y Tips</b> que el Doctor Bayter ha revelado para que hagas este proceso perfecto y seguramente vas a necesitar.</p>
                                             <a href="{{asset($fase->resources()->find(9)->url)}}" target="_blank">
-                                                <span class="w-full sm:w-96 text-center rounded-full mt-4 block text-lg font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:border-gray-200 hover:text-gray-100">DESCARGA AQUí EL PDF DE SECRETOS</span>
+                                                <span class="w-full sm:w-96 text-center rounded-full mt-4 block text-xs sm:text-lg font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:border-gray-200 hover:text-gray-100">DESCARGA AQUí LOS SECRETOS</span>
                                             </a> 
                                         </div>
                                         <div class="mt-8">
                                             <p class="text-justify">Además tienes una lista de los alimentos, que vas a necesitar para está semana. Este listado contiene todos los alimentos esenciales para la primera semana de recetas. Solo se permiten los productos incluidos en la lista; por lo tanto, si no encuentras algún alimento específico aquí, significa que no está permitido o no será necesario.</p>
                                             <a href="{{asset($fase->resources()->find(8)->url)}}" target="_blank">
-                                                <span class="w-full sm:w-96 text-center rounded-full mt-4 block text-lg font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:border-gray-200 hover:text-gray-100">DESCARGA LA LISTA DE ALIMENTOS</span>
+                                                <span class="w-full sm:w-96 text-center rounded-full mt-4 block text-xs sm:text-lg font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:border-gray-200 hover:text-gray-100">DESCARGA LA LISTA DE ALIMENTOS</span>
                                             </a> 
                                         </div>
                                     </div>
@@ -127,10 +127,8 @@
                                                         @foreach ($week->days->sortBy('day') as $day)
 
                                                             @if ($day->fase->id == $fase->id)
-                                                                <div wire:click="setDay({{$day}})" class="font-semibold text-xs @if ($this->day->day == $day->day) bg-red-700 text-red-100 cursor-default @else bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer @endif  py-2   "><span class="hidden md:block xl:inline">Día</span> {{$day->day}}</div>
+                                                                <div wire:click="setDay({{$day}})" class="font-semibold text-xs @if ($this->day->day == $day->day) bg-red-700 text-red-100 cursor-default @else bg-gray-50 hover:text-red-700 hover:bg-gray-100 cursor-pointer @endif  py-2   "><span class="hidden md:block xl:inline">Día</span> {{$day->day}} </div>
                                                             @endif
-
-
                                                         @endforeach
                                                     </div>
                                                 </div>

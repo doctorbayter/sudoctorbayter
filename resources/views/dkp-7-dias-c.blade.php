@@ -12,13 +12,13 @@
                         <img src="{{asset('img/billboards/banner_7_dias_horizontal.png')}}" alt="" class="w-full object-cover rounded-xl flex-1  shadow-sm sm:hidden">
                     </figure>   
                     <div class="text-justify space-y-2 text-base px-4 pt-4">
-                        <p>Llegaste al lugar donde aprenderás a por fin podrás superar el desafío inicial de la dieta keto con nuestro programa exclusivo de 7 días, supera la tentación y la ansiedad por el dulce, y empodérate con herramientas, recetas, y motivación directa de tu Doctor Bayter. <b>El que más sabe de la Dieta Keto en el mundo y creador del Método DKP</b></p>
+                        <p>Llegaste al lugar donde aprenderás por fin a superar el desafío inicial de la dieta keto con nuestro programa exclusivo de 7 días, supera la tentación, la ansiedad por el dulce, y empodérate con herramientas, recetas, y motivación directa de tu Doctor Bayter. <b>El que más sabe de la Dieta Keto en el mundo y creador del Método DKP</b></p>
                        
                     </div>          
                 </div>
                 <div class="w-full md:w-6/12 px-4 sm:ml-4 ">
                     <div class="text-justify space-y-2 text-base">
-                        <p><b>No estás aquí por casualidad</b>, yo estoy aquí para darte este es el impulso que necesitas para no solo llegar al día 7, sino para transformar tu vida completamente.</p>
+                        <p><b>No estás aquí por casualidad</b>, estás aquí para transformar tu vida por completo.</p>
                         <p class=" font-bold">Te prometo que: no solo superarás la primera semana, estarás en el camino para ganar salud, ganar energía y convertirte en una verdadera máquina quema de grasa.</p>
                     </div>
                     <div class="mx-auto mt-8">
@@ -142,7 +142,7 @@
             <p class="text-justify sm:text-center mb-8 text-base sm:text-lg">Al embarcarte en <b>"Tus Primeros 7 Días Keto Perfectos"</b>, te guiarás por la sabiduría del Doctor Bayter, un experto en transformaciones saludables cuya metodología ha ayudado a más de 15.000 personas, marcando la diferencia desde el inicio. Este primer paso no solo es crucial; es transformador, preparándote para seguir adelante con confianza y las herramientas correctas.</p>
             <h3 class="font-bold text-base sm:text-lg text-center">¿Estás listo para tomar el control de tu salud, comprender el funcionamiento de tu cuerpo, esquivar enfermedades y emprender acciones decisivas hacia una vida más sana, energética y feliz?</h3>
             <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70OFF" target="_blank" class="hotmart-fb">
-                <span class="w-full my-8 text-center rounded-full inline-block mt-4 text-base sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 ">¡Sé parte de la revolución Keto Bayter!</span>
+                <span class="w-full my-8 text-center rounded-full inline-block mt-4 text-base sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 ">¡Sé parte de este movimiento!</span>
             </a> 
         </article>
     </section>
@@ -338,20 +338,20 @@
 
     <section class=" bg-gradient-to-t from-gray-900  to-black px-4 text-white pt-16 pb-8 sm:pb-20">
         <div class="mx-auto w-11/12 sm:w-5/12">
-            <h3 class="text-center text-2xl sm:text-4xl font-black mb-5 sm:mb-12">EL CAMINO COMPROBADO PARA LOGRAR UNA VIDA MÁS SANA Y ENERGÉTICA, ENSEÑADO POR EL ESTRATEGA #1 EN SALUD Y BIENESTAR</h3>
+            <h3 class="text-center text-2xl sm:text-4xl font-black mb-5 sm:mb-12">EL CAMINO COMPROBADO PARA LOGRAR UNA VIDA SANA, ENERGÉTICA Y FELIZ, ENSEÑADO POR EL CREADOR DE LA DIETA KETO PERFECTA</h3>
             <div class="grid grid-rows-1  sm:grid-cols-5 sm:gap-x-12 w-full">
                 <figure class="w-full overflow-hidden rounded-xl col-span-5 sm:col-span-2">
                     <img src="{{asset('img/photos/dr_003.png')}}" alt="" class="object-cover w-full">
                 </figure>
                 <div class="mt-4 col-span-3">
                     <h2 class="text-red-700 font-bold text-2xl mb-2">DOCTOR BAYTER</h2>
-                    <h3 class="text-lg font-bold">Médico cirujano, especialista en anestesia y en medicina crítica y cuidado intensivo. Lider latinoamericano Renombrado, Innovador y Estratega de Salud #1 del Mundo con una comunidad de más de 10.000.000 de seguidores en sus redes sociales.</h3>
+                    <h3 class="text-lg font-bold">Médico especialista en medicina crítica y cuidado intensivo, lider latinoamericano Bestseller del Libro Comer para Sanar.</h3>
                     <hr class=" h-1 w-28 my-4 border-red-700 border-2">
-                    <div class="mt-2 space-y-4 text-lg">
+                    <div class="mt-2 space-y-4 text-lg text-justify">
                         <p>El Doctor Bayter es un destacado médico y cirujano Colombiano lider y referente en la transformación de la salud a través de la alimentación.</p>
                         <p>Con una amplia experiencia en medicina crítica y anestesia, ha redefinido el enfoque hacia la prevención de enfermedades y el mejoramiento de la calidad de vida.</p>
                         <p>Como deportista 100% Keto Perfecto ha realizado más de 28 carreras de triatlón de larga distancia del circuito Ironman.</p>
-                        <p>Su innovador Método DKP ha inspirado a miles de personas a adoptar un estilo de vida saludable, demostrando que el poder transformador de una nutrición adecuada puede llevarte a vivir una vida sana, energética y feliz.</p>
+                        <p>Su innovador Método DKP ha inspirado a miles de personas a adoptar un estilo de vida sanador, demostrando que el poder transformador de una nutrición adecuada puede llevarte a vivir una vida sana, energética y feliz.</p>
                     </div>
                 </div>
             </div>

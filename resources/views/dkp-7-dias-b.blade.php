@@ -21,19 +21,18 @@
                         <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm">
                     </figure>   
                     <div class="text-justify space-y-2 text-base px-4 pt-4">
-                        <p>Supera el desafío inicial del Método DKP con nuestro programa exclusivo de 7 días y entiende los cambios en tu cuerpo, supera la barrera mental del cuarto día, y empodérate con herramientas, recetas, y motivación directa de tu Doctor Bayter.</p>
-                       
+                        <p>Llegaste al lugar donde aprenderás a por fin podrás superar el desafío inicial de la dieta keto con nuestro programa exclusivo de 7 días, supera la tentación y la ansiedad por el dulce, y empodérate con herramientas, recetas, y motivación directa de tu Doctor Bayter. <b>El que más sabe de la Dieta Keto en el mundo y creador del Método DKP</b></p>
                     </div>          
                 </div>
                 
                 <div class="w-full md:w-6/12 px-4 sm:ml-4 ">
                     <div class="text-justify space-y-2 text-base">
-                        <p>Este es el impulso que necesitas para no solo llegar al día 7, sino para transformar tu vida completamente.</p>
-                        <p class=" font-bold">Haz clic y únete ahora: no solo superarás la primera semana, estarás en el camino para ganar salud, ganar energía y convertirte en una verdadera máquina quema de grasa.</p>
+                        <p><b>No estás aquí por casualidad</b>, yo estoy aquí para darte este es el impulso que necesitas para no solo llegar al día 7, sino para transformar tu vida completamente.</p>
+                        <p class=" font-bold">Te prometo que: no solo superarás la primera semana, estarás en el camino para ganar salud, ganar energía y convertirte en una verdadera máquina quema de grasa.</p>
                     </div>
                     <div class="mx-auto mt-6">
                         <div class="flex">
-                            <span class="text-sm sm:text-base text-gray-500 font-bold text-center w-full">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class=" text-gray-900">7DKP</span></span>
+                            <span class="text-sm sm:text-base text-gray-500 font-bold text-center w-full">ADQUIERE EL PLAN KETO DE 7 DÍAS  MÁS COMPLETO DEL MUNDO EN ESPAÑOL CON EL <span class="text-gray-900">70% DE DESCUENTO</span> </span>
                         </div>
                         <div class="mt-4 bg-gradient-to-t from-gray-900 to-gray-800 z-0 pt-2 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
                             <ul class="mt-2 text-white sm:text-xl font-bold">
@@ -61,6 +60,19 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="px-4 pt-8 mx-auto w-11/12 sm:w-4/12">
+            <figure>
+                <img src="{{asset('img/gfx/warranty_badge.png')}}" alt="" class=" h-52 w-52 mx-auto">
+            </figure>
+            <div class="text-center space-y-6 text-white">
+                <h3 class="font-bold">Tu inversión segura con garantía de satisfacción de 7 días</h3>
+                <p class="text-sm ">Después de ingresar al Plan DKP 7 Días tendrás 7 días para seguir el contenido. Si dentro de este tiempo sientes que no es lo que esperabas o no cumple con tus necesidades, puedes solicitar el reembolso inmediato, sin explicaciones.</p>
+                <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb sm:hidden">
+                    <span class="w-full rounded-full inline-block mt-8  sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Adquiere tu acceso ya!</span>
+                </a> 
+                <small class="inline mt-0 sm:mt-4"><i class="text-base fas fa-shield-alt"></i>  Compra segura y autenticada</small>
             </div>
         </div>
     </section>

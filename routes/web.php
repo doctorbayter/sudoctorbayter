@@ -142,7 +142,7 @@ Route::get('/dkp7', function ( Request $request ) {
     } else {
         $variation = $request->session()->get('page_variation');
     }
-    
+
     // Devuelve la vista correspondiente a la variación
     return view('dkp-7-dias-' . strtolower($variation));
 

@@ -85,9 +85,18 @@
             <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70OFF" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
         </div>
     </section>
-    <section class="bg-gray-900">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8 py-12 md:py-20  flex flex-col">
+    <section class="bg-gray-900 py-10 sm:py-20">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 mb-10 md:mb-16  flex flex-col">
             <h2 class="text-xl md:text-4xl font-bold text-gray-50 text-center uppercase">Listo para tomar la <span class="text-red-700">poderosa</span> decisión no solo por tu salud, sino por tu vida. Que te llevará hacia una versión <span class="text-red-700">más energética y saludable</span> de ti mismo.</h2>
+        </div>
+        <div class="py-8 bg-gradient-to-t from-gray-900 to-gray-800 rounded-xl px-4 mx-2 grid grid-rows-1 sm:grid-cols-7 text-center items-center text-white sm:w-4/12 sm:mx-auto">
+            <figure class=" overflow-hidden rounded-full w-32 h-32 mx-auto mb-6 col-span-7 sm:col-span-2">
+                <img src="{{asset('img/photos/daniel_001.png')}}" alt="Foto Daniel Habif" class="object-cover w-full">
+            </figure>
+            <div class=" space-y-2 col-span-5 sm:text-left">
+                <p class="italic">"Comprendí que, mientras un médico se enfoca en tratar la enfermedad, uno excepcional, como el <strong>Doctor Bayter</strong>, guía al paciente para entender cómo su propio cuerpo también puede sanarse."</p>
+                <h3 class="font-bold">Daniel Habif</h3>
+            </div>
         </div>
     </section>
     <section class="bg-white mb-8">
@@ -431,33 +440,56 @@
         </div>
     </section>
 
-    <section class="bg-gray-900">
+    <section class="bg-gray-900" id="preguntas">
         <div class="max-w-5xl mx-auto py-12 md:py-20 faqs-section" id="faqs">
-            <h2 class="text-center font-extrabold text-2xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
+            <h2 class="text-center font-extrabold text-3xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
             <div class=" max-w-4xl mx-auto" x-data="{selected:null}">
                 <ul class="text-gray-50">
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 2 ? selected = 2 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-base font-bold md:text-xl">¿Es segura la dieta Keto?</span>
+                                <span class="text-lg font-bold md:text-xl">¿Es segura la dieta Keto?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 2 , 'fa-chevron-down': selected !== 2 }"></span>
                             </div>
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg">Es una de las dietas más estudiadas en el mundo. las investigaciones sobre las dietas cetogénicas señalan su efectividad para adelgazar en el tiempo experimentando en la mayor parte de los casos muy pocos efectos adversos.
-                                    Otras investigaciones también confirman la seguridad y eficacia de las dietas muy reducidas en carbohidratos y que inducen cetosis al momento de bajar de peso, por lo que, la duración de la misma no tendría limitaciones siempre y cuando podamos adherir a su práctica.</p>
+                                <p class="text-sm md:text-base">Es una de las dietas más estudiadas en el mundo. las investigaciones sobre las dietas cetogénicas señalan su efectividad para adelgazar en el tiempo experimentando en la mayor parte de los casos muy pocos efectos adversos.</p>
+                                <p>Otras investigaciones también confirman la seguridad y eficacia de las dietas muy reducidas en carbohidratos y que inducen cetosis al momento de bajar de peso, por lo que, la duración de la misma no tendría limitaciones siempre y cuando podamos adherir a su práctica.</p>
                             </div>
                         </div>
                     </li>
-                    <li class="relative mb-4 rounded-lg bg-gray-800 ">
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 3 ? selected = 3 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-base font-bold md:text-xl">¿Cómo se si la dieta Keto es para mi, puedo hacerla?</span>
+                                <span class="text-lg font-bold md:text-xl">¿Que sigue después de estos 7 días?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 3 , 'fa-chevron-down': selected !== 3 }"></span>
                             </div>
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-sm md:text-base">Si estás a punto de embarcarte en los primeros 7 días de la Dieta Keto Perfecta con el Método DKP, ¡estás a un paso de comenzar un viaje transformador que cambiará tu vida para mejor! Entendemos que puedas tener preguntas sobre qué sigue después de estos primeros días cruciales, así que aquí te explicamos cómo puedes continuar tu camino hacia el éxito y el bienestar óptimo:</p>
+                                <p class="text-sm md:text-base">Una vez completes tus primeros 7 días, un período esencial para adaptar tu cuerpo a la cetosis y superar los desafíos iniciales, tienes dos opciones excelentes para seguir adelante con tu transformación:</p>
+                                <ul class="list-disc font-normal px-6 mt-4">
+                                    <li class="text-base mb-2">
+                                        <p><b>Programa de 21 días del Método DKP - Fase 1:</b> Esta opción es perfecta si prefieres ir paso a paso, afianzando los conocimientos y hábitos que empezaste a desarrollar. Durante estos 21 días, profundizarás en las estrategias de alimentación keto, entenderás mejor los cambios en tu metabolismo y aprenderás a manejar la ansiedad y las tentaciones. Es una manera estupenda de consolidar tu inicio y prepararte para los próximos pasos del Método DKP. (El programa de 21 días solo lo  puedes adquirir solo si antes tienes el plan de 7 días.)</p>
+                                    </li>
+                                    <li class="text-base mb-2">
+                                        <p><b>Método DKP Premium - Las 4 Fases:</b> Si estás listo para una inmersión completa y quieres tener acceso desde el principio a todas las herramientas, información y soporte necesarios para maximizar tu transformación, el Método DKP Premium es tu camino a seguir. A través de las 4 fases del Método DKP, recibirás una guía completa, apoyo continuo y recursos exclusivos para cada etapa de tu viaje hacia un estilo de vida saludable y sostenible. <a href="{{route('dkp')}}" class="font-bold">(El método DKP Plan Premium lo puedes adquirir directamente <span class="text-red-700 underline">aquí.</span> )</a></p>
+                                    </li>
+                                </ul>
+                                <p class="text-sm md:text-base">Ambas opciones están diseñadas para apoyarte y guiarte en tu transformación hacia una mejor salud y bienestar. Selecciona el camino que mejor se alinee con tus objetivos y nivel de compromiso, y prepárate para embarcarte en esta emocionante aventura hacia una vida más saludable y plena. ¡Estamos aquí para apoyarte en cada paso del camino!</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800 ">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 4 ? selected = 4 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Cómo se si la dieta Keto es para mi, puedo hacerla?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 4 , 'fa-chevron-down': selected !== 4 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
                                 <p class="text-red-700 text-xl mb-2"><b>En el siguiente listado escontrarás las personas que NO pueden hacer el método DKP</b></p>
                                 <div class="grid lg:grid-cols-3 gap-x-4">
@@ -538,75 +570,75 @@
                         </div>
                     </li>
                     <li class="relative mb-4 rounded-lg bg-gray-800">
-                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 4 ? selected = 4 : selected = null">
-                            <div class="flex items-center justify-between">
-                                <span class="text-base font-bold md:text-xl">¿Que pasa si soy alergico a algún alimento?</span>
-                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 4 , 'fa-chevron-down': selected !== 4 }"></span>
-                            </div>
-                        </button>
-                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
-                            <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg">En la lista de alimentos que tendrás al adqurir el plande 7 días encontrarás diferentes opciones de alimentos por los que los podrás reemplazar</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 5 ? selected = 5 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-base font-bold md:text-xl">Quiero hacer el Método pero no quiero bajar de peso</span>
+                                <span class="text-lg font-bold md:text-xl">¿Que pasa si soy alergico a algún alimento?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 5 , 'fa-chevron-down': selected !== 5 }"></span>
                             </div>
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container5" x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg">En tu caso que no quieres bajar de peso, es importante sigas el método perfecto, consume suficiente proteína durante el día para mujeres entre 300-320 gramos para hombre entre 300-380 gramos o  hasta sentir saciedad, debes complementar tu alimentación con ejercicio de fuerza, ejercicio de peso es así como tu cuerpo empezará a producir músculo,te sugiero busca un buen coach de gimnasio que te pueda asesorar,sigue el  plan perfecto ahora bien si tu cuerpo sigue bajando de peso es porque aún tienes grasa acomulada y la vas a quemar.</p>
+                                <p class="text-sm md:text-base">En la lista de alimentos que tendrás al adqurir el plande 7 días encontrarás diferentes opciones de alimentos por los que los podrás reemplazar</p>
                             </div>
                         </div>
                     </li>
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 6 ? selected = 6 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-base font-bold md:text-xl">¿Puedo hacer el Método si mi colesterol está arriba de 300?</span>
+                                <span class="text-lg font-bold md:text-xl">Quiero hacer el Método pero no quiero bajar de peso</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 6 , 'fa-chevron-down': selected !== 6 }"></span>
                             </div>
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container6" x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg">Entiendo tu preocupación sobre el colesterol alto y la posibilidad de continuar con el Método DKP. Es crucial destacar que el Método DKP es más que una dieta para perder peso; es un enfoque metabólico integral que busca enseñar a tu cuerpo a usar eficientemente las grasas, tanto las de los alimentos como las corporales, para mejorar tu salud de manera general</p>
-                                <p class="py-2 md:text-lg">En relación con el colesterol, es importante aclarar que seguir una dieta cetogénica, como la del Método DKP, no implica un riesgo de aumentar tus niveles de colesterol LDL o de desarrollar hígado graso, siempre y cuando sigas el método correctamente y consumas los tipos de grasas recomendadas. De hecho, el Método DKP se enfoca en reducir la activación de la insulina, lo que es beneficioso, ya que la función principal de la insulina es acumular grasa en el cuerpo y en las arterias, lo cual puede contribuir a elevar el colesterol LDL de mala calidad.</p>
-                                <p class="py-2 md:text-lg">Sin embargo, es crucial señalar que personas con colesterol alto mayor a 300 no deben realizar el método. Dado que mencionas tener un nivel de colesterol de 310, te recomendaría considerar esto cuidadosamente. Es esencial que cualquier decisión sobre tu salud y dieta sea tomada en consulta con tu médico, quien puede ofrecerte un consejo personalizado basado en tu historial médico y tus necesidades específicas.</p>
+                                <p class="text-sm md:text-base">En tu caso que no quieres bajar de peso, es importante sigas el método perfecto, consume suficiente proteína durante el día para mujeres entre 300-320 gramos para hombre entre 300-380 gramos o  hasta sentir saciedad, debes complementar tu alimentación con ejercicio de fuerza, ejercicio de peso es así como tu cuerpo empezará a producir músculo,te sugiero busca un buen coach de gimnasio que te pueda asesorar,sigue el  plan perfecto ahora bien si tu cuerpo sigue bajando de peso es porque aún tienes grasa acomulada y la vas a quemar.</p>
                             </div>
                         </div>
                     </li>
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 7 ? selected = 7 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-base font-bold md:text-xl">¿Puedo hacer el Método si me quitarón la vesícula?</span>
+                                <span class="text-lg font-bold md:text-xl">¿Puedo hacer el Método si mi colesterol está arriba de 300?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 7 , 'fa-chevron-down': selected !== 7 }"></span>
                             </div>
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container7" x-bind:style="selected == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg">Es un mito común que no debes consumir grasa si no tienes vesícula. En realidad, el cuerpo aún puede digerir las grasas, aunque el proceso es un poco diferente.</p>
-                                <p class="my-2 text-base md:text-lg">El Método DKP se basa en una alimentación cetogénica, que incluye grasas saludables. Estas grasas son fundamentales en el método y aportan muchos beneficios. Sin embargo, es importante que inicies el método con atención a cómo tu cuerpo responde a estos cambios en la dieta, especialmente en la Fase 1, que es más restrictiva y enfocada en la adaptación a un estilo de vida bajo en carbohidratos.</p>
-                                <p class="my-2 text-base md:text-lg">Recuerda seguir el método según lo establecido, sin hacer modificaciones, y estar atenta a cualquier señal de tu cuerpo. Si en algún momento sientes malestar o tienes dudas específicas, sería recomendable consultar con un médico que conozca tu historial clínico detallado.</p>
+                                <p class="text-sm md:text-base">Entiendo tu preocupación sobre el colesterol alto y la posibilidad de continuar con el Método DKP. Es crucial destacar que el Método DKP es más que una dieta para perder peso; es un enfoque metabólico integral que busca enseñar a tu cuerpo a usar eficientemente las grasas, tanto las de los alimentos como las corporales, para mejorar tu salud de manera general</p>
+                                <p class="py-2 md:text-lg">En relación con el colesterol, es importante aclarar que seguir una dieta cetogénica, como la del Método DKP, no implica un riesgo de aumentar tus niveles de colesterol LDL o de desarrollar hígado graso, siempre y cuando sigas el método correctamente y consumas los tipos de grasas recomendadas. De hecho, el Método DKP se enfoca en reducir la activación de la insulina, lo que es beneficioso, ya que la función principal de la insulina es acumular grasa en el cuerpo y en las arterias, lo cual puede contribuir a elevar el colesterol LDL de mala calidad.</p>
+                                <p class="py-2 md:text-lg">Sin embargo, es crucial señalar que personas con colesterol alto mayor a 300 no deben realizar el método. Dado que mencionas tener un nivel de colesterol de 310, te recomendaría considerar esto cuidadosamente. Es esencial que cualquier decisión sobre tu salud y dieta sea tomada en consulta con tu médico, quien puede ofrecerte un consejo personalizado basado en tu historial médico y tus necesidades específicas.</p>
                             </div>
                         </div>
                     </li>
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 8 ? selected = 8 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-base font-bold md:text-xl">¿Puedo hacer el Método si tengo los trigliceridos altos?</span>
+                                <span class="text-lg font-bold md:text-xl">¿Puedo hacer el Método si me quitarón la vesícula?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 8 , 'fa-chevron-down': selected !== 8 }"></span>
                             </div>
                         </button>
                         <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container8" x-bind:style="selected == 8 ? 'max-height: ' + $refs.container8.scrollHeight + 'px' : ''">
                             <div class="px-6 pt-4 pb-6">
-                                <p class="text-base md:text-lg">ELa clave aquí es entender cómo nuestro cuerpo maneja las grasas. Los triglicéridos se almacenan en nuestro cuerpo como reservas energéticas. En el Método DKP, al reducir la insulina en tu organismo, se activa una hormona llamada lipasa, que es esencial para romper los triglicéridos en ácidos grasos y glicerol, liberándolos de las células grasas.</p>
-                                <p class="my-2 text-base md:text-lg">Además, al limitar la ingesta de carbohidratos a menos de 25  gramos al día (para una óptima cetosis), no solo evitas activar la insulina, sino que también estimulas la liberación de triglicéridos desde las células grasas hacia la sangre. Estos ácidos grasos son transportados a los tejidos y células para ser utilizados como energía.</p>
-                                <p class="my-2 text-base md:text-lg">En resumen, al seguir el Método DKP, estás activando mecanismos naturales en tu cuerpo para movilizar y utilizar eficientemente las grasas almacenadas, lo cual puede ayudar en la reducción de triglicéridos</p>
-                                <p class="my-2 text-base md:text-lg">El Método DKP, creado por el Doctor Jorge Enrique Bayter, es una versión perfeccionada de la dieta cetogénica tradicional. </p>
-                                <p class="my-2 text-base md:text-lg">Este método se enfoca en la sanación del cuerpo y el metabolismo, utilizando un enfoque estructurado y dividido en fases para lograr resultados óptimos.</p>
+                                <p class="text-sm md:text-base">Es un mito común que no debes consumir grasa si no tienes vesícula. En realidad, el cuerpo aún puede digerir las grasas, aunque el proceso es un poco diferente.</p>
+                                <p class="my-2 text-sm md:text-base">El Método DKP se basa en una alimentación cetogénica, que incluye grasas saludables. Estas grasas son fundamentales en el método y aportan muchos beneficios. Sin embargo, es importante que inicies el método con atención a cómo tu cuerpo responde a estos cambios en la dieta, especialmente en la Fase 1, que es más restrictiva y enfocada en la adaptación a un estilo de vida bajo en carbohidratos.</p>
+                                <p class="my-2 text-sm md:text-base">Recuerda seguir el método según lo establecido, sin hacer modificaciones, y estar atenta a cualquier señal de tu cuerpo. Si en algún momento sientes malestar o tienes dudas específicas, sería recomendable consultar con un médico que conozca tu historial clínico detallado.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative mb-4 rounded-lg bg-gray-800">
+                        <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 9 ? selected = 9 : selected = null">
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold md:text-xl">¿Puedo hacer el Método si tengo los trigliceridos altos?</span>
+                                <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 9 , 'fa-chevron-down': selected !== 9 }"></span>
+                            </div>
+                        </button>
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-500" style="" x-ref="container9" x-bind:style="selected == 9 ? 'max-height: ' + $refs.container9.scrollHeight + 'px' : ''">
+                            <div class="px-6 pt-4 pb-6">
+                                <p class="text-sm md:text-base">ELa clave aquí es entender cómo nuestro cuerpo maneja las grasas. Los triglicéridos se almacenan en nuestro cuerpo como reservas energéticas. En el Método DKP, al reducir la insulina en tu organismo, se activa una hormona llamada lipasa, que es esencial para romper los triglicéridos en ácidos grasos y glicerol, liberándolos de las células grasas.</p>
+                                <p class="my-2 text-sm md:text-base">Además, al limitar la ingesta de carbohidratos a menos de 25  gramos al día (para una óptima cetosis), no solo evitas activar la insulina, sino que también estimulas la liberación de triglicéridos desde las células grasas hacia la sangre. Estos ácidos grasos son transportados a los tejidos y células para ser utilizados como energía.</p>
+                                <p class="my-2 text-sm md:text-base">En resumen, al seguir el Método DKP, estás activando mecanismos naturales en tu cuerpo para movilizar y utilizar eficientemente las grasas almacenadas, lo cual puede ayudar en la reducción de triglicéridos</p>
+                                <p class="my-2 text-sm md:text-base">El Método DKP, creado por el Doctor Jorge Enrique Bayter, es una versión perfeccionada de la dieta cetogénica tradicional. </p>
+                                <p class="my-2 text-sm md:text-base">Este método se enfoca en la sanación del cuerpo y el metabolismo, utilizando un enfoque estructurado y dividido en fases para lograr resultados óptimos.</p>
                             </div>
                         </div>
                     </li>

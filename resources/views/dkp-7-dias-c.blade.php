@@ -1,37 +1,38 @@
 <x-app-layout>
    
-    <section class=" bg-gradient-to-t from-black to-gray-900 pb-16">
+    <section class=" bg-gradient-to-t from-black to-gray-800 pb-16">
         <header class="max-w-6xl mx-auto">
-            <h2 class="text-white font-bold text-center py-12 text-xl sm:text-3xl px-4">Inicia tu camino hacia una vida más sana y energética con el Método DKP: domina los desafíos de los primeros 7 días</h2>
+            <h2 class="text-white font-bold text-center py-12 text-lg sm:text-3xl px-4">Inicia tu camino hacia una vida más sana y energética con el Método DKP: domina los desafíos de los primeros 7 días de la Dieta Keto</h2>
         </header>
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex relative overflow-hidden py-8 items-center bg-gray-100 rounded-xl ">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex relative overflow-hidden py-8 items-center bg-gray-100 rounded-xl ">
             <div class="flex  md:flex-row flex-col ">
                 <div class="flex-1 mb-8 sm:mb-0">
-                    <figure class="flex-1 overflow-hidden ">
-                        <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm">
+                    <figure class="flex-1 sm:overflow-hidden bg-transparent">
+                        <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm hidden sm:block">
+                        <img src="{{asset('img/billboards/banner_7_dias_horizontal.png')}}" alt="" class="w-full object-cover rounded-xl flex-1  shadow-sm sm:hidden">
                     </figure>   
                     <div class="text-justify space-y-2 text-base px-4 pt-4">
-                        <p>Supera el desafío inicial del Método DKP con nuestro programa exclusivo de 7 días y entiende los cambios en tu cuerpo, supera la barrera mental del cuarto día, y empodérate con herramientas, recetas, y motivación directa de tu Doctor Bayter.</p>
+                        <p>Llegaste al lugar donde aprenderás a por fin podrás superar el desafío inicial de la dieta keto con nuestro programa exclusivo de 7 días, supera la tentación y la ansiedad por el dulce, y empodérate con herramientas, recetas, y motivación directa de tu Doctor Bayter. <b>El que más sabe de la Dieta Keto en el mundo y creador del Método DKP</b></p>
                        
                     </div>          
                 </div>
                 
                 <div class="w-full md:w-6/12 px-4 sm:ml-4 ">
                     <div class="text-justify space-y-2 text-base">
-                        <p>Este es el impulso que necesitas para no solo llegar al día 7, sino para transformar tu vida completamente.</p>
-                        <p class=" font-bold">Haz clic y únete ahora: no solo superarás la primera semana, estarás en el camino para ganar salud, ganar energía y convertirte en una verdadera máquina quema de grasa.</p>
+                        <p><b>No estás aquí por casualidad</b>, yo estoy aquí para darte este es el impulso que necesitas para no solo llegar al día 7, sino para transformar tu vida completamente.</p>
+                        <p class=" font-bold">Te prometo que: no solo superarás la primera semana, estarás en el camino para ganar salud, ganar energía y convertirte en una verdadera máquina quema de grasa.</p>
                     </div>
                     <div class="mx-auto mt-8">
                         <div class="flex">
-                            <span class="text-sm sm:text-base text-gray-500 font-bold text-center w-full">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class=" text-gray-900">DKP7</span></span>
+                            <span class="text-sm sm:text-base text-gray-500 font-bold text-center w-full">ADQUIERE EL PLAN KETO DE 7 DÍAS  MÁS COMPLETO DEL MUNDO EN ESPAÑOL CON EL 70% DE DESCUENTO</span>
                         </div>
-                        <div class="mt-4 bg-gradient-to-t from-gray-900 to-gray-800 z-0 pt-2 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
-                            <ul class="mt-2 text-white sm:text-xl font-bold">
-                                <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-check mr-4"></i> Acceso inmediato por 45 días al contenido</li>
-                                <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-4"></i>21 recetas y lista de alimentos para los 7 días</li>
-                                <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-comment mr-4"></i>Secretos exclusivos del Doctor Bayter</li>
-                                <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-video mr-4"></i>Contenido multimedia para guíarte durante los 7 días</li>
-                                <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-download mr-4"></i>Descargables: Lista de alimentos y Secretos</li>
+                        <div class="mt-4 bg-gradient-to-t from-gray-900 to-gray-800 z-0 pt-2 w-full max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
+                            <ul class="mt-2 text-white text-sm sm:text-xl font-bold">
+                                <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-check mr-2 sm:mr-4"></i>Acceso inmediato al contenido por 45 días</li>
+                                <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-2 sm:mr-4"></i>21 recetas diferentes y deliciosas</li>
+                                <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-comment mr-2 sm:mr-4"></i>Secretos revelados del Doctor Bayter</li>
+                                <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-video mr-2 sm:mr-4"></i>Contenido multimedia para guíarte durante los 7 días</li>
+                                <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-download mr-2 sm:mr-4"></i>Lista de alimentos descargable en PDF</li>
                             </ul>
                             <div class="w-full my-4 mx-auto text-center px-8">
                                 <div class="mt-4 text-center">
@@ -47,27 +48,39 @@
                                     <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Adquierelo aquí ya!</span>
                                 </a> 
                             </div>
-                            <p class="text-sm sm:text-md text-center px-4 max-w-4xl mx-auto font-bold mt-4 mb-8 text-gray-100">No dejes para mañana la salud que puedes empezar a transformar hoy.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="px-4 pt-8 mx-auto w-11/12">
+            <figure>
+                <img src="{{asset('img/gfx/warranty_badge.png')}}" alt="" class=" h-52 w-52 mx-auto">
+            </figure>
+            <div class="text-center space-y-8 text-white">
+                <h3 class="font-bold">Tu inversión segura con garantía de satisfacción de 7 días</h3>
+                <p class="text-sm">Después de ingresar al Plan DKP 7 Días tendrás 7 días para seguir el contenido. Si dentro de este tiempo sientes que no es lo que esperabas o no cumple con tus necesidades, puedes solicitar el reembolso inmediato, sin explicaciones.</p>
+                <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb ">
+                    <span class="w-full rounded-full inline-block mt-8  sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Adquiere tu acceso ya!</span>
+                </a> 
+                <small class="inline mt-0 pt-0"><i class="text-base fas fa-shield-alt"></i>  Compra segura y autenticada</small>
+            </div>
+        </div>
     </section>
     <section>
         <div class="max-w-7xl mx-auto px-6 lg:px-8  relative overflow-hidden  mb-16 pt-8 md:pt-12">
-            <h3 class="text-red-700 text-center mb-6 leading-none font-black text-xl uppercase md:text-3xl">¿Te ha pasado que, pese a tus esfuerzos, te encuentras atrapado en un ciclo sin fin, incapaz de avanzar más allá del tercer o cuarto día en tu viaje Keto, sintiéndote frustrado y desanimado?</h3>
+            <h3 class="text-red-700 text-center mb-6 leading-none font-black text-base uppercase sm:text-3xl">Seguramente... ¿Te ha pasado que, pese a tus esfuerzos, te encuentras atrapado en un ciclo sin fin, incapaz de avanzar más allá del tercer o cuarto día en tu viaje Keto, sintiéndote frustrado y desanimado?</h3>
             <div class="flex flex-col-reverse md:flex-row">
                 <div class="w-full md:w-5/12 md:mr-8 mt-8 md:mt-0">
                     <div class="text-justify space-y-2"> 
-                        <p>La mayoría de las personas que inician una dieta Keto enfrentan dificultades para superar el día 7 o inclusive nisiquiera superan el cuarto día debido a desafíos como la adaptación al cambio de combustible del cuerpo, la falta de planificación adecuada, y el manejo de los síntomas o la llamada "gripe Keto".</p>
+                        <p>No estás solo, la mayoría de las personas que inician una dieta Keto enfrentan dificultades para superar el día 7 o inclusive nisiquiera superan el cuarto día debido a desafíos como la adaptación al cambio de combustible del cuerpo, la falta de planificación adecuada, y el manejo de los síntomas o la llamada "gripe Keto".</p>
                         <p class="font-bold">"Tus Primeros 7 Días Keto Perfectos", creados por tu Doctor Bayter, está diseñado específicamente para superar estos obstáculos. Proporcionando un plan detallado que incluye menús, recetas, y estrategias para evitar errores comunes, asegurando una transición suave y exitosa hacia un estilo de vida Keto.</p>
                         <p>Inicia tu transformación con "Tus Primeros 7 Días Keto Perfectos" hoy mismo. Da el primer paso hacia un cambio duradero y saludable en tu vida. ¡Únete ahora y deja que el Doctor Bayter te guíe en cada paso del camino!</p>
                     </div>
                 </div>
                 <div class="flex-1 grid-video -my-24 sm:my-0 relative">
                     <iframe id="videoReto7" src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" data-hj-allow-iframe="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Plan DKP 7 Días" class="w-full h-96 md:h-96 flex-1"></iframe>
-                    <button id="playButton" class="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; padding: 10px 20px; cursor: pointer;">Play</button>
+                    
                 </div>
             </div>
             <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
@@ -334,7 +347,7 @@
     </section>
     <section class="bg-white">
         <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
-            <h3 class="text-gray-900 text-center leading-none font-black text-xl md:text-2xl uppercase">Existen dos mejores días para iniciar un cambio en tu vida:</h3>
+            <h3 class="text-gray-900 text-center leading-none font-black text-lg md:text-2xl uppercase">Existen dos mejores días para iniciar un cambio en tu vida:</h3>
             <h3 class="text-gray-900 text-center leading-none font-black text-xl md:text-4xl uppercase">Uno fue ayer y el otro es hoy</h3>
             <h3 class="text-red-700 text-center leading-none font-black text-xl md:text-3xl uppercase">Y hoy ya se está acabando</h3>
             <div>
@@ -370,12 +383,12 @@
                 <img src="{{asset('img/billboards/banner_7_dias_horizontal.png')}}" alt="" class="w-full object-cover z-50">
             </figure>
             <div class=" bg-gradient-to-t from-gray-900 to-gray-800 -mt-16 z-0 pt-20 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
-                <ul class="mt-2 text-white sm:text-xl font-bold">
-                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-check mr-4"></i> Acceso inmediato por 45 días al contenido</li>
-                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-4"></i>21 recetas y lista de alimentos para los 7 días</li>
-                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-comment mr-4"></i>Secretos exclusivos del Doctor Bayter</li>
-                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-video mr-4"></i>Contenido multimedia para guíarte durante los 7 días</li>
-                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-download mr-4"></i>Descargables: Lista de alimentos y Secretos</li>
+                <ul class="mt-2 text-white sm:text-xl text-sm font-bold">
+                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-check mr-2 sm:mr-4"></i> Acceso inmediato por 45 días al contenido</li>
+                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-2 sm:mr-4"></i>21 recetas y lista de alimentos para los 7 días</li>
+                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-comment mr-2 sm:mr-4"></i>Secretos exclusivos del Doctor Bayter</li>
+                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-video mr-2 sm:mr-4"></i>Contenido multimedia para guíarte durante los 7 días</li>
+                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-download mr-2 sm:mr-4"></i>Descargables: Lista de alimentos y Secretos</li>
     
                 </ul>
                 <div class="w-full my-4 mx-auto text-center px-8">
@@ -389,7 +402,7 @@
                         </div>
                     </div>
                     <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb ">
-                        <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Sí, Quiero Mejorar</span>
+                        <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Sí, Quiero Iniciar</span>
                     </a> 
                 </div>
                 <p class="text-sm sm:text-md text-center px-4 max-w-4xl mx-auto font-bold mt-4 mb-8 text-gray-100">No dejes para mañana la salud que puedes empezar a transformar hoy.</p>
@@ -400,13 +413,13 @@
 
     <section class="bg-gray-900">
         <div class="max-w-5xl mx-auto py-12 md:py-20 faqs-section" id="faqs">
-            <h2 class="text-center font-extrabold text-3xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
+            <h2 class="text-center font-extrabold text-2xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
             <div class=" max-w-4xl mx-auto" x-data="{selected:null}">
                 <ul class="text-gray-50">
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 2 ? selected = 2 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-lg font-bold md:text-xl">¿Es segura la dieta Keto?</span>
+                                <span class="text-base font-bold md:text-xl">¿Es segura la dieta Keto?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 2 , 'fa-chevron-down': selected !== 2 }"></span>
                             </div>
                         </button>
@@ -420,7 +433,7 @@
                     <li class="relative mb-4 rounded-lg bg-gray-800 ">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 3 ? selected = 3 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-lg font-bold md:text-xl">¿Cómo se si la dieta Keto es para mi, puedo hacerla?</span>
+                                <span class="text-base font-bold md:text-xl">¿Cómo se si la dieta Keto es para mi, puedo hacerla?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 3 , 'fa-chevron-down': selected !== 3 }"></span>
                             </div>
                         </button>
@@ -507,7 +520,7 @@
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 4 ? selected = 4 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-lg font-bold md:text-xl">¿Que pasa si soy alergico a algún alimento?</span>
+                                <span class="text-base font-bold md:text-xl">¿Que pasa si soy alergico a algún alimento?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 4 , 'fa-chevron-down': selected !== 4 }"></span>
                             </div>
                         </button>
@@ -520,7 +533,7 @@
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 5 ? selected = 5 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-lg font-bold md:text-xl">Quiero hacer el Método pero no quiero bajar de peso</span>
+                                <span class="text-base font-bold md:text-xl">Quiero hacer el Método pero no quiero bajar de peso</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 5 , 'fa-chevron-down': selected !== 5 }"></span>
                             </div>
                         </button>
@@ -533,7 +546,7 @@
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 6 ? selected = 6 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-lg font-bold md:text-xl">¿Puedo hacer el Método si mi colesterol está arriba de 300?</span>
+                                <span class="text-base font-bold md:text-xl">¿Puedo hacer el Método si mi colesterol está arriba de 300?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 6 , 'fa-chevron-down': selected !== 6 }"></span>
                             </div>
                         </button>
@@ -548,7 +561,7 @@
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 7 ? selected = 7 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-lg font-bold md:text-xl">¿Puedo hacer el Método si me quitarón la vesícula?</span>
+                                <span class="text-base font-bold md:text-xl">¿Puedo hacer el Método si me quitarón la vesícula?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 7 , 'fa-chevron-down': selected !== 7 }"></span>
                             </div>
                         </button>
@@ -563,7 +576,7 @@
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 8 ? selected = 8 : selected = null">
                             <div class="flex items-center justify-between">
-                                <span class="text-lg font-bold md:text-xl">¿Puedo hacer el Método si tengo los trigliceridos altos?</span>
+                                <span class="text-base font-bold md:text-xl">¿Puedo hacer el Método si tengo los trigliceridos altos?</span>
                                 <span class="fas font-bold text-xl" x-bind:class="{ 'fa-chevron-up': selected == 8 , 'fa-chevron-down': selected !== 8 }"></span>
                             </div>
                         </button>
@@ -625,7 +638,7 @@
     @endpush
     @push('TopOfThePage')
         <div class="bg-red-600 text-white py-4">
-            <div class="container mx-auto px-4 text-center font-bold text-xl">
+            <div class="container mx-auto px-4 text-center font-bold sm:text-xl">
                 <p>¡Oferta especial! Primeros 7 Días del Método DKP con el 70% de descuento termina en <span id="countdown"></span></p>
             </div>
         </div>
@@ -847,7 +860,7 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const targetDuration = 2.75 * 60 * 60 * 1000; // 2 horas y 45 minutos en milisegundos
+                const targetDuration = 1.75 * 60 * 60 * 1000; // 2 horas y 45 minutos en milisegundos
 
                 function initializeCountdown() {
                     const now = new Date().getTime();

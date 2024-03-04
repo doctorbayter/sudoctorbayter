@@ -68,7 +68,7 @@
     </section>
     <section>
         <div class="max-w-7xl mx-auto px-6 lg:px-8  relative overflow-hidden  mb-16 pt-8 md:pt-12">
-            <h3 class="text-red-700 text-center mb-6 leading-none font-black text-base uppercase sm:text-3xl">Seguramente... ¿Te ha pasado que, pese a tus esfuerzos, te encuentras atrapado en un ciclo sin fin, incapaz de avanzar más allá del tercer o cuarto día en tu viaje Keto, sintiéndote frustrado y desanimado?</h3>
+            <h3 class="text-red-700 text-center mb-6 leading-tight font-black text-base uppercase sm:text-3xl">Seguramente... ¿Te ha pasado que, pese a tus esfuerzos, te encuentras atrapado en un ciclo sin fin, incapaz de avanzar más allá del tercer o cuarto día en tu viaje Keto, sintiéndote frustrado y desanimado?</h3>
             <div class="flex flex-col-reverse md:flex-row">
                 <div class="w-full md:w-5/12 md:mr-8 mt-8 md:mt-0">
                     <div class="text-justify space-y-2"> 

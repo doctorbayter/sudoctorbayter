@@ -16,7 +16,6 @@
                        
                     </div>          
                 </div>
-                
                 <div class="w-full md:w-6/12 px-4 sm:ml-4 ">
                     <div class="text-justify space-y-2 text-base">
                         <p><b>No estás aquí por casualidad</b>, yo estoy aquí para darte este es el impulso que necesitas para no solo llegar al día 7, sino para transformar tu vida completamente.</p>
@@ -53,17 +52,17 @@
                 </div>
             </div>
         </div>
-        <div class="px-4 pt-8 mx-auto w-11/12">
+        <div class="px-4 pt-8 mx-auto w-11/12 sm:w-4/12">
             <figure>
                 <img src="{{asset('img/gfx/warranty_badge.png')}}" alt="" class=" h-52 w-52 mx-auto">
             </figure>
-            <div class="text-center space-y-8 text-white">
+            <div class="text-center space-y-6 text-white">
                 <h3 class="font-bold">Tu inversión segura con garantía de satisfacción de 7 días</h3>
-                <p class="text-sm">Después de ingresar al Plan DKP 7 Días tendrás 7 días para seguir el contenido. Si dentro de este tiempo sientes que no es lo que esperabas o no cumple con tus necesidades, puedes solicitar el reembolso inmediato, sin explicaciones.</p>
-                <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb ">
+                <p class="text-sm ">Después de ingresar al Plan DKP 7 Días tendrás 7 días para seguir el contenido. Si dentro de este tiempo sientes que no es lo que esperabas o no cumple con tus necesidades, puedes solicitar el reembolso inmediato, sin explicaciones.</p>
+                <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb sm:hidden">
                     <span class="w-full rounded-full inline-block mt-8  sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Adquiere tu acceso ya!</span>
                 </a> 
-                <small class="inline mt-0 pt-0"><i class="text-base fas fa-shield-alt"></i>  Compra segura y autenticada</small>
+                <small class="inline mt-0 sm:mt-4"><i class="text-base fas fa-shield-alt"></i>  Compra segura y autenticada</small>
             </div>
         </div>
     </section>
@@ -80,7 +79,7 @@
                 </div>
                 <div class="flex-1 grid-video -my-24 sm:my-0 relative">
                     <iframe id="videoReto7" src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" data-hj-allow-iframe="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Plan DKP 7 Días" class="w-full h-96 md:h-96 flex-1"></iframe>
-                    
+                    <button id="playButton" class="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; padding: 10px 20px; cursor: pointer;">Play</button>
                 </div>
             </div>
             <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
@@ -328,6 +327,27 @@
         </div>
     </section>
 
+    <section class=" bg-gradient-to-t from-gray-900  to-black px-4 text-white pt-16 pb-8 sm:pb-20">
+        <div class="mx-auto w-11/12 sm:w-5/12">
+            <h3 class="text-center text-2xl sm:text-4xl font-black mb-5 sm:mb-12">EL CAMINO COMPROBADO PARA LOGRAR UNA VIDA MÁS SANA Y ENERGÉTICA, ENSEÑADO POR EL ESTRATEGA #1 EN SALUD Y BIENESTAR</h3>
+            <div class="grid grid-rows-1  sm:grid-cols-5 sm:gap-x-12 w-full">
+                <figure class="w-full overflow-hidden rounded-xl col-span-5 sm:col-span-2">
+                    <img src="{{asset('img/photos/dr_003.png')}}" alt="" class="object-cover w-full">
+                </figure>
+                <div class="mt-4 col-span-3">
+                    <h2 class="text-red-700 font-bold text-2xl mb-2">DOCTOR BAYTER</h2>
+                    <h3 class="text-lg font-bold">Médico cirujano, especialista en anestesia y en medicina crítica y cuidado intensivo. Lider latinoamericano Renombrado, Innovador y Estratega de Salud #1 del Mundo con una comunidad de más de 10.000.000 de seguidores en sus redes sociales.</h3>
+                    <hr class=" h-1 w-28 my-4 border-red-700 border-2">
+                    <div class="mt-2 space-y-4 text-lg">
+                        <p>El Doctor Bayter es un destacado médico y cirujano Colombiano lider y referente en la transformación de la salud a través de la alimentación.</p>
+                        <p>Con una amplia experiencia en medicina crítica y anestesia, ha redefinido el enfoque hacia la prevención de enfermedades y el mejoramiento de la calidad de vida.</p>
+                        <p>Como deportista 100% Keto Perfecto ha realizado más de 28 carreras de triatlón de larga distancia del circuito Ironman.</p>
+                        <p>Su innovador Método DKP ha inspirado a miles de personas a adoptar un estilo de vida saludable, demostrando que el poder transformador de una nutrición adecuada puede llevarte a vivir una vida sana, energética y feliz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="bg-gray-900 ">
         <div class="max-w-7xl mx-auto relative px-6 md:px-0">
             <div class="flex relative">

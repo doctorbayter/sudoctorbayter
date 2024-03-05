@@ -79,7 +79,7 @@
                 </div>
                 <div class="flex-1 grid-video -my-24 sm:my-0 relative">
                     <iframe id="videoReto7" src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Plan DKP 7 Días" class="w-full h-96 md:h-96 flex-1"></iframe>
-                    <button id="playButton" class="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; padding: 10px 20px; cursor: pointer;">Play</button>
+                    <button id="playButton" class="hidden" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; padding: 10px 20px; cursor: pointer;">Play</button>
                 </div>
             </div>
             <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70OFF" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
@@ -970,7 +970,7 @@
                 player.off('timeupdate');
                 
                 // Envía el evento al Pixel de Meta
-                alert('50%')
+                //alert('50%')
                 //fbq('trackCustom', 'HalfVideoWatched', {video_id: 'TU_VIDEO_ID'});
                 }
             });

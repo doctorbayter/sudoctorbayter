@@ -148,150 +148,153 @@
                                     </section>
 
                                     <section class="mt-16 w-full">
-                                        <header class="md:mb-12">
-                                            <h2 class="text-3xl md:text-5xl font-bold">Menú <span class="text-red-700">Día {{$this->day->day}}</span></h2>
-                                            <p class="mb-4 text-gray-500"><img src="{{asset('img/icons/gfx/pie-chart.svg')}}" alt="" class="w-4 mr-1 inline opacity-40">Gramos de carbohidratos día <b>{{$this->carbs}}</b></p>
-                                        </header>
+                                        @if ( $fase->id == 5 && $this->day->day == 8)
+                                            Paila mi pex
+                                        @else
+                                            <header class="md:mb-12">
+                                                <h2 class="text-3xl md:text-5xl font-bold">Menú <span class="text-red-700">Día {{$this->day->day}}</span></h2>
+                                                <p class="mb-4 text-gray-500"><img src="{{asset('img/icons/gfx/pie-chart.svg')}}" alt="" class="w-4 mr-1 inline opacity-40">Gramos de carbohidratos día <b>{{$this->carbs}}</b></p>
+                                            </header>
+                                            <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-10 divide-y-2 md:divide-y-0 ">
 
-                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-10 divide-y-2 md:divide-y-0 ">
+                                                @foreach ($this->day_recipes as $key => $recipe)
 
-                                            @foreach ($this->day_recipes as $key => $recipe)
-
-                                                <div class="pt-12 md:pt-0">
-                                                    <a href="{{route('plan.recipe', $recipe)}}">
-                                                        <div class="relative h-62">
-                                                            
-                                                            <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 ">
-
-                                                                @switch($recipe->pivot->meal)
-                                                                    @case(1)
-                                                                        <p>Desayuno</p>
-                                                                        @break
-                                                                    @case(2)
-                                                                        <p>Almuerzo</p>
-                                                                        @break
-                                                                    @case(3)
-                                                                        <p>Cena</p>
-                                                                        @break
-                                                                    @case(4)
-                                                                        <p>Romper Ayuno</p>
-                                                                        @break
-                                                                @endswitch
-
-                                                            </div>
-                                                            {{-- <img src="@if (Storage::exists($recipe->image->url)) {{Storage::url($recipe->image->url)}} @else {{asset('img/'.$recipe->image->url)}} @endif" alt="" class="rounded-2xl object-cover"> --}}
-                                                            <img src="{{asset('img/'.$recipe->image->url)}}?v={{ time() }}" alt="" class="rounded-2xl object-cover">
-                                                        </div>
-                                                        <div class="mt-2 ml-4">
-                                                            <p class="text-2xl mb-2 font-bold text-gray-900">{{$recipe->name}}</p>
-                                                            <div class="flex md:flex-col xl:flex-row md:items-start  text-xs items-center xl:items-center">
-                                                            <p class="bg-green-500 px-2 py-1 rounded-lg inline-block text-white">{{$recipe->carbs}} Carbs.</p>
-                                                            <p class="text-gray-400 ml-2 md:ml-0 md:my-1 xl:my-0 xl:ml-2 flex items-center">
-                                                                <img src="{{asset('img/icons/gfx/user.svg')}}" alt="" class="w-4 mr-1 opacity-40">
-                                                                @if ($fase->id == 16 )
-                                                                    <span>2 personas</span>
-                                                                @else
-                                                                    <span>1 persona</span>
-                                                                @endif
+                                                    <div class="pt-12 md:pt-0">
+                                                        <a href="{{route('plan.recipe', $recipe)}}">
+                                                            <div class="relative h-62">
                                                                 
-                                                            </p>
-                                                            <p class="text-gray-400 md:ml-0 md:my-1 xl:my-0 xl:ml-2 flex items-center">
-                                                                <img src="{{asset('img/icons/gfx/clock.svg')}}" alt="" class="w-4 mr-1 opacity-40">
-                                                                <span>{{$recipe->time}} minutos</span>
-                                                            </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                        <hr class="my-12">
-                                        <div class="flex flex-col xl:flex-row" x-data="{ modalIsShowing: false }" >
+                                                                <div class="absolute text-sm bg-gray-100 bottom-full px-4 py-2 font-bold leading-none text-gray-900  rounded-t-lg ml-2 ">
 
-                                            @if ($this->day->recipes->where('type', '==', 2)->count() > 0 )
-                                                <div class="w-full xl:w-5/12 xl:mr-16">
-                                                    <h2 class="text-4xl text-gray-900 font-bold">
-                                                        <span class="text-red-700">Snacks de </span> Día {{$this->day->day}} <span class="text-base text-gray-600 font-medium">(opcional)</span>
-                                                    </h2>
-                                                    <section class="my-4" >
-                                                        @foreach ($this->day->recipes->where('type', '==', 2) as $snack)
-                                                            <div _wire:click="toogleSnack('{{$snack->id}}')" wire:key="{{ $loop->index }}"   _x-on:click="modalIsShowing = true" id="snack{{$snack->id}}" class="border border-gray-100 shadow-md rounded-xl overflow-hidden w-full mb-6 cursor-pointer" title="click para ver más">
-                                                                <div class="w-full block">
-                                                                    <div class="flex items-center">
-                                                                        <figure class="w-20 md:w-48 h-28 overflow-hidden bg-gray-100 ">
-                                                                            <img src="{{asset('img/'.$snack->image->url)}}?v={{ time() }}" alt="" class=" h-full object-cover">
-                                                                        </figure>
-                                                                        <div class="ml-6 relative w-full flex-1">
-                                                                            <h2 class="font-bold text-lg text-gray-900">{{$snack->name}}</h2>
-                                                                            <div class="text-gray-400 text-sm pr-4 mb-2 hidden md:block">{!!Str::limit($snack->descripcion, '500', '...')!!} </div>
-                                                                            <div class="text-gray-400 text-sm pr-4 mb-2 md:hidden">{!!Str::limit($snack->descripcion, '500', '...')!!} </div>
-                                                                            <p class="bg-green-500 mt-1 px-2 py-1 text-xs rounded-lg inline-block text-white">{{$snack->carbs}}g Carbs.</p>
+                                                                    @switch($recipe->pivot->meal)
+                                                                        @case(1)
+                                                                            <p>Desayuno</p>
+                                                                            @break
+                                                                        @case(2)
+                                                                            <p>Almuerzo</p>
+                                                                            @break
+                                                                        @case(3)
+                                                                            <p>Cena</p>
+                                                                            @break
+                                                                        @case(4)
+                                                                            <p>Romper Ayuno</p>
+                                                                            @break
+                                                                    @endswitch
+
+                                                                </div>
+                                                                {{-- <img src="@if (Storage::exists($recipe->image->url)) {{Storage::url($recipe->image->url)}} @else {{asset('img/'.$recipe->image->url)}} @endif" alt="" class="rounded-2xl object-cover"> --}}
+                                                                <img src="{{asset('img/'.$recipe->image->url)}}?v={{ time() }}" alt="" class="rounded-2xl object-cover">
+                                                            </div>
+                                                            <div class="mt-2 ml-4">
+                                                                <p class="text-2xl mb-2 font-bold text-gray-900">{{$recipe->name}}</p>
+                                                                <div class="flex md:flex-col xl:flex-row md:items-start  text-xs items-center xl:items-center">
+                                                                <p class="bg-green-500 px-2 py-1 rounded-lg inline-block text-white">{{$recipe->carbs}} Carbs.</p>
+                                                                <p class="text-gray-400 ml-2 md:ml-0 md:my-1 xl:my-0 xl:ml-2 flex items-center">
+                                                                    <img src="{{asset('img/icons/gfx/user.svg')}}" alt="" class="w-4 mr-1 opacity-40">
+                                                                    @if ($fase->id == 16 )
+                                                                        <span>2 personas</span>
+                                                                    @else
+                                                                        <span>1 persona</span>
+                                                                    @endif
+                                                                    
+                                                                </p>
+                                                                <p class="text-gray-400 md:ml-0 md:my-1 xl:my-0 xl:ml-2 flex items-center">
+                                                                    <img src="{{asset('img/icons/gfx/clock.svg')}}" alt="" class="w-4 mr-1 opacity-40">
+                                                                    <span>{{$recipe->time}} minutos</span>
+                                                                </p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            <hr class="my-12">
+                                            <div class="flex flex-col xl:flex-row" x-data="{ modalIsShowing: false }" >
+
+                                                @if ($this->day->recipes->where('type', '==', 2)->count() > 0 )
+                                                    <div class="w-full xl:w-5/12 xl:mr-16">
+                                                        <h2 class="text-4xl text-gray-900 font-bold">
+                                                            <span class="text-red-700">Snacks de </span> Día {{$this->day->day}} <span class="text-base text-gray-600 font-medium">(opcional)</span>
+                                                        </h2>
+                                                        <section class="my-4" >
+                                                            @foreach ($this->day->recipes->where('type', '==', 2) as $snack)
+                                                                <div _wire:click="toogleSnack('{{$snack->id}}')" wire:key="{{ $loop->index }}"   _x-on:click="modalIsShowing = true" id="snack{{$snack->id}}" class="border border-gray-100 shadow-md rounded-xl overflow-hidden w-full mb-6 cursor-pointer" title="click para ver más">
+                                                                    <div class="w-full block">
+                                                                        <div class="flex items-center">
+                                                                            <figure class="w-20 md:w-48 h-28 overflow-hidden bg-gray-100 ">
+                                                                                <img src="{{asset('img/'.$snack->image->url)}}?v={{ time() }}" alt="" class=" h-full object-cover">
+                                                                            </figure>
+                                                                            <div class="ml-6 relative w-full flex-1">
+                                                                                <h2 class="font-bold text-lg text-gray-900">{{$snack->name}}</h2>
+                                                                                <div class="text-gray-400 text-sm pr-4 mb-2 hidden md:block">{!!Str::limit($snack->descripcion, '500', '...')!!} </div>
+                                                                                <div class="text-gray-400 text-sm pr-4 mb-2 md:hidden">{!!Str::limit($snack->descripcion, '500', '...')!!} </div>
+                                                                                <p class="bg-green-500 mt-1 px-2 py-1 text-xs rounded-lg inline-block text-white">{{$snack->carbs}}g Carbs.</p>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        @endforeach
+                                                            @endforeach
 
-                                                        <aside x-show="modalIsShowing" x-cloak class="z-50 fixed delay-500 w-full h-full top-0 left-0 flex items-center justify-center"
-                                                            x-transition:enter="transition ease-out duration-500"
-                                                            x-transition:enter-start="opacity-0"
-                                                            x-transition:enter-end="opacity-100"
-                                                            x-transition:leave="ease-in duration-300"
-                                                            x-transition:leave-end="opacity-0"
-                                                            >
-                                                            <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50" x-on:click="modalIsShowing = false"></div>
+                                                            <aside x-show="modalIsShowing" x-cloak class="z-50 fixed delay-500 w-full h-full top-0 left-0 flex items-center justify-center"
+                                                                x-transition:enter="transition ease-out duration-500"
+                                                                x-transition:enter-start="opacity-0"
+                                                                x-transition:enter-end="opacity-100"
+                                                                x-transition:leave="ease-in duration-300"
+                                                                x-transition:leave-end="opacity-0"
+                                                                >
+                                                                <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50" x-on:click="modalIsShowing = false"></div>
 
-                                                            <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+                                                                <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
 
-                                                                <div x-on:click="modalIsShowing = false" class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"  >
-                                                                    <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                                                        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                                                                    </svg>
+                                                                    <div x-on:click="modalIsShowing = false" class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"  >
+                                                                        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                                                            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                                                        </svg>
 
+                                                                    </div>
+
+                                                                    <!-- Add margin if you want to see some of the overlay behind the modal-->
+                                                                    <div class="modal-content py-4 text-left px-6">
+
+                                                                        @if ($this->snack != null)
+                                                                            <!--Title-->
+                                                                            <div class="flex justify-between items-center pb-3">
+                                                                                <p class="text-2xl font-bold"><span class="mr-2 text-red-700">Snack</span>{{$this->snack->name}}</p>
+                                                                                <div class="modal-close cursor-pointer z-50">
+                                                                                <svg x-on:click="modalIsShowing = false" id="crossClose{{$this->snack->id}}" class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                                                                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                                                                </svg>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--Body-->
+                                                                            <div class="text-gray-400 text-sm" >
+                                                                                <div>
+                                                                                    <figure class="w-full h-36 overflow-hidden bg-gray-100 ">
+                                                                                        <img src="{{asset('img/'.$this->snack->image->url)}}?v={{ time() }}" alt="" class=" w-full object-cover">
+                                                                                    </figure>
+                                                                                </div>
+                                                                                <div class="py-4">
+                                                                                    <h3 class="text-xl font-bold text-gray-900 mb-1">Preparación</h3>
+                                                                                    {!!$this->snack->descripcion!!}
+                                                                                </div>
+                                                                            </div>
+                                                                        @endif
+                                                                    </div>
                                                                 </div>
-
-                                                                <!-- Add margin if you want to see some of the overlay behind the modal-->
-                                                                <div class="modal-content py-4 text-left px-6">
-
-                                                                    @if ($this->snack != null)
-                                                                        <!--Title-->
-                                                                        <div class="flex justify-between items-center pb-3">
-                                                                            <p class="text-2xl font-bold"><span class="mr-2 text-red-700">Snack</span>{{$this->snack->name}}</p>
-                                                                            <div class="modal-close cursor-pointer z-50">
-                                                                            <svg x-on:click="modalIsShowing = false" id="crossClose{{$this->snack->id}}" class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                                                                            </svg>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!--Body-->
-                                                                        <div class="text-gray-400 text-sm" >
-                                                                            <div>
-                                                                                <figure class="w-full h-36 overflow-hidden bg-gray-100 ">
-                                                                                    <img src="{{asset('img/'.$this->snack->image->url)}}?v={{ time() }}" alt="" class=" w-full object-cover">
-                                                                                </figure>
-                                                                            </div>
-                                                                            <div class="py-4">
-                                                                                <h3 class="text-xl font-bold text-gray-900 mb-1">Preparación</h3>
-                                                                                {!!$this->snack->descripcion!!}
-                                                                            </div>
-                                                                        </div>
-                                                                    @endif
-                                                                </div>
-                                                            </div>
-                                                        </aside>
-                                                    </section>
-                                                </div>
-                                            @endif
-
-                                            @if ($this->day->note != "<p></p>")
-                                                <div class=" flex-1 hidden">
-                                                    <h2 class="text-4xl font-bold mb-4 text-red-700">¡Notas!</h2>
-                                                    <div class="text-gray-600">
-                                                        {!!$this->day->note!!}
+                                                            </aside>
+                                                        </section>
                                                     </div>
-                                                </div>
-                                            @endif
-                                        </div>                                    
+                                                @endif
+
+                                                @if ($this->day->note != "<p></p>")
+                                                    <div class=" flex-1 hidden">
+                                                        <h2 class="text-4xl font-bold mb-4 text-red-700">¡Notas!</h2>
+                                                        <div class="text-gray-600">
+                                                            {!!$this->day->note!!}
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            </div>     
+                                        @endif                               
                                     </section>
                                 </div>
                             </section>

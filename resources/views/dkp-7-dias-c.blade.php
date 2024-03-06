@@ -339,7 +339,7 @@
     </section>
 
     <section class=" bg-gradient-to-t from-gray-900  to-black px-4 text-white pt-16 pb-8 sm:pb-20">
-        <div class="mx-auto w-11/12 sm:w-6/12">
+        <div class="mx-auto w-11/12 sm:w-5/12">
             <h3 class="text-center text-2xl sm:text-4xl font-black mb-5 sm:mb-12">EL CAMINO COMPROBADO PARA LOGRAR UNA VIDA SANA, ENERGÉTICA Y FELIZ, ENSEÑADO POR EL CREADOR DE LA DIETA KETO PERFECTA</h3>
             <div class="grid grid-rows-1  sm:grid-cols-5 sm:gap-x-12 w-full">
                 <figure class="w-full overflow-hidden rounded-xl col-span-5 sm:col-span-2">

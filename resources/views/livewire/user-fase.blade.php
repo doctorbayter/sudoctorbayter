@@ -5,7 +5,7 @@
                 <x-menu :userPlan="$user_plan" />
                 <div :class="{'w-7/12': openMenu, 'w-11/12': !openMenu}" class="bg-white  ml-auto">
 
-                    <div class="w-11/12 sm:w-7/12 mx-auto pt-10">
+                    <div class="w-11/12 sm:w-10/12 lg:w-7/12 mx-auto pt-10">
                         @if ($fase->id == 5)
                             <section class=" sm:flex-row-reverse items-center">
                                 <figure class=" w-full">

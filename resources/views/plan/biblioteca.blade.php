@@ -224,7 +224,7 @@
                                                                             <p><b class="pr-2">R:</b>El insomnio es completamente normal durante las primeras semanas de este cambio de alimentación, tu cuerpo se encuentra en un proceso de adaptación es importante evites tomar café después de las 05:00pm, tomar magnesio de 400 mg en tableta, consuman suficientes verduras durante el día y  ser pacientes</p>
                                                                         </li>
                                                                         <li class="text-base py-6">
-                                                                            <p class="text-red-700 text-xl mb-2"><b>¿QUÉ PUEDO HACER SI SE ME ESTA CALLENDO EL CABELLO?</b></p>
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿QUÉ PUEDO HACER SI SE ME ESTA CAYENDO EL CABELLO?</b></p>
                                                                             <p><b class="pr-2">R:</b>El efluvio telógeno es un proceso donde los folículos pilosos se van cayendo esto debido al estrés que produce la dieta keto perfecta, se presenta al menos en el 10% de los pacientes que inician este  proceso, ahora bien si llegas a presentar efectos diferentes a la caída te sugiero visites a tu dermatólogo de cabecera.</p>
                                                                         </li>
                                                                         <li class="text-base py-6">

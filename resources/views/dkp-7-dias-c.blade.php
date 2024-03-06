@@ -52,13 +52,13 @@
                 </div>
             </div>
         </div>
-        <div class="px-4 pt-8 mx-auto w-11/12 sm:w-4/12">
+        <div class="px-4 pt-8 mx-auto w-11/12 sm:w-5/12">
             <figure>
                 <img src="{{asset('img/gfx/warranty_badge.png')}}" alt="" class=" h-52 w-52 mx-auto">
             </figure>
-            <div class="text-center space-y-6 text-white">
-                <h3 class="font-bold">Tu inversión segura con garantía de satisfacción de 7 días</h3>
-                <p class="text-sm ">Después de ingresar al Plan DKP 7 Días tendrás 7 días para seguir el contenido. Si dentro de este tiempo sientes que no es lo que esperabas o no cumple con tus necesidades, puedes solicitar el reembolso inmediato, sin explicaciones.</p>
+            <div class="text-center space-y-4 text-white">
+                <h3 class="font-bold">Garantizamos tu completa satisfacción con el Plan DKP de 7 Días</h3>
+                <p class="text-sm ">Te damos una semana completa para explorar y experimentar nuestro programa. Si no cumple con tus expectativas o no se ajusta a tus necesidades, ofrecemos un reembolso completo, sin preguntas. Estamos aquí para apoyarte en tu viaje hacia una mejor salud.</p>
                 <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70OFF" target="_blank" class="hotmart-fb sm:hidden">
                     <span class="w-full rounded-full inline-block mt-8  sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Adquiere tu acceso ya!</span>
                 </a> 
@@ -68,13 +68,13 @@
     </section>
     <section>
         <div class="max-w-7xl mx-auto px-6 lg:px-8  relative overflow-hidden  mb-16 pt-8 md:pt-12">
-            <h3 class="text-red-700 text-center mb-6 leading-tight font-black text-base uppercase sm:text-3xl">Seguramente... ¿Te ha pasado que, pese a tus esfuerzos, te encuentras atrapado en un ciclo sin fin, incapaz de avanzar más allá del tercer o cuarto día en tu viaje Keto, sintiéndote frustrado y desanimado?</h3>
+            <h3 class="text-red-700 text-center mb-6 leading-tight font-black text-base uppercase sm:text-3xl">¿Te sientes estancado en tu camino hacia un estilo de vida keto, luchando por superar la barrera de los primeros días? </h3>
             <div class="flex flex-col-reverse md:flex-row">
                 <div class="w-full md:w-5/12 md:mr-8 mt-8 md:mt-0">
                     <div class="text-justify space-y-2"> 
-                        <p>No estás solo, la mayoría de las personas que inician una dieta Keto enfrentan dificultades para superar el día 7 o inclusive nisiquiera superan el cuarto día debido a desafíos como la adaptación al cambio de combustible del cuerpo, la falta de planificación adecuada, y el manejo de los síntomas o la llamada "gripe Keto".</p>
-                        <p class="font-bold">"Tus Primeros 7 Días Keto Perfectos", creados por tu Doctor Bayter, está diseñado específicamente para superar estos obstáculos. Proporcionando un plan detallado que incluye menús, recetas, y estrategias para evitar errores comunes, asegurando una transición suave y exitosa hacia un estilo de vida Keto.</p>
-                        <p>Inicia tu transformación con "Tus Primeros 7 Días Keto Perfectos" hoy mismo. Da el primer paso hacia un cambio duradero y saludable en tu vida. ¡Únete ahora y deja que el Doctor Bayter te guíe en cada paso del camino!</p>
+                        <p>No estás solo. Muchos enfrentan este desafío, sintiéndose frustrados y desmotivados. Pero aquí está la buena noticia: nuestro programa está diseñado específicamente para ayudarte a romper ese ciclo y avanzar con confianza.</p>
+                        <p class="font-bold">Con 'Tus Primeros 7 Días Keto Perfectos', te unirás a miles que ya han experimentado una transición exitosa hacia la keto, gracias a nuestro plan exhaustivo. Recibirás menús, recetas y estrategias clave que te preparan para el éxito, asegurando que superes los retos comunes y abraces un estilo de vida saludable con facilidad.</p>
+                        <p>Inicia tu transformación hacia una vida más saludable hoy con 'Tus Primeros 7 Días Keto Perfectos'. Da el primer paso hacia un bienestar duradero. Al unirte, recibirás la guía experta del Doctor Bayter en cada momento crucial. ¡Empieza ahora e inicia el cambio!</p>
                     </div>
                 </div>
                 <div class="flex-1 grid-video -my-24 sm:my-0 relative">
@@ -82,12 +82,14 @@
                     <button id="playButton" class="hidden" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; padding: 10px 20px; cursor: pointer;">Play</button>
                 </div>
             </div>
-            <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70OFF" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
+            <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70OFF" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">¡Comienza Ahora! </span></a>
+            <small class="w-full text-center block mt-4">Haz clic aquí para dar el primer paso hacia tu transformación con el Doctor Bayter. ¡Tu viaje hacia una vida más saludable y energética y feliz empieza hoy!</small>
+            </div>
         </div>
     </section>
     <section class="bg-gray-900 py-10 sm:py-20">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 mb-10 md:mb-16  flex flex-col">
-            <h2 class="text-xl md:text-4xl font-bold text-gray-50 text-center uppercase">Listo para tomar la <span class="text-red-700">poderosa</span> decisión no solo por tu salud, sino por tu vida. Que te llevará hacia una versión <span class="text-red-700">más energética y saludable</span> de ti mismo.</h2>
+            <h2 class="text-xl md:text-4xl font-bold text-gray-50 text-center uppercase">Estás a <span class="text-red-700">un paso</span> de <span class="text-red-700">comprometerte con tu salud y tu vida</span>, abriéndote camino hacia <span class="text-red-700">una versión más energética y saludable de ti mismo</span>. Es hora de tomar esa decisión <span class="text-red-700">transformadora.</span></h2>
         </div>
         <div class="py-8 bg-gradient-to-t from-gray-900 to-gray-800 rounded-xl px-4 mx-2 grid grid-rows-1 sm:grid-cols-7 text-center items-center text-white sm:w-4/12 sm:mx-auto">
             <figure class=" overflow-hidden rounded-full w-32 h-32 mx-auto mb-6 col-span-7 sm:col-span-2">
@@ -103,23 +105,23 @@
         <div class="max-w-5xl mx-auto px-6 lg:px-8 pb-12 pt-16">
             
             <div>
+                <header class="text-center mb-12">
+                    <h2 class="text-2xl md:text-4xl mb-4 font-bold text-gray-900 uppercase">¿Qué puedes esperar de estos <span class="text-red-700">7 días</span>?</h2>
+                </header>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
                     <div>
-                        <header>
-                            <h2 class="text-2xl md:text-4xl mb-4 font-bold text-gray-900">¿Qué puedes esperar de estos <span class="text-red-700">7 días</span>?</h2>
-                        </header>
-                        <ul class="mt-8 space-y-8">
+                        <ul class="space-y-8">
                             <li class="mb-4">                    
                                 <h3 class="font-bold flex uppercase mb-2"><i class="text-red-700 fas fa-check inline-block mr-2"></i> Apoyo y Orientación</h3>
-                                <p class="text-justify">No estarás solo en este viaje. El Doctor Bayter ha creado contenido para orientarte cada día, asegurando que cada paso que das está en la dirección correcta para una adaptación Keto sin errores.</p>
+                                <p class="text-justify">En tu viaje hacia la adaptación keto, no estarás solo. Con el Doctor Bayter guiándote día a día, recibirás un acompañamiento detallado y personalizado. Cada consejo y recurso ha sido cuidadosamente seleccionado para garantizar un proceso sin errores y completamente alineado con tus objetivos de salud. Confía en la experiencia y el compromiso del Doctor Bayter para alcanzar tus metas.</p>
                             </li>
                             <li class="mb-4">                    
                                 <h3 class="font-bold flex uppercase mb-2"><i class="text-red-700 fas fa-check inline-block mr-2"></i> Desintoxicación y Reinicio Metabólico</h3>
-                                <p class="text-justify">Estos días cruciales sirven para desintoxicar tu cuerpo de adicciones previas a los carbohidratos y azúcares, reiniciando tu metabolismo para aprovechar eficientemente las grasas como fuente de energía.</p>
+                                <p class="text-justify">Estos primeros días son fundamentales para liberar tu cuerpo de la dependencia de los carbohidratos y azúcares, marcando el inicio de un reinicio metabólico. Nuestro enfoque está diseñado para optimizar tu capacidad de usar grasas como fuente de energía, estableciendo las bases para un bienestar duradero y una vitalidad renovada.</p>
                             </li>
                             <li class="mb-4">
                                 <h3 class="font-bold flex uppercase mb-2"><i class="text-red-700 fas fa-check inline-block mr-2"></i> Herramientas para el Éxito</h3>
-                                <p class="text-justify">Al superar los primeros 7 días, no solo habrás logrado un hito importante, sino que también estarás equipado con las herramientas y conocimientos necesarios para continuar tu viaje de transformación duradera en tu salud y bienestar.</p>
+                                <p class="text-justify">Al superar los primeros 7 días, celebrarás más que un logro inicial; estarás armado con las herramientas y el conocimiento esenciales para seguir avanzando en tu transformación hacia un bienestar y salud sostenibles. Este es solo el comienzo de tu camino hacia una vida plena y saludable.</p>
                             </li>
                         </ul>
                     </div>
@@ -139,7 +141,7 @@
     <section class="bg-gray-100 py-8">
         <article class=" max-w-6xl mx-auto px-6 lg:px-8">
             <h2 class="text-xl md:text-4xl font-bold text-gray-900 text-center my-8 uppercase">Da el salto hacia una vida <span class="text-red-700">más saludable</span> inicia tus Primeros 7 Días Keto <span class="text-red-700">Perfectos</span> ahora</h2>
-            <p class="text-justify sm:text-center mb-8 text-base sm:text-lg">Al embarcarte en <b>"Tus Primeros 7 Días Keto Perfectos"</b>, te guiarás por la sabiduría del Doctor Bayter, un experto en transformaciones saludables cuya metodología ha ayudado a más de 15.000 personas, marcando la diferencia desde el inicio. Este primer paso no solo es crucial; es transformador, preparándote para seguir adelante con confianza y las herramientas correctas.</p>
+            <p class="text-justify sm:text-center mb-8 text-base sm:text-lg">Iniciando <b>'Tus Primeros 7 Días Keto Perfectos'</b>, te beneficiarás de la profunda experiencia del Doctor Bayter, cuya metodología ha transformado la vida de <b>más de 15.000 personas</b>. Este es más que un simple comienzo; es un salto hacia <b>una transformación profunda</b>, equipándote con confianza y las herramientas necesarias para un viaje continuo hacia una <b>mejor salud</b></p>
             <h3 class="font-bold text-base sm:text-lg text-center">¿Estás listo para tomar el control de tu salud, comprender el funcionamiento de tu cuerpo, esquivar enfermedades y emprender acciones decisivas hacia una vida más sana, energética y feliz?</h3>
             <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70OFF" target="_blank" class="hotmart-fb">
                 <span class="w-full my-8 text-center rounded-full inline-block mt-4 text-base sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 ">¡Sé parte de este movimiento!</span>
@@ -337,7 +339,7 @@
     </section>
 
     <section class=" bg-gradient-to-t from-gray-900  to-black px-4 text-white pt-16 pb-8 sm:pb-20">
-        <div class="mx-auto w-11/12 sm:w-5/12">
+        <div class="mx-auto w-11/12 sm:w-6/12">
             <h3 class="text-center text-2xl sm:text-4xl font-black mb-5 sm:mb-12">EL CAMINO COMPROBADO PARA LOGRAR UNA VIDA SANA, ENERGÉTICA Y FELIZ, ENSEÑADO POR EL CREADOR DE LA DIETA KETO PERFECTA</h3>
             <div class="grid grid-rows-1  sm:grid-cols-5 sm:gap-x-12 w-full">
                 <figure class="w-full overflow-hidden rounded-xl col-span-5 sm:col-span-2">

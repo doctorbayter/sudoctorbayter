@@ -32,7 +32,7 @@ class ActiveCampaignController extends Controller
             if ($contact) {
                 $result = $this->activeCampaignService->addContactToList($contact['id'], 73);
                 //$result = $this->activeCampaignService->assignTagToContact($contact['id'], 44);
-                return response()->json($result);
+                //return response()->json($result);
             }
            
         }

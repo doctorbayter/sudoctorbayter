@@ -40,7 +40,7 @@ class PlanCheckout extends Component
 
         return view('no-disponible-lw');
 
-        if($this->plan->id == 4 || $this->plan->id == 11 || $this->plan->id == 12) { //WHATSAPP
+        if($this->plan->id == 8 || $this->plan->id == 9 || $this->plan->id == 4 || $this->plan->id == 11 || $this->plan->id == 12) { //WHATSAPP
             return view('no-disponible-lw');
         }
 

@@ -77,7 +77,7 @@ class PlanCheckout extends Component
         //     }
         // }
         $this->plan = $plan;
-        return view('livewire.plan-checkout');
+        return view('livewire.plan-checkou');
     }
 
     public function confirmData(){

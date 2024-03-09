@@ -38,7 +38,7 @@ class PlanCheckout extends Component
 
     public function mount(Plan $plan){
 
-
+        return view('no-disponible-lw');
 
         if($this->plan->id == 4 || $this->plan->id == 11 || $this->plan->id == 12) { //WHATSAPP
             return view('no-disponible-lw');

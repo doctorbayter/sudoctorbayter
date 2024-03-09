@@ -1257,7 +1257,7 @@ Route::get('x/query/video', function(){
     $video->save();
 
     $video = Video::find(33);
-    $video->iframe = '<audio controls class="w-full" wire:key="vid_day_5"><source src="/files/audio/7dk_dia_04.mp3" type="audio/mpeg"> <source src="/files/audio/7dk_dia_04.ogg" type="audio/ogg"></audio>';
+    $video->iframe = '<audio controls class="w-full" wire:key="vid_day_5"><source src="/files/audio/7dk_dia_05.mp3" type="audio/mpeg"> <source src="/files/audio/7dk_dia_04.ogg" type="audio/ogg"></audio>';
     $video->save();
 
     $video = Video::find(34);

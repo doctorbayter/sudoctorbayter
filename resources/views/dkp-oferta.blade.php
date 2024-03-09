@@ -19,8 +19,7 @@
             <p class="text-base  text-gray-400 uppercase my-2">La oferta termina en:</p>
             <div data-countdown="" id="countdown" class="font-bold text-4xl grid grid-cols-4 gap-x-4 h-16 mb-6"></div>
             <a href="https://pay.hotmart.com/H90297729E?off=j24ssl2s&checkoutMode=10" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu Método DKP en Oferta</a>
-            {{--<a href="{{route('payment.pay', $plan_oferta)}}" class="bg-gray-900 hover:bg-red-700 text-white font-bold py-2 px-6 border mt-4 rounded uppercase" id="promoText">Adquierelo tu plan fase 1 ahora</a>
-            --}}
+            
         </div>
 
     </div>

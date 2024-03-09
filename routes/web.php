@@ -1077,19 +1077,19 @@ Route::get('x/query', function(){
     // $discount->value = 137;
     // $discount->save();
 
-    $fase = Fase::find(5);
-    $fase->name = 'Recetas Adicionales';
-    $fase->sub_name = '7 Días <span class="text-red-700">Keto</span>';
-    $fase->descripcion = 'Tus primeros 7 días Keto Perfectos';
-    $fase->slug = '7-dias-keto';
-    $fase->save();
+    // $fase = Fase::find(5);
+    // $fase->name = 'Recetas Adicionales';
+    // $fase->sub_name = '7 Días <span class="text-red-700">Keto</span>';
+    // $fase->descripcion = 'Tus primeros 7 días Keto Perfectos';
+    // $fase->slug = '7-dias-keto';
+    // $fase->save();
 
-    $fase = Fase::find(7);
-    $fase->name = 'Recetas Adicionales';
-    $fase->sub_name = '5 Desayunos <span class="text-red-700">sin huevo</span>';
-    $fase->descripcion = '5 opciones diferentes de desayunos sin huevo';
-    $fase->slug = '5-desayunos-sin-huevo';
-    $fase->save();
+    // $fase = Fase::find(7);
+    // $fase->name = 'Recetas Adicionales';
+    // $fase->sub_name = '5 Desayunos <span class="text-red-700">sin huevo</span>';
+    // $fase->descripcion = '5 opciones diferentes de desayunos sin huevo';
+    // $fase->slug = '5-desayunos-sin-huevo';
+    // $fase->save();
 
 });
 

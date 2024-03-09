@@ -25,6 +25,7 @@ class ActiveCampaignController extends Controller
         $plans = Subscription::whereIn('plan_id', [7])
         ->whereYear('created_at', '=', 2024)
         ->whereMonth('created_at', '>=', 02)
+        ->skip(115)
         ->get();
 
         foreach ($plans as $plan) {

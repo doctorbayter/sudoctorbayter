@@ -149,7 +149,7 @@
 
                                     <section class="mt-16 w-full">
                                         @if ( $fase->id == 5 && $this->day->day == 8)
-                                            Paila mi pex
+                                            
                                         @else
                                             <header class="md:mb-12">
                                                 <h2 class="text-3xl md:text-5xl font-bold">Menú <span class="text-red-700">Día {{$this->day->day}}</span></h2>

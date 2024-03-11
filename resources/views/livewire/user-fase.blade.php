@@ -154,7 +154,7 @@
                                     <section class="pt-16  ">
                                         @if ( $fase->id == 5 && $this->day->day == 8)
                                         
-                                            @if ($upsell21 == false)
+                                            @if ($upsell21 == true)
                                                 <div class="bg-gradient-to-t from-black to-gray-900 w-full -mt-32 pt-16">
                                                     <section class="px-2 pb-16 sm:max-w-4xl mx-auto ">
                                                         <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/922071936?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="DKP_Upsell_ 7_to_21"></iframe></div>

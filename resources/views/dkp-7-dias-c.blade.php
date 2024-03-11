@@ -1,5 +1,4 @@
 <x-app-layout>
-   
     <section class=" bg-gradient-to-t from-black to-gray-800 pb-16">
         <header class="max-w-6xl mx-auto">
             <h2 class="text-white font-bold text-center py-12 text-lg sm:text-3xl px-4">Inicia tu camino hacia una vida más sana y energética con el Método DKP: domina los desafíos de los primeros 7 días de la Dieta Keto</h2>

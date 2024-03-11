@@ -4,7 +4,7 @@
         <meta name="robots" content="noindex" />
     @endpush
     @push('TopOfThePage')
-        <div class="bg-green-600 text-white py-4">
+        <div class="bg-green-600 text-white py-4 hidden">
             <div class="container mx-auto px-4 text-center font-bold text-xl">
                 <p>¡Oferta especial! Primeros 7 Días del Método DKP con el 70% de descuento termina en <span id="countdown"></span></p>
             </div>

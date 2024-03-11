@@ -3,13 +3,6 @@
     @push('metaLinks')
     <link rel="canonical" href="{{ url()->current() }}" />
     @endpush
-    @push('TopOfThePage')
-        <div class="bg-blue-600 text-white py-4">
-            <div class="container mx-auto px-4 text-center font-bold">
-                <p>¡Oferta especial! Primeros 7 Días del Método DKP con el 70% de descuento termina en <span id="countdown"></span></p>
-            </div>
-        </div>
-    @endpush
     <section class=" bg-gradient-to-t from-black to-gray-900 pb-16">
         <header class="max-w-6xl mx-auto">
             <h2 class="text-white font-bold text-center py-12 text-xl sm:text-3xl px-4">Inicia tu camino hacia una vida más sana y energética con el Método DKP: domina los desafíos de los primeros 7 días</h2>

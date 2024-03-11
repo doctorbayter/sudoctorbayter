@@ -17,8 +17,9 @@ class UserSalsitas extends Component
             $this->user_fases = auth()->user()->fases;
         }
 
-        if($planUser->plan->id == 7 ){
-            $salsitas = Recipe::where('type', '4')->take(3)->get();
+
+        if($planUser->plan->id == 2 ){
+            $salsitas = Recipe::where('type', '4')->take(9)->get();
         }else{
             $salsitas = Recipe::where('type', '4')->get();
         }

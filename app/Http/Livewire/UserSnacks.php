@@ -18,8 +18,8 @@ class UserSnacks extends Component
             $this->user_fases = auth()->user()->fases;
         }
 
-        if($planUser->plan->id == 7 ){
-            $snacks = Recipe::where('type', '2')->take(2)->get();
+        if($planUser->plan->id == 2 ){
+            $snacks = Recipe::where('type', '2')->take(6)->get();
         }else{
             $snacks = Recipe::where('type', '2')->get();
         }

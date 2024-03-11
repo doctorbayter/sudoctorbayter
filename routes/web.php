@@ -1091,6 +1091,15 @@ Route::get('x/query', function(){
     // $fase->slug = '5-desayunos-sin-huevo';
     // $fase->save();
 
+    $day = Day::create([
+       'day' => 8,
+       'fase_id' => 5,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (131, 5, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (131, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
 });
 
 Route::get('x/query/reto', function(){
@@ -1120,21 +1129,12 @@ Route::get('x/query/reto', function(){
     //    'fase_id' => $fase->id,
     // ]);
     // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (126, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (126, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //    'day' => 2,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
     // (127, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
     // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
     // (127, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
     // $day = Day::create([
-    //    'day' => 3,
+    //    'day' => 2,
     //    'fase_id' => $fase->id,
     // ]);
     // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
@@ -1143,7 +1143,7 @@ Route::get('x/query/reto', function(){
     // (128, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
     // $day = Day::create([
-    //    'day' => 4,
+    //    'day' => 3,
     //    'fase_id' => $fase->id,
     // ]);
     // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
@@ -1152,13 +1152,22 @@ Route::get('x/query/reto', function(){
     // (129, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
     // $day = Day::create([
-    //    'day' => 5,
+    //    'day' => 4,
     //    'fase_id' => $fase->id,
     // ]);
     // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
     // (130, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
     // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
     // (130, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+
+    // $day = Day::create([
+    //    'day' => 5,
+    //    'fase_id' => $fase->id,
+    // ]);
+    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    // (131, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    // (131, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
     // //Secretos y lista de alimentos

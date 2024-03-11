@@ -5,19 +5,40 @@ namespace App\Http\Livewire;
 use App\Models\Day;
 use App\Models\Fase;
 use App\Models\Recipe;
+use App\Models\Subscription;
 use Livewire\Component;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Carbon\Carbon;
 
 class UserFase extends Component
 {
     use AuthorizesRequests;
 
-    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan, $es_ayuno, $day_recipes = [];
+    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan, $es_ayuno, $day_recipes = [], $upsell21 = false, $daysRemaining, $availableAt;
 
     public function mount(Fase $fase){
 
-        
-    
+
+            // Asumiendo que cada usuario tiene una suscripción, ajusta según tu lógica de negocio
+            $subscription = auth()->user()->subscription; // Asegúrate de tener una relación subscription en el modelo User
+
+            if ($subscription && $subscription->plan_id == 7) {
+                $creationDate = Carbon::parse($subscription->created_at);
+                $fiveDaysAgo = Carbon::now()->subDays(5);
+
+
+
+                if ($creationDate > $fiveDaysAgo) {
+                    // La suscripción fue creada hace menos de 6 días
+                    // Calcular cuántos días faltan para que la suscripción tenga 6 días
+                    $daysUntilAvailable = $creationDate->diffInDays(Carbon::now()) + 1; // +1 para incluir el día actual en el cálculo
+                    $this->daysRemaining = 5 - $daysUntilAvailable;
+                    $this->availableAt = $creationDate->addDays(5);
+                } else {
+                    $this->upsell21 = true;
+                }
+            }
+
         $this->fase = $fase;
         if(auth()->user()->subscription){
             $this->user_fases = auth()->user()->fases;
@@ -46,7 +67,10 @@ class UserFase extends Component
 
         if($day_count == 5){
             $this->days = 5;
-        }else{
+        }else if($day_count == 8){
+            $this->days = 8;
+        }
+        else{
             $this->days = 7;
         }
 

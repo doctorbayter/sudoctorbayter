@@ -18,15 +18,13 @@ class UserFase extends Component
 
     public function mount(Fase $fase){
 
-
             // Asumiendo que cada usuario tiene una suscripción, ajusta según tu lógica de negocio
-            $subscription = auth()->user()->subscription; // Asegúrate de tener una relación subscription en el modelo User
-
-            if ($subscription && $subscription->plan_id == 7) {
+            $subscription = auth()->user()->subscription->plan->find(7); // Asegúrate de tener una relación subscription en el modelo User
+            
+            if ($subscription && $fase->id == 5) {
                 $creationDate = Carbon::parse($subscription->created_at);
                 $fiveDaysAgo = Carbon::now()->subDays(5);
-
-
+                
 
                 if ($creationDate > $fiveDaysAgo) {
                     // La suscripción fue creada hace menos de 6 días

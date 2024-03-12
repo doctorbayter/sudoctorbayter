@@ -14,14 +14,20 @@ class UserFase extends Component
 {
     use AuthorizesRequests;
 
-    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan, $es_ayuno, $day_recipes = [], $upsell21 = false, $daysRemaining, $availableAt;
+    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan, $es_ayuno, $day_recipes = [], $upsell21 = false, $daysRemaining, $availableAt, $subscriptionPlanExists;
 
     public function mount(Fase $fase){
 
             // Asumiendo que cada usuario tiene una suscripción, ajusta según tu lógica de negocio
             $subscription = auth()->user()->subscription->plan->find(7); // Asegúrate de tener una relación subscription en el modelo User
-            
-            if ($subscription && $fase->id == 5) {
+
+            if ($fase->id == 5) {
+
+                $this->subscriptionPlanExists = Subscription::where('user_id', auth()->user()->id)
+                    ->whereIn('plan_id', [1,15, 8, 10, 37, 38, 39,40,16,27,3,32,48,25,31,54,9, 2])
+                    ->exists();
+
+
                 $creationDate = Carbon::parse($subscription->created_at);
                 $fiveDaysAgo = Carbon::now()->subDays(5);
                 

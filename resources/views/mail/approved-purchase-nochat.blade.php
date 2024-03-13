@@ -22,7 +22,7 @@
             <p>Te doy la bienvenida al <strong>Método DKP</strong>.</p>
             <h2>¿Ahora qué debes hacer?</h2>
             <ul>
-                <li>Ingresa a la página <a href="https://doctorbayter.com/plan" target="_blank">www.doctorbayter.com/plan</a> con TU CORREO y la CONTRASEÑA</li>
+                <li>Ingresa a la página <a href="https://doctorbayter.com/plan" target="_blank">www.doctorbayter.com/plan</a> con TU CORREO y la CONTRASEÑA 123456</li>
                 @if ($library == true)
                 <li>Al ingresar a la página te recomendamos ir a la <a href="https://doctorbayter.com/plan/biblioteca" target="_blank">Biblioteca de contenido</a> para que veas toda la información exclusiva a la que ahora tienes acceso por ser parte del Método DKP</li>
                 @endif

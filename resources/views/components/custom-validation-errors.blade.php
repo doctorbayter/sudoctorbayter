@@ -2,7 +2,7 @@
 
 @if ($errors->any())
     <div {{ $attributes->merge(['class' => 'tu-clase-personalizada-de-alerta']) }}>
-        <div class="font-medium text-red-600">
+        <div class="text-red-600 font-bold">
             {{ __('Whoops! Something went wrong.') }}
         </div>
 
@@ -12,7 +12,9 @@
             @endforeach
         </ul>
         @if ($errors->email == true)
-            
+           <div class="mt-4">
+                <small> Si crees que es un error por favor contacta a nuestro 👉 <a href="http://wa.me/573012579627" class=" font-bold underline hover:text-gray-900" target="_blank" rel="noopener noreferrer nofollow">equipo de soporte técnico vía WhatsApp</a> </small>
+           </div>
         @endif
     </div>
 @endif

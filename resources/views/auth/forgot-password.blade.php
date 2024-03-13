@@ -5,14 +5,15 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            <b>¿Olvidaste tu contraseña o no sabes cual es?</b> No te preocupes. Escribe aquí abajo el correo electrónico con el que hiciste tu compra y le enviaremos a ese correo un link para que puedas restablecer o crear tu nueva contraseña para que puedas acceder inmediatamente al contenido.
+            <p class="text-base mb-2"><b>¿Olvidaste tu contraseña o no sabes cual es?</b></p> 
+            <p>No te preocupes. Escribe aquí abajo el correo electrónico con el que hiciste tu compra y le enviaremos a ese correo un link para que puedas restablecer o crear tu nueva contraseña para que puedas acceder inmediatamente al contenido.</p>
         </div>
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
                 <p class="text-red-500 mt-4">
-                    <b>IMPORTANTE:</b> En ocasiones el mensaje puede tarde hasta <b>10 minutos</b> en llegar a tu correo. si no recibes el mensaje recuerda revisar tu <b>correo no deseado</b> o <b>Spam</b>
+                    <b>IMPORTANTE:</b> Revisa tu correo electrónico, En ocasiones el mensaje puede tarde hasta <b>5 minutos</b> en llegar a tu correo. si no recibes el mensaje en ese tiempo recuerda revisar tu <b>correo no deseado</b> o <b>Spam</b> o intenta pedir un enlace nuevamente.
                 </p>
             </div>
         @endif

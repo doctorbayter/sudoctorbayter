@@ -19,6 +19,10 @@
             </div>
         @endif
 
+        <div>
+            <p class=" text-sm mb-4 font-bold">Para acceder a tu contenido debes ingresar los siguientes datos:</p>
+        </div>
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
 

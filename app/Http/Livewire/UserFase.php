@@ -33,8 +33,8 @@ class UserFase extends Component
                 
 
                 if ($creationDate > $fiveDaysAgo) {
-                    // La suscripción fue creada hace menos de 6 días
-                    // Calcular cuántos días faltan para que la suscripción tenga 6 días
+                    // La suscripción fue creada hace menos de 5 días
+                    // Calcular cuántos días faltan para que la suscripción tenga 5 días
                     $daysUntilAvailable = $creationDate->diffInDays(Carbon::now()) + 1; // +1 para incluir el día actual en el cálculo
                     $this->daysRemaining = 5 - $daysUntilAvailable;
                     $this->availableAt = $creationDate->addDays(5);

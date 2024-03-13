@@ -34,6 +34,7 @@ use App\Http\Controllers\ActiveCampaignController;
 use App\Http\Controllers\HotmartController;
 use App\Http\Controllers\ManyChatController;
 use App\Http\Controllers\WebhookController;
+use App\Models\Survey;
 use Fomo\FomoClient;
 use Fomo\FomoEventBasic;
 use Illuminate\Http\Request;
@@ -1407,6 +1408,18 @@ Route::get('x/clients/verify/', function($skip = 0){
     }
 
 });
+
+Route::get('x/encuesta', function(){ 
+    
+    Survey::create([
+        'title' => 'Encuesta de Satisfacción Plan 7 Días DKP',
+        'url' => 'https://doctorbayter.typeform.com/to/GKbNJX6W',
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+});
+
 
 Route::get('x/fomo/{name}', function($name){ 
     $apiKey = config('services.fomo.api_key');

@@ -29,4 +29,9 @@ class Subscription extends Model
         return $this->belongsTo('\App\Models\Plan');
     }
 
+    public function surveyResponses()
+    {
+        return $this->hasMany('\App\Models\SubscriptionSurveyResponse');
+    }
+
 }

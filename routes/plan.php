@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Plan\HomeController;
+use App\Http\Controllers\SurveyController;
 use App\Http\Livewire\Courses;
 use App\Http\Livewire\UserBebidas;
 use App\Http\Livewire\UserFase;
@@ -39,8 +40,9 @@ Route::get('/total/definer/create', [UserFitnessReseller::class, 'create'] )->na
 Route::post('/total/definer/store', [UserFitnessReseller::class, 'store'] )->name('fitness.store');
 
 
-
-
+Route::get('/check-survey-eligibility/{userId}', [SurveyController::class, 'checkSurveyEligibility']);
+Route::post('/mark-survey-started/{userId}', [SurveyController::class, 'markSurveyStarted']);
+Route::post('/decline-survey/{userId}', [SurveyController::class, 'declineSurvey']);
 
 Route::get('curso/{course}', Courses::class )->name('course.status');
 Route::get('curso/{course}/modulo/{lesson}', Courses::class )->name('course.etiquetas');

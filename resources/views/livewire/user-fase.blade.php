@@ -530,6 +530,31 @@
                         @endif
                     </div>
                 </div>
+
+                @if ($fase->id == 5)
+                    <!-- Pop-up container -->
+                    <div id="surveyPopup" class="hidden fixed z-50 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
+                        <!-- Pop-up -->
+                        <div class="bg-white rounded-lg shadow-lg mt-20 mx-auto max-w-2xl p-5">
+                        <div class="text-right">
+                            <button id="closePopup" class="text-gray-700 focus:outline-none">
+                            <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <h2 class="text-lg sm:text-2xl leading-6 text-gray-900 font-bold">{{auth()->user()->name}} ¡Nos encantaría conocer tu opinión!</h2>
+                            <p class="mt-2 text-gray-600">Eres uno de los KetoBayter seleccionados por tu compromiso y progreso.</p>
+                            <p class="mt-2 text-gray-600">Nos encantaría conocer tu opinión sobre el plan <b>7 Días Keto Perfectos</b> en una pequeña encuesta de satisfacción. Al dar tus valiosos comentarios, no solo ayudas a mejorar, sino que también te conviertes en parte de una comunidad exclusiva cuyas sugerencias son el motor de nuestra innovación.</p>
+                            <p class="mt-2 text-gray-600 font-bold">Tu opinión porque es importante.</p>
+                            <div class="mt-4 space-x-4">
+                            <button id="fillSurvey" class="bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Comparte Tu Experiencia</button>
+                            <button id="declineSurvey" class="bg-transparent hover:bg-gray-900 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded">No me interesa</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                @endif
+
                 @else
                     o.O
             @endcan
@@ -539,6 +564,8 @@
             @endphp
         @endcan
     </div>
+
+    
     @push('style')
         <style>
             [x-cloak] {
@@ -561,5 +588,78 @@
 
     @push('scripts')
         <script src="https://player.vimeo.com/api/player.js"></script>
+
+       @if ($fase->id == 5)
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                const userId = {{auth()->user()->id}}; // Ejemplo de cómo obtener el ID de usuario autenticado en Laravel Blade
+
+                fetch(`/plan/check-survey-eligibility/${userId}`, {
+                    headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        
+                    if (data.eligible) {
+                        
+                        document.getElementById('surveyPopup').classList.remove('hidden');
+                        
+                        document.getElementById('fillSurvey').addEventListener('click', function () {
+                            // Llamada al backend para marcar la encuesta como iniciada
+                            fetch(`/plan/mark-survey-started/${userId}`, {
+                                method: 'POST',
+                                headers: {
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                surveyId: data.surveyId, // Asegúrate de que el backend envíe el ID de la encuesta
+                                })
+                            })
+                            .then(response => {
+                                if (response.ok) {
+                                    // Ahora que se ha marcado como iniciada, redirige al usuario a la encuesta
+                                    window.open(data.surveyUrl, '_blank');
+                                    
+                                } else {
+                                    alert('Hubo un problema al iniciar la encuesta. Por favor, inténtalo de nuevo.');
+                                }
+                            });
+                        });
+
+
+
+                        document.getElementById('closePopup').addEventListener('click', function () {
+                        document.getElementById('surveyPopup').classList.add('hidden');
+                        });
+
+                        document.getElementById('declineSurvey').addEventListener('click', function () {
+                        fetch(`/plan/decline-survey/${userId}`, {
+                            method: 'POST',
+                            headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                            surveyId: data.surveyId, // Asegúrate de que el backend envíe el ID de la encuesta en la respuesta
+                            })
+                        }).then(response => {
+                            if (response.ok) {
+                            document.getElementById('surveyPopup').classList.add('hidden');
+                            // Aquí podrías mostrar un mensaje de agradecimiento o confirmación si lo deseas
+                            }
+                        });
+                        });
+                    }
+                    });
+                });
+            </script>
+       @endif
     @endpush
 </div>

@@ -150,7 +150,7 @@ Route::get('/dkp7', function ( Request $request ) {
 })->name('dkp.7dias');
 
 
-Route::get('/reviews', function () {
+Route::get('/opiniones', function () {
     return view('reviews');
 })->name('dkp.reviews');
 

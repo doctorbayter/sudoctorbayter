@@ -4,7 +4,7 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
-        <x-jet-validation-errors class="mb-4" />
+        <x-custom-validation-errors />
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
@@ -44,8 +44,14 @@
                     {{ __('Login') }}
                 </x-jet-button>
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 my-4" href="{{ route('password.request') }}">
-                        Entra aquí para si no puedes ingresar con tus datos.
+
+                    <div class="mt-8 text-center">
+                        <h2 class=" font-bold text-xl">¿Tu contraseña no funciona, o tienes problemas para ingresar?</h2>
+                        <p class="mt-4 text-sm">Si intentaste ingresar a tu contenido con el correo y contraseña y tienes algún error, solo debes hacer click en el siguiente botón y sigue los pasos para actualizar tu contraseña de acceso.</p>
+                    </div>
+
+                    <a class="border px-4 py-2 rounded-xl font-bold bg-gray-500 text-sm text-gray-50 hover:text-gray-900 my-4" href="{{ route('password.request') }}">
+                        Actualiza aquí tu contraseña
                     </a>
                 @endif
             </div>

@@ -26,7 +26,7 @@ class UserFase extends Component
             if ($fase->id == 5) {
 
                 $this->subscriptionPlanExists = Subscription::where('user_id', auth()->user()->id)
-                    ->whereIn('plan_id', [1,15, 8, 10, 37, 38, 39,40,16,27,3,32,48,25,31,54,9, 2])
+                    ->whereIn('plan_id', [1, 2, 3, 8, 9, 10, 15, 16, 25, 27, 31, 32, 37, 38, 39, 40, 48, 54])
                     ->exists();
 
                 $creationDate = Carbon::parse($subscription->created_at);

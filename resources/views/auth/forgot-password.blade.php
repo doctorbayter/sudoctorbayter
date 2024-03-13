@@ -5,7 +5,7 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            <b>¿Olvidaste tu contraseña o no sabes cual es?</b> No te preocupes. Escribe aquí abajo el correo electrónico con el que hiciste tu compra y le enviaremos a ese correo un link para que puedas restablecer o crear tu nueva contraseña para que puedas acceder inmediatamente al contenido.
         </div>
 
         @if (session('status'))
@@ -17,7 +17,7 @@
             </div>
         @endif
 
-        <x-jet-validation-errors class="mb-4" />
+        <x-custom-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('password.email') }}">
             @csrf

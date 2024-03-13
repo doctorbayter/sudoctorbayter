@@ -30,15 +30,15 @@ class UserFase extends Component
                     ->exists();
 
                 $creationDate = Carbon::parse($subscription->created_at);
-                $fiveDaysAgo = Carbon::now()->subDays(5);
+                $fiveDaysAgo = Carbon::now()->subDays(4);
                
 
                 if ($creationDate > $fiveDaysAgo) {
-                    // La suscripción fue creada hace menos de 5 días
-                    // Calcular cuántos días faltan para que la suscripción tenga 5 días
+                    // La suscripción fue creada hace menos de 4 días
+                    // Calcular cuántos días faltan para que la suscripción tenga 4 días
                     $daysUntilAvailable = $creationDate->diffInDays(Carbon::now()) + 1; // +1 para incluir el día actual en el cálculo
-                    $this->daysRemaining = 5 - $daysUntilAvailable;
-                    $this->availableAt = $creationDate->addDays(5);
+                    $this->daysRemaining = 4 - $daysUntilAvailable;
+                    $this->availableAt = $creationDate->addDays(4);
                 } else {
                     $this->upsell21 = true;
                 }

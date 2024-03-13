@@ -18,7 +18,7 @@ class SurveyController extends Controller
     
      
         if (!$subscription) {
-            return response()->json(['eligible' => 'false']);
+            return response()->json(['eligible' => false]);
         }
     
         // Revisa si ya completó la encuesta o mostró desinterés

@@ -624,7 +624,7 @@
                             .then(response => {
                                 if (response.ok) {
                                     // Ahora que se ha marcado como iniciada, redirige al usuario a la encuesta
-                                    window.open(data.surveyUrl, '_blank');
+                                   window.open(data.surveyUrl, '_blank');
                                     
                                 } else {
                                     alert('Hubo un problema al iniciar la encuesta. Por favor, inténtalo de nuevo.');

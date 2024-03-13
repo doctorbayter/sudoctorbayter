@@ -16,8 +16,9 @@ class SurveyController extends Controller
                             ->whereDate('created_at', '<=', Carbon::now()->subDays(5))
                             ->first();
     
+     
         if (!$subscription) {
-            return response()->json(['eligible' => false]);
+            return response()->json(['eligible' => 'false']);
         }
     
         // Revisa si ya completó la encuesta o mostró desinterés

@@ -68,6 +68,19 @@
                 </div>
             </div>
         </div>
+        <div class="px-4 pt-8 mx-auto w-11/12 sm:w-4/12">
+            <figure>
+                <img src="{{asset('img/gfx/warranty_badge.png')}}" alt="" class=" h-52 w-52 mx-auto">
+            </figure>
+            <div class="text-center space-y-6 text-white">
+                <h3 class="font-bold">Tu inversión segura con garantía de satisfacción de 7 días</h3>
+                <p class="text-sm ">Después de ingresar al Plan DKP 7 Días tendrás 7 días para seguir el contenido. Si dentro de este tiempo sientes que no es lo que esperabas o no cumple con tus necesidades, puedes solicitar el reembolso inmediato, sin explicaciones.</p>
+                <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb sm:hidden">
+                    <span class="w-full rounded-full inline-block mt-8  sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Adquiere tu acceso ya!</span>
+                </a> 
+                <small class="inline mt-0 sm:mt-4"><i class="text-base fas fa-shield-alt"></i>  Compra segura y autenticada</small>
+            </div>
+        </div>
     </section>
     <section>
         <div class="max-w-7xl mx-auto px-6 lg:px-8  relative overflow-hidden  mb-16 pt-8 md:pt-12">

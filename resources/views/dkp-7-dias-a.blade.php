@@ -467,9 +467,9 @@
         </div>
     </section>
 
-    <section class=" bg-white text-gray-50 pb-8 pt-16 ">
-        <h2 class="font-bold text-5xl text-gray-900 text-center">UNA COMPRA 100% LIBRE DE RIESGO</h2>
-       <div class="text-sm px-4 sm:max-w-4xl mx-auto py-8 text-justify text-gray-800">
+    <section class=" bg-white text-gray-50 pb-8 pt-8 sm:pt-16 ">
+        <h2 class="font-bold text-3xl sm:text-5xl text-gray-900 text-center">UNA COMPRA 100% LIBRE DE RIESGO</h2>
+       <div class="text-xs sm:text-sm px-4 sm:max-w-4xl mx-auto py-8 text-justify text-gray-800">
             <p><b>Tu inversión segura con nuestra garantía de satisfacción de 7 días.</b> Estamos completamente seguros de nuestro producto y sabemos que va a ser inicio de tu transformación, Si una vez iniciado este plan <b>Tus Primeros 7 Días Keto Perfectos</b>, decides que no es para ti o no cumple tus expectativas, puedes solicitar un reembolso completo antes de finalizar los 7 días de garantía que te ofrecemos. Para ello, deberás contactarnos directamente al correo equipodoctorbayter@gmail.com, proporcionando tus datos y la razón para la solicitud de reembolso y emitiremos tu reembolso inmediatamente sin condiciones. Recuerda que estamos comprometidos con la mejora continua para garantizar tu satisfacción y éxito en el método DKP del Doctor Bayter.</p>
        </div>
     </section>

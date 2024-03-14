@@ -33,6 +33,7 @@ use App\Contracts\ManyChatServiceInterface;
 use App\Http\Controllers\ActiveCampaignController;
 use App\Http\Controllers\HotmartController;
 use App\Http\Controllers\ManyChatController;
+use App\Http\Controllers\PageVariationController;
 use App\Http\Controllers\WebhookController;
 use App\Models\Survey;
 use Fomo\FomoClient;
@@ -126,28 +127,7 @@ Route::get('/masterclass', function () {
     //return view('masterclass');
 })->name('masterclass.29feb2024');
 
-Route::get('/dkp7', function ( Request $request ) {
-    //$request->session()->forget('page_variation');
-
-    $linkVersion = $request->input('version');
-
-    if ($linkVersion == 'c') {
-        $variation = 'C'; // Variación Opmtimizada para Tráfico Frio
-
-    }else if (!$request->session()->has('page_variation')) {
-        // Asigna aleatoriamente una de las 5 variaciones, asegurando igual probabilidad
-        $variations = ['A', 'B'];
-        $variation = $variations[array_rand($variations)]; // Selecciona una variación al azar
-        $request->session()->put('page_variation', $variation);
-
-    } else {
-        $variation = $request->session()->get('page_variation');
-    }
-
-    // Devuelve la vista correspondiente a la variación
-    return view('dkp-7-dias-' . strtolower($variation));
-
-})->name('dkp.7dias');
+Route::get('/dkp7', [PageVariationController::class, 'show'])->name('dkp.7dias');
 
 
 Route::get('/opiniones', function () {

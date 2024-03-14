@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                                 <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70OFF" target="_blank" class="hotmart-fb ">
-                                    <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Adquierelo aquí ya!</span>
+                                    <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Si! Me uno al plan</span>
                                 </a> 
                             </div>
                         </div>

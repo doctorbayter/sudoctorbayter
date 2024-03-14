@@ -5,13 +5,14 @@
     @endpush
     <section class=" bg-gradient-to-t from-black to-gray-900 pb-16">
         <header class="max-w-6xl mx-auto">
-            <h2 class="text-white font-bold text-center py-12 text-xl sm:text-3xl px-4">Inicia tu camino hacia una vida más sana y energética con el Método DKP: domina los desafíos de los primeros 7 días</h2>
+            <h2 class="text-white font-bold text-center py-12 text-lg sm:text-3xl px-4">Únete al plan perfecto que te ayudará a superar los desafíos de los primeros 7 días de la dieta keto</h2>
         </header>
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex relative overflow-hidden py-8 items-center bg-gray-100 rounded-xl ">
             <div class="flex  md:flex-row flex-col ">
                 <div class="flex-1 mb-8 sm:mb-0">
                     <figure class="flex-1 overflow-hidden ">
-                        <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm">
+                        <img src="{{asset('img/billboards/plan_7_dias_dkp.jpg')}}" alt="" class="w-full object-cover rounded-xl flex-1 overflow-hidden shadow-sm hidden sm:block">
+                        <img src="{{asset('img/billboards/banner_7_dias_horizontal.png')}}" alt="" class="w-full object-cover rounded-xl flex-1  shadow-sm sm:hidden">
                     </figure>
                     
                     <div class="text-center sm:text-left">
@@ -75,16 +76,16 @@
             <div class="text-center space-y-6 text-white">
                 <h3 class="font-bold">Tu inversión segura con garantía de satisfacción de 7 días</h3>
                 <p class="text-sm ">Después de ingresar al Plan DKP 7 Días tendrás 7 días para seguir el contenido. Si dentro de este tiempo sientes que no es lo que esperabas o no cumple con tus necesidades, puedes solicitar el reembolso inmediato, sin explicaciones.</p>
-                <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb sm:hidden">
+                <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKPG70" target="_blank" class="hotmart-fb sm:hidden">
                     <span class="w-full rounded-full inline-block mt-8  sm:text-2xl font-bold px-4 py-2 border bg-yellow-500 border-yellow-500 text-red-700 uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">¡Adquiere tu acceso ya!</span>
                 </a> 
-                <small class="inline mt-0 sm:mt-4"><i class="text-base fas fa-shield-alt"></i>  Compra segura y autenticada</small>
+                <small class="inline mt-0 sm:mt-4"><i class="text-base fas fa-shield-alt"></i> Compra segura y autenticada</small>
             </div>
         </div>
     </section>
     <section>
         <div class="max-w-7xl mx-auto px-6 lg:px-8  relative overflow-hidden  mb-16 pt-8 md:pt-12">
-            <h3 class="text-red-700 text-center mb-6 leading-tight font-black text-xl uppercase md:text-3xl">¿Te ha pasado que, pese a tus esfuerzos, te encuentras atrapado en un ciclo sin fin, incapaz de avanzar más allá del tercer o cuarto día en tu viaje Keto, sintiéndote frustrado y desanimado?</h3>
+            <h3 class="text-red-700 text-center mb-6 leading-tight font-black text-xl uppercase md:text-3xl">¿Te sitenes atrapado en un ciclo sin fin, incapaz de avanzar más allá del tercer o cuarto día cuando inicias la dieta keto?</h3>
             <div class="flex flex-col-reverse md:flex-row">
                 <div class="w-full md:w-5/12 md:mr-8 mt-8 md:mt-0">
                     <div class="text-justify space-y-2"> 
@@ -97,7 +98,7 @@
                     <iframe src="https://player.vimeo.com/video/912829386?h=2a224756cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reto 7 - Video Invitaci&amp;oacute;n" class="w-full h-96 md:h-96 flex-1"></iframe>
                 </div>
             </div>
-            <div class="mt-4"><a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank"><span class="w-full rounded-full inline-block mt-4 text-lg sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Haz clic aquí para comenzar</span></a></div>
+            <div class="mt-4"><a href="#comprar"><span class="w-full rounded-full inline-block mt-4 text-sn sm:text-2xl font-bold p-4  border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700 text-center ">Únete al Plan de 7 Días</span></a></div>
         </div>
     </section>
     <section class="bg-gray-900 py-10 sm:py-20">
@@ -189,8 +190,8 @@
 
     <section class="bg-gray-900 py-12 md:py-20 ">
         <div class="max-w-6xl mx-auto px-6 lg:px-8  flex flex-col text-center text-gray-50 mb-12">
-            <h3 class="text-xs sm:text-sm mb-6"><span class=" inline-block px-6 py-3 border-white border rounded-full">INCLUSO EN UN MUNDO LLENO DE CARBOHIDRATOS, HAY UN CAMINO HACIA UNA VIDA SALUDABLE Y ENERGÉTICA</span></h3>
-            <h2 class=" font-black text-lg sm:text-4xl max-w-4xl  sm:leading-10 mx-auto">Muchas Personas Fracasan con Dietas Pasajeras, Pero Tú Puedes Aprovechar Esta Oportunidad Para Transformar Tu Salud</h2>
+            <h3 class="text-xs sm:text-sm mb-6"><span class=" inline-block px-6 py-3 border-white border rounded-full">SI HAY UN CAMINO HACIA UNA VIDA SALUDABLE, ENERGÉTICA Y FELIZ </span></h3>
+            <h2 class=" font-black text-lg sm:text-4xl max-w-4xl  sm:leading-10 mx-auto">Tú Puedes Aprovechar Esta Oportunidad Para Transformar Tu Salud.</h2>
         </div>
         
         <div class=" bg-white py-8 px-2 sm:p-8 rounded-xl shadow-xl sm:max-w-5xl mx-2 sm:mx-auto grid grid-cols-6 sm:grid-cols-7 sm:gap-2 items-stretch">
@@ -204,7 +205,7 @@
                             </svg>
                         </span>
                         <div class=" h-48 sm:h-32"> 
-                            <h3 class="font-black mb-4 text-sm sm:text-xl">Luchando Con Dietas Estándar</h3>
+                            <h3 class="font-black mb-4 text-sm sm:text-xl">Dietas Estándar <span class="text-red-700">NO</span> funcionan</h3>
                             <p class="text-xs sm:text-base">Rindiéndote antes de empezar por reglas complejas y comidas insatisfactorias</p>
                         </div>
                     </li>
@@ -282,7 +283,7 @@
                             </svg>                              
                         </span>
                         <div class=" h-48 sm:h-32"> 
-                            <h3 class="font-black mb-4 text-sm sm:text-xl">Toma el Control</h3>
+                            <h3 class="font-black mb-4 text-sm sm:text-xl">Control Tus Antojos</h3>
                             <p class="text-xs sm:text-base">Interpreta las señales de tu cuerpo y transforma los antojos en elecciones conscientes</p>
                         </div>
                     </li>
@@ -293,7 +294,7 @@
                             </svg>                              
                         </span>
                         <div class=" h-48 sm:h-32">   
-                            <h3 class="font-black mb-4 text-sm sm:text-xl">Transformación Sostenible</h3>
+                            <h3 class="font-black mb-4 text-sm sm:text-xl">Perdida de Peso Sostenible</h3>
                             <p class="text-xs sm:text-base">Logrando resultados duraderos con un reinicio metabólico que va más allá del peso</p>
                         </div>
                     </li>
@@ -368,7 +369,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-white">
+    <section class="bg-white" >
         <div class="max-w-5xl mx-auto relative py-12 px-6 md:px-0">
             <h3 class="text-gray-900 text-center leading-none font-black text-xl md:text-2xl uppercase">Existen dos mejores días para iniciar un cambio en tu vida:</h3>
             <h3 class="text-gray-900 text-center leading-none font-black text-xl md:text-4xl uppercase">Uno fue ayer y el otro es hoy</h3>
@@ -401,18 +402,50 @@
                 </script>
             </div>      
             
-           <div class="mx-auto ">
+           <div class="mx-auto" id="comprar">
             <figure class="max-w-xl mx-auto z-50 mt-2">
                 <img src="{{asset('img/billboards/banner_7_dias_horizontal.png')}}" alt="" class="w-full object-cover z-50">
             </figure>
             <div class=" bg-gradient-to-t from-gray-900 to-gray-800 -mt-16 z-0 pt-20 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
+                <h3 class="px-4 pb-4 uppercase font-bold text-yellow-500 text-center text-xl">DI SÍ HOY Y OBTÉN TODO LO SIGUIENTE</h3>
+                <hr class=" border-gray-700">
                 <ul class="mt-2 text-white sm:text-xl font-bold">
-                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-check mr-4"></i> Acceso inmediato por 45 días al contenido</li>
-                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-book mr-4"></i>21 recetas y lista de alimentos para los 7 días</li>
-                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-comment mr-4"></i>Secretos exclusivos del Doctor Bayter</li>
-                    <li class="py-4 px-8 bg-gray-700"><i class="text-base sm:text-lg fas fa-video mr-4"></i>Contenido multimedia para guíarte durante los 7 días</li>
-                    <li class="py-4 px-8"><i class="text-base sm:text-lg fas fa-download mr-4"></i>Descargables: Lista de alimentos y Secretos</li>
-    
+                    <li class="py-4 px-4 sm:px-8">
+                        <div class="flex items-baseline">
+                            <i class="text-base sm:text-lg fas fa-check mr-2"></i> 
+                            <p>Acceso inmediato por 45 días al contenido</p>
+                        </div>
+                        <p class="text-sm font-normal text-justify mt-1">Obtendrás acceso por 45 días a todo nuestro contenido exclusivo. Esto significa que tendrás la flexibilidad de revisar y aplicar las estrategias a tu propio ritmo, asegurándote de absorber al máximo todos los conocimientos y aplicarlos de manera efectiva que te ayudarán a cumplir tus objetivos.</p>
+                    </li>
+                    <li class="py-4 px-4 sm:px-8 bg-gray-700">
+                        <div class="flex items-baseline">
+                            <i class="text-base sm:text-lg fas fa-book mr-2"></i>
+                            <p>21 recetas y lista de alimentos para los 7 días</p>
+                        </div>
+                        <p class="text-sm font-normal text-justify mt-1">Deliciosas recetas con la cantidad perfecta de Grasa, Proteina y Carbohidratos para cada comida del día, todas nuestras recetas están diseñadas para disfrutar de platos deliciosos y fáciles de preparar. Además, te proporcionaremos una lista de alimentos esenciales que podrás tener siempre a mano para facilitar tu experiencia.</p>
+                    </li>
+                    <li class="py-4 px-4 sm:px-8">
+                        <div class="flex items-baseline">
+                            <i class="text-base sm:text-lg fas fa-comment mr-2"></i>
+                            <p>Secretos exclusivos del Doctor Bayter</p>
+                        </div>
+                        <p class="text-sm font-normal text-justify mt-1">Descubre los secretos y estrategias que el Doctor Bayter ha desarrollado. Estos secretos incluyen desde cómo manejar los antojos hasta consejos para mantenerse en cetosis, todo lo que neceistas para superar estos primeros 7 días con éxito.</p>
+                    </li>
+                    <li class="py-4 px-4 sm:px-8 bg-gray-700">
+                        <div class="flex items-baseline">
+                            <i class="text-base sm:text-lg fas fa-video mr-2"></i>
+                            <p>Contenido multimedia para guíarte durante los 7 días</p>
+                        </div>
+                        <p class="text-sm font-normal text-justify mt-1">Entendemos que cada persona tiene un estilo de aprendizaje diferente, por lo que hemos incluido contenido multimedia para acompañarte y guiarte a través de cada paso de tu semana Keto. diseñados para proporcionarte el apoy que necesitas.</p>
+                    </li>
+                    <li class="py-4 px-4 sm:px-8">
+                        <div class="flex items-baseline">
+                            <i class="text-base sm:text-lg fas fa-download mr-2"></i>
+                            <p>Descargables: Lista de alimentos y Secretos</p>
+                        </div>
+                        <p class="text-sm font-normal text-justify mt-1">Para que tu experiencia sea aún más cómoda y accesible, te ofreceremos materiales descargables que podrás consultar en cualquier momento. Esto incluye la lista de alimentos recomendados para seguir el plan Keto sin complicaciones y un compendio de los secretos exclusivos del Doctor Bayter.</p>
+                        
+                    </li>
                 </ul>
                 <div class="w-full my-4 mx-auto text-center px-8">
                     <div class="mt-4 text-center">
@@ -425,18 +458,25 @@
                         </div>
                     </div>
                     <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank" class="hotmart-fb ">
-                        <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Sí, Quiero Mejorar</span>
+                        <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Sí, Me uno al plan</span>
                     </a> 
                 </div>
-                <p class="text-sm sm:text-md text-center px-4 max-w-4xl mx-auto font-bold mt-4 mb-8 text-gray-100">No dejes para mañana la salud que puedes empezar a transformar hoy.</p>
+                <p class="text-sm sm:text-md text-center px-4 max-w-4xl mx-auto font-bold mt-4 mb-8 text-gray-100">No dejes pasar esta oportunidad. ¡Actúa ya!</p>
             </div>
            </div>
         </div>
     </section>
 
+    <section class=" bg-white text-gray-50 pb-8 pt-16 ">
+        <h2 class="font-bold text-5xl text-gray-900 text-center">UNA COMPRA 100% LIBRE DE RIESGO</h2>
+       <div class="text-sm px-4 sm:max-w-4xl mx-auto py-8 text-justify text-gray-800">
+            <p><b>Tu inversión segura con nuestra garantía de satisfacción de 7 días.</b> Estamos completamente seguros de nuestro producto y sabemos que va a ser inicio de tu transformación, Si una vez iniciado este plan <b>Tus Primeros 7 Días Keto Perfectos</b>, decides que no es para ti o no cumple tus expectativas, puedes solicitar un reembolso completo antes de finalizar los 7 días de garantía que te ofrecemos. Para ello, deberás contactarnos directamente al correo equipodoctorbayter@gmail.com, proporcionando tus datos y la razón para la solicitud de reembolso y emitiremos tu reembolso inmediatamente sin condiciones. Recuerda que estamos comprometidos con la mejora continua para garantizar tu satisfacción y éxito en el método DKP del Doctor Bayter.</p>
+       </div>
+    </section>
+
     <section class="bg-gray-900" id="preguntas">
         <div class="max-w-5xl mx-auto py-12 md:py-20 faqs-section" id="faqs">
-            <h2 class="text-center font-extrabold text-3xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
+            <h2 class="text-center font-extrabold px-4 text-xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
             <div class=" max-w-4xl mx-auto" x-data="{selected:null}">
                 <ul class="text-gray-50">
                     <li class="relative mb-4 rounded-lg bg-gray-800">
@@ -843,6 +883,7 @@
         </script>
         <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
         <script>
             function showPopup() {
                 const popup = document.getElementById('exitIntentPopup');

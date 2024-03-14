@@ -419,7 +419,7 @@
                         </div>
                     </div>
                     <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=ucf5h58x&offDiscount=7DKP" target="_blank" class="hotmart-fb ">
-                        <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Sí, Quiero Mejorar</span>
+                        <span class="w-full rounded-full inline-block mt-4 sm:text-2xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Sí, Me uno al plan</span>
                     </a> 
                 </div>
                 <p class="text-sm sm:text-md text-center px-4 max-w-4xl mx-auto font-bold mt-4 mb-8 text-gray-100">No dejes para mañana la salud que puedes empezar a transformar hoy.</p>

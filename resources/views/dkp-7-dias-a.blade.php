@@ -377,29 +377,31 @@
             <div>
                 <div class="text-gray-900">
                     <div id="countdown" class="text-center font-bold text-6xl py-2">
-                        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+                        <span id="hours">00</span>h : <span id="minutes">00</span>m :<span id="seconds">00</span>s
                     </div>
                 </div>
                 <script>
-                    function updateCountdown() {
+                    document.addEventListener('DOMContentLoaded', function() {
+                      function updateCountdown() {
                         const now = new Date();
                         const endOfDay = new Date(now);
                         endOfDay.setHours(23, 59, 59, 999); // Establece la hora al final del día
-            
+                  
                         const diff = endOfDay - now; // Diferencia en milisegundos
-            
+                  
                         const hours = Math.floor(diff / 1000 / 60 / 60);
                         const minutes = Math.floor(diff / 1000 / 60) % 60;
                         const seconds = Math.floor(diff / 1000) % 60;
-            
+                  
                         document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
                         document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
                         document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
-                    }
-            
-                    updateCountdown(); // Actualiza el contador inmediatamente
-                    setInterval(updateCountdown, 1000); // Y luego cada segundo
-                </script>
+                      }
+                  
+                      updateCountdown(); // Actualiza el contador inmediatamente
+                      setInterval(updateCountdown, 1000); // Y luego cada segundo
+                    });
+                  </script>
             </div>      
             
            <div class="mx-auto" id="comprar">
@@ -932,45 +934,7 @@
             });
         </script>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const targetDuration = 2.75 * 60 * 60 * 1000; // 2 horas y 45 minutos en milisegundos
-
-                function initializeCountdown() {
-                    const now = new Date().getTime();
-                    let endTime = parseInt(localStorage.getItem('countdownEndTime'), 10);
-
-                    if (!endTime || endTime < now) {
-                        // Si no hay un tiempo final guardado o ya ha pasado, establece uno nuevo.
-                        endTime = now + targetDuration;
-                        localStorage.setItem('countdownEndTime', endTime);
-                    }
-
-                    updateCountdown(endTime);
-                }
-
-                function updateCountdown(endTime) {
-                    const countdownInterval = setInterval(function() {
-                        const now = new Date().getTime();
-                        const timeLeft = endTime - now;
-
-                        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-                        document.getElementById('countdown').innerText = `${hours}h ${minutes}m ${seconds}s`;
-
-                        if (timeLeft < 0) {
-                            clearInterval(countdownInterval);
-                            localStorage.removeItem('countdownEndTime'); // Limpia el almacenamiento para el próximo ciclo
-                            initializeCountdown(); // Reinicia el temporizador
-                        }
-                    }, 1000);
-                }
-
-                initializeCountdown();
-            });
-        </script>
+        
 
     @endpush
 </x-app-layout>

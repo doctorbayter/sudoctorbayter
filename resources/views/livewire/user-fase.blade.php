@@ -562,9 +562,57 @@
                                                                                 <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$97 USD</span></span>
                                                                             </div>
                                                                         </div>
+                                                                        <style>
+                                                                            .cta-btn:after{
+                                                                                content: " ";
+                                                                                display: block;
+                                                                                position: absolute;
+                                                                                top: 0;
+                                                                                left: -120px;
+                                                                                height: 100%;
+                                                                                width: 90px;
+                                                                                background: hsla(0,0%,100%,.4);
+                                                                                -webkit-transition: all .15s linear;
+                                                                                transition: all .15s linear;
+                                                                                -webkit-transform: skewX(-20deg) translateX(0);
+                                                                                transform: skewX(-20deg) translateX(0);
+                                                                                -webkit-animation: buttonShine 4s infinite;
+                                                                                animation: buttonShine 4s infinite;
+
+                                                                                -webkit-box-sizing: border-box;
+                                                                                box-sizing: border-box;
+                                                                            }
+                                                                            @keyframes buttonShine {
+                                                                                0% {
+                                                                                    -webkit-transform: skewX(-20deg) translateX(0);
+                                                                                    transform:skewX(-20deg) translateX(0)
+                                                                                }
+
+                                                                                90% {
+                                                                                    -webkit-transform: skewX(-20deg) translateX(0);
+                                                                                    transform:skewX(-20deg) translateX(0)
+                                                                                }
+
+                                                                                95% {
+                                                                                    -webkit-transform: skewX(-20deg) translateX(900px);
+                                                                                    transform:skewX(-20deg) translateX(900px)
+                                                                                }
+                                                                            }
+                                                                            @keyframes pulse {
+                                                                              0%, 100% {
+                                                                                transform: scale(1);
+                                                                              }
+                                                                              50% {
+                                                                                transform: scale(1.05);
+                                                                              }
+                                                                            }
+                                                                            .pulse-animation {
+                                                                              animation: pulse 2s infinite ease-in-out;
+                                                                            }
+                                                                        </style>
                                                                         <a href="https://pay.hotmart.com/F90185342J?off=gomhrypb&checkoutMode=10&offDiscount=50OFFDKP21&bid=1710187425178" target="_blank" class="hotmart-fb ">
-                                                                            <span class="w-full rounded-full inline-block mt-4 sm:text-xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Reclama aquí tu descuento</span>
-                                                                        </a> 
+                                                                            <span class="w-full rounded-full inline-block mt-4 sm:text-xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden pulse-animation">Reclama aquí tu descuento</span>
+                                                                        </a>
                                                                     </div>
                                                                     
                                                                 </div>

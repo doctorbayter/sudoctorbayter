@@ -14,7 +14,7 @@ class UserFase extends Component
 {
     use AuthorizesRequests;
 
-    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan, $es_ayuno, $day_recipes = [], $upsell21 = false, $daysRemaining, $availableAt, $subscriptionPlanExists;
+    public $fase , $day, $days, $current, $carbs, $snacks, $snack, $user_fases, $user_retos, $user_plan, $es_ayuno, $day_recipes = [], $upsell21 = false, $daysRemaining, $availableAt, $subscriptionPlanExists, $tenDaysAgo = false;
 
     public function mount(Fase $fase){
 
@@ -30,10 +30,14 @@ class UserFase extends Component
                     ->exists();
 
                 $creationDate = Carbon::parse($subscription->created_at);
-                $fiveDaysAgo = Carbon::now()->subDays(4);
-               
+                $fourDaysAgo = Carbon::now()->subDays(4);
+                $tenDaysAgo = Carbon::now()->subDays(10);
 
-                if ($creationDate > $fiveDaysAgo) {
+                if ($creationDate >= $tenDaysAgo) {
+                    $this->tenDaysAgo = true;
+                }
+
+                if ($creationDate > $fourDaysAgo) {
                     // La suscripción fue creada hace menos de 4 días
                     // Calcular cuántos días faltan para que la suscripción tenga 4 días
                     $daysUntilAvailable = $creationDate->diffInDays(Carbon::now()) + 1; // +1 para incluir el día actual en el cálculo

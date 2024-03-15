@@ -523,6 +523,56 @@
                                                     </div>
                                                 @endif
                                             </div>     
+
+                                            @if ($fase->id == 5 && $tenDaysAgo == true && $this->day->day != 8 && $subscriptionPlanExists == false)
+                                                <div class="bg-gradient-to-t from-black to-gray-900 w-full -mt-12 sm:pt-16">
+                                                    <section class="px-2 pb-16 sm:max-w-4xl mx-auto ">
+                                                        
+                                                        <div class="py-4">
+                                                            <h2 class=" font-bold pt-4 mb-2 uppercase text-gray-50 text-xl sm:text-2xl lg:text-4xl text-center">{{ explode(' ', trim(auth()->user()->name))[0] }}, No te estanques y <span class="text-red-700">Continua tu proceso</span> con el plan de 21 días</h2>
+                                                            <p class="text-xs sm:text-base text-justify text-gray-50">Durante los primeros 7 días, tu cuerpo inicia el cambio hacia el uso de grasas como fuente principal de energía, pero este es solo el comienzo.</p>
+                                                            <p class="mt-2 text-xs sm:text-base text-justify text-gray-50">Permanecer en un ciclo de solo 7 días repitiendo una y otra vez el proceso podría resultar en un efecto rebote o en un estancamiento de los resultados, ya que tu cuerpo no ha completado la adaptación necesaria para obtener todos los beneficios de la dieta keto. Este periodo completo es crucial para liberarte eficazmente de las adicciones al azúcar y ajustar tu metabolismo hacia una quema de grasa más eficiente.</p>
+                                                            <h3 class="my-2 font-bold text-yellow-400 text-base sm:text-xl text-center">Queremos que sigas por el camino correcto, aprovecha esta oportunidad única.<br><span class="text-red-700">¡Reclama tu 50% de descuento en la Fase Uno del Método DKP ahora!</span></h3>
+                                                        </div>
+                                                        <section class="flex flex-col sm:flex-row items-start">
+                                                                <div class="sm:mr-4 sm:w-6/12">
+                                                                    <figure class=" overflow-hidden rounded-xl shadow-xl">
+                                                                        <img src="{{asset('img/billboards/21_dias_keto.jpg')}}" alt="" class="sm:hidden">
+                                                                        <img src="{{asset('img/billboards/21_dias_keto_4-5.png')}}" alt="" class="hidden sm:block">
+                                                                    </figure>
+                                                                </div>
+                                                                <div class=" bg-gradient-to-t from-gray-900 to-gray-800 sm:w-6/12 overflow-hidden rounded-xl shadow-xl pt-2">
+                                                                    <ul class="mt-2 text-white  text-xs font-bold ">
+                                                                        <li class="px-4 py-2"><i class="text-sm sm:text-base fas fa-check mr-2 sm:mr-4"></i> Acceso inmediato por 3 meses al contenido</li>
+                                                                        <li class="px-4 py-2 bg-gray-700"><i class="text-sm sm:text-base fas fa-utensils mr-2 sm:mr-4"></i>Más de 60 recetas diferentes y lista de alimentos para los 21 días</li>
+                                                                        <li class="px-4 py-2"><i class="text-sm sm:text-base fas fa-mug-hot  mr-2 sm:mr-4"></i> Recetas de Snacks, Bebidas y Salsitas</li>
+                                                                        <li class="px-4 py-2 bg-gray-700"><i class="text-sm sm:text-base fas fa-book mr-2 sm:mr-4"></i>Biblioteca de contenido exclusiva</li>
+                                                                        <li class="px-4 py-2"><i class="text-sm sm:text-base fas fa-comment mr-2 sm:mr-4"></i>Secretos exclusivos del Doctor Bayter de la fase uno</li>
+                                                                        <li class="px-4 py-2 bg-gray-700"><i class="text-sm sm:text-base fas fa-video mr-2 sm:mr-4"></i>Contenido multimedia para guíarte durante los 7 días</li>
+                                                                        <li class="px-4 py-2"><i class="text-sm sm:text-base fas fa-download mr-2 sm:mr-4"></i>Descargables: Lista de alimentos y Secretos</li>
+                                                                        <li class="px-4 py-2 bg-gray-700"><i class="text-sm sm:text-base fas fa-info mr-2 sm:mr-4"></i>Soporte técnico</li>
+                                                                    </ul>
+                                                                    <div class="w-full my-4 mx-auto text-center px-8">
+                                                                        <div class="mt-4 text-center">
+                                                                            <div class="flex flex-col ">
+                                                                                <span class=" text-gray-100 font-bold text-lg sm:text-2xl">50% de descuento</span>
+                                                                                <span class="text-red-700 font-semibold text-5xl sm:text-6xl">$47 USD</span>
+                                                                            </div> 
+                                                                            <div class="">
+                                                                                <span class="text-xl text-gray-500">Precio Normal <span class="line-through">$97 USD</span></span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <a href="https://pay.hotmart.com/F90185342J?off=gomhrypb&checkoutMode=10&offDiscount=50OFFDKP21&bid=1710187425178" target="_blank" class="hotmart-fb ">
+                                                                            <span class="w-full rounded-full inline-block mt-4 sm:text-xl font-bold px-4 py-2 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-transparent hover:text-white cta-btn relative overflow-hidden">Reclama aquí tu descuento</span>
+                                                                        </a> 
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                        </section>
+                                                    </section>
+                                                </div>
+                                            @endif
+
                                         @endif                               
                                     </section>
                                 </div>

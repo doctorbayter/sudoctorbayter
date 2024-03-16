@@ -373,6 +373,11 @@ class PaymentController extends Controller
                         $this->addSuscription($user->id, 23); // Total Fitness
                         $tagID = "41293532"; //Método DKP - Oferta DM
                         break;
+                    case 'baubfw2u':
+                        $plan = Plan::find(1); // Plan Premium $117 ahora 167,00 US$
+                        $this->addSuscription($user->id, 23); // Total Fitness
+                        $tagID = "43299837"; //Método DKP - Oferta VM
+                        break;
                     case 'z3922ohl':
                         $plan = Plan::find(1); // Actualización Plan Premium $117 US$
                         $tagID = "42162934"; // Método DKP - Plan Premium Update

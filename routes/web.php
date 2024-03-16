@@ -270,6 +270,11 @@ Route::get('/dm', function () {
     return redirect('https://pay.hotmart.com/F78337495Q?off=6hbgake3&checkoutMode=10');
 })->name('oferta.llamadasYoanita');
 
+Route::get('/vm', function () {
+    //return view('no-disponible'); 
+    return redirect('https://pay.hotmart.com/F78337495Q?off=baubfw2u&checkoutMode=10');
+})->name('oferta.llamadasYoanita');
+
 Route::get('/oferta', function () {
     return view('no-disponible'); 
     return redirect('https://pay.hotmart.com/F78337495Q?off=9oai28hf&checkoutMode=10');

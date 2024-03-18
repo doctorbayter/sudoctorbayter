@@ -1,4 +1,7 @@
 <x-guest-layout>
+    @push('metaLinks')
+        <meta name="robots" content="noindex" />
+    @endpush
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />

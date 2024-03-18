@@ -680,7 +680,7 @@
     </section>
 
     <div class="text-center bg-gray-900 text-gray-200">
-        <small class="italic w-full text-center text-xs" >This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</small>
+        <small class="italic w-full text-center block text-xs  mb-2" >This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</small>
     </div>
 
     <!-- Pop-up de abandono del sitio -->

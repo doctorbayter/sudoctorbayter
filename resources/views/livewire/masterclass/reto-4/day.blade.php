@@ -1,4 +1,7 @@
 <x-app-layout >
+    @push('metaLinks')
+        <meta name="robots" content="noindex" />
+    @endpush
     <section class="bg-fixed bg-cover min-h-screen" >
 
         <div class="py-6 md:py-12 max-w-4xl mx-auto">

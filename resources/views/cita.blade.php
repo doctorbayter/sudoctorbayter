@@ -1,4 +1,7 @@
 <x-app-layout>
+    @push('metaLinks')
+        <meta name="robots" content="noindex" />
+    @endpush
     <section class="bg-fixed bg-cover" style="background-image: url({{asset('img/backgrounds/hero.jpg')}})">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 flex justify-end relative overflow-hidden">
             <div class="max-w-lg my-24">

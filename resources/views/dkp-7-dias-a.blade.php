@@ -3,7 +3,7 @@
     @push('metaLinks')
     <link rel="canonical" href="{{ url()->current() }}" />
     @endpush
-    <section class=" bg-gradient-to-t from-black to-gray-900 pb-16">
+    <section class="bg-gradient-to-t from-black to-gray-900 pb-16">
         <header class="max-w-6xl mx-auto">
             <h2 class="text-white font-bold text-center py-12 text-lg sm:text-3xl px-4">Únete al plan perfecto que te ayudará a superar los desafíos de los primeros 7 días de la dieta keto</h2>
         </header>
@@ -23,7 +23,7 @@
                         <p>Supera el desafío inicial del Método DKP con nuestro programa exclusivo de 7 días.</p>
                         <p>Entiende los cambios en tu cuerpo, supera la barrera mental del cuarto día, y empodérate con herramientas, recetas, y motivación directa de tu Doctor Bayter.</p>
                         <p>Este es el impulso que necesitas para no solo llegar al día 7, sino para transformar tu vida completamente.</p>
-                        <p class=" font-bold">Haz clic y únete ahora: no solo superarás la primera semana, estarás en el camino para ganar salud, ganar energía y convertirte en una verdadera máquina quema de grasa.</p>
+                        <p class="font-bold">Haz clic y únete ahora: no solo superarás la primera semana, estarás en el camino para ganar salud, ganar energía y convertirte en una verdadera máquina quema de grasa.</p>
                     </div>
                      <div class="w-full mt-4 mx-auto text-center">
                         <div class="mt-4 text-left">
@@ -34,7 +34,7 @@
                                         <p class="text-gray-400 line-through font-semibold text-5xl ">$49 USD</p>
                                     </div>
                                     <div class="mt-4">
-                                        <p class=" text-black text-center sm:text-left font-bold text-2xl sm:text-4xl">Oferta <span class="text-red-700">Hoy</span></p>
+                                        <p class="text-black text-center sm:text-left font-bold text-2xl sm:text-4xl">Oferta <span class="text-red-700">Hoy</span></p>
                                         <p class="text-red-700 font-semibold text-5xl sm:text-7xl">$14.7 USD</p>
                                     </div>
                                 </div>
@@ -42,10 +42,6 @@
                             <div class="flex">
                                 <span class="text-sm sm:text-base text-gray-500  text-center  sm:text-left w-full">CUPÓN DEL 70% DE DESCUENTO APLICADO CON EL CÓDIGO <span class="font-bold text-gray-900">DKP7</span></span>
                             </div>
-                          </div>
-                          <div class="hidden">
-                            <a href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" target="_blank"><span class="cta-btn relative overflow-hidden w-full rounded-full inline-block mt-4 text-2xl font-bold px-4 py-4 border bg-red-700 border-red-700 text-white uppercase transition-colors duration-300 ease-in-out  hover:bg-transparent hover:text-red-700">ÚNETE AHORA AQUÍ</span></a> 
-                            <small class="block mt-2 mb-4 sm:mb-0"><i class="text-base fas fa-shield-alt"></i>  Compra segura. Ambiente seguro y autenticado</small>
                           </div>
                      </div>
                 </div>
@@ -55,7 +51,7 @@
                     <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
 
                     <!--- The div that the checkout should be loaded --->
-                    <div id="inline_checkout" class=" overflow-hidden sm:-mb-64"></div>
+                    <div id="inline_checkout" class="overflow-hidden sm:-mb-64"></div>
 
                     <!--- Configuration --->
                     <script>
@@ -71,7 +67,7 @@
         </div>
         <div class="px-4 pt-8 mx-auto w-11/12 sm:w-4/12">
             <figure>
-                <img src="{{asset('img/gfx/warranty_badge.png')}}" alt="" class=" h-52 w-52 mx-auto">
+                <img src="{{asset('img/gfx/warranty_badge.png')}}" alt="" class="h-52 w-52 mx-auto">
             </figure>
             <div class="text-center space-y-6 text-white">
                 <h3 class="font-bold">Tu inversión segura con garantía de satisfacción de 7 días</h3>
@@ -106,10 +102,10 @@
             <h2 class="text-xl md:text-4xl font-bold text-gray-50 text-center uppercase">Listo para tomar la <span class="text-red-700">poderosa</span> decisión no solo por tu salud, sino por tu vida. Que te llevará hacia una versión <span class="text-red-700">más energética y saludable</span> de ti mismo.</h2>
         </div>
         <div class="py-8 bg-gradient-to-t from-gray-900 to-gray-800 rounded-xl px-4 mx-2 grid grid-rows-1 sm:grid-cols-7 text-center items-center text-white sm:w-4/12 sm:mx-auto">
-            <figure class=" overflow-hidden rounded-full w-32 h-32 mx-auto mb-6 col-span-7 sm:col-span-2">
+            <figure class="overflow-hidden rounded-full w-32 h-32 mx-auto mb-6 col-span-7 sm:col-span-2">
                 <img src="{{asset('img/photos/daniel_001.png')}}" alt="Foto Daniel Habif" class="object-cover w-full">
             </figure>
-            <div class=" space-y-2 col-span-5 sm:text-left">
+            <div class="space-y-2 col-span-5 sm:text-left">
                 <p class="italic">"Comprendí que, mientras un médico se enfoca en tratar la enfermedad, uno excepcional, como el <strong>Doctor Bayter</strong>, guía al paciente para entender cómo su propio cuerpo también puede sanarse."</p>
                 <h3 class="font-bold">Daniel Habif</h3>
             </div>
@@ -140,7 +136,7 @@
                         </ul>
                     </div>
                     <div>
-                        <figure class=" w-full">
+                        <figure class="w-full">
                             <!-- Imagen para dispositivos móviles -->
                             <img src="{{asset('img/photos/dr_002.png')}}" alt="Descripción de la imagen" class="block sm:hidden">
                             <!-- Imagen para tablets hacia arriba -->
@@ -153,7 +149,7 @@
     </section>
 
     <section class="bg-gray-100 py-8">
-        <article class=" max-w-6xl mx-auto px-6 lg:px-8">
+        <article class="max-w-6xl mx-auto px-6 lg:px-8">
             <h2 class="text-xl md:text-4xl font-bold text-gray-900 text-center my-8 uppercase">Da el salto hacia una vida <span class="text-red-700">más saludable</span> inicia tus Primeros 7 Días Keto <span class="text-red-700">Perfectos</span> ahora</h2>
             <p class="text-justify sm:text-center mb-8 text-base sm:text-lg">Al embarcarte en <b>"Tus Primeros 7 Días Keto Perfectos"</b>, te guiarás por la sabiduría del Doctor Bayter, un experto en transformaciones saludables cuya metodología ha ayudado a más de 15.000 personas, marcando la diferencia desde el inicio. Este primer paso no solo es crucial; es transformador, preparándote para seguir adelante con confianza y las herramientas correctas.</p>
             <h3 class="font-bold text-base sm:text-lg text-center">¿Estás listo para tomar el control de tu salud, comprender el funcionamiento de tu cuerpo, esquivar enfermedades y emprender acciones decisivas hacia una vida más sana, energética y feliz?</h3>
@@ -190,45 +186,45 @@
 
     <section class="bg-gray-900 py-12 md:py-20 ">
         <div class="max-w-6xl mx-auto px-6 lg:px-8  flex flex-col text-center text-gray-50 mb-12">
-            <h3 class="text-xs sm:text-sm mb-6"><span class=" inline-block px-6 py-3 border-white border rounded-full">SI HAY UN CAMINO HACIA UNA VIDA SALUDABLE, ENERGÉTICA Y FELIZ </span></h3>
-            <h2 class=" font-black text-lg sm:text-4xl max-w-4xl  sm:leading-10 mx-auto">Tú Puedes Aprovechar Esta Oportunidad Para Transformar Tu Salud.</h2>
+            <h3 class="text-xs sm:text-sm mb-6"><span class="inline-block px-6 py-3 border-white border rounded-full">SI HAY UN CAMINO HACIA UNA VIDA SALUDABLE, ENERGÉTICA Y FELIZ </span></h3>
+            <h2 class="font-black text-lg sm:text-4xl max-w-4xl  sm:leading-10 mx-auto">Tú Puedes Aprovechar Esta Oportunidad Para Transformar Tu Salud.</h2>
         </div>
         
-        <div class=" bg-white py-8 px-2 sm:p-8 rounded-xl shadow-xl sm:max-w-5xl mx-2 sm:mx-auto grid grid-cols-6 sm:grid-cols-7 sm:gap-2 items-stretch">
+        <div class="bg-white py-8 px-2 sm:p-8 rounded-xl shadow-xl sm:max-w-5xl mx-2 sm:mx-auto grid grid-cols-6 sm:grid-cols-7 sm:gap-2 items-stretch">
             <div class="col-span-3">
                 <ul class="h-full justify-between divide-y-2">
                     <li class="flex items-start align-top justify-start py-3 sm:py-6">
                         <span class="flex-1 mr-1 sm:mr-2">
-                            <svg class=" transform scale-75" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="transform scale-75" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                             <line x1="10" y1="10" x2="30" y2="30" stroke="#FF5733" stroke-width="5" />
                             <line x1="30" y1="10" x2="10" y2="30" stroke="#FF5733" stroke-width="5" />
                             </svg>
                         </span>
-                        <div class=" h-48 sm:h-32"> 
+                        <div class="h-48 sm:h-32"> 
                             <h3 class="font-black mb-4 text-sm sm:text-xl">Dietas Estándar <span class="text-red-700">NO</span> funcionan</h3>
                             <p class="text-xs sm:text-base">Rindiéndote antes de empezar por reglas complejas y comidas insatisfactorias</p>
                         </div>
                     </li>
                     <li class="flex items-start align-top justify-start py-3 sm:py-6">
                         <span class="flex-1 mr-1 sm:mr-2">
-                            <svg class=" transform scale-75" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="transform scale-75" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                             <line x1="10" y1="10" x2="30" y2="30" stroke="#FF5733" stroke-width="5" />
                             <line x1="30" y1="10" x2="10" y2="30" stroke="#FF5733" stroke-width="5" />
                             </svg>
                         </span>
-                        <div class=" h-48 sm:h-32"> 
+                        <div class="h-48 sm:h-32"> 
                             <h3 class="font-black mb-4 text-sm sm:text-xl">Antojos Constantes</h3>
                             <p class="text-xs sm:text-base">Lidiando con ataques de hambre y síntomas de abstinencia de azúcar que descarrilan tu progreso</p>
                         </div>
                     </li>
                     <li class="flex items-start align-top justify-start py-3 sm:py-6">
                         <span class="flex-1 mr-1 sm:mr-2">
-                            <svg class=" transform scale-75" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="transform scale-75" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                             <line x1="10" y1="10" x2="30" y2="30" stroke="#FF5733" stroke-width="5" />
                             <line x1="30" y1="10" x2="10" y2="30" stroke="#FF5733" stroke-width="5" />
                             </svg>
                         </span>
-                        <div class=" h-48 sm:h-32"> 
+                        <div class="h-48 sm:h-32"> 
                             <h3 class="font-black mb-4 text-sm sm:text-xl">Efectos de Dietas Yoyó</h3>
                             <p class="text-xs sm:text-base">Experimentando la frustración de resultados temporales y el efecto rebote en el peso</p> 
                         </div>
@@ -267,33 +263,33 @@
                 <ul class="h-full justify-between divide-y-2">
                     <li class="flex items-start align-top justify-start py-3 sm:py-6">
                         <span class="flex-1 mr-1 sm:mr-2">
-                            <svg class=" transform scale-75" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="transform scale-75" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 20 l10 10 l20 -20" stroke="#7CFC00" stroke-width="5" fill="none" />
                             </svg>                               
                         </span>
-                        <div class=" h-48 sm:h-32"> 
+                        <div class="h-48 sm:h-32"> 
                             <h3 class="font-black mb-4 text-sm sm:text-xl">Plan Keto Perfecto</h3>
                             <p class="text-xs sm:text-base">Accediendo a un plan meticulosamente elaborado y comprobado</p>
                         </div>
                     </li>
                     <li class="flex items-start align-top justify-start py-3 sm:py-6">
                         <span class="flex-1 mr-1 sm:mr-2">
-                            <svg class=" transform scale-75" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="transform scale-75" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 20 l10 10 l20 -20" stroke="#7CFC00" stroke-width="5" fill="none" />
                             </svg>                              
                         </span>
-                        <div class=" h-48 sm:h-32"> 
+                        <div class="h-48 sm:h-32"> 
                             <h3 class="font-black mb-4 text-sm sm:text-xl">Control Tus Antojos</h3>
                             <p class="text-xs sm:text-base">Interpreta las señales de tu cuerpo y transforma los antojos en elecciones conscientes</p>
                         </div>
                     </li>
                     <li class="flex items-start align-top justify-start py-3 sm:py-6">
                         <span class="flex-1 mr-1 sm:mr-2">
-                            <svg class=" transform scale-75" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="transform scale-75" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 20 l10 10 l20 -20" stroke="#7CFC00" stroke-width="5" fill="none" />
                             </svg>                              
                         </span>
-                        <div class=" h-48 sm:h-32">   
+                        <div class="h-48 sm:h-32">   
                             <h3 class="font-black mb-4 text-sm sm:text-xl">Perdida de Peso Sostenible</h3>
                             <p class="text-xs sm:text-base">Logrando resultados duraderos con un reinicio metabólico que va más allá del peso</p>
                         </div>
@@ -310,7 +306,7 @@
     </section>
 
     <section class="bg-white">
-        <div class=" px-6 lg:px-8 pb-16 sm:pb-24 pt-16">
+        <div class="px-6 lg:px-8 pb-16 sm:pb-24 pt-16">
             <header class="py-4 max-w-5xl mx-auto">
                 <h2 class="text-xl md:text-3xl text-center mb-4 font-bold text-gray-900">Únete a miles de personas que han alcanzado sus objetivos de pérdida de peso y salud con el Método DKP</h2>
                 <p class="text-center max-w-2xl mx-auto mb-8">Estamos muy orgullosos de los miembros de nuestra familia <b>KetoBayter</b> por haber alcanzado sus objetivos de pérdida de peso y salud. Te queremos compartir las imagenes que nos ha enviado algunos de ellos.</p>
@@ -408,9 +404,9 @@
             <figure class="max-w-xl mx-auto z-50 mt-2">
                 <img src="{{asset('img/billboards/banner_7_dias_horizontal.png')}}" alt="" class="w-full object-cover z-50">
             </figure>
-            <div class=" bg-gradient-to-t from-gray-900 to-gray-800 -mt-16 z-0 pt-20 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
+            <div class="bg-gradient-to-t from-gray-900 to-gray-800 -mt-16 z-0 pt-20 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-xl">
                 <h3 class="px-4 pb-4 uppercase font-bold text-yellow-500 text-center text-xl">DI SÍ HOY Y OBTÉN TODO LO SIGUIENTE</h3>
-                <hr class=" border-gray-700">
+                <hr class="border-gray-700">
                 <ul class="mt-2 text-white sm:text-xl font-bold">
                     <li class="py-4 px-4 sm:px-8">
                         <div class="flex items-baseline">
@@ -452,7 +448,7 @@
                 <div class="w-full my-4 mx-auto text-center px-8">
                     <div class="mt-4 text-center">
                         <div class="flex flex-col ">
-                            <span class=" text-gray-100 font-bold text-xl sm:text-4xl">Oferta Exclusiva <span class="text-red-700">HOY</span></span>
+                            <span class="text-gray-100 font-bold text-xl sm:text-4xl">Oferta Exclusiva <span class="text-red-700">HOY</span></span>
                             <span class="text-red-700 font-semibold text-5xl sm:text-6xl">$14.7 USD</span>
                         </div> 
                         <div class="">
@@ -469,7 +465,7 @@
         </div>
     </section>
 
-    <section class=" bg-white text-gray-50 pb-8 pt-8 sm:pt-16 ">
+    <section class="bg-white text-gray-50 pb-8 pt-8 sm:pt-16 ">
         <h2 class="font-bold text-3xl sm:text-5xl text-gray-900 text-center">UNA COMPRA 100% LIBRE DE RIESGO</h2>
        <div class="text-xs sm:text-sm px-4 sm:max-w-4xl mx-auto py-8 text-justify text-gray-800">
             <p><b>Tu inversión segura con nuestra garantía de satisfacción de 7 días.</b> Estamos completamente seguros de nuestro producto y sabemos que va a ser inicio de tu transformación, Si una vez iniciado este plan <b>Tus Primeros 7 Días Keto Perfectos</b>, decides que no es para ti o no cumple tus expectativas, puedes solicitar un reembolso completo antes de finalizar los 7 días de garantía que te ofrecemos. Para ello, deberás contactarnos directamente al correo equipodoctorbayter@gmail.com, proporcionando tus datos y la razón para la solicitud de reembolso y emitiremos tu reembolso inmediatamente sin condiciones. Recuerda que estamos comprometidos con la mejora continua para garantizar tu satisfacción y éxito en el método DKP del Doctor Bayter.</p>
@@ -479,7 +475,7 @@
     <section class="bg-gray-900" id="preguntas">
         <div class="max-w-5xl mx-auto py-12 md:py-20 faqs-section" id="faqs">
             <h2 class="text-center font-extrabold px-4 text-xl md:text-4xl max-w-2xl mx-auto leading-none text-gray-50 mb-12">Posiblemente tienes alguna de las siguientes dudas</h2>
-            <div class=" max-w-4xl mx-auto" x-data="{selected:null}">
+            <div class="max-w-4xl mx-auto" x-data="{selected:null}">
                 <ul class="text-gray-50">
                     <li class="relative mb-4 rounded-lg bg-gray-800">
                         <button class="w-full px-8 py-6 text-left outline-zero" @click="selected !== 2 ? selected = 2 : selected = null">
@@ -714,7 +710,7 @@
                     <p>Esta oferta no durará para siempre, y queremos que seas parte de nuestro éxito</p>
                 </div>
                 <a  href="https://pay.hotmart.com/G90883691T?checkoutMode=6&off=4dc10xp0&offDiscount=DKP70" class="block w-11/12 mx-auto rounded-xl p bg-red-700 hover:bg-red-900 text-white font-bold px-4 py-4 text-sm sm:text-3xl uppercase relative overflow-hidden cta-btn">¡Quiero Aprovechar la Oferta!</a>
-                <button class=" text-gray-400 pt-2 px-4 my-2" onclick="closePopup()">No, gracias, no quiero</button>
+                <button class="text-gray-400 pt-2 px-4 my-2" onclick="closePopup()">No, gracias, no quiero</button>
             </div>
         </div>
     </div>
@@ -922,15 +918,18 @@
                 });
                 // Establecer un temporizador para retrasar la activación del detector de intención de salida
                 setTimeout(function() {
-                    document.addEventListener('mouseout', function (e) {
-                        if (!e.toElement && !e.relatedTarget) {
-                            // Verificar si el pop-up ya fue cerrado en esta sesión
-                            if (sessionStorage.getItem('popupClosed') !== 'true') {
-                                showPopup()
+                    // Verifica si el ancho de la ventana es mayor que 1024px, lo que generalmente indica una pantalla de computadora
+                    if (window.innerWidth > 1024) {
+                        document.addEventListener('mouseout', function (e) {
+                            if (!e.toElement && !e.relatedTarget) {
+                                // Verificar si el pop-up ya fue cerrado en esta sesión
+                                if (sessionStorage.getItem('popupClosed') !== 'true') {
+                                    showPopup();
+                                }
                             }
-                        }
-                    });
-                }, 3000); // Retraso de 2 segundos
+                        });
+                    }
+                }, 4000); // Retraso de 4 segundos
             });
         </script>
 

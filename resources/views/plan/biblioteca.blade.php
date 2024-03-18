@@ -184,6 +184,30 @@
                                                                             <p class="text-red-700 text-xl mb-2"><b>¿ME PESE Y NO BAJE DE PESO AL CONTRARIO SUBI?</b></p>
                                                                             <p><b class="pr-2">R:</b>Silo haces perfecto jamás vas a subir de peso, puedes estar teniendo líquidos si estás próxima a tu periodo menstrual en el caso de las mujeres, has presentado cuadros de estresado, la recomendación más importante es que te peses en tu día 1 y tu día 21 para evaluar tu proceso, recuerda el método está diseñado para que te conviertas en una máquina quema grasa.</p>
                                                                         </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿PUEDO TOMAR GELATINA SIN SABOR PARA MIS ARTICULACIONES?</b></p>
+                                                                            <p><b class="pr-2">R:</b>La mejor fuente de colágeno la obtienes del caldo de huesos especialmente de la rodilla de vaca o pata de vaca esta gelatina es la que debes consumir</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿SI TENGO CANDIDIASIS DEBO SUSPENDER EL CONSUMO DE QUESO?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Nunca se restringe el uso de queso en candidiasis. no hay necesidad y no tiene nada que ver, solo se deben restringir los carbohidratos y las frutas, evitar la humedad y en algunos casos medicación (Que indique tu médico tratante)</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿QUÉ PASA SI NO AGREGO CARBOHIDRATOS EN FASE 2?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Te vas a estancar, no vas a bajar de peso y lo más importante es que no vas a conocer tu cuerpo cuales son esos alimentos que le hacen bien o no a tu cuerpo.</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿QUÉ DEBO HACER PARA BLOQUEAR MI PÉRDIDA DE PESO?</b></p>
+                                                                            <p><b class="pr-2">R:</b>El método Dkp está diseñado principalmente para sanar tu cuerpo, como efecto secundario vas a bajar de peso, ahora bien tu cuerpo sabe hasta qué punto debe bajar, si continúas bajando de peso quiere  decir que aun tienes grasa acomulada, llegará el momento que tu cuerpo se quede en x peso, es importante complementar tu alimentación con ejercicio y realizar las fases perfectas.</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿ME DA MIEDO INGERIR TANTA GRASA  QUE DEBO HACER?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Las únicas personas que deben tener miedo de comer grasas son aquellas con un colesterol mayor a 300 ya que deberían tener  una consideración especial. De lo contrario deben comer grasa para sanar.</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿PUEDO QUEMAR GRASA Y NO BAJAR DE PESO?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Si  pierdes grasa debes bajar de peso. Para muchos la pérdida de peso inicia cuando bajas la resistencia a la insulina y eso puede demorar 3 a 4 meses. debes alinear tus ritmos circadianos y toma el sol a mediodía</p>
+                                                                        </li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -263,6 +287,42 @@
                                                                         <li class="text-base py-6">
                                                                             <p class="text-red-700 text-xl mb-2"><b>¿ES NORMAL QUE TENGA ALTERACIONES EN LA REGLA O PERIODO MENSTRUAL?</b></p>
                                                                             <p><b class="pr-2">R:</b>Al iniciar este cambio de alimentación  es completamente normal que tu periodo menstrual  presente irregularidad, recuerda tu cuerpo se encuentra en un proceso de adaptación, estás dejando tus hormonas, tu microbiota y tu metabolismo perfecto, ahora bien esto se te regulará después de tu semana 12 aproximadamente.</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿EL TOMAR MUCHO CAFÉ PUEDE OCASIONAR QUE LAS PALPITACIONES DEL CORAZÓN SUBAN?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Si ves que suben más de lo normal baja la cantidad de café y si continuan los sintomas te sugiero visitar a tu médico de cabecera</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿QUÉ HAGO SI PRESENTO MUCHAS NAUSEAS?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Aprovecha las nauseas, tu cuerpo te está diciendo lo que le estas dando te está saciando, te está haciendo sentir bien, esto puede durar entre 8 a 15 días, solo debes ser paciente, permanecer muy bien hidratado y seguir el método perfecto</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿QUÉ PASA SI AHORA TOMO MAS AGUA Y VOY MENOS AL BAÑO?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Esto significa que te estás hidratando, el agua que tomas ingresa a tus celular y te da la energía que tu cuerpo necesita, antes el agua te deshidrataba y te la pasabas orinando.</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>SIENTO ARDOR AL ORINAR</b></p>
+                                                                            <p><b class="pr-2">R:</b>Si presentas ardor al momento de orinar es importante visites a tu médico de cabecera ya que no tiene nada que ver con tu cambio de alimentación y es ideal descartar una infección urinaria</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿PUEDO SEGUIR TOMANDO AGUA SI ME SUBE LA PRESIÓN Y ME DUELE LA CABEZA?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Las personas hipertensas sufren de hiponatremia es decir se les baja el sodio por eso ocurre el dolor de cabeza, es decir tu cerebro está sufriendo por falta de sal, ahora bien la sal no sube la presión tu cuerpo pierde agua y el sodio es la forma como la reponemos.</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿EL CALCIO  PRODUCEN PIEDRAS EN LOS RIÑONES?</b></p>
+                                                                            <p><b class="pr-2">R:</b>El calcio no se eleva por comer más calcio, este se eleva por que se saca el calcio de los huesos, esto sucede cuando tengo niveles de vitamina D bajos es decir no tengo buena relación con el sol.</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿EL ÁCIDO ÚRICO ALTO PRODUCE PIEDRAS  EN LOS RIÑONES?</b></p>
+                                                                            <p><b class="pr-2">R:</b>El ácido úrico no es por comer carne, el ácido úrico sube por comer frutas, carbohidratos y alcohol ahora bien si tomas el sol y realizar el método perfecto no vas a formar calculos.</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿SIENTO HORMIGUEO EN LOS PIES QUE PUEDO HACER?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Debes tomar magnesio en al noche, tu hormigueo es por bajos niveles de magnesio (busca magnesio de 400 mg en tableta el más natural que encuentres en tu país)</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿ESTOY ORINANDO CON ESPUMA QUE DEBO HACE?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Es importante te realices un parcial de orina para descartar una infección y remites a tu médico de cabecera y aumenta tu hidratación mínimo 4 litros de agua con sal rosada del himalaya</p>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -386,6 +446,15 @@
                                                                             <p class="text-red-700 text-xl mb-2"><b>¿QUÉ COLAGENO PUEDO TOMAR?</b></p>
                                                                             <p><b class="pr-2">R:</b>la mejor fuente de  colágeno 100 % natural la obtienes de las patas de cerdo, patas de pollo, patas de res, espinas del pescado y las verduras verdes, solo debes seguir el plan perfecto ahora bien si en tu pais no encuentras estos alimentos puedes optar por comprar el más natural que encuentres en el mercado.</p>
                                                                         </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿QUÉ HAGO SI TENGO MI VITAMINA D MUY BAJA?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Es importante tomes el sol minimo 15 minutos todos los días  preferiblemente al mediodía y vas aumentando paulatinamente mientras tu cuerpo hace callo solar (si puedes hacerlo completamente desnuedo sería ideal)</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿PODEMOS CONSUMIR OMEGA 6 POR LAS PROPORCIONES DE 3 A 1 Y DE 6 A 6?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Soy partidario del omega 1 a uno por eso mi unica recomendacion es que consuman pescados azules y alimentos 100 % naturales</p>
+                                                                        </li>
+                                                                        
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -566,6 +635,38 @@
                                                                             <p class="my-2">El Método DKP, creado por el Doctor Jorge Enrique Bayter, es una versión perfeccionada de la dieta cetogénica tradicional. </p>
                                                                             <p class="my-2">Este método se enfoca en la sanación del cuerpo y el metabolismo, utilizando un enfoque estructurado y dividido en fases para lograr resultados óptimos.</p>
                                                                         </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿DURANTE EL PERIODO MENSTRUAL PUEDO SUBIR DE PESO?</b></p>
+                                                                            <p><b class="pr-2">R:</b>No te preocupes durante tu periodo menstrual acumulas un poco de líquidos que luego sueltas, te sugiero solo pesarte en tu dia 1 y tudia 21 y si tienes el periodo evita pesarte.</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿SI TENGO OPERACIÓN DE TUMOR BENIGNO EN EL HÍGADO PUEDE REALIZAR EL METODO DKP?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Claro que puedes realizarlo siempre contemplando las indicaciones de tu médico tratante</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿UNA PERSONA CON SÍNDROME DE INTESTINO IRRITABLE PUEDE REALIZAR EL MÉTODO DKP?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Puede realizarlo bajo la supervisión de su médico tratante y dependiendo de lo guado del cuadro, ahora bien debe pedir permiso a su gastroenterólogo</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿CUANDO SUCEDE LA CETOACIDOSIS?</b></p>
+                                                                            <p><b class="pr-2">R:</b>la cetoacidosis es una condición únicamente de diabéticos tipo 1 y alcohólicos</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿SI TENGO UNA COLONOSCOPIA Y MI MEDICO TRATANTE ME ENVÍA A COMER FRUTAS QUE DEBO HACER?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Nada que hacer debes salir de cetosis y seguir las indicaciones de tu médico tratante, tan pronto realicen tu procedimiento puedes continuar el plan sin problema</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿SI ESTOY TOMANDO CORTICOIDES PUEDE AFECTAR MI PROCESO?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Es tu médico tratante quien decide bajar la dosis o suspender completamente ahora bien, claro que afecta tu proceso y tu salud  recuerda estas iniciado a comer para sanar para que en minimo 7 meses a 1 año sea tu médico quien retire tus medicación</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿TENGO HERNIAS LUMBARES QUE ME GENERAN DOLOR DEBO VOLVER A TOMAR MEDICAMENTO?</b></p>
+                                                                            <p><b class="pr-2">R:</b>No debes aguantar dolor, ahora bien debes seguir tomando la medicación que envíe tu médico tratante</p>
+                                                                        </li>
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>¿TENGO LAS PLAQUETAS BAJAS, QUE DEBO HACER PARA SUBIRLAS?</b></p>
+                                                                            <p><b class="pr-2">R:</b>Esto nada tiene que ver con tu dieta, es prácticamente un indicio de una enfermedad hematológica es importante tomes  una cita con hematología</p>
+                                                                        </li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -601,7 +702,10 @@
                                                                             <p class="text-red-700 text-xl mb-2"><b>¿SOY  DEPORTISTA DEBE CONSUMIR LAS MISMAS CANTIDADES?</b></p>
                                                                             <p><b class="pr-2">R:</b>El método dkp está diseñado con las porciones que tu cuerpo requiere para la energía diaria, lo ideal es que si eres hombre consumas entre 300-380 gramos de proteína y en el caso de las mujeres entre 300-320 gramos de proteína diaria</p>
                                                                         </li>
-                                                                        
+                                                                        <li class="text-base py-6">
+                                                                            <p class="text-red-700 text-xl mb-2"><b>ESTOY PERDIENDO MÚSCULO Y SOY DEPORTISTA DE ALTO RENDIMIENTO</b></p>
+                                                                            <p><b class="pr-2">R:</b>Si comes 70% grasa jamas vas a tocar el músculo, ahora bien estas perdiendo más grasa de la que quieres perder, así que debes aumentar el consumo de proteína, iniciar ejercicio de fuerza (busca un buen coach de entrenamiento) toma tu mct para entrenamientos de mínimo 3 horas y aumenta tu hidratación antes, durante y después</p>
+                                                                        </li>
                                                                     </ul>
                                                                 </div>
                                                             </div>

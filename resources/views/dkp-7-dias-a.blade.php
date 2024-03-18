@@ -1,7 +1,7 @@
 <x-app-layout>
-    @section('title', 'Método DKP 7 Días |')
+    @section('title', 'Menú Completo Una Semana Keto Perfecta |')
     @push('metaLinks')
-    <link rel="canonical" href="{{ url()->current() }}" />
+        <link rel="canonical" href="{{ url()->current() }}" />
     @endpush
     <section class="bg-gradient-to-t from-black to-gray-900 pb-16">
         <header class="max-w-6xl mx-auto">

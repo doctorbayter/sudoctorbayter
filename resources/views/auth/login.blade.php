@@ -1,7 +1,9 @@
 <x-guest-layout>
     @push('metaLinks')
-        <meta name="robots" content="noindex" />
+    <meta name="robots" content="noindex" />
     @endpush
+
+    @section('title', 'Inicio de Sesión | ')
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />

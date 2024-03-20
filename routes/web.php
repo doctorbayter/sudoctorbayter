@@ -179,64 +179,34 @@ Route::get('reto/{reto}/repeticion/reunion-{day}', [Reto::class, 'replay'])->nam
 
 Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.video');
 
+
 Route::get('/reto', function () {
-    return view('no-disponible');
-    //return redirect('https://pay.hotmart.com/R89419188I?checkoutMode=10');
+    //return view('no-disponible');
+    return redirect('https://pay.hotmart.com/D91820293W?checkoutMode=10');
 })->name('reto.nuevo');
 
-Route::get('/comprar', function () {
-    return view('no-disponible');
-    //return redirect('https://pay.hotmart.com/R89419188I?checkoutMode=10');
-})->name('reto.comprar');
 
 Route::get('/venezuela', function () {
-    return view('no-disponible');
-    //return redirect()->route('reto.register', ['reto'=>'desafio-2024']);
+    //return view('no-disponible');
+    return redirect()->route('reto.register', ['reto'=>'5mer-2024']);
 })->name('reto.venezuela');
 
-Route::get('/reto/desafio/whatsapp', function () {
-    return redirect('https://chat.whatsapp.com/IsAS6z1wOaoHHIimHdTsHh');
+
+Route::get('/reto/5-mer/whatsapp/', function () {
+    return redirect('https://chat.whatsapp.com/FKioIs9IfEsHXBjyao1hsK');
 })->name('reto.whatsapp');
 
-Route::get('/reto/desafio/whatsapp/grupo-1', function () {
-    return redirect('https://chat.whatsapp.com/JRw9aIvGsKB0KpPev9bHGF');
+Route::get('/reto/5-mer/whatsapp/grupo-1', function () {
+    return redirect('https://chat.whatsapp.com/FKioIs9IfEsHXBjyao1hsK');
 })->name('reto.whatsapp1');
 
-Route::get('/reto/desafio/whatsapp/grupo-2', function () {
-    return redirect('https://chat.whatsapp.com/LZdcMxn2iYbAvWKkW9zxko');
+Route::get('/reto/5-mer/whatsapp/grupo-2', function () {
+    return redirect('https://chat.whatsapp.com/LxJtsYaON04ALSM2EjexCz');
 })->name('reto.whatsapp2');
 
-Route::get('/reto/desafio/whatsapp/grupo-3', function () {
-    return redirect('https://chat.whatsapp.com/Lu9PNCqw2Wj5oh7DHdP9G2');
+Route::get('/reto/5-mer/whatsapp/grupo-3', function () {
+    return redirect('https://chat.whatsapp.com/Id6tgCvME3lGKCeH2rTe4f');
 })->name('reto.whatsapp3');
-
-Route::get('/reto/desafio/whatsapp/grupo-4', function () {
-    return redirect('https://chat.whatsapp.com/CMEMtU4g5jh4SbRihm5Sp9');
-})->name('reto.whatsapp4');
-
-Route::get('/reto/desafio/whatsapp/grupo-5', function () {
-    return redirect('https://chat.whatsapp.com/Ggg7qSWMj8I7QMpEddluBv');
-})->name('reto.whatsapp5');
-
-Route::get('/reto/desafio/whatsapp/grupo-6', function () {
-    return redirect('https://chat.whatsapp.com/JgTZZKe3cRR6B3Pn4Aoaor');
-})->name('reto.whatsapp6');
-
-Route::get('/reto/desafio/whatsapp/grupo-7', function () {
-    return redirect('https://chat.whatsapp.com/KUOSyvwXVJfCH6l9LSbTxj');
-})->name('reto.whatsapp7');
-
-Route::get('/reto/desafio/whatsapp/grupo-8', function () {  
-    return redirect('https://chat.whatsapp.com/IsAS6z1wOaoHHIimHdTsHh');
-})->name('reto.whatsapp8');
-
-Route::get('/reto/desafio/whatsapp/grupo-9', function () {
-    return redirect('https://chat.whatsapp.com/FjM4Nun1SD9ABClj2qR4Aj');
-})->name('reto.whatsapp9');
-
-Route::get('/reto/desafio/whatsapp/grupo-10', function () {
-    return redirect('https://chat.whatsapp.com/FPS0H06HeNk3kkyRw1OezS');
-})->name('reto.whatsapp10');
 
 
 Route::get('/selecto', function () {
@@ -1091,89 +1061,87 @@ Route::get('x/query', function(){
 Route::get('x/query/reto', function(){
 
 
-    // // Plan y Fase del reto
+    // Plan y Fase del reto
 
-    // $plan = Plan::create([
-    //    'name' => 'Desafío 2024',
-    //    'slug' => 'desafio-2024',
-    //    'price_id' => 14
-    // ]);
+    $plan = Plan::create([
+       'name' => 'Reto 5 Mer 2024',
+       'slug' => '5mer-2024',
+       'price_id' => 14
+    ]);
 
-    // $fase = Fase::create([
-    //    'name' => 'Desafío 2024',
-    //    'sub_name' => 'Liberate de la <span class="text-red-700">mierda</span> del 2023',
-    //    'descripcion' => '',
-    //    'slug' => 'desafio-2024',
-    // ]);
+    $fase = Fase::create([
+       'name' => 'Reto 5 Mer 2024',
+       'sub_name' => 'El Reto del <span class="text-red-700">Ayuno</span>',
+       'descripcion' => '',
+       'slug' => '5mer-2024',
+    ]);
 
-    // //Días Reto
+    //Días Reto
 
-    // $fase = Fase::find(19); //Desafio 2024
+    $day = Day::create([
+       'day' => 1,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (132, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (132, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    // $day = Day::create([
-    //    'day' => 1,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (127, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (127, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+       'day' => 2,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (133, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (133, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    // $day = Day::create([
-    //    'day' => 2,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (128, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (128, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+       'day' => 3,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (134, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (134, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    // $day = Day::create([
-    //    'day' => 3,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (129, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (129, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+       'day' => 4,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (135, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (135, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
-    // $day = Day::create([
-    //    'day' => 4,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (130, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (130, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
-
-    // $day = Day::create([
-    //    'day' => 5,
-    //    'fase_id' => $fase->id,
-    // ]);
-    // DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    // (131, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
-    // DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    // (131, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    $day = Day::create([
+       'day' => 5,
+       'fase_id' => $fase->id,
+    ]);
+    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
+    (136, $fase->id, $day->id, CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
+    (136, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
 
 
-    // //Secretos y lista de alimentos
+    //Secretos y lista de alimentos
 
-    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    // (41, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-desafio-2024.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (44, 'Lista de Alimentos', 'files/pdf/lista-de-alimentos-5mer-2024.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
-    // DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
-    // (42, 'Secretos', 'files/pdf/secretos-desafio-2024.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO resources (id, name, url, resourceable_id, resourceable_type, created_at, updated_at) VALUES
+    (45, 'Secretos', 'files/pdf/secretos-5mer-2024.pdf', $fase->id, 'App\\Models\\Fase', CURRENT_TIMESTAMP, NULL)");
 
-    // DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
-    // (43, $fase->id, '1', 'files/pdf/lista-de-alimentos-desafio-2024.pdf', CURRENT_TIMESTAMP, NULL)");
+    DB::insert("INSERT INTO fase_week (id, fase_id, week_id, resource, created_at, updated_at) VALUES
+    (46, $fase->id, '1', 'files/pdf/lista-de-alimentos-5mer-2024.pdf', CURRENT_TIMESTAMP, NULL)");
 
 
 
     // Recetas
 
     // $recipe = Recipe::create([
-    //     'name' => 'desafio-2024-5-1',
-    //     'slug' => 'desafio-2024-5-1',
+    //     'name' => '5mer-2024-5-1',
+    //     'slug' => '5mer-2024-5-1',
     //     'indice'=> 1,
     //     'carbs' => 0,
     //     'time' => 10,

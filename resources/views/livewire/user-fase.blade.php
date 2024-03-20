@@ -60,7 +60,7 @@
                                     <h2 class=" font-bold text-3xl md:text-6xl"> {!!$fase->sub_name!!}</h2>
                                     <p class="text-base text-gray-600 mt-2">{{$fase->descripcion}}</p>
 
-                                    @if ($fase->id != 19000 || auth()->user()->id == 13706)
+                                    @if ($fase->id != 20 || auth()->user()->id != 13706)
                                         <section class=" flex items-center flex-col md:flex-row mt-4 ">
                                             @foreach ($fase->resources->sortBy('created_at') as $resource)
                                                     <a  href="{{asset($resource->url)}}" target="_blank" class="text-white text-xs mt-4 md:mt-0 md:text-sm xl:text-base border @if ($loop->first) md:mr-3 @endif cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-6 py-2 rounded-full">Descargar {{$resource->name}}</a>
@@ -72,7 +72,7 @@
                         @endif
     
                         <div class="hidden">{{$this->day->id}}</div>
-                        @if ($fase->id == 19000 && auth()->user()->id != 13706 )
+                        @if ($fase->id == 20 && auth()->user()->id != 1370600 )
                             <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
                                 <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
                                     <div class="flex items-center justify-between">
@@ -85,9 +85,9 @@
                                             </svg>
                                             <div class="flex flex-col ml-3">
                                                 <div class=" leading-none font-bold text-red-700">¡Aviso Importante!</div>
-                                                <p class="text-sm text-gray-600 leading-none mt-1">El reto <b>En Nevidad 2023</b> Dará inicio el <b>9 de Enero de 2024</b></p>
-                                                <p class="text-sm text-gray-600 leading-none mt-1">por ahora puedes ingresar a <a class="text-white text-sm border cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-4 py-2 rounded-full" href="https://doctorbayter.com/reto/desafio/whatsapp" target="_blank" rel="noopener noreferrer"><b>El grupo de Whatsapp</b></a> Dirigido por <b>El Equipo de Tu Doctor Bayter</b></p>
-                                                <p class="text-sm text-gray-600 leading-none mt-1">Recurda que: <b>Toda la información del reto quedará activa el día viernes 5 de Enero de 2024 (Recetas, Lista de alimentos y Secretos)</b></p>
+                                                <p class="text-sm text-gray-600 leading-none mt-1">El reto <b>5 Mer El Reto del Ayuno</b> Dará inicio el Lunes <b>8 de abril de 2024</b></p>
+                                                <p class="text-sm text-gray-600 leading-none mt-1">Ya estás inscrito al reto, por ahora puedes ingresar a <a class="text-white text-sm border cursor-pointer border-red-700 bg-red-700 hover:text-red-800 hover:bg-white inline-block font-bold px-4 py-2 rounded-full" href="https://doctorbayter.com/reto/5-mer/whatsapp/grupo-1" target="_blank" rel="noopener noreferrer"><b>El grupo de Whatsapp</b></a> Dirigido por <b>El Equipo de Tu Doctor Bayter</b></p>
+                                                <p class="text-sm text-gray-600 leading-none mt-1">Recurda que: <b>Toda la información del reto quedará activa el día viernes 5 de abril de 2024 (Recetas, Lista de alimentos y Secretos)</b></p>
                                             </div>
                                         </div>
                                     </div>

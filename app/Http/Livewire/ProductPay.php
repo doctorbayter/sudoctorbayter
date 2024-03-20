@@ -133,7 +133,7 @@ class ProductPay extends Component
 
             $fases_premium = Fase::whereIn('id', [1, 2, 3, 4])->get();
             $fase_one = Fase::find(1);
-            $reto = Fase::find(19);
+            $reto = Fase::find(20);
 
             if($this->plan->id != 5 || $this->plan->id != 6){
 
@@ -163,14 +163,14 @@ class ProductPay extends Component
                     if($fase_one->clients()->where('users.id', $user->id)->doesntExist()){
                         $fase_one->clients()->attach($user->id);
                     }
-                }else if($this->plan->id == 53) {
+                }else if($this->plan->id == 56) {
                     if($reto->clients()->where('users.id', $user->id)->doesntExist()){
                         $reto->clients()->attach($user->id);
                     }
                     $activeCampaignService = new ActiveCampaignService();
                     $contact = $activeCampaignService->verifyOrCreateContact($user->name, $user->email);
                     if ($contact) {
-                        $activeCampaignService->addContactToList($contact['id'], 64);
+                        $activeCampaignService->addContactToList($contact['id'], 69);
                         $activeCampaignService->assignTagToContact($contact['id'], 44);
                     }
                 }else if($this->plan->id == 55) {
@@ -182,7 +182,7 @@ class ProductPay extends Component
                     }
                 }
 
-                if($this->plan->id == 53){
+                if($this->plan->id == 56){
                     $mail = new ApprovedPurchaseReto($this->plan, $user);
                     Mail::to($user->email)->bcc('correosdoctorbayter@gmail.com', 'Doctor Bayter')->send($mail);
                 }else if($this->plan->id == 55){

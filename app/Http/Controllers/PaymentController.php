@@ -300,7 +300,7 @@ class PaymentController extends Controller
             case 15:
                 $mail = new ApprovedPurchase($plan, $user);
             break;
-            case 53:
+            case 56:
                 $mail = new ApprovedPurchaseReto($plan, $user);
             break;
             case 4:
@@ -398,10 +398,10 @@ class PaymentController extends Controller
                 $tagID = "41442684"; //Método DKP - Fase Uno
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
 
-            }else if($product_id == 3647377){ // Desafio 2024
-                $plan = Plan::find(53); 
-                $fases = Fase::whereIn('id', [19])->get();
-                $tagID = "40709740"; //Desafio-2024
+            }else if($product_id == 3949560){ // Reto 5Mer 2024
+                $plan = Plan::find(56); 
+                $fases = Fase::whereIn('id', [20])->get();
+                $tagID = "43445075"; //5Mer 2024
                 $manyChatService->processSubscriberByEmail($subscriberData, $tagID);
 
             }else if($product_id == 3795223){ // MasterClass Predice Tu Enfermedad Metabólica

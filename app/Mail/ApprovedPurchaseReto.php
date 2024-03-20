@@ -33,6 +33,6 @@ class ApprovedPurchaseReto extends Mailable
     public function build()
     {
         return $this->view('mail.approved-purchase-reto')
-        ->subject('Bienvenido, al Desafio 2024');
+        ->subject('Bienvenido, al Reto 5Mer 2024 - El reto del ayuno');
     }
 }

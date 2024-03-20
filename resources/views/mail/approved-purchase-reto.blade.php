@@ -19,14 +19,15 @@
     <div class="container">
         <div class="content">
             <p>Hola,</p>
-            <p>Pronto estará disponible toda la información del <strong>Desafío 2024 - Liberate de la mierda del 2024</strong>. Por ahora, si aún no estás dentro del grupo de seguimiento con en equipo de tu Doctor Bayter ingresa al siguiente botón.</p>
-            <a href="https://doctorbayter.com/reto/desafio/whatsapp" class="button" target="_blank">ENTRA AQUÍ AL GRUPO DE WHATSAPP DEL RETO</a>
+            <p>Pronto estará disponible toda la información del <strong>Reto 5Mer 2024 - El reto del ayuno</strong>. Por ahora, si aún no estás dentro del grupo de seguimiento con en equipo de tu Doctor Bayter ingresa al siguiente botón.</p>
+            <a href="https://doctorbayter.com/reto/5-mer/whatsapp/" class="button" target="_blank">ENTRA AQUÍ AL GRUPO DE WHATSAPP DEL RETO</a>
 
             <h2>¿Ahora qué debes hacer?</h2>
             <ul>
-                <li>Ingresa a la página <a href="https://doctorbayter.com/plan" target="_blank">www.doctorbayter.com/plan</a> con TU CORREO y la CONTRASEÑA <strong>123456</strong>...</li>
-                <li>El reto dará inicio el <strong>día 9 de enero</strong>.</li>
-                <li>Es importante que tengas en cuenta que el acceso a este reto lo tendrás por 3 meses a partir del momento que finalice el reto.</li>
+                <li>Ingresa a la página <a href="https://doctorbayter.com/plan" target="_blank">www.doctorbayter.com/plan</a> con TU CORREO y la CONTRASEÑA <strong>123456</strong></li>
+                <li>Si tienes problemas con tus datos de acceso solo debes actualizar tu contraseña en <a href="https://doctorbayter.com/forgot-password" target="_blank">Esta Página</a></li>
+                <li>El reto dará inicio el <strong>día 8 de enero</strong>.</li>
+                <li>Es importante que tengas en cuenta que el acceso a este reto lo tendrás por 30 días a partir del momento que finalice el reto.</li>
             </ul>
             <p>Un fuerte abrazo,</p>
             <p><strong>Tu Doctor Bayter.</strong></p>

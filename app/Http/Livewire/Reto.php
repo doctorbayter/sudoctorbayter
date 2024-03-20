@@ -63,6 +63,10 @@ class Reto extends Component
                 $this->plan = Plan::find(53);
                 $this->list_id = 34;
                 break;
+            case '5mer-2024':
+                $this->plan = Plan::find(56);
+                $this->list_id = 34;
+                break;
                 
             default:
                 $this->list_id = null;
@@ -182,6 +186,16 @@ class Reto extends Component
                     'video' => null,
                 ];
             break;
+            case '5mer-2024':
+                return $this->data = [
+                    'title' => 'Reto 5 Mer',
+                    'subtitle'=> 'El Reto del Ayuno',
+                    'type' => 'Reto Online',
+                    'online' => true,
+                    'billdoard' => null,
+                    'video' => null,
+                ];
+            break;
             default:
                 return null;
                 break;
@@ -226,6 +240,9 @@ class Reto extends Component
             break;
             case 'desafio-2024':
                 return view('livewire.reto.desafio-2024.register');
+            break;
+            case '5mer-2024':
+                return view('livewire.reto.5mer-2024.register');
             break;
             default:
                 return view('livewire.masterclass.no-disponible');
@@ -345,6 +362,15 @@ class Reto extends Component
                         'type' => 'video',
                         'online' => true,
                         'video-1' => '902603729?h=375180ce32', 
+                    ];
+                    break;
+                case '5mer-2024':
+                    return $this->data = [
+                        'title' => 'Reto 5 Mer',
+                        'subtitle'=> 'El Reto del Ayuno',
+                        'type' => 'video',
+                        'online' => true,
+                        'video-1' => '', 
                     ];
                     break;
             default:

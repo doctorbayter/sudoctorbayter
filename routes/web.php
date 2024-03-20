@@ -1047,14 +1047,11 @@ Route::get('x/query', function(){
     // $fase->slug = '5-desayunos-sin-huevo';
     // $fase->save();
 
-    $day = Day::create([
-       'day' => 8,
-       'fase_id' => 5,
-    ]);
-    DB::insert("INSERT INTO day_fase (id, fase_id, day_id, created_at, updated_at) VALUES
-    (131, 5, $day->id, CURRENT_TIMESTAMP, NULL)");
-    DB::insert("INSERT INTO day_week (id, day_id, week_id, created_at, updated_at) VALUES
-    (131, $day->id, '1', CURRENT_TIMESTAMP, NULL)");
+    $plan = Plan::find(56);
+    $plan->price_id = 45;
+    $plan->save();
+  
+    
 
 });
 

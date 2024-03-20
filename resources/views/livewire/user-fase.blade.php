@@ -74,6 +74,9 @@
                         <div class="hidden">{{$this->day->id}}</div>
                         @if ($fase->id == 20 && auth()->user()->id != 1370600 )
                             <div class="flex flex-col space-y-4 min-w-screen py-16 animated fadeIn faster  justify-center items-center outline-none focus:outline-none bg-gray-900">
+                                <figure>
+                                    <img src="{{asset('img/billboards/banner_5mer_2024_solo.jpg')}}" alt="" class="w-full mx-auto shadow-xl overflow-hidden rounded-xl animate-wiggle">
+                                </figure>
                                 <div class="flex flex-col p-8 bg-white shadow-md hover:shodow-lg rounded-2xl">
                                     <div class="flex items-center justify-between">
                                         <div class="flex items-center">

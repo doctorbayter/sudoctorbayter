@@ -182,7 +182,8 @@ Route::get('reto/{reto}/video/{video}', [Reto::class, 'video'])->name('reto.vide
 
 Route::get('/reto', function () {
     //return view('no-disponible');
-    return redirect('https://pay.hotmart.com/D91820293W?checkoutMode=10');
+    //return redirect('https://pay.hotmart.com/D91820293W?checkoutMode=10');
+    return view('sales.retos.5-mer');
 })->name('reto.nuevo');
 
 
@@ -1047,9 +1048,9 @@ Route::get('x/query', function(){
     // $fase->slug = '5-desayunos-sin-huevo';
     // $fase->save();
 
-    $plan = Plan::find(56);
-    $plan->price_id = 45;
-    $plan->save();
+    // $plan = Plan::find(56);
+    // $plan->price_id = 45;
+    // $plan->save();
   
     
 

@@ -47,7 +47,7 @@
                     <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
 
                     <!--- The div that the checkout should be loaded --->
-                    <div id="inline_checkout" class="overflow-hidden sm:-mb-64"></div>
+                    <div id="inline_checkout" class="overflow-hidden h-full"></div>
 
                     <!--- Configuration --->
                     <script>

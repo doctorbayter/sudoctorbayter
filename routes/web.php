@@ -194,7 +194,7 @@ Route::get('/venezuela', function () {
 
 
 Route::get('/reto/5-mer/whatsapp/', function () {
-    return redirect('https://chat.whatsapp.com/FKioIs9IfEsHXBjyao1hsK');
+    return redirect('https://chat.whatsapp.com/LxJtsYaON04ALSM2EjexCz');
 })->name('reto.whatsapp');
 
 Route::get('/reto/5-mer/whatsapp/grupo-1', function () {
